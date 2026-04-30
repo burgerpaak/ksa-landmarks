@@ -1,0 +1,3093 @@
+[
+  {
+    "id": "01",
+    "idx": 1,
+    "name": "National Museum of Saudi Arabia",
+    "name_lines": [
+      "National Museum",
+      "of Saudi Arabia"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "museum",
+    "badge": "MUSEUM",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/National_Museum_Riyadh_%286781666263%29.jpg/960px-National_Museum_Riyadh_%286781666263%29.jpg",
+      "wiki_query": "National Museum of Saudi Arabia",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/National_Museum_of_Saudi_Arabia.jpg/640px-National_Museum_of_Saudi_Arabia.jpg",
+      "local_path": "01_national-museum-of-saudi-arabia.jpg"
+    },
+    "key_points": [
+      "1999년 사우디 건국 100주년에 맞춰 완공 — 26개월 공기",
+      "Raymond Moriyama(캐나다) 설계 — 리야드 외곽 'Red Sands' 사구의 곡선·색에서 영감",
+      "메카 방향으로 휘어지는 초승달 평면 — 서측 곡면이 시그니처",
+      "총 면적 약 28,000 m² · 8개 전시홀이 2층에 분포"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "초승달 곡면 매스 · 2층"
+      },
+      {
+        "label": "재료",
+        "value": "리야드산 라임스톤 클래딩 + 글레이즈 커튼월"
+      },
+      {
+        "label": "규모",
+        "value": "연면적 약 28,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "1999년 완공"
+      },
+      {
+        "label": "설계",
+        "value": "Raymond Moriyama / Moriyama & Teshima"
+      }
+    ],
+    "tags": [
+      "저층",
+      "곡선파사드",
+      "사암질감",
+      "복합동"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "National Museum of Saudi Arabia Riyadh المتحف الوطني",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=National+Museum+Saudi+Arabia+Riyadh+architecture"
+        },
+        {
+          "label": "Archello",
+          "url": "https://www.archello.com/project/national-museum-of-saudi-arabia"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/National_Museum_of_Saudi_Arabia"
+        },
+        {
+          "label": "Saudipedia",
+          "url": "https://saudipedia.com/en/the-saudi-national-museum"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/1GRUewHu1GaYvcFk7"
+    },
+    "modeling_notes": [
+      "외벽 패턴: 가로 슬릿형 개구부 반복 — 텍스처 UV 필수",
+      "서측 곡면 파사드는 단일 매스로 모델링 후 라임스톤 텍스처에 가로 결 displacement 추가",
+      "주변 Murabba 광장·궁전과의 축선을 유지해 배치"
+    ],
+    "must_have": [
+      "메카 향한 초승달형 곡면 매스",
+      "리야드산 라임스톤 외벽 + 가로 결",
+      "8개 전시홀 2층 구조 (총 ~28,000 m²)",
+      "King Abdulaziz Historical Centre 광장과 축선"
+    ]
+  },
+  {
+    "id": "02",
+    "idx": 2,
+    "name": "Murabba Palace",
+    "name_lines": [
+      "Murabba Palace"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "heritage",
+    "badge": "HERITAGE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Murabba_Palace_%281%29.jpg/960px-Murabba_Palace_%281%29.jpg",
+      "wiki_query": "Murabba Palace",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Al-Murabba_Palace_%28Riyadh%29.jpg/640px-Al-Murabba_Palace_%28Riyadh%29.jpg",
+      "local_path": "02_murabba-palace.jpg"
+    },
+    "key_points": [
+      "1936–1938년 King Abdulaziz가 리야드 구도시 성벽 밖에 세운 첫 대규모 건물",
+      "1953년 서거까지 거주·집무 — 이후 King Abdulaziz Historical Centre로 보존",
+      "전형적 Najdi 양식 — 두꺼운 흙벽, 입방체 매스, 안마당 구조",
+      "약 9,844 m² 건물이 9개 문이 있는 큰 흙벽 안에 위치"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "정사각형 입방체 매스 · 안마당"
+      },
+      {
+        "label": "재료",
+        "value": "짚 섞은 어도비 벽돌, 타마리스크 목재, 야자수 잎 천장"
+      },
+      {
+        "label": "규모",
+        "value": "건물 약 9,844 m² · 약 400×400m 흙벽 부지"
+      },
+      {
+        "label": "시대",
+        "value": "1936–1938 (King Abdulaziz 명령)"
+      },
+      {
+        "label": "설계",
+        "value": "Ibn Qabba (master builder)"
+      }
+    ],
+    "tags": [
+      "나즈디건축",
+      "중정형",
+      "어도비",
+      "망루"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Murabba Palace Riyadh قصر المربع",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Murabba+Palace+Riyadh+exterior"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Murabba_Palace"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/ctYXJ3qtc2vHXC3b6"
+    },
+    "modeling_notes": [
+      "흙벽 특유의 거친 표면 질감 — displacement 맵 활용 권장",
+      "흙벽 표면: 거친 normal/displacement 맵 + 지면 가까이 어두워지는 컬러 그라데이션",
+      "톱니 파라펫·작은 창은 instancing으로 반복 배치"
+    ],
+    "must_have": [
+      "정사각형 어도비 흙벽 매스 (2층)",
+      "4면 모서리 망루 (Barjeel)",
+      "톱니형(삼각) 파라펫 장식 상단",
+      "작고 깊은 사각 창 + 나무 격자"
+    ]
+  },
+  {
+    "id": "03",
+    "idx": 3,
+    "name": "Kingdom Arena",
+    "name_lines": [
+      "Kingdom Arena"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "stadium",
+    "badge": "STADIUM · 26,000",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kingdom_Arena_Logo.svg/960px-Kingdom_Arena_Logo.svg.png",
+      "wiki_query": "Kingdom Arena",
+      "fallback": "https://stadiumdb.com/pictures/stadiums/ksa/kingdom_arena/kingdom_arena12.jpg",
+      "local_path": "03_kingdom-arena.jpg"
+    },
+    "key_points": [
+      "실내 다목적 아레나 — 축구 경기장이 아닌 콘서트·복싱·이벤트 베뉴",
+      "2022년 완공 · Boulevard Riyadh City 단지의 핵심 시설",
+      "아시안컵 2027에서는 임시 경기장 변환 가능성 (개막식·개회식 등 활용)"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "직사각형 실내 아레나 (Indoor multi-purpose)"
+      },
+      {
+        "label": "재료",
+        "value": "백색 메탈 패널 + LED 외벽"
+      },
+      {
+        "label": "지붕",
+        "value": "완전 폐쇄형"
+      },
+      {
+        "label": "수용",
+        "value": "약 22,500–26,000 (이벤트별 가변)"
+      },
+      {
+        "label": "시대",
+        "value": "2022년 완공"
+      }
+    ],
+    "tags": [
+      "원형",
+      "반개방지붕",
+      "LED파사드"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Kingdom Arena Riyadh",
+      "extras": [
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/stadiums/ksa/kingdom_arena"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Kingdom+Arena+Riyadh+stadium"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kingdom_Arena"
+        },
+        {
+          "label": "AFC Asian Cup 2027",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/RmcsVHgtRgh7MpH38"
+    },
+    "modeling_notes": [
+      "규모 감 표현 위해 주변 주차장 & 진입로 포함 권장",
+      "오픈 보울이 아닌 박스형 실내 매스로 모델링 — 지붕은 완전 폐쇄",
+      "야간 외벽 LED 컬러 변환이 식별성의 핵심 — 발광 머티리얼 권장"
+    ],
+    "must_have": [
+      "직사각형 실내 아레나 매스 (보울 X)",
+      "완전 폐쇄형 지붕",
+      "백색 메탈 외피 + LED 동적 조명",
+      "Boulevard Riyadh City 엔터테인먼트 구역 인접"
+    ]
+  },
+  {
+    "id": "04",
+    "idx": 4,
+    "name": "King Saud University Stadium (Alawwal Park)",
+    "name_lines": [
+      "King Saud University Stadium"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "stadium",
+    "badge": "STADIUM · 25,000",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Inside_King_Saud_University_Stadium.jpg/960px-Inside_King_Saud_University_Stadium.jpg",
+      "wiki_query": "King Saud University Stadium",
+      "fallback": "https://stadiumdb.com/pictures/stadiums/ksa/king_saud_university_stadium/king_saud_university_stadium08.jpg",
+      "local_path": "04_king-saud-university-stadium-alawwal-park.jpg"
+    },
+    "key_points": [
+      "Al-Nassr FC 홈구장 (Cristiano Ronaldo 영입 후 국제 인지도 급상승)",
+      "2015년 완공 — 킹사우드대학교 캠퍼스 내 위치",
+      "아시안컵 2027 호스트 베뉴 중 하나 (~25,000석)"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "타원형 보울 (oval)"
+      },
+      {
+        "label": "지붕",
+        "value": "양 측면 부분 캔틸레버"
+      },
+      {
+        "label": "재료",
+        "value": "노출 콘크리트 + 메탈 스크린 액센트"
+      },
+      {
+        "label": "수용",
+        "value": "~25,000 / Asian Cup 2027"
+      },
+      {
+        "label": "시대",
+        "value": "2015 (현재 보울)"
+      }
+    ],
+    "tags": [
+      "타원형",
+      "트러스파사드",
+      "막구조지붕"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Al-Awwal Park King Saud University Stadium Riyadh",
+      "extras": [
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/stadiums/ksa/king_saud_university_stadium"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Alawwal+Park+stadium+Riyadh"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Saud_University_Stadium"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/mbQbgiMrC5M2LYke6"
+    },
+    "subtitle": "(Alawwal Park)",
+    "must_have": [
+      "타원형 보울 (oval bowl)",
+      "양 측면(메인·백) 부분 캔틸레버 지붕",
+      "노출 콘크리트 + 메탈 스크린 외피",
+      "킹사우드대학 캠퍼스 입지 — 사막성 조경"
+    ],
+    "modeling_notes": [
+      "지붕은 양 측면(롱사이드)에만 — 골대 뒤(엔드존)는 개방형으로 모델링",
+      "캠퍼스 도로·주차장 컨텍스트 함께 배치하면 실감 향상"
+    ]
+  },
+  {
+    "id": "05",
+    "idx": 5,
+    "name": "Imam Muhammad Ibn Saud Islamic University Football Stadium",
+    "name_lines": [
+      "Imam Muhammad Ibn Saud Islamic",
+      "University Football Stadium"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "stadium",
+    "badge": "STADIUM · 21,000",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Lejbailat_and_State_Mosque.jpg/960px-View_of_Lejbailat_and_State_Mosque.jpg",
+      "wiki_query": "Imam Mohammad ibn Saud Islamic University",
+      "fallback": "https://stadiumdb.com/pictures/stadiums/ksa/imam_muhammad_ibn_saud_stadium/imam_muhammad_ibn_saud_stadium01.jpg",
+      "local_path": "05_imam-mohammed-ibn-saud-university-stadium.jpg"
+    },
+    "key_points": [
+      "Imam Mohammed Ibn Saud Islamic University 캠퍼스 내 경기장",
+      "아시안컵 2027 위해 업그레이드/신축 진행 — 공개 도면 자료 매우 제한적",
+      "확인 필요: 정확한 수용석·완공 시점은 추후 위성·공식 자료로 검증 필요"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "타원형 보울 (추정)"
+      },
+      {
+        "label": "수용",
+        "value": "~21,000 / Asian Cup 2027 (xlsx 기준)"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·외장 재료·지붕 형식"
+      }
+    ],
+    "tags": [
+      "타원형",
+      "수직루버",
+      "캔틸레버지붕"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Imam Muhammad Ibn Saud Islamic University Football Stadium",
+      "extras": [
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/stadiums/ksa/imam_muhammad_ibn_saud_stadium"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Imam+Mohammed+Ibn+Saud+University+Stadium"
+        },
+        {
+          "label": "AFC Asian Cup 2027",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/2sBW9cXNqFaXLmUj7"
+    },
+    "modeling_notes": [
+      "타원형 볼 + 외벽 전체 수직 루버(louver) 시스템 — 가는 핀들의 반복",
+      "공개 자료 제한 — 일반적 대학 경기장 형태(타원 + 4코너 라이트)로 단순화",
+      "프로젝트 진행 시 위성사진/공식 렌더링으로 보강할 것"
+    ],
+    "must_have": [
+      "대학 캠퍼스 부속 경기장 (보수 진행 중)",
+      "오픈 보울 + 4코너 조명탑 (일반적 구성)"
+    ]
+  },
+  {
+    "id": "06",
+    "idx": 6,
+    "name": "Al Shabab Stadium",
+    "name_lines": [
+      "Al Shabab Stadium"
+    ],
+    "tier": 1,
+    "city": "Riyadh",
+    "type": "stadium",
+    "badge": "STADIUM · 14,000",
+    "image": {
+      "url": "",
+      "wiki_query": "Prince Faisal bin Fahd Stadium",
+      "fallback": "https://stadiumdb.com/pictures/stadiums/ksa/al-shabab_stadium/al-shabab_stadium03.jpg",
+      "local_path": "06_Al-Shabab-Stadium.jpg"
+    },
+    "key_points": [
+      "Al-Shabab SC 홈구장 — 약 14,000석의 비교적 소형 클럽 전용 구장",
+      "아시안컵 2027 베뉴로 개보수 예정",
+      "확인 필요: 완공 연도·외장 재료·정확한 수용석"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "소형 컴팩트 보울"
+      },
+      {
+        "label": "지붕",
+        "value": "개방형 (지붕 없음 또는 부분)"
+      },
+      {
+        "label": "수용",
+        "value": "~14,000 / Asian Cup 2027"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공·재료·정확한 수용"
+      }
+    ],
+    "tags": [
+      "원형",
+      "주름파사드",
+      "반폐쇄돔"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Al Shabab Club Stadium Riyadh ملعب الشباب",
+      "extras": [
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/stadiums/ksa/al-shabab_club_stadium"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Shabab+Stadium+Riyadh"
+        },
+        {
+          "label": "AFC Asian Cup 2027",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/S75LYZuXueh6Yyoh6"
+    },
+    "must_have": [
+      "소규모 컴팩트 보울 (단일 층 스탠드)",
+      "개방형 지붕 (지붕 없음 / 부분만)",
+      "알샤밥 클럽 컬러: 백색 + 검정"
+    ],
+    "modeling_notes": [
+      "단일 층 스탠드 + 개방형 지붕으로 단순화",
+      "클럽 컬러(백/흑)가 식별 포인트 — 시트·외장 컬러 일관 적용"
+    ]
+  },
+  {
+    "id": "07",
+    "idx": 7,
+    "name": "Nasif House (Bayt Nassif)",
+    "name_lines": [
+      "Nasif House"
+    ],
+    "tier": 1,
+    "city": "Jeddah",
+    "type": "heritage",
+    "badge": "HERITAGE",
+    "image": {
+      "url": "",
+      "wiki_query": "Nassif House",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Nassif_House_Jeddah.jpg/640px-Nassif_House_Jeddah.jpg",
+      "local_path": "07_Nasif-House.jpg"
+    },
+    "key_points": [
+      "1872 착공 / 1881 완공 — Old Jeddah(Al-Balad)의 대표 상인 저택",
+      "약 4–7층, 106개 방 — 오스만 후기 + 홍해 연안 양식 결합",
+      "1925년 이븐 사우드가 제다 점령 후 머문 곳 (역사적 의미 큼)",
+      "북측 님(neem)나무 때문에 'House with the Tree' 별칭"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "4–7층 비정형 매스 · 106개 방"
+      },
+      {
+        "label": "재료",
+        "value": "산호석(manqabi) 석조 + 흰 회반죽, 티크/열대 경목, 조각 라와신"
+      },
+      {
+        "label": "시대",
+        "value": "1872 착공 / 1881 완공"
+      }
+    ],
+    "tags": [
+      "Al-Balad",
+      "로샨",
+      "산호석",
+      "UNESCO",
+      "탑형"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Nassif House Museum Al Balad Jeddah بيت نصيف",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Nasif+House+Jeddah+Al+Balad+Rawshan"
+        },
+        {
+          "label": "UNESCO",
+          "url": "https://whc.unesco.org/en/list/1361"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Nasseef_House"
+        },
+        {
+          "label": "Arab News",
+          "url": "https://www.arabnews.com/node/271716"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/tN8xsrWLdaDnVomn8"
+    },
+    "subtitle": "(Bayt Nassif)",
+    "must_have": [
+      "전면 2단 적층 라와신(Roshan) 목재 출창",
+      "북측 진입 리잘릿 (돌출 매스)",
+      "산호석(Coral Stone) 벽체 + 흰 회반죽 마감",
+      "옥상 목재 파빌리온과 평지붕 테라스"
+    ],
+    "modeling_notes": [
+      "라와신 한 모듈을 정밀 제작 후 instancing — 격자무늬는 normal map으로",
+      "전체 매스는 약간 비정형 — 옥상은 평지붕 + 작은 파빌리온 조합"
+    ]
+  },
+  {
+    "id": "08",
+    "idx": 8,
+    "name": "Al Rahma Mosque (Floating Mosque)",
+    "name_lines": [
+      "Al Rahma Mosque"
+    ],
+    "tier": 1,
+    "city": "Jeddah",
+    "type": "mosque",
+    "badge": "MOSQUE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Al-Rahmah_Mosque_7_%28cropped%29.jpg/960px-Al-Rahmah_Mosque_7_%28cropped%29.jpg",
+      "wiki_query": "Al Rahmah Mosque",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Al-Rahma_Mosque%2C_Jeddah%2C_Saudi_Arabia_%282%29.jpg/640px-Al-Rahma_Mosque%2C_Jeddah%2C_Saudi_Arabia_%282%29.jpg",
+      "local_path": "08_al-rahmah-mosque-floating-mosque.jpg"
+    },
+    "key_points": [
+      "1985년 제다 코르니쉬 북단 완공 — 세계 최초의 '해상 모스크'",
+      "주돔 = 8개 기둥 지지 / 부속 = 52개 소돔 + 23개 우산 + 56개 이슬람 양식 창",
+      "약 500여 명 수용 · 여성 예배 공간은 매달린 목재 갤러리",
+      "확인 필요: 미나렛/돔 정확한 높이는 권위 있는 자료 부족"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "필로티 부유형 + 중앙 대돔"
+      },
+      {
+        "label": "재료",
+        "value": "흰 대리석 + 터쿼이즈 글레이즈 타일, 철근콘크리트 파일"
+      },
+      {
+        "label": "규모",
+        "value": "내부 약 2,400 m² · 수용 ~500"
+      },
+      {
+        "label": "시대",
+        "value": "1985년 완공"
+      }
+    ],
+    "tags": [
+      "수상모스크",
+      "흰색돔",
+      "미나렛×2",
+      "해수면연출"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Rahma Floating Mosque Jeddah مسجد الرحمة",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Rahma+Mosque+Jeddah+floating"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Al-Rahma_Mosque"
+        },
+        {
+          "label": "Saudipedia",
+          "url": "https://saudipedia.com/en/al-rahma-mosque"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/Lbg5GcxmCmLUvXtB8"
+    },
+    "subtitle": "(Floating Mosque)",
+    "modeling_notes": [
+      "해질녘 역광 실루엣이 상징적 — 조명/렌더 앵글 참고",
+      "52개 부속 돔·23개 우산은 instancing으로 반복",
+      "기단부를 수면 약간 위로 띄워 모델링 — 만조 시 반사 강조",
+      "터쿼이즈 돔 + 흰 대리석 색대비를 명확히 분리"
+    ],
+    "must_have": [
+      "필로티 위 부유형 매스 (만조 시 바다 위 인상)",
+      "터쿼이즈색 중앙 큰 돔 + 52개 작은 돔군",
+      "흰 대리석 외벽 + 단일 백색 미나렛",
+      "외부 23개 우산형(파라솔) 캐노피"
+    ]
+  },
+  {
+    "id": "09",
+    "idx": 9,
+    "name": "Prince Abdullah Al Faisal Sports City Stadium",
+    "name_lines": [
+      "Prince Abdullah Al Faisal",
+      "Sports City Stadium"
+    ],
+    "tier": 1,
+    "city": "Jeddah",
+    "type": "stadium",
+    "badge": "STADIUM · 25,000",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Prince_Abdullah_Al-Faisal_Sports_City.jpg/960px-Prince_Abdullah_Al-Faisal_Sports_City.jpg",
+      "wiki_query": "Prince Abdullah Al Faisal Stadium",
+      "fallback": "https://stadiumdb.com/pictures/stadiums/ksa/prince_abdullah_al_faisal_stadium/prince_abdullah_al_faisal_stadium03.jpg",
+      "local_path": "09_prince-abdullah-al-faisal-sports-city-stadium.jpg"
+    },
+    "key_points": [
+      "제다 도심에 위치한 Al-Ittihad FC + Al-Ahli FC 공동 홈구장",
+      "2020년경 대규모 리노베이션 — 외관 완전 일신",
+      "아시안컵 2027 베뉴 (~25,000석)"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "타원형 보울 (oval)"
+      },
+      {
+        "label": "파사드",
+        "value": "백색 천공 메탈 패널"
+      },
+      {
+        "label": "지붕",
+        "value": "양 측면 부분 캔틸레버"
+      },
+      {
+        "label": "수용",
+        "value": "~25,000 / Asian Cup 2027"
+      },
+      {
+        "label": "시대",
+        "value": "2020 (현재 외관)"
+      }
+    ],
+    "tags": [
+      "타원형",
+      "파도형지붕",
+      "아케이드하부"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Prince Abdullah Al Faisal Stadium Jeddah",
+      "extras": [
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/stadiums/ksa/prince_abdullah_al_faisal_stadium"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Prince+Abdullah+Al+Faisal+Stadium+Jeddah"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Prince_Abdullah_al-Faisal_Stadium"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/dZN1mEnMv5i5wsAe7"
+    },
+    "must_have": [
+      "타원형 보울 + 백색 천공(perforated) 메탈 외피",
+      "양 측면 부분 캔틸레버 지붕",
+      "Al-Ittihad / Al-Ahli 공동 사용",
+      "도시 내부 입지 — 도로·주차 인접"
+    ],
+    "modeling_notes": [
+      "리노베이션 후 외관은 백색 메탈 패널 중심 — 노후 콘크리트 표현 지양",
+      "양 측면만 부분 지붕 / 골대 뒤는 개방"
+    ]
+  },
+  {
+    "id": "10",
+    "idx": 10,
+    "name": "AL KHOBAR New Stadium (Aramco Stadium)",
+    "name_lines": [
+      "AL KHOBAR New Stadium"
+    ],
+    "tier": 1,
+    "city": "Al Khobar",
+    "type": "stadium",
+    "badge": "STADIUM · 45,000",
+    "image": {
+      "url": "",
+      "wiki_query": "Aramco Stadium",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Aramco_Stadium_Al_Khobar.jpg/640px-Aramco_Stadium_Al_Khobar.jpg",
+      "local_path": "10_Aramco-Stadium.jpg"
+    },
+    "key_points": [
+      "알코바르 해안에 건설 중인 신축 경기장 — Populous 설계",
+      "약 45,000석 — 아시안컵 2027 결승전 후보 베뉴",
+      "동부주(Eastern Province) Dhahran-Dammam-Khobar 도시권 대표 랜드마크로 계획"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "타원형 풀-보울"
+      },
+      {
+        "label": "파사드",
+        "value": "천공 메탈 + 사막 모티브 기하 패턴"
+      },
+      {
+        "label": "지붕",
+        "value": "PTFE 막구조 + 캔틸레버"
+      },
+      {
+        "label": "수용",
+        "value": "~45,000 / Asian Cup 2027"
+      },
+      {
+        "label": "시대",
+        "value": "건설 중"
+      },
+      {
+        "label": "설계",
+        "value": "Populous"
+      }
+    ],
+    "tags": [
+      "원형",
+      "다이아몬드패턴",
+      "45,000석"
+    ],
+    "remarks": [
+      "ASIAN CUP 2027"
+    ],
+    "links": {
+      "google_maps_query": "Aramco Stadium Al Khobar",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Aramco+Stadium+Al+Khobar+design"
+        },
+        {
+          "label": "렌더링 검색",
+          "url": "https://www.google.com/search?q=Aramco+Stadium+Al+Khobar+design+render"
+        },
+        {
+          "label": "StadiumDB",
+          "url": "https://stadiumdb.com/designs/ksa/aramco_stadium"
+        },
+        {
+          "label": "Populous",
+          "url": "https://populous.com/projects"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/BGJ4bvLCrBiceDsG9"
+    },
+    "subtitle": "(Aramco Stadium)",
+    "modeling_notes": [
+      "아직 건설 중 — 렌더링 이미지 레퍼런스 활용",
+      "공식 렌더링을 1차 레퍼런스로 — 외피 패턴 밀도는 LOD에 따라 조정",
+      "해안·도시 진입로 컨텍스트 포함 권장"
+    ],
+    "must_have": [
+      "사막 영감 기하학 패턴 외피 (Populous design)",
+      "PTFE 막구조 캔틸레버 지붕",
+      "타원형 풀-보울",
+      "알코바르 해안 인접 입지 — 동부주 상징"
+    ]
+  },
+  {
+    "id": "11",
+    "idx": 11,
+    "name": "Diriyah (Ad Diriyah)",
+    "name_lines": [
+      "Diriyah (Ad Diriyah)"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "heritage",
+    "badge": "HERITAGE · UNESCO",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/At-Turaif_District_of_Diriyah%2C_Saudi_Arabia.jpg/960px-At-Turaif_District_of_Diriyah%2C_Saudi_Arabia.jpg",
+      "wiki_query": "Diriyah",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Saudi_Arabia_Diriyah_2.jpg/640px-Saudi_Arabia_Diriyah_2.jpg",
+      "local_path": "11_diriyah-ad-diriyah.jpg"
+    },
+    "key_points": [
+      "1727년부터 사우드 왕가 제1왕국 수도 — 2010년 UNESCO 세계유산 등재",
+      "단일 건물이 아닌 흙벽돌 도시 군집 — 살와 궁전이 단지 내 최대 다층 구조물",
+      "두꺼운 토벽·좁은 창·내부 안뜰로 사막 기후에 대응한 나즈디 양식의 정수"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "흙벽돌 도시 군집 + 살와 궁전(다층 요새)"
+      },
+      {
+        "label": "재료",
+        "value": "햇볕 건조 머드브릭, 타마리스크/야자수 목재, 조각 석고(juss), 라임스톤 기초"
+      },
+      {
+        "label": "규모",
+        "value": "At-Turaif 시타델 약 29 ha"
+      },
+      {
+        "label": "시대",
+        "value": "1727년 — UNESCO 2010"
+      }
+    ],
+    "tags": [
+      "UNESCO",
+      "나즈디",
+      "어도비",
+      "유적",
+      "계곡"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Diriyah At-Turaif UNESCO الدرعية الطريف",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Diriyah+At-Turaif+aerial+UNESCO"
+        },
+        {
+          "label": "UNESCO",
+          "url": "https://whc.unesco.org/en/list/1329/"
+        },
+        {
+          "label": "DGDA",
+          "url": "https://www.dgda.gov.sa/en/place/at-turaif"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/SMR4FXd4XskXKaRc9"
+    },
+    "must_have": [
+      "두꺼운 흙벽돌 외벽 + 흉벽",
+      "살와 궁전 다층 요새 매스",
+      "삼각형 통풍구 + 작은 창",
+      "나즈디 미로 골목과 안뜰"
+    ],
+    "modeling_notes": [
+      "같은 모듈을 회전·스케일 변형해 인스턴싱하면 효율적",
+      "삼각 환기구·흉벽 패턴은 별도 모듈로 만들어 여러 건물에 재사용"
+    ]
+  },
+  {
+    "id": "12",
+    "idx": 12,
+    "name": "Salam Park",
+    "name_lines": [
+      "Salam Park"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "park",
+    "badge": "PARK",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Families_Salam_Park_Riyadh.jpg/960px-Families_Salam_Park_Riyadh.jpg",
+      "wiki_query": "Salam Park",
+      "fallback": "https://omrania.com/wp-content/uploads/2020/08/Salam-Park-1.jpg",
+      "local_path": "12_salam-park.jpg"
+    },
+    "key_points": [
+      "2004년 개장한 ~24.8 ha 도심 공원 — 옛 압둘라 빈 압둘라흐만 왕자의 대추야자 농장 부지",
+      "4개 영역 구성: 야자수 숲 / 호수 / 힐사이드 / 생태 — 호수 분수는 최대 ~40m",
+      "Omrania & Associates + Aukett Fitzroy Robinson 설계"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "도심 공원 — 4개 영역 (야자숲/호수/힐사이드/생태)"
+      },
+      {
+        "label": "규모",
+        "value": "24.8 ha · 호수 ~33,000 m²"
+      },
+      {
+        "label": "재료",
+        "value": "천연석 포장, 콘크리트(모스크), 대추야자, 수경 시설"
+      },
+      {
+        "label": "시대",
+        "value": "2004년 개장"
+      },
+      {
+        "label": "설계",
+        "value": "Omrania + Aukett Fitzroy Robinson"
+      }
+    ],
+    "tags": [
+      "공원",
+      "조경",
+      "원형호수",
+      "파빌리온"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Salam Park Riyadh حديقة السلام",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Salam+Park+Riyadh+aerial"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Salam_Park"
+        },
+        {
+          "label": "Omrania",
+          "url": "https://omrania.com/project/salam-park/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/rxjTE2jTBe8KrjEb9"
+    },
+    "must_have": [
+      "중앙 인공 호수 + 분수 (~40m)",
+      "약 1,300그루 대추야자 군락",
+      "굴곡진 잔디 힐사이드 존",
+      "중앙 흰색 살람 모스크"
+    ],
+    "modeling_notes": [
+      "대추야자는 3–4종 메시 만들어 임의 회전·스케일로 인스턴싱",
+      "호수는 평면 메시 + 노멀맵/리플렉션 / 분수는 파티클·빌보드"
+    ]
+  },
+  {
+    "id": "13",
+    "idx": 13,
+    "name": "King Fahad National Library",
+    "name_lines": [
+      "King Fahad National Library"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "museum",
+    "badge": "LIBRARY",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/King_Fahad_Library.jpg/960px-King_Fahad_Library.jpg",
+      "wiki_query": "King Fahd National Library",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/King_Fahd_National_Library.jpg/640px-King_Fahd_National_Library.jpg",
+      "local_path": "13_king-fahd-national-library.jpg"
+    },
+    "key_points": [
+      "Gerber Architekten(獨) 설계 · 2013년 11월 완공 — 1980년대 기존 도서관을 큐브가 감싸는 증축",
+      "파사드: 마름모형 백색 PTFE 텐트 막을 3D 인장 강선이 지지 — 아라비아 전통 텐트의 현대적 재해석",
+      "연면적 약 86,632 m² · 일사 투과율 ~7%"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "큐브 매스 + 마름모 텐트 막 파사드"
+      },
+      {
+        "label": "재료",
+        "value": "SEFAR 백색 PTFE 막, 인장 강선 케이블, 강·콘크리트 구조, 흰 대리석"
+      },
+      {
+        "label": "규모",
+        "value": "연면적 86,632 m² · 체적 452,000 m³"
+      },
+      {
+        "label": "시대",
+        "value": "2013년 (증축 완공)"
+      },
+      {
+        "label": "설계",
+        "value": "Gerber Architekten + SEFAR(막)"
+      }
+    ],
+    "tags": [
+      "막구조",
+      "PTFE텐트",
+      "발광",
+      "Gerber"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "King Fahad National Library Riyadh مكتبة الملك فهد",
+      "extras": [
+        {
+          "label": "ArchDaily",
+          "url": "https://www.archdaily.com/tag/king-fahad-national-library"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=King+Fahd+National+Library+Riyadh+tent"
+        },
+        {
+          "label": "Gerber",
+          "url": "https://www.gerberarchitekten.de/en/project/king-fahad-national-library/"
+        },
+        {
+          "label": "ArchDaily",
+          "url": "https://www.archdaily.com/469088/king-fahad-national-library-gerber-architekten"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/NfkGR7JbNqNVZKFa8"
+    },
+    "must_have": [
+      "백색 마름모(롬보이드) 텐트 막구조 파사드",
+      "기존 도서관을 사방에서 감싼 큐브 매스",
+      "3D 인장 강선 케이블 그리드",
+      "바닥 흰 대리석 포디움 광장"
+    ],
+    "modeling_notes": [
+      "마름모 패널 1개 정밀 모델링 후 인스턴싱 / 막은 반투명 화이트 + 약간의 SSS",
+      "케이블 구조는 별도 라인 지오메트리 — 멀리서는 텍스처로 LOD 대체"
+    ]
+  },
+  {
+    "id": "14",
+    "idx": 14,
+    "name": "Six Flags Qiddiya City",
+    "name_lines": [
+      "Six Flags Qiddiya City"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "resort",
+    "badge": "THEME PARK",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Six_Flags_Qiddiya_Theme_Park%2C_Saudi_Arabia_%282025%29.jpg/960px-Six_Flags_Qiddiya_Theme_Park%2C_Saudi_Arabia_%282025%29.jpg",
+      "wiki_query": "Six Flags Qiddiya City",
+      "fallback": "https://www.sixflagsqiddiya.com/wp-content/uploads/2024/08/sfq-header-2.jpg",
+      "local_path": "14_six-flags-qiddiya-city.jpg"
+    },
+    "key_points": [
+      "리야드 SW ~40km Qiddiya City — 사우디 최초 대형 테마파크 / 2025년 12월 31일 개장",
+      "시그니처: Falcons Flight = 세계 최고·최장·최속 롤러코스터(높이 195m / 250km/h, 트랙 ~4 km, Intamin)",
+      "마스터플랜: BIG (Bjarke Ingels Group) — 투와이크 단애 지형과 대화하는 배치"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "6개 테마 존 + 시그니처 코스터/타워"
+      },
+      {
+        "label": "규모",
+        "value": "파크 ~320,000 m² · Falcons Flight 트랙 ~4 km"
+      },
+      {
+        "label": "재료",
+        "value": "강철 트랙(Intamin), 콘크리트 하부, 테마 클래딩(GFRC/FRP), 텐사일 막 차양"
+      },
+      {
+        "label": "시대",
+        "value": "2025년 12월 개장"
+      },
+      {
+        "label": "설계",
+        "value": "마스터플랜: BIG / 코스터: Intamin"
+      }
+    ],
+    "tags": [
+      "테마파크",
+      "사막절벽",
+      "롤러코스터"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Six Flags Qiddiya City Saudi Arabia",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Six+Flags+Qiddiya+aerial+cliff"
+        },
+        {
+          "label": "Wikipedia (Six Flags Qiddiya)",
+          "url": "https://en.wikipedia.org/wiki/Six_Flags_Qiddiya_City"
+        },
+        {
+          "label": "Wikipedia (Falcons Flight)",
+          "url": "https://en.wikipedia.org/wiki/Falcons_Flight"
+        },
+        {
+          "label": "Qiddiya Master Plan",
+          "url": "https://qiddiya.com/en/about-qiddiya/master-plan/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/ZWHfxvTSd6mzNhGU8"
+    },
+    "must_have": [
+      "팰컨스 플라이트 195m 코스터",
+      "시로코 타워 145m",
+      "투와이크 절벽 옆 입지",
+      "6개 테마 구역"
+    ],
+    "modeling_notes": [
+      "팰컨스 플라이트 첫 드롭(~195m 수직)과 시로코 타워(145m)를 두 개의 버티컬 랜드마크로 강조",
+      "평지 X — 투와이크 단애 가장자리 단차 살리기"
+    ]
+  },
+  {
+    "id": "15",
+    "idx": 15,
+    "name": "King Khalid International Airport",
+    "name_lines": [
+      "King Khalid",
+      "International Airport"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "infra",
+    "badge": "AIRPORT",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Riyadh-airport.jpg/960px-Riyadh-airport.jpg",
+      "wiki_query": "King Khalid International Airport",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/King_Khalid_International_Airport_Terminal.jpg/640px-King_Khalid_International_Airport_Terminal.jpg",
+      "local_path": "15_king-khalid-international-airport.jpg"
+    },
+    "key_points": [
+      "1983년 HOK 설계 개항 — 사우디 관문 공항",
+      "4개 삼각 터미널 셸 + 중앙 Royal Mosque(6각, 5,600 m², 33m 청동 내장 돔, 5,000명 수용)가 십자형 배치",
+      "콘크리트 쉘 + 사막 색조 + 이슬람 기하 패턴 — 1980s 모더니즘과 지역성 융합 사례"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "삼각 피라미드 4개 터미널 + 중앙 6각 모스크 (십자형 배치)"
+      },
+      {
+        "label": "재료",
+        "value": "프리캐스트 콘크리트, 사암 톤 클래딩, 이슬람 기하 스크린, 모스크 내부 폴리시드 브론즈"
+      },
+      {
+        "label": "규모",
+        "value": "공항 부지 ~225 km² · 모스크 5,600 m²"
+      },
+      {
+        "label": "시대",
+        "value": "1983년 (원형 4터미널)"
+      },
+      {
+        "label": "설계",
+        "value": "Hellmuth, Obata & Kassabaum (HOK)"
+      }
+    ],
+    "tags": [
+      "공항",
+      "저층수평",
+      "로열터미널돔"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "King Khalid International Airport Riyadh مطار الملك خالد",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=King+Khalid+Airport+Riyadh+aerial"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Khalid_International_Airport"
+        },
+        {
+          "label": "Aramco World 1984",
+          "url": "https://archive.aramcoworld.com/issue/198401/the.riyadh.gateway.htm"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/Zk1TatQeRYwjrqRJ7"
+    },
+    "must_have": [
+      "삼각 피라미드형 4개 터미널 셸",
+      "중앙 6각 모스크 + 큰 돔",
+      "사막색 콘크리트 쉘",
+      "이슬람 기하 패턴 스크린"
+    ],
+    "modeling_notes": [
+      "4개 터미널은 정삼각형 평면 + 셸 지붕 단순화 / 모스크 = 6각 매스 위 얕은 돔",
+      "외장: 모래색~베이지 톤 콘크리트 통일"
+    ]
+  },
+  {
+    "id": "16",
+    "idx": 16,
+    "name": "Riyadh Park Mall",
+    "name_lines": [
+      "Riyadh Park Mall"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "mall",
+    "badge": "MALL",
+    "image": {
+      "url": "",
+      "wiki_query": "Riyadh Park (mall)",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Riyadh_Park_Mall.jpg/640px-Riyadh_Park_Mall.jpg",
+      "local_path": "16_riyadh-park-mall.png"
+    },
+    "key_points": [
+      "리야드 북부 Northern Ring Road 인근 대형 교외형 쇼핑몰",
+      "옥상 야외 식음료/엔터테인먼트 공간이 시그니처",
+      "확인 필요: 정확 완공 연도·설계자·연면적은 권위 자료 부족"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "곡선형 다중 윙 매스 + 옥상 테라스"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 컴포지트 패널, 흰 프리캐스트 콘크리트"
+      },
+      {
+        "label": "확인필요",
+        "value": "정확 완공 연도·설계자·면적"
+      }
+    ],
+    "tags": [
+      "쇼핑몰",
+      "곡선클래딩",
+      "저층"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Riyadh Park Mall",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Riyadh+Park+Mall+exterior"
+        },
+        {
+          "label": "Riyadh Park 공식",
+          "url": "https://www.riyadhpark.com/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Riyadh_Park"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/M6AMAyCVEFxggqVx8"
+    },
+    "must_have": [
+      "대형 곡선 매스 + 다중 윙 구성",
+      "유리 파사드 + 알루미늄 패널",
+      "옥상 야외 엔터테인먼트 테라스",
+      "지상·지하 대형 주차장"
+    ],
+    "modeling_notes": [
+      "단일 매스 X — 길게 뻗은 다중 윙 + 곡선 입면 단순화",
+      "주변 대형 주차장·진입 램프 함께 표현하면 컨텍스트 살아남"
+    ]
+  },
+  {
+    "id": "17",
+    "idx": 17,
+    "name": "King Saud University",
+    "name_lines": [
+      "King Saud University"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "edu",
+    "badge": "UNIVERSITY",
+    "image": {
+      "url": "",
+      "wiki_query": "King Saud University",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/KSU_Main_Building.jpg/640px-KSU_Main_Building.jpg",
+      "local_path": "17_King-Saud-University.jpg"
+    },
+    "key_points": [
+      "HOK 1975–76 마스터플랜 · 약 900 ha 모더니즘 캠퍼스",
+      "두 개의 보행 스파인이 중앙 포럼에서 교차하는 구성이 핵심",
+      "야자수 모티브 콘크리트 아치 열주가 스파인을 덮어 그늘 형성"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "두 개 직교 보행 스파인 + 중앙 포럼 (모더니즘)"
+      },
+      {
+        "label": "재료",
+        "value": "프리캐스트 콘크리트(베이지), 팜폼 콘크리트 아치 열주, 천공 기하 스크린, 틴트 글래스"
+      },
+      {
+        "label": "규모",
+        "value": "주 캠퍼스 ~900 ha (9 km²)"
+      },
+      {
+        "label": "시대",
+        "value": "마스터플랜 1975–76, 시공 1980s"
+      },
+      {
+        "label": "설계",
+        "value": "HOK + 4 Consortium"
+      }
+    ],
+    "tags": [
+      "대학",
+      "메인게이트",
+      "캠퍼스모스크"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "King Saud University Riyadh جامعة الملك سعود",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=King+Saud+University+Riyadh+main+gate"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Saud_University"
+        },
+        {
+          "label": "Aramco World 1985",
+          "url": "https://archive.aramcoworld.com/issue/198505/a.campus.for.ksu.htm"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/rLMdjZ6mKeUPQJcdA"
+    },
+    "must_have": [
+      "두 개의 직교 보행 스파인 축",
+      "교차점 중앙 포럼 광장",
+      "팜트리형 콘크리트 아치 열주",
+      "도서관·강당 중심부 매스"
+    ],
+    "modeling_notes": [
+      "직교 그리드 축으로 구성 — 교차점 광장 둘레 4–5 동 콘크리트 매스",
+      "외장: 따뜻한 베이지 콘크리트 + 반복 기하 스크린 패턴"
+    ]
+  },
+  {
+    "id": "18",
+    "idx": 18,
+    "name": "Princess Nourah Bint Abdulrahman University",
+    "name_lines": [
+      "Princess Nourah Bint",
+      "Abdulrahman University"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "edu",
+    "badge": "UNIVERSITY",
+    "image": {
+      "url": "",
+      "wiki_query": "Princess Nourah bint Abdulrahman University",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Princess_Nora_University_2.jpg/640px-Princess_Nora_University_2.jpg",
+      "local_path": "18_Princess-Nourah Bint-Abdulrahman-University.jpg"
+    },
+    "key_points": [
+      "Perkins+Will + Dar Al-Handasah 공동설계 · 2011년 완공 — 세계 최대 여성 전용 대학 캠퍼스",
+      "15개 단과대 + 700병상 부속 병원 + 700여 동 건물 + 캠퍼스 모노레일",
+      "항공 뷰에서 황금 돔 중앙 모스크 + 모노레일 루프가 가장 인지됨"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "격자 마스터플랜 + 중앙 모스크 + 모노레일 루프"
+      },
+      {
+        "label": "재료",
+        "value": "라임스톤·프리캐스트 석재, 마쉬라비야 차양, 황금색 글레이즈 타일 돔, 백색 콘크리트, 유리 커튼월"
+      },
+      {
+        "label": "규모",
+        "value": "~8 km² · 700+ 동 · 15 단과대"
+      },
+      {
+        "label": "시대",
+        "value": "2011년 완공"
+      },
+      {
+        "label": "설계",
+        "value": "Perkins+Will + Dar Al-Handasah"
+      }
+    ],
+    "tags": [
+      "대학",
+      "대칭배치",
+      "모노레일",
+      "쌍둥이타워"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Princess Nourah Bint Abdulrahman University Riyadh",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Princess+Nourah+University+Riyadh+aerial"
+        },
+        {
+          "label": "Perkins+Will",
+          "url": "https://perkinswill.com/project/princess-nora-bint-abdulrahman-university/"
+        },
+        {
+          "label": "ArchDaily",
+          "url": "https://www.archdaily.com/449650/princess-nora-bint-abdulrahman-university-perkins-will"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/3vYnwQgix98BrDrg6"
+    },
+    "must_have": [
+      "황금빛 돔 중앙 모스크",
+      "캠퍼스 일주 모노레일 고가",
+      "방대한 격자형 마스터플랜",
+      "여성 전용 폐쇄형 외곽 게이트"
+    ],
+    "modeling_notes": [
+      "직교 그리드 모듈화 + 모노레일 고가 루프(외곽~내부 순환선) 표현",
+      "중앙 모스크: 큰 황금 돔 1개 + 4개 미나레트 강조 / 외곽 연속 외벽·게이트 강조"
+    ]
+  },
+  {
+    "id": "19",
+    "idx": 19,
+    "name": "Riyadh Golf Club",
+    "name_lines": [
+      "Riyadh Golf Club"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "park",
+    "badge": "GOLF",
+    "image": {
+      "url": "",
+      "wiki_query": "Riyadh Golf Club",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Riyadh_Golf_Club.jpg/640px-Riyadh_Golf_Club.jpg",
+      "local_path": ""
+    },
+    "key_points": [
+      "리야드 북부 Al Aarid 지구 18홀 코스 (외교지구·디랍 골프장 X)",
+      "2025년부터 LIV Golf Riyadh 토너먼트 개최 — 야간 조명 아래 진행",
+      "확인 필요: 코스 완공 연도·설계자·코스 길이는 공개 자료 부족"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "18홀 사막 챔피언십 코스 + 클럽하우스"
+      },
+      {
+        "label": "위치",
+        "value": "Al Aarid, 리야드 북부"
+      },
+      {
+        "label": "재료",
+        "value": "관수 잔디 페어웨이/그린, 사막 러프, 낮은 클럽하우스(석재·스터코), 조명탑"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·설계자·코스 길이"
+      }
+    ],
+    "tags": [
+      "골프클럽",
+      "녹지",
+      "클럽하우스"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Riyadh Golf Club",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Riyadh+Golf+Club+clubhouse+aerial"
+        },
+        {
+          "label": "LIV Golf Riyadh",
+          "url": "https://en.wikipedia.org/wiki/LIV_Golf_Riyadh"
+        },
+        {
+          "label": "Riyadh Golf",
+          "url": "https://riyadhgolf.com/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/D5RJw8yt7NwtwmTp7"
+    },
+    "must_have": [
+      "18홀 사막 골프 코스",
+      "야간 조명 토너먼트(LIV) 라이트 폴",
+      "낮은 클럽하우스 (스톤·스터코)",
+      "Al Aarid 북부 입지"
+    ],
+    "modeling_notes": [
+      "지도용: 18홀 페어웨이 외곽선 + 클럽하우스 1동 단순화",
+      "리야드 북부 Al Aarid 위치 정확히 — Dirab 골프장과 혼동 금지",
+      "토너먼트 표현 시 야간 조명탑 배치 포함"
+    ]
+  },
+  {
+    "id": "20",
+    "idx": 20,
+    "name": "KAFD Metro Station",
+    "name_lines": [
+      "KAFD Metro Station"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "infra",
+    "badge": "METRO",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/KAFD_metro_station_2025.jpg/960px-KAFD_metro_station_2025.jpg",
+      "wiki_query": "KAFD Metro Station",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/KAFD_Metro_Station_Riyadh.jpg/640px-KAFD_Metro_Station_Riyadh.jpg",
+      "local_path": "20_kafd-metro-station.jpg"
+    },
+    "key_points": [
+      "Zaha Hadid Architects (2013 공모) · 2024년 12월 1일 개통",
+      "리야드 메트로 핵심 환승역 — 3노선(블루·옐로·퍼플) + KAFD 모노레일",
+      "UHPC(초고성능 콘크리트) 자체지지 격자 쉘 / 사막 바람·마쉬라비야 영감 천공",
+      "LEED 골드 인증"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "큐브 매스 + 곡면 격자 쉘 + 모서리 라운딩"
+      },
+      {
+        "label": "파사드",
+        "value": "UHPC 자체지지 다이아그리드 + 6각 망사 천공"
+      },
+      {
+        "label": "규모",
+        "value": "풋프린트 8,150 m² · 4층 지상 + 지하 플랫폼 · 6개 트랙"
+      },
+      {
+        "label": "시대",
+        "value": "2024년 12월 개통"
+      },
+      {
+        "label": "설계",
+        "value": "Zaha Hadid Architects"
+      }
+    ],
+    "tags": [
+      "ZHA",
+      "라티스파사드",
+      "파라메트릭",
+      "엑소스켈레톤"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "KAFD Metro Station Riyadh Zaha Hadid",
+      "extras": [
+        {
+          "label": "ZHA 공식",
+          "url": "https://www.zaha-hadid.com/architecture/kafd-metro-station/"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=KAFD+Metro+Station+Zaha+Hadid+Riyadh"
+        },
+        {
+          "label": "ZHA",
+          "url": "https://www.zaha-hadid.com/architecture/king-abdullah-financial-district-metro-station/"
+        },
+        {
+          "label": "ArchDaily",
+          "url": "https://www.archdaily.com/1024201/king-abdullah-financial-district-metro-station-zaha-hadid-architects"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/tSfhzLoXsNG7nr166"
+    },
+    "must_have": [
+      "3D 격자형 파라메트릭 외피",
+      "사막 바람 결을 닮은 패턴",
+      "6각형 망사 천공",
+      "6개 트랙 환승역 (3노선 + 모노레일)"
+    ],
+    "modeling_notes": [
+      "평면 격자 X — 곡면 따라 흐르는 3D 다이아그리드",
+      "천공 패턴은 부분별 밀도 그라디언트(중심부 조밀, 가장자리 성긴)"
+    ]
+  },
+  {
+    "id": "21",
+    "idx": 21,
+    "name": "MoMRAH",
+    "name_lines": [
+      "MoMRAH"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "infra",
+    "badge": "GOVERNMENT",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/%D9%88%D8%B2%D9%8A%D8%B1_%D8%A7%D9%84%D8%A3%D8%B3%D9%83%D8%A7%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0_%D9%85%D8%A7%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D9%84.jpg",
+      "wiki_query": "Ministry of Municipal Rural Affairs and Housing",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/MoMRAH_Riyadh.jpg/640px-MoMRAH_Riyadh.jpg",
+      "local_path": "21_MoMRAH.jpg"
+    },
+    "key_points": [
+      "사우디 지방행정·농촌·주택부 본청 (현 MoMAH) — 리야드 King Fahd Road 인근",
+      "확인 필요: 외관에 대한 권위 자료 매우 제한적 — 위성/거리뷰 기반 보강 필요"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "저층 정부청사 슬래브 (추정)"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·설계자·정확 매스/외장"
+      }
+    ],
+    "tags": [
+      "정부청사",
+      "이슬람패턴",
+      "대칭"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "MoMRAH Ministry Municipalities Housing Riyadh وزارة الشؤون البلدية",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=MoMRAH+Ministry+Riyadh"
+        },
+        {
+          "label": "MoMAH 공식",
+          "url": "https://momah.gov.sa/en"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/fu7A99KJdcuTnouw8"
+    },
+    "must_have": [
+      "현대식 정부청사 매스 (저층 슬래브)",
+      "정면 진입 광장 + 국기 게양대",
+      "유리 + 석재 혼합 파사드"
+    ],
+    "modeling_notes": [
+      "검증 도면/사진 부족 — 추상화된 일반 정부청사 형태로 처리",
+      "확정 자료 없이 디테일 만들지 말 것 — 현장 답사 후 보강"
+    ]
+  },
+  {
+    "id": "22",
+    "idx": 22,
+    "name": "Al Rajhi Mosque",
+    "name_lines": [
+      "Al Rajhi Mosque"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "mosque",
+    "badge": "MOSQUE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Al_Rajhi_Grand_Mosque_Riyadh%2C_2024.jpeg/960px-Al_Rajhi_Grand_Mosque_Riyadh%2C_2024.jpeg",
+      "wiki_query": "Al Rajhi Grand Mosque",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Al_Rajhi_Grand_Mosque_Riyadh.jpg/640px-Al_Rajhi_Grand_Mosque_Riyadh.jpg",
+      "local_path": "22_al-rajhi-mosque.jpg"
+    },
+    "key_points": [
+      "2004년 리야드 알 자지라 지구 개장 — 사업가 Sulaiman Al-Rajhi 후원, 안달루시아·무어풍",
+      "수용 ~20,000명 (남성 ~18,000 + 여성 ~2,500) — 리야드 최대 모스크 중 하나",
+      "중앙 돔 직경 ~28.8m / 높이 ~37m · 두 미나레트 ~55m"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "중앙 대돔 + 쌍 미나레트 + 사다리꼴 안뜰"
+      },
+      {
+        "label": "재료",
+        "value": "라임스톤 클래딩, 대리석 내장, 기하 타일/스터코, 조각 석고"
+      },
+      {
+        "label": "규모",
+        "value": "부지 ~43,568 m² · 내부 ~13,260 m² · 수용 ~20,000"
+      },
+      {
+        "label": "시대",
+        "value": "2004년 개장"
+      }
+    ],
+    "tags": [
+      "대형돔",
+      "미나렛×4",
+      "대리석",
+      "아치회랑"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Rajhi Grand Mosque Riyadh جامع الراجحي",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Rajhi+Mosque+Riyadh"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Al_Rajhi_Grand_Mosque"
+        },
+        {
+          "label": "Saudipedia",
+          "url": "https://saudipedia.com/en/article/1541/religion/mosques/al-rajhi-mosque-in-riyadh"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/jBfRfSpz2iF3srXk9"
+    },
+    "must_have": [
+      "중앙 대형 돔 (외경 ~28.8m)",
+      "쌍둥이 미나레트 2기 (각 ~55m)",
+      "안달루시아·무어풍 말굽 아치 파사드",
+      "넓은 사다리꼴 안뜰 + 아케이드"
+    ],
+    "modeling_notes": [
+      "돔·미나레트는 정확한 회전체로 모델링",
+      "말굽 아치·아라베스크 패턴은 노멀맵 + 일부 지오메트리 디테일",
+      "안뜰 아케이드 기둥열은 1유닛 인스턴싱 / 외장: 베이지~황토 PBR"
+    ]
+  },
+  {
+    "id": "23",
+    "idx": 23,
+    "name": "Bab Makkah",
+    "name_lines": [
+      "Bab Makkah"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "heritage",
+    "badge": "GATE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Great_Mosque_of_Mecca1.jpg/960px-Great_Mosque_of_Mecca1.jpg",
+      "wiki_query": "Bab Makkah",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bab_Makkah_Jeddah.jpg/640px-Bab_Makkah_Jeddah.jpg",
+      "local_path": "23_bab-makkah.jpg"
+    },
+    "key_points": [
+      "구도심 Al-Balad 동쪽 성벽의 '메카 문' — 본래 성벽은 1947년경 도시 확장으로 철거",
+      "⚠ 현재 구조물은 원형 유적 X — 후대에 재건/기념적 복원 형태 (유산적 진정성 제한적)",
+      "중앙 큰 아치 + 좌우 보조 통로의 3분할 구성"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "독립 기념문 (3분할 — 중앙 아치 + 좌우 보조)"
+      },
+      {
+        "label": "재료",
+        "value": "산호석 클래딩, 라임 회벽, 목재 인방/디테일, 석고 장식"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공·재건 연도·설계자·정확 치수"
+      }
+    ],
+    "tags": [
+      "성문",
+      "아치",
+      "쌍탑",
+      "Al-Balad"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Bab Makkah Gate Al Balad Jeddah باب مكة",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Bab+Makkah+Jeddah+gate"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Historic_Jeddah"
+        },
+        {
+          "label": "UNESCO",
+          "url": "https://whc.unesco.org/en/list/1361/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/WPL6nN1qF7qGwQeR8"
+    },
+    "must_have": [
+      "중앙 아치형 관문 + 양옆 측면 매스",
+      "백색 회벽 마감",
+      "상부 코니스 + 총안형 디테일",
+      "Al-Balad 동측 진입부 위치"
+    ],
+    "modeling_notes": [
+      "독립 기념문 형태로 모델링 (원형 성벽 X)",
+      "중앙 아치 + 좌우 보조 통로 3분할 단순 매스",
+      "백색 회벽 톤 + 상부 코니스/작은 총안 디테일"
+    ]
+  },
+  {
+    "id": "24",
+    "idx": 24,
+    "name": "Red Sea Mall",
+    "name_lines": [
+      "Red Sea Mall"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "mall",
+    "badge": "MALL",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Red_Sea_Mall_1_Jeddah.jpg/960px-Red_Sea_Mall_1_Jeddah.jpg",
+      "wiki_query": "Red Sea Mall",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Red_Sea_Mall_Jeddah.jpg/640px-Red_Sea_Mall_Jeddah.jpg",
+      "local_path": "24_red-sea-mall.jpg"
+    },
+    "key_points": [
+      "제다 북부 King Abdulaziz Road 대형 복합 쇼핑몰 — 2008년경 개장",
+      "쇼핑몰 본동 + 호텔/오피스 부속 타워가 인접 — 수평 매스 위에 수직 타워 솟은 실루엣",
+      "총 연면적 약 244,000 m²"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "저층 대형 본동 + 부속 중층 타워"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 컴포지트 패널, 기단부 석재, 강구조 + 유리 아트리움 천장"
+      },
+      {
+        "label": "규모",
+        "value": "연면적 ~244,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "~2008"
+      }
+    ],
+    "tags": [
+      "쇼핑몰",
+      "유리커튼월"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Red Sea Mall Jeddah",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Red+Sea+Mall+Jeddah+exterior"
+        },
+        {
+          "label": "Red Sea Mall 공식",
+          "url": "https://www.redseamall.com/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Red_Sea_Mall"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/tz8QwehRuvPrbnxt8"
+    },
+    "must_have": [
+      "저층 대형 본동 + 부속 중층 타워",
+      "대형 유리 천창 아트리움",
+      "곡선형 진입 캐노피 + 광장 분수",
+      "King Abdulaziz Road 입지"
+    ],
+    "modeling_notes": [
+      "본동(저층 대형) + 부속 타워(중층 슬렌더) 명확히 분리",
+      "본동 지붕 유리 아트리움 라인 살리기 — 식별 포인트"
+    ]
+  },
+  {
+    "id": "25",
+    "idx": 25,
+    "name": "King Fahd's Fountain",
+    "name_lines": [
+      "King Fahd's Fountain"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "infra",
+    "badge": "FOUNTAIN",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/King_Fahd%E2%80%99s_Fountain.jpg/960px-King_Fahd%E2%80%99s_Fountain.jpg",
+      "wiki_query": "King Fahd's Fountain",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/King_Fahd_Fountain_at_night.jpg/640px-King_Fahd_Fountain_at_night.jpg",
+      "local_path": "25_king-fahds-fountain.jpg"
+    },
+    "key_points": [
+      "제다 코르니쉬 앞 홍해 해상 분수 — 세계에서 가장 높은 분수",
+      "분사 높이 약 260m (~853 ft) — 일부 자료의 312m보다 260m가 권위 있음",
+      "1985년경 King Fahd 기증 — 야간 500+ 스포트라이트 조명"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "해상 단일 수직 제트 + 육상 펌프 하우스"
+      },
+      {
+        "label": "규모",
+        "value": "분사 높이 ~260m (세계 최고 분수)"
+      },
+      {
+        "label": "재료",
+        "value": "해수(제트), 스테인리스 노즐 어셈블리, 콘크리트/강 해상 플랫폼"
+      },
+      {
+        "label": "시대",
+        "value": "~1985"
+      }
+    ],
+    "tags": [
+      "세계최고분수",
+      "312m",
+      "해수면위",
+      "야간조명"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "King Fahd Fountain Jeddah نافورة الملك فهد",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=King+Fahd+Fountain+Jeddah+night"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Fahd%27s_Fountain"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/u1dfrtPnJC2P3iE6A"
+    },
+    "must_have": [
+      "초고압 수직 물기둥 (~260m)",
+      "바다 위 분수 (해상 노즐)",
+      "500개 이상 야간 스포트라이트",
+      "제다 코르니쉬 해안가 경관"
+    ],
+    "modeling_notes": [
+      "지상 X — 해상에서 솟구치는 단일 수직 제트",
+      "펌프 하우스(육상 박스 매스) + 해상 노즐 분리 배치",
+      "분수 자체는 가는 흰 파티클/원기둥 단순화 / 코르니쉬와의 거리(수백m) 정확히"
+    ]
+  },
+  {
+    "id": "26",
+    "idx": 26,
+    "name": "Abdul Raouf Khalil Museum",
+    "name_lines": [
+      "Abdul Raouf Khalil Museum"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "museum",
+    "badge": "MUSEUM",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Jeddah_Waterfront_2025_%28cropped%29.jpg",
+      "wiki_query": "Abdul Raouf Khalil Museum",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Abdul_Raouf_Khalil_Museum.jpg/640px-Abdul_Raouf_Khalil_Museum.jpg",
+      "local_path": "26_abdul-raouf-khalil-museum.jpg"
+    },
+    "key_points": [
+      "Abdul Raouf Khalil 사재 사설 박물관 단지 — 이슬람관/사우디 유산관/공공홀/민속관 등 테마별 파빌리온",
+      "단일 건축물 X — 서로 다른 양식의 파빌리온이 마당·통로로 연결된 캠퍼스형",
+      "아라베스크 + Najdi/Hejazi 전통 모티프 결합"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "다중 파빌리온 캠퍼스 + 중앙 마당"
+      },
+      {
+        "label": "재료",
+        "value": "회벽/스터코, 조각 석고·목재 패널, 마쉬라비야 격자, 장식 타일·석재"
+      },
+      {
+        "label": "시대",
+        "value": "~1999"
+      },
+      {
+        "label": "확인필요",
+        "value": "정확 파빌리온 수·완공 연도·설계자"
+      }
+    ],
+    "tags": [
+      "전통저택",
+      "로샨",
+      "산호석"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Abdul Raouf Khalil Museum Jeddah متحف عبد الرؤوف خليل",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Abdul+Raouf+Khalil+Museum+Jeddah"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Abdul_Raouf_Khalil_Museum"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/2ADfEHRip6AiQ89r7"
+    },
+    "must_have": [
+      "다중 파빌리온 캠퍼스 구성",
+      "마쉬라비야 (목재 격자창)",
+      "아치형 출입구 + 작은 돔",
+      "백색·황토 회벽 + 짙은 갈색 디테일 대비"
+    ],
+    "modeling_notes": [
+      "단일 매스로 단순화 X — 3–5개 파빌리온 + 중앙 마당 구성 그대로",
+      "각 파빌리온의 작은 돔·아치 입구·마쉬라비야 패턴은 단순화 텍스처/메시"
+    ]
+  },
+  {
+    "id": "27",
+    "idx": 27,
+    "name": "Hassan Enany Mosque",
+    "name_lines": [
+      "Hassan Enany Mosque"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "mosque",
+    "badge": "MOSQUE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/A_mosque_destroyed_in_the_Jabalia_area_of_the_Gaza_Strip.jpg/960px-A_mosque_destroyed_in_the_Jabalia_area_of_the_Gaza_Strip.jpg",
+      "wiki_query": "Hassan Anani Mosque",
+      "fallback": "",
+      "local_path": "27_hassan-enany-mosque.jpg"
+    },
+    "key_points": [
+      "제다 지역 모스크 — 국제적 자료가 매우 적음",
+      "일반적 현대 사우디 모스크 양식 (직사각 본당 + 단일 돔 + 1개 미나렛 추정)",
+      "확인 필요: 완공 연도·설계자·정확 위치·치수 모두 권위 자료 부재"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "직사각 본당 + 단일 돔 + 1 미나렛 (추정)"
+      },
+      {
+        "label": "재료",
+        "value": "백색 석재/대리석, 회벽, 조각 석고, 기하 창"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공·설계자·위치·모든 치수"
+      }
+    ],
+    "tags": [
+      "모스크",
+      "코니쉬"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Hassan Enany Mosque Jeddah مسجد حسن عناني",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Hassan+Enany+Mosque+Jeddah"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/ztMbjRBrhY5o4vzx9"
+    },
+    "modeling_notes": [
+      "⚠️ 이미지 레퍼런스 부족 — 현지 사진/Google Maps 직접 확인 권장",
+      "정보 부족 — 일반적 현대 Hejazi 모스크 형식으로 단순화",
+      "실측 사진 확보 후 보정 필수"
+    ],
+    "must_have": [
+      "백색 외벽 + 단일 미나렛",
+      "중앙 돔",
+      "기하 패턴 창"
+    ]
+  },
+  {
+    "id": "28",
+    "idx": 28,
+    "name": "Fakieh Aquarium",
+    "name_lines": [
+      "Fakieh Aquarium"
+    ],
+    "tier": 2,
+    "city": "Jeddah",
+    "type": "museum",
+    "badge": "AQUARIUM",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Chime-Long_Ocean_Kingdom_11629-Ocean-Kingdom_%2849014440462%29.jpg/960px-Chime-Long_Ocean_Kingdom_11629-Ocean-Kingdom_%2849014440462%29.jpg",
+      "wiki_query": "Fakieh Aquarium",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Fakieh_Aquarium.jpg/640px-Fakieh_Aquarium.jpg",
+      "local_path": "28_fakieh-aquarium.jpg"
+    },
+    "key_points": [
+      "제다 코르니쉬 사우디 최초 공공 수족관 — 2010년경 개장",
+      "비교적 작은 단일 동 (~6,000 m²) · 곡선·사선 매스 + 청색 유리 + 메탈 패널",
+      "사우디 유일 공공 수족관 (개관 당시 기준)"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "낮은 단일 동 곡선 매스"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 컴포지트 클래딩, 도장 강구조, 콘크리트 베이스"
+      },
+      {
+        "label": "규모",
+        "value": "~6,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "~2010"
+      }
+    ],
+    "tags": [
+      "아쿠아리움",
+      "구형돔",
+      "수변입지"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Fakieh Aquarium Jeddah",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Fakieh+Aquarium+Jeddah"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Fakieh_Aquarium"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/HwykPzWKRhjeUZVm6"
+    },
+    "modeling_notes": [
+      "코니쉬 해변가 입지 — 수변 환경 포함 권장",
+      "큰 랜드마크 X — 코르니쉬 도로변 낮고 긴 단일 매스",
+      "유리: 청색 계열 / 지붕: 흰색·은색 메탈 / 입구 캐노피 + 해양 테마 간판 강조"
+    ],
+    "must_have": [
+      "곡선형 모던 매스 (낮은 단일 동)",
+      "푸른 톤 유리 파사드",
+      "해양 테마 사이니지·캐노피",
+      "제다 코르니쉬 도로변 입지"
+    ]
+  },
+  {
+    "id": "29",
+    "idx": 29,
+    "name": "Al Rashid Mall",
+    "name_lines": [
+      "Al Rashid Mall"
+    ],
+    "tier": 2,
+    "city": "Al Khobar",
+    "type": "mall",
+    "badge": "MALL",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Khobar_water_tower.jpg/960px-Khobar_water_tower.jpg",
+      "wiki_query": "Al Rashid Mall",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Al_Rashid_Mall_Khobar.jpg/640px-Al_Rashid_Mall_Khobar.jpg",
+      "local_path": "29_al-rashid-mall.jpg"
+    },
+    "key_points": [
+      "1995년 개장 동부주 대표 대형 쇼핑몰 — King Abdullah St / Prince Faisal bin Fahd Rd 교차로",
+      "650+ 매장 · 70+ 식당 · 시네마 / 4층 (3 리테일 + 지하 주차)",
+      "2005년 Qaisariyah 확장 + 2023년 대대적 리노베이션"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "거대 직사각 매스 (4층)"
+      },
+      {
+        "label": "재료",
+        "value": "베이지 톤 클래딩, 유리 커튼월, 메탈 지붕, 대리석 내장"
+      },
+      {
+        "label": "규모",
+        "value": "연면적 ~150,000 m² · GLA ~115,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "1995 (확장 2005, 리노베이션 2023)"
+      },
+      {
+        "label": "설계",
+        "value": "EDSA(조경) / DLR Group(확장)"
+      }
+    ],
+    "tags": [
+      "쇼핑몰",
+      "진입돔",
+      "석재파사드"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Rashid Mall Al Khobar",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Rashid+Mall+Al+Khobar"
+        },
+        {
+          "label": "Al Rashid Mall",
+          "url": "https://www.alrashidmall.sa/about"
+        },
+        {
+          "label": "DLR Group",
+          "url": "https://www.dlrgroup.com/work/al-rashid-mall/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/nwNwugaKGrtSBhwR9"
+    },
+    "must_have": [
+      "거대한 직사각 매스 (4층)",
+      "베이지 외장 + 곡선형 메인 캐노피",
+      "중앙 아트리움 채광",
+      "둘레 대형 주차장 (~5,000대)"
+    ],
+    "modeling_notes": [
+      "거대한 직사각 매스 + 옥상 주차장 + 곡선 메인 엔트런스 캐노피",
+      "주변 5,000대 규모 주차장 표현 — 스케일감 핵심"
+    ]
+  },
+  {
+    "id": "30",
+    "idx": 30,
+    "name": "Al Othman Office Tower",
+    "name_lines": [
+      "Al Othman Office Tower"
+    ],
+    "tier": 2,
+    "city": "Al Khobar",
+    "type": "tower",
+    "badge": "TOWER",
+    "image": {
+      "url": "",
+      "wiki_query": "Al Othman Tower",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Al_Othman_Tower_Khobar.jpg/640px-Al_Othman_Tower_Khobar.jpg",
+      "local_path": "30_Al-Othman-Office-Tower.jpg"
+    },
+    "key_points": [
+      "2015년 완공 20층 오피스 타워 — King Saud Road",
+      "Kempinski Al Othman 호텔과 같은 알 오스만 복합 단지",
+      "확인 필요: 설계자·정확 높이·외장 사양 권위 자료 부재"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "20층 슬렌더 직사각 박스"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 클래딩 (추정)"
+      },
+      {
+        "label": "시대",
+        "value": "2015 완공"
+      },
+      {
+        "label": "확인필요",
+        "value": "설계자·정확 높이·외장 사양"
+      }
+    ],
+    "tags": [
+      "쌍둥이타워",
+      "반사유리",
+      "포디움연결"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Othman Tower Al Khobar برج العثمان",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Othman+Tower+Al+Khobar"
+        },
+        {
+          "label": "Al Othman 공식",
+          "url": "https://www.al-othman.com/en/al-othman-office-tower"
+        },
+        {
+          "label": "Kempinski",
+          "url": "https://www.kempinski.com/en/hotel-al-othman/overview/hotel-information/location"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/sx6TdbtpVpY5NhP9A"
+    },
+    "must_have": [
+      "20층 슬렌더 박스 매스",
+      "유리 커튼월 외장",
+      "Kempinski 호텔과 동일 단지",
+      "King Saud Road 입지"
+    ],
+    "modeling_notes": [
+      "슬렌더 직사각 박스로 단순화 + 인접 Kempinski 동과 단지 구성",
+      "입면 패턴 불확실 — 일반 유리 커튼월 표현"
+    ]
+  },
+  {
+    "id": "31",
+    "idx": 31,
+    "name": "Ajdan Infinity",
+    "name_lines": [
+      "Ajdan Infinity"
+    ],
+    "tier": 2,
+    "city": "Al Khobar",
+    "type": "tower",
+    "badge": "MIXED-USE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ajdan_Walk%2C_Saudi_Arabia.png/960px-Ajdan_Walk%2C_Saudi_Arabia.png",
+      "wiki_query": "Ajdan Walk",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ajdan_Infinity_AlKhobar.jpg/640px-Ajdan_Infinity_AlKhobar.jpg",
+      "local_path": "31_ajdan-infinity.png"
+    },
+    "key_points": [
+      "Al Khobar 코르니쉬 복합 리테일/F&B — 2019년 개장 / Benoy 디자인 (Foster X)",
+      "중앙 플라자를 둘러싼 저층 매스 군집 — 동부주 최초 푸드빌리지",
+      "⚠ 인접 'Ajdan Rise/Waterfront' 타워와 혼동 주의 — 본 단지는 저층 평이한 모던 입면"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "저층 다중 매스 + 중앙 광장"
+      },
+      {
+        "label": "재료",
+        "value": "백색 회벽, 유리 점포, 알루미늄 트림, 따뜻한 톤 석재 포장"
+      },
+      {
+        "label": "규모",
+        "value": "부지 ~15,120 m² · GFA ~12,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "2019 개장"
+      },
+      {
+        "label": "설계",
+        "value": "Benoy (concept)"
+      }
+    ],
+    "tags": [
+      "∞형타워",
+      "스카이브리지",
+      "Benoy"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Ajdan Walk Infinity Al Khobar",
+      "extras": [
+        {
+          "label": "Benoy 공식",
+          "url": "https://benoy.com/projects/ajdan-infinity-complex/"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Ajdan+Infinity+Al+Khobar"
+        },
+        {
+          "label": "Benoy",
+          "url": "https://www.benoy.com/projects/ajdan-walk/"
+        },
+        {
+          "label": "Middle East Architect",
+          "url": "https://www.middleeastarchitect.com/projects/42466-benoy-designs-a-cultural-and-retail-destination-in-al-khobar-saudi-arabia"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/BcfBwhnDxoDPws3r8"
+    },
+    "must_have": [
+      "흰 저층 매스 군집 (고층 X)",
+      "중앙 광장 + 푸드빌리지",
+      "코르니쉬 해변 인접 산책로",
+      "대형 캔틸레버 캐노피"
+    ],
+    "modeling_notes": [
+      "고층 타워 X — 저층 다중 매스 군집",
+      "인접한 Ajdan Rise/Waterfront 타워 모양과 혼동 금지 — 본 단지는 평이한 흰 저층",
+      "주차는 지하 — 보행자 광장 환경 표현"
+    ]
+  },
+  {
+    "id": "32",
+    "idx": 32,
+    "name": "Jawza Al Qahtani Mosque",
+    "name_lines": [
+      "Jawza Al Qahtani Mosque"
+    ],
+    "tier": 2,
+    "city": "Al Khobar",
+    "type": "mosque",
+    "badge": "MOSQUE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Khobar_water_tower.jpg/960px-Khobar_water_tower.jpg",
+      "wiki_query": "Khobar Corniche",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Jawza_Al_Qahtani_Mosque.jpg/640px-Jawza_Al_Qahtani_Mosque.jpg",
+      "local_path": "32_jawza-al-qahtani-mosque.jpg"
+    },
+    "key_points": [
+      "Al Khobar 코르니쉬 흰색 모스크 — Sumou Holding 회장 Sheikh Ayed Al Qahtani가 모친 이름으로 헌정",
+      "국제 자료 매우 적음 — 외관 사진 외 권위 자료 부재",
+      "코르니쉬 보행로에서 잘 보이는 랜드마크"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "현대식 모스크 (단일 미나렛 + 단순 매스)"
+      },
+      {
+        "label": "재료",
+        "value": "백색 석재/회벽"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·설계자·정확 치수·돔 유무"
+      }
+    ],
+    "tags": [
+      "해안모스크",
+      "황금돔",
+      "나선미나렛"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Jawza Al Qahtani Mosque Al Khobar Corniche",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Jawza+Al+Qahtani+Mosque+Khobar"
+        },
+        {
+          "label": "Welcome Saudi",
+          "url": "https://welcomesaudi.com/activity/khobar-corniche-mosque-eastern-province"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/euFifBs92sHJ8kSDA"
+    },
+    "must_have": [
+      "순백색 외관",
+      "코르니쉬 해변 입지",
+      "단일 미나렛",
+      "현대식 모스크 매스"
+    ],
+    "modeling_notes": [
+      "순백색 매스 + 단일 미나렛 + 단순 돔/플랫 루프 단순화",
+      "코르니쉬 해변 컨텍스트 우선 — 디테일은 보수적으로"
+    ]
+  },
+  {
+    "id": "33",
+    "idx": 33,
+    "name": "Al Othaim Mall",
+    "name_lines": [
+      "Al Othaim Mall"
+    ],
+    "tier": 2,
+    "city": "Dammam",
+    "type": "mall",
+    "badge": "MALL",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Othaim_Markets_Store.jpg/960px-Othaim_Markets_Store.jpg",
+      "wiki_query": "Abdullah Al Othaim Markets",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Al_Othaim_Mall_Dammam.jpg/640px-Al_Othaim_Mall_Dammam.jpg",
+      "local_path": "33_al-othaim-mall.jpg"
+    },
+    "key_points": [
+      "2004년 개장 Al Othaim Group 담맘 대표 몰 — Prince Mohammad Bin Fahd Road, Abdullah Fouad 지구",
+      "⚠ 위치 주의: 코르니쉬 도로 X / Salahuddin Road X",
+      "~75,000 m² 부지 · GLA ~91,748 m² · 315+ 매장 + Saffori Land"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "거대 박스형 단층/2층 + 실내 놀이공원"
+      },
+      {
+        "label": "재료",
+        "value": "베이지 석재/프리캐스트 콘크리트, 유리 점포, 메탈 지붕"
+      },
+      {
+        "label": "규모",
+        "value": "부지 ~75,000 m² · GLA ~91,748 m²"
+      },
+      {
+        "label": "시대",
+        "value": "2004 개장"
+      }
+    ],
+    "tags": [
+      "쇼핑몰",
+      "유리돔아트리움"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Othaim Mall Dammam",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Othaim+Mall+Dammam"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Othaim_Mall"
+        },
+        {
+          "label": "Othaim Malls",
+          "url": "https://othaimmalls.com/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/Ry4ZuauZCW27vNRGA"
+    },
+    "must_have": [
+      "거대 박스형 매스 (단층/2층)",
+      "베이지 외장 마감",
+      "Saffori Land 실내 놀이공원 일체",
+      "둘레 넓은 지상 주차장"
+    ],
+    "modeling_notes": [
+      "단층/2층 거대 박스 + 평지붕 + 입구 사인보드",
+      "주변 넓은 지상 주차장 함께 표현",
+      "주소 Prince Mohammad Bin Fahd Road 정확히 — 코르니쉬와 혼동 금지"
+    ]
+  },
+  {
+    "id": "34",
+    "idx": 34,
+    "name": "Westfield Dammam",
+    "name_lines": [
+      "Westfield Dammam"
+    ],
+    "tier": 2,
+    "city": "Dammam",
+    "type": "mall",
+    "badge": "MALL",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/U_Walk_Riyadh%2C_2024.jpeg/960px-U_Walk_Riyadh%2C_2024.jpeg",
+      "wiki_query": "Cenomi Centers",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Westfield_Dammam.jpg/640px-Westfield_Dammam.jpg",
+      "local_path": "34_westfield-dammam.jpg"
+    },
+    "key_points": [
+      "2019년 'Nakheel Dammam Mall'로 개장 → 2025년 12월 1일 'Westfield Dammam'으로 리브랜딩 (사우디 최초 Westfield)",
+      "Cenomi Centers 소유 / Cenomi-URW 프랜차이즈 도입",
+      "~92,000 m² · GLA ~58,000–64,000 m² · 2층 · 292+ 매장"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "현대식 2층 박스 매스"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 컴포지트 클래딩, 석재 톤 액센트"
+      },
+      {
+        "label": "규모",
+        "value": "~92,000 m² · GLA ~58,000–64,000 m²"
+      },
+      {
+        "label": "시대",
+        "value": "2019 (Nakheel) → 2025-12-01 Westfield 리브랜딩"
+      }
+    ],
+    "tags": [
+      "쇼핑몰",
+      "현대식",
+      "사선캐노피"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Westfield Dammam Mall",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Westfield+Dammam+exterior"
+        },
+        {
+          "label": "Westfield",
+          "url": "https://www.westfield.com/en/saudi-arabia/dammam"
+        },
+        {
+          "label": "Cenomi 발표",
+          "url": "https://centers.cenomi.com/wp-content/uploads/sites/2/2025/12/Press-release-Nakheel-Dammam-mall-becomes-Westfield-Dammam-English-1-1.pdf"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/nnc2qATG9TZ4L9Lx6"
+    },
+    "must_have": [
+      "현대식 글라스 파사드 (2층 박스)",
+      "King Abdullah Road 입지",
+      "Westfield 브랜드 사이니지",
+      "292+ 매장 대형 매스"
+    ],
+    "modeling_notes": [
+      "깨끗한 모던 2층 박스 + 큰 글라스 파사드 + Westfield 사이니지",
+      "외형은 Nakheel(2019)와 동일 — 사이니지만 Westfield로 갱신"
+    ]
+  },
+  {
+    "id": "35",
+    "idx": 35,
+    "name": "King Fahd Causeway",
+    "name_lines": [
+      "King Fahd Causeway"
+    ],
+    "tier": 2,
+    "city": "Al Khobar",
+    "type": "infra",
+    "badge": "BRIDGE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/King_Fahd_causeway_satellite.png/960px-King_Fahd_causeway_satellite.png",
+      "wiki_query": "King Fahd Causeway",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/King_Fahd_Causeway.jpg/640px-King_Fahd_Causeway.jpg",
+      "local_path": "35_king-fahd-causeway.jpg"
+    },
+    "key_points": [
+      "1986-11-26 개통 — 사우디 Al Khobar ↔ 바레인 Al Jasra 연결 25km 해상 코즈웨이",
+      "5개 교량 + 7개 제방 + 536개 콘크리트 파일런 / 중앙 인공섬 Passport Island ~660,000 m²",
+      "Passport Island: 양국 출입국 시설 + 모스크 2 + 코스트가드 타워 2 + 65m 타워 레스토랑 2 (사우디·바레인 각 1)",
+      "주 시공: Ballast Nedam (네덜란드) / 콘크리트 350,000 m³ + 철근 147,000 톤"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "5교량 + 7제방 + 중앙 Passport Island + 양국 타워 레스토랑"
+      },
+      {
+        "label": "규모",
+        "value": "길이 25 km · Passport Island ~660,000 m² · 타워 65m"
+      },
+      {
+        "label": "재료",
+        "value": "철근 콘크리트, 강철 보강, 아스팔트 노면, 콘크리트 파일런 536개"
+      },
+      {
+        "label": "시대",
+        "value": "1986-11-26 개통"
+      },
+      {
+        "label": "설계",
+        "value": "Ballast Nedam (Netherlands, 주시공)"
+      }
+    ],
+    "tags": [
+      "해상교량",
+      "25km",
+      "인공섬",
+      "등대타워"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "King Fahd Causeway Al Khobar جسر الملك فهد",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=King+Fahd+Causeway+aerial"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Fahd_Causeway"
+        },
+        {
+          "label": "Wikipedia (Passport Island)",
+          "url": "https://en.wikipedia.org/wiki/Passport_Island"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/ALMWumjyFhcxTqETA"
+    },
+    "modeling_notes": [
+      "지도 앱에서는 조감뷰 + 중간 섬 디테일 포함 권장",
+      "25km 전체는 LOD 단순화 — 중앙 Passport Island + 양 끝 65m 타워 레스토랑 강조",
+      "5교량 / 7제방 비율 + 사우디·바레인 출입국 분리 두 섬 구조 정확히"
+    ],
+    "must_have": [
+      "25 km 해상 코즈웨이 (5교 + 7제방)",
+      "중앙 Passport Island (~660,000 m²)",
+      "65m 양국 타워 레스토랑 2동",
+      "536개 콘크리트 파일런"
+    ]
+  },
+  {
+    "id": "36",
+    "idx": 36,
+    "name": "Elephant Rock (Jabal AlFil, AlUla)",
+    "name_lines": [
+      "Elephant Rock"
+    ],
+    "tier": 3,
+    "city": "Alula",
+    "type": "nature",
+    "badge": "NATURE",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Elephant_rock%2C_Al-%27Ula.jpg/960px-Elephant_rock%2C_Al-%27Ula.jpg",
+      "wiki_query": "Jabal AlFil",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Elephant_Rock%2C_AlUla.jpg/640px-Elephant_Rock%2C_AlUla.jpg",
+      "local_path": "36_elephant-rock-jabal-alfil-alula.jpg"
+    },
+    "key_points": [
+      "AlUla 사막 천연 사암 기둥 — 측면 실루엣이 코를 내린 코끼리 형상",
+      "높이 ~52m (널리 인용 / 공식 측량치는 미확인)",
+      "주변 야외 라운지 (모닥불·좌석) — 일몰 관광 명소"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "천연 사암 기둥 (코끼리 실루엣)"
+      },
+      {
+        "label": "재료",
+        "value": "누비안 사암 (적·황 풍화), 산화철 패티나"
+      },
+      {
+        "label": "규모",
+        "value": "~52m 높이"
+      },
+      {
+        "label": "시대",
+        "value": "천연 형성 (지질학적)"
+      }
+    ],
+    "tags": [
+      "자연암석",
+      "사암",
+      "아치터널",
+      "52m"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Elephant Rock Jabal AlFil AlUla جبل الفيل",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Elephant+Rock+AlUla+Saudi+arch"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jabal_AlFil"
+        },
+        {
+          "label": "Experience AlUla",
+          "url": "https://www.experiencealula.com/en/discover-alula/jabal-alfil-elephant-rock"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/KYwjn3RY8LzGpkci6"
+    },
+    "subtitle": "(Jabal AlFil, AlUla)",
+    "modeling_notes": [
+      "주황-붉은빛 사암 재질 — displacement + 컬러 바리에이션",
+      "야간 조명 연출 (기암 하부 업라이팅) 참고 이미지 존재",
+      "천연물 — 사진 측량 기반 메시 이상적",
+      "좌측 코 아치 비율이 정면 인식의 핵심",
+      "표면: 수평 결 침식 + 따뜻한 적갈색 그라데이션"
+    ],
+    "must_have": [
+      "코끼리 모양 실루엣 (긴 코 + 다리 아치)",
+      "약 52m 천연 사암 기둥",
+      "붉은 누비안 사암 질감",
+      "주변 모닥불 라운지 + 좌석"
+    ]
+  },
+  {
+    "id": "37",
+    "idx": 37,
+    "name": "Savola Tower",
+    "name_lines": [
+      "Savola Tower"
+    ],
+    "tier": 3,
+    "city": "Jeddah",
+    "type": "tower",
+    "badge": "TOWER · JEDDAH",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Savola_Logo.svg/960px-Savola_Logo.svg.png",
+      "wiki_query": "Savola Group",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Savola_Tower_Jeddah.jpg/640px-Savola_Tower_Jeddah.jpg",
+      "local_path": "37_savola-tower.jpg"
+    },
+    "key_points": [
+      "Savola Group(사우디 식음료 대기업) 본사 — 제다 소재",
+      "국제 자료가 매우 제한 — 정확 높이·완공 연도·설계자 권위 자료 부재",
+      "확인 필요: 정확한 위치(코르니쉬 여부)·치수"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "중층 오피스 타워 (추정)"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 알루미늄 클래딩 (추정)"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·설계자·높이·정확 위치"
+      }
+    ],
+    "tags": [
+      "타워",
+      "유리커튼월",
+      "테이퍼링"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Savola Tower Jeddah برج سافولا",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Savola+Tower+Jeddah"
+        },
+        {
+          "label": "Savola Group",
+          "url": "https://www.savola.com/"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/E2g2FpkZGTx2E7GcA"
+    },
+    "must_have": [
+      "사볼라 그룹 로고 사이니지",
+      "유리 커튼월 외피",
+      "제다 인근 입지",
+      "중층 코퍼릿 타워 형태"
+    ],
+    "modeling_notes": [
+      "정보 부족 — 일반적 중층 코퍼릿 타워로 일반화",
+      "입면 디테일은 현장 사진 확보 후 보강",
+      "지도 앱: LOD 낮게 + 로고 사이니지 포커스"
+    ]
+  },
+  {
+    "id": "38",
+    "idx": 38,
+    "name": "Al-Majdoul Tower",
+    "name_lines": [
+      "Al-Majdoul Tower"
+    ],
+    "tier": 3,
+    "city": "Riyadh",
+    "type": "tower",
+    "badge": "TOWER · TALLEST KSA",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Majdoul_Tower_Riyadh%2C_2023.jpg/960px-Majdoul_Tower_Riyadh%2C_2023.jpg",
+      "wiki_query": "Al-Majdoul Tower",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Al_Majdoul_Tower_Riyadh.jpg/640px-Al_Majdoul_Tower_Riyadh.jpg",
+      "local_path": "38_al-majdoul-tower.jpg"
+    },
+    "key_points": [
+      "KAFD(킹 압둘라 금융지구) 시그니처 트위스트 타워",
+      "KAFD 마스터플랜 일부 — 다수 국제 설계사 참여 단지",
+      "확인 필요: 단독 설계자·정확 높이(380m 수치 미검증)·완공 연도"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "나선형 트위스트 타워"
+      },
+      {
+        "label": "재료",
+        "value": "유리 커튼월, 강구조 (추정)"
+      },
+      {
+        "label": "확인필요",
+        "value": "완공 연도·설계자·정확 높이·트위스트 형태 사실 여부"
+      }
+    ],
+    "tags": [
+      "사우디최고층",
+      "트위스트",
+      "380m",
+      "KAFD"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Al Majdoul Tower Riyadh KAFD برج المجدول",
+      "extras": [
+        {
+          "label": "CTBUH",
+          "url": "https://www.skyscrapercenter.com/building/al-majdoul-tower/10373"
+        },
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Al+Majdoul+Tower+Riyadh+twisted"
+        },
+        {
+          "label": "Wikipedia (KAFD)",
+          "url": "https://en.wikipedia.org/wiki/King_Abdullah_Financial_District"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/18pDFBE4Mt8jFcX39"
+    },
+    "must_have": [
+      "KAFD 스카이라인 일원",
+      "수직 트위스트(나선) 외피 기하",
+      "유리 파사드 패널 띠",
+      "비대칭 상단 마감"
+    ],
+    "modeling_notes": [
+      "층마다 회전(예: 층당 1–2도)되는 트위스트 매스 — lofted form",
+      "KAFD 다른 타워와 군집 배치 — 단지 컨텍스트와 함께"
+    ]
+  },
+  {
+    "id": "39",
+    "idx": 39,
+    "name": "Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)",
+    "name_lines": [
+      "Makkah Clock Royal Tower"
+    ],
+    "tier": 3,
+    "city": "Makkah",
+    "type": "tower",
+    "badge": "TOWER · MAKKAH",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Abraj_Al_Bait_Tower_2017.jpg/960px-Abraj_Al_Bait_Tower_2017.jpg",
+      "wiki_query": "Abraj Al Bait",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Makkah_Royal_Clock_Tower.jpg/640px-Makkah_Royal_Clock_Tower.jpg",
+      "local_path": "39_makkah-clock-royal-tower-fairmont-abraj-al-bait.jpg"
+    },
+    "key_points": [
+      "높이 601m — 세계 최고 높이 건축물 중 하나 (CTBUH)",
+      "메카 Masjid al-Haram 바로 옆 Abraj Al Bait 단지의 중앙 타워 — Fairmont 호텔 입주",
+      "4면 직경 ~43m 시계 (세계 최대급) + 정상 금박 초승달",
+      "Saudi Binladin Group 발주·시공 / 2012년 완공"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "중앙 시계탑 + 6 부속 타워 (ㄷ자 단지)"
+      },
+      {
+        "label": "재료",
+        "value": "라임스톤 클래딩, 유리 커튼월, 강구조, 철근 콘크리트 코어, 금박 초승달, 모자이크 시계면"
+      },
+      {
+        "label": "규모",
+        "value": "높이 601m · 시계면 직경 ~43m"
+      },
+      {
+        "label": "시대",
+        "value": "2012 완공"
+      },
+      {
+        "label": "설계",
+        "value": "Dar Al-Handasah + SL Rasch (시계·왕관)"
+      }
+    ],
+    "tags": [
+      "601m",
+      "초대형시계",
+      "초승달크라운",
+      "복합단지"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Makkah Royal Clock Tower Fairmont Abraj Al Bait",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Makkah+Clock+Tower+Abraj+Al+Bait+crescent"
+        },
+        {
+          "label": "CTBUH",
+          "url": "https://www.skyscrapercenter.com/building/abraj-al-bait-tower/138"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Abraj_Al-Bait"
+        },
+        {
+          "label": "CTBUH Skyscraper Center",
+          "url": "https://www.skyscrapercenter.com/building/makkah-royal-clock-tower/84"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/HYYm3viWG9jjXork6"
+    },
+    "subtitle": "(Fairmont / Abraj Al Bait)",
+    "must_have": [
+      "43m 직경 4면 시계",
+      "황금 초승달 첨탑",
+      "‘الله أكبر’ 아랍어 문구",
+      "Masjid al-Haram 인접 거대 매스"
+    ],
+    "modeling_notes": [
+      "중앙 시계탑 + 6개 부속 타워가 ㄷ자 단지 — 마스터매스 먼저 / 시계면·왕관·초승달 별도 분리",
+      "야간 조명: 시계면 모자이크 녹·금색 발광 — emissive 텍스처 별도"
+    ]
+  },
+  {
+    "id": "40",
+    "idx": 40,
+    "name": "Boulevard World",
+    "name_lines": [
+      "Boulevard World"
+    ],
+    "tier": 3,
+    "city": "Riyadh",
+    "type": "park",
+    "badge": "ENTERTAINMENT",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Boulevard_World_Logo.svg/960px-Boulevard_World_Logo.svg.png",
+      "wiki_query": "Boulevard World",
+      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Boulevard_World_Riyadh.jpg/640px-Boulevard_World_Riyadh.jpg",
+      "local_path": "40_boulevard-world.jpg"
+    },
+    "key_points": [
+      "Riyadh Season 일환 — 매년 시즌제 운영 (통상 10–3월) · 영구 건축물 X",
+      "약 11개 테마 존: 파리/이집트/그리스/이탈리아/스페인/미국/멕시코/일본/모로코/인도/중국",
+      "⚠ 지도 앱에서는 '영구 빌딩' X — '이벤트/시즌 부지'로 표시 권장"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "시즌제 테마 단지 (~11개 국가 존)"
+      },
+      {
+        "label": "재료",
+        "value": "임시 강·스캐폴드 구조, GFRC·폼 조각 파사드, 테마 클래딩, LED 스크린"
+      },
+      {
+        "label": "시대",
+        "value": "시즌제 (Riyadh Season)"
+      },
+      {
+        "label": "확인필요",
+        "value": "연도별 정확한 존 구성·운영 주최"
+      }
+    ],
+    "tags": [
+      "테마파크",
+      "세계테마존",
+      "야간조명"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "Boulevard World Riyadh Season",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=Boulevard+World+Riyadh+aerial"
+        },
+        {
+          "label": "Riyadh Season",
+          "url": "https://riyadhseason.sa/"
+        },
+        {
+          "label": "Wikipedia (Riyadh Season)",
+          "url": "https://en.wikipedia.org/wiki/Riyadh_Season"
+        }
+      ],
+      "google_maps_url": "https://maps.app.goo.gl/m4xTm3kkMegDMXE78"
+    },
+    "must_have": [
+      "축소 에펠탑 포토존",
+      "이집트 스핑크스/피라미드 미니어처",
+      "약 11개 세계 테마 존 거리",
+      "대형 인공 호수 + 곤돌라"
+    ],
+    "modeling_notes": [
+      "시즌마다 레이아웃 변경 — '존 마스터플랜' 단위 모듈화 (시즌별 교체 가능)",
+      "에펠탑·스핑크스 등은 축소 페이크 — 사진 기준 과장 비례로 모델링"
+    ]
+  }
+]

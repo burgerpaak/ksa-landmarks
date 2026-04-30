@@ -1,0 +1,284 @@
+[
+  {
+    "category": "ISLAMIC & ARABIAN VERNACULAR",
+    "desc": "이슬람·아라비아 반도 전통 건축 요소",
+    "terms": [
+      {
+        "kr": "나즈디 건축",
+        "en": "Najdi Architecture",
+        "desc": "사우디 중부(나즈드 지역) 전통 건축. 두꺼운 어도비 벽, 좁은 창, 직각 매스, 모서리 망루(Barjeel), 톱니 모양 파라펫이 특징. 사막 기후에 최적화된 열차폐 구조.",
+        "where": "Murabba Palace · Diriyah"
+      },
+      {
+        "kr": "어도비",
+        "en": "Adobe / Mud Brick",
+        "desc": "진흙 + 짚 + 물로 만든 흙벽돌. 표면이 거칠고 불규칙한 자연 텍스처가 특징. 모델링 시 displacement map + 노이즈 베이크 권장.",
+        "where": "Murabba Palace · Diriyah"
+      },
+      {
+        "kr": "로샨",
+        "en": "Rawshan / Mashrabiya",
+        "desc": "홍해 연안(헤자즈) 전통 건물의 목조 격자 돌출 창. 외부에서 안이 보이지 않게 하면서 통풍을 유지. 제다 구시가지 정체성의 핵심 요소. 격자 패턴이 매우 정교해서 모듈로 모델링 후 인스턴싱 권장.",
+        "where": "Nasif House · Abdul Raouf Khalil Museum"
+      },
+      {
+        "kr": "산호석",
+        "en": "Coral Stone",
+        "desc": "홍해에서 채취한 화석화된 산호 블록. 헤자즈 전통 건축의 주재료. 흰색~크림색, 표면에 작은 구멍이 많은 거친 텍스처.",
+        "where": "Nasif House · Bab Makkah"
+      },
+      {
+        "kr": "미나렛",
+        "en": "Minaret",
+        "desc": "모스크의 첨탑. 보통 원통형 또는 팔각형 기단 + 발코니(셰레페) + 첨두 마감. 사우디 모스크는 일반적으로 1~4개 보유. 끝에는 초승달 장식.",
+        "where": "Al Rahmah · Al Rajhi · Jawza Al Qahtani"
+      },
+      {
+        "kr": "무카르나스",
+        "en": "Muqarnas",
+        "desc": "벌집/종유석 모양으로 떨어지는 이슬람 장식 천장 구조. 작은 셀들이 단계적으로 쌓이며 곡면을 형성. 모스크 출입구나 돔 하부 전이부에 자주 쓰임.",
+        "where": "MoMRAH · Al Rajhi Mosque"
+      },
+      {
+        "kr": "아치 회랑",
+        "en": "Arcade / Riwaq",
+        "desc": "반복되는 아치를 따라 이어지는 회랑. 모스크 안뜰(사한)을 둘러싸는 그늘진 통로 역할. 첨두(pointed) 또는 말굽(horseshoe) 아치 형태가 일반적.",
+        "where": "Al Rajhi Mosque · Prince Abdullah Stadium"
+      },
+      {
+        "kr": "중정",
+        "en": "Courtyard / Hosh",
+        "desc": "건물 내부 한가운데 빈 안뜰. 외부에서는 폐쇄적으로 보이지만 내부에서 빛과 공기를 받는 핵심 공간. 사우디 전통 주거의 기본 구성.",
+        "where": "Murabba Palace · Abdul Raouf Khalil Museum"
+      },
+      {
+        "kr": "바르질 (망루)",
+        "en": "Barjeel / Watchtower",
+        "desc": "나즈디 건축에서 건물 모서리에 솟은 사각 망루. 방어 기능 + 환기 기능. 톱니 모양 파라펫(crenellation)이 상단에 자주 함께 나타남.",
+        "where": "Murabba Palace · Diriyah"
+      }
+    ]
+  },
+  {
+    "category": "CONTEMPORARY SYSTEMS",
+    "desc": "현대 건축의 파사드·구조 시스템",
+    "terms": [
+      {
+        "kr": "파사드",
+        "en": "Facade",
+        "desc": "건물의 주(主) 외관 — 보통 정면. 건축 디자인의 정체성이 가장 강하게 드러나는 면. 모델링 시 패널 분할, 창 비율, 텍스처 해상도가 핵심이며, 카메라가 가장 많이 잡는 면이라 LOD0 디테일을 집중해야 함.",
+        "where": "전 카드 공통 모델링 대상"
+      },
+      {
+        "kr": "커튼월",
+        "en": "Curtain Wall",
+        "desc": "건물 구조에 매달린 비내력 외벽. 보통 알루미늄 멀리언(수직 프레임) + 유리 패널의 반복. 고층 오피스 빌딩의 대표적 외피.",
+        "where": "Al Othman · Savola Tower · Al Majdoul"
+      },
+      {
+        "kr": "루버",
+        "en": "Louver / Fin",
+        "desc": "햇빛 차단을 위한 수직/수평 핀의 반복. 사막 기후에서 필수. 입면 전체가 줄무늬처럼 보이게 하는 강한 시각 효과. 모델링은 단일 핀 + 어레이.",
+        "where": "Imam Mohammed Ibn Saud Stadium · Kingdom Arena"
+      },
+      {
+        "kr": "파라메트릭 라티스",
+        "en": "Parametric Lattice",
+        "desc": "알고리즘으로 생성된 다각형/유기적 격자 구조. 각 셀이 위치에 따라 점진적으로 변형됨. ZHA, BIG 등 현대 건축의 시그니처. C4D MoGraph + Effector / Blender Geometry Nodes 추천.",
+        "where": "KAFD Metro Station"
+      },
+      {
+        "kr": "엑소스켈레톤",
+        "en": "Exoskeleton",
+        "desc": "건물 외부에 노출된 구조 골격. 내부 공간을 비우면서 외관에 강한 그래픽 효과. 라티스 형태로 변형되기도 함.",
+        "where": "KAFD Metro Station"
+      },
+      {
+        "kr": "캔틸레버",
+        "en": "Cantilever",
+        "desc": "한쪽 끝만 고정되고 다른 쪽은 허공에 떠 있는 구조. 경기장 지붕에서 주로 사용. 끝단이 얇고 날카로워 그림자가 강한 실루엣 형성.",
+        "where": "Imam Mohammed Ibn Saud · Alawwal Park"
+      },
+      {
+        "kr": "PTFE 막구조",
+        "en": "PTFE / ETFE Membrane",
+        "desc": "반투명 합성 수지 막을 케이블로 인장시킨 지붕. 가볍고 햇빛을 부드럽게 투과. 내부 조명이 막을 통해 발광하는 야간 효과가 시그니처. 모델링 시 SSS(Subsurface) 또는 반투명 셰이더 필수.",
+        "where": "King Fahd National Library · Alawwal Park"
+      },
+      {
+        "kr": "트러스 메쉬",
+        "en": "Truss Mesh / Diagrid",
+        "desc": "삼각형/마름모 격자가 반복되는 구조 시스템. 외벽 전체를 감싸 입면을 형성. 다이아그리드(diagrid)는 사선 격자가 만나 자체적으로 하중을 분산.",
+        "where": "Alawwal Park · Aramco Stadium"
+      },
+      {
+        "kr": "포디움",
+        "en": "Podium",
+        "desc": "고층 타워의 저층 기단부. 보통 상업/공용 시설이 들어가며 타워보다 폭이 넓음. 타워가 솟아오르기 전 받침 역할.",
+        "where": "Al Othman Tower · Ajdan Infinity"
+      },
+      {
+        "kr": "스카이브리지",
+        "en": "Sky Bridge",
+        "desc": "두 개 이상의 타워를 공중에서 연결하는 다리. 구조적 도전 + 시각적 임팩트. 페트로나스 트윈타워가 대표 사례.",
+        "where": "Ajdan Infinity"
+      },
+      {
+        "kr": "트위스트 타워",
+        "en": "Twisted Tower",
+        "desc": "각 층이 일정 각도씩 회전하며 상승하는 나선형 타워. 풍하중 분산 + 조형적 임팩트. 모델링은 베이스 평면 + Twist deformer/modifier.",
+        "where": "Al Majdoul Tower"
+      },
+      {
+        "kr": "테이퍼링",
+        "en": "Tapering",
+        "desc": "타워 상부로 갈수록 점점 좁아지는 형태. 구조적 안정성 + 풍하중 감소 + 시각적 우아함.",
+        "where": "Savola Tower · Makkah Clock Tower"
+      },
+      {
+        "kr": "크라운",
+        "en": "Crown",
+        "desc": "타워 최상부의 장식적 마감. 안테나, 첨탑, 조명 구조물 등. 도시 스카이라인에서 타워를 식별하는 결정적 요소.",
+        "where": "Makkah Clock Tower (초승달) · Al Majdoul"
+      },
+      {
+        "kr": "아트리움",
+        "en": "Atrium",
+        "desc": "건물 내부 천장이 높고 채광이 들어오는 중앙 공용 공간. 보통 유리 천창(skylight)으로 마감. 쇼핑몰/박물관에서 주요한 동선 허브.",
+        "where": "National Museum · Al Othaim Mall"
+      },
+      {
+        "kr": "핀(fin) 구조",
+        "en": "Fin / Vertical Fin Facade",
+        "desc": "파사드에 일정 간격으로 붙는 수직(또는 수평) 핀. 일사 차단 + 빛/그림자 리듬 + 시각 패턴을 동시에 만들어냄. 알루미늄·유리·콘크리트 핀이 일반. 단일 핀을 모델링한 뒤 array 모디파이어로 인스턴싱하면 효율적.",
+        "where": "KAFD 오피스 타워 · 현대 정부청사 · Al-Majdoul Tower"
+      },
+      {
+        "kr": "띠창 패턴",
+        "en": "Ribbon Window / Strip Glazing",
+        "desc": "수평으로 길게 이어진 창 띠 — 층마다 또는 입면 중간을 가로지르는 연속 글레이징. 모더니즘 사무 빌딩의 대표 표현. 띠 사이 spandrel(불투명 패널)과의 비율과 mullion(수직 분할바) 간격이 인상을 결정.",
+        "where": "King Fahd National Library · 메트로 역사 · 오피스 타워"
+      },
+      {
+        "kr": "언더컷 디테일",
+        "en": "Undercut Detail",
+        "desc": "매스의 하부가 안쪽으로 깎여 들어간 형태. 캔틸레버와 그늘 라인을 만들어 건물이 떠 있는 듯한 인상을 줌. 그림자 디테일이 핵심이라 노멀맵보다 실제 지오메트리로 오목 형상을 만드는 편이 결과가 좋음.",
+        "where": "KAFD Metro Station · 현대 메트로/관공서"
+      },
+      {
+        "kr": "포르티코",
+        "en": "Portico",
+        "desc": "건물 입구 앞에 기둥으로 받친 지붕이 있는 외부 회랑·현관 캐노피. 고전 건축의 대표 요소이며 사우디에서는 박물관·정부청사·도서관 입구에 자주 등장. 기둥 간격과 지붕 두께 비율이 고전적 위엄을 좌우.",
+        "where": "National Museum · King Fahd National Library · MoMRAH"
+      },
+      {
+        "kr": "오픈 보울",
+        "en": "Open Bowl",
+        "desc": "엔드존(골대 뒤)이나 일부 측면 스탠드 위에 지붕이 없는 경기장 형태. 측면(롱사이드)에만 부분 캔틸레버 지붕이 있는 비대칭 구성이 일반적. 사우디 중·소형 클럽 구장에 흔함. 모델링 시 에어 갭이 풀-보울과 시각적으로 가장 큰 차이를 만듦.",
+        "where": "Alawwal Park · Prince Abdullah Stadium · Al Shabab Stadium"
+      },
+      {
+        "kr": "풀-보울",
+        "en": "Full Bowl",
+        "desc": "경기장 4면 둘레가 모두 막힌 보울 구조. 지붕이 전체 또는 둘레를 둘러싸 외부에서 보면 닫힌 매스. 대형 국제 경기장과 실내 아레나에 일반적. 실내 아레나는 풀-보울 + 완전 폐쇄형 지붕 조합.",
+        "where": "Aramco Stadium · Kingdom Arena · Six Flags 코스터 입지 외 대형 베뉴"
+      },
+      {
+        "kr": "리잘릿",
+        "en": "Risalit / Risalto",
+        "desc": "건물 본체 파사드에서 일정 부분이 앞쪽으로 돌출되어 강조 매스를 만드는 요소. 진입부·중앙 매스·코너에 자주 적용. Old Jeddah 상인저택의 전면 돌출 매스가 대표 예. 모델링 시 본체와 분리된 직육면체 매스를 이어 붙이고 그림자 라인을 강조.",
+        "where": "Nasif House · Abdul Raouf Khalil Museum"
+      },
+      {
+        "kr": "파빌리온",
+        "en": "Pavilion",
+        "desc": "본 건물에서 분리되거나 작은 독립 동으로 배치된 부속 건물. 정원 안 정자, 박물관 분관, 모스크 부속실 등. 다중 파빌리온이 마당·통로로 연결되는 캠퍼스형 구성도 흔함. 단일 매스로 단순화하지 말고 작은 매스 군집으로 모델링.",
+        "where": "Abdul Raouf Khalil Museum · Salam Park · 전통 공공 시설"
+      },
+      {
+        "kr": "아케이드",
+        "en": "Arcade",
+        "desc": "일정한 간격으로 반복되는 아치 또는 기둥이 만드는 회랑. 안마당을 둘러싸거나 보행로를 덮는 그늘진 통로 역할. 모스크 사흔(안뜰) 둘레, 시장 보행로, 학교 캠퍼스에 자주 쓰임. 1유닛(기둥+아치) 모델링 후 array 인스턴싱이 효율적.",
+        "where": "Al Rajhi Mosque · Murabba Palace 안마당 · KSU 보행 스파인"
+      },
+      {
+        "kr": "코니스",
+        "en": "Cornice",
+        "desc": "건물 외벽 상단(파라펫)이나 입면 분절선에 돌출된 수평 띠 장식. 그림자 라인을 만들어 입면에 깊이감을 부여. 고전·이슬람·모더니즘 모두에서 변형되어 등장. 단순 직육면체 띠로 모델링하되 모서리 챔퍼를 살짝 주면 그림자가 자연스러움.",
+        "where": "Bab Makkah · Nasif House · 정부청사 상단부"
+      },
+      {
+        "kr": "스캐폴드",
+        "en": "Scaffold",
+        "desc": "강철 파이프와 클램프로 조립되는 임시 구조 골조. 시즌제 이벤트장·테마 구조물의 본체로 사용되며 영구 건축물이 아님. 가는 봉의 그리드 형태이므로 LOD0에서는 instancing, LOD1 이하에서는 단일 메시 + 알파 텍스처로 단순화 권장.",
+        "where": "Boulevard World · Riyadh Season 임시 구조"
+      }
+    ]
+  },
+  {
+    "category": "CLADDING & FINISH",
+    "desc": "외피 마감재 · 표면 처리",
+    "terms": [
+      {
+        "kr": "클래딩",
+        "en": "Cladding",
+        "desc": "건물 외피를 덮는 마감재 시스템. 구조벽 위에 부착되어 단열·방수·미관을 담당. 패널·타일·메탈 시트·스톤 슬랩 등 다양. 모델링 시 패널 분할선과 줄눈(joint) 라인이 입면 인상을 결정 — 일정한 모듈을 정해 array로 반복.",
+        "where": "Riyadh Park Mall · Westfield Dammam · Ajdan Infinity 등"
+      },
+      {
+        "kr": "메탈 클래딩",
+        "en": "Metal Cladding / Panels",
+        "desc": "알루미늄/스테인리스 패널을 외벽에 부착. 평면, 주름(corrugated), 천공(perforated) 등 다양. LED 백라이팅과 결합해 야간 효과.",
+        "where": "Kingdom Arena · Al Shabab · Riyadh Park Mall"
+      },
+      {
+        "kr": "사암",
+        "en": "Sandstone",
+        "desc": "사우디 자연 채석 사암. 따뜻한 베이지~황토~붉은 갈색 톤. 사암 자체의 자연 결(layering)이 큰 매력. AlUla 자연 암석군의 주재료.",
+        "where": "National Museum · Elephant Rock · Diriyah"
+      },
+      {
+        "kr": "스터코",
+        "en": "Stucco",
+        "desc": "석회/시멘트 미장 마감. 매끄러운 흰색 표면. 모스크 외벽의 전형적 마감재. 약간 거친 텍스처 + 브러시 마크 표현 권장.",
+        "where": "Al Rahmah Mosque"
+      },
+      {
+        "kr": "대리석",
+        "en": "Marble",
+        "desc": "고급 모스크/궁전의 외부 마감. 흰색 + 무늬(veining)가 핵심. 광택 처리된 표면은 반사/반사도(roughness) 셰이더 세팅이 중요.",
+        "where": "Al Rajhi Mosque"
+      }
+    ]
+  },
+  {
+    "category": "3D WORKFLOW NOTES",
+    "desc": "C4D · Blender 작업 시 참고 포인트",
+    "terms": [
+      {
+        "kr": "반복 패턴 모델링",
+        "en": "Pattern Repetition",
+        "desc": "루버/트러스/로샨 등 반복 요소는 단일 모듈로 만들고 Cloner(C4D) / Array(Blender) / Instance로 배열. 직접 복제하지 말 것 — 폴리곤 폭증.",
+        "where": "루버·트러스 메쉬·라티스 전반"
+      },
+      {
+        "kr": "곡선 파사드 처리",
+        "en": "Curved Facade",
+        "desc": "국립박물관 같은 유기적 곡선은 NURBS 또는 SubD(Sub-D Surface)로 베이스 모델링 후 폴리곤 변환. UV는 재단(seam) 위치 사전 계획 필수.",
+        "where": "National Museum · Al Rahmah"
+      },
+      {
+        "kr": "발광 파사드",
+        "en": "Luminous Facade",
+        "desc": "PTFE 막이나 백라이트 패널의 야간 발광. Octane은 Blackbody Emission 또는 IES 조명 + 반투명 셰이더 조합. 강도(intensity) 조절이 관건.",
+        "where": "King Fahd Library · Kingdom Arena"
+      },
+      {
+        "kr": "스케일 컨텍스트",
+        "en": "Scale Context",
+        "desc": "초고층 타워(Makkah Clock 601m)나 거대 인프라(Causeway 25km)는 단독으로는 스케일이 안 느껴짐. 주변 인물/차량/건물을 함께 배치해 비교 대상 확보.",
+        "where": "Makkah Clock · King Fahd Causeway · Kingdom Arena"
+      }
+    ]
+  }
+]
