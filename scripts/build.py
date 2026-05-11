@@ -44,6 +44,7 @@ def render_card(lm: dict) -> str:
     tier = lm["tier"]
     city = lm["city"]
     type_ = lm["type"]
+    modeling = lm.get("modeling", {})
 
     # 폴더에서 idx 매칭되는 모든 이미지 자동 수집 (알파벳순)
     # 메인은 보통 짧은 슬러그, 추가본은 _2/_3 접미어로 정렬 가능
@@ -135,6 +136,26 @@ def render_card(lm: dict) -> str:
         rows_html.append(
             f'<div class="spec-row spec-row--extra"><dt>{esc(s["label"])}</dt><dd>{esc(s["value"])}</dd></div>'
         )
+
+    # Modeling 사양 행 — 폴리곤 예산 + WGS84 좌표 (스펙 시트 핵심)
+    size_class = modeling.get("size_class")
+    tri_budget = modeling.get("tri_budget")
+    wgs84 = modeling.get("wgs84")
+    if size_class:
+        if tri_budget:
+            budget_val = f"≤{tri_budget:,} tris · {size_class}"
+        else:
+            budget_val = f"별도 협의 · {size_class}"
+        rows_html.append(
+            f'<div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>{esc(budget_val)}</dd></div>'
+        )
+    if wgs84:
+        lat = wgs84.get("lat")
+        lon = wgs84.get("lon")
+        coord_val = f"{lat:.7f}, {lon:.7f}"
+        rows_html.append(
+            f'<div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>{esc(coord_val)}</dd></div>'
+        )
     struct_rows = "".join(rows_html)
 
     # Modeling Notes (기술 팁 — 분리)
@@ -163,6 +184,22 @@ def render_card(lm: dict) -> str:
     if uncertain_items:
         joined = " · ".join(uncertain_items)
         draft_html = f'<span class="tag tag-draft" title="검증 미완: {esc(joined)}">DRAFT</span>'
+
+    # 카드 헤더의 status, task_type 뱃지
+    status = modeling.get("status")
+    task_type = modeling.get("task_type")
+    status_html = ""
+    if status:
+        status_cls = {
+            "완공": "tag-status-done",
+            "건설 중": "tag-status-wip",
+            "계획": "tag-status-plan",
+        }.get(status, "tag-status-done")
+        status_html = f'<span class="tag tag-status {status_cls}">{esc(status)}</span>'
+    task_html = ""
+    if task_type:
+        task_cls = "tag-task-new" if task_type == "신규제작" else "tag-task-edit"
+        task_html = f'<span class="tag tag-task {task_cls}">{esc(task_type)}</span>'
 
     # Links
     links_parts = []
@@ -220,7 +257,7 @@ def render_card(lm: dict) -> str:
       </div>
       <h3 class="card-title">{name_lines_html}</h3>
       {subtitle_html}
-      <div class="card-tags">{tag_html}{remarks_html}{draft_html}</div>
+      <div class="card-tags">{status_html}{task_html}{tag_html}{remarks_html}{draft_html}</div>
     </header>
 
     {must_have_html}

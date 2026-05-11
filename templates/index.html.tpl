@@ -980,6 +980,66 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   color: var(--ink-soft);
 }
 
+/* Modeling 메타 뱃지 — 시공 상태 */
+.tag-status {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tag-status-done {
+  background: color-mix(in srgb, var(--tier-2) 14%, var(--bg-elev));
+  color: var(--tier-2);
+  border-color: color-mix(in srgb, var(--tier-2) 30%, var(--border));
+}
+
+.tag-status-wip {
+  background: color-mix(in srgb, var(--alert) 12%, var(--bg-elev));
+  color: var(--alert);
+  border-color: color-mix(in srgb, var(--alert) 30%, var(--border));
+}
+
+.tag-status-plan {
+  background: color-mix(in srgb, var(--tier-3) 14%, var(--bg-elev));
+  color: var(--tier-3);
+  border-color: color-mix(in srgb, var(--tier-3) 30%, var(--border));
+}
+
+/* 작업 구분 (신규제작/기존편집) */
+.tag-task {
+  font-weight: 500;
+}
+
+.tag-task-new {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-elev));
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.tag-task-edit {
+  background: color-mix(in srgb, var(--ink-soft) 10%, var(--bg-elev));
+  color: var(--ink-soft);
+  border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
+}
+
+/* 폴리곤 예산 행 — 모델러의 첫 질문 답 */
+.spec-row--budget dt {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.spec-row--budget dd {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* WGS84 좌표 행 — 등폭 숫자로 정렬 */
+.spec-row--coord dd {
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  letter-spacing: 0.01em;
+}
+
 .card-content > .card-section--structure {
   margin-top: auto;
 }

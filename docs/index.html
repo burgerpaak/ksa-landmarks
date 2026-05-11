@@ -980,6 +980,66 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   color: var(--ink-soft);
 }
 
+/* Modeling 메타 뱃지 — 시공 상태 */
+.tag-status {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tag-status-done {
+  background: color-mix(in srgb, var(--tier-2) 14%, var(--bg-elev));
+  color: var(--tier-2);
+  border-color: color-mix(in srgb, var(--tier-2) 30%, var(--border));
+}
+
+.tag-status-wip {
+  background: color-mix(in srgb, var(--alert) 12%, var(--bg-elev));
+  color: var(--alert);
+  border-color: color-mix(in srgb, var(--alert) 30%, var(--border));
+}
+
+.tag-status-plan {
+  background: color-mix(in srgb, var(--tier-3) 14%, var(--bg-elev));
+  color: var(--tier-3);
+  border-color: color-mix(in srgb, var(--tier-3) 30%, var(--border));
+}
+
+/* 작업 구분 (신규제작/기존편집) */
+.tag-task {
+  font-weight: 500;
+}
+
+.tag-task-new {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-elev));
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.tag-task-edit {
+  background: color-mix(in srgb, var(--ink-soft) 10%, var(--bg-elev));
+  color: var(--ink-soft);
+  border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
+}
+
+/* 폴리곤 예산 행 — 모델러의 첫 질문 답 */
+.spec-row--budget dt {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.spec-row--budget dd {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* WGS84 좌표 행 — 등폭 숫자로 정렬 */
+.spec-row--coord dd {
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  letter-spacing: 0.01em;
+}
+
 .card-content > .card-section--structure {
   margin-top: auto;
 }
@@ -1561,7 +1621,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">National Museum<br>of Saudi Arabia</h3>
       
-      <div class="card-tags"><span class="tag">저층</span> <span class="tag">곡선파사드</span> <span class="tag">사암질감</span> <span class="tag">복합동</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">저층</span> <span class="tag">곡선파사드</span> <span class="tag">사암질감</span> <span class="tag">복합동</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>메카 향한 초승달형 곡면 매스</li><li>리야드산 라임스톤 외벽 + 가로 결</li><li>8개 전시홀 2층 구조 (총 ~28,000 m²)</li><li>King Abdulaziz Historical Centre 광장과 축선</li></ul></section>
@@ -1570,7 +1630,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>초승달 곡면 매스 · 2층</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 약 28,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>리야드산 라임스톤 클래딩 + 글레이즈 커튼월</dd></div><div class="spec-row"><dt>시대</dt><dd>1999년 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Raymond Moriyama / Moriyama &amp; Teshima</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>초승달 곡면 매스 · 2층</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 약 28,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>리야드산 라임스톤 클래딩 + 글레이즈 커튼월</dd></div><div class="spec-row"><dt>시대</dt><dd>1999년 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Raymond Moriyama / Moriyama &amp; Teshima</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.6480983, 46.7109536</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>외벽 패턴: 가로 슬릿형 개구부 반복 — 텍스처 UV 필수</li><li>서측 곡면 파사드는 단일 매스로 모델링 후 라임스톤 텍스처에 가로 결 displacement 추가</li><li>주변 Murabba 광장·궁전과의 축선을 유지해 배치</li></ul></section>
@@ -1602,7 +1662,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Murabba Palace</h3>
       
-      <div class="card-tags"><span class="tag">나즈디건축</span> <span class="tag">중정형</span> <span class="tag">어도비</span> <span class="tag">망루</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">나즈디건축</span> <span class="tag">중정형</span> <span class="tag">어도비</span> <span class="tag">망루</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>정사각형 어도비 흙벽 매스 (2층)</li><li>4면 모서리 망루 (Barjeel)</li><li>톱니형(삼각) 파라펫 장식 상단</li><li>작고 깊은 사각 창 + 나무 격자</li></ul></section>
@@ -1611,7 +1671,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>정사각형 입방체 매스 · 안마당</dd></div><div class="spec-row"><dt>규모</dt><dd>건물 약 9,844 m² · 약 400×400m 흙벽 부지</dd></div><div class="spec-row"><dt>재료</dt><dd>짚 섞은 어도비 벽돌, 타마리스크 목재, 야자수 잎 천장</dd></div><div class="spec-row"><dt>시대</dt><dd>1936–1938 (King Abdulaziz 명령)</dd></div><div class="spec-row"><dt>설계</dt><dd>Ibn Qabba (master builder)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>정사각형 입방체 매스 · 안마당</dd></div><div class="spec-row"><dt>규모</dt><dd>건물 약 9,844 m² · 약 400×400m 흙벽 부지</dd></div><div class="spec-row"><dt>재료</dt><dd>짚 섞은 어도비 벽돌, 타마리스크 목재, 야자수 잎 천장</dd></div><div class="spec-row"><dt>시대</dt><dd>1936–1938 (King Abdulaziz 명령)</dd></div><div class="spec-row"><dt>설계</dt><dd>Ibn Qabba (master builder)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.6465518, 46.7091690</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>흙벽 특유의 거친 표면 질감 — displacement 맵 활용 권장</li><li>흙벽 표면: 거친 normal/displacement 맵 + 지면 가까이 어두워지는 컬러 그라데이션</li><li>톱니 파라펫·작은 창은 instancing으로 반복 배치</li></ul></section>
@@ -1643,7 +1703,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Kingdom Arena</h3>
       
-      <div class="card-tags"><span class="tag">원형</span> <span class="tag">반개방지붕</span> <span class="tag">LED파사드</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">반개방지붕</span> <span class="tag">LED파사드</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>직사각형 실내 아레나 매스 (보울 X)</li><li>완전 폐쇄형 지붕</li><li>백색 메탈 외피 + LED 동적 조명</li><li>Boulevard Riyadh City 엔터테인먼트 구역 인접</li></ul></section>
@@ -1652,7 +1712,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>직사각형 실내 아레나 (Indoor multi-purpose)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 메탈 패널 + LED 외벽</dd></div><div class="spec-row"><dt>시대</dt><dd>2022년 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>완전 폐쇄형</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>약 22,500–26,000 (이벤트별 가변)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>직사각형 실내 아레나 (Indoor multi-purpose)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 메탈 패널 + LED 외벽</dd></div><div class="spec-row"><dt>시대</dt><dd>2022년 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>완전 폐쇄형</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>약 22,500–26,000 (이벤트별 가변)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7777103, 46.6062157</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>규모 감 표현 위해 주변 주차장 &amp; 진입로 포함 권장</li><li>오픈 보울이 아닌 박스형 실내 매스로 모델링 — 지붕은 완전 폐쇄</li><li>야간 외벽 LED 컬러 변환이 식별성의 핵심 — 발광 머티리얼 권장</li></ul></section>
@@ -1684,7 +1744,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Saud University Stadium</h3>
       <p class="card-subtitle">(Alawwal Park)</p>
-      <div class="card-tags"><span class="tag">타원형</span> <span class="tag">트러스파사드</span> <span class="tag">막구조지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타원형</span> <span class="tag">트러스파사드</span> <span class="tag">막구조지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>타원형 보울 (oval bowl)</li><li>양 측면(메인·백) 부분 캔틸레버 지붕</li><li>노출 콘크리트 + 메탈 스크린 외피</li><li>킹사우드대학 캠퍼스 입지 — 사막성 조경</li></ul></section>
@@ -1693,7 +1753,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (oval)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>노출 콘크리트 + 메탈 스크린 액센트</dd></div><div class="spec-row"><dt>시대</dt><dd>2015 (현재 보울)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>양 측면 부분 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~25,000 / Asian Cup 2027</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (oval)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>노출 콘크리트 + 메탈 스크린 액센트</dd></div><div class="spec-row"><dt>시대</dt><dd>2015 (현재 보울)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>양 측면 부분 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~25,000 / Asian Cup 2027</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7292377, 46.6237795</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>지붕은 양 측면(롱사이드)에만 — 골대 뒤(엔드존)는 개방형으로 모델링</li><li>캠퍼스 도로·주차장 컨텍스트 함께 배치하면 실감 향상</li></ul></section>
@@ -1725,7 +1785,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Imam Muhammad Ibn Saud Islamic<br>University Football Stadium</h3>
       
-      <div class="card-tags"><span class="tag">타원형</span> <span class="tag">수직루버</span> <span class="tag">캔틸레버지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공 연도·외장 재료·지붕 형식">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타원형</span> <span class="tag">수직루버</span> <span class="tag">캔틸레버지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공 연도·외장 재료·지붕 형식">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>대학 캠퍼스 부속 경기장 (보수 진행 중)</li><li>오픈 보울 + 4코너 조명탑 (일반적 구성)</li></ul></section>
@@ -1734,7 +1794,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~21,000 / Asian Cup 2027 (xlsx 기준)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~21,000 / Asian Cup 2027 (xlsx 기준)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.8060943, 46.7034388</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>타원형 볼 + 외벽 전체 수직 루버(louver) 시스템 — 가는 핀들의 반복</li><li>공개 자료 제한 — 일반적 대학 경기장 형태(타원 + 4코너 라이트)로 단순화</li><li>프로젝트 진행 시 위성사진/공식 렌더링으로 보강할 것</li></ul></section>
@@ -1766,7 +1826,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Shabab Stadium</h3>
       
-      <div class="card-tags"><span class="tag">원형</span> <span class="tag">주름파사드</span> <span class="tag">반폐쇄돔</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공·재료·정확한 수용">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">주름파사드</span> <span class="tag">반폐쇄돔</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공·재료·정확한 수용">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>소규모 컴팩트 보울 (단일 층 스탠드)</li><li>개방형 지붕 (지붕 없음 / 부분만)</li><li>알샤밥 클럽 컬러: 백색 + 검정</li></ul></section>
@@ -1775,7 +1835,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>소형 컴팩트 보울</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>개방형 (지붕 없음 또는 부분)</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~14,000 / Asian Cup 2027</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>소형 컴팩트 보울</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>개방형 (지붕 없음 또는 부분)</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~14,000 / Asian Cup 2027</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.8031695, 46.6287469</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>단일 층 스탠드 + 개방형 지붕으로 단순화</li><li>클럽 컬러(백/흑)가 식별 포인트 — 시트·외장 컬러 일관 적용</li></ul></section>
@@ -1807,7 +1867,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Nasif House</h3>
       <p class="card-subtitle">(Bayt Nassif)</p>
-      <div class="card-tags"><span class="tag">Al-Balad</span> <span class="tag">로샨</span> <span class="tag">산호석</span> <span class="tag">UNESCO</span> <span class="tag">탑형</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">Al-Balad</span> <span class="tag">로샨</span> <span class="tag">산호석</span> <span class="tag">UNESCO</span> <span class="tag">탑형</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>전면 2단 적층 라와신(Roshan) 목재 출창</li><li>북측 진입 리잘릿 (돌출 매스)</li><li>산호석(Coral Stone) 벽체 + 흰 회반죽 마감</li><li>옥상 목재 파빌리온과 평지붕 테라스</li></ul></section>
@@ -1816,7 +1876,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>4–7층 비정형 매스 · 106개 방</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>산호석(manqabi) 석조 + 흰 회반죽, 티크/열대 경목, 조각 라와신</dd></div><div class="spec-row"><dt>시대</dt><dd>1872 착공 / 1881 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>4–7층 비정형 매스 · 106개 방</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>산호석(manqabi) 석조 + 흰 회반죽, 티크/열대 경목, 조각 라와신</dd></div><div class="spec-row"><dt>시대</dt><dd>1872 착공 / 1881 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.4841396, 39.1876259</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>라와신 한 모듈을 정밀 제작 후 instancing — 격자무늬는 normal map으로</li><li>전체 매스는 약간 비정형 — 옥상은 평지붕 + 작은 파빌리온 조합</li></ul></section>
@@ -1848,7 +1908,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Rahma Mosque</h3>
       <p class="card-subtitle">(Floating Mosque)</p>
-      <div class="card-tags"><span class="tag">수상모스크</span> <span class="tag">흰색돔</span> <span class="tag">미나렛×2</span> <span class="tag">해수면연출</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">수상모스크</span> <span class="tag">흰색돔</span> <span class="tag">미나렛×2</span> <span class="tag">해수면연출</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>필로티 위 부유형 매스 (만조 시 바다 위 인상)</li><li>터쿼이즈색 중앙 큰 돔 + 52개 작은 돔군</li><li>흰 대리석 외벽 + 단일 백색 미나렛</li><li>외부 23개 우산형(파라솔) 캐노피</li></ul></section>
@@ -1857,7 +1917,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>필로티 부유형 + 중앙 대돔</dd></div><div class="spec-row"><dt>규모</dt><dd>내부 약 2,400 m² · 수용 ~500</dd></div><div class="spec-row"><dt>재료</dt><dd>흰 대리석 + 터쿼이즈 글레이즈 타일, 철근콘크리트 파일</dd></div><div class="spec-row"><dt>시대</dt><dd>1985년 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>필로티 부유형 + 중앙 대돔</dd></div><div class="spec-row"><dt>규모</dt><dd>내부 약 2,400 m² · 수용 ~500</dd></div><div class="spec-row"><dt>재료</dt><dd>흰 대리석 + 터쿼이즈 글레이즈 타일, 철근콘크리트 파일</dd></div><div class="spec-row"><dt>시대</dt><dd>1985년 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.6485661, 39.1008916</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>해질녘 역광 실루엣이 상징적 — 조명/렌더 앵글 참고</li><li>52개 부속 돔·23개 우산은 instancing으로 반복</li><li>기단부를 수면 약간 위로 띄워 모델링 — 만조 시 반사 강조</li><li>터쿼이즈 돔 + 흰 대리석 색대비를 명확히 분리</li></ul></section>
@@ -1889,7 +1949,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Prince Abdullah Al Faisal<br>Sports City Stadium</h3>
       
-      <div class="card-tags"><span class="tag">타원형</span> <span class="tag">파도형지붕</span> <span class="tag">아케이드하부</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타원형</span> <span class="tag">파도형지붕</span> <span class="tag">아케이드하부</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>타원형 보울 + 백색 천공(perforated) 메탈 외피</li><li>양 측면 부분 캔틸레버 지붕</li><li>Al-Ittihad / Al-Ahli 공동 사용</li><li>도시 내부 입지 — 도로·주차 인접</li></ul></section>
@@ -1898,7 +1958,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (oval)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>2020 (현재 외관)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>백색 천공 메탈 패널</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>양 측면 부분 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~25,000 / Asian Cup 2027</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 보울 (oval)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>2020 (현재 외관)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>백색 천공 메탈 패널</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>양 측면 부분 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~25,000 / Asian Cup 2027</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.4467347, 39.2517530</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>리노베이션 후 외관은 백색 메탈 패널 중심 — 노후 콘크리트 표현 지양</li><li>양 측면만 부분 지붕 / 골대 뒤는 개방</li></ul></section>
@@ -1930,7 +1990,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">AL KHOBAR New Stadium</h3>
       <p class="card-subtitle">(Aramco Stadium)</p>
-      <div class="card-tags"><span class="tag">원형</span> <span class="tag">다이아몬드패턴</span> <span class="tag">45,000석</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">다이아몬드패턴</span> <span class="tag">45,000석</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>사막 영감 기하학 패턴 외피 (Populous design)</li><li>PTFE 막구조 캔틸레버 지붕</li><li>타원형 풀-보울</li><li>알코바르 해안 인접 입지 — 동부주 상징</li></ul></section>
@@ -1939,7 +1999,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 풀-보울</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>건설 중</dd></div><div class="spec-row"><dt>설계</dt><dd>Populous</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>천공 메탈 + 사막 모티브 기하 패턴</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>PTFE 막구조 + 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~45,000 / Asian Cup 2027</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>타원형 풀-보울</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>건설 중</dd></div><div class="spec-row"><dt>설계</dt><dd>Populous</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>천공 메탈 + 사막 모티브 기하 패턴</dd></div><div class="spec-row spec-row--extra"><dt>지붕</dt><dd>PTFE 막구조 + 캔틸레버</dd></div><div class="spec-row spec-row--extra"><dt>수용</dt><dd>~45,000 / Asian Cup 2027</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3653910, 50.1809410</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>아직 건설 중 — 렌더링 이미지 레퍼런스 활용</li><li>공식 렌더링을 1차 레퍼런스로 — 외피 패턴 밀도는 LOD에 따라 조정</li><li>해안·도시 진입로 컨텍스트 포함 권장</li></ul></section>
@@ -1972,7 +2032,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Diriyah (Ad Diriyah)</h3>
       
-      <div class="card-tags"><span class="tag">UNESCO</span> <span class="tag">나즈디</span> <span class="tag">어도비</span> <span class="tag">유적</span> <span class="tag">계곡</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">UNESCO</span> <span class="tag">나즈디</span> <span class="tag">어도비</span> <span class="tag">유적</span> <span class="tag">계곡</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>두꺼운 흙벽돌 외벽 + 흉벽</li><li>살와 궁전 다층 요새 매스</li><li>삼각형 통풍구 + 작은 창</li><li>나즈디 미로 골목과 안뜰</li></ul></section>
@@ -1981,7 +2041,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>흙벽돌 도시 군집 + 살와 궁전(다층 요새)</dd></div><div class="spec-row"><dt>규모</dt><dd>At-Turaif 시타델 약 29 ha</dd></div><div class="spec-row"><dt>재료</dt><dd>햇볕 건조 머드브릭, 타마리스크/야자수 목재, 조각 석고(juss), 라임스톤 기초</dd></div><div class="spec-row"><dt>시대</dt><dd>1727년 — UNESCO 2010</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>흙벽돌 도시 군집 + 살와 궁전(다층 요새)</dd></div><div class="spec-row"><dt>규모</dt><dd>At-Turaif 시타델 약 29 ha</dd></div><div class="spec-row"><dt>재료</dt><dd>햇볕 건조 머드브릭, 타마리스크/야자수 목재, 조각 석고(juss), 라임스톤 기초</dd></div><div class="spec-row"><dt>시대</dt><dd>1727년 — UNESCO 2010</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7479649, 46.5363683</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>같은 모듈을 회전·스케일 변형해 인스턴싱하면 효율적</li><li>삼각 환기구·흉벽 패턴은 별도 모듈로 만들어 여러 건물에 재사용</li></ul></section>
@@ -2013,7 +2073,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Salam Park</h3>
       
-      <div class="card-tags"><span class="tag">공원</span> <span class="tag">조경</span> <span class="tag">원형호수</span> <span class="tag">파빌리온</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">공원</span> <span class="tag">조경</span> <span class="tag">원형호수</span> <span class="tag">파빌리온</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>중앙 인공 호수 + 분수 (~40m)</li><li>약 1,300그루 대추야자 군락</li><li>굴곡진 잔디 힐사이드 존</li><li>중앙 흰색 살람 모스크</li></ul></section>
@@ -2022,7 +2082,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>도심 공원 — 4개 영역 (야자숲/호수/힐사이드/생태)</dd></div><div class="spec-row"><dt>규모</dt><dd>24.8 ha · 호수 ~33,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>천연석 포장, 콘크리트(모스크), 대추야자, 수경 시설</dd></div><div class="spec-row"><dt>시대</dt><dd>2004년 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>Omrania + Aukett Fitzroy Robinson</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>도심 공원 — 4개 영역 (야자숲/호수/힐사이드/생태)</dd></div><div class="spec-row"><dt>규모</dt><dd>24.8 ha · 호수 ~33,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>천연석 포장, 콘크리트(모스크), 대추야자, 수경 시설</dd></div><div class="spec-row"><dt>시대</dt><dd>2004년 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>Omrania + Aukett Fitzroy Robinson</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.6200404, 46.7094679</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>대추야자는 3–4종 메시 만들어 임의 회전·스케일로 인스턴싱</li><li>호수는 평면 메시 + 노멀맵/리플렉션 / 분수는 파티클·빌보드</li></ul></section>
@@ -2054,7 +2114,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Fahad National Library</h3>
       
-      <div class="card-tags"><span class="tag">막구조</span> <span class="tag">PTFE텐트</span> <span class="tag">발광</span> <span class="tag">Gerber</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">막구조</span> <span class="tag">PTFE텐트</span> <span class="tag">발광</span> <span class="tag">Gerber</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>백색 마름모(롬보이드) 텐트 막구조 파사드</li><li>기존 도서관을 사방에서 감싼 큐브 매스</li><li>3D 인장 강선 케이블 그리드</li><li>바닥 흰 대리석 포디움 광장</li></ul></section>
@@ -2063,7 +2123,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>큐브 매스 + 마름모 텐트 막 파사드</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 86,632 m² · 체적 452,000 m³</dd></div><div class="spec-row"><dt>재료</dt><dd>SEFAR 백색 PTFE 막, 인장 강선 케이블, 강·콘크리트 구조, 흰 대리석</dd></div><div class="spec-row"><dt>시대</dt><dd>2013년 (증축 완공)</dd></div><div class="spec-row"><dt>설계</dt><dd>Gerber Architekten + SEFAR(막)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>큐브 매스 + 마름모 텐트 막 파사드</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 86,632 m² · 체적 452,000 m³</dd></div><div class="spec-row"><dt>재료</dt><dd>SEFAR 백색 PTFE 막, 인장 강선 케이블, 강·콘크리트 구조, 흰 대리석</dd></div><div class="spec-row"><dt>시대</dt><dd>2013년 (증축 완공)</dd></div><div class="spec-row"><dt>설계</dt><dd>Gerber Architekten + SEFAR(막)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.6857915, 46.6864778</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>마름모 패널 1개 정밀 모델링 후 인스턴싱 / 막은 반투명 화이트 + 약간의 SSS</li><li>케이블 구조는 별도 라인 지오메트리 — 멀리서는 텍스처로 LOD 대체</li></ul></section>
@@ -2095,7 +2155,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Six Flags Qiddiya City</h3>
       
-      <div class="card-tags"><span class="tag">테마파크</span> <span class="tag">사막절벽</span> <span class="tag">롤러코스터</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">테마파크</span> <span class="tag">사막절벽</span> <span class="tag">롤러코스터</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>팰컨스 플라이트 195m 코스터</li><li>시로코 타워 145m</li><li>투와이크 절벽 옆 입지</li><li>6개 테마 구역</li></ul></section>
@@ -2104,7 +2164,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>6개 테마 존 + 시그니처 코스터/타워</dd></div><div class="spec-row"><dt>규모</dt><dd>파크 ~320,000 m² · Falcons Flight 트랙 ~4 km</dd></div><div class="spec-row"><dt>재료</dt><dd>강철 트랙(Intamin), 콘크리트 하부, 테마 클래딩(GFRC/FRP), 텐사일 막 차양</dd></div><div class="spec-row"><dt>시대</dt><dd>2025년 12월 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>마스터플랜: BIG / 코스터: Intamin</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>6개 테마 존 + 시그니처 코스터/타워</dd></div><div class="spec-row"><dt>규모</dt><dd>파크 ~320,000 m² · Falcons Flight 트랙 ~4 km</dd></div><div class="spec-row"><dt>재료</dt><dd>강철 트랙(Intamin), 콘크리트 하부, 테마 클래딩(GFRC/FRP), 텐사일 막 차양</dd></div><div class="spec-row"><dt>시대</dt><dd>2025년 12월 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>마스터플랜: BIG / 코스터: Intamin</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.5867830, 46.3311103</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>팰컨스 플라이트 첫 드롭(~195m 수직)과 시로코 타워(145m)를 두 개의 버티컬 랜드마크로 강조</li><li>평지 X — 투와이크 단애 가장자리 단차 살리기</li></ul></section>
@@ -2136,7 +2196,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Khalid<br>International Airport</h3>
       
-      <div class="card-tags"><span class="tag">공항</span> <span class="tag">저층수평</span> <span class="tag">로열터미널돔</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">공항</span> <span class="tag">저층수평</span> <span class="tag">로열터미널돔</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>삼각 피라미드형 4개 터미널 셸</li><li>중앙 6각 모스크 + 큰 돔</li><li>사막색 콘크리트 쉘</li><li>이슬람 기하 패턴 스크린</li></ul></section>
@@ -2145,7 +2205,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>삼각 피라미드 4개 터미널 + 중앙 6각 모스크 (십자형 배치)</dd></div><div class="spec-row"><dt>규모</dt><dd>공항 부지 ~225 km² · 모스크 5,600 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>프리캐스트 콘크리트, 사암 톤 클래딩, 이슬람 기하 스크린, 모스크 내부 폴리시드 브론즈</dd></div><div class="spec-row"><dt>시대</dt><dd>1983년 (원형 4터미널)</dd></div><div class="spec-row"><dt>설계</dt><dd>Hellmuth, Obata &amp; Kassabaum (HOK)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>삼각 피라미드 4개 터미널 + 중앙 6각 모스크 (십자형 배치)</dd></div><div class="spec-row"><dt>규모</dt><dd>공항 부지 ~225 km² · 모스크 5,600 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>프리캐스트 콘크리트, 사암 톤 클래딩, 이슬람 기하 스크린, 모스크 내부 폴리시드 브론즈</dd></div><div class="spec-row"><dt>시대</dt><dd>1983년 (원형 4터미널)</dd></div><div class="spec-row"><dt>설계</dt><dd>Hellmuth, Obata &amp; Kassabaum (HOK)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.9594430, 46.7010829</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>4개 터미널은 정삼각형 평면 + 셸 지붕 단순화 / 모스크 = 6각 매스 위 얕은 돔</li><li>외장: 모래색~베이지 톤 콘크리트 통일</li></ul></section>
@@ -2177,7 +2237,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Riyadh Park Mall</h3>
       
-      <div class="card-tags"><span class="tag">쇼핑몰</span> <span class="tag">곡선클래딩</span> <span class="tag">저층</span><span class="tag tag-draft" title="검증 미완: 정확 완공 연도·설계자·면적">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">곡선클래딩</span> <span class="tag">저층</span><span class="tag tag-draft" title="검증 미완: 정확 완공 연도·설계자·면적">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>대형 곡선 매스 + 다중 윙 구성</li><li>유리 파사드 + 알루미늄 패널</li><li>옥상 야외 엔터테인먼트 테라스</li><li>지상·지하 대형 주차장</li></ul></section>
@@ -2186,7 +2246,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>곡선형 다중 윙 매스 + 옥상 테라스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 패널, 흰 프리캐스트 콘크리트</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>곡선형 다중 윙 매스 + 옥상 테라스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 패널, 흰 프리캐스트 콘크리트</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7566256, 46.6293917</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>단일 매스 X — 길게 뻗은 다중 윙 + 곡선 입면 단순화</li><li>주변 대형 주차장·진입 램프 함께 표현하면 컨텍스트 살아남</li></ul></section>
@@ -2218,7 +2278,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Saud University</h3>
       
-      <div class="card-tags"><span class="tag">대학</span> <span class="tag">메인게이트</span> <span class="tag">캠퍼스모스크</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대학</span> <span class="tag">메인게이트</span> <span class="tag">캠퍼스모스크</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>두 개의 직교 보행 스파인 축</li><li>교차점 중앙 포럼 광장</li><li>팜트리형 콘크리트 아치 열주</li><li>도서관·강당 중심부 매스</li></ul></section>
@@ -2227,7 +2287,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>두 개 직교 보행 스파인 + 중앙 포럼 (모더니즘)</dd></div><div class="spec-row"><dt>규모</dt><dd>주 캠퍼스 ~900 ha (9 km²)</dd></div><div class="spec-row"><dt>재료</dt><dd>프리캐스트 콘크리트(베이지), 팜폼 콘크리트 아치 열주, 천공 기하 스크린, 틴트 글래스</dd></div><div class="spec-row"><dt>시대</dt><dd>마스터플랜 1975–76, 시공 1980s</dd></div><div class="spec-row"><dt>설계</dt><dd>HOK + 4 Consortium</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>두 개 직교 보행 스파인 + 중앙 포럼 (모더니즘)</dd></div><div class="spec-row"><dt>규모</dt><dd>주 캠퍼스 ~900 ha (9 km²)</dd></div><div class="spec-row"><dt>재료</dt><dd>프리캐스트 콘크리트(베이지), 팜폼 콘크리트 아치 열주, 천공 기하 스크린, 틴트 글래스</dd></div><div class="spec-row"><dt>시대</dt><dd>마스터플랜 1975–76, 시공 1980s</dd></div><div class="spec-row"><dt>설계</dt><dd>HOK + 4 Consortium</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7129206, 46.6217434</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>직교 그리드 축으로 구성 — 교차점 광장 둘레 4–5 동 콘크리트 매스</li><li>외장: 따뜻한 베이지 콘크리트 + 반복 기하 스크린 패턴</li></ul></section>
@@ -2259,7 +2319,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Princess Nourah Bint<br>Abdulrahman University</h3>
       
-      <div class="card-tags"><span class="tag">대학</span> <span class="tag">대칭배치</span> <span class="tag">모노레일</span> <span class="tag">쌍둥이타워</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대학</span> <span class="tag">대칭배치</span> <span class="tag">모노레일</span> <span class="tag">쌍둥이타워</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>황금빛 돔 중앙 모스크</li><li>캠퍼스 일주 모노레일 고가</li><li>방대한 격자형 마스터플랜</li><li>여성 전용 폐쇄형 외곽 게이트</li></ul></section>
@@ -2268,7 +2328,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>격자 마스터플랜 + 중앙 모스크 + 모노레일 루프</dd></div><div class="spec-row"><dt>규모</dt><dd>~8 km² · 700+ 동 · 15 단과대</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤·프리캐스트 석재, 마쉬라비야 차양, 황금색 글레이즈 타일 돔, 백색 콘크리트, 유리 커튼월</dd></div><div class="spec-row"><dt>시대</dt><dd>2011년 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Perkins+Will + Dar Al-Handasah</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>격자 마스터플랜 + 중앙 모스크 + 모노레일 루프</dd></div><div class="spec-row"><dt>규모</dt><dd>~8 km² · 700+ 동 · 15 단과대</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤·프리캐스트 석재, 마쉬라비야 차양, 황금색 글레이즈 타일 돔, 백색 콘크리트, 유리 커튼월</dd></div><div class="spec-row"><dt>시대</dt><dd>2011년 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Perkins+Will + Dar Al-Handasah</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.8466526, 46.7255186</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>직교 그리드 모듈화 + 모노레일 고가 루프(외곽~내부 순환선) 표현</li><li>중앙 모스크: 큰 황금 돔 1개 + 4개 미나레트 강조 / 외곽 연속 외벽·게이트 강조</li></ul></section>
@@ -2300,7 +2360,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Riyadh Golf Club</h3>
       
-      <div class="card-tags"><span class="tag">골프클럽</span> <span class="tag">녹지</span> <span class="tag">클럽하우스</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·코스 길이">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">골프클럽</span> <span class="tag">녹지</span> <span class="tag">클럽하우스</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·코스 길이">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>18홀 사막 골프 코스</li><li>야간 조명 토너먼트(LIV) 라이트 폴</li><li>낮은 클럽하우스 (스톤·스터코)</li><li>Al Aarid 북부 입지</li></ul></section>
@@ -2309,7 +2369,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>18홀 사막 챔피언십 코스 + 클럽하우스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>관수 잔디 페어웨이/그린, 사막 러프, 낮은 클럽하우스(석재·스터코), 조명탑</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>위치</dt><dd>Al Aarid, 리야드 북부</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>18홀 사막 챔피언십 코스 + 클럽하우스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>관수 잔디 페어웨이/그린, 사막 러프, 낮은 클럽하우스(석재·스터코), 조명탑</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--extra"><dt>위치</dt><dd>Al Aarid, 리야드 북부</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.9591054, 46.5760607</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>지도용: 18홀 페어웨이 외곽선 + 클럽하우스 1동 단순화</li><li>리야드 북부 Al Aarid 위치 정확히 — Dirab 골프장과 혼동 금지</li><li>토너먼트 표현 시 야간 조명탑 배치 포함</li></ul></section>
@@ -2341,7 +2401,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">KAFD Metro Station</h3>
       
-      <div class="card-tags"><span class="tag">ZHA</span> <span class="tag">라티스파사드</span> <span class="tag">파라메트릭</span> <span class="tag">엑소스켈레톤</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">ZHA</span> <span class="tag">라티스파사드</span> <span class="tag">파라메트릭</span> <span class="tag">엑소스켈레톤</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>3D 격자형 파라메트릭 외피</li><li>사막 바람 결을 닮은 패턴</li><li>6각형 망사 천공</li><li>6개 트랙 환승역 (3노선 + 모노레일)</li></ul></section>
@@ -2350,7 +2410,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>큐브 매스 + 곡면 격자 쉘 + 모서리 라운딩</dd></div><div class="spec-row"><dt>규모</dt><dd>풋프린트 8,150 m² · 4층 지상 + 지하 플랫폼 · 6개 트랙</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>2024년 12월 개통</dd></div><div class="spec-row"><dt>설계</dt><dd>Zaha Hadid Architects</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>UHPC 자체지지 다이아그리드 + 6각 망사 천공</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>큐브 매스 + 곡면 격자 쉘 + 모서리 라운딩</dd></div><div class="spec-row"><dt>규모</dt><dd>풋프린트 8,150 m² · 4층 지상 + 지하 플랫폼 · 6개 트랙</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row"><dt>시대</dt><dd>2024년 12월 개통</dd></div><div class="spec-row"><dt>설계</dt><dd>Zaha Hadid Architects</dd></div><div class="spec-row spec-row--extra"><dt>파사드</dt><dd>UHPC 자체지지 다이아그리드 + 6각 망사 천공</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7674375, 46.6430625</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>평면 격자 X — 곡면 따라 흐르는 3D 다이아그리드</li><li>천공 패턴은 부분별 밀도 그라디언트(중심부 조밀, 가장자리 성긴)</li></ul></section>
@@ -2382,7 +2442,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">MoMRAH</h3>
       
-      <div class="card-tags"><span class="tag">정부청사</span> <span class="tag">이슬람패턴</span> <span class="tag">대칭</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 매스/외장">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">정부청사</span> <span class="tag">이슬람패턴</span> <span class="tag">대칭</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 매스/외장">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>현대식 정부청사 매스 (저층 슬래브)</li><li>정면 진입 광장 + 국기 게양대</li><li>유리 + 석재 혼합 파사드</li></ul></section>
@@ -2391,7 +2451,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 정부청사 슬래브 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 정부청사 슬래브 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>재료</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7298448, 46.6655445</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>검증 도면/사진 부족 — 추상화된 일반 정부청사 형태로 처리</li><li>확정 자료 없이 디테일 만들지 말 것 — 현장 답사 후 보강</li></ul></section>
@@ -2423,7 +2483,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Rajhi Mosque</h3>
       
-      <div class="card-tags"><span class="tag">대형돔</span> <span class="tag">미나렛×4</span> <span class="tag">대리석</span> <span class="tag">아치회랑</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대형돔</span> <span class="tag">미나렛×4</span> <span class="tag">대리석</span> <span class="tag">아치회랑</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>중앙 대형 돔 (외경 ~28.8m)</li><li>쌍둥이 미나레트 2기 (각 ~55m)</li><li>안달루시아·무어풍 말굽 아치 파사드</li><li>넓은 사다리꼴 안뜰 + 아케이드</li></ul></section>
@@ -2432,7 +2492,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중앙 대돔 + 쌍 미나레트 + 사다리꼴 안뜰</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~43,568 m² · 내부 ~13,260 m² · 수용 ~20,000</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤 클래딩, 대리석 내장, 기하 타일/스터코, 조각 석고</dd></div><div class="spec-row"><dt>시대</dt><dd>2004년 개장</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중앙 대돔 + 쌍 미나레트 + 사다리꼴 안뜰</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~43,568 m² · 내부 ~13,260 m² · 수용 ~20,000</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤 클래딩, 대리석 내장, 기하 타일/스터코, 조각 석고</dd></div><div class="spec-row"><dt>시대</dt><dd>2004년 개장</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.6772704, 46.7788545</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>돔·미나레트는 정확한 회전체로 모델링</li><li>말굽 아치·아라베스크 패턴은 노멀맵 + 일부 지오메트리 디테일</li><li>안뜰 아케이드 기둥열은 1유닛 인스턴싱 / 외장: 베이지~황토 PBR</li></ul></section>
@@ -2464,7 +2524,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Bab Makkah</h3>
       
-      <div class="card-tags"><span class="tag">성문</span> <span class="tag">아치</span> <span class="tag">쌍탑</span> <span class="tag">Al-Balad</span><span class="tag tag-draft" title="검증 미완: 완공·재건 연도·설계자·정확 치수">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">성문</span> <span class="tag">아치</span> <span class="tag">쌍탑</span> <span class="tag">Al-Balad</span><span class="tag tag-draft" title="검증 미완: 완공·재건 연도·설계자·정확 치수">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>중앙 아치형 관문 + 양옆 측면 매스</li><li>백색 회벽 마감</li><li>상부 코니스 + 총안형 디테일</li><li>Al-Balad 동측 진입부 위치</li></ul></section>
@@ -2473,7 +2533,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>독립 기념문 (3분할 — 중앙 아치 + 좌우 보조)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>산호석 클래딩, 라임 회벽, 목재 인방/디테일, 석고 장식</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>독립 기념문 (3분할 — 중앙 아치 + 좌우 보조)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>산호석 클래딩, 라임 회벽, 목재 인방/디테일, 석고 장식</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.4852599, 39.1926923</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>독립 기념문 형태로 모델링 (원형 성벽 X)</li><li>중앙 아치 + 좌우 보조 통로 3분할 단순 매스</li><li>백색 회벽 톤 + 상부 코니스/작은 총안 디테일</li></ul></section>
@@ -2505,7 +2565,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Red Sea Mall</h3>
       
-      <div class="card-tags"><span class="tag">쇼핑몰</span> <span class="tag">유리커튼월</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">유리커튼월</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>저층 대형 본동 + 부속 중층 타워</li><li>대형 유리 천창 아트리움</li><li>곡선형 진입 캐노피 + 광장 분수</li><li>King Abdulaziz Road 입지</li></ul></section>
@@ -2514,7 +2574,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 대형 본동 + 부속 중층 타워</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 ~244,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 패널, 기단부 석재, 강구조 + 유리 아트리움 천장</dd></div><div class="spec-row"><dt>시대</dt><dd>~2008</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 대형 본동 + 부속 중층 타워</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 ~244,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 패널, 기단부 석재, 강구조 + 유리 아트리움 천장</dd></div><div class="spec-row"><dt>시대</dt><dd>~2008</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.6286568, 39.1118495</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>본동(저층 대형) + 부속 타워(중층 슬렌더) 명확히 분리</li><li>본동 지붕 유리 아트리움 라인 살리기 — 식별 포인트</li></ul></section>
@@ -2546,7 +2606,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Fahd&#x27;s Fountain</h3>
       
-      <div class="card-tags"><span class="tag">세계최고분수</span> <span class="tag">312m</span> <span class="tag">해수면위</span> <span class="tag">야간조명</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">세계최고분수</span> <span class="tag">312m</span> <span class="tag">해수면위</span> <span class="tag">야간조명</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>초고압 수직 물기둥 (~260m)</li><li>바다 위 분수 (해상 노즐)</li><li>500개 이상 야간 스포트라이트</li><li>제다 코르니쉬 해안가 경관</li></ul></section>
@@ -2555,7 +2615,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>해상 단일 수직 제트 + 육상 펌프 하우스</dd></div><div class="spec-row"><dt>규모</dt><dd>분사 높이 ~260m (세계 최고 분수)</dd></div><div class="spec-row"><dt>재료</dt><dd>해수(제트), 스테인리스 노즐 어셈블리, 콘크리트/강 해상 플랫폼</dd></div><div class="spec-row"><dt>시대</dt><dd>~1985</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>해상 단일 수직 제트 + 육상 펌프 하우스</dd></div><div class="spec-row"><dt>규모</dt><dd>분사 높이 ~260m (세계 최고 분수)</dd></div><div class="spec-row"><dt>재료</dt><dd>해수(제트), 스테인리스 노즐 어셈블리, 콘크리트/강 해상 플랫폼</dd></div><div class="spec-row"><dt>시대</dt><dd>~1985</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.5156556, 39.1450512</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>지상 X — 해상에서 솟구치는 단일 수직 제트</li><li>펌프 하우스(육상 박스 매스) + 해상 노즐 분리 배치</li><li>분수 자체는 가는 흰 파티클/원기둥 단순화 / 코르니쉬와의 거리(수백m) 정확히</li></ul></section>
@@ -2587,7 +2647,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Abdul Raouf Khalil Museum</h3>
       
-      <div class="card-tags"><span class="tag">전통저택</span> <span class="tag">로샨</span> <span class="tag">산호석</span><span class="tag tag-draft" title="검증 미완: 정확 파빌리온 수·완공 연도·설계자">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">전통저택</span> <span class="tag">로샨</span> <span class="tag">산호석</span><span class="tag tag-draft" title="검증 미완: 정확 파빌리온 수·완공 연도·설계자">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>다중 파빌리온 캠퍼스 구성</li><li>마쉬라비야 (목재 격자창)</li><li>아치형 출입구 + 작은 돔</li><li>백색·황토 회벽 + 짙은 갈색 디테일 대비</li></ul></section>
@@ -2596,7 +2656,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>다중 파빌리온 캠퍼스 + 중앙 마당</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>회벽/스터코, 조각 석고·목재 패널, 마쉬라비야 격자, 장식 타일·석재</dd></div><div class="spec-row"><dt>시대</dt><dd>~1999</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>다중 파빌리온 캠퍼스 + 중앙 마당</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>회벽/스터코, 조각 석고·목재 패널, 마쉬라비야 격자, 장식 타일·석재</dd></div><div class="spec-row"><dt>시대</dt><dd>~1999</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.5809932, 39.1766658</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>단일 매스로 단순화 X — 3–5개 파빌리온 + 중앙 마당 구성 그대로</li><li>각 파빌리온의 작은 돔·아치 입구·마쉬라비야 패턴은 단순화 텍스처/메시</li></ul></section>
@@ -2628,7 +2688,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Hassan Enany Mosque</h3>
       
-      <div class="card-tags"><span class="tag">모스크</span> <span class="tag">코니쉬</span><span class="tag tag-draft" title="검증 미완: 완공·설계자·위치·모든 치수">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">모스크</span> <span class="tag">코니쉬</span><span class="tag tag-draft" title="검증 미완: 완공·설계자·위치·모든 치수">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>백색 외벽 + 단일 미나렛</li><li>중앙 돔</li><li>기하 패턴 창</li></ul></section>
@@ -2637,7 +2697,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>직사각 본당 + 단일 돔 + 1 미나렛 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 석재/대리석, 회벽, 조각 석고, 기하 창</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>직사각 본당 + 단일 돔 + 1 미나렛 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 석재/대리석, 회벽, 조각 석고, 기하 창</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.5313247, 39.1577714</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>⚠️ 이미지 레퍼런스 부족 — 현지 사진/Google Maps 직접 확인 권장</li><li>정보 부족 — 일반적 현대 Hejazi 모스크 형식으로 단순화</li><li>실측 사진 확보 후 보정 필수</li></ul></section>
@@ -2669,7 +2729,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Fakieh Aquarium</h3>
       
-      <div class="card-tags"><span class="tag">아쿠아리움</span> <span class="tag">구형돔</span> <span class="tag">수변입지</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">아쿠아리움</span> <span class="tag">구형돔</span> <span class="tag">수변입지</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>곡선형 모던 매스 (낮은 단일 동)</li><li>푸른 톤 유리 파사드</li><li>해양 테마 사이니지·캐노피</li><li>제다 코르니쉬 도로변 입지</li></ul></section>
@@ -2678,7 +2738,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>낮은 단일 동 곡선 매스</dd></div><div class="spec-row"><dt>규모</dt><dd>~6,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 클래딩, 도장 강구조, 콘크리트 베이스</dd></div><div class="spec-row"><dt>시대</dt><dd>~2010</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>낮은 단일 동 곡선 매스</dd></div><div class="spec-row"><dt>규모</dt><dd>~6,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 클래딩, 도장 강구조, 콘크리트 베이스</dd></div><div class="spec-row"><dt>시대</dt><dd>~2010</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.5722026, 39.1096166</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>코니쉬 해변가 입지 — 수변 환경 포함 권장</li><li>큰 랜드마크 X — 코르니쉬 도로변 낮고 긴 단일 매스</li><li>유리: 청색 계열 / 지붕: 흰색·은색 메탈 / 입구 캐노피 + 해양 테마 간판 강조</li></ul></section>
@@ -2710,7 +2770,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Rashid Mall</h3>
       
-      <div class="card-tags"><span class="tag">쇼핑몰</span> <span class="tag">진입돔</span> <span class="tag">석재파사드</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">진입돔</span> <span class="tag">석재파사드</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>거대한 직사각 매스 (4층)</li><li>베이지 외장 + 곡선형 메인 캐노피</li><li>중앙 아트리움 채광</li><li>둘레 대형 주차장 (~5,000대)</li></ul></section>
@@ -2719,7 +2779,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>거대 직사각 매스 (4층)</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 ~150,000 m² · GLA ~115,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>베이지 톤 클래딩, 유리 커튼월, 메탈 지붕, 대리석 내장</dd></div><div class="spec-row"><dt>시대</dt><dd>1995 (확장 2005, 리노베이션 2023)</dd></div><div class="spec-row"><dt>설계</dt><dd>EDSA(조경) / DLR Group(확장)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>거대 직사각 매스 (4층)</dd></div><div class="spec-row"><dt>규모</dt><dd>연면적 ~150,000 m² · GLA ~115,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>베이지 톤 클래딩, 유리 커튼월, 메탈 지붕, 대리석 내장</dd></div><div class="spec-row"><dt>시대</dt><dd>1995 (확장 2005, 리노베이션 2023)</dd></div><div class="spec-row"><dt>설계</dt><dd>EDSA(조경) / DLR Group(확장)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.2900117, 50.1804128</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>거대한 직사각 매스 + 옥상 주차장 + 곡선 메인 엔트런스 캐노피</li><li>주변 5,000대 규모 주차장 표현 — 스케일감 핵심</li></ul></section>
@@ -2751,7 +2811,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Othman Office Tower</h3>
       
-      <div class="card-tags"><span class="tag">쌍둥이타워</span> <span class="tag">반사유리</span> <span class="tag">포디움연결</span><span class="tag tag-draft" title="검증 미완: 설계자·정확 높이·외장 사양">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쌍둥이타워</span> <span class="tag">반사유리</span> <span class="tag">포디움연결</span><span class="tag tag-draft" title="검증 미완: 설계자·정확 높이·외장 사양">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>20층 슬렌더 박스 매스</li><li>유리 커튼월 외장</li><li>Kempinski 호텔과 동일 단지</li><li>King Saud Road 입지</li></ul></section>
@@ -2760,7 +2820,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>20층 슬렌더 직사각 박스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 클래딩 (추정)</dd></div><div class="spec-row"><dt>시대</dt><dd>2015 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>20층 슬렌더 직사각 박스</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 클래딩 (추정)</dd></div><div class="spec-row"><dt>시대</dt><dd>2015 완공</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3666162, 50.1778305</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>슬렌더 직사각 박스로 단순화 + 인접 Kempinski 동과 단지 구성</li><li>입면 패턴 불확실 — 일반 유리 커튼월 표현</li></ul></section>
@@ -2792,7 +2852,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Ajdan Infinity</h3>
       
-      <div class="card-tags"><span class="tag">∞형타워</span> <span class="tag">스카이브리지</span> <span class="tag">Benoy</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">∞형타워</span> <span class="tag">스카이브리지</span> <span class="tag">Benoy</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>흰 저층 매스 군집 (고층 X)</li><li>중앙 광장 + 푸드빌리지</li><li>코르니쉬 해변 인접 산책로</li><li>대형 캔틸레버 캐노피</li></ul></section>
@@ -2801,7 +2861,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 다중 매스 + 중앙 광장</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~15,120 m² · GFA ~12,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 회벽, 유리 점포, 알루미늄 트림, 따뜻한 톤 석재 포장</dd></div><div class="spec-row"><dt>시대</dt><dd>2019 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>Benoy (concept)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>저층 다중 매스 + 중앙 광장</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~15,120 m² · GFA ~12,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 회벽, 유리 점포, 알루미늄 트림, 따뜻한 톤 석재 포장</dd></div><div class="spec-row"><dt>시대</dt><dd>2019 개장</dd></div><div class="spec-row"><dt>설계</dt><dd>Benoy (concept)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3694298, 50.2369764</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>고층 타워 X — 저층 다중 매스 군집</li><li>인접한 Ajdan Rise/Waterfront 타워 모양과 혼동 금지 — 본 단지는 평이한 흰 저층</li><li>주차는 지하 — 보행자 광장 환경 표현</li></ul></section>
@@ -2833,7 +2893,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Jawza Al Qahtani Mosque</h3>
       
-      <div class="card-tags"><span class="tag">해안모스크</span> <span class="tag">황금돔</span> <span class="tag">나선미나렛</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 치수·돔 유무">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">해안모스크</span> <span class="tag">황금돔</span> <span class="tag">나선미나렛</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 치수·돔 유무">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>순백색 외관</li><li>코르니쉬 해변 입지</li><li>단일 미나렛</li><li>현대식 모스크 매스</li></ul></section>
@@ -2842,7 +2902,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>현대식 모스크 (단일 미나렛 + 단순 매스)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 석재/회벽</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>현대식 모스크 (단일 미나렛 + 단순 매스)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>백색 석재/회벽</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤10,000 tris · 중형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3040328, 50.2271976</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>순백색 매스 + 단일 미나렛 + 단순 돔/플랫 루프 단순화</li><li>코르니쉬 해변 컨텍스트 우선 — 디테일은 보수적으로</li></ul></section>
@@ -2874,7 +2934,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al Othaim Mall</h3>
       
-      <div class="card-tags"><span class="tag">쇼핑몰</span> <span class="tag">유리돔아트리움</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">유리돔아트리움</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>거대 박스형 매스 (단층/2층)</li><li>베이지 외장 마감</li><li>Saffori Land 실내 놀이공원 일체</li><li>둘레 넓은 지상 주차장</li></ul></section>
@@ -2883,7 +2943,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>거대 박스형 단층/2층 + 실내 놀이공원</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~75,000 m² · GLA ~91,748 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>베이지 석재/프리캐스트 콘크리트, 유리 점포, 메탈 지붕</dd></div><div class="spec-row"><dt>시대</dt><dd>2004 개장</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>거대 박스형 단층/2층 + 실내 놀이공원</dd></div><div class="spec-row"><dt>규모</dt><dd>부지 ~75,000 m² · GLA ~91,748 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>베이지 석재/프리캐스트 콘크리트, 유리 점포, 메탈 지붕</dd></div><div class="spec-row"><dt>시대</dt><dd>2004 개장</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3999642, 50.1165625</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>단층/2층 거대 박스 + 평지붕 + 입구 사인보드</li><li>주변 넓은 지상 주차장 함께 표현</li><li>주소 Prince Mohammad Bin Fahd Road 정확히 — 코르니쉬와 혼동 금지</li></ul></section>
@@ -2915,7 +2975,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Westfield Dammam</h3>
       
-      <div class="card-tags"><span class="tag">쇼핑몰</span> <span class="tag">현대식</span> <span class="tag">사선캐노피</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">현대식</span> <span class="tag">사선캐노피</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>현대식 글라스 파사드 (2층 박스)</li><li>King Abdullah Road 입지</li><li>Westfield 브랜드 사이니지</li><li>292+ 매장 대형 매스</li></ul></section>
@@ -2924,7 +2984,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>현대식 2층 박스 매스</dd></div><div class="spec-row"><dt>규모</dt><dd>~92,000 m² · GLA ~58,000–64,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 클래딩, 석재 톤 액센트</dd></div><div class="spec-row"><dt>시대</dt><dd>2019 (Nakheel) → 2025-12-01 Westfield 리브랜딩</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>현대식 2층 박스 매스</dd></div><div class="spec-row"><dt>규모</dt><dd>~92,000 m² · GLA ~58,000–64,000 m²</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 컴포지트 클래딩, 석재 톤 액센트</dd></div><div class="spec-row"><dt>시대</dt><dd>2019 (Nakheel) → 2025-12-01 Westfield 리브랜딩</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.3915910, 50.0375970</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>깨끗한 모던 2층 박스 + 큰 글라스 파사드 + Westfield 사이니지</li><li>외형은 Nakheel(2019)와 동일 — 사이니지만 Westfield로 갱신</li></ul></section>
@@ -2956,7 +3016,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">King Fahd Causeway</h3>
       
-      <div class="card-tags"><span class="tag">해상교량</span> <span class="tag">25km</span> <span class="tag">인공섬</span> <span class="tag">등대타워</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">해상교량</span> <span class="tag">25km</span> <span class="tag">인공섬</span> <span class="tag">등대타워</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>25 km 해상 코즈웨이 (5교 + 7제방)</li><li>중앙 Passport Island (~660,000 m²)</li><li>65m 양국 타워 레스토랑 2동</li><li>536개 콘크리트 파일런</li></ul></section>
@@ -2965,7 +3025,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>5교량 + 7제방 + 중앙 Passport Island + 양국 타워 레스토랑</dd></div><div class="spec-row"><dt>규모</dt><dd>길이 25 km · Passport Island ~660,000 m² · 타워 65m</dd></div><div class="spec-row"><dt>재료</dt><dd>철근 콘크리트, 강철 보강, 아스팔트 노면, 콘크리트 파일런 536개</dd></div><div class="spec-row"><dt>시대</dt><dd>1986-11-26 개통</dd></div><div class="spec-row"><dt>설계</dt><dd>Ballast Nedam (Netherlands, 주시공)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>5교량 + 7제방 + 중앙 Passport Island + 양국 타워 레스토랑</dd></div><div class="spec-row"><dt>규모</dt><dd>길이 25 km · Passport Island ~660,000 m² · 타워 65m</dd></div><div class="spec-row"><dt>재료</dt><dd>철근 콘크리트, 강철 보강, 아스팔트 노면, 콘크리트 파일런 536개</dd></div><div class="spec-row"><dt>시대</dt><dd>1986-11-26 개통</dd></div><div class="spec-row"><dt>설계</dt><dd>Ballast Nedam (Netherlands, 주시공)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.2083196, 50.2739778</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>지도 앱에서는 조감뷰 + 중간 섬 디테일 포함 권장</li><li>25km 전체는 LOD 단순화 — 중앙 Passport Island + 양 끝 65m 타워 레스토랑 강조</li><li>5교량 / 7제방 비율 + 사우디·바레인 출입국 분리 두 섬 구조 정확히</li></ul></section>
@@ -2998,7 +3058,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Elephant Rock</h3>
       <p class="card-subtitle">(Jabal AlFil, AlUla)</p>
-      <div class="card-tags"><span class="tag">자연암석</span> <span class="tag">사암</span> <span class="tag">아치터널</span> <span class="tag">52m</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">자연암석</span> <span class="tag">사암</span> <span class="tag">아치터널</span> <span class="tag">52m</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>코끼리 모양 실루엣 (긴 코 + 다리 아치)</li><li>약 52m 천연 사암 기둥</li><li>붉은 누비안 사암 질감</li><li>주변 모닥불 라운지 + 좌석</li></ul></section>
@@ -3007,7 +3067,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>천연 사암 기둥 (코끼리 실루엣)</dd></div><div class="spec-row"><dt>규모</dt><dd>~52m 높이</dd></div><div class="spec-row"><dt>재료</dt><dd>누비안 사암 (적·황 풍화), 산화철 패티나</dd></div><div class="spec-row"><dt>시대</dt><dd>천연 형성 (지질학적)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>천연 사암 기둥 (코끼리 실루엣)</dd></div><div class="spec-row"><dt>규모</dt><dd>~52m 높이</dd></div><div class="spec-row"><dt>재료</dt><dd>누비안 사암 (적·황 풍화), 산화철 패티나</dd></div><div class="spec-row"><dt>시대</dt><dd>천연 형성 (지질학적)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>26.6891140, 37.9816444</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>주황-붉은빛 사암 재질 — displacement + 컬러 바리에이션</li><li>야간 조명 연출 (기암 하부 업라이팅) 참고 이미지 존재</li><li>천연물 — 사진 측량 기반 메시 이상적</li><li>좌측 코 아치 비율이 정면 인식의 핵심</li><li>표면: 수평 결 침식 + 따뜻한 적갈색 그라데이션</li></ul></section>
@@ -3039,7 +3099,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Savola Tower</h3>
       
-      <div class="card-tags"><span class="tag">타워</span> <span class="tag">유리커튼월</span> <span class="tag">테이퍼링</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·높이·정확 위치">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타워</span> <span class="tag">유리커튼월</span> <span class="tag">테이퍼링</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·높이·정확 위치">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>사볼라 그룹 로고 사이니지</li><li>유리 커튼월 외피</li><li>제다 인근 입지</li><li>중층 코퍼릿 타워 형태</li></ul></section>
@@ -3048,7 +3108,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중층 오피스 타워 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 클래딩 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중층 오피스 타워 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 알루미늄 클래딩 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤20,000 tris · 대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.6020950, 39.1103642</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>정보 부족 — 일반적 중층 코퍼릿 타워로 일반화</li><li>입면 디테일은 현장 사진 확보 후 보강</li><li>지도 앱: LOD 낮게 + 로고 사이니지 포커스</li></ul></section>
@@ -3080,7 +3140,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Al-Majdoul Tower</h3>
       
-      <div class="card-tags"><span class="tag">사우디최고층</span> <span class="tag">트위스트</span> <span class="tag">380m</span> <span class="tag">KAFD</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 높이·트위스트 형태 사실 여부">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">사우디최고층</span> <span class="tag">트위스트</span> <span class="tag">380m</span> <span class="tag">KAFD</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 높이·트위스트 형태 사실 여부">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>KAFD 스카이라인 일원</li><li>수직 트위스트(나선) 외피 기하</li><li>유리 파사드 패널 띠</li><li>비대칭 상단 마감</li></ul></section>
@@ -3089,7 +3149,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>나선형 트위스트 타워</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 강구조 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>나선형 트위스트 타워</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>유리 커튼월, 강구조 (추정)</dd></div><div class="spec-row spec-row--missing"><dt>시대</dt><dd>—</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7391824, 46.6593862</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>층마다 회전(예: 층당 1–2도)되는 트위스트 매스 — lofted form</li><li>KAFD 다른 타워와 군집 배치 — 단지 컨텍스트와 함께</li></ul></section>
@@ -3121,7 +3181,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Makkah Clock Royal Tower</h3>
       <p class="card-subtitle">(Fairmont / Abraj Al Bait)</p>
-      <div class="card-tags"><span class="tag">601m</span> <span class="tag">초대형시계</span> <span class="tag">초승달크라운</span> <span class="tag">복합단지</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">601m</span> <span class="tag">초대형시계</span> <span class="tag">초승달크라운</span> <span class="tag">복합단지</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>43m 직경 4면 시계</li><li>황금 초승달 첨탑</li><li>‘الله أكبر’ 아랍어 문구</li><li>Masjid al-Haram 인접 거대 매스</li></ul></section>
@@ -3130,7 +3190,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중앙 시계탑 + 6 부속 타워 (ㄷ자 단지)</dd></div><div class="spec-row"><dt>규모</dt><dd>높이 601m · 시계면 직경 ~43m</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤 클래딩, 유리 커튼월, 강구조, 철근 콘크리트 코어, 금박 초승달, 모자이크 시계면</dd></div><div class="spec-row"><dt>시대</dt><dd>2012 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Dar Al-Handasah + SL Rasch (시계·왕관)</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>중앙 시계탑 + 6 부속 타워 (ㄷ자 단지)</dd></div><div class="spec-row"><dt>규모</dt><dd>높이 601m · 시계면 직경 ~43m</dd></div><div class="spec-row"><dt>재료</dt><dd>라임스톤 클래딩, 유리 커튼월, 강구조, 철근 콘크리트 코어, 금박 초승달, 모자이크 시계면</dd></div><div class="spec-row"><dt>시대</dt><dd>2012 완공</dd></div><div class="spec-row"><dt>설계</dt><dd>Dar Al-Handasah + SL Rasch (시계·왕관)</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>≤50,000 tris · 초대형</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>21.4191164, 39.8255149</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>중앙 시계탑 + 6개 부속 타워가 ㄷ자 단지 — 마스터매스 먼저 / 시계면·왕관·초승달 별도 분리</li><li>야간 조명: 시계면 모자이크 녹·금색 발광 — emissive 텍스처 별도</li></ul></section>
@@ -3162,7 +3222,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
       </div>
       <h3 class="card-title">Boulevard World</h3>
       
-      <div class="card-tags"><span class="tag">테마파크</span> <span class="tag">세계테마존</span> <span class="tag">야간조명</span><span class="tag tag-draft" title="검증 미완: 연도별 정확한 존 구성·운영 주최">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">테마파크</span> <span class="tag">세계테마존</span> <span class="tag">야간조명</span><span class="tag tag-draft" title="검증 미완: 연도별 정확한 존 구성·운영 주최">DRAFT</span></div>
     </header>
 
     <section class="card-section must-have-section"><h4 class="section-heading section-heading--accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" fill="currentColor"/></svg>필수 모델링 요소</h4><ul class="must-have-list"><li>축소 에펠탑 포토존</li><li>이집트 스핑크스/피라미드 미니어처</li><li>약 11개 세계 테마 존 거리</li><li>대형 인공 호수 + 곤돌라</li></ul></section>
@@ -3171,7 +3231,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <section class="card-section card-section--structure">
       <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>시즌제 테마 단지 (~11개 국가 존)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>임시 강·스캐폴드 구조, GFRC·폼 조각 파사드, 테마 클래딩, LED 스크린</dd></div><div class="spec-row"><dt>시대</dt><dd>시즌제 (Riyadh Season)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div></dl>
+      <dl class="spec-list"><div class="spec-row"><dt>형태</dt><dd>시즌제 테마 단지 (~11개 국가 존)</dd></div><div class="spec-row spec-row--missing"><dt>규모</dt><dd>—</dd></div><div class="spec-row"><dt>재료</dt><dd>임시 강·스캐폴드 구조, GFRC·폼 조각 파사드, 테마 클래딩, LED 스크린</dd></div><div class="spec-row"><dt>시대</dt><dd>시즌제 (Riyadh Season)</dd></div><div class="spec-row spec-row--missing"><dt>설계</dt><dd>—</dd></div><div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>별도 협의 · 단지</dd></div><div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>24.7765816, 46.6018485</dd></div></dl>
     </section>
 
     <section class="card-section card-modeling-notes"><h4 class="section-heading"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Modeling Notes</h4><ul class="key-list"><li>시즌마다 레이아웃 변경 — &#x27;존 마스터플랜&#x27; 단위 모듈화 (시즌별 교체 가능)</li><li>에펠탑·스핑크스 등은 축소 페이크 — 사진 기준 과장 비례로 모델링</li></ul></section>
