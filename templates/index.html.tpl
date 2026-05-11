@@ -377,6 +377,100 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink-mute);
 }
 
+/* ───── DELIVERY SPEC (글로벌 납품 사양) ───── */
+.delivery-spec {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  padding: 18px 22px 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.delivery-spec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.delivery-spec-mark {
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.delivery-spec-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.delivery-spec-sub {
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+
+.delivery-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 8px 32px;
+}
+
+.delivery-spec-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.delivery-spec-row dt {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+
+.delivery-spec-row dd {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.delivery-spec-row dd strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.budget-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget-table span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.budget-table em {
+  font-style: normal;
+  color: var(--ink-mute);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 /* ───── GLOSSARY (collapsible) ───── */
 .glossary {
   margin-bottom: 56px;
@@ -1504,6 +1598,54 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
         <div class="stat"><span class="stat-num">{{T3}}</span><span class="stat-label">Tier 3 · 추가</span></div>
         <div class="stat"><span class="stat-num">{{CITIES}}</span><span class="stat-label">Cities</span></div>
       </div>
+    </section>
+
+    <!-- ───── DELIVERY SPEC (글로벌 납품 사양 헤더) ───── -->
+    <section class="delivery-spec">
+      <div class="delivery-spec-head">
+        <span class="delivery-spec-mark">◆</span>
+        <span class="delivery-spec-title">납품 사양</span>
+        <span class="delivery-spec-sub">전 카드 공통 모델링 룰</span>
+      </div>
+      <dl class="delivery-spec-grid">
+        <div class="delivery-spec-row">
+          <dt>단위</dt>
+          <dd><strong>미터(m)</strong> — 익스포트 전 씬 단위 확인 필수, 불일치 시 납품 불합격</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>좌표계</dt>
+          <dd><strong>EPSG:4326 (WGS84)</strong> 경위도 · 소수점 8자리 이상 정밀도</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>포맷</dt>
+          <dd>제작: <strong>glTF 2.0</strong> (.gltf + .bin) → 최종: <strong>.glb</strong> 바이너리</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>메타데이터</dt>
+          <dd>.json — 원점 절대좌표 + Azimuth + Offset + Scale</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>텍스처</dt>
+          <dd>기본 <strong>미포함</strong> · 적용 시 AO 미적용 원본 + AO 맵(.png) 별도 채널 분리</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>Footprint</dt>
+          <dd>위탁자 제공 <strong>EPSG:3857</strong> 폴리곤 기준 위치 정합 + 기저면 정렬</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>메시</dt>
+          <dd>가시 면(Visible Face)만 · 삼각형 면 · 비가시·하단·접합 면 제외 · Non-manifold 미허용</dd>
+        </div>
+        <div class="delivery-spec-row">
+          <dt>폴리곤 한도</dt>
+          <dd class="budget-table">
+            <span><em>소형</em>(&lt;10m) 3,000</span>
+            <span><em>중형</em>(10–50m) 10,000</span>
+            <span><em>대형</em>(50–200m) 20,000</span>
+            <span><em>초대형</em>(&gt;200m) 50,000</span>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <section class="glossary" id="glossary">

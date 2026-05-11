@@ -274,10 +274,28 @@
         "lat": 24.7777103,
         "lon": 46.6062157
       },
-      "size_class": "대형",
-      "tri_budget": 20000,
+      "size_class": "초대형",
+      "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "part_heights": [
+        {
+          "part": "건물 높이",
+          "value": "47 m"
+        },
+        {
+          "part": "외부 평면",
+          "value": "220 × 150 m"
+        },
+        {
+          "part": "지붕 표면적",
+          "value": "37,991 m²"
+        },
+        {
+          "part": "수용 인원",
+          "value": "28,000"
+        }
+      ]
     }
   },
   {
@@ -2214,7 +2232,21 @@
       "size_class": "중형",
       "tri_budget": 10000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "part_heights": [
+        {
+          "part": "최대 분수 높이",
+          "value": "312 m"
+        },
+        {
+          "part": "분사 속도",
+          "value": "375 km/h"
+        },
+        {
+          "part": "공중 수괴 질량 (최대)",
+          "value": "16 tonnes"
+        }
+      ]
     }
   },
   {
@@ -3056,7 +3088,41 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "part_heights": [
+        {
+          "part": "총 길이",
+          "value": "25 km"
+        },
+        {
+          "part": "교량 누적 길이",
+          "value": "12.43 km"
+        },
+        {
+          "part": "최장 교량 길이",
+          "value": "5,194 m"
+        },
+        {
+          "part": "최장 스팬",
+          "value": "150 m"
+        },
+        {
+          "part": "콘크리트 교각 수",
+          "value": "536 pylons"
+        },
+        {
+          "part": "Passport Island 면적",
+          "value": "660,000 m²"
+        },
+        {
+          "part": "타워 레스토랑 높이",
+          "value": "65 m"
+        },
+        {
+          "part": "도로 전체 폭",
+          "value": "23 m"
+        }
+      ]
     }
   },
   {
@@ -3306,7 +3372,29 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "part_heights": [
+        {
+          "part": "총 높이 (첨두)",
+          "value": "244.55 m"
+        },
+        {
+          "part": "지상 층수",
+          "value": "54 floors"
+        },
+        {
+          "part": "지하 층수",
+          "value": "3 levels"
+        },
+        {
+          "part": "총 회전 각도",
+          "value": "135°"
+        },
+        {
+          "part": "층당 회전",
+          "value": "2.5° / floor"
+        }
+      ]
     }
   },
   {
@@ -3402,7 +3490,45 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "part_heights": [
+        {
+          "part": "총 높이 (첨두 포함)",
+          "value": "601 m"
+        },
+        {
+          "part": "지붕 높이 (시계 하단)",
+          "value": "508 m"
+        },
+        {
+          "part": "첨탑 (스파이어)",
+          "value": "93 m"
+        },
+        {
+          "part": "시계 자체 높이",
+          "value": "57 m"
+        },
+        {
+          "part": "시계 면",
+          "value": "43 × 43 m"
+        },
+        {
+          "part": "분침 길이",
+          "value": "23 m"
+        },
+        {
+          "part": "시침 길이",
+          "value": "18 m"
+        },
+        {
+          "part": "전망대 높이",
+          "value": "484 m"
+        },
+        {
+          "part": "층수",
+          "value": "120 floors"
+        }
+      ]
     }
   },
   {

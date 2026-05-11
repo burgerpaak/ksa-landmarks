@@ -158,6 +158,26 @@ def render_card(lm: dict) -> str:
         )
     struct_rows = "".join(rows_html)
 
+    # Part Heights (권위 자료 기반 부분별 높이/치수 — 데이터 있는 카드만 노출)
+    ph_items = modeling.get("part_heights", [])
+    part_heights_html = ""
+    if ph_items:
+        ph_rows = "".join(
+            f'<div class="spec-row"><dt>{esc(p["part"])}</dt><dd>{esc(p["value"])}</dd></div>'
+            for p in ph_items
+        )
+        part_heights_html = (
+            '<section class="card-section card-part-heights">'
+            '<h4 class="section-heading section-heading--accent">'
+            '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">'
+            '<path d="M1 9 L1 5 L4 5 L4 1 L9 1 L9 9 Z" stroke="currentColor" stroke-width="1" fill="none"/>'
+            '</svg>'
+            'Part Heights'
+            '</h4>'
+            f'<dl class="spec-list">{ph_rows}</dl>'
+            '</section>'
+        )
+
     # Modeling Notes (기술 팁 — 분리)
     mn_items = lm.get("modeling_notes", [])
     modeling_notes_html = ""
@@ -268,6 +288,8 @@ def render_card(lm: dict) -> str:
       <h4 class="section-heading">Structure</h4>
       <dl class="spec-list">{struct_rows}</dl>
     </section>
+
+    {part_heights_html}
 
     {modeling_notes_html}
 
