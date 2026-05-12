@@ -178,8 +178,8 @@
         "lat": 24.6465518,
         "lon": 46.709169
       },
-      "size_class": "중형",
-      "tri_budget": 10000,
+      "size_class": "대형",
+      "tri_budget": 20000,
       "status": "완공",
       "task_type": "신규제작"
     }
