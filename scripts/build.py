@@ -239,9 +239,10 @@ def render_card(lm: dict) -> str:
     wgs = modeling.get("wgs84")
     if wgs and wgs.get("lat") is not None and wgs.get("lon") is not None:
         # @lat,lon,altitude_a,distance_d,fov_y,heading_h,tilt_t,roll_r
+        # 탑뷰 + 좁은 FOV로 orthographic 느낌 (1500m 거리, 20° FOV, 기울기 0)
         gearth_url = (
             f"https://earth.google.com/web/@{wgs['lat']},{wgs['lon']},"
-            f"0a,500d,35y,0h,60t,0r"
+            f"0a,1500d,20y,0h,0t,0r"
         )
         links_parts.append(
             f'<a class="ref-link" href="{esc(gearth_url)}" target="_blank" rel="noopener">'
