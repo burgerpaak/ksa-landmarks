@@ -235,6 +235,20 @@ def render_card(lm: dict) -> str:
         f'<path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/>'
         f'</svg></a>'
     )
+    # Google Earth (3D 오블리크 뷰) — wgs84 좌표가 있으면 자동 생성
+    wgs = modeling.get("wgs84")
+    if wgs and wgs.get("lat") is not None and wgs.get("lon") is not None:
+        # @lat,lon,altitude_a,distance_d,fov_y,heading_h,tilt_t,roll_r
+        gearth_url = (
+            f"https://earth.google.com/web/@{wgs['lat']},{wgs['lon']},"
+            f"0a,500d,35y,0h,60t,0r"
+        )
+        links_parts.append(
+            f'<a class="ref-link" href="{esc(gearth_url)}" target="_blank" rel="noopener">'
+            f'<span>Google Earth</span><svg width="10" height="10" viewBox="0 0 10 10">'
+            f'<path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/>'
+            f'</svg></a>'
+        )
     for extra in lm["links"]["extras"]:
         links_parts.append(
             f'<a class="ref-link" href="{esc(extra["url"])}" target="_blank" rel="noopener">'
