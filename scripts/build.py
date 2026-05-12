@@ -238,15 +238,24 @@ def render_card(lm: dict) -> str:
     # Google Earth (3D 오블리크 뷰) — wgs84 좌표가 있으면 자동 생성
     wgs = modeling.get("wgs84")
     if wgs and wgs.get("lat") is not None and wgs.get("lon") is not None:
+        lat, lon = wgs["lat"], wgs["lon"]
         # @lat,lon,altitude_a,distance_d,fov_y,heading_h,tilt_t,roll_r
         # 탑뷰 + 좁은 FOV로 orthographic 느낌 (1500m 거리, 20° FOV, 기울기 0)
         gearth_url = (
-            f"https://earth.google.com/web/@{wgs['lat']},{wgs['lon']},"
+            f"https://earth.google.com/web/@{lat},{lon},"
             f"0a,1500d,20y,0h,0t,0r"
         )
         links_parts.append(
             f'<a class="ref-link" href="{esc(gearth_url)}" target="_blank" rel="noopener">'
             f'<span>Google Earth</span><svg width="10" height="10" viewBox="0 0 10 10">'
+            f'<path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/>'
+            f'</svg></a>'
+        )
+        # OpenStreetMap (실제 building footprint 확인) — 줌 19로 건물 외곽선 보이게
+        osm_url = f"https://www.openstreetmap.org/?mlat={lat}&mlon={lon}#map=19/{lat}/{lon}"
+        links_parts.append(
+            f'<a class="ref-link" href="{esc(osm_url)}" target="_blank" rel="noopener">'
+            f'<span>OSM (footprint)</span><svg width="10" height="10" viewBox="0 0 10 10">'
             f'<path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/>'
             f'</svg></a>'
         )
