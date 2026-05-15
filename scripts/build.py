@@ -11,6 +11,7 @@ data/landmarks.json + data/glossary.json을 읽어 단일 HTML 파일을 생성.
 import argparse
 import html as htmllib
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -95,49 +96,64 @@ def render_card(lm: dict) -> str:
     name_lines_html = "<br>".join(esc(l) for l in lm["name_lines"]) if lm.get("name_lines") else esc(lm["name"])
     subtitle_html = f'<p class="card-subtitle">{esc(lm["subtitle"])}</p>' if lm.get("subtitle") else ""
 
-    # Must-have (강조 — 이게 빠지면 그 건물이 아닌 핵심 요소들)
+    # 헤어라인 리스트 항목 헬퍼
+    def _hl_item(primary: str, aux: str = "", cls: str = "") -> str:
+        aux_html = f'<div class="hl-aux">{esc(aux)}</div>' if aux else ""
+        return f'<div class="hl-item{cls}"><div class="hl-primary">{esc(primary)}</div>{aux_html}</div>'
+
+    def _hl_kv(label: str, value: str, cls: str = "") -> str:
+        return f'<div class="hl-item hl-item--kv{cls}"><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>'
+
+    # must_have / key_points: 마지막 괄호를 보조 텍스트로 분리
+    def _split_paren_aux(s: str) -> tuple:
+        m = re.match(r"^(.*?)\s*\(([^()]+)\)\s*$", s.strip())
+        if m:
+            return m.group(1).strip(), m.group(2).strip()
+        return s.strip(), ""
+
+    # Must-have (필수 모델링 요소)
     mh_items = lm.get("must_have", [])
     must_have_html = ""
     if mh_items:
-        mh_lis = "".join(f"<li>{esc(x)}</li>" for x in mh_items)
+        rows = []
+        for item in mh_items:
+            primary, aux = _split_paren_aux(item)
+            rows.append(_hl_item(primary, aux))
         must_have_html = (
-            '<section class="card-section must-have-section">'
-            '<h4 class="section-heading section-heading--accent">'
-            '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">'
-            '<path d="M5 0.5 L6 3.5 L9 4 L6.7 6.2 L7.3 9.3 L5 7.8 L2.7 9.3 L3.3 6.2 L1 4 L4 3.5 Z" '
-            'fill="currentColor"/></svg>'
-            '필수 모델링 요소'
-            '</h4>'
-            f'<ul class="must-have-list">{mh_lis}</ul>'
+            '<section class="card-section card-section--must-have">'
+            '<h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4>'
+            f'<div class="hairline-list">{"".join(rows)}</div>'
             '</section>'
         )
 
     # Key Points
-    kps = "".join(f"<li>{esc(kp)}</li>" for kp in lm["key_points"])
-    key_points_html = (
-        '<section class="card-section">'
-        '<h4 class="section-heading">Key Points</h4>'
-        f'<ul class="key-list">{kps}</ul>'
-        '</section>'
-    ) if kps else ""
+    kps_data = lm.get("key_points", [])
+    key_points_html = ""
+    if kps_data:
+        rows = []
+        for kp in kps_data:
+            primary, aux = _split_paren_aux(kp)
+            rows.append(_hl_item(primary, aux))
+        key_points_html = (
+            '<section class="card-section">'
+            '<h4 class="section-eyebrow">Key Points</h4>'
+            f'<div class="hairline-list">{"".join(rows)}</div>'
+            '</section>'
+        )
 
-    # Structure: 핵심 5라벨을 항상 같은 순서로 노출 (없으면 "—"), 그 외 추가 라벨은 뒤에
+    # Structure: 핵심 라벨 5종 + 추가 라벨 + 모델링 메타 (폴리곤·좌표)
     structure = [s for s in lm.get("structure", []) if s["label"] != "확인필요"]
     struct_map = {s["label"]: s["value"] for s in structure}
     extras = [s for s in structure if s["label"] not in CORE_STRUCT_LABELS]
     rows_html = []
     for label in CORE_STRUCT_LABELS:
         val = struct_map.get(label, "—")
-        cls = "" if val != "—" else " spec-row--missing"
-        rows_html.append(
-            f'<div class="spec-row{cls}"><dt>{esc(label)}</dt><dd>{esc(val)}</dd></div>'
-        )
+        cls = "" if val != "—" else " hl-item--missing"
+        rows_html.append(_hl_kv(label, val, cls))
     for s in extras:
-        rows_html.append(
-            f'<div class="spec-row spec-row--extra"><dt>{esc(s["label"])}</dt><dd>{esc(s["value"])}</dd></div>'
-        )
+        rows_html.append(_hl_kv(s["label"], s["value"], " hl-item--extra"))
 
-    # Modeling 사양 행 — 폴리곤 예산 + WGS84 좌표 (스펙 시트 핵심)
+    # Modeling 메타 (폴리곤 예산 — 취소선, WGS84 좌표)
     size_class = modeling.get("size_class")
     tri_budget = modeling.get("tri_budget")
     wgs84 = modeling.get("wgs84")
@@ -146,35 +162,23 @@ def render_card(lm: dict) -> str:
             budget_val = f"≤{tri_budget:,} tris · {size_class}"
         else:
             budget_val = f"별도 협의 · {size_class}"
-        rows_html.append(
-            f'<div class="spec-row spec-row--budget"><dt>폴리곤 예산</dt><dd>{esc(budget_val)}</dd></div>'
-        )
+        rows_html.append(_hl_kv("폴리곤 예산", budget_val, " hl-item--deprecated"))
     if wgs84:
         lat = wgs84.get("lat")
         lon = wgs84.get("lon")
         coord_val = f"{lat:.7f}, {lon:.7f}"
-        rows_html.append(
-            f'<div class="spec-row spec-row--coord"><dt>WGS84</dt><dd>{esc(coord_val)}</dd></div>'
-        )
+        rows_html.append(_hl_kv("WGS84", coord_val, " hl-item--coord"))
     struct_rows = "".join(rows_html)
 
-    # Part Heights (권위 자료 기반 부분별 높이/치수 — 데이터 있는 카드만 노출)
+    # Part Heights
     ph_items = modeling.get("part_heights", [])
     part_heights_html = ""
     if ph_items:
-        ph_rows = "".join(
-            f'<div class="spec-row"><dt>{esc(p["part"])}</dt><dd>{esc(p["value"])}</dd></div>'
-            for p in ph_items
-        )
+        ph_rows = "".join(_hl_kv(p["part"], p["value"]) for p in ph_items)
         part_heights_html = (
-            '<section class="card-section card-part-heights">'
-            '<h4 class="section-heading section-heading--accent">'
-            '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">'
-            '<path d="M1 9 L1 5 L4 5 L4 1 L9 1 L9 9 Z" stroke="currentColor" stroke-width="1" fill="none"/>'
-            '</svg>'
-            'Part Heights'
-            '</h4>'
-            f'<dl class="spec-list">{ph_rows}</dl>'
+            '<section class="card-section">'
+            '<h4 class="section-eyebrow">Part Heights</h4>'
+            f'<dl class="hairline-list hairline-list--kv">{ph_rows}</dl>'
             '</section>'
         )
 
@@ -182,15 +186,14 @@ def render_card(lm: dict) -> str:
     mn_items = lm.get("modeling_notes", [])
     modeling_notes_html = ""
     if mn_items:
-        mn_lis = "".join(f"<li>{esc(x)}</li>" for x in mn_items)
+        mn_rows = []
+        for note in mn_items:
+            primary, aux = _split_paren_aux(note)
+            mn_rows.append(_hl_item(primary, aux))
         modeling_notes_html = (
-            '<section class="card-section card-modeling-notes">'
-            '<h4 class="section-heading">'
-            '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">'
-            '<path d="M2 5 L4.5 7.5 L8 2.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-            'Modeling Notes'
-            '</h4>'
-            f'<ul class="key-list">{mn_lis}</ul>'
+            '<section class="card-section card-section--modeling-notes">'
+            '<h4 class="section-eyebrow">Modeling Notes</h4>'
+            f'<div class="hairline-list">{"".join(mn_rows)}</div>'
             '</section>'
         )
 
@@ -328,8 +331,8 @@ def render_card(lm: dict) -> str:
     {key_points_html}
 
     <section class="card-section card-section--structure">
-      <h4 class="section-heading">Structure</h4>
-      <dl class="spec-list">{struct_rows}</dl>
+      <h4 class="section-eyebrow">Structure</h4>
+      <dl class="hairline-list hairline-list--kv">{struct_rows}</dl>
     </section>
 
     {part_heights_html}
@@ -362,9 +365,9 @@ def render_glossary(glossary: list) -> str:
     parts = []
     for cat in glossary:
         terms_html = "".join(
-            f'<div class="gloss-term">'
-            f'<div class="gloss-term-head">'
-            f'<h4 class="gloss-kr">{esc(t["kr"])}</h4>'
+            f'<div class="hl-item gloss-term">'
+            f'<div class="gloss-term-row">'
+            f'<span class="gloss-kr">{esc(t["kr"])}</span>'
             f'<span class="gloss-en">{esc(t["en"])}</span>'
             f"</div>"
             f'<p class="gloss-desc">{esc(t["desc"])}</p>'
@@ -375,10 +378,10 @@ def render_glossary(glossary: list) -> str:
         parts.append(f"""
 <div class="gloss-cat">
   <div class="gloss-cat-head">
-    <h3 class="gloss-cat-title">{esc(cat["category"])}</h3>
+    <h3 class="section-eyebrow section-eyebrow--accent">{esc(cat["category"])}</h3>
     <p class="gloss-cat-desc">{esc(cat["desc"])}</p>
   </div>
-  <div class="gloss-grid">{terms_html}</div>
+  <div class="hairline-list">{terms_html}</div>
 </div>""")
     return "".join(parts)
 

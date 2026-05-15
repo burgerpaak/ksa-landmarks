@@ -588,78 +588,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .gloss-cat { margin-top: 28px; }
-.gloss-cat:first-child { margin-top: 16px; }
+.gloss-cat:first-child { margin-top: 4px; }
 
-.gloss-cat-head { margin-bottom: 16px; }
-
-.gloss-cat-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
+.gloss-cat-head { margin-bottom: 8px; }
 
 .gloss-cat-desc {
   font-size: 12px;
   color: var(--ink-mute);
+  margin-top: 2px;
 }
 
-.gloss-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-}
+/* glossary 항목 — hairline-list 위에 얹은 의미적 스타일 */
+.gloss-term { padding: 12px 0 14px; }
 
-.gloss-term {
-  background: var(--bg-elev);
-  padding: 14px 16px;
-  transition: background 0.14s ease;
-}
-
-.gloss-term:hover { background: var(--bg-sunken); }
-
-.gloss-term-head {
+.gloss-term-row {
   display: flex;
   align-items: baseline;
-  gap: 8px;
-  margin-bottom: 6px;
+  gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
 .gloss-kr {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 .gloss-en {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
   color: var(--accent);
   letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 .gloss-desc {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--ink-soft);
   line-height: 1.55;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .gloss-where {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
   color: var(--ink-mute);
-  letter-spacing: 0.02em;
-  padding-top: 6px;
-  border-top: 1px dashed var(--border);
+  letter-spacing: 0;
+  margin: 6px 0 0;
 }
 
 .gloss-where::before {
@@ -779,7 +756,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* compact 모드: 필수요소 + Structure만 노출, Key Points·Modeling Notes 숨김 */
-body.density-compact .card-section:not(.must-have-section):not(.card-section--structure) {
+body.density-compact .card-section:not(.card-section--must-have):not(.card-section--structure) {
   display: none;
 }
 
@@ -1001,10 +978,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 }
 
 .card-content {
-  padding: 20px 22px 22px;
+  padding: 22px 24px 22px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
   flex: 1;
 }
 
@@ -1015,9 +992,9 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 }
 
 .card-meta {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-mute);
   display: flex;
@@ -1028,16 +1005,16 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
 .card-title {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 22px;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
 .card-subtitle {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 400;
   color: var(--ink-mute);
   letter-spacing: 0;
@@ -1047,8 +1024,8 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 .card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 4px;
+  gap: 5px;
+  margin-top: 6px;
 }
 
 .tag {
@@ -1077,78 +1054,101 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   gap: 8px;
 }
 
-.section-heading {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+/* ───── iOS section eyebrow ───── */
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-mute);
+  margin: 0 0 10px;
 }
 
-.key-list {
-  list-style: none;
+.section-eyebrow--accent {
+  color: var(--accent);
+}
+
+/* ───── HAIRLINE LIST (iOS Settings 그룹 리스트) ───── */
+.hairline-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  margin: 0;
+  padding: 0;
 }
 
-.key-list li {
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  padding-left: 16px;
-  position: relative;
+.hairline-list--kv { display: block; }
+
+.hl-item {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.key-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 1px;
-  background: var(--accent);
+.hl-item:first-child { padding-top: 2px; }
+.hl-item:last-child { border-bottom: none; padding-bottom: 2px; }
+
+.hl-primary {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
 }
 
-.spec-list {
-  display: grid;
-  gap: 6px;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 14px;
-}
-
-.spec-row {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 10px;
+.hl-aux {
+  margin-top: 3px;
   font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-mute);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* Key/Value 행 (Structure, Part Heights) */
+.hl-item--kv {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
   align-items: baseline;
 }
 
-.spec-row dt {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
-  color: var(--ink-mute);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.spec-row dd {
-  color: var(--ink);
+.hl-item--kv dt {
+  margin: 0;
+  font-size: 12px;
   font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0;
 }
 
-.spec-row--missing dd {
+.hl-item--kv dd {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hl-item--missing dd {
   color: var(--ink-mute);
   font-weight: 400;
   font-style: italic;
 }
 
-.spec-row--extra dt {
+.hl-item--extra dt { color: var(--ink-mute); }
+
+.hl-item--deprecated dt,
+.hl-item--deprecated dd {
   color: var(--ink-mute);
+  font-weight: 400;
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-mute);
+}
+
+.hl-item--coord dd {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0;
 }
 
 /* DRAFT 핀 — 카드 헤더의 검증 미완 표지 */
@@ -1208,47 +1208,9 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
 }
 
-/* 폴리곤 예산 행 — 거의 안 맞으므로 취소선 처리 */
-.spec-row--budget dt {
-  color: var(--ink-mute);
-  font-weight: 500;
-  text-decoration: line-through;
-  text-decoration-color: var(--ink-mute);
-}
-
-.spec-row--budget dd {
-  color: var(--ink-mute);
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  text-decoration: line-through;
-  text-decoration-color: var(--ink-mute);
-}
-
-/* 글로벌 납품 사양 — 취소선 행 (폴리곤 한도) */
-.spec-row--strikethrough dt,
-.spec-row--strikethrough dd,
-.spec-row--strikethrough dd strong,
-.spec-row--strikethrough dd em,
-.spec-row--strikethrough dd span {
-  text-decoration: line-through;
-  text-decoration-color: var(--ink-mute);
-  color: var(--ink-mute);
-  opacity: 0.7;
-}
-
-/* WGS84 좌표 행 — 등폭 숫자로 정렬 */
-.spec-row--coord dd {
-  font-variant-numeric: tabular-nums;
-  font-size: 11px;
-  letter-spacing: 0.01em;
-}
-
+/* Structure 섹션을 카드 하단에 정렬 (footer 위로) */
 .card-content > .card-section--structure {
   margin-top: auto;
-}
-
-.card-content > .card-modeling-notes {
-  margin-top: 0;
 }
 
 .card-footer {
@@ -1256,102 +1218,15 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   border-top: 1px solid var(--border);
 }
 
-/* ───── MUST-HAVE (필수 모델링 요소) ───── */
-.must-have-section {
-  background: color-mix(in srgb, var(--accent) 9%, var(--bg-elev));
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
-  border-radius: 10px;
-  padding: 12px 14px;
-  position: relative;
-}
-
-.must-have-section::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 3px;
-  background: var(--accent);
-  border-radius: 0 2px 2px 0;
-}
-
-.section-heading--accent {
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.section-heading--accent svg {
-  flex-shrink: 0;
-}
-
-.must-have-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding-left: 0;
-}
-
-.must-have-list li {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.5;
-  padding-left: 18px;
-  position: relative;
-}
-
-.must-have-list li::before {
-  content: '◆';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--accent);
-  font-size: 9px;
-  line-height: 22px;
-}
-
-/* ───── MODELING NOTES (기술 팁) ───── */
-.card-modeling-notes {
-  background: var(--bg-sunken);
-  border: 1px dashed var(--border-strong);
-  border-radius: 8px;
-  padding: 10px 12px;
-  margin-top: 8px;
-}
-
-.card-modeling-notes .section-heading {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+/* ───── Section variants (must-have / modeling-notes) ───── */
+.card-section--modeling-notes .hl-primary {
+  font-size: 12.5px;
+  font-weight: 400;
   color: var(--ink-soft);
-  margin-bottom: 6px;
 }
 
-.card-modeling-notes .section-heading svg {
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.card-modeling-notes .section-heading {
-  font-size: 9px;
-}
-
-.card-modeling-notes .key-list li {
-  font-size: 11px;
-  color: var(--ink-mute);
-  line-height: 1.55;
-  opacity: 0.92;
-}
-
-.card-modeling-notes .key-list li::before {
-  background: var(--ink-mute);
-  opacity: 0.6;
+.card-section--modeling-notes .hl-aux {
+  font-size: 11.5px;
 }
 
 /* ───── GLOSSARY HOVER MARK ───── */
