@@ -379,33 +379,33 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ───── DELIVERY SPEC (글로벌 납품 사양) ───── */
 .delivery-spec {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--bg-elev);
-  padding: 18px 22px 20px;
+  padding: 22px 26px 24px;
   border-left: 3px solid var(--accent);
 }
 
 .delivery-spec-head {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin-bottom: 14px;
-  padding-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
 
 .delivery-spec-mark {
   color: var(--accent);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .delivery-spec-title {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink);
 }
@@ -413,62 +413,92 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .delivery-spec-sub {
   font-size: 12px;
   color: var(--ink-mute);
+  letter-spacing: 0.02em;
 }
 
+/* 타일 그리드 — 각 사양 = 독립 카드 */
 .delivery-spec-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 8px 32px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
 }
 
 .delivery-spec-row {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 12px;
-  align-items: baseline;
-  font-size: 12px;
-  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--bg-sunken);
+  border-radius: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 50%, var(--border));
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.delivery-spec-row:hover {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 4%, var(--bg-sunken));
 }
 
 .delivery-spec-row dt {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
   font-size: 10px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-mute);
-  font-weight: 500;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0;
 }
 
 .delivery-spec-row dd {
+  margin: 0;
   color: var(--ink-soft);
-  line-height: 1.55;
+  line-height: 1.5;
+  font-size: 13px;
 }
 
 .delivery-spec-row dd strong {
+  display: inline-block;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+}
+
+/* 폴리곤 한도 타일 — 전체 너비 점유 + 취소선 */
+.delivery-spec-row.spec-row--strikethrough {
+  grid-column: 1 / -1;
+  border-left-color: var(--border);
+  opacity: 0.55;
+}
+
+.delivery-spec-row.spec-row--strikethrough:hover {
+  border-left-color: var(--border);
+  background: var(--bg-sunken);
 }
 
 .budget-table {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 14px;
+  gap: 10px 22px;
   font-variant-numeric: tabular-nums;
+  margin-top: 2px;
 }
 
 .budget-table span {
   display: inline-flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
 }
 
 .budget-table em {
   font-style: normal;
   color: var(--ink-mute);
   font-size: 10px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ───── GLOSSARY (collapsible) ───── */
