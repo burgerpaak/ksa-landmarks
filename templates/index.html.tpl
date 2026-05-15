@@ -90,25 +90,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .brand-mark {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: -0.02em;
   color: var(--ink);
+  line-height: 1.1;
 }
 
 .brand-meta {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
+  font-family: var(--mono);
+  font-size: 9.5px;
   color: var(--ink-mute);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  margin-top: 3px;
+  line-height: 1;
 }
 
 .search-wrap {
