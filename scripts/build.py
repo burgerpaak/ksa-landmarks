@@ -182,20 +182,7 @@ def render_card(lm: dict) -> str:
             '</section>'
         )
 
-    # Modeling Notes (기술 팁 — 분리)
-    mn_items = lm.get("modeling_notes", [])
-    modeling_notes_html = ""
-    if mn_items:
-        mn_rows = []
-        for note in mn_items:
-            primary, aux = _split_paren_aux(note)
-            mn_rows.append(_hl_item(primary, aux))
-        modeling_notes_html = (
-            '<section class="card-section card-section--modeling-notes">'
-            '<h4 class="section-eyebrow">Modeling Notes</h4>'
-            f'<div class="hairline-list">{"".join(mn_rows)}</div>'
-            '</section>'
-        )
+    # Modeling Notes 섹션 제거됨
 
     # Tags
     tag_html = " ".join(f'<span class="tag">{esc(t)}</span>' for t in lm["tags"])
@@ -336,8 +323,6 @@ def render_card(lm: dict) -> str:
     </section>
 
     {part_heights_html}
-
-    {modeling_notes_html}
 
     <footer class="card-footer">
       <div class="ref-links">{links_html}</div>

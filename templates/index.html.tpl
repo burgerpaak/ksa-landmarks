@@ -1219,16 +1219,6 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   border-top: 1px solid var(--border);
 }
 
-/* ───── Section variants (must-have / modeling-notes) ───── */
-.card-section--modeling-notes .hl-primary {
-  font-size: 12.5px;
-  font-weight: 400;
-  color: var(--ink-soft);
-}
-
-.card-section--modeling-notes .hl-aux {
-  font-size: 11.5px;
-}
 
 /* ───── GLOSSARY HOVER MARK ───── */
 .gloss-mark {
