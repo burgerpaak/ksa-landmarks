@@ -503,13 +503,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 13px;
 }
 
-.delivery-spec .spec-item--deprecated { opacity: 0.45; }
-
-.delivery-spec .spec-item--deprecated dt,
-.delivery-spec .spec-item--deprecated dd {
-  text-decoration: line-through;
-  text-decoration-color: var(--ink-mute);
-}
+.delivery-spec .spec-item--deprecated { opacity: 0.65; }
 
 .delivery-spec .budget-pill {
   display: inline-block;
