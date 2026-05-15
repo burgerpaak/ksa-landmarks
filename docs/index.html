@@ -1148,16 +1148,32 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
 }
 
-/* 폴리곤 예산 행 — 모델러의 첫 질문 답 */
+/* 폴리곤 예산 행 — 거의 안 맞으므로 취소선 처리 */
 .spec-row--budget dt {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--ink-mute);
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-mute);
 }
 
 .spec-row--budget dd {
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--ink-mute);
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-mute);
+}
+
+/* 글로벌 납품 사양 — 취소선 행 (폴리곤 한도) */
+.spec-row--strikethrough dt,
+.spec-row--strikethrough dd,
+.spec-row--strikethrough dd strong,
+.spec-row--strikethrough dd em,
+.spec-row--strikethrough dd span {
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-mute);
+  color: var(--ink-mute);
+  opacity: 0.7;
 }
 
 /* WGS84 좌표 행 — 등폭 숫자로 정렬 */
@@ -1690,7 +1706,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
         </div>
         <div class="delivery-spec-row">
           <dt>포맷</dt>
-          <dd>제작: <strong>glTF 2.0</strong> (.gltf + .bin) → 최종: <strong>.glb</strong> 바이너리</dd>
+          <dd><strong>.glb</strong> 바이너리</dd>
         </div>
         <div class="delivery-spec-row">
           <dt>메타데이터</dt>
@@ -1698,7 +1714,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
         </div>
         <div class="delivery-spec-row">
           <dt>텍스처</dt>
-          <dd>기본 <strong>미포함</strong> · 적용 시 AO 미적용 원본 + AO 맵(.png) 별도 채널 분리</dd>
+          <dd>기본 <strong>미포함</strong></dd>
         </div>
         <div class="delivery-spec-row">
           <dt>Footprint</dt>
@@ -1708,7 +1724,7 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
           <dt>메시</dt>
           <dd>가시 면(Visible Face)만 · 삼각형 면 · 비가시·하단·접합 면 제외 · Non-manifold 미허용</dd>
         </div>
-        <div class="delivery-spec-row">
+        <div class="delivery-spec-row spec-row--strikethrough">
           <dt>폴리곤 한도</dt>
           <dd class="budget-table">
             <span><em>소형</em>(&lt;10m) 3,000</span>
