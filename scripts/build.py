@@ -30,8 +30,8 @@ def esc(text: str) -> str:
     return htmllib.escape(text or "")
 
 
-# Tier 색상 매핑 — 한색 계열 다른 색조 (steel blue / teal / slate)
-TIER_COLOR = {1: "#4a6585", 2: "#5a8585", 3: "#7589a0"}
+# Tier 색상 매핑 — 한색 계열 구분 강화 (deep blue / saturated teal / neutral slate)
+TIER_COLOR = {1: "#2c5588", 2: "#3a8a78", 3: "#8696a8"}
 TIER_LABEL = {1: "Tier 1", 2: "Tier 2", 3: "Tier 3"}
 TIER_SUBTITLE = {1: "핵심", 2: "주요", 3: "추가"}
 

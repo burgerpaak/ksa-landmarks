@@ -21,10 +21,10 @@
   --ink-mute: #8a94a3;
   --accent: #4a6585;
   --accent-soft: #dde5f0;
-  /* Tier — 한색 계열 다른 색조 (steel blue / teal / slate) */
-  --tier-1: #4a6585;
-  --tier-2: #5a8585;
-  --tier-3: #7589a0;
+  /* Tier — 한색 계열, 구분 강화 (deep blue / saturated teal / neutral slate) */
+  --tier-1: #2c5588;
+  --tier-2: #3a8a78;
+  --tier-3: #8696a8;
   /* Alert — cool muted plum (한색 계열 경고) */
   --alert: #8a6878;
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -45,10 +45,10 @@
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
   --accent-soft: #1f2530;
-  /* Tier — dark 모드: 밝기 보정한 같은 색조 */
-  --tier-1: #8aa5cc;
-  --tier-2: #95b8b8;
-  --tier-3: #9eb2cc;
+  /* Tier — dark: 밝기 보정 + hue 강조 유지 */
+  --tier-1: #7ea4d5;
+  --tier-2: #6db8a4;
+  --tier-3: #a5b3c5;
   --alert: #c39aac;
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
@@ -1564,46 +1564,46 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         <span class="count" id="visible-count">40/40</span>
       </div>
       <nav class="nav-list" id="nav-list">
-<a href="#card-01" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-museum" data-search="national museum of saudi arabia"><span class="nav-num">01</span><span class="nav-label">National Museum of Saudi Arabia</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-02" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-heritage" data-search="murabba palace"><span class="nav-num">02</span><span class="nav-label">Murabba Palace</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-03" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="kingdom arena"><span class="nav-num">03</span><span class="nav-label">Kingdom Arena</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-04" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="king saud university stadium (alawwal park)"><span class="nav-num">04</span><span class="nav-label">King Saud University Stadium (Alawwal Park)</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-05" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="imam muhammad ibn saud islamic university football stadium"><span class="nav-num">05</span><span class="nav-label">Imam Muhammad Ibn Saud Islamic University Football Stadium</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-06" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="al shabab stadium"><span class="nav-num">06</span><span class="nav-label">Al Shabab Stadium</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-07" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-heritage" data-search="nasif house (bayt nassif)"><span class="nav-num">07</span><span class="nav-label">Nasif House (Bayt Nassif)</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-08" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-mosque" data-search="al rahma mosque (floating mosque)"><span class="nav-num">08</span><span class="nav-label">Al Rahma Mosque (Floating Mosque)</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-09" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-stadium" data-search="prince abdullah al faisal sports city stadium"><span class="nav-num">09</span><span class="nav-label">Prince Abdullah Al Faisal Sports City Stadium</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-10" class="nav-item" data-tier="tier-1" data-city="city-AL-KHOBAR" data-type="type-stadium" data-search="al khobar new stadium (aramco stadium)"><span class="nav-num">10</span><span class="nav-label">AL KHOBAR New Stadium (Aramco Stadium)</span><span class="nav-tier" style="background: #4a6585"></span></a>
-<a href="#card-11" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-heritage" data-search="diriyah (ad diriyah)"><span class="nav-num">11</span><span class="nav-label">Diriyah (Ad Diriyah)</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-12" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-park" data-search="salam park"><span class="nav-num">12</span><span class="nav-label">Salam Park</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-13" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-museum" data-search="king fahad national library"><span class="nav-num">13</span><span class="nav-label">King Fahad National Library</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-14" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-resort" data-search="six flags qiddiya city"><span class="nav-num">14</span><span class="nav-label">Six Flags Qiddiya City</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-15" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="king khalid international airport"><span class="nav-num">15</span><span class="nav-label">King Khalid International Airport</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-16" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-mall" data-search="riyadh park mall"><span class="nav-num">16</span><span class="nav-label">Riyadh Park Mall</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-17" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-edu" data-search="king saud university"><span class="nav-num">17</span><span class="nav-label">King Saud University</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-18" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-edu" data-search="princess nourah bint abdulrahman university"><span class="nav-num">18</span><span class="nav-label">Princess Nourah Bint Abdulrahman University</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-19" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-park" data-search="riyadh golf club"><span class="nav-num">19</span><span class="nav-label">Riyadh Golf Club</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-20" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="kafd metro station"><span class="nav-num">20</span><span class="nav-label">KAFD Metro Station</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-21" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="momrah"><span class="nav-num">21</span><span class="nav-label">MoMRAH</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-22" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-mosque" data-search="al rajhi mosque"><span class="nav-num">22</span><span class="nav-label">Al Rajhi Mosque</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-23" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-heritage" data-search="bab makkah"><span class="nav-num">23</span><span class="nav-label">Bab Makkah</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-24" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-mall" data-search="red sea mall"><span class="nav-num">24</span><span class="nav-label">Red Sea Mall</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-25" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-infra" data-search="king fahd&#x27;s fountain"><span class="nav-num">25</span><span class="nav-label">King Fahd&#x27;s Fountain</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-26" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-museum" data-search="abdul raouf khalil museum"><span class="nav-num">26</span><span class="nav-label">Abdul Raouf Khalil Museum</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-27" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-mosque" data-search="hassan enany mosque"><span class="nav-num">27</span><span class="nav-label">Hassan Enany Mosque</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-28" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-museum" data-search="fakieh aquarium"><span class="nav-num">28</span><span class="nav-label">Fakieh Aquarium</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-29" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-mall" data-search="al rashid mall"><span class="nav-num">29</span><span class="nav-label">Al Rashid Mall</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-30" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-tower" data-search="al othman office tower"><span class="nav-num">30</span><span class="nav-label">Al Othman Office Tower</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-31" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-tower" data-search="ajdan infinity"><span class="nav-num">31</span><span class="nav-label">Ajdan Infinity</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-32" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-mosque" data-search="jawza al qahtani mosque"><span class="nav-num">32</span><span class="nav-label">Jawza Al Qahtani Mosque</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-33" class="nav-item" data-tier="tier-2" data-city="city-DAMMAM" data-type="type-mall" data-search="al othaim mall"><span class="nav-num">33</span><span class="nav-label">Al Othaim Mall</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-34" class="nav-item" data-tier="tier-2" data-city="city-DAMMAM" data-type="type-mall" data-search="westfield dammam"><span class="nav-num">34</span><span class="nav-label">Westfield Dammam</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-35" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-infra" data-search="king fahd causeway"><span class="nav-num">35</span><span class="nav-label">King Fahd Causeway</span><span class="nav-tier" style="background: #5a8585"></span></a>
-<a href="#card-36" class="nav-item" data-tier="tier-3" data-city="city-ALULA" data-type="type-nature" data-search="elephant rock (jabal alfil, alula)"><span class="nav-num">36</span><span class="nav-label">Elephant Rock (Jabal AlFil, AlUla)</span><span class="nav-tier" style="background: #7589a0"></span></a>
-<a href="#card-37" class="nav-item" data-tier="tier-3" data-city="city-JEDDAH" data-type="type-tower" data-search="savola tower"><span class="nav-num">37</span><span class="nav-label">Savola Tower</span><span class="nav-tier" style="background: #7589a0"></span></a>
-<a href="#card-38" class="nav-item" data-tier="tier-3" data-city="city-RIYADH" data-type="type-tower" data-search="al-majdoul tower"><span class="nav-num">38</span><span class="nav-label">Al-Majdoul Tower</span><span class="nav-tier" style="background: #7589a0"></span></a>
-<a href="#card-39" class="nav-item" data-tier="tier-3" data-city="city-MAKKAH" data-type="type-tower" data-search="makkah clock royal tower (fairmont / abraj al bait)"><span class="nav-num">39</span><span class="nav-label">Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)</span><span class="nav-tier" style="background: #7589a0"></span></a>
-<a href="#card-40" class="nav-item" data-tier="tier-3" data-city="city-RIYADH" data-type="type-park" data-search="boulevard world"><span class="nav-num">40</span><span class="nav-label">Boulevard World</span><span class="nav-tier" style="background: #7589a0"></span></a>
+<a href="#card-01" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-museum" data-search="national museum of saudi arabia"><span class="nav-num">01</span><span class="nav-label">National Museum of Saudi Arabia</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-02" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-heritage" data-search="murabba palace"><span class="nav-num">02</span><span class="nav-label">Murabba Palace</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-03" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="kingdom arena"><span class="nav-num">03</span><span class="nav-label">Kingdom Arena</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-04" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="king saud university stadium (alawwal park)"><span class="nav-num">04</span><span class="nav-label">King Saud University Stadium (Alawwal Park)</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-05" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="imam muhammad ibn saud islamic university football stadium"><span class="nav-num">05</span><span class="nav-label">Imam Muhammad Ibn Saud Islamic University Football Stadium</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-06" class="nav-item" data-tier="tier-1" data-city="city-RIYADH" data-type="type-stadium" data-search="al shabab stadium"><span class="nav-num">06</span><span class="nav-label">Al Shabab Stadium</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-07" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-heritage" data-search="nasif house (bayt nassif)"><span class="nav-num">07</span><span class="nav-label">Nasif House (Bayt Nassif)</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-08" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-mosque" data-search="al rahma mosque (floating mosque)"><span class="nav-num">08</span><span class="nav-label">Al Rahma Mosque (Floating Mosque)</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-09" class="nav-item" data-tier="tier-1" data-city="city-JEDDAH" data-type="type-stadium" data-search="prince abdullah al faisal sports city stadium"><span class="nav-num">09</span><span class="nav-label">Prince Abdullah Al Faisal Sports City Stadium</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-10" class="nav-item" data-tier="tier-1" data-city="city-AL-KHOBAR" data-type="type-stadium" data-search="al khobar new stadium (aramco stadium)"><span class="nav-num">10</span><span class="nav-label">AL KHOBAR New Stadium (Aramco Stadium)</span><span class="nav-tier" style="background: #2c5588"></span></a>
+<a href="#card-11" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-heritage" data-search="diriyah (ad diriyah)"><span class="nav-num">11</span><span class="nav-label">Diriyah (Ad Diriyah)</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-12" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-park" data-search="salam park"><span class="nav-num">12</span><span class="nav-label">Salam Park</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-13" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-museum" data-search="king fahad national library"><span class="nav-num">13</span><span class="nav-label">King Fahad National Library</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-14" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-resort" data-search="six flags qiddiya city"><span class="nav-num">14</span><span class="nav-label">Six Flags Qiddiya City</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-15" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="king khalid international airport"><span class="nav-num">15</span><span class="nav-label">King Khalid International Airport</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-16" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-mall" data-search="riyadh park mall"><span class="nav-num">16</span><span class="nav-label">Riyadh Park Mall</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-17" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-edu" data-search="king saud university"><span class="nav-num">17</span><span class="nav-label">King Saud University</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-18" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-edu" data-search="princess nourah bint abdulrahman university"><span class="nav-num">18</span><span class="nav-label">Princess Nourah Bint Abdulrahman University</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-19" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-park" data-search="riyadh golf club"><span class="nav-num">19</span><span class="nav-label">Riyadh Golf Club</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-20" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="kafd metro station"><span class="nav-num">20</span><span class="nav-label">KAFD Metro Station</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-21" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-infra" data-search="momrah"><span class="nav-num">21</span><span class="nav-label">MoMRAH</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-22" class="nav-item" data-tier="tier-2" data-city="city-RIYADH" data-type="type-mosque" data-search="al rajhi mosque"><span class="nav-num">22</span><span class="nav-label">Al Rajhi Mosque</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-23" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-heritage" data-search="bab makkah"><span class="nav-num">23</span><span class="nav-label">Bab Makkah</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-24" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-mall" data-search="red sea mall"><span class="nav-num">24</span><span class="nav-label">Red Sea Mall</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-25" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-infra" data-search="king fahd&#x27;s fountain"><span class="nav-num">25</span><span class="nav-label">King Fahd&#x27;s Fountain</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-26" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-museum" data-search="abdul raouf khalil museum"><span class="nav-num">26</span><span class="nav-label">Abdul Raouf Khalil Museum</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-27" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-mosque" data-search="hassan enany mosque"><span class="nav-num">27</span><span class="nav-label">Hassan Enany Mosque</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-28" class="nav-item" data-tier="tier-2" data-city="city-JEDDAH" data-type="type-museum" data-search="fakieh aquarium"><span class="nav-num">28</span><span class="nav-label">Fakieh Aquarium</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-29" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-mall" data-search="al rashid mall"><span class="nav-num">29</span><span class="nav-label">Al Rashid Mall</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-30" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-tower" data-search="al othman office tower"><span class="nav-num">30</span><span class="nav-label">Al Othman Office Tower</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-31" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-tower" data-search="ajdan infinity"><span class="nav-num">31</span><span class="nav-label">Ajdan Infinity</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-32" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-mosque" data-search="jawza al qahtani mosque"><span class="nav-num">32</span><span class="nav-label">Jawza Al Qahtani Mosque</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-33" class="nav-item" data-tier="tier-2" data-city="city-DAMMAM" data-type="type-mall" data-search="al othaim mall"><span class="nav-num">33</span><span class="nav-label">Al Othaim Mall</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-34" class="nav-item" data-tier="tier-2" data-city="city-DAMMAM" data-type="type-mall" data-search="westfield dammam"><span class="nav-num">34</span><span class="nav-label">Westfield Dammam</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-35" class="nav-item" data-tier="tier-2" data-city="city-AL-KHOBAR" data-type="type-infra" data-search="king fahd causeway"><span class="nav-num">35</span><span class="nav-label">King Fahd Causeway</span><span class="nav-tier" style="background: #3a8a78"></span></a>
+<a href="#card-36" class="nav-item" data-tier="tier-3" data-city="city-ALULA" data-type="type-nature" data-search="elephant rock (jabal alfil, alula)"><span class="nav-num">36</span><span class="nav-label">Elephant Rock (Jabal AlFil, AlUla)</span><span class="nav-tier" style="background: #8696a8"></span></a>
+<a href="#card-37" class="nav-item" data-tier="tier-3" data-city="city-JEDDAH" data-type="type-tower" data-search="savola tower"><span class="nav-num">37</span><span class="nav-label">Savola Tower</span><span class="nav-tier" style="background: #8696a8"></span></a>
+<a href="#card-38" class="nav-item" data-tier="tier-3" data-city="city-RIYADH" data-type="type-tower" data-search="al-majdoul tower"><span class="nav-num">38</span><span class="nav-label">Al-Majdoul Tower</span><span class="nav-tier" style="background: #8696a8"></span></a>
+<a href="#card-39" class="nav-item" data-tier="tier-3" data-city="city-MAKKAH" data-type="type-tower" data-search="makkah clock royal tower (fairmont / abraj al bait)"><span class="nav-num">39</span><span class="nav-label">Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)</span><span class="nav-tier" style="background: #8696a8"></span></a>
+<a href="#card-40" class="nav-item" data-tier="tier-3" data-city="city-RIYADH" data-type="type-park" data-search="boulevard world"><span class="nav-num">40</span><span class="nav-label">Boulevard World</span><span class="nav-tier" style="background: #8696a8"></span></a>
       </nav>
     </div>
 
@@ -1735,7 +1735,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         <span class="cards-count" id="cards-count">40 items</span>
       </div>
       <div class="cards-grid" id="cards-grid">
-<div class="tier-header" data-tier="tier-1"><span class="tier-header-mark" style="background:#4a6585"></span><span class="tier-header-label">Tier 1</span><span class="tier-header-sub">· 핵심</span><span class="tier-header-count">10 items</span></div>
+<div class="tier-header" data-tier="tier-1"><span class="tier-header-mark" style="background:#2c5588"></span><span class="tier-header-label">Tier 1</span><span class="tier-header-sub">· 핵심</span><span class="tier-header-count">10 items</span></div>
 
 <article class="card" id="card-01"
          data-tier="tier-1"
@@ -1748,7 +1748,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 01</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -1794,7 +1794,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 02</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -1840,7 +1840,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 03</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -1886,7 +1886,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 04</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -1932,7 +1932,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 05</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 권위 자료 매우 부족 — 일반 추정치만"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -1978,7 +1978,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 06</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 권위 자료 매우 부족 — 완공·외장·수용 모두 미확정"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -2024,7 +2024,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 07</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -2070,7 +2070,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 08</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -2116,7 +2116,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 09</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -2162,7 +2162,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 10</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 건설 중 — Populous 설계만 확정, 공식 도면 비공개"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #4a6585">T1</span>
+        <span class="card-tier-pill" style="--pill-color: #2c5588">T1</span>
       </div>
     </div>
   </div>
@@ -2196,7 +2196,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     </footer>
   </div>
 </article>
-<div class="tier-header" data-tier="tier-2"><span class="tier-header-mark" style="background:#5a8585"></span><span class="tier-header-label">Tier 2</span><span class="tier-header-sub">· 주요</span><span class="tier-header-count">25 items</span></div>
+<div class="tier-header" data-tier="tier-2"><span class="tier-header-mark" style="background:#3a8a78"></span><span class="tier-header-label">Tier 2</span><span class="tier-header-sub">· 주요</span><span class="tier-header-count">25 items</span></div>
 
 <article class="card" id="card-11"
          data-tier="tier-2"
@@ -2209,7 +2209,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 11</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2255,7 +2255,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 12</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 공원 형태·면적 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2301,7 +2301,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 13</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2347,7 +2347,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 14</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 건설 중, 단지 구성 비공개"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2393,7 +2393,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 15</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 공항 — 거대 단지, 개별 건물 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2439,7 +2439,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 16</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 몰 — 외관 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2485,7 +2485,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 17</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2531,7 +2531,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 18</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 캠퍼스 — 마스터플랜만"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2577,7 +2577,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 19</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 골프 코스 자연 지형, 구조 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2623,7 +2623,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 20</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2669,7 +2669,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 21</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 정부청사 — 외부 자료 매우 적음"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2715,7 +2715,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 22</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2761,7 +2761,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 23</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 게이트 구조물 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2807,7 +2807,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 24</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 몰 — 외관 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2853,7 +2853,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 25</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2899,7 +2899,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 26</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 박물관 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2945,7 +2945,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 27</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 모스크 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -2991,7 +2991,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 28</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 아쿠아리움 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3037,7 +3037,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 29</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3083,7 +3083,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 30</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 오피스 타워 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3129,7 +3129,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 31</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 복합 시설 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3175,7 +3175,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 32</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 모스크 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3221,7 +3221,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 33</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3267,7 +3267,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 34</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족 (Dammam)"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3313,7 +3313,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 35</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #5a8585">T2</span>
+        <span class="card-tier-pill" style="--pill-color: #3a8a78">T2</span>
       </div>
     </div>
   </div>
@@ -3347,7 +3347,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     </footer>
   </div>
 </article>
-<div class="tier-header" data-tier="tier-3"><span class="tier-header-mark" style="background:#7589a0"></span><span class="tier-header-label">Tier 3</span><span class="tier-header-sub">· 추가</span><span class="tier-header-count">5 items</span></div>
+<div class="tier-header" data-tier="tier-3"><span class="tier-header-mark" style="background:#8696a8"></span><span class="tier-header-label">Tier 3</span><span class="tier-header-sub">· 추가</span><span class="tier-header-count">5 items</span></div>
 
 <article class="card" id="card-36"
          data-tier="tier-3"
@@ -3360,7 +3360,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 36</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #7589a0">T3</span>
+        <span class="card-tier-pill" style="--pill-color: #8696a8">T3</span>
       </div>
     </div>
   </div>
@@ -3406,7 +3406,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 37</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — Savola Tower — 자료 매우 부족 (Jeddah Tower와 혼동 가능)"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #7589a0">T3</span>
+        <span class="card-tier-pill" style="--pill-color: #8696a8">T3</span>
       </div>
     </div>
   </div>
@@ -3452,7 +3452,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 38</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #7589a0">T3</span>
+        <span class="card-tier-pill" style="--pill-color: #8696a8">T3</span>
       </div>
     </div>
   </div>
@@ -3498,7 +3498,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 39</span>
       <div class="card-image-meta-right">
         
-        <span class="card-tier-pill" style="--pill-color: #7589a0">T3</span>
+        <span class="card-tier-pill" style="--pill-color: #8696a8">T3</span>
       </div>
     </div>
   </div>
@@ -3544,7 +3544,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       <span class="card-num">№ 40</span>
       <div class="card-image-meta-right">
         <span class="card-warning" title="권위 자료 부족 — 테마 단지 — 임시 구조 다수, 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
-        <span class="card-tier-pill" style="--pill-color: #7589a0">T3</span>
+        <span class="card-tier-pill" style="--pill-color: #8696a8">T3</span>
       </div>
     </div>
   </div>
