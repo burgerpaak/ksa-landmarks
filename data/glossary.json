@@ -242,12 +242,6 @@
         "en": "Stucco",
         "desc": "석회/시멘트 미장 마감. 매끄러운 흰색 표면. 모스크 외벽의 전형적 마감재. 약간 거친 텍스처 + 브러시 마크 표현 권장.",
         "where": "Al Rahmah Mosque"
-      },
-      {
-        "kr": "대리석",
-        "en": "Marble",
-        "desc": "고급 모스크/궁전의 외부 마감. 흰색 + 무늬(veining)가 핵심. 광택 처리된 표면은 반사/반사도(roughness) 셰이더 세팅이 중요.",
-        "where": "Al Rajhi Mosque"
       }
     ]
   },
