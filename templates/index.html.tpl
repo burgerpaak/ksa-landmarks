@@ -1599,10 +1599,6 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
             <dd><code>.glb</code> 바이너리</dd>
           </div>
           <div class="spec-item">
-            <dt>메타데이터</dt>
-            <dd><code>.json</code> — 원점 절대좌표 + Azimuth + Offset + Scale</dd>
-          </div>
-          <div class="spec-item">
             <dt>텍스처</dt>
             <dd>기본 <strong>미포함</strong></dd>
           </div>
