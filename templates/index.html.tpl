@@ -21,10 +21,10 @@
   --ink-mute: #8a94a3;
   --accent: #4a6585;
   --accent-soft: #dde5f0;
-  /* Tier — accent 명도 3단계 (모노크로매틱) */
-  --tier-1: #324b6a;
-  --tier-2: #4a6585;
-  --tier-3: #8497b3;
+  /* Tier — 한색 계열 다른 색조 (steel blue / teal / slate) */
+  --tier-1: #4a6585;
+  --tier-2: #5a8585;
+  --tier-3: #7589a0;
   /* Alert — cool muted plum (한색 계열 경고) */
   --alert: #8a6878;
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -45,10 +45,10 @@
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
   --accent-soft: #1f2530;
-  /* Tier — dark에서는 밝기 역전 (T1이 가장 밝음) */
-  --tier-1: #b0c4e0;
-  --tier-2: #8aa5cc;
-  --tier-3: #6c8099;
+  /* Tier — dark 모드: 밝기 보정한 같은 색조 */
+  --tier-1: #8aa5cc;
+  --tier-2: #95b8b8;
+  --tier-3: #9eb2cc;
   --alert: #c39aac;
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
