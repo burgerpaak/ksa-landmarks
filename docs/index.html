@@ -189,7 +189,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .icon-btn:hover { background: var(--bg-sunken); color: var(--ink); }
 
 [data-theme="dark"] .sun-icon { display: none; }
-[data-theme="light"] .moon-icon, html:not([data-theme]) .moon-icon { display: none; }
+[data-theme="light"] .moon-icon { display: none; }
 
 /* ───── LAYOUT ───── */
 .layout {
