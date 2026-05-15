@@ -205,6 +205,22 @@ def render_card(lm: dict) -> str:
         joined = " · ".join(uncertain_items)
         draft_html = f'<span class="tag tag-draft" title="검증 미완: {esc(joined)}">DRAFT</span>'
 
+    # 데이터 신뢰도 — LOW일 때 이미지에 경고 아이콘
+    confidence = modeling.get("data_confidence")
+    confidence_note = modeling.get("data_confidence_note", "")
+    confidence_html = ""
+    if confidence == "low":
+        confidence_html = (
+            f'<span class="card-warning" title="권위 자료 부족 — {esc(confidence_note)}">'
+            f'<svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true">'
+            f'<path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>'
+            f'<path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>'
+            f'<circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/>'
+            f'</svg>'
+            f'<span>DATA LOW</span>'
+            f'</span>'
+        )
+
     # 카드 헤더의 status, task_type 뱃지
     status = modeling.get("status")
     task_type = modeling.get("task_type")
@@ -289,7 +305,10 @@ def render_card(lm: dict) -> str:
     {img_html}
     <div class="card-image-meta">
       <span class="card-num">№ {idx_str}</span>
-      <span class="card-tier-pill" style="--pill-color: {TIER_COLOR[tier]}">T{tier}</span>
+      <div class="card-image-meta-right">
+        {confidence_html}
+        <span class="card-tier-pill" style="--pill-color: {TIER_COLOR[tier]}">T{tier}</span>
+      </div>
     </div>
   </div>
   <div class="card-content">

@@ -909,6 +909,39 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+.card-image-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.card-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: rgba(194, 90, 60, 0.92);
+  padding: 4px 7px;
+  border-radius: 4px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: help;
+  text-transform: uppercase;
+}
+
+.card-warning svg {
+  flex-shrink: 0;
+}
+
+.card-warning:hover {
+  background: rgba(194, 90, 60, 1);
+}
+
 .card-content {
   padding: 20px 22px 22px;
   display: flex;

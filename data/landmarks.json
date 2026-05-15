@@ -93,7 +93,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia·Saudipedia 검증 (Raymond Moriyama·28,000m²·1999)"
     }
   },
   {
@@ -181,7 +183,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia 검증 (1936–38·Ibn Qabba·9,844m²)"
     }
   },
   {
@@ -299,7 +303,9 @@
           "part": "수용 인원",
           "value": "28,000"
         }
-      ]
+      ],
+      "data_confidence": "partial",
+      "data_confidence_note": "StadiumDB·Wikipedia 검증 (47m·220×150m), 로비 높이는 추정"
     }
   },
   {
@@ -391,7 +397,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "일반 정보만 — 정확한 구조 치수 비공개"
     }
   },
   {
@@ -474,7 +482,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "권위 자료 매우 부족 — 일반 추정치만"
     }
   },
   {
@@ -560,7 +570,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "권위 자료 매우 부족 — 완공·외장·수용 모두 미확정"
     }
   },
   {
@@ -649,7 +661,9 @@
       "size_class": "중형",
       "tri_budget": 10000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia·Geoffrey King 학술 인용 (1872–81·산호석·106 rooms)"
     }
   },
   {
@@ -739,7 +753,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia·Saudipedia·Arab News 검증 (1985·52돔+23우산)"
     }
   },
   {
@@ -831,7 +847,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "리노베이션(2020) 외관 검증, 구체 치수 추정"
     }
   },
   {
@@ -932,7 +950,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "건설 중",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "건설 중 — Populous 설계만 확정, 공식 도면 비공개"
     }
   },
   {
@@ -1019,7 +1039,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "헤리티지 단지, 개별 건물 자료 분산"
     }
   },
   {
@@ -1109,7 +1131,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "공원 형태·면적 자료 부족"
     }
   },
   {
@@ -1203,7 +1227,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "Gerber Architekten 검증, 정확한 치수는 OSM/실측 필요"
     }
   },
   {
@@ -1296,7 +1322,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "건설 중",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "건설 중, 단지 구성 비공개"
     }
   },
   {
@@ -1386,7 +1414,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "공항 — 거대 단지, 개별 건물 자료 부족"
     }
   },
   {
@@ -1467,7 +1497,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "몰 — 외관 자료 부족"
     }
   },
   {
@@ -1556,7 +1588,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "캠퍼스 — 마스터플랜만, 개별 건물 미확정"
     }
   },
   {
@@ -1647,7 +1681,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "캠퍼스 — 마스터플랜만"
     }
   },
   {
@@ -1733,7 +1769,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "골프 코스 자연 지형, 구조 자료 부족"
     }
   },
   {
@@ -1828,7 +1866,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "최근 건설(2019)·도면 부분 공개"
     }
   },
   {
@@ -1899,7 +1939,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "정부청사 — 외부 자료 매우 적음"
     }
   },
   {
@@ -1986,7 +2028,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "모스크 일반 정보, 정확한 치수 미확정"
     }
   },
   {
@@ -2069,7 +2113,9 @@
       "size_class": "중형",
       "tri_budget": 10000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "게이트 구조물 — 자료 매우 부족"
     }
   },
   {
@@ -2153,7 +2199,9 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "몰 — 외관 자료 부족"
     }
   },
   {
@@ -2250,7 +2298,9 @@
           "part": "공중 수괴 질량 (최대)",
           "value": "16 tonnes"
         }
-      ]
+      ],
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia·Guinness 검증 (312m 분수·375 km/h)"
     }
   },
   {
@@ -2331,7 +2381,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "박물관 — 자료 매우 부족"
     }
   },
   {
@@ -2403,7 +2455,9 @@
       "size_class": "중형",
       "tri_budget": 10000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "모스크 — 자료 매우 부족"
     }
   },
   {
@@ -2485,7 +2539,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "아쿠아리움 — 자료 부족"
     }
   },
   {
@@ -2574,7 +2630,9 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "몰 — 자료 부족"
     }
   },
   {
@@ -2659,7 +2717,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "오피스 타워 — 자료 매우 부족"
     }
   },
   {
@@ -2753,7 +2813,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "복합 시설 — 자료 부족"
     }
   },
   {
@@ -2830,7 +2892,9 @@
       "size_class": "중형",
       "tri_budget": 10000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "모스크 — 자료 매우 부족"
     }
   },
   {
@@ -2915,7 +2979,9 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "몰 — 자료 부족"
     }
   },
   {
@@ -3000,7 +3066,9 @@
       "size_class": "초대형",
       "tri_budget": 50000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "몰 — 자료 부족 (Dammam)"
     }
   },
   {
@@ -3126,7 +3194,9 @@
           "part": "도로 전체 폭",
           "value": "23 m"
         }
-      ]
+      ],
+      "data_confidence": "verified",
+      "data_confidence_note": "Wikipedia 검증 (25 km · 5,194m 최장교 · 536 pylons)"
     }
   },
   {
@@ -3216,7 +3286,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "자연 바위, 정확 치수 자료 불일치"
     }
   },
   {
@@ -3294,7 +3366,9 @@
       "size_class": "대형",
       "tri_budget": 20000,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "Savola Tower — 자료 매우 부족 (Jeddah Tower와 혼동 가능)"
     }
   },
   {
@@ -3398,7 +3472,9 @@
           "part": "층당 회전",
           "value": "2.5° / floor"
         }
-      ]
+      ],
+      "data_confidence": "verified",
+      "data_confidence_note": "CTBUH·Skyscraper Center 검증 (244.55m·54층·135° twist)"
     }
   },
   {
@@ -3532,7 +3608,9 @@
           "part": "층수",
           "value": "120 floors"
         }
-      ]
+      ],
+      "data_confidence": "verified",
+      "data_confidence_note": "CTBUH·Wikipedia 검증 (601m·시계 43×43m·120층)"
     }
   },
   {
@@ -3617,7 +3695,9 @@
       "size_class": "단지",
       "tri_budget": null,
       "status": "완공",
-      "task_type": "신규제작"
+      "task_type": "신규제작",
+      "data_confidence": "low",
+      "data_confidence_note": "테마 단지 — 임시 구조 다수, 자료 부족"
     }
   }
 ]

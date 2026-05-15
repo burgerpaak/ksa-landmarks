@@ -909,6 +909,39 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+.card-image-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.card-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: rgba(194, 90, 60, 0.92);
+  padding: 4px 7px;
+  border-radius: 4px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: help;
+  text-transform: uppercase;
+}
+
+.card-warning svg {
+  flex-shrink: 0;
+}
+
+.card-warning:hover {
+  background: rgba(194, 90, 60, 1);
+}
+
 .card-content {
   padding: 20px 22px 22px;
   display: flex;
@@ -1751,7 +1784,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia.jpg?v=1777356418" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_2.jpg?v=1777360788" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_3.jpg?v=1777360814" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_4.jpg?v=1778654673" alt="National Museum of Saudi Arabia" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 01</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -1794,7 +1830,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/02_murabba-palace.jpg?v=1777277035" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_2.jpg?v=1777361103" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_3.jpg?v=1777361043" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_4.jpg?v=1778566651" alt="Murabba Palace" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 02</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -1837,7 +1876,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/03_kingdom-arena.jpg?v=1777358562" alt="Kingdom Arena" loading="lazy"><img class="card-slide" src="images/03_kingdom-arena_2.jpg?v=1778664974" alt="Kingdom Arena" loading="lazy"><img class="card-slide" src="images/03_kingdom-arena_3.jpg?v=1778228293" alt="Kingdom Arena" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 03</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -1880,7 +1922,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park.jpg?v=1777356504" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_2.jpg?v=1778733301" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_3.png?v=1778733331" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_4.png?v=1778733346" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_5.png?v=1778733352" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/5"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/5"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/5"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/5"></button><button class="card-dot" data-idx="4" aria-label="이미지 5/5"></button></div><span class="card-counter">1 / 5</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 04</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -1923,7 +1968,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/05_Imam-Muhammad-Ibn-Saud-Islamic-University-Football-Stadium.jpg?v=1777361379" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><img class="card-slide" src="images/05_Imam-Muhammad-Ibn-Saud-Islamic-University-Football-Stadium_2.jpg?v=1777361391" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 05</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 권위 자료 매우 부족 — 일반 추정치만"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -1966,7 +2014,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/06_Al-Shabab-Stadium.jpg?v=1777354904" alt="Al Shabab Stadium" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 06</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 권위 자료 매우 부족 — 완공·외장·수용 모두 미확정"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2009,7 +2060,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/07_Nasif-House.jpg?v=1777355034" alt="Nasif House (Bayt Nassif)" loading="lazy"><img class="card-slide" src="images/07_Nasif-House_2.jpg?v=1777360864" alt="Nasif House (Bayt Nassif)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 07</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2052,7 +2106,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque.jpg?v=1777277050" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque_2.jpg?v=1777361576" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque_3.jpg?v=1777361637" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 08</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2095,7 +2152,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/09_prince-abdullah-al-faisal-sports-city-stadium.jpg?v=1777356758" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><img class="card-slide" src="images/09_prince-abdullah-al-faisal-sports-city-stadium_2.jpg?v=1777361771" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 09</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2138,7 +2198,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/10_Aramco-Stadium.jpg?v=1777355130" alt="AL KHOBAR New Stadium (Aramco Stadium)" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 10</span>
-      <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 건설 중 — Populous 설계만 확정, 공식 도면 비공개"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #c89638">T1</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2182,7 +2245,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/11_diriyah-ad-diriyah.jpg?v=1777356881" alt="Diriyah (Ad Diriyah)" loading="lazy"><img class="card-slide" src="images/11_diriyah-ad-diriyah_2.jpg?v=1777361844" alt="Diriyah (Ad Diriyah)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 11</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2225,7 +2291,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/12_salam-park.jpg?v=1777357018" alt="Salam Park" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 12</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 공원 형태·면적 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2268,7 +2337,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/13_king-fahad-national-library.jpg?v=1777277063" alt="King Fahad National Library" loading="lazy"><img class="card-slide" src="images/13_king-fahad-national-library_2.jpg?v=1777362839" alt="King Fahad National Library" loading="lazy"><img class="card-slide" src="images/13_king-fahad-national-library_3.jpeg?v=1777362835" alt="King Fahad National Library" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 13</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2311,7 +2383,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/14_six-flags-qiddiya-city.jpg?v=1777357168" alt="Six Flags Qiddiya City" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 14</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 건설 중, 단지 구성 비공개"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2354,7 +2429,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/15_king-khalid-international-airport.jpg?v=1777363008" alt="King Khalid International Airport" loading="lazy"><img class="card-slide" src="images/15_king-khalid-international-airport_2.png?v=1777362955" alt="King Khalid International Airport" loading="lazy"><img class="card-slide" src="images/15_king-khalid-international-airport_3.jpeg?v=1777362937" alt="King Khalid International Airport" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 15</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 공항 — 거대 단지, 개별 건물 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2397,7 +2475,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/16_riyadh-park-mall.png?v=1777355187" alt="Riyadh Park Mall" loading="lazy"><img class="card-slide" src="images/16_riyadh-park-mall_2.jpg?v=1777363078" alt="Riyadh Park Mall" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 16</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 몰 — 외관 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2440,7 +2521,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/17_King-Saud-University.jpg?v=1777355281" alt="King Saud University" loading="lazy"><img class="card-slide" src="images/17_King-Saud-University_2.jpg?v=1777363118" alt="King Saud University" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 17</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2483,7 +2567,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University.jpg?v=1777355358" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University_2.jpg?v=1777363256" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University_3.jpg?v=1777363268" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 18</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 캠퍼스 — 마스터플랜만"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2526,7 +2613,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <img class="card-slide active" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Riyadh_Golf_Club.jpg/640px-Riyadh_Golf_Club.jpg" alt="Riyadh Golf Club" loading="lazy">
     <div class="card-image-meta">
       <span class="card-num">№ 19</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 골프 코스 자연 지형, 구조 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2569,7 +2659,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/20_kafd-metro-station.jpg?v=1777357274" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_2.jpg?v=1777363288" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_3.jpg?v=1777363310" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_4.jpg?v=1777363322" alt="KAFD Metro Station" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 20</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2612,7 +2705,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/21_MoMRAH.jpg?v=1777355905" alt="MoMRAH" loading="lazy"><img class="card-slide" src="images/21_MoMRAH_2.jpg?v=1777355916" alt="MoMRAH" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 21</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 정부청사 — 외부 자료 매우 적음"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2655,7 +2751,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/22_al-rajhi-mosque.jpg?v=1777355990" alt="Al Rajhi Mosque" loading="lazy"><img class="card-slide" src="images/22_al-rajhi-mosque_2.jpg?v=1777356020" alt="Al Rajhi Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 22</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2698,7 +2797,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/23_bab-makkah.jpg?v=1777357374" alt="Bab Makkah" loading="lazy"><img class="card-slide" src="images/23_bab-makkah_2.jpg?v=1777363450" alt="Bab Makkah" loading="lazy"><img class="card-slide" src="images/23_bab-makkah_3.jpeg?v=1777363459" alt="Bab Makkah" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 23</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 게이트 구조물 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2741,7 +2843,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/24_red-sea-mall.jpg?v=1777357415" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_2.jpg?v=1777363591" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_3.jpg?v=1777363597" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_4.jpg?v=1777363641" alt="Red Sea Mall" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 24</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 몰 — 외관 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2784,7 +2889,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/25_king-fahds-fountain.jpg?v=1777357606" alt="King Fahd&#x27;s Fountain" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 25</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2827,7 +2935,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum.jpg?v=1777357669" alt="Abdul Raouf Khalil Museum" loading="lazy"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum_2.jpg?v=1777363694" alt="Abdul Raouf Khalil Museum" loading="lazy"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum_3.jpg?v=1777363709" alt="Abdul Raouf Khalil Museum" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 26</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 박물관 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2870,7 +2981,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/27_hassan-enany-mosque.jpg?v=1777356081" alt="Hassan Enany Mosque" loading="lazy"><img class="card-slide" src="images/27_hassan-enany-mosque_2.jpg?v=1777363764" alt="Hassan Enany Mosque" loading="lazy"><img class="card-slide" src="images/27_hassan-enany-mosque_3.jpg?v=1777363770" alt="Hassan Enany Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 27</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 모스크 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2913,7 +3027,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/28_fakieh-aquarium.jpg?v=1777357801" alt="Fakieh Aquarium" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 28</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 아쿠아리움 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2956,7 +3073,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/29_al-rashid-mall.jpg?v=1777357906" alt="Al Rashid Mall" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 29</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -2999,7 +3119,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/30_Al-Othman-Office-Tower.jpg?v=1777355547" alt="Al Othman Office Tower" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 30</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 오피스 타워 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3042,7 +3165,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/31_ajdan-infinity.jpg?v=1777363828" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_2.jpg?v=1777363845" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_3.jpg?v=1777363913" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_4.jpg?v=1777363951" alt="Ajdan Infinity" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 31</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 복합 시설 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3085,7 +3211,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque.jpg?v=1777354808" alt="Jawza Al Qahtani Mosque" loading="lazy"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque_2.jpg?v=1777363987" alt="Jawza Al Qahtani Mosque" loading="lazy"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque_3.jpg?v=1777363996" alt="Jawza Al Qahtani Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 32</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 모스크 — 자료 매우 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3128,7 +3257,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/33_al-othaim-mall.jpg?v=1777357962" alt="Al Othaim Mall" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 33</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3171,7 +3303,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/34_westfield-dammam.jpg?v=1777358133" alt="Westfield Dammam" loading="lazy"><img class="card-slide" src="images/34_westfield-dammam_2.jpg?v=1777364183" alt="Westfield Dammam" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 34</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 몰 — 자료 부족 (Dammam)"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3214,7 +3349,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/35_king-fahd-causeway.jpg?v=1777358198" alt="King Fahd Causeway" loading="lazy"><img class="card-slide" src="images/35_king-fahd-causeway_2.jpg?v=1777358217" alt="King Fahd Causeway" loading="lazy"><img class="card-slide" src="images/35_king-fahd-causeway_3.jpg?v=1777358180" alt="King Fahd Causeway" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 35</span>
-      <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a9e7e">T2</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3258,7 +3396,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/36_elephant-rock-jabal-alfil-alula.jpg?v=1777277127" alt="Elephant Rock (Jabal AlFil, AlUla)" loading="lazy"></div>
     <div class="card-image-meta">
       <span class="card-num">№ 36</span>
-      <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3301,7 +3442,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/37_savola-tower.jpg?v=1777355619" alt="Savola Tower" loading="lazy"><img class="card-slide" src="images/37_savola-tower_2.jpg?v=1777364287" alt="Savola Tower" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 37</span>
-      <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — Savola Tower — 자료 매우 부족 (Jeddah Tower와 혼동 가능)"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3344,7 +3488,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/38_al-majdoul-tower.jpg?v=1777358285" alt="Al-Majdoul Tower" loading="lazy"><img class="card-slide" src="images/38_al-majdoul-tower_2.jpg?v=1777364321" alt="Al-Majdoul Tower" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 38</span>
-      <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3387,7 +3534,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/39_makkah-clock-royal-tower-fairmont-abraj-al-bait.jpg?v=1777277135" alt="Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)" loading="lazy"><img class="card-slide" src="images/39_makkah-clock-royal-tower-fairmont-abraj-al-bait_2.jpg?v=1777358337" alt="Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 39</span>
-      <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      <div class="card-image-meta-right">
+        
+        <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
@@ -3430,7 +3580,10 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
     <div class="card-slider"><img class="card-slide" src="images/40_boulevard-world.jpg?v=1777358388" alt="Boulevard World" loading="lazy"><img class="card-slide" src="images/40_boulevard-world_2.png?v=1777364373" alt="Boulevard World" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
     <div class="card-image-meta">
       <span class="card-num">№ 40</span>
-      <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      <div class="card-image-meta-right">
+        <span class="card-warning" title="권위 자료 부족 — 테마 단지 — 임시 구조 다수, 자료 부족"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1 L10 9.5 L1 9.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 4.5 L5.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5.5" cy="8.4" r="0.6" fill="currentColor"/></svg><span>DATA LOW</span></span>
+        <span class="card-tier-pill" style="--pill-color: #7a8ea0">T3</span>
+      </div>
     </div>
   </div>
   <div class="card-content">
