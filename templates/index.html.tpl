@@ -6,7 +6,7 @@
 <title>KSA Landmarks · 3D Modeling Reference</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -377,128 +377,185 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink-mute);
 }
 
-/* ───── DELIVERY SPEC (글로벌 납품 사양) ───── */
+/* ───── DELIVERY SPEC (글로벌 납품 사양) — iOS doc-style ───── */
 .delivery-spec {
-  margin-bottom: 32px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--bg-elev);
-  padding: 22px 26px 24px;
-  border-left: 3px solid var(--accent);
+  /* 한색 계열 scoped 팔레트 */
+  --spec-card-bg: #ffffff;
+  --spec-soft-bg: #f4f6f9;
+  --spec-border: #e3e7ed;
+  --spec-divider: #eef1f5;
+  --spec-ink: #0e131b;
+  --spec-ink-soft: #44505f;
+  --spec-ink-mute: #8a94a3;
+  --spec-accent: #4a6585;
+  --spec-mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  margin-bottom: 40px;
+  background: var(--spec-card-bg);
+  border: 1px solid var(--spec-border);
+  border-radius: 16px;
+  padding: 32px 36px 28px;
+  box-shadow: 0 1px 0 rgba(15, 25, 40, 0.02), 0 4px 16px rgba(15, 25, 40, 0.03);
+}
+
+[data-theme="dark"] .delivery-spec {
+  --spec-card-bg: #181c24;
+  --spec-soft-bg: #1f2530;
+  --spec-border: #2a3140;
+  --spec-divider: #242a35;
+  --spec-ink: #ecf0f7;
+  --spec-ink-soft: #b4bcca;
+  --spec-ink-mute: #6e7787;
+  --spec-accent: #8aa5cc;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.4);
 }
 
 .delivery-spec-head {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 20px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
 }
 
-.delivery-spec-mark {
-  color: var(--accent);
+.delivery-spec-eyebrow {
+  display: block;
+  font-family: var(--spec-mono);
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--spec-accent);
+  margin-bottom: 8px;
 }
 
 .delivery-spec-title {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 15px;
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink);
+  letter-spacing: -0.02em;
+  color: var(--spec-ink);
+  line-height: 1.1;
+  margin: 0;
 }
 
 .delivery-spec-sub {
-  font-size: 12px;
-  color: var(--ink-mute);
-  letter-spacing: 0.02em;
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--spec-ink-mute);
+  letter-spacing: 0;
 }
 
-/* 타일 그리드 — 각 사양 = 독립 카드 */
-.delivery-spec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
+.spec-group {
+  margin-top: 24px;
 }
 
-.delivery-spec-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 14px 16px;
-  background: var(--bg-sunken);
-  border-radius: 10px;
-  border-left: 2px solid color-mix(in srgb, var(--accent) 50%, var(--border));
-  transition: border-color 0.12s, background 0.12s;
+.spec-group:first-of-type {
+  margin-top: 0;
 }
 
-.delivery-spec-row:hover {
-  border-left-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 4%, var(--bg-sunken));
-}
-
-.delivery-spec-row dt {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 10px;
+.spec-group-head {
+  font-family: var(--spec-mono);
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--spec-ink-mute);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--spec-divider);
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
   margin: 0;
 }
 
-.delivery-spec-row dd {
+.spec-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 28px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--spec-divider);
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-item dt {
   margin: 0;
-  color: var(--ink-soft);
-  line-height: 1.5;
   font-size: 13px;
+  font-weight: 500;
+  color: var(--spec-ink-mute);
+  letter-spacing: 0;
 }
 
-.delivery-spec-row dd strong {
-  display: inline-block;
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 15px;
+.spec-item dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--spec-ink-soft);
+  line-height: 1.55;
   letter-spacing: -0.005em;
 }
 
-/* 폴리곤 한도 타일 — 전체 너비 점유 + 취소선 */
-.delivery-spec-row.spec-row--strikethrough {
-  grid-column: 1 / -1;
-  border-left-color: var(--border);
-  opacity: 0.55;
-}
-
-.delivery-spec-row.spec-row--strikethrough:hover {
-  border-left-color: var(--border);
-  background: var(--bg-sunken);
-}
-
-.budget-table {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  font-variant-numeric: tabular-nums;
-  margin-top: 2px;
-}
-
-.budget-table span {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--ink-soft);
-}
-
-.budget-table em {
-  font-style: normal;
-  color: var(--ink-mute);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.spec-item dd strong {
+  color: var(--spec-ink);
   font-weight: 600;
+}
+
+.spec-item dd code {
+  display: inline-block;
+  font-family: var(--spec-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  background: var(--spec-soft-bg);
+  color: var(--spec-ink);
+  padding: 2px 7px;
+  border-radius: 5px;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--spec-divider);
+}
+
+.spec-muted {
+  color: var(--spec-ink-mute);
+  font-size: 13px;
+}
+
+.spec-item--deprecated {
+  opacity: 0.45;
+}
+
+.spec-item--deprecated dt,
+.spec-item--deprecated dd > span:not(.budget-pill) {
+  text-decoration: line-through;
+  text-decoration-color: var(--spec-ink-mute);
+}
+
+.spec-item--deprecated dd {
+  text-decoration: line-through;
+  text-decoration-color: var(--spec-ink-mute);
+}
+
+.budget-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 0 4px 4px 0;
+  background: var(--spec-soft-bg);
+  border: 1px solid var(--spec-divider);
+  border-radius: 999px;
+  font-family: var(--spec-mono);
+  font-size: 11px;
+  color: var(--spec-ink-mute);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .delivery-spec {
+    padding: 24px 22px;
+  }
+  .spec-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }
 
 /* ───── GLOSSARY (collapsible) ───── */
@@ -1681,50 +1738,60 @@ body.density-compact .card-section:not(.must-have-section):not(.card-section--st
 
     <!-- ───── DELIVERY SPEC (글로벌 납품 사양 헤더) ───── -->
     <section class="delivery-spec">
-      <div class="delivery-spec-head">
-        <span class="delivery-spec-mark">◆</span>
-        <span class="delivery-spec-title">납품 사양</span>
-        <span class="delivery-spec-sub">전 카드 공통 모델링 룰</span>
+      <header class="delivery-spec-head">
+        <span class="delivery-spec-eyebrow">Delivery Spec</span>
+        <h2 class="delivery-spec-title">납품 사양</h2>
+        <p class="delivery-spec-sub">전 카드 공통 모델링 룰</p>
+      </header>
+
+      <div class="spec-group">
+        <div class="spec-group-head">Delivery Format</div>
+        <dl class="spec-list">
+          <div class="spec-item">
+            <dt>단위</dt>
+            <dd><strong>미터(m)</strong> — 익스포트 전 씬 단위 확인 필수, 불일치 시 납품 불합격</dd>
+          </div>
+          <div class="spec-item">
+            <dt>좌표계</dt>
+            <dd><code>EPSG:4326</code> <span class="spec-muted">(WGS84)</span> 경위도 · 소수점 8자리 이상 정밀도</dd>
+          </div>
+          <div class="spec-item">
+            <dt>포맷</dt>
+            <dd><code>.glb</code> 바이너리</dd>
+          </div>
+          <div class="spec-item">
+            <dt>메타데이터</dt>
+            <dd><code>.json</code> — 원점 절대좌표 + Azimuth + Offset + Scale</dd>
+          </div>
+          <div class="spec-item">
+            <dt>텍스처</dt>
+            <dd>기본 <strong>미포함</strong></dd>
+          </div>
+        </dl>
       </div>
-      <dl class="delivery-spec-grid">
-        <div class="delivery-spec-row">
-          <dt>단위</dt>
-          <dd><strong>미터(m)</strong> — 익스포트 전 씬 단위 확인 필수, 불일치 시 납품 불합격</dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>좌표계</dt>
-          <dd><strong>EPSG:4326 (WGS84)</strong> 경위도 · 소수점 8자리 이상 정밀도</dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>포맷</dt>
-          <dd><strong>.glb</strong> 바이너리</dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>메타데이터</dt>
-          <dd>.json — 원점 절대좌표 + Azimuth + Offset + Scale</dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>텍스처</dt>
-          <dd>기본 <strong>미포함</strong></dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>Footprint</dt>
-          <dd>위탁자 제공 <strong>EPSG:3857</strong> 폴리곤 기준 위치 정합 + 기저면 정렬</dd>
-        </div>
-        <div class="delivery-spec-row">
-          <dt>메시</dt>
-          <dd>가시 면(Visible Face)만 · 삼각형 면 · 비가시·하단·접합 면 제외 · Non-manifold 미허용</dd>
-        </div>
-        <div class="delivery-spec-row spec-row--strikethrough">
-          <dt>폴리곤 한도</dt>
-          <dd class="budget-table">
-            <span><em>소형</em>(&lt;10m) 3,000</span>
-            <span><em>중형</em>(10–50m) 10,000</span>
-            <span><em>대형</em>(50–200m) 20,000</span>
-            <span><em>초대형</em>(&gt;200m) 50,000</span>
-          </dd>
-        </div>
-      </dl>
+
+      <div class="spec-group">
+        <div class="spec-group-head">Geometry Rules</div>
+        <dl class="spec-list">
+          <div class="spec-item">
+            <dt>메시</dt>
+            <dd>가시 면(Visible Face)만 · 삼각형 면 · 비가시·하단·접합 면 제외 · Non-manifold 미허용</dd>
+          </div>
+          <div class="spec-item">
+            <dt>Footprint</dt>
+            <dd>위탁자 제공 <code>EPSG:3857</code> 폴리곤 기준 위치 정합 + 기저면 정렬</dd>
+          </div>
+          <div class="spec-item spec-item--deprecated">
+            <dt>폴리곤 한도</dt>
+            <dd>
+              <span class="budget-pill">소형 ≤3,000</span>
+              <span class="budget-pill">중형 ≤10,000</span>
+              <span class="budget-pill">대형 ≤20,000</span>
+              <span class="budget-pill">초대형 ≤50,000</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </section>
 
     <section class="glossary" id="glossary">
