@@ -95,7 +95,17 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "verified",
-      "data_confidence_note": "Wikipedia·Saudipedia 검증 (Raymond Moriyama·28,000m²·1999)"
+      "data_confidence_note": "Wikipedia·Saudipedia 검증 (Raymond Moriyama·28,000m²·1999)",
+      "must_have": [
+        "메카 향한 초승달형 곡면 매스",
+        "수평 결 패턴 외피",
+        "8개 전시홀 2층 구조 (총 ~28,000 m²)",
+        "King Abdulaziz Historical Centre 광장과 축선"
+      ],
+      "modeling_notes": [
+        "서측 곡면 파사드는 단일 매스로 모델링 + 가로 결 음각 디테일",
+        "주변 Murabba 광장·궁전과의 축선을 유지해 배치"
+      ]
     }
   },
   {
@@ -185,7 +195,17 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "verified",
-      "data_confidence_note": "Wikipedia 검증 (1936–38·Ibn Qabba·9,844m²)"
+      "data_confidence_note": "Wikipedia 검증 (1936–38·Ibn Qabba·9,844m²)",
+      "must_have": [
+        "정사각형 입방체 매스 (2층)",
+        "4면 모서리 망루 (Barjeel)",
+        "톱니형(삼각) 파라펫 장식 상단",
+        "작고 깊은 사각 창 + 나무 격자"
+      ],
+      "modeling_notes": [
+        "톱니 파라펫·작은 창은 instancing으로 반복 배치",
+        "창은 깊은 음각으로 모델링해 그림자 라인 강조"
+      ]
     }
   },
   {
@@ -305,7 +325,17 @@
         }
       ],
       "data_confidence": "partial",
-      "data_confidence_note": "StadiumDB·Wikipedia 검증 (47m·220×150m), 로비 높이는 추정"
+      "data_confidence_note": "StadiumDB·Wikipedia 검증 (47m·220×150m), 로비 높이는 추정",
+      "must_have": [
+        "직사각형 실내 아레나 매스 (보울 X)",
+        "완전 폐쇄형 지붕",
+        "메인 아레나 + 주변 로비 2단 매스",
+        "Boulevard Riyadh City 엔터테인먼트 구역 인접"
+      ],
+      "modeling_notes": [
+        "오픈 보울이 아닌 박스형 실내 매스로 모델링 — 지붕은 완전 폐쇄",
+        "메인 아레나(중앙 ~47m)와 로비(주변 ~18m) 매스 분리"
+      ]
     }
   },
   {
@@ -336,12 +366,12 @@
         "value": "타원형 보울 (oval)"
       },
       {
-        "label": "지붕",
-        "value": "양 측면 부분 캔틸레버"
-      },
-      {
         "label": "재료",
         "value": "노출 콘크리트 + 메탈 스크린 액센트"
+      },
+      {
+        "label": "지붕",
+        "value": "양 측면 부분 캔틸레버"
       },
       {
         "label": "수용",
@@ -399,7 +429,17 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "partial",
-      "data_confidence_note": "일반 정보만 — 정확한 구조 치수 비공개"
+      "data_confidence_note": "일반 정보만 — 정확한 구조 치수 비공개",
+      "must_have": [
+        "타원형 보울 (oval bowl)",
+        "양 측면(메인·백) 부분 캔틸레버 지붕",
+        "리브 + 트러스 구조 패턴",
+        "킹사우드대학 캠퍼스 입지"
+      ],
+      "modeling_notes": [
+        "지붕은 양 측면(롱사이드)에만 — 골대 뒤(엔드존)는 개방형",
+        "캠퍼스 도로·주차장 컨텍스트 함께 배치하면 실감 향상"
+      ]
     }
   },
   {
@@ -484,7 +524,15 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "low",
-      "data_confidence_note": "권위 자료 매우 부족 — 일반 추정치만"
+      "data_confidence_note": "권위 자료 매우 부족 — 일반 추정치만",
+      "must_have": [
+        "대학 캠퍼스 부속 경기장 (보수 진행 중)",
+        "오픈 보울 + 4코너 조명탑 (일반적 구성)"
+      ],
+      "modeling_notes": [
+        "공개 자료 제한 — 일반적 대학 경기장 형태(타원 + 4코너 라이트)로 단순화",
+        "프로젝트 진행 시 위성사진/공식 렌더링으로 보강할 것"
+      ]
     }
   },
   {
@@ -572,7 +620,14 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "low",
-      "data_confidence_note": "권위 자료 매우 부족 — 완공·외장·수용 모두 미확정"
+      "data_confidence_note": "권위 자료 매우 부족 — 완공·외장·수용 모두 미확정",
+      "must_have": [
+        "소규모 컴팩트 보울 (단일 층 스탠드)",
+        "개방형 지붕 (지붕 없음 / 부분만)"
+      ],
+      "modeling_notes": [
+        "단일 층 스탠드 + 개방형 지붕으로 단순화"
+      ]
     }
   },
   {
@@ -663,7 +718,16 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "verified",
-      "data_confidence_note": "Wikipedia·Geoffrey King 학술 인용 (1872–81·산호석·106 rooms)"
+      "data_confidence_note": "Wikipedia·Geoffrey King 학술 인용 (1872–81·산호석·106 rooms)",
+      "must_have": [
+        "전면 2단 적층 라와신(Roshan) 목재 출창",
+        "북측 진입 리잘릿 (돌출 매스)",
+        "옥상 목재 파빌리온과 평지붕 테라스"
+      ],
+      "modeling_notes": [
+        "라와신 한 모듈을 정밀 제작 후 instancing — 격자무늬는 작은 음각 반복",
+        "전체 매스는 약간 비정형 — 옥상은 평지붕 + 작은 파빌리온 조합"
+      ]
     }
   },
   {
@@ -755,7 +819,17 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "verified",
-      "data_confidence_note": "Wikipedia·Saudipedia·Arab News 검증 (1985·52돔+23우산)"
+      "data_confidence_note": "Wikipedia·Saudipedia·Arab News 검증 (1985·52돔+23우산)",
+      "must_have": [
+        "필로티 위 부유형 매스 (만조 시 바다 위 인상)",
+        "중앙 큰 돔 + 52개 작은 돔군",
+        "단일 미나렛",
+        "외부 23개 우산형(파라솔) 캐노피"
+      ],
+      "modeling_notes": [
+        "52개 부속 돔·23개 우산은 instancing으로 반복",
+        "기단부를 수면 약간 위로 띄워 모델링 — 만조 시 반사 강조"
+      ]
     }
   },
   {
@@ -788,7 +862,7 @@
       },
       {
         "label": "파사드",
-        "value": "백색 천공 메탈 패널"
+        "value": "천공"
       },
       {
         "label": "지붕",
@@ -849,7 +923,17 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "partial",
-      "data_confidence_note": "리노베이션(2020) 외관 검증, 구체 치수 추정"
+      "data_confidence_note": "리노베이션(2020) 외관 검증, 구체 치수 추정",
+      "must_have": [
+        "타원형 보울 + 천공 외피 패턴",
+        "양 측면 부분 캔틸레버 지붕",
+        "Al-Ittihad / Al-Ahli 공동 사용",
+        "도시 내부 입지 — 도로·주차 인접"
+      ],
+      "modeling_notes": [
+        "천공 외피의 구멍 패턴은 형태로 모델링 (작은 음각 반복)",
+        "양 측면만 부분 지붕 / 골대 뒤는 개방"
+      ]
     }
   },
   {
@@ -952,7 +1036,17 @@
       "status": "건설 중",
       "task_type": "신규제작",
       "data_confidence": "low",
-      "data_confidence_note": "건설 중 — Populous 설계만 확정, 공식 도면 비공개"
+      "data_confidence_note": "건설 중 — Populous 설계만 확정, 공식 도면 비공개",
+      "must_have": [
+        "사막 영감 기하학 패턴 외피 (Populous design)",
+        "PTFE 막구조 캔틸레버 지붕",
+        "타원형 풀-보울",
+        "알코바르 해안 인접 입지 — 동부주 상징"
+      ],
+      "modeling_notes": [
+        "공식 렌더링을 1차 레퍼런스로 — 외피 패턴 밀도는 LOD에 따라 조정",
+        "해안·도시 진입로 컨텍스트 포함 권장"
+      ]
     }
   },
   {
@@ -1072,12 +1166,12 @@
         "value": "도심 공원 — 4개 영역 (야자숲/호수/힐사이드/생태)"
       },
       {
-        "label": "규모",
-        "value": "24.8 ha · 호수 ~33,000 m²"
-      },
-      {
         "label": "재료",
         "value": "천연석 포장, 콘크리트(모스크), 대추야자, 수경 시설"
+      },
+      {
+        "label": "규모",
+        "value": "24.8 ha · 호수 ~33,000 m²"
       },
       {
         "label": "시대",
@@ -1155,7 +1249,7 @@
     },
     "key_points": [
       "Gerber Architekten(獨) 설계 · 2013년 11월 완공 — 1980년대 기존 도서관을 큐브가 감싸는 증축",
-      "파사드: 마름모형 백색 PTFE 텐트 막을 3D 인장 강선이 지지 — 아라비아 전통 텐트의 현대적 재해석",
+      "파사드: 마름모형PTFE 텐트 막을 3D 인장 강선이 지지 — 아라비아 전통 텐트의 현대적 재해석",
       "연면적 약 86,632 m² · 일사 투과율 ~7%"
     ],
     "structure": [
@@ -1229,7 +1323,13 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "partial",
-      "data_confidence_note": "Gerber Architekten 검증, 정확한 치수는 OSM/실측 필요"
+      "data_confidence_note": "Gerber Architekten 검증, 정확한 치수는 OSM/실측 필요",
+      "must_have": [
+        "정육면체 본체 매스",
+        "마름모(rhombus) 패턴 외피 (텐션 케이블 래퍼)",
+        "상단 캐노피/파라펫",
+        "본체 + 외피 두 겹 구조"
+      ]
     }
   },
   {
@@ -1260,12 +1360,12 @@
         "value": "6개 테마 존 + 시그니처 코스터/타워"
       },
       {
-        "label": "규모",
-        "value": "파크 ~320,000 m² · Falcons Flight 트랙 ~4 km"
-      },
-      {
         "label": "재료",
         "value": "강철 트랙(Intamin), 콘크리트 하부, 테마 클래딩(GFRC/FRP), 텐사일 막 차양"
+      },
+      {
+        "label": "규모",
+        "value": "파크 ~320,000 m² · Falcons Flight 트랙 ~4 km"
       },
       {
         "label": "시대",
@@ -1714,12 +1814,12 @@
         "value": "18홀 사막 챔피언십 코스 + 클럽하우스"
       },
       {
-        "label": "위치",
-        "value": "Al Aarid, 리야드 북부"
-      },
-      {
         "label": "재료",
         "value": "관수 잔디 페어웨이/그린, 사막 러프, 낮은 클럽하우스(석재·스터코), 조명탑"
+      },
+      {
+        "label": "위치",
+        "value": "Al Aarid, 리야드 북부"
       },
       {
         "label": "확인필요",
@@ -2232,12 +2332,12 @@
         "value": "해상 단일 수직 제트 + 육상 펌프 하우스"
       },
       {
-        "label": "규모",
-        "value": "분사 높이 ~260m (세계 최고 분수)"
-      },
-      {
         "label": "재료",
         "value": "해수(제트), 스테인리스 노즐 어셈블리, 콘크리트/강 해상 플랫폼"
+      },
+      {
+        "label": "규모",
+        "value": "분사 높이 ~260m (세계 최고 분수)"
       },
       {
         "label": "시대",
@@ -2300,7 +2400,14 @@
         }
       ],
       "data_confidence": "verified",
-      "data_confidence_note": "Wikipedia·Guinness 검증 (312m 분수·375 km/h)"
+      "data_confidence_note": "Wikipedia·Guinness 검증 (312m 분수·375 km/h)",
+      "must_have": [
+        "분수 플랫폼 + 노즐 구조 (높이 표현 X — 물줄기는 런타임)",
+        "홍해 코르니쉬 진입 광장"
+      ],
+      "modeling_notes": [
+        "물줄기 자체는 모델링 대상 아님 — 플랫폼·노즐 부위만"
+      ]
     }
   },
   {
@@ -2479,7 +2586,7 @@
     },
     "key_points": [
       "제다 코르니쉬 사우디 최초 공공 수족관 — 2010년경 개장",
-      "비교적 작은 단일 동 (~6,000 m²) · 곡선·사선 매스 + 청색 유리 + 메탈 패널",
+      "비교적 작은 단일 동 (~6,000 m²) · 곡선·사선 매스 + 청색 유리",
       "사우디 유일 공공 수족관 (개관 당시 기준)"
     ],
     "structure": [
@@ -2836,7 +2943,7 @@
       "local_path": "32_jawza-al-qahtani-mosque.jpg"
     },
     "key_points": [
-      "Al Khobar 코르니쉬 흰색 모스크 — Sumou Holding 회장 Sheikh Ayed Al Qahtani가 모친 이름으로 헌정",
+      "Al Khobar 코르니쉬색 모스크 — Sumou Holding 회장 Sheikh Ayed Al Qahtani가 모친 이름으로 헌정",
       "국제 자료 매우 적음 — 외관 사진 외 권위 자료 부재",
       "코르니쉬 보행로에서 잘 보이는 랜드마크"
     ],
@@ -3100,12 +3207,12 @@
         "value": "5교량 + 7제방 + 중앙 Passport Island + 양국 타워 레스토랑"
       },
       {
-        "label": "규모",
-        "value": "길이 25 km · Passport Island ~660,000 m² · 타워 65m"
-      },
-      {
         "label": "재료",
         "value": "철근 콘크리트, 강철 보강, 아스팔트 노면, 콘크리트 파일런 536개"
+      },
+      {
+        "label": "규모",
+        "value": "길이 25 km · Passport Island ~660,000 m² · 타워 65m"
       },
       {
         "label": "시대",
@@ -3610,7 +3717,16 @@
         }
       ],
       "data_confidence": "verified",
-      "data_confidence_note": "CTBUH·Wikipedia 검증 (601m·시계 43×43m·120층)"
+      "data_confidence_note": "CTBUH·Wikipedia 검증 (601m·시계 43×43m·120층)",
+      "must_have": [
+        "중앙 시계탑 + 6개 부속 타워 (ㄷ자 단지)",
+        "꼭대기 크레센트(초승달) + 별 장식 구조물 — 무조건 포함",
+        "타워 하부는 6개 부속 타워가 둘러싸는 복합 형태",
+        "Masjid al-Haram (대모스크) 바로 옆 위치 — 배경 맥락 중요"
+      ],
+      "modeling_notes": [
+        "중앙 시계탑 + 6개 부속 타워가 ㄷ자 단지 — 마스터매스 먼저 / 시계면·왕관·초승달 별도 분리"
+      ]
     }
   },
   {
