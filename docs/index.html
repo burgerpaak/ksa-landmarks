@@ -191,6 +191,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 [data-theme="dark"] .sun-icon { display: none; }
 [data-theme="light"] .moon-icon { display: none; }
 
+/* 달 아이콘 광학 보정 — 크레센트 무게중심이 우하단이라 살짝 좌상단으로 밀기 */
+.moon-icon { transform: translate(-1px, -1px); }
+
 /* ───── LAYOUT ───── */
 .layout {
   display: grid;
