@@ -593,11 +593,13 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
         tier_dot = ""
         ref_link = ""
 
+    sample_badge = '<span class="entry-sample-badge">SAMPLE</span>' if entry.get("sample") else ""
     landmark_html = (
         f'<div class="entry-landmark">'
         f'{tier_dot}'
         f'<span class="entry-num">№ {esc(lm_id)}</span>'
         f'<span class="entry-landmark-name">{esc(lm_name)}</span>'
+        f'{sample_badge}'
         f'</div>'
     )
 
@@ -642,8 +644,9 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
             )
     shots_html = f'<div class="entry-shots">{"".join(shots)}</div>' if shots else ""
 
+    entry_cls = " entry--sample" if entry.get("sample") else ""
     return f"""
-<div class="entry">
+<div class="entry{entry_cls}">
   <div class="entry-date">{esc(entry.get("date", ""))}</div>
   <div class="entry-card">
     <div class="entry-head">

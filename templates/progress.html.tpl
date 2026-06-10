@@ -185,6 +185,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 8px; height: 8px; border-radius: 50%;
 }
 
+.entry-sample-badge {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--alert);
+  background: color-mix(in srgb, var(--alert) 12%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--alert) 30%, var(--border));
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-left: 2px;
+}
+
+/* 샘플 엔트리 — 점선 테두리 + 약간 흐림으로 테스트용 명시 */
+.entry--sample .entry-card {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--alert) 35%, var(--border));
+  background: color-mix(in srgb, var(--alert) 3%, var(--bg-elev));
+}
+
 .entry-title {
   font-size: 19px;
   font-weight: 700;
