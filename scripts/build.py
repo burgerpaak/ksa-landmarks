@@ -426,39 +426,73 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
         f'</div>'
     )
 
-    # tri 수 (진행바 없이 간단 표기)
-    tri_html = ""
-    tri = entry.get("tri_count")
-    if tri is not None:
-        tri_html = f'<div class="entry-tri"><span>{tri:,} tris</span></div>'
+    # 모델 정규화: 구버전 단일 "model"/"tri_count" → models[] 배열로 통합
+    models = list(entry.get("models", []) or [])
+    if entry.get("model"):
+        models.insert(0, {
+            "file": entry["model"],
+            "label": entry.get("model_label", ""),
+            "tris": entry.get("tri_count"),
+        })
+    # 존재하는 파일만, 다운로드 아이콘 SVG
+    dl_svg = (
+        '<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
+        '<path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" '
+        'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    )
+    valid_models = []
+    for m in models:
+        f = m.get("file")
+        if f and (PROGRESS_SRC_DIR / f).exists():
+            mb = (PROGRESS_SRC_DIR / f).stat().st_size / (1024 * 1024)
+            valid_models.append({**m, "_mb": mb})
 
-    # 스크린샷 (존재하는 파일만)
+    model_html = ""
+    if valid_models:
+        first = valid_models[0]
+        # 탭 (모델 2개 이상일 때만)
+        tabs_html = ""
+        if len(valid_models) > 1:
+            tab_items = []
+            for i, m in enumerate(valid_models):
+                label = m.get("label") or m["file"].rsplit("/", 1)[-1]
+                tris = f' · {m["tris"]:,} tris' if m.get("tris") is not None else ""
+                tab_items.append(
+                    f'<div class="model-tab{" active" if i == 0 else ""}" data-src="assets/{esc(m["file"])}" '
+                    f'data-mb="{m["_mb"]:.1f}" data-name="{esc(m["file"].rsplit("/",1)[-1])}">'
+                    f'<button class="model-tab-label">{esc(label)}<span class="model-tab-meta">{esc(tris)}</span></button>'
+                    f'<a class="model-tab-dl" href="assets/{esc(m["file"])}" download title="{esc(m["file"].rsplit("/",1)[-1])} 다운로드">{dl_svg}</a>'
+                    f'</div>'
+                )
+            tabs_html = f'<div class="model-tabs">{"".join(tab_items)}</div>'
+
+        first_tris = f' · {first["tris"]:,} tris' if first.get("tris") is not None else ""
+        model_html = (
+            f'<div class="entry-model-wrap">'
+            f'<div class="entry-model">'
+            f'<model-viewer src="assets/{esc(first["file"])}" camera-controls auto-rotate '
+            f'shadow-intensity="0.6" exposure="1.0" interaction-prompt="none" loading="lazy"></model-viewer>'
+            f'<div class="entry-model-bar">'
+            f'<a class="model-dl" href="assets/{esc(first["file"])}" download data-dl>'
+            f'{dl_svg}<span data-dl-label>{esc(first["file"].rsplit("/",1)[-1])} ({first["_mb"]:.1f} MB){esc(first_tris)}</span></a>'
+            f'</div>'
+            f'</div>'
+            f'{tabs_html}'
+            f'</div>'
+        )
+
+    # 스크린샷 (존재하는 파일만) — 개별 다운로드 아이콘 포함
     shots = []
     for fn in entry.get("screenshots", []) or []:
         if (PROGRESS_SRC_DIR / fn).exists():
+            name = fn.rsplit("/", 1)[-1]
             shots.append(
-                f'<div class="entry-shot"><img src="assets/{esc(fn)}" alt="{esc(entry.get("title",""))}" loading="lazy"></div>'
+                f'<div class="entry-shot">'
+                f'<img src="assets/{esc(fn)}" alt="{esc(entry.get("title",""))}" loading="lazy">'
+                f'<a class="shot-dl" href="assets/{esc(fn)}" download title="{esc(name)} 다운로드">{dl_svg}</a>'
+                f'</div>'
             )
     shots_html = f'<div class="entry-shots">{"".join(shots)}</div>' if shots else ""
-
-    # 모델 (존재하면 model-viewer)
-    model_html = ""
-    model = entry.get("model")
-    if model and (PROGRESS_SRC_DIR / model).exists():
-        size_mb = (PROGRESS_SRC_DIR / model).stat().st_size / (1024 * 1024)
-        model_html = (
-            f'<div class="entry-model">'
-            f'<model-viewer src="assets/{esc(model)}" camera-controls auto-rotate '
-            f'shadow-intensity="0.6" exposure="1.0" '
-            f'interaction-prompt="none" loading="lazy"></model-viewer>'
-            f'<div class="entry-model-bar">'
-            f'<a class="model-dl" href="assets/{esc(model)}" download>'
-            f'<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
-            f'<path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-            f'.glb ({size_mb:.1f} MB)</a>'
-            f'</div>'
-            f'</div>'
-        )
 
     return f"""
 <div class="entry">
@@ -468,7 +502,6 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
       {landmark_html}
       <h3 class="entry-title">{esc(entry.get("title", ""))}</h3>
       <p class="entry-notes">{esc(entry.get("notes", ""))}</p>
-      {tri_html}
     </div>
     {model_html}
     {shots_html}

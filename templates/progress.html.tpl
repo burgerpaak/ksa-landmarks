@@ -222,13 +222,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 3px;
 }
 
-/* model-viewer */
+/* ───── 3D MODEL VIEWER (탭 전환) ───── */
+.entry-model-wrap {
+  padding: 16px 22px 4px;
+}
 .entry-model {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 340px;
   background: var(--bg-sunken);
-  border-top: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
 }
 .entry-model model-viewer {
   width: 100%; height: 100%;
@@ -256,17 +261,59 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .model-dl:hover { color: var(--ink); background: var(--bg-elev); }
 
-/* screenshots */
+/* 모델 탭 바 */
+.model-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.model-tab {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  transition: border-color 0.14s ease;
+}
+.model-tab.active { border-color: var(--accent); }
+.model-tab-label {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.model-tab.active .model-tab-label { color: var(--ink); }
+.model-tab-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+}
+.model-tab-dl {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  color: var(--ink-mute);
+  border-left: 1px solid var(--border);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.model-tab-dl:hover { background: var(--accent); color: #fff; }
+
+/* ───── SCREENSHOTS ───── */
 .entry-shots {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px;
-  padding: 0 22px 20px;
+  gap: 10px;
+  padding: 16px 22px 20px;
 }
-.entry-shots:first-child { padding-top: 18px; }
 .entry-shot {
+  position: relative;
   aspect-ratio: 4 / 3;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   cursor: zoom-in;
   border: 1px solid var(--border);
@@ -278,6 +325,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: transform 0.3s ease;
 }
 .entry-shot:hover img { transform: scale(1.04); }
+.shot-dl {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--bg-elev) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+.entry-shot:hover .shot-dl { opacity: 1; }
+.shot-dl:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 .entry-foot { padding: 16px 22px 18px; border-top: 1px solid var(--border); }
 .entry-ref-link {
@@ -360,7 +422,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
 
-  // lightbox
+  // 모델 탭 전환 — 활성 모델만 viewer에 로드 (10개+ 파일도 1개만 메모리)
+  document.querySelectorAll('.entry-model-wrap').forEach(wrap => {
+    const viewer = wrap.querySelector('model-viewer');
+    const dlBtn = wrap.querySelector('[data-dl]');
+    const dlLabel = wrap.querySelector('[data-dl-label]');
+    wrap.querySelectorAll('.model-tab').forEach(tab => {
+      const labelBtn = tab.querySelector('.model-tab-label');
+      labelBtn.addEventListener('click', () => {
+        const src = tab.dataset.src;
+        if (!src || viewer.getAttribute('src') === src) return;
+        viewer.setAttribute('src', src);
+        wrap.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        if (dlBtn) dlBtn.setAttribute('href', src);
+        if (dlLabel) dlLabel.textContent = `${tab.dataset.name} (${tab.dataset.mb} MB)`;
+      });
+    });
+  });
+
+  // lightbox (다운로드 버튼 클릭은 제외)
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   document.querySelectorAll('.entry-shot img').forEach(img => {
@@ -368,6 +449,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       lbImg.src = img.src;
       lb.classList.add('open');
     });
+  });
+  document.querySelectorAll('.shot-dl').forEach(a => {
+    a.addEventListener('click', e => e.stopPropagation());
   });
   lb.addEventListener('click', () => { lb.classList.remove('open'); lbImg.src = ''; });
   document.addEventListener('keydown', e => {
