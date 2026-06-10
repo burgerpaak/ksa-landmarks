@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 <style>
 
 :root {
@@ -1366,6 +1367,20 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 .ref-link svg { flex-shrink: 0; opacity: 0.6; }
 .ref-link:hover svg { opacity: 1; }
 
+/* 3D 모델 버튼 — accent 채움으로 강조 */
+.ref-link--3d {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.ref-link--3d svg { opacity: 1; }
+.ref-link--3d:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+  color: #fff;
+  border-color: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
 /* ───── EMPTY STATE ───── */
 .empty-state {
   grid-column: 1 / -1;
@@ -1879,7 +1894,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     
 
     <footer class="card-footer">
-      <div class="ref-links"><a class="ref-link" href="https://maps.app.goo.gl/ctYXJ3qtc2vHXC3b6" target="_blank" rel="noopener"><span>Google Maps</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://earth.google.com/web/@24.6465518,46.709169,0a,1500d,20y,0h,0t,0r" target="_blank" rel="noopener"><span>Google Earth</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://www.openstreetmap.org/?mlat=24.6465518&amp;mlon=46.709169#map=19/24.6465518/46.709169" target="_blank" rel="noopener"><span>OSM (footprint)</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://www.google.com/search?tbm=isch&amp;q=Al+Murabba+Palace+Riyadh+exterior" target="_blank" rel="noopener"><span>Google 이미지</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://en.wikipedia.org/wiki/Murabba_Palace" target="_blank" rel="noopener"><span>Wikipedia</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a></div>
+      <div class="ref-links"><button class="ref-link ref-link--3d model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}]" data-start="0"><svg width="11" height="11" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D 모델</span></button><a class="ref-link" href="https://maps.app.goo.gl/ctYXJ3qtc2vHXC3b6" target="_blank" rel="noopener"><span>Google Maps</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://earth.google.com/web/@24.6465518,46.709169,0a,1500d,20y,0h,0t,0r" target="_blank" rel="noopener"><span>Google Earth</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://www.openstreetmap.org/?mlat=24.6465518&amp;mlon=46.709169#map=19/24.6465518/46.709169" target="_blank" rel="noopener"><span>OSM (footprint)</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://www.google.com/search?tbm=isch&amp;q=Al+Murabba+Palace+Riyadh+exterior" target="_blank" rel="noopener"><span>Google 이미지</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a><a class="ref-link" href="https://en.wikipedia.org/wiki/Murabba_Palace" target="_blank" rel="noopener"><span>Wikipedia</span><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/></svg></a></div>
     </footer>
   </div>
 </article>
@@ -3620,6 +3635,142 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   <img class="lightbox-img" id="lightbox-img" alt="">
   <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
+
+
+<!-- ───── SHARED 3D MODEL MODAL ───── -->
+<div class="model-modal" id="model-modal" aria-hidden="true">
+  <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
+    <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
+    <div class="model-modal-stage">
+      <model-viewer id="modal-mv" camera-controls auto-rotate shadow-intensity="0.6" exposure="1.0" interaction-prompt="none"></model-viewer>
+    </div>
+    <div class="model-modal-foot">
+      <div class="model-modal-tabs" id="modal-tabs"></div>
+      <a class="model-dl" id="modal-dl" download>
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="modal-dl-label"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+.model-modal {
+  position: fixed; inset: 0; z-index: 250;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 20, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+}
+.model-modal.open { display: flex; }
+.model-modal-panel {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+.model-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft); font-size: 20px; line-height: 1;
+}
+.model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
+.model-modal-stage { width: 100%; height: min(64vh, 540px); background: var(--bg-sunken); }
+.model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+.model-modal-foot {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.model-modal-tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.model-modal-tab {
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.model-modal-tab:hover { color: var(--ink); }
+.model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-modal-tab .t-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); }
+.model-modal .model-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--ink); color: var(--bg-elev);
+  font-family: var(--mono); font-size: 11px;
+  flex-shrink: 0;
+}
+.model-modal .model-dl:hover { opacity: 0.88; }
+@media (max-width: 640px) {
+  .model-modal { padding: 16px; }
+  .model-modal-stage { height: 48vh; }
+}
+</style>
+<script>
+(function(){
+  const ASSET_BASE = 'progress/assets/';
+  const modal = document.getElementById('model-modal');
+  if (!modal) return;
+  const mv = document.getElementById('modal-mv');
+  const tabsEl = document.getElementById('modal-tabs');
+  const dl = document.getElementById('modal-dl');
+  const dlLabel = document.getElementById('modal-dl-label');
+
+  function fmt(n){ return n.toLocaleString(); }
+
+  function load(models, idx){
+    const m = models[idx];
+    const src = ASSET_BASE + m.file;
+    mv.setAttribute('src', src);
+    dl.setAttribute('href', src);
+    const name = m.file.split('/').pop();
+    dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+
+  window.openModelModal = function(models, startIdx){
+    if (!models || !models.length) return;
+    tabsEl.innerHTML = '';
+    // 모델 1개면 탭 숨김
+    if (models.length > 1) {
+      models.forEach((m, i) => {
+        const b = document.createElement('button');
+        b.className = 'model-modal-tab';
+        const meta = (m.tris!=null) ? ('<span class="t-meta">'+fmt(m.tris)+' tris</span>') : '';
+        b.innerHTML = (m.label || m.file) + meta;
+        b.addEventListener('click', () => load(models, i));
+        tabsEl.appendChild(b);
+      });
+    }
+    load(models, startIdx || 0);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function close(){ modal.classList.remove('open'); mv.removeAttribute('src'); document.body.style.overflow=''; }
+  document.getElementById('model-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // 모든 .model-btn 트리거 연결
+  document.querySelectorAll('.model-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      try {
+        const models = JSON.parse(btn.getAttribute('data-models'));
+        window.openModelModal(models, parseInt(btn.getAttribute('data-start')||'0', 10));
+      } catch(err) {}
+    });
+  });
+})();
+</script>
+
 
 <script>
 

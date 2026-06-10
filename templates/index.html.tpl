@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 <style>
 
 :root {
@@ -1366,6 +1367,20 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 .ref-link svg { flex-shrink: 0; opacity: 0.6; }
 .ref-link:hover svg { opacity: 1; }
 
+/* 3D 모델 버튼 — accent 채움으로 강조 */
+.ref-link--3d {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.ref-link--3d svg { opacity: 1; }
+.ref-link--3d:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
+  color: #fff;
+  border-color: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
 /* ───── EMPTY STATE ───── */
 .empty-state {
   grid-column: 1 / -1;
@@ -1751,6 +1766,8 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   <img class="lightbox-img" id="lightbox-img" alt="">
   <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
+
+{{MODEL_MODAL}}
 
 <script>
 

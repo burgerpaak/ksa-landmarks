@@ -243,108 +243,50 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 16px;
 }
 
-.entry-tri {
+/* ───── 3D 모델 (버튼 → 공유 모달) ───── */
+.entry-models {
+  padding: 4px 22px 4px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  margin-bottom: 18px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--ink-mute);
 }
-.entry-tri-bar {
-  flex: 0 0 120px;
-  height: 5px;
-  background: var(--bg-sunken);
-  border-radius: 3px;
-  overflow: hidden;
-}
-.entry-tri-fill {
-  height: 100%;
+.model-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.model-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 10px;
   background: var(--accent);
-  border-radius: 3px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.14s ease, transform 0.14s ease;
 }
-
-/* ───── 3D MODEL VIEWER (탭 전환) ───── */
-.entry-model-wrap {
-  padding: 16px 22px 4px;
+.model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.model-btn svg { flex-shrink: 0; }
+.model-btn-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.85;
 }
-.entry-model {
-  position: relative;
-  width: 100%;
-  height: 340px;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.entry-model model-viewer {
-  width: 100%; height: 100%;
-  --poster-color: transparent;
-}
-.entry-model-bar {
-  position: absolute;
-  bottom: 12px; right: 12px;
-  display: flex; gap: 8px;
-  z-index: 5;
-}
-.model-dl {
+.model-dls { display: flex; flex-wrap: wrap; gap: 8px; }
+.model-dl-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 12px;
+  padding: 6px 11px;
   border-radius: 8px;
-  background: color-mix(in srgb, var(--bg-elev) 90%, transparent);
-  backdrop-filter: blur(8px);
+  background: var(--bg-sunken);
   border: 1px solid var(--border);
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--ink-soft);
-  transition: background 0.14s ease, color 0.14s ease;
-}
-.model-dl:hover { color: var(--ink); background: var(--bg-elev); }
-
-/* 모델 탭 바 */
-.model-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-.model-tab {
-  display: inline-flex;
-  align-items: stretch;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  transition: border-color 0.14s ease;
-}
-.model-tab.active { border-color: var(--accent); }
-.model-tab-label {
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-}
-.model-tab.active .model-tab-label { color: var(--ink); }
-.model-tab-meta {
-  font-family: var(--mono);
-  font-size: 10px;
   color: var(--ink-mute);
+  transition: color 0.14s ease, border-color 0.14s ease;
 }
-.model-tab-dl {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 9px;
-  color: var(--ink-mute);
-  border-left: 1px solid var(--border);
-  transition: background 0.14s ease, color 0.14s ease;
-}
-.model-tab-dl:hover { background: var(--accent); color: #fff; }
+.model-dl-chip:hover { color: var(--ink); border-color: var(--border-strong); }
+.model-dl-chip svg { flex-shrink: 0; }
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {
@@ -457,7 +399,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <h3 class="entry-title">블록아웃 1차 공유</h3>
       <p class="entry-notes">본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫 디테일까지 진행. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)</p>
     </div>
-    <div class="entry-model-wrap"><div class="entry-model"><model-viewer src="assets/02_sample_blockout.glb" camera-controls auto-rotate shadow-intensity="0.6" exposure="1.0" interaction-prompt="none" loading="lazy"></model-viewer><div class="entry-model-bar"><a class="model-dl" href="assets/02_sample_blockout.glb" download data-dl><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-dl-label>02_sample_blockout.glb (0.0 MB) · 60 tris</span></a></div></div><div class="model-tabs"><div class="model-tab active" data-src="assets/02_sample_blockout.glb" data-mb="0.0" data-name="02_sample_blockout.glb"><button class="model-tab-label">블록아웃<span class="model-tab-meta"> · 60 tris</span></button><a class="model-tab-dl" href="assets/02_sample_blockout.glb" download title="02_sample_blockout.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="model-tab" data-src="assets/02_sample_detail.glb" data-mb="0.0" data-name="02_sample_detail.glb"><button class="model-tab-label">파라펫 디테일<span class="model-tab-meta"> · 492 tris</span></button><a class="model-tab-dl" href="assets/02_sample_detail.glb" download title="02_sample_detail.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+    <div class="entry-models"><div class="model-btns"><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>블록아웃</span><span class="model-btn-meta">60 tris</span></button><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="1"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>파라펫 디테일</span><span class="model-btn-meta">492 tris</span></button></div><div class="model-dls"><a class="model-dl-chip" href="assets/02_sample_blockout.glb" download title="02_sample_blockout.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>02_sample_blockout.glb (0.0 MB)</span></a><a class="model-dl-chip" href="assets/02_sample_detail.glb" download title="02_sample_detail.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>02_sample_detail.glb (0.0 MB)</span></a></div></div>
     <div class="entry-shots"><div class="entry-shot"><img src="assets/02_sample_01.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_01.jpg" download title="02_sample_01.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_02.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_02.jpg" download title="02_sample_02.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_03.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_03.jpg" download title="02_sample_03.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
     <div class="entry-foot"><a class="entry-ref-link" href="../#card-02">↳ 레퍼런스 카드 보기</a></div>
   </div>
@@ -466,6 +408,142 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </main>
 
 <div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
+
+
+<!-- ───── SHARED 3D MODEL MODAL ───── -->
+<div class="model-modal" id="model-modal" aria-hidden="true">
+  <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
+    <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
+    <div class="model-modal-stage">
+      <model-viewer id="modal-mv" camera-controls auto-rotate shadow-intensity="0.6" exposure="1.0" interaction-prompt="none"></model-viewer>
+    </div>
+    <div class="model-modal-foot">
+      <div class="model-modal-tabs" id="modal-tabs"></div>
+      <a class="model-dl" id="modal-dl" download>
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="modal-dl-label"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+.model-modal {
+  position: fixed; inset: 0; z-index: 250;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 20, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+}
+.model-modal.open { display: flex; }
+.model-modal-panel {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+.model-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft); font-size: 20px; line-height: 1;
+}
+.model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
+.model-modal-stage { width: 100%; height: min(64vh, 540px); background: var(--bg-sunken); }
+.model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+.model-modal-foot {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.model-modal-tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.model-modal-tab {
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.model-modal-tab:hover { color: var(--ink); }
+.model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-modal-tab .t-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); }
+.model-modal .model-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--ink); color: var(--bg-elev);
+  font-family: var(--mono); font-size: 11px;
+  flex-shrink: 0;
+}
+.model-modal .model-dl:hover { opacity: 0.88; }
+@media (max-width: 640px) {
+  .model-modal { padding: 16px; }
+  .model-modal-stage { height: 48vh; }
+}
+</style>
+<script>
+(function(){
+  const ASSET_BASE = 'assets/';
+  const modal = document.getElementById('model-modal');
+  if (!modal) return;
+  const mv = document.getElementById('modal-mv');
+  const tabsEl = document.getElementById('modal-tabs');
+  const dl = document.getElementById('modal-dl');
+  const dlLabel = document.getElementById('modal-dl-label');
+
+  function fmt(n){ return n.toLocaleString(); }
+
+  function load(models, idx){
+    const m = models[idx];
+    const src = ASSET_BASE + m.file;
+    mv.setAttribute('src', src);
+    dl.setAttribute('href', src);
+    const name = m.file.split('/').pop();
+    dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+
+  window.openModelModal = function(models, startIdx){
+    if (!models || !models.length) return;
+    tabsEl.innerHTML = '';
+    // 모델 1개면 탭 숨김
+    if (models.length > 1) {
+      models.forEach((m, i) => {
+        const b = document.createElement('button');
+        b.className = 'model-modal-tab';
+        const meta = (m.tris!=null) ? ('<span class="t-meta">'+fmt(m.tris)+' tris</span>') : '';
+        b.innerHTML = (m.label || m.file) + meta;
+        b.addEventListener('click', () => load(models, i));
+        tabsEl.appendChild(b);
+      });
+    }
+    load(models, startIdx || 0);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function close(){ modal.classList.remove('open'); mv.removeAttribute('src'); document.body.style.overflow=''; }
+  document.getElementById('model-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // 모든 .model-btn 트리거 연결
+  document.querySelectorAll('.model-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      try {
+        const models = JSON.parse(btn.getAttribute('data-models'));
+        window.openModelModal(models, parseInt(btn.getAttribute('data-start')||'0', 10));
+      } catch(err) {}
+    });
+  });
+})();
+</script>
+
 
 <script>
 (function(){
@@ -478,24 +556,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
 
-  // 모델 탭 전환 — 활성 모델만 viewer에 로드 (10개+ 파일도 1개만 메모리)
-  document.querySelectorAll('.entry-model-wrap').forEach(wrap => {
-    const viewer = wrap.querySelector('model-viewer');
-    const dlBtn = wrap.querySelector('[data-dl]');
-    const dlLabel = wrap.querySelector('[data-dl-label]');
-    wrap.querySelectorAll('.model-tab').forEach(tab => {
-      const labelBtn = tab.querySelector('.model-tab-label');
-      labelBtn.addEventListener('click', () => {
-        const src = tab.dataset.src;
-        if (!src || viewer.getAttribute('src') === src) return;
-        viewer.setAttribute('src', src);
-        wrap.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        if (dlBtn) dlBtn.setAttribute('href', src);
-        if (dlLabel) dlLabel.textContent = `${tab.dataset.name} (${tab.dataset.mb} MB)`;
-      });
-    });
-  });
+  // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
 
   // lightbox (다운로드 버튼 클릭은 제외)
   const lb = document.getElementById('lightbox');

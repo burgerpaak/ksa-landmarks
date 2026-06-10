@@ -43,6 +43,146 @@ CORE_STRUCT_LABELS = ["형태", "규모", "재료", "시대", "설계"]
 
 # 랜드마크별 최신 진행 업데이트 날짜 (build_progress가 채움 → 카드 배지용)
 PROGRESS_LATEST = {}
+# 랜드마크별 대표 3D 모델 (Reference 카드 3D 버튼용)
+PROGRESS_REP_MODELS = {}
+
+
+# 공유 3D 모델 모달 — Reference·Worklog 양쪽에 주입. {{ASSET_BASE}}만 페이지별로 다름.
+MODEL_MODAL = """
+<!-- ───── SHARED 3D MODEL MODAL ───── -->
+<div class="model-modal" id="model-modal" aria-hidden="true">
+  <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
+    <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
+    <div class="model-modal-stage">
+      <model-viewer id="modal-mv" camera-controls auto-rotate shadow-intensity="0.6" exposure="1.0" interaction-prompt="none"></model-viewer>
+    </div>
+    <div class="model-modal-foot">
+      <div class="model-modal-tabs" id="modal-tabs"></div>
+      <a class="model-dl" id="modal-dl" download>
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="modal-dl-label"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+.model-modal {
+  position: fixed; inset: 0; z-index: 250;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 20, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+}
+.model-modal.open { display: flex; }
+.model-modal-panel {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+.model-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft); font-size: 20px; line-height: 1;
+}
+.model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
+.model-modal-stage { width: 100%; height: min(64vh, 540px); background: var(--bg-sunken); }
+.model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+.model-modal-foot {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.model-modal-tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.model-modal-tab {
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.model-modal-tab:hover { color: var(--ink); }
+.model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-modal-tab .t-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); }
+.model-modal .model-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--ink); color: var(--bg-elev);
+  font-family: var(--mono); font-size: 11px;
+  flex-shrink: 0;
+}
+.model-modal .model-dl:hover { opacity: 0.88; }
+@media (max-width: 640px) {
+  .model-modal { padding: 16px; }
+  .model-modal-stage { height: 48vh; }
+}
+</style>
+<script>
+(function(){
+  const ASSET_BASE = '{{ASSET_BASE}}';
+  const modal = document.getElementById('model-modal');
+  if (!modal) return;
+  const mv = document.getElementById('modal-mv');
+  const tabsEl = document.getElementById('modal-tabs');
+  const dl = document.getElementById('modal-dl');
+  const dlLabel = document.getElementById('modal-dl-label');
+
+  function fmt(n){ return n.toLocaleString(); }
+
+  function load(models, idx){
+    const m = models[idx];
+    const src = ASSET_BASE + m.file;
+    mv.setAttribute('src', src);
+    dl.setAttribute('href', src);
+    const name = m.file.split('/').pop();
+    dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+
+  window.openModelModal = function(models, startIdx){
+    if (!models || !models.length) return;
+    tabsEl.innerHTML = '';
+    // 모델 1개면 탭 숨김
+    if (models.length > 1) {
+      models.forEach((m, i) => {
+        const b = document.createElement('button');
+        b.className = 'model-modal-tab';
+        const meta = (m.tris!=null) ? ('<span class="t-meta">'+fmt(m.tris)+' tris</span>') : '';
+        b.innerHTML = (m.label || m.file) + meta;
+        b.addEventListener('click', () => load(models, i));
+        tabsEl.appendChild(b);
+      });
+    }
+    load(models, startIdx || 0);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function close(){ modal.classList.remove('open'); mv.removeAttribute('src'); document.body.style.overflow=''; }
+  document.getElementById('model-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // 모든 .model-btn 트리거 연결
+  document.querySelectorAll('.model-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      try {
+        const models = JSON.parse(btn.getAttribute('data-models'));
+        window.openModelModal(models, parseInt(btn.getAttribute('data-start')||'0', 10));
+      } catch(err) {}
+    });
+  });
+})();
+</script>
+"""
 
 
 def render_card(lm: dict) -> str:
@@ -293,6 +433,17 @@ def render_card(lm: dict) -> str:
             f'<path d="M2 8 L8 2 M3.5 2 L8 2 L8 6.5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="square"/>'
             f"</svg></a>"
         )
+    # 3D 모델 버튼 — 이 랜드마크 대표 모델이 있으면 공유 모달 호출
+    rep = PROGRESS_REP_MODELS.get(idx_str)
+    if rep:
+        rep_payload = esc(json.dumps([rep], ensure_ascii=False))
+        links_parts.insert(0,
+            f'<button class="ref-link ref-link--3d model-btn" data-models="{rep_payload}" data-start="0">'
+            f'<svg width="11" height="11" viewBox="0 0 13 13" fill="none">'
+            f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+            f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+            f'</svg><span>3D 모델</span></button>'
+        )
     links_html = "".join(links_parts)
 
     # 검색용 데이터 속성 (스펙 시트: must_have + structure + key_points까지 포함)
@@ -403,6 +554,29 @@ def extract_palette(template_text: str) -> str:
     return "\n\n".join(blocks)
 
 
+def entry_valid_models(entry: dict) -> list:
+    """엔트리에서 실제 존재하는 모델 파일만 정규화해 반환 (구버전 단일 model 호환)"""
+    models = list(entry.get("models", []) or [])
+    if entry.get("model"):
+        models.insert(0, {
+            "file": entry["model"],
+            "label": entry.get("model_label", ""),
+            "tris": entry.get("tri_count"),
+        })
+    out = []
+    for m in models:
+        f = m.get("file")
+        if f and (PROGRESS_SRC_DIR / f).exists():
+            mb = (PROGRESS_SRC_DIR / f).stat().st_size / (1024 * 1024)
+            out.append({
+                "file": f,
+                "label": m.get("label") or f.rsplit("/", 1)[-1],
+                "tris": m.get("tris"),
+                "mb": round(mb, 2),
+            })
+    return out
+
+
 def render_progress_entry(entry: dict, lm_map: dict) -> str:
     lm = lm_map.get(str(entry.get("landmark_id", "")).zfill(2))
     # 랜드마크 메타
@@ -426,58 +600,39 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
         f'</div>'
     )
 
-    # 모델 정규화: 구버전 단일 "model"/"tri_count" → models[] 배열로 통합
-    models = list(entry.get("models", []) or [])
-    if entry.get("model"):
-        models.insert(0, {
-            "file": entry["model"],
-            "label": entry.get("model_label", ""),
-            "tris": entry.get("tri_count"),
-        })
-    # 존재하는 파일만, 다운로드 아이콘 SVG
     dl_svg = (
         '<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
         '<path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" '
         'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     )
-    valid_models = []
-    for m in models:
-        f = m.get("file")
-        if f and (PROGRESS_SRC_DIR / f).exists():
-            mb = (PROGRESS_SRC_DIR / f).stat().st_size / (1024 * 1024)
-            valid_models.append({**m, "_mb": mb})
+    valid_models = entry_valid_models(entry)
 
+    # 모델 영역 — "3D 보기" 버튼이 공유 모달을 호출 (엔트리 안에 뷰어를 심지 않음)
     model_html = ""
     if valid_models:
-        first = valid_models[0]
-        # 탭 (모델 2개 이상일 때만)
-        tabs_html = ""
-        if len(valid_models) > 1:
-            tab_items = []
-            for i, m in enumerate(valid_models):
-                label = m.get("label") or m["file"].rsplit("/", 1)[-1]
-                tris = f' · {m["tris"]:,} tris' if m.get("tris") is not None else ""
-                tab_items.append(
-                    f'<div class="model-tab{" active" if i == 0 else ""}" data-src="assets/{esc(m["file"])}" '
-                    f'data-mb="{m["_mb"]:.1f}" data-name="{esc(m["file"].rsplit("/",1)[-1])}">'
-                    f'<button class="model-tab-label">{esc(label)}<span class="model-tab-meta">{esc(tris)}</span></button>'
-                    f'<a class="model-tab-dl" href="assets/{esc(m["file"])}" download title="{esc(m["file"].rsplit("/",1)[-1])} 다운로드">{dl_svg}</a>'
-                    f'</div>'
-                )
-            tabs_html = f'<div class="model-tabs">{"".join(tab_items)}</div>'
-
-        first_tris = f' · {first["tris"]:,} tris' if first.get("tris") is not None else ""
+        payload = esc(json.dumps(valid_models, ensure_ascii=False))
+        btns = []
+        for i, m in enumerate(valid_models):
+            tris = f'<span class="model-btn-meta">{m["tris"]:,} tris</span>' if m.get("tris") is not None else ""
+            btns.append(
+                f'<button class="model-btn" data-models="{payload}" data-start="{i}">'
+                f'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
+                f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+                f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+                f'</svg>'
+                f'<span>{esc(m["label"])}</span>{tris}</button>'
+            )
+        # 각 모델 개별 다운로드
+        dls = "".join(
+            f'<a class="model-dl-chip" href="assets/{esc(m["file"])}" download '
+            f'title="{esc(m["file"].rsplit("/",1)[-1])} 다운로드">{dl_svg}'
+            f'<span>{esc(m["file"].rsplit("/",1)[-1])} ({m["mb"]:.1f} MB)</span></a>'
+            for m in valid_models
+        )
         model_html = (
-            f'<div class="entry-model-wrap">'
-            f'<div class="entry-model">'
-            f'<model-viewer src="assets/{esc(first["file"])}" camera-controls auto-rotate '
-            f'shadow-intensity="0.6" exposure="1.0" interaction-prompt="none" loading="lazy"></model-viewer>'
-            f'<div class="entry-model-bar">'
-            f'<a class="model-dl" href="assets/{esc(first["file"])}" download data-dl>'
-            f'{dl_svg}<span data-dl-label>{esc(first["file"].rsplit("/",1)[-1])} ({first["_mb"]:.1f} MB){esc(first_tris)}</span></a>'
-            f'</div>'
-            f'</div>'
-            f'{tabs_html}'
+            f'<div class="entry-models">'
+            f'<div class="model-btns">{"".join(btns)}</div>'
+            f'<div class="model-dls">{dls}</div>'
             f'</div>'
         )
 
@@ -537,6 +692,7 @@ def build_progress(landmarks: list, palette: str):
     output = template.replace("{{PALETTE}}", palette)
     output = output.replace("{{ENTRIES}}", entries_html)
     output = output.replace("{{COUNT}}", count_html)
+    output = output.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/"))
 
     OUTPUT_PROGRESS_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_PROGRESS_DIR / "index.html").write_text(output, encoding="utf-8")
@@ -556,26 +712,33 @@ def build_progress(landmarks: list, palette: str):
         for name in dst_files - src_files:
             (OUTPUT_PROGRESS_ASSETS / name).unlink()
 
-    # 랜드마크별 최신 업데이트 날짜 맵 (카드 배지용)
+    # 랜드마크별: 최신 날짜(배지) + 대표 모델(Reference 카드 3D 버튼 = 가장 최근 엔트리의 첫 모델)
     latest = {}
-    for e in entries_sorted:
+    rep_models = {}
+    for e in entries_sorted:  # 최신순이라 첫 등장이 곧 최신
         lid = str(e.get("landmark_id", "")).zfill(2)
         if lid not in latest:
             latest[lid] = e.get("date", "")
+        if lid not in rep_models:
+            vms = entry_valid_models(e)
+            if vms:
+                rep_models[lid] = vms[0]  # 최신 엔트리의 첫 모델 1개
 
-    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(entries_sorted)} entries, +{copied} assets)")
-    return latest
+    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(entries_sorted)} entries, +{copied} assets, {len(rep_models)} 3D models)")
+    return {"dates": latest, "rep_models": rep_models}
 
 
 def build():
-    global PROGRESS_LATEST
+    global PROGRESS_LATEST, PROGRESS_REP_MODELS
     landmarks = json.loads((DATA_DIR / "landmarks.json").read_text(encoding="utf-8"))
     glossary = json.loads((DATA_DIR / "glossary.json").read_text(encoding="utf-8"))
     template = (TEMPLATE_DIR / "index.html.tpl").read_text(encoding="utf-8")
 
-    # 진행 보고 페이지 먼저 빌드 → 카드 배지용 최신 날짜 맵 확보
+    # 진행 보고 페이지 먼저 빌드 → 카드 배지·3D 버튼용 맵 확보
     palette = extract_palette(template)
-    PROGRESS_LATEST = build_progress(landmarks, palette)
+    prog = build_progress(landmarks, palette)
+    PROGRESS_LATEST = prog["dates"]
+    PROGRESS_REP_MODELS = prog["rep_models"]
 
     # 정렬: tier 1 → 2 → 3, 같은 tier 내에서는 idx 순서
     landmarks_sorted = sorted(landmarks, key=lambda x: (x["tier"], x["idx"]))
@@ -620,6 +783,7 @@ def build():
         "{{SIDEBAR}}": sidebar_html,
         "{{GLOSSARY}}": glossary_html,
         "{{GLOSSARY_JSON}}": glossary_json,
+        "{{MODEL_MODAL}}": MODEL_MODAL.replace("{{ASSET_BASE}}", "progress/assets/"),
         "{{TOTAL}}": str(total),
         "{{T1}}": str(t1),
         "{{T2}}": str(t2),

@@ -200,108 +200,50 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 16px;
 }
 
-.entry-tri {
+/* ───── 3D 모델 (버튼 → 공유 모달) ───── */
+.entry-models {
+  padding: 4px 22px 4px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  margin-bottom: 18px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--ink-mute);
 }
-.entry-tri-bar {
-  flex: 0 0 120px;
-  height: 5px;
-  background: var(--bg-sunken);
-  border-radius: 3px;
-  overflow: hidden;
-}
-.entry-tri-fill {
-  height: 100%;
+.model-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.model-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 10px;
   background: var(--accent);
-  border-radius: 3px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.14s ease, transform 0.14s ease;
 }
-
-/* ───── 3D MODEL VIEWER (탭 전환) ───── */
-.entry-model-wrap {
-  padding: 16px 22px 4px;
+.model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.model-btn svg { flex-shrink: 0; }
+.model-btn-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.85;
 }
-.entry-model {
-  position: relative;
-  width: 100%;
-  height: 340px;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.entry-model model-viewer {
-  width: 100%; height: 100%;
-  --poster-color: transparent;
-}
-.entry-model-bar {
-  position: absolute;
-  bottom: 12px; right: 12px;
-  display: flex; gap: 8px;
-  z-index: 5;
-}
-.model-dl {
+.model-dls { display: flex; flex-wrap: wrap; gap: 8px; }
+.model-dl-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 12px;
+  padding: 6px 11px;
   border-radius: 8px;
-  background: color-mix(in srgb, var(--bg-elev) 90%, transparent);
-  backdrop-filter: blur(8px);
+  background: var(--bg-sunken);
   border: 1px solid var(--border);
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--ink-soft);
-  transition: background 0.14s ease, color 0.14s ease;
-}
-.model-dl:hover { color: var(--ink); background: var(--bg-elev); }
-
-/* 모델 탭 바 */
-.model-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-.model-tab {
-  display: inline-flex;
-  align-items: stretch;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  transition: border-color 0.14s ease;
-}
-.model-tab.active { border-color: var(--accent); }
-.model-tab-label {
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-}
-.model-tab.active .model-tab-label { color: var(--ink); }
-.model-tab-meta {
-  font-family: var(--mono);
-  font-size: 10px;
   color: var(--ink-mute);
+  transition: color 0.14s ease, border-color 0.14s ease;
 }
-.model-tab-dl {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 9px;
-  color: var(--ink-mute);
-  border-left: 1px solid var(--border);
-  transition: background 0.14s ease, color 0.14s ease;
-}
-.model-tab-dl:hover { background: var(--accent); color: #fff; }
+.model-dl-chip:hover { color: var(--ink); border-color: var(--border-strong); }
+.model-dl-chip svg { flex-shrink: 0; }
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {
@@ -411,6 +353,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
 
+{{MODEL_MODAL}}
+
 <script>
 (function(){
   // theme (메인과 같은 localStorage 키 공유)
@@ -422,24 +366,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
 
-  // 모델 탭 전환 — 활성 모델만 viewer에 로드 (10개+ 파일도 1개만 메모리)
-  document.querySelectorAll('.entry-model-wrap').forEach(wrap => {
-    const viewer = wrap.querySelector('model-viewer');
-    const dlBtn = wrap.querySelector('[data-dl]');
-    const dlLabel = wrap.querySelector('[data-dl-label]');
-    wrap.querySelectorAll('.model-tab').forEach(tab => {
-      const labelBtn = tab.querySelector('.model-tab-label');
-      labelBtn.addEventListener('click', () => {
-        const src = tab.dataset.src;
-        if (!src || viewer.getAttribute('src') === src) return;
-        viewer.setAttribute('src', src);
-        wrap.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        if (dlBtn) dlBtn.setAttribute('href', src);
-        if (dlLabel) dlLabel.textContent = `${tab.dataset.name} (${tab.dataset.mb} MB)`;
-      });
-    });
-  });
+  // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
 
   // lightbox (다운로드 버튼 클릭은 제외)
   const lb = document.getElementById('lightbox');
