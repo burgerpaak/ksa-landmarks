@@ -1635,6 +1635,16 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     </div>
 
     <div class="sidebar-section">
+      <div class="sidebar-heading">3D Model</div>
+      <div class="filter-chips" data-filter-group="has3d">
+        <button class="chip" data-filter="has3d-yes">
+          <svg width="11" height="11" viewBox="0 0 13 13" fill="none" style="margin-right:4px"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+          모델 있음
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
       <div class="sidebar-heading">
         <span>Index</span>
         <span class="count" id="visible-count">{{TOTAL}}/{{TOTAL}}</span>
@@ -1823,20 +1833,24 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   }
   
   // ─── FILTERS ───
-  const state = { tier: 'all', cities: new Set(), types: new Set(), search: '' };
-  
+  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, search: '' };
+
   document.querySelectorAll('.filter-chips').forEach(group => {
     const groupType = group.dataset.filterGroup;
     group.addEventListener('click', e => {
       const btn = e.target.closest('.chip');
       if (!btn) return;
       const f = btn.dataset.filter;
-      
+
       if (groupType === 'tier') {
         // single select
         group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
         state.tier = f;
+      } else if (groupType === 'has3d') {
+        // toggle (단일 boolean)
+        state.has3d = !state.has3d;
+        btn.classList.toggle('active', state.has3d);
       } else {
         // multi select
         const set = groupType === 'city' ? state.cities : state.types;
@@ -1882,13 +1896,14 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const c = card.dataset.city;
       const ty = card.dataset.type;
       const s = card.dataset.search || '';
-      
+
       const tierOk = state.tier === 'all' || t === state.tier;
       const cityOk = state.cities.size === 0 || state.cities.has(c);
       const typeOk = state.types.size === 0 || state.types.has(ty);
+      const has3dOk = !state.has3d || card.dataset.has3d === 'yes';
       const searchOk = !state.search || s.includes(state.search);
-      
-      const show = tierOk && cityOk && typeOk && searchOk;
+
+      const show = tierOk && cityOk && typeOk && has3dOk && searchOk;
       card.classList.toggle('hidden', !show);
       
       // sync nav

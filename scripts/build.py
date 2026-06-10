@@ -457,11 +457,14 @@ def render_card(lm: dict) -> str:
         " ".join(lm.get("key_points", [])).lower(),
     ])
 
+    has_3d = "yes" if PROGRESS_REP_MODELS.get(idx_str) else "no"
+
     return f"""
 <article class="card" id="card-{idx_str}"
          data-tier="tier-{tier}"
          data-city="city-{city.upper().replace(' ', '-')}"
          data-type="type-{type_}"
+         data-has3d="{has_3d}"
          data-search="{esc(search_str)}">
   <div class="card-image{no_image_class}">
     {img_html}
