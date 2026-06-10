@@ -5,11 +5,10 @@
       "date": "2026-06-10",
       "landmark_id": "02",
       "title": "블록아웃 1차 공유",
-      "notes": "본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫·창 음각은 다음 단계. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이.",
-      "tri_count": 480,
-      "budget": 20000,
-      "screenshots": [],
-      "model": null
+      "notes": "본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫·창 음각은 다음 단계. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)",
+      "tri_count": 60,
+      "screenshots": ["02_sample_01.jpg", "02_sample_02.jpg", "02_sample_03.jpg"],
+      "model": "02_sample_blockout.glb"
     }
   ]
 }

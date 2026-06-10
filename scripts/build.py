@@ -223,13 +223,13 @@ def render_card(lm: dict) -> str:
     if upd_date:
         short = upd_date[5:] if len(upd_date) >= 10 else upd_date  # MM-DD
         progress_badge_html = (
-            f'<a class="card-progress-badge" href="progress/#card-{idx_str}" '
-            f'title="진행 업데이트 {esc(upd_date)} — Progress 페이지에서 보기">'
+            f'<a class="card-progress-badge" href="progress/" '
+            f'title="Worklog 업데이트 {esc(upd_date)} — Worklog 페이지에서 보기">'
             f'<svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true">'
             f'<circle cx="4.5" cy="4.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.1"/>'
             f'<path d="M4.5 2.6 L4.5 4.5 L5.9 5.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>'
             f'</svg>'
-            f'<span>업데이트 {esc(short)}</span></a>'
+            f'<span>Updated {esc(short)}</span></a>'
         )
 
     # 카드 헤더의 status, task_type 뱃지
@@ -426,21 +426,11 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
         f'</div>'
     )
 
-    # tri 진행바
+    # tri 수 (진행바 없이 간단 표기)
     tri_html = ""
     tri = entry.get("tri_count")
-    budget = entry.get("budget")
     if tri is not None:
-        if budget:
-            pct = min(100, round(tri / budget * 100))
-            tri_html = (
-                f'<div class="entry-tri">'
-                f'<div class="entry-tri-bar"><div class="entry-tri-fill" style="width:{pct}%"></div></div>'
-                f'<span>{tri:,} / {budget:,} tris ({pct}%)</span>'
-                f'</div>'
-            )
-        else:
-            tri_html = f'<div class="entry-tri"><span>{tri:,} tris</span></div>'
+        tri_html = f'<div class="entry-tri"><span>{tri:,} tris</span></div>'
 
     # 스크린샷 (존재하는 파일만)
     shots = []

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Progress · KSA Landmarks</title>
+<title>Worklog · KSA Landmarks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -325,7 +325,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
   <nav class="topbar-nav">
     <a href="../">Reference</a>
-    <a href="./" class="active">Progress</a>
+    <a href="./" class="active">Worklog</a>
   </nav>
   <div class="topbar-spacer"></div>
   <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
@@ -336,9 +336,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <main class="main">
   <div class="page-head">
-    <div class="page-eyebrow">Work in Progress</div>
-    <h1 class="page-title">진행 상황 공유</h1>
-    <p class="page-sub">모델링 진행 중 중간 공유 기록. 스크린샷·3D 모델(.glb)을 시간순으로 정리합니다.</p>
+    <div class="page-eyebrow">Worklog</div>
+    <h1 class="page-title">Modeling Worklog</h1>
+    <p class="page-sub">Modeling progress &amp; deliverables — screenshots and 3D models (.glb), latest first.</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 
