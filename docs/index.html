@@ -86,6 +86,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 100;
   backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* chrome 내부 input·textarea는 다시 선택 허용 */
+.topbar input,
+.topbar textarea {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .brand {
@@ -211,6 +220,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--bg-elev);
   overflow-y: auto;
   padding: 20px 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .sidebar::-webkit-scrollbar { width: 6px; }
