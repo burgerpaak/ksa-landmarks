@@ -265,12 +265,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 .model-btn svg { flex-shrink: 0; }
-.model-btn-meta {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  opacity: 0.85;
-}
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {
@@ -383,7 +377,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <h3 class="entry-title">블록아웃 1차 공유</h3>
       <p class="entry-notes">본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫 디테일까지 진행. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)</p>
     </div>
-    <div class="entry-models"><div class="model-btns"><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>블록아웃</span><span class="model-btn-meta">60 tris</span></button><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="1"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>파라펫 디테일</span><span class="model-btn-meta">492 tris</span></button></div></div>
+    <div class="entry-models"><div class="model-btns"><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: null, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: null, &quot;mb&quot;: 0.03}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>블록아웃</span></button><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: null, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: null, &quot;mb&quot;: 0.03}]" data-start="1"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>파라펫 디테일</span></button></div></div>
     <div class="entry-shots"><div class="entry-shot"><img src="assets/02_sample_01.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_01.jpg" download title="02_sample_01.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_02.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_02.jpg" download title="02_sample_02.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_03.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_03.jpg" download title="02_sample_03.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
     <div class="entry-foot"><a class="entry-ref-link" href="../#card-02">↳ 레퍼런스 카드 보기</a></div>
   </div>
@@ -455,7 +449,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .model-modal-tab:hover { color: var(--ink); }
 .model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
-.model-modal-tab .t-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); }
 .model-modal .model-dl {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 14px; border-radius: 8px;
@@ -499,8 +492,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       models.forEach((m, i) => {
         const b = document.createElement('button');
         b.className = 'model-modal-tab';
-        const meta = (m.tris!=null) ? ('<span class="t-meta">'+fmt(m.tris)+' tris</span>') : '';
-        b.innerHTML = (m.label || m.file) + meta;
+        b.innerHTML = (m.label || m.file);
         b.addEventListener('click', () => load(models, i));
         tabsEl.appendChild(b);
       });

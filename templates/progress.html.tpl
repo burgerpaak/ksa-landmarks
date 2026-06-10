@@ -222,12 +222,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 .model-btn svg { flex-shrink: 0; }
-.model-btn-meta {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  opacity: 0.85;
-}
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {

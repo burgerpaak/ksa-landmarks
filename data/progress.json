@@ -7,8 +7,8 @@
       "title": "블록아웃 1차 공유",
       "notes": "본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫 디테일까지 진행. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)",
       "models": [
-        { "file": "02_sample_blockout.glb", "label": "블록아웃", "tris": 60 },
-        { "file": "02_sample_detail.glb", "label": "파라펫 디테일", "tris": 492 }
+        { "file": "02_sample_blockout.glb", "label": "블록아웃" },
+        { "file": "02_sample_detail.glb", "label": "파라펫 디테일" }
       ],
       "screenshots": ["02_sample_01.jpg", "02_sample_02.jpg", "02_sample_03.jpg"]
     }

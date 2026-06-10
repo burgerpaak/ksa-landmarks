@@ -110,7 +110,6 @@ MODEL_MODAL = """
 }
 .model-modal-tab:hover { color: var(--ink); }
 .model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
-.model-modal-tab .t-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); }
 .model-modal .model-dl {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 14px; border-radius: 8px;
@@ -154,8 +153,7 @@ MODEL_MODAL = """
       models.forEach((m, i) => {
         const b = document.createElement('button');
         b.className = 'model-modal-tab';
-        const meta = (m.tris!=null) ? ('<span class="t-meta">'+fmt(m.tris)+' tris</span>') : '';
-        b.innerHTML = (m.label || m.file) + meta;
+        b.innerHTML = (m.label || m.file);
         b.addEventListener('click', () => load(models, i));
         tabsEl.appendChild(b);
       });
@@ -616,14 +614,13 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
         payload = esc(json.dumps(valid_models, ensure_ascii=False))
         btns = []
         for i, m in enumerate(valid_models):
-            tris = f'<span class="model-btn-meta">{m["tris"]:,} tris</span>' if m.get("tris") is not None else ""
             btns.append(
                 f'<button class="model-btn" data-models="{payload}" data-start="{i}">'
                 f'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
                 f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
                 f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
                 f'</svg>'
-                f'<span>{esc(m["label"])}</span>{tris}</button>'
+                f'<span>{esc(m["label"])}</span></button>'
             )
         # 다운로드는 3D 모달 안에서만 (중복 칩 제거)
         model_html = (
