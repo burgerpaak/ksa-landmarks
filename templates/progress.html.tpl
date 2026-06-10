@@ -228,22 +228,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 500;
   opacity: 0.85;
 }
-.model-dls { display: flex; flex-wrap: wrap; gap: 8px; }
-.model-dl-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 11px;
-  border-radius: 8px;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-mute);
-  transition: color 0.14s ease, border-color 0.14s ease;
-}
-.model-dl-chip:hover { color: var(--ink); border-color: var(--border-strong); }
-.model-dl-chip svg { flex-shrink: 0; }
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {

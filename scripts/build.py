@@ -625,17 +625,10 @@ def render_progress_entry(entry: dict, lm_map: dict) -> str:
                 f'</svg>'
                 f'<span>{esc(m["label"])}</span>{tris}</button>'
             )
-        # 각 모델 개별 다운로드
-        dls = "".join(
-            f'<a class="model-dl-chip" href="assets/{esc(m["file"])}" download '
-            f'title="{esc(m["file"].rsplit("/",1)[-1])} 다운로드">{dl_svg}'
-            f'<span>{esc(m["file"].rsplit("/",1)[-1])} ({m["mb"]:.1f} MB)</span></a>'
-            for m in valid_models
-        )
+        # 다운로드는 3D 모달 안에서만 (중복 칩 제거)
         model_html = (
             f'<div class="entry-models">'
             f'<div class="model-btns">{"".join(btns)}</div>'
-            f'<div class="model-dls">{dls}</div>'
             f'</div>'
         )
 

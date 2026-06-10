@@ -271,22 +271,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 500;
   opacity: 0.85;
 }
-.model-dls { display: flex; flex-wrap: wrap; gap: 8px; }
-.model-dl-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 11px;
-  border-radius: 8px;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-mute);
-  transition: color 0.14s ease, border-color 0.14s ease;
-}
-.model-dl-chip:hover { color: var(--ink); border-color: var(--border-strong); }
-.model-dl-chip svg { flex-shrink: 0; }
 
 /* ───── SCREENSHOTS ───── */
 .entry-shots {
@@ -399,7 +383,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <h3 class="entry-title">블록아웃 1차 공유</h3>
       <p class="entry-notes">본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫 디테일까지 진행. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)</p>
     </div>
-    <div class="entry-models"><div class="model-btns"><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>블록아웃</span><span class="model-btn-meta">60 tris</span></button><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="1"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>파라펫 디테일</span><span class="model-btn-meta">492 tris</span></button></div><div class="model-dls"><a class="model-dl-chip" href="assets/02_sample_blockout.glb" download title="02_sample_blockout.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>02_sample_blockout.glb (0.0 MB)</span></a><a class="model-dl-chip" href="assets/02_sample_detail.glb" download title="02_sample_detail.glb 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>02_sample_detail.glb (0.0 MB)</span></a></div></div>
+    <div class="entry-models"><div class="model-btns"><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>블록아웃</span><span class="model-btn-meta">60 tris</span></button><button class="model-btn" data-models="[{&quot;file&quot;: &quot;02_sample_blockout.glb&quot;, &quot;label&quot;: &quot;블록아웃&quot;, &quot;tris&quot;: 60, &quot;mb&quot;: 0.0}, {&quot;file&quot;: &quot;02_sample_detail.glb&quot;, &quot;label&quot;: &quot;파라펫 디테일&quot;, &quot;tris&quot;: 492, &quot;mb&quot;: 0.03}]" data-start="1"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>파라펫 디테일</span><span class="model-btn-meta">492 tris</span></button></div></div>
     <div class="entry-shots"><div class="entry-shot"><img src="assets/02_sample_01.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_01.jpg" download title="02_sample_01.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_02.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_02.jpg" download title="02_sample_02.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="entry-shot"><img src="assets/02_sample_03.jpg" alt="블록아웃 1차 공유" loading="lazy"><a class="shot-dl" href="assets/02_sample_03.jpg" download title="02_sample_03.jpg 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
     <div class="entry-foot"><a class="entry-ref-link" href="../#card-02">↳ 레퍼런스 카드 보기</a></div>
   </div>
