@@ -20,10 +20,13 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 TEMPLATE_DIR = ROOT / "templates"
 IMG_DIR = ROOT / "images"
+PROGRESS_SRC_DIR = ROOT / "progress"  # 진행 보고용 glb·스크린샷 원본
 # 빌드 결과는 docs/ 에 — GitHub Pages 호스팅 디렉토리
 OUTPUT_DIR = ROOT / "docs"
 OUTPUT = OUTPUT_DIR / "index.html"
 OUTPUT_IMG_DIR = OUTPUT_DIR / "images"
+OUTPUT_PROGRESS_DIR = OUTPUT_DIR / "progress"
+OUTPUT_PROGRESS_ASSETS = OUTPUT_PROGRESS_DIR / "assets"
 
 
 def esc(text: str) -> str:
@@ -37,6 +40,9 @@ TIER_SUBTITLE = {1: "핵심", 2: "주요", 3: "추가"}
 
 # Spec sheet 핵심 5라벨 (모든 카드에 동일 순서로 노출)
 CORE_STRUCT_LABELS = ["형태", "규모", "재료", "시대", "설계"]
+
+# 랜드마크별 최신 진행 업데이트 날짜 (build_progress가 채움 → 카드 배지용)
+PROGRESS_LATEST = {}
 
 
 def render_card(lm: dict) -> str:
@@ -211,6 +217,21 @@ def render_card(lm: dict) -> str:
             f'</span>'
         )
 
+    # 진행 업데이트 배지 — progress.json에 해당 카드 엔트리가 있으면 이미지에 표시
+    progress_badge_html = ""
+    upd_date = PROGRESS_LATEST.get(idx_str)
+    if upd_date:
+        short = upd_date[5:] if len(upd_date) >= 10 else upd_date  # MM-DD
+        progress_badge_html = (
+            f'<a class="card-progress-badge" href="progress/#card-{idx_str}" '
+            f'title="진행 업데이트 {esc(upd_date)} — Progress 페이지에서 보기">'
+            f'<svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true">'
+            f'<circle cx="4.5" cy="4.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.1"/>'
+            f'<path d="M4.5 2.6 L4.5 4.5 L5.9 5.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>'
+            f'</svg>'
+            f'<span>업데이트 {esc(short)}</span></a>'
+        )
+
     # 카드 헤더의 status, task_type 뱃지
     status = modeling.get("status")
     task_type = modeling.get("task_type")
@@ -300,6 +321,7 @@ def render_card(lm: dict) -> str:
         <span class="card-tier-pill" style="--pill-color: {TIER_COLOR[tier]}">T{tier}</span>
       </div>
     </div>
+    {progress_badge_html}
   </div>
   <div class="card-content">
     <header class="card-header">
@@ -371,10 +393,166 @@ def render_glossary(glossary: list) -> str:
     return "".join(parts)
 
 
+def extract_palette(template_text: str) -> str:
+    """메인 템플릿에서 :root + [data-theme=dark] 팔레트 블록 추출 (progress 페이지 색 동기화)"""
+    blocks = []
+    for pat in (r":root\s*\{[^}]*\}", r'\[data-theme="dark"\]\s*\{[^}]*\}'):
+        m = re.search(pat, template_text)
+        if m:
+            blocks.append(m.group(0))
+    return "\n\n".join(blocks)
+
+
+def render_progress_entry(entry: dict, lm_map: dict) -> str:
+    lm = lm_map.get(str(entry.get("landmark_id", "")).zfill(2))
+    # 랜드마크 메타
+    if lm:
+        tier = lm["tier"]
+        lm_name = lm["name"]
+        lm_id = lm["id"]
+        tier_dot = f'<span class="entry-tier" style="background:{TIER_COLOR[tier]}"></span>'
+        ref_link = f'<a class="entry-ref-link" href="../#card-{lm_id}">↳ 레퍼런스 카드 보기</a>'
+    else:
+        lm_name = entry.get("landmark_name", "")
+        lm_id = str(entry.get("landmark_id", "—"))
+        tier_dot = ""
+        ref_link = ""
+
+    landmark_html = (
+        f'<div class="entry-landmark">'
+        f'{tier_dot}'
+        f'<span class="entry-num">№ {esc(lm_id)}</span>'
+        f'<span class="entry-landmark-name">{esc(lm_name)}</span>'
+        f'</div>'
+    )
+
+    # tri 진행바
+    tri_html = ""
+    tri = entry.get("tri_count")
+    budget = entry.get("budget")
+    if tri is not None:
+        if budget:
+            pct = min(100, round(tri / budget * 100))
+            tri_html = (
+                f'<div class="entry-tri">'
+                f'<div class="entry-tri-bar"><div class="entry-tri-fill" style="width:{pct}%"></div></div>'
+                f'<span>{tri:,} / {budget:,} tris ({pct}%)</span>'
+                f'</div>'
+            )
+        else:
+            tri_html = f'<div class="entry-tri"><span>{tri:,} tris</span></div>'
+
+    # 스크린샷 (존재하는 파일만)
+    shots = []
+    for fn in entry.get("screenshots", []) or []:
+        if (PROGRESS_SRC_DIR / fn).exists():
+            shots.append(
+                f'<div class="entry-shot"><img src="assets/{esc(fn)}" alt="{esc(entry.get("title",""))}" loading="lazy"></div>'
+            )
+    shots_html = f'<div class="entry-shots">{"".join(shots)}</div>' if shots else ""
+
+    # 모델 (존재하면 model-viewer)
+    model_html = ""
+    model = entry.get("model")
+    if model and (PROGRESS_SRC_DIR / model).exists():
+        size_mb = (PROGRESS_SRC_DIR / model).stat().st_size / (1024 * 1024)
+        model_html = (
+            f'<div class="entry-model">'
+            f'<model-viewer src="assets/{esc(model)}" camera-controls auto-rotate '
+            f'shadow-intensity="0.6" exposure="1.0" '
+            f'interaction-prompt="none" loading="lazy"></model-viewer>'
+            f'<div class="entry-model-bar">'
+            f'<a class="model-dl" href="assets/{esc(model)}" download>'
+            f'<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
+            f'<path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            f'.glb ({size_mb:.1f} MB)</a>'
+            f'</div>'
+            f'</div>'
+        )
+
+    return f"""
+<div class="entry">
+  <div class="entry-date">{esc(entry.get("date", ""))}</div>
+  <div class="entry-card">
+    <div class="entry-head">
+      {landmark_html}
+      <h3 class="entry-title">{esc(entry.get("title", ""))}</h3>
+      <p class="entry-notes">{esc(entry.get("notes", ""))}</p>
+      {tri_html}
+    </div>
+    {model_html}
+    {shots_html}
+    <div class="entry-foot">{ref_link}</div>
+  </div>
+</div>"""
+
+
+def build_progress(landmarks: list, palette: str):
+    """진행 보고 페이지 렌더링 → docs/progress/index.html"""
+    prog_path = DATA_DIR / "progress.json"
+    if not prog_path.exists():
+        return {}
+
+    data = json.loads(prog_path.read_text(encoding="utf-8"))
+    entries = data.get("entries", [])
+    lm_map = {lm["id"]: lm for lm in landmarks}
+
+    # 최신순 정렬 (date 내림차순)
+    entries_sorted = sorted(entries, key=lambda e: e.get("date", ""), reverse=True)
+
+    if entries_sorted:
+        entries_html = "\n".join(render_progress_entry(e, lm_map) for e in entries_sorted)
+        count_html = f"{len(entries_sorted)} updates"
+    else:
+        entries_html = (
+            '<div class="empty"><div class="empty-title">아직 공유된 진행 상황이 없습니다</div>'
+            '<p>data/progress.json에 엔트리를 추가하세요.</p></div>'
+        )
+        count_html = "0 updates"
+
+    template = (TEMPLATE_DIR / "progress.html.tpl").read_text(encoding="utf-8")
+    output = template.replace("{{PALETTE}}", palette)
+    output = output.replace("{{ENTRIES}}", entries_html)
+    output = output.replace("{{COUNT}}", count_html)
+
+    OUTPUT_PROGRESS_DIR.mkdir(parents=True, exist_ok=True)
+    (OUTPUT_PROGRESS_DIR / "index.html").write_text(output, encoding="utf-8")
+
+    # 에셋 동기화: progress/ → docs/progress/assets/
+    OUTPUT_PROGRESS_ASSETS.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    if PROGRESS_SRC_DIR.exists():
+        import shutil
+        src_files = {f.name for f in PROGRESS_SRC_DIR.iterdir() if f.is_file() and not f.name.startswith(".")}
+        dst_files = {f.name for f in OUTPUT_PROGRESS_ASSETS.iterdir() if f.is_file() and not f.name.startswith(".")}
+        for name in src_files:
+            src, dst = PROGRESS_SRC_DIR / name, OUTPUT_PROGRESS_ASSETS / name
+            if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+                shutil.copy2(src, dst)
+                copied += 1
+        for name in dst_files - src_files:
+            (OUTPUT_PROGRESS_ASSETS / name).unlink()
+
+    # 랜드마크별 최신 업데이트 날짜 맵 (카드 배지용)
+    latest = {}
+    for e in entries_sorted:
+        lid = str(e.get("landmark_id", "")).zfill(2)
+        if lid not in latest:
+            latest[lid] = e.get("date", "")
+
+    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(entries_sorted)} entries, +{copied} assets)")
+    return latest
+
+
 def build():
+    global PROGRESS_LATEST
     landmarks = json.loads((DATA_DIR / "landmarks.json").read_text(encoding="utf-8"))
     glossary = json.loads((DATA_DIR / "glossary.json").read_text(encoding="utf-8"))
     template = (TEMPLATE_DIR / "index.html.tpl").read_text(encoding="utf-8")
+
+    # 진행 보고 페이지 먼저 빌드 → 카드 배지용 최신 날짜 맵 확보
+    palette = extract_palette(template)
+    PROGRESS_LATEST = build_progress(landmarks, palette)
 
     # 정렬: tier 1 → 2 → 3, 같은 tier 내에서는 idx 순서
     landmarks_sorted = sorted(landmarks, key=lambda x: (x["tier"], x["idx"]))

@@ -126,6 +126,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   line-height: 1;
 }
 
+/* 페이지 전환 nav (Reference / Progress) */
+.topbar-nav {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.topbar-nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-sunken);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.topbar-nav a:hover { color: var(--ink); }
+.topbar-nav a.active { background: var(--ink); color: var(--bg-elev); }
+
 .search-wrap {
   flex: 1;
   max-width: 480px;
@@ -981,7 +999,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #fff;
-  background: rgba(194, 90, 60, 0.92);
+  background: rgba(138, 104, 120, 0.92);
   padding: 4px 7px;
   border-radius: 4px;
   backdrop-filter: blur(6px);
@@ -995,7 +1013,35 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 }
 
 .card-warning:hover {
-  background: rgba(194, 90, 60, 1);
+  background: rgba(138, 104, 120, 1);
+}
+
+/* 진행 업데이트 배지 — 카드 이미지 좌하단 */
+.card-progress-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  background: color-mix(in srgb, var(--accent) 82%, #000 0%);
+  background: rgba(74, 101, 133, 0.92);
+  padding: 4px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+  transition: background 0.14s ease, transform 0.14s ease;
+}
+
+.card-progress-badge svg { flex-shrink: 0; }
+.card-progress-badge:hover {
+  background: rgba(74, 101, 133, 1);
+  transform: translateY(-1px);
 }
 
 .card-content {
@@ -1506,6 +1552,11 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     <span class="brand-mark">KSA Landmarks</span>
     <span class="brand-meta">3D · Reference</span>
   </div>
+
+  <nav class="topbar-nav">
+    <a href="./" class="active">Reference</a>
+    <a href="progress/">Progress</a>
+  </nav>
 
   <div class="search-wrap">
     <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
