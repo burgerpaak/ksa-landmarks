@@ -58,6 +58,10 @@ MODEL_MODAL = """
     </div>
     <div class="model-modal-foot">
       <div class="model-modal-tabs" id="modal-tabs"></div>
+      <button class="model-wire-toggle" id="modal-wire" aria-pressed="false" title="와이어프레임 토글">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+        <span>와이어프레임</span>
+      </button>
       <a class="model-dl" id="modal-dl" download>
         <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span id="modal-dl-label"></span>
@@ -113,6 +117,19 @@ MODEL_MODAL = """
 }
 .model-modal-tab:hover { color: var(--ink); }
 .model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-wire-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 11.5px; font-weight: 500; color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.model-wire-toggle:hover { color: var(--ink); }
+.model-wire-toggle[aria-pressed="true"] {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.model-wire-toggle svg { flex-shrink: 0; }
 .model-modal .model-dl {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 14px; border-radius: 8px;
@@ -135,8 +152,24 @@ MODEL_MODAL = """
   const tabsEl = document.getElementById('modal-tabs');
   const dl = document.getElementById('modal-dl');
   const dlLabel = document.getElementById('modal-dl-label');
+  const wireBtn = document.getElementById('modal-wire');
+  let wireOn = false;
 
-  function fmt(n){ return n.toLocaleString(); }
+  // model-viewer 내부 Three.js scene 접근 (와이어프레임 토글용)
+  function getScene(){
+    const sym = Object.getOwnPropertySymbols(mv).find(s => s.description === 'scene');
+    return sym ? mv[sym] : null;
+  }
+  function applyWire(){
+    const scene = getScene();
+    if (!scene) return;
+    scene.traverse(o => { if (o.isMesh && o.material) {
+      (Array.isArray(o.material) ? o.material : [o.material]).forEach(mat => mat.wireframe = wireOn);
+    }});
+    if (typeof scene.queueRender === 'function') scene.queueRender();
+  }
+  // 모델 로드 완료 때마다 현재 와이어 상태 반영 (모델 전환 후에도 유지)
+  mv.addEventListener('load', () => applyWire());
 
   function load(models, idx){
     const m = models[idx];
@@ -147,6 +180,12 @@ MODEL_MODAL = """
     dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
     tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
   }
+
+  wireBtn.addEventListener('click', () => {
+    wireOn = !wireOn;
+    wireBtn.setAttribute('aria-pressed', wireOn ? 'true' : 'false');
+    applyWire();
+  });
 
   window.openModelModal = function(models, startIdx){
     if (!models || !models.length) return;
