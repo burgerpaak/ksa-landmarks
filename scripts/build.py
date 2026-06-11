@@ -58,6 +58,7 @@ MODEL_MODAL = """
     </div>
     <div class="model-modal-foot">
       <div class="model-modal-tabs" id="modal-tabs"></div>
+      <span class="model-tri" id="modal-tri" hidden></span>
       <button class="model-wire-toggle" id="modal-wire" aria-pressed="false" title="와이어프레임 토글">
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
         <span>와이어프레임</span>
@@ -117,6 +118,16 @@ MODEL_MODAL = """
 }
 .model-modal-tab:hover { color: var(--ink); }
 .model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-tri {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 .model-wire-toggle {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 12px; border-radius: 8px;
@@ -153,9 +164,10 @@ MODEL_MODAL = """
   const dl = document.getElementById('modal-dl');
   const dlLabel = document.getElementById('modal-dl-label');
   const wireBtn = document.getElementById('modal-wire');
+  const triEl = document.getElementById('modal-tri');
   let wireOn = false;
 
-  // model-viewer 내부 Three.js scene 접근 (와이어프레임 토글용)
+  // model-viewer 내부 Three.js scene 접근 (와이어프레임 + tri 카운트용)
   function getScene(){
     const sym = Object.getOwnPropertySymbols(mv).find(s => s.description === 'scene');
     return sym ? mv[sym] : null;
@@ -168,8 +180,23 @@ MODEL_MODAL = """
     }});
     if (typeof scene.queueRender === 'function') scene.queueRender();
   }
-  // 모델 로드 완료 때마다 현재 와이어 상태 반영 (모델 전환 후에도 유지)
-  mv.addEventListener('load', () => applyWire());
+  function updateTri(){
+    const scene = getScene();
+    if (!scene) { triEl.hidden = true; return; }
+    let tris = 0, found = false;
+    scene.traverse(o => {
+      if (o.isMesh && o.geometry && o.visible !== false) {
+        const g = o.geometry, pos = g.attributes && g.attributes.position;
+        if (g.index) { tris += g.index.count/3; found = true; }
+        else if (pos) { tris += pos.count/3; found = true; }
+      }
+    });
+    if (!found) { triEl.hidden = true; return; }
+    triEl.hidden = false;
+    triEl.textContent = '△ ' + Math.round(tris).toLocaleString() + ' tris';
+  }
+  // 모델 로드 완료 때마다: 와이어 상태 반영 + tri 카운트 갱신
+  mv.addEventListener('load', () => { applyWire(); updateTri(); });
 
   function load(models, idx){
     const m = models[idx];
@@ -189,6 +216,7 @@ MODEL_MODAL = """
 
   window.openModelModal = function(models, startIdx){
     if (!models || !models.length) return;
+    triEl.hidden = true;
     tabsEl.innerHTML = '';
     // 모델 1개면 탭 숨김
     if (models.length > 1) {
