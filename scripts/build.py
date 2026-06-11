@@ -12,6 +12,7 @@ import argparse
 import html as htmllib
 import json
 import re
+import struct
 import sys
 import time
 from pathlib import Path
@@ -166,8 +167,9 @@ MODEL_MODAL = """
   const wireBtn = document.getElementById('modal-wire');
   const triEl = document.getElementById('modal-tri');
   let wireOn = false;
+  let currentTris = null;  // 빌드 시 정확 계산된 값
 
-  // model-viewer 내부 Three.js scene 접근 (와이어프레임 + tri 카운트용)
+  // model-viewer 내부 Three.js scene 접근 (와이어프레임용)
   function getScene(){
     const sym = Object.getOwnPropertySymbols(mv).find(s => s.description === 'scene');
     return sym ? mv[sym] : null;
@@ -181,22 +183,13 @@ MODEL_MODAL = """
     if (typeof scene.queueRender === 'function') scene.queueRender();
   }
   function updateTri(){
-    const scene = getScene();
-    if (!scene) { triEl.hidden = true; return; }
-    let tris = 0, found = false;
-    scene.traverse(o => {
-      if (o.isMesh && o.geometry && o.visible !== false) {
-        const g = o.geometry, pos = g.attributes && g.attributes.position;
-        if (g.index) { tris += g.index.count/3; found = true; }
-        else if (pos) { tris += pos.count/3; found = true; }
-      }
-    });
-    if (!found) { triEl.hidden = true; return; }
+    // 빌드 시 glTF accessor로 정확히 계산한 값 사용 (뷰어 실시간 카운트는 그림자 평면 포함 오차)
+    if (currentTris == null) { triEl.hidden = true; return; }
     triEl.hidden = false;
-    triEl.textContent = '△ ' + Math.round(tris).toLocaleString() + ' tris';
+    triEl.textContent = '△ ' + currentTris.toLocaleString() + ' tris';
   }
-  // 모델 로드 완료 때마다: 와이어 상태 반영 + tri 카운트 갱신
-  mv.addEventListener('load', () => { applyWire(); updateTri(); });
+  // 모델 로드 완료 때마다 와이어 상태 반영
+  mv.addEventListener('load', () => { applyWire(); });
 
   function load(models, idx){
     const m = models[idx];
@@ -205,6 +198,8 @@ MODEL_MODAL = """
     dl.setAttribute('href', src);
     const name = m.file.split('/').pop();
     dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    currentTris = (m.tris != null) ? m.tris : null;
+    updateTri();
     tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
   }
 
@@ -625,6 +620,57 @@ def extract_palette(template_text: str) -> str:
     return "\n\n".join(blocks)
 
 
+def glb_triangle_count(path: Path):
+    """glb 파일을 직접 파싱해 삼각형 수 계산 (glTF accessor 기준 — 정확). 실패 시 None"""
+    try:
+        data = path.read_bytes()
+        magic, _ver, length = struct.unpack("<III", data[:12])
+        if magic != 0x46546C67:
+            return None
+        off, gltf = 12, None
+        while off < length:
+            clen, ctype = struct.unpack("<I4s", data[off:off + 8])
+            if ctype == b"JSON":
+                gltf = json.loads(data[off + 8:off + 8 + clen])
+                break
+            off += 8 + clen
+        if not gltf:
+            return None
+        accessors = gltf.get("accessors", [])
+        nodes = gltf.get("nodes", [])
+        meshes = gltf.get("meshes", [])
+
+        def prim_tris(p):
+            if p.get("mode", 4) != 4:  # TRIANGLES만 정확 카운트
+                return 0
+            if "indices" in p:
+                return accessors[p["indices"]]["count"] // 3
+            pos = p.get("attributes", {}).get("POSITION")
+            return accessors[pos]["count"] // 3 if pos is not None else 0
+
+        mesh_tris = [sum(prim_tris(p) for p in m.get("primitives", [])) for m in meshes]
+        scenes = gltf.get("scenes", [])
+        roots = scenes[gltf.get("scene", 0)]["nodes"] if scenes else range(len(nodes))
+        total = 0
+        seen = set()
+
+        def walk(ni):
+            nonlocal total
+            if ni in seen:  # 순환 방지
+                return
+            seen.add(ni)
+            n = nodes[ni]
+            if "mesh" in n:
+                total += mesh_tris[n["mesh"]]
+            for c in n.get("children", []):
+                walk(c)
+        for ni in roots:
+            walk(ni)
+        return total
+    except Exception:
+        return None
+
+
 def parse_landmark_id(filename: str):
     """파일명에서 랜드마크 번호 추출. KSA-01.glb / 01-1.png / 013-1_0090.png → '01'/'13'"""
     m = re.match(r"(?:KSA[-_]?)?0*(\d{1,3})", filename, re.IGNORECASE)
@@ -655,6 +701,7 @@ def scan_progress_files(landmarks: list) -> dict:
                 "file": f.name,
                 "label": f.stem,
                 "mb": round(mb, 2),
+                "tris": glb_triangle_count(f),  # 빌드 시 정확 계산
             })
         elif ext in IMG_EXT:
             g["shots"].append(f.name)
