@@ -184,19 +184,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .model-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 16px;
+  gap: 7px;
+  padding: 10px 16px;
   border-radius: 10px;
   background: var(--accent);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
+  line-height: 1;
   width: 100%;
   justify-content: center;
   transition: opacity 0.14s ease, transform 0.14s ease;
 }
 .model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-.model-btn svg { flex-shrink: 0; }
+.model-btn svg { flex-shrink: 0; display: block; }
 
 .fc-dls { padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 6px; }
 .fc-dl {
@@ -301,7 +302,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="page-head">
     <div class="page-eyebrow">Files</div>
     <h1 class="page-title">Model Files</h1>
-    <p class="page-sub">랜드마크별 최신 3D 모델(.glb)과 스크린샷. 클릭해서 미리보고 바로 다운로드하세요.</p>
+    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 살펴보고 바로 다운로드할 수 있습니다.</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 

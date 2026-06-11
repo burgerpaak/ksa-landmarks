@@ -505,7 +505,7 @@ def render_card(lm: dict) -> str:
             f'<svg width="11" height="11" viewBox="0 0 13 13" fill="none">'
             f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
             f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
-            f'</svg><span>3D 모델</span></button>'
+            f'</svg><span>3D Viewer</span></button>'
         )
     links_html = "".join(links_parts)
 
@@ -741,7 +741,7 @@ def render_file_card(lid: str, group: dict, lm_map: dict) -> str:
             f'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
             f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
             f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
-            f'</svg><span>3D 보기</span></button>'
+            f'</svg><span>3D Viewer</span></button>'
         )
     actions_html = f'<div class="fc-actions">{"".join(actions)}</div>' if actions else ""
 
