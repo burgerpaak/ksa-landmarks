@@ -432,8 +432,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 40px;
   background: var(--bg-elev);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 36px 28px;
+  border-radius: 14px;
+  padding: 22px 26px 24px;
   box-shadow: var(--shadow-sm), var(--shadow-md);
 }
 
@@ -482,17 +482,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .delivery-spec-title {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--ink);
-  line-height: 1.1;
+  line-height: 1.2;
   margin: 0;
 }
 
 .delivery-spec-sub {
-  margin: 6px 0 0;
-  font-size: 13px;
+  margin: 4px 0 0;
+  font-size: 12px;
   color: var(--ink-mute);
   letter-spacing: 0;
 }
