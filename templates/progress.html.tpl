@@ -116,7 +116,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-top: 14px;
   font-size: 15px;
   color: var(--ink-soft);
-  max-width: 60ch;
+  max-width: 760px;
 }
 .page-count {
   margin-top: 18px;
