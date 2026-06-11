@@ -438,7 +438,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .delivery-spec-head {
-  margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.delivery-spec-arrow {
+  flex-shrink: 0;
+  margin-top: 6px;
+  color: var(--ink-mute);
+  transition: transform 0.25s ease;
+}
+.delivery-spec.open .delivery-spec-arrow { transform: rotate(180deg); }
+
+/* 접기/펼치기 본문 */
+.delivery-spec-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.4s ease;
+  margin-top: 0;
+}
+.delivery-spec.open .delivery-spec-body {
+  max-height: 1200px;
+  opacity: 1;
+  margin-top: 28px;
 }
 
 .delivery-spec-eyebrow {
@@ -1672,12 +1700,17 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     </section>
 
     <!-- ───── DELIVERY SPEC (글로벌 납품 사양 헤더) ───── -->
-    <section class="delivery-spec">
-      <header class="delivery-spec-head">
-        <span class="delivery-spec-eyebrow">Delivery Spec</span>
-        <h2 class="delivery-spec-title">납품 사양</h2>
-        <p class="delivery-spec-sub">전 카드 공통 모델링 룰</p>
-      </header>
+    <section class="delivery-spec open" id="delivery-spec">
+      <button class="delivery-spec-head" id="delivery-spec-toggle" aria-expanded="true">
+        <div class="delivery-spec-head-text">
+          <span class="delivery-spec-eyebrow">Delivery Spec</span>
+          <h2 class="delivery-spec-title">납품 사양</h2>
+          <p class="delivery-spec-sub">전 카드 공통 모델링 룰</p>
+        </div>
+        <svg class="delivery-spec-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="delivery-spec-body">
 
       <div class="spec-group">
         <div class="spec-group-head">Delivery Format</div>
@@ -1722,6 +1755,8 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
             </dd>
           </div>
         </dl>
+      </div>
+
       </div>
     </section>
 
@@ -1808,6 +1843,18 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
+
+  // ─── DELIVERY SPEC 접기/펼치기 ───
+  const specEl = document.getElementById('delivery-spec');
+  const specToggle = document.getElementById('delivery-spec-toggle');
+  if (specEl && specToggle) {
+    if (localStorage.getItem('ksa-spec') === 'closed') specEl.classList.remove('open');
+    specToggle.addEventListener('click', () => {
+      const open = specEl.classList.toggle('open');
+      specToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      localStorage.setItem('ksa-spec', open ? 'open' : 'closed');
+    });
+  }
 
   // ─── DENSITY (Detailed / Compact) ───
   const densityBtns = document.querySelectorAll('.density-btn');
