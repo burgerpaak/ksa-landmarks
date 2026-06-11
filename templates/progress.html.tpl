@@ -302,7 +302,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="page-head">
     <div class="page-eyebrow">Files</div>
     <h1 class="page-title">Model Files</h1>
-    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전은 물론 삼각형(tris) 수와 와이어프레임까지 확인하고 바로 다운로드할 수 있습니다.</p>
+    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 살펴보고 바로 다운로드할 수 있습니다.</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 
