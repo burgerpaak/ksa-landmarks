@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Worklog · KSA Landmarks</title>
+<title>Files · KSA Landmarks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -95,6 +95,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 0 auto;
   padding: calc(var(--topbar-height) + 40px) 32px 100px;
 }
+.main--files { max-width: 1200px; }
 
 .page-head { margin-bottom: 44px; }
 .page-eyebrow {
@@ -124,162 +125,129 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink-mute);
 }
 
-/* ───── TIMELINE ───── */
-.timeline { position: relative; }
-
-.entry {
-  position: relative;
-  padding: 0 0 40px 32px;
-  border-left: 2px solid var(--border);
-}
-.entry:last-child { border-left-color: transparent; padding-bottom: 0; }
-
-.entry::before {
-  content: '';
-  position: absolute;
-  left: -7px; top: 4px;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 3px solid var(--bg);
+/* ───── FILES GRID (랜드마크별 파일 카드) ───── */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
 }
 
-.entry-date {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--ink-mute);
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-
-.entry-card {
+.file-card {
   background: var(--bg-elev);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-}
-
-.entry-head {
-  padding: 18px 22px 0;
-}
-
-.entry-landmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.entry-num {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-mute);
-}
-.entry-landmark-name {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--ink-soft);
-}
-.entry-tier {
-  width: 8px; height: 8px; border-radius: 50%;
-}
-
-.entry-sample-badge {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--alert);
-  background: color-mix(in srgb, var(--alert) 12%, var(--bg-elev));
-  border: 1px solid color-mix(in srgb, var(--alert) 30%, var(--border));
-  padding: 2px 7px;
-  border-radius: 999px;
-  margin-left: 2px;
-}
-
-.entry-title {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-
-.entry-notes {
-  font-size: 13.5px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-/* ───── 3D 모델 (버튼 → 공유 모달) ───── */
-.entry-models {
-  padding: 4px 22px 4px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
-.model-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.fc-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.fc-tier { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.fc-num {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--ink-mute);
+}
+.fc-name {
+  font-size: 14px; font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  flex: 1; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fc-ref {
+  font-size: 13px; color: var(--ink-mute);
+  flex-shrink: 0;
+  transition: color 0.14s ease;
+}
+.fc-ref:hover { color: var(--accent); }
+
+.fc-cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-sunken);
+  overflow: hidden;
+}
+.fc-cover img { width: 100%; height: 100%; object-fit: cover; }
+.fc-cover--3d {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--border-strong);
+}
+
+.fc-actions { padding: 14px 16px 6px; }
 .model-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 14px;
+  padding: 9px 16px;
   border-radius: 10px;
   background: var(--accent);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
+  width: 100%;
+  justify-content: center;
   transition: opacity 0.14s ease, transform 0.14s ease;
 }
 .model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 .model-btn svg { flex-shrink: 0; }
 
-/* ───── SCREENSHOTS ───── */
-.entry-shots {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
-  padding: 16px 22px 20px;
+.fc-dls { padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 6px; }
+.fc-dl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  transition: color 0.14s ease, background 0.14s ease;
 }
-.entry-shot {
+.fc-dl:hover { color: var(--ink); background: color-mix(in srgb, var(--accent) 8%, var(--bg-sunken)); }
+.fc-dl svg { flex-shrink: 0; color: var(--accent); }
+.fc-dl > span:nth-of-type(1) { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fc-dl-size { color: var(--ink-mute); flex-shrink: 0; }
+
+.fc-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+  padding: 4px 16px 16px;
+}
+.fc-shot {
   position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
   overflow: hidden;
   cursor: zoom-in;
   border: 1px solid var(--border);
   background: var(--bg-sunken);
 }
-.entry-shot img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.entry-shot:hover img { transform: scale(1.04); }
+.fc-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.fc-shot:hover img { transform: scale(1.06); }
 .shot-dl {
   position: absolute;
-  top: 8px; right: 8px;
-  width: 26px; height: 26px;
+  top: 5px; right: 5px;
+  width: 22px; height: 22px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 7px;
-  background: color-mix(in srgb, var(--bg-elev) 88%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--bg-elev) 86%, transparent);
   backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   color: var(--ink-soft);
   opacity: 0;
   transition: opacity 0.14s ease, background 0.14s ease, color 0.14s ease;
 }
-.entry-shot:hover .shot-dl { opacity: 1; }
+.fc-shot:hover .shot-dl { opacity: 1; }
 .shot-dl:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-.entry-foot { padding: 16px 22px 18px; border-top: 1px solid var(--border); }
-.entry-ref-link {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-}
 
 /* 빈 상태 */
 .empty {
@@ -306,7 +274,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 640px) {
   .main { padding: calc(var(--topbar-height) + 28px) 18px 60px; }
-  .entry { padding-left: 24px; }
+  .files-grid { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -320,7 +288,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
   <nav class="topbar-nav">
     <a href="../">Reference</a>
-    <a href="./" class="active">Worklog</a>
+    <a href="./" class="active">Files</a>
   </nav>
   <div class="topbar-spacer"></div>
   <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
@@ -329,15 +297,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </button>
 </header>
 
-<main class="main">
+<main class="main main--files">
   <div class="page-head">
-    <div class="page-eyebrow">Worklog</div>
-    <h1 class="page-title">Modeling Worklog</h1>
-    <p class="page-sub">Modeling progress &amp; deliverables — screenshots and 3D models (.glb), latest first.</p>
+    <div class="page-eyebrow">Files</div>
+    <h1 class="page-title">Model Files</h1>
+    <p class="page-sub">랜드마크별 최신 3D 모델(.glb)과 스크린샷. 클릭해서 미리보고 바로 다운로드하세요.</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 
-  <div class="timeline">
+  <div class="files-grid">
 {{ENTRIES}}
   </div>
 </main>
@@ -362,7 +330,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   // lightbox (다운로드 버튼 클릭은 제외)
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
-  document.querySelectorAll('.entry-shot img').forEach(img => {
+  document.querySelectorAll('.fc-shot img').forEach(img => {
     img.addEventListener('click', () => {
       lbImg.src = img.src;
       lb.classList.add('open');

@@ -625,138 +625,133 @@ def extract_palette(template_text: str) -> str:
     return "\n\n".join(blocks)
 
 
-def entry_valid_models(entry: dict) -> list:
-    """엔트리에서 실제 존재하는 모델 파일만 정규화해 반환 (구버전 단일 model 호환)"""
-    models = list(entry.get("models", []) or [])
-    if entry.get("model"):
-        models.insert(0, {
-            "file": entry["model"],
-            "label": entry.get("model_label", ""),
-            "tris": entry.get("tri_count"),
-        })
-    out = []
-    for m in models:
-        f = m.get("file")
-        if f and (PROGRESS_SRC_DIR / f).exists():
-            mb = (PROGRESS_SRC_DIR / f).stat().st_size / (1024 * 1024)
-            out.append({
-                "file": f,
-                "label": m.get("label") or f.rsplit("/", 1)[-1],
-                "tris": m.get("tris"),
+def parse_landmark_id(filename: str):
+    """파일명에서 랜드마크 번호 추출. KSA-01.glb / 01-1.png / 013-1_0090.png → '01'/'13'"""
+    m = re.match(r"(?:KSA[-_]?)?0*(\d{1,3})", filename, re.IGNORECASE)
+    if not m:
+        return None
+    n = int(m.group(1))
+    return f"{n:02d}" if 1 <= n <= 40 else None
+
+
+def scan_progress_files(landmarks: list) -> dict:
+    """progress/ 폴더 스캔 → 랜드마크 번호별 {models, shots} 그룹핑 (자동 감지)"""
+    groups = {}
+    if not PROGRESS_SRC_DIR.exists():
+        return groups
+    MODEL_EXT = (".glb",)
+    IMG_EXT = (".png", ".jpg", ".jpeg", ".webp")
+    for f in sorted(PROGRESS_SRC_DIR.iterdir(), key=lambda p: p.name.lower()):
+        if not f.is_file() or f.name.startswith(".") or f.name.lower() == "readme.md":
+            continue
+        ext = f.suffix.lower()
+        lid = parse_landmark_id(f.name)
+        if lid is None:
+            continue
+        g = groups.setdefault(lid, {"models": [], "shots": []})
+        if ext in MODEL_EXT:
+            mb = f.stat().st_size / (1024 * 1024)
+            g["models"].append({
+                "file": f.name,
+                "label": f.stem,
                 "mb": round(mb, 2),
             })
-    return out
+        elif ext in IMG_EXT:
+            g["shots"].append(f.name)
+    return groups
 
 
-def render_progress_entry(entry: dict, lm_map: dict) -> str:
-    lm = lm_map.get(str(entry.get("landmark_id", "")).zfill(2))
-    # 랜드마크 메타
-    if lm:
-        tier = lm["tier"]
-        lm_name = lm["name"]
-        lm_id = lm["id"]
-        tier_dot = f'<span class="entry-tier" style="background:{TIER_COLOR[tier]}"></span>'
-        ref_link = f'<a class="entry-ref-link" href="../#card-{lm_id}">↳ 레퍼런스 카드 보기</a>'
-    else:
-        lm_name = entry.get("landmark_name", "")
-        lm_id = str(entry.get("landmark_id", "—"))
-        tier_dot = ""
-        ref_link = ""
-
-    sample_badge = '<span class="entry-sample-badge">SAMPLE</span>' if entry.get("sample") else ""
-    landmark_html = (
-        f'<div class="entry-landmark">'
-        f'{tier_dot}'
-        f'<span class="entry-num">№ {esc(lm_id)}</span>'
-        f'<span class="entry-landmark-name">{esc(lm_name)}</span>'
-        f'{sample_badge}'
-        f'</div>'
-    )
+def render_file_card(lid: str, group: dict, lm_map: dict) -> str:
+    lm = lm_map.get(lid)
+    lm_name = lm["name"] if lm else ""
+    tier = lm["tier"] if lm else 0
+    tier_dot = f'<span class="fc-tier" style="background:{TIER_COLOR[tier]}"></span>' if lm else ""
 
     dl_svg = (
         '<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
         '<path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" '
         'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     )
-    valid_models = entry_valid_models(entry)
+    models = group["models"]
+    shots = group["shots"]
 
-    # 모델 영역 — "3D 보기" 버튼이 공유 모달을 호출 (엔트리 안에 뷰어를 심지 않음)
-    model_html = ""
-    if valid_models:
-        payload = esc(json.dumps(valid_models, ensure_ascii=False))
-        btns = []
-        for i, m in enumerate(valid_models):
-            btns.append(
-                f'<button class="model-btn" data-models="{payload}" data-start="{i}">'
-                f'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
-                f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
-                f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
-                f'</svg>'
-                f'<span>{esc(m["label"])}</span></button>'
-            )
-        # 다운로드는 3D 모달 안에서만 (중복 칩 제거)
-        model_html = (
-            f'<div class="entry-models">'
-            f'<div class="model-btns">{"".join(btns)}</div>'
-            f'</div>'
+    # 커버 = 첫 스크린샷 (없으면 3D placeholder)
+    if shots:
+        cover = (
+            f'<div class="fc-cover"><img src="assets/{esc(shots[0])}" alt="{esc(lm_name)}" loading="lazy"></div>'
         )
-
-    # 스크린샷 (존재하는 파일만) — 개별 다운로드 아이콘 포함
-    shots = []
-    for fn in entry.get("screenshots", []) or []:
-        if (PROGRESS_SRC_DIR / fn).exists():
-            name = fn.rsplit("/", 1)[-1]
-            shots.append(
-                f'<div class="entry-shot">'
-                f'<img src="assets/{esc(fn)}" alt="{esc(entry.get("title",""))}" loading="lazy">'
-                f'<a class="shot-dl" href="assets/{esc(fn)}" download title="{esc(name)} 다운로드">{dl_svg}</a>'
-                f'</div>'
-            )
-    shots_html = f'<div class="entry-shots">{"".join(shots)}</div>' if shots else ""
-
-    entry_cls = " entry--sample" if entry.get("sample") else ""
-    return f"""
-<div class="entry{entry_cls}">
-  <div class="entry-date">{esc(entry.get("date", ""))}</div>
-  <div class="entry-card">
-    <div class="entry-head">
-      {landmark_html}
-      <h3 class="entry-title">{esc(entry.get("title", ""))}</h3>
-      <p class="entry-notes">{esc(entry.get("notes", ""))}</p>
-    </div>
-    {model_html}
-    {shots_html}
-    <div class="entry-foot">{ref_link}</div>
-  </div>
-</div>"""
-
-
-def build_progress(landmarks: list, palette: str):
-    """진행 보고 페이지 렌더링 → docs/progress/index.html"""
-    prog_path = DATA_DIR / "progress.json"
-    if not prog_path.exists():
-        return {}
-
-    data = json.loads(prog_path.read_text(encoding="utf-8"))
-    entries = data.get("entries", [])
-    lm_map = {lm["id"]: lm for lm in landmarks}
-
-    # 최신순 정렬 (date 내림차순)
-    entries_sorted = sorted(entries, key=lambda e: e.get("date", ""), reverse=True)
-
-    if entries_sorted:
-        entries_html = "\n".join(render_progress_entry(e, lm_map) for e in entries_sorted)
-        count_html = f"{len(entries_sorted)} updates"
+    elif models:
+        cover = '<div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>'
     else:
-        entries_html = (
-            '<div class="empty"><div class="empty-title">아직 공유된 진행 상황이 없습니다</div>'
-            '<p>data/progress.json에 엔트리를 추가하세요.</p></div>'
+        cover = ""
+
+    # 3D 보기 버튼 (모델 있으면) + 모델별 다운로드 칩
+    actions = []
+    if models:
+        payload = esc(json.dumps(models, ensure_ascii=False))
+        actions.append(
+            f'<button class="model-btn fc-3d" data-models="{payload}" data-start="0">'
+            f'<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
+            f'<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+            f'<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+            f'</svg><span>3D 보기</span></button>'
         )
-        count_html = "0 updates"
+    actions_html = f'<div class="fc-actions">{"".join(actions)}</div>' if actions else ""
+
+    dls = "".join(
+        f'<a class="fc-dl" href="assets/{esc(m["file"])}" download title="{esc(m["file"])} 다운로드">'
+        f'{dl_svg}<span>{esc(m["file"])}</span><span class="fc-dl-size">{m["mb"]:.1f} MB</span></a>'
+        for m in models
+    )
+    dls_html = f'<div class="fc-dls">{dls}</div>' if dls else ""
+
+    # 스크린샷 썸네일 (커버 포함 전체 — 클릭 시 라이트박스, 개별 다운로드)
+    thumbs = "".join(
+        f'<div class="fc-shot">'
+        f'<img src="assets/{esc(s)}" alt="{esc(lm_name)}" loading="lazy">'
+        f'<a class="shot-dl" href="assets/{esc(s)}" download title="{esc(s)} 다운로드">{dl_svg}</a>'
+        f'</div>'
+        for s in shots
+    )
+    thumbs_html = f'<div class="fc-shots">{thumbs}</div>' if thumbs else ""
+
+    return f"""
+<article class="file-card">
+  <header class="fc-head">
+    {tier_dot}
+    <span class="fc-num">№ {esc(lid)}</span>
+    <span class="fc-name">{esc(lm_name)}</span>
+    <a class="fc-ref" href="../#card-{esc(lid)}" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  {cover}
+  {actions_html}
+  {dls_html}
+  {thumbs_html}
+</article>"""
+
+
+def build_files(landmarks: list, palette: str):
+    """Files 페이지 렌더링 (폴더 자동 스캔) → docs/progress/index.html"""
+    lm_map = {lm["id"]: lm for lm in landmarks}
+    groups = scan_progress_files(landmarks)
+
+    # 랜드마크 번호 오름차순 정렬
+    sorted_ids = sorted(groups.keys())
+
+    if sorted_ids:
+        cards_html = "\n".join(render_file_card(lid, groups[lid], lm_map) for lid in sorted_ids)
+        n_files = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
+        count_html = f"{len(sorted_ids)} landmarks · {n_files} files"
+    else:
+        cards_html = (
+            '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
+            '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
+        )
+        count_html = "0 files"
 
     template = (TEMPLATE_DIR / "progress.html.tpl").read_text(encoding="utf-8")
     output = template.replace("{{PALETTE}}", palette)
-    output = output.replace("{{ENTRIES}}", entries_html)
+    output = output.replace("{{ENTRIES}}", cards_html)
     output = output.replace("{{COUNT}}", count_html)
     output = output.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/"))
 
@@ -778,20 +773,14 @@ def build_progress(landmarks: list, palette: str):
         for name in dst_files - src_files:
             (OUTPUT_PROGRESS_ASSETS / name).unlink()
 
-    # 랜드마크별: 최신 날짜(배지) + 대표 모델(Reference 카드 3D 버튼 = 가장 최근 엔트리의 첫 모델)
-    latest = {}
+    # Reference 카드 3D 버튼용: 랜드마크별 대표 모델(첫 glb)
     rep_models = {}
-    for e in entries_sorted:  # 최신순이라 첫 등장이 곧 최신
-        lid = str(e.get("landmark_id", "")).zfill(2)
-        if lid not in latest:
-            latest[lid] = e.get("date", "")
-        if lid not in rep_models:
-            vms = entry_valid_models(e)
-            if vms:
-                rep_models[lid] = vms[0]  # 최신 엔트리의 첫 모델 1개
+    for lid, g in groups.items():
+        if g["models"]:
+            rep_models[lid] = g["models"][0]
 
-    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(entries_sorted)} entries, +{copied} assets, {len(rep_models)} 3D models)")
-    return {"dates": latest, "rep_models": rep_models}
+    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(sorted_ids)} landmarks, +{copied} assets, {len(rep_models)} 3D models)")
+    return {"dates": {lid: "" for lid in groups}, "rep_models": rep_models}
 
 
 def build():
@@ -800,9 +789,9 @@ def build():
     glossary = json.loads((DATA_DIR / "glossary.json").read_text(encoding="utf-8"))
     template = (TEMPLATE_DIR / "index.html.tpl").read_text(encoding="utf-8")
 
-    # 진행 보고 페이지 먼저 빌드 → 카드 배지·3D 버튼용 맵 확보
+    # Files 페이지 먼저 빌드 → Reference 카드 3D 버튼용 맵 확보
     palette = extract_palette(template)
-    prog = build_progress(landmarks, palette)
+    prog = build_files(landmarks, palette)
     PROGRESS_LATEST = prog["dates"]
     PROGRESS_REP_MODELS = prog["rep_models"]
 

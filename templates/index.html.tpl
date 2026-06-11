@@ -1570,7 +1570,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 
   <nav class="topbar-nav">
     <a href="./" class="active">Reference</a>
-    <a href="progress/">Worklog</a>
+    <a href="progress/">Files</a>
   </nav>
 
   <div class="search-wrap">
