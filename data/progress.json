@@ -2,16 +2,14 @@
   "_comment": "진행 보고 엔트리. 최신순으로 위에 추가. 파일은 progress/ 폴더에 넣고 파일명만 기입. 없는 파일은 빌드 시 자동 무시. models[]에 여러 개 넣으면 3D 뷰어에 탭이 생기고 각 파일은 개별 다운로드 가능.",
   "entries": [
     {
-      "date": "2026-06-10",
-      "landmark_id": "02",
-      "sample": true,
-      "title": "블록아웃 1차 공유",
-      "notes": "본체 매스(100×10×100m) + 4모서리 망루 배치 완료. 톱니 파라펫 디테일까지 진행. 파라메트릭 유지 상태라 footprint 수령 후 치수 보정 용이. (※ 아래 3D 모델·스크린샷은 레이아웃 확인용 샘플)",
+      "date": "2026-06-11",
+      "landmark_id": "01",
+      "title": "National Museum 모델 업로드",
+      "notes": "",
       "models": [
-        { "file": "02_sample_blockout.glb", "label": "블록아웃" },
-        { "file": "02_sample_detail.glb", "label": "파라펫 디테일" }
+        { "file": "KSA-01.glb", "label": "모델" }
       ],
-      "screenshots": ["02_sample_01.jpg", "02_sample_02.jpg", "02_sample_03.jpg"]
+      "screenshots": ["KSA-01-vp.png"]
     }
   ]
 }
