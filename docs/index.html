@@ -3883,6 +3883,9 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 
   window.openModelModal = function(models, startIdx){
     if (!models || !models.length) return;
+    // 와이어프레임 상태 초기화 (이전 세션이 남지 않게)
+    wireOn = false;
+    wireBtn.setAttribute('aria-pressed', 'false');
     triEl.hidden = true;
     tabsEl.innerHTML = '';
     // 모델 1개면 탭 숨김
