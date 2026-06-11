@@ -54,7 +54,7 @@ MODEL_MODAL = """
   <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
     <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
     <div class="model-modal-stage">
-      <model-viewer id="modal-mv" camera-controls auto-rotate shadow-intensity="0.6" exposure="1.0" interaction-prompt="none"></model-viewer>
+      <model-viewer id="modal-mv" camera-controls auto-rotate environment-image="neutral" exposure="0.95" shadow-intensity="1.0" shadow-softness="0.5" tone-mapping="neutral" interaction-prompt="none"></model-viewer>
     </div>
     <div class="model-modal-foot">
       <div class="model-modal-tabs" id="modal-tabs"></div>
@@ -93,7 +93,10 @@ MODEL_MODAL = """
   color: var(--ink-soft); font-size: 20px; line-height: 1;
 }
 .model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
-.model-modal-stage { width: 100%; height: min(64vh, 540px); background: var(--bg-sunken); }
+.model-modal-stage {
+  width: 100%; height: min(64vh, 540px);
+  background: radial-gradient(circle at 50% 38%, #5b6573 0%, #3a414d 55%, #272c34 100%);
+}
 .model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
 .model-modal-foot {
   display: flex; align-items: center; gap: 12px;
