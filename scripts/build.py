@@ -55,7 +55,7 @@ MODEL_MODAL = """
   <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
     <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
     <div class="model-modal-stage">
-      <model-viewer id="modal-mv" camera-controls auto-rotate environment-image="neutral" exposure="0.5" shadow-intensity="1.0" shadow-softness="0.5" tone-mapping="commerce" interaction-prompt="none"></model-viewer>
+      <model-viewer id="modal-mv" camera-controls auto-rotate environment-image="legacy" exposure="0.55" shadow-intensity="1.3" shadow-softness="0.2" tone-mapping="agx" interaction-prompt="none"></model-viewer>
     </div>
     <div class="model-modal-foot">
       <div class="model-modal-tabs" id="modal-tabs"></div>
