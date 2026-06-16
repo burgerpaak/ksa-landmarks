@@ -605,9 +605,9 @@
   {
     "id": "07",
     "idx": 7,
-    "name": "Nasif House (Bayt Nassif)",
+    "name": "Nassif House (Bayt Nassif)",
     "name_lines": [
-      "Nasif House"
+      "Nassif House"
     ],
     "tier": 1,
     "city": "Jeddah",
@@ -652,7 +652,7 @@
       "extras": [
         {
           "label": "Google 이미지",
-          "url": "https://www.google.com/search?tbm=isch&q=Nasif+House+Jeddah+Al+Balad+Rawshan"
+          "url": "https://www.google.com/search?tbm=isch&q=Nassif+House+Jeddah+Al+Balad+Rawshan"
         },
         {
           "label": "UNESCO",
