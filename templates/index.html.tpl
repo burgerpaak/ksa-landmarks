@@ -440,16 +440,37 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .delivery-spec-head {
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
   text-align: left;
   cursor: pointer;
 }
 
+.delivery-spec-head-text { flex: 1; min-width: 0; }
+
+.spec-method-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.spec-method-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.spec-method-link svg { flex-shrink: 0; }
+
 .delivery-spec-arrow {
   flex-shrink: 0;
-  margin-top: 6px;
   color: var(--ink-mute);
   transition: transform 0.25s ease;
 }
@@ -1701,14 +1722,18 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
 
     <!-- ───── DELIVERY SPEC (글로벌 납품 사양 헤더) ───── -->
     <section class="delivery-spec open" id="delivery-spec">
-      <button class="delivery-spec-head" id="delivery-spec-toggle" aria-expanded="true">
+      <div class="delivery-spec-head" id="delivery-spec-toggle" role="button" tabindex="0" aria-expanded="true">
         <div class="delivery-spec-head-text">
           <span class="delivery-spec-eyebrow">Delivery Spec</span>
           <h2 class="delivery-spec-title">납품 사양</h2>
           <p class="delivery-spec-sub">전 카드 공통 모델링 룰</p>
         </div>
+        <a class="spec-method-link" href="methodology.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="자료를 어떻게·어떤 기준으로 수집했는지 (PDF)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+          <span>자료 수집 방법론</span>
+        </a>
         <svg class="delivery-spec-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+      </div>
 
       <div class="delivery-spec-body">
 

@@ -901,6 +901,12 @@ def build():
     OUTPUT_DIR.mkdir(exist_ok=True)
     OUTPUT.write_text(output, encoding="utf-8")
 
+    # 방법론 PDF 동기화: 자료수집_방법론.pdf → docs/methodology.pdf
+    import shutil as _sh
+    _pdf = ROOT / "자료수집_방법론.pdf"
+    if _pdf.exists():
+        _sh.copy2(_pdf, OUTPUT_DIR / "methodology.pdf")
+
     # 이미지 동기화: images/ → docs/images/
     OUTPUT_IMG_DIR.mkdir(exist_ok=True)
     if IMG_DIR.exists():
