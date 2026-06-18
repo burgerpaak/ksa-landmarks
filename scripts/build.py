@@ -913,6 +913,9 @@ def build():
     OUTPUT_DIR.mkdir(exist_ok=True)
     OUTPUT.write_text(output, encoding="utf-8")
 
+    # 검색엔진 색인 차단 — robots.txt
+    (OUTPUT_DIR / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+
     # 방법론 PDF 동기화: 자료수집_방법론.pdf → docs/methodology.pdf
     import shutil as _sh
     _pdf = ROOT / "자료수집_방법론.pdf"
