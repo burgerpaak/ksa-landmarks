@@ -216,6 +216,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .fc-dl svg { flex-shrink: 0; color: var(--accent); }
 .fc-dl > span:nth-of-type(1) { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fc-dl-size { color: var(--ink-mute); flex-shrink: 0; }
+/* glb 다운로드 비활성화 — 버튼 유지, 잠금 표시 */
+.fc-dl--disabled { color: var(--ink-mute); cursor: not-allowed; }
+.fc-dl--disabled:hover { color: var(--ink-mute); background: var(--bg-sunken); }
+.fc-dl--disabled svg { color: var(--ink-mute); }
 
 .fc-shots {
   display: grid;
@@ -302,7 +306,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="page-head">
     <div class="page-eyebrow">Files</div>
     <h1 class="page-title">Model Files</h1>
-    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 살펴보고 바로 다운로드할 수 있습니다.</p>
+    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다.</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 

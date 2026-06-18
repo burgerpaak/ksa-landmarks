@@ -3761,10 +3761,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
         <span>와이어프레임</span>
       </button>
-      <a class="model-dl" id="modal-dl" download>
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="model-dl model-dl--disabled" id="modal-dl" title="다운로드 비활성화" aria-disabled="true">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="2.2" y="5" width="6.6" height="4.3" rx="0.8" stroke="currentColor" stroke-width="1"/><path d="M3.6 5 V3.6 A1.9 1.9 0 0 1 7.4 3.6 V5" stroke="currentColor" stroke-width="1"/></svg>
         <span id="modal-dl-label"></span>
-      </a>
+      </span>
     </div>
   </div>
 </div>
@@ -3847,6 +3847,12 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   flex-shrink: 0;
 }
 .model-modal .model-dl:hover { opacity: 0.88; }
+.model-modal .model-dl--disabled {
+  background: var(--bg-sunken); color: var(--ink-mute);
+  border: 1px solid var(--border);
+  cursor: not-allowed;
+}
+.model-modal .model-dl--disabled:hover { opacity: 1; }
 @media (max-width: 640px) {
   .model-modal { padding: 16px; }
   .model-modal-stage { height: 48vh; }
@@ -3892,7 +3898,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
     const m = models[idx];
     const src = ASSET_BASE + m.file;
     mv.setAttribute('src', src);
-    dl.setAttribute('href', src);
+    // 다운로드 비활성화 — href 설정 안 함 (파일명·크기 라벨만 표시)
     const name = m.file.split('/').pop();
     dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
     currentTris = (m.tris != null) ? m.tris : null;
