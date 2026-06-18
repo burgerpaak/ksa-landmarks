@@ -872,7 +872,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   aspect-ratio: 16 / 10;
   background: var(--bg-sunken);
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
+  border-radius: 13px 13px 0 0;
+  /* 호버 시 scale된 이미지가 둥근 클립을 벗어나는 합성 글리치 방지 — 자체 레이어로 승격 */
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 .card-image img {
