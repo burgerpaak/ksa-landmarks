@@ -279,8 +279,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   cursor: zoom-in;
   border: 1px solid var(--border);
   background: var(--bg-sunken);
-  transform: translateZ(0);
-  isolation: isolate;
+  clip-path: inset(0 round 8px);
 }
 .fc-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .fc-shot:hover img { transform: scale(1.06); }
