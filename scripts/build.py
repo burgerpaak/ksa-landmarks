@@ -680,6 +680,24 @@ def glb_triangle_count(path: Path):
         return None
 
 
+def glb_has_material(path: Path) -> bool:
+    """glb에 머티리얼/텍스처가 있는지 (있으면 뷰어에 색/텍스처 표시됨)"""
+    try:
+        data = path.read_bytes()
+        if struct.unpack("<I", data[:4])[0] != 0x46546C67:
+            return False
+        off, length = 12, struct.unpack("<I", data[8:12])[0]
+        while off < length:
+            clen, ctype = struct.unpack("<I4s", data[off:off + 8])
+            if ctype == b"JSON":
+                g = json.loads(data[off + 8:off + 8 + clen])
+                return len(g.get("materials", [])) > 0 or len(g.get("textures", [])) > 0
+            off += 8 + clen
+    except Exception:
+        pass
+    return False
+
+
 def parse_landmark_id(filename: str):
     """파일명에서 랜드마크 번호 추출. KSA-01.glb / 01-1.png / 013-1_0090.png → '01'/'13'"""
     m = re.match(r"(?:KSA[-_]?)?0*(\d{1,3})", filename, re.IGNORECASE)
@@ -706,14 +724,28 @@ def scan_progress_files(landmarks: list) -> dict:
         g = groups.setdefault(lid, {"models": [], "shots": []})
         if ext in MODEL_EXT:
             mb = f.stat().st_size / (1024 * 1024)
+            textured = glb_has_material(f)
             g["models"].append({
                 "file": f.name,
-                "label": f.stem,
+                "label": "텍스처" if textured else "기본",
                 "mb": round(mb, 2),
                 "tris": glb_triangle_count(f),  # 빌드 시 정확 계산
+                "_textured": textured,
             })
         elif ext in IMG_EXT:
             g["shots"].append(f.name)
+
+    from collections import Counter
+    for g in groups.values():
+        # 텍스처 버전을 항상 앞으로 (기본 활성 탭) — 같은 상태끼린 파일명 순
+        g["models"].sort(key=lambda m: (not m["_textured"], m["file"].lower()))
+        # 동일 라벨 충돌 방지(같은 상태 모델 2개 이상) — 번호 붙임
+        cnt = Counter(m["label"] for m in g["models"])
+        seen = {}
+        for m in g["models"]:
+            if cnt[m["label"]] > 1:
+                seen[m["label"]] = seen.get(m["label"], 0) + 1
+                m["label"] = f'{m["label"]} {seen[m["label"]]}'
     return groups
 
 
