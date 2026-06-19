@@ -51,7 +51,7 @@ PROGRESS_REP_MODELS = {}
 # True  → Files 카드·3D 모달에 glb 다운로드 버튼 표시
 # False → glb 다운로드 버튼 제거 (3D 뷰어·이미지 다운로드는 그대로 유지)
 # 끄거나 켠 뒤 `python3 scripts/build.py` 만 다시 돌리면 즉시 반영.
-GLB_DOWNLOAD = True
+GLB_DOWNLOAD = False
 
 # 3D 모달 다운로드 버튼 HTML (GLB_DOWNLOAD=False면 빈 문자열로 대체)
 MODAL_DL_BTN = (
