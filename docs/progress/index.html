@@ -489,10 +489,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
         <span>와이어프레임</span>
       </button>
-      <a class="model-dl" id="modal-dl" download title="모델 다운로드">
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span id="modal-dl-label"></span>
-      </a>
+      <a class="model-dl" id="modal-dl" download title="모델 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="modal-dl-label"></span></a>
     </div>
   </div>
 </div>
@@ -621,9 +618,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     const src = ASSET_BASE + m.file;
     mv.setAttribute('src', src);
     const name = m.file.split('/').pop();
-    dl.href = src;
-    dl.setAttribute('download', name);
-    dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    if (dl) {  // 다운로드 버튼이 꺼져 있으면(GLB_DOWNLOAD=False) 없을 수 있음
+      dl.href = src;
+      dl.setAttribute('download', name);
+      dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    }
     currentTris = (m.tris != null) ? m.tris : null;
     updateTri();
     tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));

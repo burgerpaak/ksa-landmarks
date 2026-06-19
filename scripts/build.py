@@ -47,6 +47,19 @@ PROGRESS_LATEST = {}
 # 랜드마크별 대표 3D 모델 (Reference 카드 3D 버튼용)
 PROGRESS_REP_MODELS = {}
 
+# ── glb 다운로드 버튼 토글 ──────────────────────────────────────────
+# True  → Files 카드·3D 모달에 glb 다운로드 버튼 표시
+# False → glb 다운로드 버튼 제거 (3D 뷰어·이미지 다운로드는 그대로 유지)
+# 끄거나 켠 뒤 `python3 scripts/build.py` 만 다시 돌리면 즉시 반영.
+GLB_DOWNLOAD = True
+
+# 3D 모달 다운로드 버튼 HTML (GLB_DOWNLOAD=False면 빈 문자열로 대체)
+MODAL_DL_BTN = (
+    '<a class="model-dl" id="modal-dl" download title="모델 다운로드">'
+    '<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    '<span id="modal-dl-label"></span></a>'
+) if GLB_DOWNLOAD else ""
+
 
 # 공유 3D 모델 모달 — Reference·Worklog 양쪽에 주입. {{ASSET_BASE}}만 페이지별로 다름.
 MODEL_MODAL = """
@@ -64,10 +77,7 @@ MODEL_MODAL = """
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
         <span>와이어프레임</span>
       </button>
-      <a class="model-dl" id="modal-dl" download title="모델 다운로드">
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span id="modal-dl-label"></span>
-      </a>
+      {{DL_BTN}}
     </div>
   </div>
 </div>
@@ -196,9 +206,11 @@ MODEL_MODAL = """
     const src = ASSET_BASE + m.file;
     mv.setAttribute('src', src);
     const name = m.file.split('/').pop();
-    dl.href = src;
-    dl.setAttribute('download', name);
-    dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    if (dl) {  // 다운로드 버튼이 꺼져 있으면(GLB_DOWNLOAD=False) 없을 수 있음
+      dl.href = src;
+      dl.setAttribute('download', name);
+      dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    }
     currentTris = (m.tris != null) ? m.tris : null;
     updateTri();
     tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
@@ -781,12 +793,12 @@ def render_file_card(lid: str, group: dict, lm_map: dict) -> str:
         )
     actions_html = f'<div class="fc-actions">{"".join(actions)}</div>' if actions else ""
 
-    # glb 다운로드 — 모델별 활성 링크
+    # glb 다운로드 — 모델별 활성 링크 (GLB_DOWNLOAD 토글로 on/off)
     dls = "".join(
         f'<a class="fc-dl" href="assets/{esc(m["file"])}" download title="{esc(m["file"])} 다운로드">'
         f'{dl_svg}<span>{esc(m["file"])}</span><span class="fc-dl-size">{m["mb"]:.1f} MB</span></a>'
         for m in models
-    )
+    ) if GLB_DOWNLOAD else ""
     dls_html = f'<div class="fc-dls">{dls}</div>' if dls else ""
 
     # 스크린샷 썸네일 (커버 포함 전체 — 클릭 시 라이트박스, 개별 다운로드)
@@ -837,7 +849,7 @@ def build_files(landmarks: list, palette: str):
     output = template.replace("{{PALETTE}}", palette)
     output = output.replace("{{ENTRIES}}", cards_html)
     output = output.replace("{{COUNT}}", count_html)
-    output = output.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/"))
+    output = output.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/").replace("{{DL_BTN}}", MODAL_DL_BTN))
 
     OUTPUT_PROGRESS_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_PROGRESS_DIR / "index.html").write_text(output, encoding="utf-8")
@@ -922,7 +934,7 @@ def build():
         "{{SIDEBAR}}": sidebar_html,
         "{{GLOSSARY}}": glossary_html,
         "{{GLOSSARY_JSON}}": glossary_json,
-        "{{MODEL_MODAL}}": MODEL_MODAL.replace("{{ASSET_BASE}}", "progress/assets/"),
+        "{{MODEL_MODAL}}": MODEL_MODAL.replace("{{ASSET_BASE}}", "progress/assets/").replace("{{DL_BTN}}", MODAL_DL_BTN),
         "{{TOTAL}}": str(total),
         "{{T1}}": str(t1),
         "{{T2}}": str(t2),
