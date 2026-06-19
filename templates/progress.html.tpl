@@ -217,10 +217,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .fc-dl svg { flex-shrink: 0; color: var(--accent); }
 .fc-dl > span:nth-of-type(1) { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fc-dl-size { color: var(--ink-mute); flex-shrink: 0; }
-/* glb 다운로드 비활성화 — 버튼 유지, 잠금 표시 */
-.fc-dl--disabled { color: var(--ink-mute); cursor: not-allowed; }
-.fc-dl--disabled:hover { color: var(--ink-mute); background: var(--bg-sunken); }
-.fc-dl--disabled svg { color: var(--ink-mute); }
 
 .fc-shots {
   display: grid;
