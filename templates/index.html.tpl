@@ -1168,6 +1168,15 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   font-weight: 600;
 }
 
+/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루로 구분 */
+.tag-dup {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 13%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .card-section {
   display: flex;
   flex-direction: column;

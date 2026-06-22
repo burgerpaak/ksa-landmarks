@@ -326,6 +326,7 @@
   {
     "id": "04",
     "idx": 4,
+    "balady_dup": true,
     "name": "King Saud University Stadium (Alawwal Park)",
     "name_lines": [
       "King Saud University Stadium"
@@ -1005,6 +1006,7 @@
   {
     "id": "11",
     "idx": 11,
+    "balady_dup": true,
     "name": "Diriyah (Ad Diriyah)",
     "name_lines": [
       "Diriyah (Ad Diriyah)"
@@ -1455,6 +1457,7 @@
   {
     "id": "16",
     "idx": 16,
+    "balady_dup": true,
     "name": "Riyadh Park Mall",
     "name_lines": [
       "Riyadh Park Mall"
@@ -1886,6 +1889,7 @@
   {
     "id": "21",
     "idx": 21,
+    "balady_dup": true,
     "name": "MoMRAH",
     "name_lines": [
       "MoMRAH"
@@ -2529,6 +2533,7 @@
   {
     "id": "29",
     "idx": 29,
+    "balady_dup": true,
     "name": "Al Rashid Mall",
     "name_lines": [
       "Al Rashid Mall"
@@ -3238,6 +3243,7 @@
   {
     "id": "37",
     "idx": 37,
+    "balady_dup": true,
     "name": "Savola Tower",
     "name_lines": [
       "Savola Tower"
@@ -3313,6 +3319,7 @@
   {
     "id": "38",
     "idx": 38,
+    "balady_dup": true,
     "name": "Al-Majdoul Tower",
     "name_lines": [
       "Al-Majdoul Tower"
@@ -3415,6 +3422,7 @@
   {
     "id": "39",
     "idx": 39,
+    "balady_dup": true,
     "name": "Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)",
     "name_lines": [
       "Makkah Clock Royal Tower"
@@ -3556,6 +3564,7 @@
   {
     "id": "40",
     "idx": 40,
+    "balady_dup": true,
     "name": "Boulevard World",
     "name_lines": [
       "Boulevard World"

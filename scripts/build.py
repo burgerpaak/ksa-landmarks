@@ -413,6 +413,14 @@ def render_card(lm: dict) -> str:
     tag_html = " ".join(f'<span class="tag">{esc(t)}</span>' for t in lm["tags"])
     remarks_html = " ".join(f'<span class="tag tag-alert">{esc(r)}</span>' for r in lm["remarks"])
 
+    # Balady/MOMRAH 50 리스트와 중복되는 랜드마크 표시
+    dup_html = ""
+    if lm.get("balady_dup"):
+        dup_html = (
+            '<span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">'
+            'Balady 중복</span>'
+        )
+
     # 검증 미완(=기존 '확인필요' 행) → 카드 헤더 DRAFT 핀으로 분리
     uncertain_items = [s["value"] for s in lm.get("structure", []) if s["label"] == "확인필요"]
     draft_html = ""
@@ -534,6 +542,7 @@ def render_card(lm: dict) -> str:
         " ".join(lm.get("must_have", [])).lower(),
         " ".join(s.get("value", "") for s in lm.get("structure", [])).lower(),
         " ".join(lm.get("key_points", [])).lower(),
+        "balady 중복 momrah" if lm.get("balady_dup") else "",
     ])
 
     has_3d = "yes" if PROGRESS_REP_MODELS.get(idx_str) else "no"
@@ -565,7 +574,7 @@ def render_card(lm: dict) -> str:
       </div>
       <h3 class="card-title">{name_lines_html}</h3>
       {subtitle_html}
-      <div class="card-tags">{status_html}{task_html}{tag_html}{remarks_html}{draft_html}</div>
+      <div class="card-tags">{status_html}{task_html}{dup_html}{tag_html}{remarks_html}{draft_html}</div>
     </header>
 
     {must_have_html}
