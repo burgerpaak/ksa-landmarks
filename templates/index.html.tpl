@@ -27,7 +27,7 @@
   --tier-1: #2c5588;
   --tier-2: #3a8a78;
   --tier-3: #8696a8;
-  /* Balady 중복 태그 — 완공(teal)급 채도의 선명한 블루 */
+  /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
   --dup: #2470c8;
   /* Alert — cool muted plum (한색 계열 경고) */
   --alert: #8a6878;
@@ -308,7 +308,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .chip[data-tier="tier-2"].active { background: var(--tier-2); color: #fff; }
 .chip[data-tier="tier-3"].active { background: var(--tier-3); color: #fff; }
 
-/* Balady 중복 필터 칩 — 태그와 동일한 --dup 블루 */
+/* Balady + 필터 칩 — 태그와 동일한 --dup 블루 */
 .chip--dup .chip-dot {
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--dup); margin-right: 5px; flex-shrink: 0;
@@ -1935,7 +1935,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         state.has3d = !state.has3d;
         btn.classList.toggle('active', state.has3d);
       } else if (groupType === 'dup') {
-        // toggle (Balady 중복)
+        // toggle (Balady +)
         state.dup = !state.dup;
         btn.classList.toggle('active', state.dup);
       } else {
