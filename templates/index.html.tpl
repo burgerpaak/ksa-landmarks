@@ -1168,12 +1168,12 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   font-weight: 600;
 }
 
-/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루로 구분 */
+/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루, 완공 태그 수준으로 강조 */
 .tag-dup {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 13%, var(--bg-elev));
-  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
-  font-weight: 600;
+  color: var(--tier-1);
+  background: color-mix(in srgb, var(--tier-1) 20%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--tier-1) 48%, var(--border));
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
@@ -1318,23 +1318,6 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   background: color-mix(in srgb, var(--tier-3) 14%, var(--bg-elev));
   color: var(--tier-3);
   border-color: color-mix(in srgb, var(--tier-3) 30%, var(--border));
-}
-
-/* 작업 구분 (신규제작/기존편집) */
-.tag-task {
-  font-weight: 500;
-}
-
-.tag-task-new {
-  background: color-mix(in srgb, var(--accent) 10%, var(--bg-elev));
-  color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
-}
-
-.tag-task-edit {
-  background: color-mix(in srgb, var(--ink-soft) 10%, var(--bg-elev));
-  color: var(--ink-soft);
-  border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
 }
 
 /* Structure 섹션을 카드 하단에 정렬 (footer 위로) */

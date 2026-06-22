@@ -459,9 +459,8 @@ def render_card(lm: dict) -> str:
             f'<span>Updated {esc(short)}</span></a>'
         )
 
-    # 카드 헤더의 status, task_type 뱃지
+    # 카드 헤더의 status 뱃지 (task_type 태그는 전 카드 동일값이라 미표시)
     status = modeling.get("status")
-    task_type = modeling.get("task_type")
     status_html = ""
     if status:
         status_cls = {
@@ -470,10 +469,6 @@ def render_card(lm: dict) -> str:
             "계획": "tag-status-plan",
         }.get(status, "tag-status-done")
         status_html = f'<span class="tag tag-status {status_cls}">{esc(status)}</span>'
-    task_html = ""
-    if task_type:
-        task_cls = "tag-task-new" if task_type == "신규제작" else "tag-task-edit"
-        task_html = f'<span class="tag tag-task {task_cls}">{esc(task_type)}</span>'
 
     # Links
     links_parts = []
@@ -574,7 +569,7 @@ def render_card(lm: dict) -> str:
       </div>
       <h3 class="card-title">{name_lines_html}</h3>
       {subtitle_html}
-      <div class="card-tags">{status_html}{task_html}{dup_html}{tag_html}{remarks_html}{draft_html}</div>
+      <div class="card-tags">{status_html}{dup_html}{tag_html}{remarks_html}{draft_html}</div>
     </header>
 
     {must_have_html}

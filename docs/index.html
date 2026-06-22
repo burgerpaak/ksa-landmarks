@@ -1168,12 +1168,12 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   font-weight: 600;
 }
 
-/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루로 구분 */
+/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루, 완공 태그 수준으로 강조 */
 .tag-dup {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 13%, var(--bg-elev));
-  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
-  font-weight: 600;
+  color: var(--tier-1);
+  background: color-mix(in srgb, var(--tier-1) 20%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--tier-1) 48%, var(--border));
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
@@ -1318,23 +1318,6 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   background: color-mix(in srgb, var(--tier-3) 14%, var(--bg-elev));
   color: var(--tier-3);
   border-color: color-mix(in srgb, var(--tier-3) 30%, var(--border));
-}
-
-/* 작업 구분 (신규제작/기존편집) */
-.tag-task {
-  font-weight: 500;
-}
-
-.tag-task-new {
-  background: color-mix(in srgb, var(--accent) 10%, var(--bg-elev));
-  color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
-}
-
-.tag-task-edit {
-  background: color-mix(in srgb, var(--ink-soft) 10%, var(--bg-elev));
-  color: var(--ink-soft);
-  border-color: color-mix(in srgb, var(--ink-soft) 25%, var(--border));
 }
 
 /* Structure 섹션을 카드 하단에 정렬 (footer 위로) */
@@ -1917,7 +1900,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">National Museum<br>of Saudi Arabia</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">저층</span> <span class="tag">곡선파사드</span> <span class="tag">사암질감</span> <span class="tag">복합동</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">저층</span> <span class="tag">곡선파사드</span> <span class="tag">사암질감</span> <span class="tag">복합동</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">메카 향한 초승달형 곡면 매스</div></div><div class="hl-item"><div class="hl-primary">리야드산 라임스톤 외벽 + 가로 결</div></div><div class="hl-item"><div class="hl-primary">8개 전시홀 2층 구조</div><div class="hl-aux">총 ~28,000 m²</div></div><div class="hl-item"><div class="hl-primary">King Abdulaziz Historical Centre 광장과 축선</div></div></div></section>
@@ -1963,7 +1946,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Murabba Palace</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">나즈디건축</span> <span class="tag">중정형</span> <span class="tag">어도비</span> <span class="tag">망루</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">나즈디건축</span> <span class="tag">중정형</span> <span class="tag">어도비</span> <span class="tag">망루</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">정사각형 어도비 흙벽 매스</div><div class="hl-aux">2층</div></div><div class="hl-item"><div class="hl-primary">4면 모서리 망루</div><div class="hl-aux">Barjeel</div></div><div class="hl-item"><div class="hl-primary">톱니형(삼각) 파라펫 장식 상단</div></div><div class="hl-item"><div class="hl-primary">작고 깊은 사각 창 + 나무 격자</div></div></div></section>
@@ -2009,7 +1992,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Kingdom Arena</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">반개방지붕</span> <span class="tag">LED파사드</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">원형</span> <span class="tag">반개방지붕</span> <span class="tag">LED파사드</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">직사각형 실내 아레나 매스</div><div class="hl-aux">보울 X</div></div><div class="hl-item"><div class="hl-primary">완전 폐쇄형 지붕</div></div><div class="hl-item"><div class="hl-primary">백색 메탈 외피 + LED 동적 조명</div></div><div class="hl-item"><div class="hl-primary">Boulevard Riyadh City 엔터테인먼트 구역 인접</div></div></div></section>
@@ -2055,7 +2038,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Saud University Stadium</h3>
       <p class="card-subtitle">(Alawwal Park)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">타원형</span> <span class="tag">트러스파사드</span> <span class="tag">막구조지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">타원형</span> <span class="tag">트러스파사드</span> <span class="tag">막구조지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">타원형 보울</div><div class="hl-aux">oval bowl</div></div><div class="hl-item"><div class="hl-primary">양 측면(메인·백) 부분 캔틸레버 지붕</div></div><div class="hl-item"><div class="hl-primary">노출 콘크리트 + 메탈 스크린 외피</div></div><div class="hl-item"><div class="hl-primary">킹사우드대학 캠퍼스 입지 — 사막성 조경</div></div></div></section>
@@ -2101,7 +2084,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Imam Muhammad Ibn Saud Islamic<br>University Football Stadium</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타원형</span> <span class="tag">수직루버</span> <span class="tag">캔틸레버지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공 연도·외장 재료·지붕 형식">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">타원형</span> <span class="tag">수직루버</span> <span class="tag">캔틸레버지붕</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공 연도·외장 재료·지붕 형식">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">대학 캠퍼스 부속 경기장</div><div class="hl-aux">보수 진행 중</div></div><div class="hl-item"><div class="hl-primary">오픈 보울 + 4코너 조명탑</div><div class="hl-aux">일반적 구성</div></div></div></section>
@@ -2147,7 +2130,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Shabab Stadium</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">주름파사드</span> <span class="tag">반폐쇄돔</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공·재료·정확한 수용">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">원형</span> <span class="tag">주름파사드</span> <span class="tag">반폐쇄돔</span><span class="tag tag-alert">ASIAN CUP 2027</span><span class="tag tag-draft" title="검증 미완: 완공·재료·정확한 수용">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">소규모 컴팩트 보울</div><div class="hl-aux">단일 층 스탠드</div></div><div class="hl-item"><div class="hl-primary">개방형 지붕</div><div class="hl-aux">지붕 없음 / 부분만</div></div><div class="hl-item"><div class="hl-primary">알샤밥 클럽 컬러: 백색 + 검정</div></div></div></section>
@@ -2193,7 +2176,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Nassif House</h3>
       <p class="card-subtitle">(Bayt Nassif)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">Al-Balad</span> <span class="tag">로샨</span> <span class="tag">산호석</span> <span class="tag">UNESCO</span> <span class="tag">탑형</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">Al-Balad</span> <span class="tag">로샨</span> <span class="tag">산호석</span> <span class="tag">UNESCO</span> <span class="tag">탑형</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">전면 2단 적층 라와신(Roshan) 목재 출창</div></div><div class="hl-item"><div class="hl-primary">북측 진입 리잘릿</div><div class="hl-aux">돌출 매스</div></div><div class="hl-item"><div class="hl-primary">산호석(Coral Stone) 벽체 + 흰 회반죽 마감</div></div><div class="hl-item"><div class="hl-primary">옥상 목재 파빌리온과 평지붕 테라스</div></div></div></section>
@@ -2239,7 +2222,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Rahma Mosque</h3>
       <p class="card-subtitle">(Floating Mosque)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">수상모스크</span> <span class="tag">흰색돔</span> <span class="tag">미나렛×2</span> <span class="tag">해수면연출</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">수상모스크</span> <span class="tag">흰색돔</span> <span class="tag">미나렛×2</span> <span class="tag">해수면연출</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">필로티 위 부유형 매스</div><div class="hl-aux">만조 시 바다 위 인상</div></div><div class="hl-item"><div class="hl-primary">터쿼이즈색 중앙 큰 돔 + 52개 작은 돔군</div></div><div class="hl-item"><div class="hl-primary">흰 대리석 외벽 + 단일 백색 미나렛</div></div><div class="hl-item"><div class="hl-primary">외부 23개 우산형(파라솔) 캐노피</div></div></div></section>
@@ -2285,7 +2268,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Prince Abdullah Al Faisal<br>Sports City Stadium</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">타원형</span> <span class="tag">파도형지붕</span> <span class="tag">아케이드하부</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">타원형</span> <span class="tag">파도형지붕</span> <span class="tag">아케이드하부</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">타원형 보울 + 백색 천공(perforated) 메탈 외피</div></div><div class="hl-item"><div class="hl-primary">양 측면 부분 캔틸레버 지붕</div></div><div class="hl-item"><div class="hl-primary">Al-Ittihad / Al-Ahli 공동 사용</div></div><div class="hl-item"><div class="hl-primary">도시 내부 입지 — 도로·주차 인접</div></div></div></section>
@@ -2331,7 +2314,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">AL KHOBAR New Stadium</h3>
       <p class="card-subtitle">(Aramco Stadium)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">원형</span> <span class="tag">다이아몬드패턴</span> <span class="tag">45,000석</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag">원형</span> <span class="tag">다이아몬드패턴</span> <span class="tag">45,000석</span><span class="tag tag-alert">ASIAN CUP 2027</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">사막 영감 기하학 패턴 외피</div><div class="hl-aux">Populous design</div></div><div class="hl-item"><div class="hl-primary">PTFE 막구조 캔틸레버 지붕</div></div><div class="hl-item"><div class="hl-primary">타원형 풀-보울</div></div><div class="hl-item"><div class="hl-primary">알코바르 해안 인접 입지 — 동부주 상징</div></div></div></section>
@@ -2378,7 +2361,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Diriyah (Ad Diriyah)</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">UNESCO</span> <span class="tag">나즈디</span> <span class="tag">어도비</span> <span class="tag">유적</span> <span class="tag">계곡</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">UNESCO</span> <span class="tag">나즈디</span> <span class="tag">어도비</span> <span class="tag">유적</span> <span class="tag">계곡</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">두꺼운 흙벽돌 외벽 + 흉벽</div></div><div class="hl-item"><div class="hl-primary">살와 궁전 다층 요새 매스</div></div><div class="hl-item"><div class="hl-primary">삼각형 통풍구 + 작은 창</div></div><div class="hl-item"><div class="hl-primary">나즈디 미로 골목과 안뜰</div></div></div></section>
@@ -2424,7 +2407,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Salam Park</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">공원</span> <span class="tag">조경</span> <span class="tag">원형호수</span> <span class="tag">파빌리온</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">공원</span> <span class="tag">조경</span> <span class="tag">원형호수</span> <span class="tag">파빌리온</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">중앙 인공 호수 + 분수</div><div class="hl-aux">~40m</div></div><div class="hl-item"><div class="hl-primary">약 1,300그루 대추야자 군락</div></div><div class="hl-item"><div class="hl-primary">굴곡진 잔디 힐사이드 존</div></div><div class="hl-item"><div class="hl-primary">중앙 흰색 살람 모스크</div></div></div></section>
@@ -2470,7 +2453,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Fahad National Library</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">막구조</span> <span class="tag">PTFE텐트</span> <span class="tag">발광</span> <span class="tag">Gerber</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">막구조</span> <span class="tag">PTFE텐트</span> <span class="tag">발광</span> <span class="tag">Gerber</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">백색 마름모(롬보이드) 텐트 막구조 파사드</div></div><div class="hl-item"><div class="hl-primary">기존 도서관을 사방에서 감싼 큐브 매스</div></div><div class="hl-item"><div class="hl-primary">3D 인장 강선 케이블 그리드</div></div><div class="hl-item"><div class="hl-primary">바닥 흰 대리석 포디움 광장</div></div></div></section>
@@ -2516,7 +2499,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Six Flags Qiddiya City</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">테마파크</span> <span class="tag">사막절벽</span> <span class="tag">롤러코스터</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-wip">건설 중</span><span class="tag">테마파크</span> <span class="tag">사막절벽</span> <span class="tag">롤러코스터</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">팰컨스 플라이트 195m 코스터</div></div><div class="hl-item"><div class="hl-primary">시로코 타워 145m</div></div><div class="hl-item"><div class="hl-primary">투와이크 절벽 옆 입지</div></div><div class="hl-item"><div class="hl-primary">6개 테마 구역</div></div></div></section>
@@ -2562,7 +2545,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Khalid<br>International Airport</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">공항</span> <span class="tag">저층수평</span> <span class="tag">로열터미널돔</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">공항</span> <span class="tag">저층수평</span> <span class="tag">로열터미널돔</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">삼각 피라미드형 4개 터미널 셸</div></div><div class="hl-item"><div class="hl-primary">중앙 6각 모스크 + 큰 돔</div></div><div class="hl-item"><div class="hl-primary">사막색 콘크리트 쉘</div></div><div class="hl-item"><div class="hl-primary">이슬람 기하 패턴 스크린</div></div></div></section>
@@ -2608,7 +2591,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Riyadh Park Mall</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">쇼핑몰</span> <span class="tag">곡선클래딩</span> <span class="tag">저층</span><span class="tag tag-draft" title="검증 미완: 정확 완공 연도·설계자·면적">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">쇼핑몰</span> <span class="tag">곡선클래딩</span> <span class="tag">저층</span><span class="tag tag-draft" title="검증 미완: 정확 완공 연도·설계자·면적">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">대형 곡선 매스 + 다중 윙 구성</div></div><div class="hl-item"><div class="hl-primary">유리 파사드 + 알루미늄 패널</div></div><div class="hl-item"><div class="hl-primary">옥상 야외 엔터테인먼트 테라스</div></div><div class="hl-item"><div class="hl-primary">지상·지하 대형 주차장</div></div></div></section>
@@ -2654,7 +2637,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Saud University</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대학</span> <span class="tag">메인게이트</span> <span class="tag">캠퍼스모스크</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">대학</span> <span class="tag">메인게이트</span> <span class="tag">캠퍼스모스크</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">두 개의 직교 보행 스파인 축</div></div><div class="hl-item"><div class="hl-primary">교차점 중앙 포럼 광장</div></div><div class="hl-item"><div class="hl-primary">팜트리형 콘크리트 아치 열주</div></div><div class="hl-item"><div class="hl-primary">도서관·강당 중심부 매스</div></div></div></section>
@@ -2700,7 +2683,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Princess Nourah Bint<br>Abdulrahman University</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대학</span> <span class="tag">대칭배치</span> <span class="tag">모노레일</span> <span class="tag">쌍둥이타워</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">대학</span> <span class="tag">대칭배치</span> <span class="tag">모노레일</span> <span class="tag">쌍둥이타워</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">황금빛 돔 중앙 모스크</div></div><div class="hl-item"><div class="hl-primary">캠퍼스 일주 모노레일 고가</div></div><div class="hl-item"><div class="hl-primary">방대한 격자형 마스터플랜</div></div><div class="hl-item"><div class="hl-primary">여성 전용 폐쇄형 외곽 게이트</div></div></div></section>
@@ -2746,7 +2729,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Riyadh Golf Club</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">골프클럽</span> <span class="tag">녹지</span> <span class="tag">클럽하우스</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·코스 길이">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">골프클럽</span> <span class="tag">녹지</span> <span class="tag">클럽하우스</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·코스 길이">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">18홀 사막 골프 코스</div></div><div class="hl-item"><div class="hl-primary">야간 조명 토너먼트(LIV) 라이트 폴</div></div><div class="hl-item"><div class="hl-primary">낮은 클럽하우스</div><div class="hl-aux">스톤·스터코</div></div><div class="hl-item"><div class="hl-primary">Al Aarid 북부 입지</div></div></div></section>
@@ -2792,7 +2775,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">KAFD Metro Station</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">ZHA</span> <span class="tag">라티스파사드</span> <span class="tag">파라메트릭</span> <span class="tag">엑소스켈레톤</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">ZHA</span> <span class="tag">라티스파사드</span> <span class="tag">파라메트릭</span> <span class="tag">엑소스켈레톤</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">3D 격자형 파라메트릭 외피</div></div><div class="hl-item"><div class="hl-primary">사막 바람 결을 닮은 패턴</div></div><div class="hl-item"><div class="hl-primary">6각형 망사 천공</div></div><div class="hl-item"><div class="hl-primary">6개 트랙 환승역</div><div class="hl-aux">3노선 + 모노레일</div></div></div></section>
@@ -2838,7 +2821,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">MoMRAH</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">정부청사</span> <span class="tag">이슬람패턴</span> <span class="tag">대칭</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 매스/외장">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">정부청사</span> <span class="tag">이슬람패턴</span> <span class="tag">대칭</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 매스/외장">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">현대식 정부청사 매스</div><div class="hl-aux">저층 슬래브</div></div><div class="hl-item"><div class="hl-primary">정면 진입 광장 + 국기 게양대</div></div><div class="hl-item"><div class="hl-primary">유리 + 석재 혼합 파사드</div></div></div></section>
@@ -2884,7 +2867,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Rajhi Mosque</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">대형돔</span> <span class="tag">미나렛×4</span> <span class="tag">대리석</span> <span class="tag">아치회랑</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">대형돔</span> <span class="tag">미나렛×4</span> <span class="tag">대리석</span> <span class="tag">아치회랑</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">중앙 대형 돔</div><div class="hl-aux">외경 ~28.8m</div></div><div class="hl-item"><div class="hl-primary">쌍둥이 미나레트 2기</div><div class="hl-aux">각 ~55m</div></div><div class="hl-item"><div class="hl-primary">안달루시아·무어풍 말굽 아치 파사드</div></div><div class="hl-item"><div class="hl-primary">넓은 사다리꼴 안뜰 + 아케이드</div></div></div></section>
@@ -2930,7 +2913,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Bab Makkah</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">성문</span> <span class="tag">아치</span> <span class="tag">쌍탑</span> <span class="tag">Al-Balad</span><span class="tag tag-draft" title="검증 미완: 완공·재건 연도·설계자·정확 치수">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">성문</span> <span class="tag">아치</span> <span class="tag">쌍탑</span> <span class="tag">Al-Balad</span><span class="tag tag-draft" title="검증 미완: 완공·재건 연도·설계자·정확 치수">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">중앙 아치형 관문 + 양옆 측면 매스</div></div><div class="hl-item"><div class="hl-primary">백색 회벽 마감</div></div><div class="hl-item"><div class="hl-primary">상부 코니스 + 총안형 디테일</div></div><div class="hl-item"><div class="hl-primary">Al-Balad 동측 진입부 위치</div></div></div></section>
@@ -2976,7 +2959,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Red Sea Mall</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">유리커튼월</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">쇼핑몰</span> <span class="tag">유리커튼월</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">저층 대형 본동 + 부속 중층 타워</div></div><div class="hl-item"><div class="hl-primary">대형 유리 천창 아트리움</div></div><div class="hl-item"><div class="hl-primary">곡선형 진입 캐노피 + 광장 분수</div></div><div class="hl-item"><div class="hl-primary">King Abdulaziz Road 입지</div></div></div></section>
@@ -3022,7 +3005,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Fahd&#x27;s Fountain</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">세계최고분수</span> <span class="tag">312m</span> <span class="tag">해수면위</span> <span class="tag">야간조명</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">세계최고분수</span> <span class="tag">312m</span> <span class="tag">해수면위</span> <span class="tag">야간조명</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">초고압 수직 물기둥</div><div class="hl-aux">~260m</div></div><div class="hl-item"><div class="hl-primary">바다 위 분수</div><div class="hl-aux">해상 노즐</div></div><div class="hl-item"><div class="hl-primary">500개 이상 야간 스포트라이트</div></div><div class="hl-item"><div class="hl-primary">제다 코르니쉬 해안가 경관</div></div></div></section>
@@ -3068,7 +3051,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Abdul Raouf Khalil Museum</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">전통저택</span> <span class="tag">로샨</span> <span class="tag">산호석</span><span class="tag tag-draft" title="검증 미완: 정확 파빌리온 수·완공 연도·설계자">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">전통저택</span> <span class="tag">로샨</span> <span class="tag">산호석</span><span class="tag tag-draft" title="검증 미완: 정확 파빌리온 수·완공 연도·설계자">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">다중 파빌리온 캠퍼스 구성</div></div><div class="hl-item"><div class="hl-primary">마쉬라비야</div><div class="hl-aux">목재 격자창</div></div><div class="hl-item"><div class="hl-primary">아치형 출입구 + 작은 돔</div></div><div class="hl-item"><div class="hl-primary">백색·황토 회벽 + 짙은 갈색 디테일 대비</div></div></div></section>
@@ -3114,7 +3097,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Hassan Enany Mosque</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">모스크</span> <span class="tag">코니쉬</span><span class="tag tag-draft" title="검증 미완: 완공·설계자·위치·모든 치수">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">모스크</span> <span class="tag">코니쉬</span><span class="tag tag-draft" title="검증 미완: 완공·설계자·위치·모든 치수">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">백색 외벽 + 단일 미나렛</div></div><div class="hl-item"><div class="hl-primary">중앙 돔</div></div><div class="hl-item"><div class="hl-primary">기하 패턴 창</div></div></div></section>
@@ -3160,7 +3143,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Fakieh Aquarium</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">아쿠아리움</span> <span class="tag">구형돔</span> <span class="tag">수변입지</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">아쿠아리움</span> <span class="tag">구형돔</span> <span class="tag">수변입지</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">곡선형 모던 매스</div><div class="hl-aux">낮은 단일 동</div></div><div class="hl-item"><div class="hl-primary">푸른 톤 유리 파사드</div></div><div class="hl-item"><div class="hl-primary">해양 테마 사이니지·캐노피</div></div><div class="hl-item"><div class="hl-primary">제다 코르니쉬 도로변 입지</div></div></div></section>
@@ -3206,7 +3189,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Rashid Mall</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">쇼핑몰</span> <span class="tag">진입돔</span> <span class="tag">석재파사드</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">쇼핑몰</span> <span class="tag">진입돔</span> <span class="tag">석재파사드</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">거대한 직사각 매스</div><div class="hl-aux">4층</div></div><div class="hl-item"><div class="hl-primary">베이지 외장 + 곡선형 메인 캐노피</div></div><div class="hl-item"><div class="hl-primary">중앙 아트리움 채광</div></div><div class="hl-item"><div class="hl-primary">둘레 대형 주차장</div><div class="hl-aux">~5,000대</div></div></div></section>
@@ -3252,7 +3235,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Othman Office Tower</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쌍둥이타워</span> <span class="tag">반사유리</span> <span class="tag">포디움연결</span><span class="tag tag-draft" title="검증 미완: 설계자·정확 높이·외장 사양">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">쌍둥이타워</span> <span class="tag">반사유리</span> <span class="tag">포디움연결</span><span class="tag tag-draft" title="검증 미완: 설계자·정확 높이·외장 사양">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">20층 슬렌더 박스 매스</div></div><div class="hl-item"><div class="hl-primary">유리 커튼월 외장</div></div><div class="hl-item"><div class="hl-primary">Kempinski 호텔과 동일 단지</div></div><div class="hl-item"><div class="hl-primary">King Saud Road 입지</div></div></div></section>
@@ -3298,7 +3281,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Ajdan Infinity</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">∞형타워</span> <span class="tag">스카이브리지</span> <span class="tag">Benoy</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">∞형타워</span> <span class="tag">스카이브리지</span> <span class="tag">Benoy</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">흰 저층 매스 군집</div><div class="hl-aux">고층 X</div></div><div class="hl-item"><div class="hl-primary">중앙 광장 + 푸드빌리지</div></div><div class="hl-item"><div class="hl-primary">코르니쉬 해변 인접 산책로</div></div><div class="hl-item"><div class="hl-primary">대형 캔틸레버 캐노피</div></div></div></section>
@@ -3344,7 +3327,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Jawza Al Qahtani Mosque</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">해안모스크</span> <span class="tag">황금돔</span> <span class="tag">나선미나렛</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 치수·돔 유무">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">해안모스크</span> <span class="tag">황금돔</span> <span class="tag">나선미나렛</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 치수·돔 유무">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">순백색 외관</div></div><div class="hl-item"><div class="hl-primary">코르니쉬 해변 입지</div></div><div class="hl-item"><div class="hl-primary">단일 미나렛</div></div><div class="hl-item"><div class="hl-primary">현대식 모스크 매스</div></div></div></section>
@@ -3390,7 +3373,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al Othaim Mall</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">유리돔아트리움</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">쇼핑몰</span> <span class="tag">유리돔아트리움</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">거대 박스형 매스</div><div class="hl-aux">단층/2층</div></div><div class="hl-item"><div class="hl-primary">베이지 외장 마감</div></div><div class="hl-item"><div class="hl-primary">Saffori Land 실내 놀이공원 일체</div></div><div class="hl-item"><div class="hl-primary">둘레 넓은 지상 주차장</div></div></div></section>
@@ -3436,7 +3419,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Westfield Dammam</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">쇼핑몰</span> <span class="tag">현대식</span> <span class="tag">사선캐노피</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">쇼핑몰</span> <span class="tag">현대식</span> <span class="tag">사선캐노피</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">현대식 글라스 파사드</div><div class="hl-aux">2층 박스</div></div><div class="hl-item"><div class="hl-primary">King Abdullah Road 입지</div></div><div class="hl-item"><div class="hl-primary">Westfield 브랜드 사이니지</div></div><div class="hl-item"><div class="hl-primary">292+ 매장 대형 매스</div></div></div></section>
@@ -3482,7 +3465,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">King Fahd Causeway</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">해상교량</span> <span class="tag">25km</span> <span class="tag">인공섬</span> <span class="tag">등대타워</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">해상교량</span> <span class="tag">25km</span> <span class="tag">인공섬</span> <span class="tag">등대타워</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">25 km 해상 코즈웨이</div><div class="hl-aux">5교 + 7제방</div></div><div class="hl-item"><div class="hl-primary">중앙 Passport Island</div><div class="hl-aux">~660,000 m²</div></div><div class="hl-item"><div class="hl-primary">65m 양국 타워 레스토랑 2동</div></div><div class="hl-item"><div class="hl-primary">536개 콘크리트 파일런</div></div></div></section>
@@ -3529,7 +3512,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Elephant Rock</h3>
       <p class="card-subtitle">(Jabal AlFil, AlUla)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag">자연암석</span> <span class="tag">사암</span> <span class="tag">아치터널</span> <span class="tag">52m</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag">자연암석</span> <span class="tag">사암</span> <span class="tag">아치터널</span> <span class="tag">52m</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">코끼리 모양 실루엣</div><div class="hl-aux">긴 코 + 다리 아치</div></div><div class="hl-item"><div class="hl-primary">약 52m 천연 사암 기둥</div></div><div class="hl-item"><div class="hl-primary">붉은 누비안 사암 질감</div></div><div class="hl-item"><div class="hl-primary">주변 모닥불 라운지 + 좌석</div></div></div></section>
@@ -3575,7 +3558,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Savola Tower</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">타워</span> <span class="tag">유리커튼월</span> <span class="tag">테이퍼링</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·높이·정확 위치">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">타워</span> <span class="tag">유리커튼월</span> <span class="tag">테이퍼링</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·높이·정확 위치">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">사볼라 그룹 로고 사이니지</div></div><div class="hl-item"><div class="hl-primary">유리 커튼월 외피</div></div><div class="hl-item"><div class="hl-primary">제다 인근 입지</div></div><div class="hl-item"><div class="hl-primary">중층 코퍼릿 타워 형태</div></div></div></section>
@@ -3621,7 +3604,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Al-Majdoul Tower</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">사우디최고층</span> <span class="tag">트위스트</span> <span class="tag">380m</span> <span class="tag">KAFD</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 높이·트위스트 형태 사실 여부">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">사우디최고층</span> <span class="tag">트위스트</span> <span class="tag">380m</span> <span class="tag">KAFD</span><span class="tag tag-draft" title="검증 미완: 완공 연도·설계자·정확 높이·트위스트 형태 사실 여부">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">KAFD 스카이라인 일원</div></div><div class="hl-item"><div class="hl-primary">수직 트위스트(나선) 외피 기하</div></div><div class="hl-item"><div class="hl-primary">유리 파사드 패널 띠</div></div><div class="hl-item"><div class="hl-primary">비대칭 상단 마감</div></div></div></section>
@@ -3667,7 +3650,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Makkah Clock Royal Tower</h3>
       <p class="card-subtitle">(Fairmont / Abraj Al Bait)</p>
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">601m</span> <span class="tag">초대형시계</span> <span class="tag">초승달크라운</span> <span class="tag">복합단지</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">601m</span> <span class="tag">초대형시계</span> <span class="tag">초승달크라운</span> <span class="tag">복합단지</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">43m 직경 4면 시계</div></div><div class="hl-item"><div class="hl-primary">황금 초승달 첨탑</div></div><div class="hl-item"><div class="hl-primary">‘الله أكبر’ 아랍어 문구</div></div><div class="hl-item"><div class="hl-primary">Masjid al-Haram 인접 거대 매스</div></div></div></section>
@@ -3713,7 +3696,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       </div>
       <h3 class="card-title">Boulevard World</h3>
       
-      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-task tag-task-new">신규제작</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">테마파크</span> <span class="tag">세계테마존</span> <span class="tag">야간조명</span><span class="tag tag-draft" title="검증 미완: 연도별 정확한 존 구성·운영 주최">DRAFT</span></div>
+      <div class="card-tags"><span class="tag tag-status tag-status-done">완공</span><span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">Balady 중복</span><span class="tag">테마파크</span> <span class="tag">세계테마존</span> <span class="tag">야간조명</span><span class="tag tag-draft" title="검증 미완: 연도별 정확한 존 구성·운영 주최">DRAFT</span></div>
     </header>
 
     <section class="card-section card-section--must-have"><h4 class="section-eyebrow section-eyebrow--accent">Essentials</h4><div class="hairline-list"><div class="hl-item"><div class="hl-primary">축소 에펠탑 포토존</div></div><div class="hl-item"><div class="hl-primary">이집트 스핑크스/피라미드 미니어처</div></div><div class="hl-item"><div class="hl-primary">약 11개 세계 테마 존 거리</div></div><div class="hl-item"><div class="hl-primary">대형 인공 호수 + 곤돌라</div></div></div></section>
