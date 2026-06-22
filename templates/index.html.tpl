@@ -1698,7 +1698,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         </button>
         <button class="chip chip--dup" data-filter-group-override="dup" data-filter="dup-yes">
           <span class="chip-dot"></span>
-          Balady 중복
+          Balady +
         </button>
       </div>
     </div>

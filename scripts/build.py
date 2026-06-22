@@ -418,7 +418,7 @@ def render_card(lm: dict) -> str:
     if lm.get("balady_dup"):
         dup_html = (
             '<span class="tag tag-dup" title="Balady/MOMRAH 50 리스트와 중복 — 기존 3D 자산 존재">'
-            'Balady 중복</span>'
+            'Balady +</span>'
         )
 
     # 검증 미완(=기존 '확인필요' 행) → 카드 헤더 DRAFT 핀으로 분리
