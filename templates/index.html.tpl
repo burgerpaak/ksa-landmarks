@@ -27,6 +27,8 @@
   --tier-1: #2c5588;
   --tier-2: #3a8a78;
   --tier-3: #8696a8;
+  /* Balady 중복 태그 — 완공(teal)급 채도의 선명한 블루 */
+  --dup: #2470c8;
   /* Alert — cool muted plum (한색 계열 경고) */
   --alert: #8a6878;
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -51,6 +53,7 @@
   --tier-1: #7ea4d5;
   --tier-2: #6db8a4;
   --tier-3: #a5b3c5;
+  --dup: #6aa6ef;
   --alert: #c39aac;
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
@@ -1168,11 +1171,11 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   font-weight: 600;
 }
 
-/* Balady/MOMRAH 50 리스트 중복 표시 — accent 블루, 완공 태그 수준으로 강조 */
+/* Balady/MOMRAH 50 리스트 중복 표시 — 완공(teal)급 채도의 선명한 블루 */
 .tag-dup {
-  color: var(--tier-1);
-  background: color-mix(in srgb, var(--tier-1) 20%, var(--bg-elev));
-  border: 1px solid color-mix(in srgb, var(--tier-1) 48%, var(--border));
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
   font-weight: 700;
   letter-spacing: 0.02em;
 }
