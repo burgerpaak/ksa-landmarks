@@ -541,6 +541,7 @@ def render_card(lm: dict) -> str:
     ])
 
     has_3d = "yes" if PROGRESS_REP_MODELS.get(idx_str) else "no"
+    dup_flag = "yes" if lm.get("balady_dup") else "no"
 
     return f"""
 <article class="card" id="card-{idx_str}"
@@ -548,6 +549,7 @@ def render_card(lm: dict) -> str:
          data-city="city-{city.upper().replace(' ', '-')}"
          data-type="type-{type_}"
          data-has3d="{has_3d}"
+         data-dup="{dup_flag}"
          data-search="{esc(search_str)}">
   <div class="card-image{no_image_class}">
     {img_html}

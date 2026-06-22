@@ -308,6 +308,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .chip[data-tier="tier-2"].active { background: var(--tier-2); color: #fff; }
 .chip[data-tier="tier-3"].active { background: var(--tier-3); color: #fff; }
 
+/* Balady 중복 필터 칩 — 태그와 동일한 --dup 블루 */
+.chip--dup .chip-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--dup); margin-right: 5px; flex-shrink: 0;
+}
+.chip--dup.active { background: var(--dup); color: #fff; }
+.chip--dup.active .chip-dot { background: #fff; }
+
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -1688,6 +1696,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
           <svg width="11" height="11" viewBox="0 0 13 13" fill="none" style="margin-right:4px"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
           모델 있음
         </button>
+        <button class="chip chip--dup" data-filter-group-override="dup" data-filter="dup-yes">
+          <span class="chip-dot"></span>
+          Balady 중복
+        </button>
       </div>
     </div>
 
@@ -1903,24 +1915,29 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   }
   
   // ─── FILTERS ───
-  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, search: '' };
+  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, dup: false, search: '' };
 
   document.querySelectorAll('.filter-chips').forEach(group => {
-    const groupType = group.dataset.filterGroup;
     group.addEventListener('click', e => {
       const btn = e.target.closest('.chip');
       if (!btn) return;
+      // 같은 컨테이너 안에 다른 필터 그룹 칩이 섞일 수 있어 버튼 우선 (override)
+      const groupType = btn.dataset.filterGroupOverride || group.dataset.filterGroup;
       const f = btn.dataset.filter;
 
       if (groupType === 'tier') {
         // single select
-        group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        group.querySelectorAll('.chip:not([data-filter-group-override])').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
         state.tier = f;
       } else if (groupType === 'has3d') {
         // toggle (단일 boolean)
         state.has3d = !state.has3d;
         btn.classList.toggle('active', state.has3d);
+      } else if (groupType === 'dup') {
+        // toggle (Balady 중복)
+        state.dup = !state.dup;
+        btn.classList.toggle('active', state.dup);
       } else {
         // multi select
         const set = groupType === 'city' ? state.cities : state.types;
@@ -1971,9 +1988,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const cityOk = state.cities.size === 0 || state.cities.has(c);
       const typeOk = state.types.size === 0 || state.types.has(ty);
       const has3dOk = !state.has3d || card.dataset.has3d === 'yes';
+      const dupOk = !state.dup || card.dataset.dup === 'yes';
       const searchOk = !state.search || s.includes(state.search);
 
-      const show = tierOk && cityOk && typeOk && has3dOk && searchOk;
+      const show = tierOk && cityOk && typeOk && has3dOk && dupOk && searchOk;
       card.classList.toggle('hidden', !show);
       
       // sync nav

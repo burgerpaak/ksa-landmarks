@@ -308,6 +308,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .chip[data-tier="tier-2"].active { background: var(--tier-2); color: #fff; }
 .chip[data-tier="tier-3"].active { background: var(--tier-3); color: #fff; }
 
+/* Balady 중복 필터 칩 — 태그와 동일한 --dup 블루 */
+.chip--dup .chip-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--dup); margin-right: 5px; flex-shrink: 0;
+}
+.chip--dup.active { background: var(--dup); color: #fff; }
+.chip--dup.active .chip-dot { background: #fff; }
+
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -1688,6 +1696,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
           <svg width="11" height="11" viewBox="0 0 13 13" fill="none" style="margin-right:4px"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
           모델 있음
         </button>
+        <button class="chip chip--dup" data-filter-group-override="dup" data-filter="dup-yes">
+          <span class="chip-dot"></span>
+          Balady 중복
+        </button>
       </div>
     </div>
 
@@ -1882,6 +1894,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-museum"
          data-has3d="yes"
+         data-dup="no"
          data-search="national museum of saudi arabia riyadh museum 저층 곡선파사드 사암질감 복합동 메카 향한 초승달형 곡면 매스 리야드산 라임스톤 외벽 + 가로 결 8개 전시홀 2층 구조 (총 ~28,000 m²) king abdulaziz historical centre 광장과 축선 초승달 곡면 매스 · 2층 리야드산 라임스톤 클래딩 + 글레이즈 커튼월 연면적 약 28,000 m² 1999년 완공 raymond moriyama / moriyama &amp; teshima 1999년 사우디 건국 100주년에 맞춰 완공 — 26개월 공기 raymond moriyama(캐나다) 설계 — 리야드 외곽 &#x27;red sands&#x27; 사구의 곡선·색에서 영감 메카 방향으로 휘어지는 초승달 평면 — 서측 곡면이 시그니처 총 면적 약 28,000 m² · 8개 전시홀이 2층에 분포 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia.jpg?v=1777356418" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_2.jpg?v=1777360788" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_3.jpg?v=1777360814" alt="National Museum of Saudi Arabia" loading="lazy"><img class="card-slide" src="images/01_national-museum-of-saudi-arabia_4.jpg?v=1778654673" alt="National Museum of Saudi Arabia" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
@@ -1928,6 +1941,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-heritage"
          data-has3d="yes"
+         data-dup="no"
          data-search="murabba palace riyadh heritage 나즈디건축 중정형 어도비 망루 정사각형 어도비 흙벽 매스 (2층) 4면 모서리 망루 (barjeel) 톱니형(삼각) 파라펫 장식 상단 작고 깊은 사각 창 + 나무 격자 정사각형 입방체 매스 · 안마당 짚 섞은 어도비 벽돌, 타마리스크 목재, 야자수 잎 천장 건물 약 9,844 m² · 약 400×400m 흙벽 부지 1936–1938 (king abdulaziz 명령) ibn qabba (master builder) 1936–1938년 king abdulaziz가 리야드 구도시 성벽 밖에 세운 첫 대규모 건물 1953년 서거까지 거주·집무 — 이후 king abdulaziz historical centre로 보존 전형적 najdi 양식 — 두꺼운 흙벽, 입방체 매스, 안마당 구조 약 9,844 m² 건물이 9개 문이 있는 큰 흙벽 안에 위치 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/02_murabba-palace.jpg?v=1777277035" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_2.jpg?v=1777361103" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_3.jpg?v=1777361043" alt="Murabba Palace" loading="lazy"><img class="card-slide" src="images/02_murabba-palace_4.jpg?v=1778566651" alt="Murabba Palace" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
@@ -1974,6 +1988,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-stadium"
          data-has3d="yes"
+         data-dup="no"
          data-search="kingdom arena riyadh stadium 원형 반개방지붕 led파사드 직사각형 실내 아레나 매스 (보울 x) 완전 폐쇄형 지붕 백색 메탈 외피 + led 동적 조명 boulevard riyadh city 엔터테인먼트 구역 인접 직사각형 실내 아레나 (indoor multi-purpose) 백색 메탈 패널 + led 외벽 완전 폐쇄형 약 22,500–26,000 (이벤트별 가변) 2022년 완공 실내 다목적 아레나 — 축구 경기장이 아닌 콘서트·복싱·이벤트 베뉴 2022년 완공 · boulevard riyadh city 단지의 핵심 시설 아시안컵 2027에서는 임시 경기장 변환 가능성 (개막식·개회식 등 활용) ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/03_kingdom-arena.jpg?v=1777358562" alt="Kingdom Arena" loading="lazy"><img class="card-slide" src="images/03_kingdom-arena_2.jpg?v=1778664974" alt="Kingdom Arena" loading="lazy"><img class="card-slide" src="images/03_kingdom-arena_3.jpg?v=1778228293" alt="Kingdom Arena" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2020,6 +2035,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-stadium"
          data-has3d="yes"
+         data-dup="yes"
          data-search="king saud university stadium (alawwal park) riyadh stadium 타원형 트러스파사드 막구조지붕 타원형 보울 (oval bowl) 양 측면(메인·백) 부분 캔틸레버 지붕 노출 콘크리트 + 메탈 스크린 외피 킹사우드대학 캠퍼스 입지 — 사막성 조경 타원형 보울 (oval) 노출 콘크리트 + 메탈 스크린 액센트 양 측면 부분 캔틸레버 ~25,000 / asian cup 2027 2015 (현재 보울) al-nassr fc 홈구장 (cristiano ronaldo 영입 후 국제 인지도 급상승) 2015년 완공 — 킹사우드대학교 캠퍼스 내 위치 아시안컵 2027 호스트 베뉴 중 하나 (~25,000석) balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park.jpg?v=1777356504" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_2.jpg?v=1778733301" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_3.png?v=1778733331" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_4.png?v=1778733346" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><img class="card-slide" src="images/04_king-saud-university-stadium-alawwal-park_5.png?v=1778733352" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/5"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/5"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/5"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/5"></button><button class="card-dot" data-idx="4" aria-label="이미지 5/5"></button></div><span class="card-counter">1 / 5</span></div>
@@ -2066,6 +2082,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-stadium"
          data-has3d="yes"
+         data-dup="no"
          data-search="imam muhammad ibn saud islamic university football stadium riyadh stadium 타원형 수직루버 캔틸레버지붕 대학 캠퍼스 부속 경기장 (보수 진행 중) 오픈 보울 + 4코너 조명탑 (일반적 구성) 타원형 보울 (추정) ~21,000 / asian cup 2027 (xlsx 기준) 완공 연도·외장 재료·지붕 형식 imam mohammed ibn saud islamic university 캠퍼스 내 경기장 아시안컵 2027 위해 업그레이드/신축 진행 — 공개 도면 자료 매우 제한적 확인 필요: 정확한 수용석·완공 시점은 추후 위성·공식 자료로 검증 필요 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/05_Imam-Muhammad-Ibn-Saud-Islamic-University-Football-Stadium.jpg?v=1777361379" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><img class="card-slide" src="images/05_Imam-Muhammad-Ibn-Saud-Islamic-University-Football-Stadium_2.jpg?v=1777361391" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2112,6 +2129,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-stadium"
          data-has3d="yes"
+         data-dup="no"
          data-search="al shabab stadium riyadh stadium 원형 주름파사드 반폐쇄돔 소규모 컴팩트 보울 (단일 층 스탠드) 개방형 지붕 (지붕 없음 / 부분만) 알샤밥 클럽 컬러: 백색 + 검정 소형 컴팩트 보울 개방형 (지붕 없음 또는 부분) ~14,000 / asian cup 2027 완공·재료·정확한 수용 al-shabab sc 홈구장 — 약 14,000석의 비교적 소형 클럽 전용 구장 아시안컵 2027 베뉴로 개보수 예정 확인 필요: 완공 연도·외장 재료·정확한 수용석 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/06_Al-Shabab-Stadium.jpg?v=1777354904" alt="Al Shabab Stadium" loading="lazy"></div>
@@ -2158,6 +2176,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-heritage"
          data-has3d="yes"
+         data-dup="no"
          data-search="nassif house (bayt nassif) jeddah heritage al-balad 로샨 산호석 unesco 탑형 전면 2단 적층 라와신(roshan) 목재 출창 북측 진입 리잘릿 (돌출 매스) 산호석(coral stone) 벽체 + 흰 회반죽 마감 옥상 목재 파빌리온과 평지붕 테라스 4–7층 비정형 매스 · 106개 방 산호석(manqabi) 석조 + 흰 회반죽, 티크/열대 경목, 조각 라와신 1872 착공 / 1881 완공 1872 착공 / 1881 완공 — old jeddah(al-balad)의 대표 상인 저택 약 4–7층, 106개 방 — 오스만 후기 + 홍해 연안 양식 결합 1925년 이븐 사우드가 제다 점령 후 머문 곳 (역사적 의미 큼) 북측 님(neem)나무 때문에 &#x27;house with the tree&#x27; 별칭 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/07_Nasif-House.jpg?v=1777355034" alt="Nassif House (Bayt Nassif)" loading="lazy"><img class="card-slide" src="images/07_Nasif-House_2.jpg?v=1777360864" alt="Nassif House (Bayt Nassif)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2204,6 +2223,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-mosque"
          data-has3d="yes"
+         data-dup="no"
          data-search="al rahma mosque (floating mosque) jeddah mosque 수상모스크 흰색돔 미나렛×2 해수면연출 필로티 위 부유형 매스 (만조 시 바다 위 인상) 터쿼이즈색 중앙 큰 돔 + 52개 작은 돔군 흰 대리석 외벽 + 단일 백색 미나렛 외부 23개 우산형(파라솔) 캐노피 필로티 부유형 + 중앙 대돔 흰 대리석 + 터쿼이즈 글레이즈 타일, 철근콘크리트 파일 내부 약 2,400 m² · 수용 ~500 1985년 완공 1985년 제다 코르니쉬 북단 완공 — 세계 최초의 &#x27;해상 모스크&#x27; 주돔 = 8개 기둥 지지 / 부속 = 52개 소돔 + 23개 우산 + 56개 이슬람 양식 창 약 500여 명 수용 · 여성 예배 공간은 매달린 목재 갤러리 확인 필요: 미나렛/돔 정확한 높이는 권위 있는 자료 부족 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque.jpg?v=1777277050" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque_2.jpg?v=1777361576" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><img class="card-slide" src="images/08_al-rahma-mosque-floating-mosque_3.jpg?v=1777361637" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2250,6 +2270,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-stadium"
          data-has3d="no"
+         data-dup="no"
          data-search="prince abdullah al faisal sports city stadium jeddah stadium 타원형 파도형지붕 아케이드하부 타원형 보울 + 백색 천공(perforated) 메탈 외피 양 측면 부분 캔틸레버 지붕 al-ittihad / al-ahli 공동 사용 도시 내부 입지 — 도로·주차 인접 타원형 보울 (oval) 천공 양 측면 부분 캔틸레버 ~25,000 / asian cup 2027 2020 (현재 외관) 제다 도심에 위치한 al-ittihad fc + al-ahli fc 공동 홈구장 2020년경 대규모 리노베이션 — 외관 완전 일신 아시안컵 2027 베뉴 (~25,000석) ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/09_prince-abdullah-al-faisal-sports-city-stadium.jpg?v=1777356758" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><img class="card-slide" src="images/09_prince-abdullah-al-faisal-sports-city-stadium_2.jpg?v=1777361771" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2296,6 +2317,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-stadium"
          data-has3d="no"
+         data-dup="no"
          data-search="al khobar new stadium (aramco stadium) al khobar stadium 원형 다이아몬드패턴 45,000석 사막 영감 기하학 패턴 외피 (populous design) ptfe 막구조 캔틸레버 지붕 타원형 풀-보울 알코바르 해안 인접 입지 — 동부주 상징 타원형 풀-보울 천공 메탈 + 사막 모티브 기하 패턴 ptfe 막구조 + 캔틸레버 ~45,000 / asian cup 2027 건설 중 populous 알코바르 해안에 건설 중인 신축 경기장 — populous 설계 약 45,000석 — 아시안컵 2027 결승전 후보 베뉴 동부주(eastern province) dhahran-dammam-khobar 도시권 대표 랜드마크로 계획 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/10_Aramco-Stadium.jpg?v=1777355130" alt="AL KHOBAR New Stadium (Aramco Stadium)" loading="lazy"></div>
@@ -2343,6 +2365,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-heritage"
          data-has3d="no"
+         data-dup="yes"
          data-search="diriyah (ad diriyah) riyadh heritage unesco 나즈디 어도비 유적 계곡 두꺼운 흙벽돌 외벽 + 흉벽 살와 궁전 다층 요새 매스 삼각형 통풍구 + 작은 창 나즈디 미로 골목과 안뜰 흙벽돌 도시 군집 + 살와 궁전(다층 요새) 햇볕 건조 머드브릭, 타마리스크/야자수 목재, 조각 석고(juss), 라임스톤 기초 at-turaif 시타델 약 29 ha 1727년 — unesco 2010 1727년부터 사우드 왕가 제1왕국 수도 — 2010년 unesco 세계유산 등재 단일 건물이 아닌 흙벽돌 도시 군집 — 살와 궁전이 단지 내 최대 다층 구조물 두꺼운 토벽·좁은 창·내부 안뜰로 사막 기후에 대응한 나즈디 양식의 정수 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/11_diriyah-ad-diriyah.jpg?v=1777356881" alt="Diriyah (Ad Diriyah)" loading="lazy"><img class="card-slide" src="images/11_diriyah-ad-diriyah_2.jpg?v=1777361844" alt="Diriyah (Ad Diriyah)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2389,6 +2412,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-park"
          data-has3d="no"
+         data-dup="no"
          data-search="salam park riyadh park 공원 조경 원형호수 파빌리온 중앙 인공 호수 + 분수 (~40m) 약 1,300그루 대추야자 군락 굴곡진 잔디 힐사이드 존 중앙 흰색 살람 모스크 도심 공원 — 4개 영역 (야자숲/호수/힐사이드/생태) 천연석 포장, 콘크리트(모스크), 대추야자, 수경 시설 24.8 ha · 호수 ~33,000 m² 2004년 개장 omrania + aukett fitzroy robinson 2004년 개장한 ~24.8 ha 도심 공원 — 옛 압둘라 빈 압둘라흐만 왕자의 대추야자 농장 부지 4개 영역 구성: 야자수 숲 / 호수 / 힐사이드 / 생태 — 호수 분수는 최대 ~40m omrania &amp; associates + aukett fitzroy robinson 설계 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/12_salam-park.jpg?v=1777357018" alt="Salam Park" loading="lazy"></div>
@@ -2435,6 +2459,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-museum"
          data-has3d="yes"
+         data-dup="no"
          data-search="king fahad national library riyadh museum 막구조 ptfe텐트 발광 gerber 백색 마름모(롬보이드) 텐트 막구조 파사드 기존 도서관을 사방에서 감싼 큐브 매스 3d 인장 강선 케이블 그리드 바닥 흰 대리석 포디움 광장 큐브 매스 + 마름모 텐트 막 파사드 sefar 백색 ptfe 막, 인장 강선 케이블, 강·콘크리트 구조, 흰 대리석 연면적 86,632 m² · 체적 452,000 m³ 2013년 (증축 완공) gerber architekten + sefar(막) gerber architekten(獨) 설계 · 2013년 11월 완공 — 1980년대 기존 도서관을 큐브가 감싸는 증축 파사드: 마름모형ptfe 텐트 막을 3d 인장 강선이 지지 — 아라비아 전통 텐트의 현대적 재해석 연면적 약 86,632 m² · 일사 투과율 ~7% ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/13_king-fahad-national-library.jpg?v=1777277063" alt="King Fahad National Library" loading="lazy"><img class="card-slide" src="images/13_king-fahad-national-library_2.jpg?v=1777362839" alt="King Fahad National Library" loading="lazy"><img class="card-slide" src="images/13_king-fahad-national-library_3.jpeg?v=1777362835" alt="King Fahad National Library" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2481,6 +2506,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-resort"
          data-has3d="no"
+         data-dup="no"
          data-search="six flags qiddiya city riyadh resort 테마파크 사막절벽 롤러코스터 팰컨스 플라이트 195m 코스터 시로코 타워 145m 투와이크 절벽 옆 입지 6개 테마 구역 6개 테마 존 + 시그니처 코스터/타워 강철 트랙(intamin), 콘크리트 하부, 테마 클래딩(gfrc/frp), 텐사일 막 차양 파크 ~320,000 m² · falcons flight 트랙 ~4 km 2025년 12월 개장 마스터플랜: big / 코스터: intamin 리야드 sw ~40km qiddiya city — 사우디 최초 대형 테마파크 / 2025년 12월 31일 개장 시그니처: falcons flight = 세계 최고·최장·최속 롤러코스터(높이 195m / 250km/h, 트랙 ~4 km, intamin) 마스터플랜: big (bjarke ingels group) — 투와이크 단애 지형과 대화하는 배치 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/14_six-flags-qiddiya-city.jpg?v=1777357168" alt="Six Flags Qiddiya City" loading="lazy"></div>
@@ -2527,6 +2553,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-infra"
          data-has3d="no"
+         data-dup="no"
          data-search="king khalid international airport riyadh infra 공항 저층수평 로열터미널돔 삼각 피라미드형 4개 터미널 셸 중앙 6각 모스크 + 큰 돔 사막색 콘크리트 쉘 이슬람 기하 패턴 스크린 삼각 피라미드 4개 터미널 + 중앙 6각 모스크 (십자형 배치) 프리캐스트 콘크리트, 사암 톤 클래딩, 이슬람 기하 스크린, 모스크 내부 폴리시드 브론즈 공항 부지 ~225 km² · 모스크 5,600 m² 1983년 (원형 4터미널) hellmuth, obata &amp; kassabaum (hok) 1983년 hok 설계 개항 — 사우디 관문 공항 4개 삼각 터미널 셸 + 중앙 royal mosque(6각, 5,600 m², 33m 청동 내장 돔, 5,000명 수용)가 십자형 배치 콘크리트 쉘 + 사막 색조 + 이슬람 기하 패턴 — 1980s 모더니즘과 지역성 융합 사례 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/15_king-khalid-international-airport.jpg?v=1777363008" alt="King Khalid International Airport" loading="lazy"><img class="card-slide" src="images/15_king-khalid-international-airport_2.png?v=1777362955" alt="King Khalid International Airport" loading="lazy"><img class="card-slide" src="images/15_king-khalid-international-airport_3.jpeg?v=1777362937" alt="King Khalid International Airport" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2573,6 +2600,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-mall"
          data-has3d="no"
+         data-dup="yes"
          data-search="riyadh park mall riyadh mall 쇼핑몰 곡선클래딩 저층 대형 곡선 매스 + 다중 윙 구성 유리 파사드 + 알루미늄 패널 옥상 야외 엔터테인먼트 테라스 지상·지하 대형 주차장 곡선형 다중 윙 매스 + 옥상 테라스 유리 커튼월, 알루미늄 컴포지트 패널, 흰 프리캐스트 콘크리트 정확 완공 연도·설계자·면적 리야드 북부 northern ring road 인근 대형 교외형 쇼핑몰 옥상 야외 식음료/엔터테인먼트 공간이 시그니처 확인 필요: 정확 완공 연도·설계자·연면적은 권위 자료 부족 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/16_riyadh-park-mall.png?v=1777355187" alt="Riyadh Park Mall" loading="lazy"><img class="card-slide" src="images/16_riyadh-park-mall_2.jpg?v=1777363078" alt="Riyadh Park Mall" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2619,6 +2647,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-edu"
          data-has3d="no"
+         data-dup="no"
          data-search="king saud university riyadh edu 대학 메인게이트 캠퍼스모스크 두 개의 직교 보행 스파인 축 교차점 중앙 포럼 광장 팜트리형 콘크리트 아치 열주 도서관·강당 중심부 매스 두 개 직교 보행 스파인 + 중앙 포럼 (모더니즘) 프리캐스트 콘크리트(베이지), 팜폼 콘크리트 아치 열주, 천공 기하 스크린, 틴트 글래스 주 캠퍼스 ~900 ha (9 km²) 마스터플랜 1975–76, 시공 1980s hok + 4 consortium hok 1975–76 마스터플랜 · 약 900 ha 모더니즘 캠퍼스 두 개의 보행 스파인이 중앙 포럼에서 교차하는 구성이 핵심 야자수 모티브 콘크리트 아치 열주가 스파인을 덮어 그늘 형성 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/17_King-Saud-University.jpg?v=1777355281" alt="King Saud University" loading="lazy"><img class="card-slide" src="images/17_King-Saud-University_2.jpg?v=1777363118" alt="King Saud University" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2665,6 +2694,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-edu"
          data-has3d="no"
+         data-dup="no"
          data-search="princess nourah bint abdulrahman university riyadh edu 대학 대칭배치 모노레일 쌍둥이타워 황금빛 돔 중앙 모스크 캠퍼스 일주 모노레일 고가 방대한 격자형 마스터플랜 여성 전용 폐쇄형 외곽 게이트 격자 마스터플랜 + 중앙 모스크 + 모노레일 루프 라임스톤·프리캐스트 석재, 마쉬라비야 차양, 황금색 글레이즈 타일 돔, 백색 콘크리트, 유리 커튼월 ~8 km² · 700+ 동 · 15 단과대 2011년 완공 perkins+will + dar al-handasah perkins+will + dar al-handasah 공동설계 · 2011년 완공 — 세계 최대 여성 전용 대학 캠퍼스 15개 단과대 + 700병상 부속 병원 + 700여 동 건물 + 캠퍼스 모노레일 항공 뷰에서 황금 돔 중앙 모스크 + 모노레일 루프가 가장 인지됨 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University.jpg?v=1777355358" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University_2.jpg?v=1777363256" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><img class="card-slide" src="images/18_Princess-Nourah Bint-Abdulrahman-University_3.jpg?v=1777363268" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2711,6 +2741,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-park"
          data-has3d="no"
+         data-dup="no"
          data-search="riyadh golf club riyadh park 골프클럽 녹지 클럽하우스 18홀 사막 골프 코스 야간 조명 토너먼트(liv) 라이트 폴 낮은 클럽하우스 (스톤·스터코) al aarid 북부 입지 18홀 사막 챔피언십 코스 + 클럽하우스 관수 잔디 페어웨이/그린, 사막 러프, 낮은 클럽하우스(석재·스터코), 조명탑 al aarid, 리야드 북부 완공 연도·설계자·코스 길이 리야드 북부 al aarid 지구 18홀 코스 (외교지구·디랍 골프장 x) 2025년부터 liv golf riyadh 토너먼트 개최 — 야간 조명 아래 진행 확인 필요: 코스 완공 연도·설계자·코스 길이는 공개 자료 부족 ">
   <div class="card-image">
     <img class="card-slide active" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Riyadh_Golf_Club.jpg/640px-Riyadh_Golf_Club.jpg" alt="Riyadh Golf Club" loading="lazy">
@@ -2757,6 +2788,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-infra"
          data-has3d="no"
+         data-dup="no"
          data-search="kafd metro station riyadh infra zha 라티스파사드 파라메트릭 엑소스켈레톤 3d 격자형 파라메트릭 외피 사막 바람 결을 닮은 패턴 6각형 망사 천공 6개 트랙 환승역 (3노선 + 모노레일) 큐브 매스 + 곡면 격자 쉘 + 모서리 라운딩 uhpc 자체지지 다이아그리드 + 6각 망사 천공 풋프린트 8,150 m² · 4층 지상 + 지하 플랫폼 · 6개 트랙 2024년 12월 개통 zaha hadid architects zaha hadid architects (2013 공모) · 2024년 12월 1일 개통 리야드 메트로 핵심 환승역 — 3노선(블루·옐로·퍼플) + kafd 모노레일 uhpc(초고성능 콘크리트) 자체지지 격자 쉘 / 사막 바람·마쉬라비야 영감 천공 leed 골드 인증 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/20_kafd-metro-station.jpg?v=1777357274" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_2.jpg?v=1777363288" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_3.jpg?v=1777363310" alt="KAFD Metro Station" loading="lazy"><img class="card-slide" src="images/20_kafd-metro-station_4.jpg?v=1777363322" alt="KAFD Metro Station" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
@@ -2803,6 +2835,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-infra"
          data-has3d="no"
+         data-dup="yes"
          data-search="momrah riyadh infra 정부청사 이슬람패턴 대칭 현대식 정부청사 매스 (저층 슬래브) 정면 진입 광장 + 국기 게양대 유리 + 석재 혼합 파사드 저층 정부청사 슬래브 (추정) 완공 연도·설계자·정확 매스/외장 사우디 지방행정·농촌·주택부 본청 (현 momah) — 리야드 king fahd road 인근 확인 필요: 외관에 대한 권위 자료 매우 제한적 — 위성/거리뷰 기반 보강 필요 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/21_MoMRAH.jpg?v=1777355905" alt="MoMRAH" loading="lazy"><img class="card-slide" src="images/21_MoMRAH_2.jpg?v=1777355916" alt="MoMRAH" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2849,6 +2882,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-mosque"
          data-has3d="no"
+         data-dup="no"
          data-search="al rajhi mosque riyadh mosque 대형돔 미나렛×4 대리석 아치회랑 중앙 대형 돔 (외경 ~28.8m) 쌍둥이 미나레트 2기 (각 ~55m) 안달루시아·무어풍 말굽 아치 파사드 넓은 사다리꼴 안뜰 + 아케이드 중앙 대돔 + 쌍 미나레트 + 사다리꼴 안뜰 라임스톤 클래딩, 대리석 내장, 기하 타일/스터코, 조각 석고 부지 ~43,568 m² · 내부 ~13,260 m² · 수용 ~20,000 2004년 개장 2004년 리야드 알 자지라 지구 개장 — 사업가 sulaiman al-rajhi 후원, 안달루시아·무어풍 수용 ~20,000명 (남성 ~18,000 + 여성 ~2,500) — 리야드 최대 모스크 중 하나 중앙 돔 직경 ~28.8m / 높이 ~37m · 두 미나레트 ~55m ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/22_al-rajhi-mosque.jpg?v=1777355990" alt="Al Rajhi Mosque" loading="lazy"><img class="card-slide" src="images/22_al-rajhi-mosque_2.jpg?v=1777356020" alt="Al Rajhi Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -2895,6 +2929,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-heritage"
          data-has3d="no"
+         data-dup="no"
          data-search="bab makkah jeddah heritage 성문 아치 쌍탑 al-balad 중앙 아치형 관문 + 양옆 측면 매스 백색 회벽 마감 상부 코니스 + 총안형 디테일 al-balad 동측 진입부 위치 독립 기념문 (3분할 — 중앙 아치 + 좌우 보조) 산호석 클래딩, 라임 회벽, 목재 인방/디테일, 석고 장식 완공·재건 연도·설계자·정확 치수 구도심 al-balad 동쪽 성벽의 &#x27;메카 문&#x27; — 본래 성벽은 1947년경 도시 확장으로 철거 ⚠ 현재 구조물은 원형 유적 x — 후대에 재건/기념적 복원 형태 (유산적 진정성 제한적) 중앙 큰 아치 + 좌우 보조 통로의 3분할 구성 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/23_bab-makkah.jpg?v=1777357374" alt="Bab Makkah" loading="lazy"><img class="card-slide" src="images/23_bab-makkah_2.jpg?v=1777363450" alt="Bab Makkah" loading="lazy"><img class="card-slide" src="images/23_bab-makkah_3.jpeg?v=1777363459" alt="Bab Makkah" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -2941,6 +2976,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-mall"
          data-has3d="no"
+         data-dup="no"
          data-search="red sea mall jeddah mall 쇼핑몰 유리커튼월 저층 대형 본동 + 부속 중층 타워 대형 유리 천창 아트리움 곡선형 진입 캐노피 + 광장 분수 king abdulaziz road 입지 저층 대형 본동 + 부속 중층 타워 유리 커튼월, 알루미늄 컴포지트 패널, 기단부 석재, 강구조 + 유리 아트리움 천장 연면적 ~244,000 m² ~2008 제다 북부 king abdulaziz road 대형 복합 쇼핑몰 — 2008년경 개장 쇼핑몰 본동 + 호텔/오피스 부속 타워가 인접 — 수평 매스 위에 수직 타워 솟은 실루엣 총 연면적 약 244,000 m² ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/24_red-sea-mall.jpg?v=1777357415" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_2.jpg?v=1777363591" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_3.jpg?v=1777363597" alt="Red Sea Mall" loading="lazy"><img class="card-slide" src="images/24_red-sea-mall_4.jpg?v=1777363641" alt="Red Sea Mall" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
@@ -2987,6 +3023,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-infra"
          data-has3d="no"
+         data-dup="no"
          data-search="king fahd&#x27;s fountain jeddah infra 세계최고분수 312m 해수면위 야간조명 초고압 수직 물기둥 (~260m) 바다 위 분수 (해상 노즐) 500개 이상 야간 스포트라이트 제다 코르니쉬 해안가 경관 해상 단일 수직 제트 + 육상 펌프 하우스 해수(제트), 스테인리스 노즐 어셈블리, 콘크리트/강 해상 플랫폼 분사 높이 ~260m (세계 최고 분수) ~1985 제다 코르니쉬 앞 홍해 해상 분수 — 세계에서 가장 높은 분수 분사 높이 약 260m (~853 ft) — 일부 자료의 312m보다 260m가 권위 있음 1985년경 king fahd 기증 — 야간 500+ 스포트라이트 조명 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/25_king-fahds-fountain.jpg?v=1777357606" alt="King Fahd&#x27;s Fountain" loading="lazy"></div>
@@ -3033,6 +3070,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-museum"
          data-has3d="no"
+         data-dup="no"
          data-search="abdul raouf khalil museum jeddah museum 전통저택 로샨 산호석 다중 파빌리온 캠퍼스 구성 마쉬라비야 (목재 격자창) 아치형 출입구 + 작은 돔 백색·황토 회벽 + 짙은 갈색 디테일 대비 다중 파빌리온 캠퍼스 + 중앙 마당 회벽/스터코, 조각 석고·목재 패널, 마쉬라비야 격자, 장식 타일·석재 ~1999 정확 파빌리온 수·완공 연도·설계자 abdul raouf khalil 사재 사설 박물관 단지 — 이슬람관/사우디 유산관/공공홀/민속관 등 테마별 파빌리온 단일 건축물 x — 서로 다른 양식의 파빌리온이 마당·통로로 연결된 캠퍼스형 아라베스크 + najdi/hejazi 전통 모티프 결합 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum.jpg?v=1777357669" alt="Abdul Raouf Khalil Museum" loading="lazy"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum_2.jpg?v=1777363694" alt="Abdul Raouf Khalil Museum" loading="lazy"><img class="card-slide" src="images/26_abdul-raouf-khalil-museum_3.jpg?v=1777363709" alt="Abdul Raouf Khalil Museum" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -3079,6 +3117,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-mosque"
          data-has3d="no"
+         data-dup="no"
          data-search="hassan enany mosque jeddah mosque 모스크 코니쉬 백색 외벽 + 단일 미나렛 중앙 돔 기하 패턴 창 직사각 본당 + 단일 돔 + 1 미나렛 (추정) 백색 석재/대리석, 회벽, 조각 석고, 기하 창 완공·설계자·위치·모든 치수 제다 지역 모스크 — 국제적 자료가 매우 적음 일반적 현대 사우디 모스크 양식 (직사각 본당 + 단일 돔 + 1개 미나렛 추정) 확인 필요: 완공 연도·설계자·정확 위치·치수 모두 권위 자료 부재 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/27_hassan-enany-mosque.jpg?v=1777356081" alt="Hassan Enany Mosque" loading="lazy"><img class="card-slide" src="images/27_hassan-enany-mosque_2.jpg?v=1777363764" alt="Hassan Enany Mosque" loading="lazy"><img class="card-slide" src="images/27_hassan-enany-mosque_3.jpg?v=1777363770" alt="Hassan Enany Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -3125,6 +3164,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-museum"
          data-has3d="no"
+         data-dup="no"
          data-search="fakieh aquarium jeddah museum 아쿠아리움 구형돔 수변입지 곡선형 모던 매스 (낮은 단일 동) 푸른 톤 유리 파사드 해양 테마 사이니지·캐노피 제다 코르니쉬 도로변 입지 낮은 단일 동 곡선 매스 유리 커튼월, 알루미늄 컴포지트 클래딩, 도장 강구조, 콘크리트 베이스 ~6,000 m² ~2010 제다 코르니쉬 사우디 최초 공공 수족관 — 2010년경 개장 비교적 작은 단일 동 (~6,000 m²) · 곡선·사선 매스 + 청색 유리 사우디 유일 공공 수족관 (개관 당시 기준) ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/28_fakieh-aquarium.jpg?v=1777357801" alt="Fakieh Aquarium" loading="lazy"></div>
@@ -3171,6 +3211,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-mall"
          data-has3d="no"
+         data-dup="yes"
          data-search="al rashid mall al khobar mall 쇼핑몰 진입돔 석재파사드 거대한 직사각 매스 (4층) 베이지 외장 + 곡선형 메인 캐노피 중앙 아트리움 채광 둘레 대형 주차장 (~5,000대) 거대 직사각 매스 (4층) 베이지 톤 클래딩, 유리 커튼월, 메탈 지붕, 대리석 내장 연면적 ~150,000 m² · gla ~115,000 m² 1995 (확장 2005, 리노베이션 2023) edsa(조경) / dlr group(확장) 1995년 개장 동부주 대표 대형 쇼핑몰 — king abdullah st / prince faisal bin fahd rd 교차로 650+ 매장 · 70+ 식당 · 시네마 / 4층 (3 리테일 + 지하 주차) 2005년 qaisariyah 확장 + 2023년 대대적 리노베이션 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/29_al-rashid-mall.jpg?v=1777357906" alt="Al Rashid Mall" loading="lazy"></div>
@@ -3217,6 +3258,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-tower"
          data-has3d="no"
+         data-dup="no"
          data-search="al othman office tower al khobar tower 쌍둥이타워 반사유리 포디움연결 20층 슬렌더 박스 매스 유리 커튼월 외장 kempinski 호텔과 동일 단지 king saud road 입지 20층 슬렌더 직사각 박스 유리 커튼월, 알루미늄 클래딩 (추정) 2015 완공 설계자·정확 높이·외장 사양 2015년 완공 20층 오피스 타워 — king saud road kempinski al othman 호텔과 같은 알 오스만 복합 단지 확인 필요: 설계자·정확 높이·외장 사양 권위 자료 부재 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/30_Al-Othman-Office-Tower.jpg?v=1777355547" alt="Al Othman Office Tower" loading="lazy"></div>
@@ -3263,6 +3305,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-tower"
          data-has3d="no"
+         data-dup="no"
          data-search="ajdan infinity al khobar tower ∞형타워 스카이브리지 benoy 흰 저층 매스 군집 (고층 x) 중앙 광장 + 푸드빌리지 코르니쉬 해변 인접 산책로 대형 캔틸레버 캐노피 저층 다중 매스 + 중앙 광장 백색 회벽, 유리 점포, 알루미늄 트림, 따뜻한 톤 석재 포장 부지 ~15,120 m² · gfa ~12,000 m² 2019 개장 benoy (concept) al khobar 코르니쉬 복합 리테일/f&amp;b — 2019년 개장 / benoy 디자인 (foster x) 중앙 플라자를 둘러싼 저층 매스 군집 — 동부주 최초 푸드빌리지 ⚠ 인접 &#x27;ajdan rise/waterfront&#x27; 타워와 혼동 주의 — 본 단지는 저층 평이한 모던 입면 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/31_ajdan-infinity.jpg?v=1777363828" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_2.jpg?v=1777363845" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_3.jpg?v=1777363913" alt="Ajdan Infinity" loading="lazy"><img class="card-slide" src="images/31_ajdan-infinity_4.jpg?v=1777363951" alt="Ajdan Infinity" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/4"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/4"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/4"></button><button class="card-dot" data-idx="3" aria-label="이미지 4/4"></button></div><span class="card-counter">1 / 4</span></div>
@@ -3309,6 +3352,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-mosque"
          data-has3d="no"
+         data-dup="no"
          data-search="jawza al qahtani mosque al khobar mosque 해안모스크 황금돔 나선미나렛 순백색 외관 코르니쉬 해변 입지 단일 미나렛 현대식 모스크 매스 현대식 모스크 (단일 미나렛 + 단순 매스) 백색 석재/회벽 완공 연도·설계자·정확 치수·돔 유무 al khobar 코르니쉬색 모스크 — sumou holding 회장 sheikh ayed al qahtani가 모친 이름으로 헌정 국제 자료 매우 적음 — 외관 사진 외 권위 자료 부재 코르니쉬 보행로에서 잘 보이는 랜드마크 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque.jpg?v=1777354808" alt="Jawza Al Qahtani Mosque" loading="lazy"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque_2.jpg?v=1777363987" alt="Jawza Al Qahtani Mosque" loading="lazy"><img class="card-slide" src="images/32_jawza-al-qahtani-mosque_3.jpg?v=1777363996" alt="Jawza Al Qahtani Mosque" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -3355,6 +3399,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-DAMMAM"
          data-type="type-mall"
          data-has3d="no"
+         data-dup="no"
          data-search="al othaim mall dammam mall 쇼핑몰 유리돔아트리움 거대 박스형 매스 (단층/2층) 베이지 외장 마감 saffori land 실내 놀이공원 일체 둘레 넓은 지상 주차장 거대 박스형 단층/2층 + 실내 놀이공원 베이지 석재/프리캐스트 콘크리트, 유리 점포, 메탈 지붕 부지 ~75,000 m² · gla ~91,748 m² 2004 개장 2004년 개장 al othaim group 담맘 대표 몰 — prince mohammad bin fahd road, abdullah fouad 지구 ⚠ 위치 주의: 코르니쉬 도로 x / salahuddin road x ~75,000 m² 부지 · gla ~91,748 m² · 315+ 매장 + saffori land ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/33_al-othaim-mall.jpg?v=1777357962" alt="Al Othaim Mall" loading="lazy"></div>
@@ -3401,6 +3446,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-DAMMAM"
          data-type="type-mall"
          data-has3d="no"
+         data-dup="no"
          data-search="westfield dammam dammam mall 쇼핑몰 현대식 사선캐노피 현대식 글라스 파사드 (2층 박스) king abdullah road 입지 westfield 브랜드 사이니지 292+ 매장 대형 매스 현대식 2층 박스 매스 유리 커튼월, 알루미늄 컴포지트 클래딩, 석재 톤 액센트 ~92,000 m² · gla ~58,000–64,000 m² 2019 (nakheel) → 2025-12-01 westfield 리브랜딩 2019년 &#x27;nakheel dammam mall&#x27;로 개장 → 2025년 12월 1일 &#x27;westfield dammam&#x27;으로 리브랜딩 (사우디 최초 westfield) cenomi centers 소유 / cenomi-urw 프랜차이즈 도입 ~92,000 m² · gla ~58,000–64,000 m² · 2층 · 292+ 매장 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/34_westfield-dammam.jpg?v=1777358133" alt="Westfield Dammam" loading="lazy"><img class="card-slide" src="images/34_westfield-dammam_2.jpg?v=1777364183" alt="Westfield Dammam" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -3447,6 +3493,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-AL-KHOBAR"
          data-type="type-infra"
          data-has3d="no"
+         data-dup="no"
          data-search="king fahd causeway al khobar infra 해상교량 25km 인공섬 등대타워 25 km 해상 코즈웨이 (5교 + 7제방) 중앙 passport island (~660,000 m²) 65m 양국 타워 레스토랑 2동 536개 콘크리트 파일런 5교량 + 7제방 + 중앙 passport island + 양국 타워 레스토랑 철근 콘크리트, 강철 보강, 아스팔트 노면, 콘크리트 파일런 536개 길이 25 km · passport island ~660,000 m² · 타워 65m 1986-11-26 개통 ballast nedam (netherlands, 주시공) 1986-11-26 개통 — 사우디 al khobar ↔ 바레인 al jasra 연결 25km 해상 코즈웨이 5개 교량 + 7개 제방 + 536개 콘크리트 파일런 / 중앙 인공섬 passport island ~660,000 m² passport island: 양국 출입국 시설 + 모스크 2 + 코스트가드 타워 2 + 65m 타워 레스토랑 2 (사우디·바레인 각 1) 주 시공: ballast nedam (네덜란드) / 콘크리트 350,000 m³ + 철근 147,000 톤 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/35_king-fahd-causeway.jpg?v=1777358198" alt="King Fahd Causeway" loading="lazy"><img class="card-slide" src="images/35_king-fahd-causeway_2.jpg?v=1777358217" alt="King Fahd Causeway" loading="lazy"><img class="card-slide" src="images/35_king-fahd-causeway_3.jpg?v=1777358180" alt="King Fahd Causeway" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/3"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/3"></button><button class="card-dot" data-idx="2" aria-label="이미지 3/3"></button></div><span class="card-counter">1 / 3</span></div>
@@ -3494,6 +3541,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-ALULA"
          data-type="type-nature"
          data-has3d="no"
+         data-dup="no"
          data-search="elephant rock (jabal alfil, alula) alula nature 자연암석 사암 아치터널 52m 코끼리 모양 실루엣 (긴 코 + 다리 아치) 약 52m 천연 사암 기둥 붉은 누비안 사암 질감 주변 모닥불 라운지 + 좌석 천연 사암 기둥 (코끼리 실루엣) 누비안 사암 (적·황 풍화), 산화철 패티나 ~52m 높이 천연 형성 (지질학적) alula 사막 천연 사암 기둥 — 측면 실루엣이 코를 내린 코끼리 형상 높이 ~52m (널리 인용 / 공식 측량치는 미확인) 주변 야외 라운지 (모닥불·좌석) — 일몰 관광 명소 ">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/36_elephant-rock-jabal-alfil-alula.jpg?v=1777277127" alt="Elephant Rock (Jabal AlFil, AlUla)" loading="lazy"></div>
@@ -3540,6 +3588,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-JEDDAH"
          data-type="type-tower"
          data-has3d="no"
+         data-dup="yes"
          data-search="savola tower jeddah tower 타워 유리커튼월 테이퍼링 사볼라 그룹 로고 사이니지 유리 커튼월 외피 제다 인근 입지 중층 코퍼릿 타워 형태 중층 오피스 타워 (추정) 유리 커튼월, 알루미늄 클래딩 (추정) 완공 연도·설계자·높이·정확 위치 savola group(사우디 식음료 대기업) 본사 — 제다 소재 국제 자료가 매우 제한 — 정확 높이·완공 연도·설계자 권위 자료 부재 확인 필요: 정확한 위치(코르니쉬 여부)·치수 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/37_savola-tower.jpg?v=1777355619" alt="Savola Tower" loading="lazy"><img class="card-slide" src="images/37_savola-tower_2.jpg?v=1777364287" alt="Savola Tower" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -3586,6 +3635,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-tower"
          data-has3d="no"
+         data-dup="yes"
          data-search="al-majdoul tower riyadh tower 사우디최고층 트위스트 380m kafd kafd 스카이라인 일원 수직 트위스트(나선) 외피 기하 유리 파사드 패널 띠 비대칭 상단 마감 나선형 트위스트 타워 유리 커튼월, 강구조 (추정) 완공 연도·설계자·정확 높이·트위스트 형태 사실 여부 kafd(킹 압둘라 금융지구) 시그니처 트위스트 타워 kafd 마스터플랜 일부 — 다수 국제 설계사 참여 단지 확인 필요: 단독 설계자·정확 높이(380m 수치 미검증)·완공 연도 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/38_al-majdoul-tower.jpg?v=1777358285" alt="Al-Majdoul Tower" loading="lazy"><img class="card-slide" src="images/38_al-majdoul-tower_2.jpg?v=1777364321" alt="Al-Majdoul Tower" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -3632,6 +3682,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-MAKKAH"
          data-type="type-tower"
          data-has3d="no"
+         data-dup="yes"
          data-search="makkah clock royal tower (fairmont / abraj al bait) makkah tower 601m 초대형시계 초승달크라운 복합단지 43m 직경 4면 시계 황금 초승달 첨탑 ‘الله أكبر’ 아랍어 문구 masjid al-haram 인접 거대 매스 중앙 시계탑 + 6 부속 타워 (ㄷ자 단지) 라임스톤 클래딩, 유리 커튼월, 강구조, 철근 콘크리트 코어, 금박 초승달, 모자이크 시계면 높이 601m · 시계면 직경 ~43m 2012 완공 dar al-handasah + sl rasch (시계·왕관) 높이 601m — 세계 최고 높이 건축물 중 하나 (ctbuh) 메카 masjid al-haram 바로 옆 abraj al bait 단지의 중앙 타워 — fairmont 호텔 입주 4면 직경 ~43m 시계 (세계 최대급) + 정상 금박 초승달 saudi binladin group 발주·시공 / 2012년 완공 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/39_makkah-clock-royal-tower-fairmont-abraj-al-bait.jpg?v=1777277135" alt="Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)" loading="lazy"><img class="card-slide" src="images/39_makkah-clock-royal-tower-fairmont-abraj-al-bait_2.jpg?v=1777358337" alt="Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -3678,6 +3729,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
          data-city="city-RIYADH"
          data-type="type-park"
          data-has3d="no"
+         data-dup="yes"
          data-search="boulevard world riyadh park 테마파크 세계테마존 야간조명 축소 에펠탑 포토존 이집트 스핑크스/피라미드 미니어처 약 11개 세계 테마 존 거리 대형 인공 호수 + 곤돌라 시즌제 테마 단지 (~11개 국가 존) 임시 강·스캐폴드 구조, gfrc·폼 조각 파사드, 테마 클래딩, led 스크린 시즌제 (riyadh season) 연도별 정확한 존 구성·운영 주최 riyadh season 일환 — 매년 시즌제 운영 (통상 10–3월) · 영구 건축물 x 약 11개 테마 존: 파리/이집트/그리스/이탈리아/스페인/미국/멕시코/일본/모로코/인도/중국 ⚠ 지도 앱에서는 &#x27;영구 빌딩&#x27; x — &#x27;이벤트/시즌 부지&#x27;로 표시 권장 balady 중복 momrah">
   <div class="card-image">
     <div class="card-slider"><img class="card-slide" src="images/40_boulevard-world.jpg?v=1777358388" alt="Boulevard World" loading="lazy"><img class="card-slide" src="images/40_boulevard-world_2.png?v=1777364373" alt="Boulevard World" loading="lazy"><button class="card-arrow card-arrow--prev" aria-label="이전 이미지">‹</button><button class="card-arrow card-arrow--next" aria-label="다음 이미지">›</button><div class="card-dots"><button class="card-dot active" data-idx="0" aria-label="이미지 1/2"></button><button class="card-dot" data-idx="1" aria-label="이미지 2/2"></button></div><span class="card-counter">1 / 2</span></div>
@@ -4011,24 +4063,29 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   }
   
   // ─── FILTERS ───
-  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, search: '' };
+  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, dup: false, search: '' };
 
   document.querySelectorAll('.filter-chips').forEach(group => {
-    const groupType = group.dataset.filterGroup;
     group.addEventListener('click', e => {
       const btn = e.target.closest('.chip');
       if (!btn) return;
+      // 같은 컨테이너 안에 다른 필터 그룹 칩이 섞일 수 있어 버튼 우선 (override)
+      const groupType = btn.dataset.filterGroupOverride || group.dataset.filterGroup;
       const f = btn.dataset.filter;
 
       if (groupType === 'tier') {
         // single select
-        group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        group.querySelectorAll('.chip:not([data-filter-group-override])').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
         state.tier = f;
       } else if (groupType === 'has3d') {
         // toggle (단일 boolean)
         state.has3d = !state.has3d;
         btn.classList.toggle('active', state.has3d);
+      } else if (groupType === 'dup') {
+        // toggle (Balady 중복)
+        state.dup = !state.dup;
+        btn.classList.toggle('active', state.dup);
       } else {
         // multi select
         const set = groupType === 'city' ? state.cities : state.types;
@@ -4079,9 +4136,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const cityOk = state.cities.size === 0 || state.cities.has(c);
       const typeOk = state.types.size === 0 || state.types.has(ty);
       const has3dOk = !state.has3d || card.dataset.has3d === 'yes';
+      const dupOk = !state.dup || card.dataset.dup === 'yes';
       const searchOk = !state.search || s.includes(state.search);
 
-      const show = tierOk && cityOk && typeOk && has3dOk && searchOk;
+      const show = tierOk && cityOk && typeOk && has3dOk && dupOk && searchOk;
       card.classList.toggle('hidden', !show);
       
       // sync nav
