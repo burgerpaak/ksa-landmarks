@@ -789,6 +789,35 @@ def scan_balady_catalog() -> list:
     return out
 
 
+def balady_grouped(cat: list) -> list:
+    """Balady 50종을 클러스터+지역 혼합으로 그룹핑 → [{title, sub, items}]."""
+    by_num = {e["num"]: e for e in cat}
+    used = set()
+    groups = []
+
+    def take(nums, title, sub):
+        items = [by_num[n] for n in nums if n in by_num]
+        used.update(n for n in nums if n in by_num)
+        if items:
+            groups.append({"title": title, "sub": sub, "items": items})
+
+    # 단지 클러스터 먼저
+    take(range(1, 9), "KAFD 단지", "Riyadh · KAFD 금융지구")
+    take(range(18, 26), "Boulevard World", "Riyadh · 테마파크")
+    take(range(26, 30), "Boulevard City", "Riyadh · 엔터테인먼트")
+    # 나머지는 지역별
+    rest = [e for e in cat if e["num"] not in used]
+    region_order = ["Riyadh", "Makkah Prov.", "Eastern", "Madinah", "Asir", "Tabuk"]
+    seen_regions = [r for r in region_order if any(e["region"] == r for e in rest)]
+    seen_regions += sorted({e["region"] for e in rest if e["region"] not in region_order})
+    for reg in seen_regions:
+        items = [e for e in rest if e["region"] == reg]
+        if items:
+            label = (reg or "기타") + (" 개별" if reg == "Riyadh" else "")
+            groups.append({"title": label, "sub": f"{len(items)}종", "items": items})
+    return groups
+
+
 def render_balady_card(entry: dict) -> str:
     """Balady+ 참조 카드 (우리 40종과 무관한 자체 번호·이름·지역)."""
     name, num, region = entry["name"], entry["num"], entry.get("region", "")
@@ -910,34 +939,60 @@ def build_files(landmarks: list, palette: str):
             f'<div class="files-grid">\n{cards}\n    </div></section>'
         )
 
-    sections = []
+    template = (TEMPLATE_DIR / "progress.html.tpl").read_text(encoding="utf-8")
+
+    def fill(entries, count, eyebrow, title, sub, back=""):
+        o = template.replace("{{PALETTE}}", palette)
+        o = o.replace("{{ENTRIES}}", entries)
+        o = o.replace("{{COUNT}}", count)
+        o = o.replace("{{PAGE_BACK}}", back)
+        o = o.replace("{{PAGE_EYEBROW}}", eyebrow)
+        o = o.replace("{{PAGE_TITLE}}", esc(title))
+        o = o.replace("{{PAGE_SUB}}", esc(sub))
+        o = o.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/").replace("{{DL_BTN}}", MODAL_DL_BTN))
+        return o
+
+    # ── 메인 Files 페이지: 작업 파일 + Balady+ 진입 배너 ──
+    work_section = ""
     if sorted_ids:
         work_cards = "\n".join(render_file_card(lid, groups[lid], lm_map) for lid in sorted_ids)
-        sections.append(_section_html("작업 파일", "팀이 제작 중인 3D 모델 · 캡처", work_cards))
+        work_section = _section_html("작업 파일", "팀이 제작 중인 3D 모델 · 캡처", work_cards)
+    entry = ""
     if balady_cat:
-        bal_cards = "\n".join(render_balady_card(e) for e in balady_cat)
-        sections.append(_section_html(
-            "Balady+ 참조 모델", "MOMRAH/Balady 기존 3D 자산 50종 · 참조용 (다운로드 비활성)", bal_cards))
-
-    if sections:
-        cards_html = "\n".join(sections)
-        n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
-        count_html = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_cat)}종"
-    else:
-        cards_html = (
-            '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
-            '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
+        entry = (
+            '<a class="balady-entry" href="balady.html">'
+            '<span class="balady-entry-badge">Balady +</span>'
+            '<span class="balady-entry-text">'
+            '<span class="balady-entry-title">Balady+ 참조 모델</span>'
+            f'<span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 {len(balady_cat)}종 · 클러스터·지역별 정리 · 참조용</span>'
+            '</span><span class="balady-entry-arrow">→</span></a>'
         )
-        count_html = "0 files"
-
-    template = (TEMPLATE_DIR / "progress.html.tpl").read_text(encoding="utf-8")
-    output = template.replace("{{PALETTE}}", palette)
-    output = output.replace("{{ENTRIES}}", cards_html)
-    output = output.replace("{{COUNT}}", count_html)
-    output = output.replace("{{MODEL_MODAL}}", MODEL_MODAL.replace("{{ASSET_BASE}}", "assets/").replace("{{DL_BTN}}", MODAL_DL_BTN))
+    main_entries = "\n".join(x for x in (work_section, entry) if x) or (
+        '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
+        '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
+    )
+    n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
+    main_count = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_cat)}종 →"
 
     OUTPUT_PROGRESS_DIR.mkdir(parents=True, exist_ok=True)
-    (OUTPUT_PROGRESS_DIR / "index.html").write_text(output, encoding="utf-8")
+    (OUTPUT_PROGRESS_DIR / "index.html").write_text(
+        fill(main_entries, main_count, "Files", "Model Files",
+             "랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다."),
+        encoding="utf-8")
+
+    # ── Balady+ 하위 페이지: 클러스터+지역 그룹 ──
+    if balady_cat:
+        groups_b = balady_grouped(balady_cat)
+        bal_entries = "\n".join(
+            _section_html(g["title"], g["sub"], "\n".join(render_balady_card(e) for e in g["items"]))
+            for g in groups_b
+        )
+        bal_count = f"{len(balady_cat)}종 · {len(groups_b)}개 그룹"
+        (OUTPUT_PROGRESS_DIR / "balady.html").write_text(
+            fill(bal_entries, bal_count, "Files · Balady+", "Balady+ 참조 모델",
+                 "MOMRAH/Balady 기존 3D 자산 50종 · 클러스터·지역별 정리 · 참조용 (다운로드 비활성)",
+                 '<a class="page-back" href="./">← Files</a>'),
+            encoding="utf-8")
 
     # 에셋 동기화: progress/ → docs/progress/assets/
     OUTPUT_PROGRESS_ASSETS.mkdir(parents=True, exist_ok=True)

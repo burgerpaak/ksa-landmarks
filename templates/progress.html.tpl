@@ -125,6 +125,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 12px;
   color: var(--ink-mute);
 }
+.page-back {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--mono);
+  font-size: 12px; color: var(--ink-mute);
+  margin-bottom: 14px;
+  transition: color 0.14s ease;
+}
+.page-back:hover { color: var(--accent); }
+
+/* Balady+ 진입 배너 (메인 Files → 하위 페이지) */
+.balady-entry {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 8px;
+  padding: 18px 20px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.14s ease, transform 0.14s ease;
+}
+.balady-entry:hover { border-color: color-mix(in srgb, var(--dup) 45%, var(--border)); transform: translateY(-1px); }
+.balady-entry-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+  padding: 5px 10px; border-radius: 999px;
+}
+.balady-entry-text { flex: 1; min-width: 0; }
+.balady-entry-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); }
+.balady-entry-sub { display: block; font-size: 12.5px; color: var(--ink-mute); margin-top: 3px; }
+.balady-entry-arrow { flex-shrink: 0; font-size: 18px; color: var(--ink-mute); }
+.balady-entry:hover .balady-entry-arrow { color: var(--dup); }
 
 /* ───── FILES SECTION (작업 / Balady+ 분기) ───── */
 .files-section { margin-bottom: 40px; }
@@ -361,9 +396,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <main class="main main--files">
   <div class="page-head">
-    <div class="page-eyebrow">Files</div>
-    <h1 class="page-title">Model Files</h1>
-    <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다.</p>
+    {{PAGE_BACK}}
+    <div class="page-eyebrow">{{PAGE_EYEBROW}}</div>
+    <h1 class="page-title">{{PAGE_TITLE}}</h1>
+    <p class="page-sub">{{PAGE_SUB}}</p>
     <div class="page-count">{{COUNT}}</div>
   </div>
 

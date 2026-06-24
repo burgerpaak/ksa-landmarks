@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>Files · KSA Landmarks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+
+:root {
+  /* Light theme — cool gray palette (iOS doc tone) */
+  --bg: #f4f6f9;
+  --bg-elev: #ffffff;
+  --bg-sunken: #eef1f5;
+  --border: #e3e7ed;
+  --border-strong: #c8cfd9;
+  --ink: #0e131b;
+  --ink-soft: #44505f;
+  --ink-mute: #8a94a3;
+  --accent: #4a6585;
+  --accent-soft: #dde5f0;
+  /* Tier — 한색 계열, 구분 강화 (deep blue / saturated teal / neutral slate) */
+  --tier-1: #2c5588;
+  --tier-2: #3a8a78;
+  --tier-3: #8696a8;
+  /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
+  --dup: #2470c8;
+  /* Alert — cool muted plum (한색 계열 경고) */
+  --alert: #8a6878;
+  --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --shadow-sm: 0 1px 0 rgba(15, 25, 40, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
+  --sidebar-width: 280px;
+  --topbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg: #0c1018;
+  --bg-elev: #181c24;
+  --bg-sunken: #12161e;
+  --border: #2a3140;
+  --border-strong: #3a4250;
+  --ink: #ecf0f7;
+  --ink-soft: #b4bcca;
+  --ink-mute: #6e7787;
+  --accent: #8aa5cc;
+  --accent-soft: #1f2530;
+  /* Tier — dark: 밝기 보정 + hue 강조 유지 */
+  --tier-1: #7ea4d5;
+  --tier-2: #6db8a4;
+  --tier-3: #a5b3c5;
+  --dup: #6aa6ef;
+  --alert: #c39aac;
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+/* ───── TOP BAR ───── */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 18px;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
+  user-select: none;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.brand-mark { font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: var(--ink); line-height: 1.1; }
+.brand-meta {
+  font-family: var(--mono);
+  font-size: 9.5px; color: var(--ink-mute);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 3px; line-height: 1;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 12px;
+}
+.topbar-nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-sunken);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.topbar-nav a:hover { color: var(--ink); }
+.topbar-nav a.active { background: var(--ink); color: var(--bg-elev); }
+
+.topbar-spacer { flex: 1; }
+
+.icon-btn {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft);
+  background: var(--bg-elev);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.icon-btn:hover { background: var(--bg-sunken); color: var(--ink); }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="light"] .moon-icon { display: none; }
+.moon-icon { transform: translate(1px, -1px); }
+
+/* ───── MAIN ───── */
+.main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: calc(var(--topbar-height) + 40px) 32px 100px;
+}
+.main--files { max-width: 1200px; }
+
+.page-head { margin-bottom: 44px; }
+.page-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.page-title {
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.page-sub {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 760px;
+}
+.page-count {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.page-back {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--mono);
+  font-size: 12px; color: var(--ink-mute);
+  margin-bottom: 14px;
+  transition: color 0.14s ease;
+}
+.page-back:hover { color: var(--accent); }
+
+/* Balady+ 진입 배너 (메인 Files → 하위 페이지) */
+.balady-entry {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 8px;
+  padding: 18px 20px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.14s ease, transform 0.14s ease;
+}
+.balady-entry:hover { border-color: color-mix(in srgb, var(--dup) 45%, var(--border)); transform: translateY(-1px); }
+.balady-entry-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+  padding: 5px 10px; border-radius: 999px;
+}
+.balady-entry-text { flex: 1; min-width: 0; }
+.balady-entry-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); }
+.balady-entry-sub { display: block; font-size: 12.5px; color: var(--ink-mute); margin-top: 3px; }
+.balady-entry-arrow { flex-shrink: 0; font-size: 18px; color: var(--ink-mute); }
+.balady-entry:hover .balady-entry-arrow { color: var(--dup); }
+
+/* ───── FILES SECTION (작업 / Balady+ 분기) ───── */
+.files-section { margin-bottom: 40px; }
+.files-section:last-child { margin-bottom: 0; }
+.files-section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.files-section-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.files-section-sub {
+  font-size: 12px; color: var(--ink-mute);
+}
+
+/* ───── FILES GRID (랜드마크별 파일 카드) ───── */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.file-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.fc-tier { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.fc-num {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--ink-mute);
+}
+.fc-name {
+  font-size: 14px; font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  flex: 1; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: default;
+}
+/* 잘린 이름 호버 시 즉시 뜨는 풀텍스트 툴팁 (body 직속 → 카드 클리핑 없음) */
+.name-tip {
+  position: fixed;
+  z-index: 2000;
+  background: var(--ink);
+  color: var(--bg-elev);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 12px; font-weight: 500;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  max-width: 340px;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.06s ease;
+}
+.name-tip.show { opacity: 1; }
+.fc-ref {
+  font-size: 13px; color: var(--ink-mute);
+  flex-shrink: 0;
+  transition: color 0.14s ease;
+}
+.fc-ref:hover { color: var(--accent); }
+.fc-region {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+.fc-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px; border-radius: 999px;
+}
+.fc-badge--balady {
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+}
+
+.fc-cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-sunken);
+  overflow: hidden;
+}
+.fc-cover img { width: 100%; height: 100%; object-fit: cover; }
+.fc-cover--3d {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--border-strong);
+}
+/* 모델 렌더 썸네일 — 투명 배경 + 여백 있어 전체가 보이도록 contain */
+.fc-cover--model img { object-fit: contain; }
+
+.fc-actions { padding: 14px 16px 6px; }
+/* 버튼이 카드 마지막 요소면(Balady 카드 등) 상하 패딩 대칭 */
+.fc-actions:last-child { padding-bottom: 14px; }
+.model-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  width: 100%;
+  justify-content: center;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+.model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.model-btn svg { flex-shrink: 0; display: block; }
+
+.fc-dls { padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 6px; }
+.fc-dl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  transition: color 0.14s ease, background 0.14s ease;
+}
+.fc-dl:hover { color: var(--ink); background: color-mix(in srgb, var(--accent) 8%, var(--bg-sunken)); }
+.fc-dl svg { flex-shrink: 0; color: var(--accent); }
+.fc-dl > span:nth-of-type(1) { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fc-dl-size { color: var(--ink-mute); flex-shrink: 0; }
+
+.fc-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+  padding: 4px 16px 16px;
+}
+.fc-shot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 1px solid var(--border);
+  background: var(--bg-sunken);
+  clip-path: inset(0 round 8px);
+}
+.fc-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.fc-shot:hover img { transform: scale(1.06); }
+.shot-dl {
+  position: absolute;
+  top: 5px; right: 5px;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--bg-elev) 86%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+.fc-shot:hover .shot-dl { opacity: 1; }
+.shot-dl:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* 빈 상태 */
+.empty {
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--ink-mute);
+}
+.empty-title { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+
+/* lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.88);
+  display: none; align-items: center; justify-content: center;
+  cursor: zoom-out; padding: 40px;
+  backdrop-filter: blur(4px);
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 100%; max-height: calc(100vh - 80px);
+  object-fit: contain; border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 640px) {
+  .main { padding: calc(var(--topbar-height) + 28px) 18px 60px; }
+  .files-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body data-theme="light">
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">KSA Landmarks</span>
+    <span class="brand-meta">3D · Reference</span>
+  </div>
+  <nav class="topbar-nav">
+    <a href="../">Reference</a>
+    <a href="./" class="active">Files</a>
+  </nav>
+  <div class="topbar-spacer"></div>
+  <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+    <svg class="sun-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <svg class="moon-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 9.5A6 6 0 1 1 6.5 3a4.5 4.5 0 0 0 6.5 6.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  </button>
+</header>
+
+<main class="main main--files">
+  <div class="page-head">
+    <a class="page-back" href="./">← Files</a>
+    <div class="page-eyebrow">Files · Balady+</div>
+    <h1 class="page-title">Balady+ 참조 모델</h1>
+    <p class="page-sub">MOMRAH/Balady 기존 3D 자산 50종 · 클러스터·지역별 정리 · 참조용 (다운로드 비활성)</p>
+    <div class="page-count">50종 · 9개 그룹</div>
+  </div>
+
+  <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">KAFD 단지</h2><span class="files-section-sub">Riyadh · KAFD 금융지구</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 01</span>
+    <span class="fc-name">KAFD – SNB Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B01.png" alt="KAFD – SNB Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B01.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1687, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 02</span>
+    <span class="fc-name">KAFD – Riyadh Bank Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B02.png" alt="KAFD – Riyadh Bank Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B02.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 2320, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 03</span>
+    <span class="fc-name">KAFD- Capital Market Authority Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B03.png" alt="KAFD- Capital Market Authority Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B03.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 3406, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 04</span>
+    <span class="fc-name">KAFD- Tower 4</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B04.png" alt="KAFD- Tower 4" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B04.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2115, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 05</span>
+    <span class="fc-name">KAFD- Tower 5</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B05.png" alt="KAFD- Tower 5" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B05.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2062, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 06</span>
+    <span class="fc-name">KAFD- Tower 6</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B06.png" alt="KAFD- Tower 6" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B06.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 6312, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 07</span>
+    <span class="fc-name">KAFD- Tower 7</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B07.png" alt="KAFD- Tower 7" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B07.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.1, &quot;tris&quot;: 6565, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 08</span>
+    <span class="fc-name">KAFD – Conference Hall</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B08.png" alt="KAFD – Conference Hall" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B08.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 381, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Boulevard World</h2><span class="files-section-sub">Riyadh · 테마파크</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 18</span>
+    <span class="fc-name">Boulevard World – Main Entrance</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B18.png" alt="Boulevard World – Main Entrance" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B18.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 52, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 19</span>
+    <span class="fc-name">Boulevard World – Japan</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B19.png" alt="Boulevard World – Japan" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B19.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 922, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 20</span>
+    <span class="fc-name">Boulevard World - Italy</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B20.png" alt="Boulevard World - Italy" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B20.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 1276, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 21</span>
+    <span class="fc-name">Boulevard World - Greece</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B21.png" alt="Boulevard World - Greece" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B21.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.39, &quot;tris&quot;: 8151, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 22</span>
+    <span class="fc-name">Boulevard World - France</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B22.png" alt="Boulevard World - France" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B22.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 1418, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 23</span>
+    <span class="fc-name">Boulevard World – The Sphere</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B23.png" alt="Boulevard World – The Sphere" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B23.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 24</span>
+    <span class="fc-name">Boulevard World – The Dolphine show</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B24.png" alt="Boulevard World – The Dolphine show" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B24.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1772, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 25</span>
+    <span class="fc-name">Boulevard World - PlayOCity by Hasbro</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B25.png" alt="Boulevard World - PlayOCity by Hasbro" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B25.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 599, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Boulevard City</h2><span class="files-section-sub">Riyadh · 엔터테인먼트</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 26</span>
+    <span class="fc-name">Boulevard City – Fountain Area</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B26.png" alt="Boulevard City – Fountain Area" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B26.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 58, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 27</span>
+    <span class="fc-name">Boulevard City – Abu Baker Salem Stage</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B27.png" alt="Boulevard City – Abu Baker Salem Stage" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B27.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 204, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 28</span>
+    <span class="fc-name">Boulevard City – Square 2</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B28.png" alt="Boulevard City – Square 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B28.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1288, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 29</span>
+    <span class="fc-name">Boulevard City – Square 1</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B29.png" alt="Boulevard City – Square 1" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B29.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1288, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Riyadh 개별</h2><span class="files-section-sub">11종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 09</span>
+    <span class="fc-name">Kingdom Center</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B09.png" alt="Kingdom Center" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B09.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 3.88, &quot;tris&quot;: 29359, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 10</span>
+    <span class="fc-name">Al Masmak Palace</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B10.png" alt="Al Masmak Palace" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B10.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 1.09, &quot;tris&quot;: 11462, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 11</span>
+    <span class="fc-name">Al Faisaliyah Center</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B11.png" alt="Al Faisaliyah Center" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B11.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 4.51, &quot;tris&quot;: 22116, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 12</span>
+    <span class="fc-name">Almajdul Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B12.png" alt="Almajdul Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B12.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.31, &quot;tris&quot;: 7961, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 13</span>
+    <span class="fc-name">Boulevard Riyadh City</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B13.png" alt="Boulevard Riyadh City" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B13.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.27, &quot;tris&quot;: 9785, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 14</span>
+    <span class="fc-name">Al-Awal Park / Mrsool Park</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B14.png" alt="Al-Awal Park / Mrsool Park" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B14.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 5596, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 15</span>
+    <span class="fc-name">Ministry of Municipal Rural Affairs and Housing</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B15.png" alt="Ministry of Municipal Rural Affairs and Housing" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B15.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.21, &quot;tris&quot;: 8933, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 16</span>
+    <span class="fc-name">At-Turaif World Heritage Site</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B16.png" alt="At-Turaif World Heritage Site" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B16.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 139, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 17</span>
+    <span class="fc-name">King Fahd Stadium</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B17.png" alt="King Fahd Stadium" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B17.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.5, &quot;tris&quot;: 17910, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 30</span>
+    <span class="fc-name">Riyadh Park Mall</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B30.png" alt="Riyadh Park Mall" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B30.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 7303, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 31</span>
+    <span class="fc-name">Riyadh Front</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B31.png" alt="Riyadh Front" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B31.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.13, &quot;tris&quot;: 1274, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Makkah Prov.</h2><span class="files-section-sub">10종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 32</span>
+    <span class="fc-name">Royal Clock Tower Hotel</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B32.png" alt="Royal Clock Tower Hotel" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B32.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.61, &quot;tris&quot;: 25835, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 33</span>
+    <span class="fc-name">Holly Mosque</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B33.png" alt="Holly Mosque" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B33.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 1.9, &quot;tris&quot;: 76696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 34</span>
+    <span class="fc-name">Holly Quran Holder Gate</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B34.png" alt="Holly Quran Holder Gate" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B34.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.17, &quot;tris&quot;: 2836, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 35</span>
+    <span class="fc-name">Jeddah Corniche Circuit</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B35.png" alt="Jeddah Corniche Circuit" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B35.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.38, &quot;tris&quot;: 16058, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 36</span>
+    <span class="fc-name">Savola Towe</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B36.png" alt="Savola Towe" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B36.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.4, &quot;tris&quot;: 13047, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 37</span>
+    <span class="fc-name">Jeddah Flagpole</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B37.png" alt="Jeddah Flagpole" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B37.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.13, &quot;tris&quot;: 7808, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 38</span>
+    <span class="fc-name">Jeddah Historical Gate</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B38.png" alt="Jeddah Historical Gate" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B38.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1638, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 39</span>
+    <span class="fc-name">Al Jawhara Stadium</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B39.png" alt="Al Jawhara Stadium" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B39.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.43, &quot;tris&quot;: 15297, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 40</span>
+    <span class="fc-name">King Abdulaziz international Airport (KAIA)</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B40.png" alt="King Abdulaziz international Airport (KAIA)" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B40.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.66, &quot;tris&quot;: 28303, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 49</span>
+    <span class="fc-name">Shobra Palace</span>
+    <span class="fc-region">Makkah Prov.</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B49.png" alt="Shobra Palace" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B49.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.42, &quot;tris&quot;: 17946, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Eastern</h2><span class="files-section-sub">5종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 41</span>
+    <span class="fc-name">King Abdulaziz Center for World Culture</span>
+    <span class="fc-region">Eastern</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B41.png" alt="King Abdulaziz Center for World Culture" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B41.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.15, &quot;tris&quot;: 3552, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 42</span>
+    <span class="fc-name">Grand Hyatt – Al Khobar</span>
+    <span class="fc-region">Eastern</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B42.png" alt="Grand Hyatt – Al Khobar" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B42.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.85, &quot;tris&quot;: 27846, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 43</span>
+    <span class="fc-name">Al-Rashid Mall with indoor floor plan</span>
+    <span class="fc-region">Eastern</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B43.png" alt="Al-Rashid Mall with indoor floor plan" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B43.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.35, &quot;tris&quot;: 14696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 44</span>
+    <span class="fc-name">AlQarah Mountain – Land of civilization museum</span>
+    <span class="fc-region">Eastern</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B44.png" alt="AlQarah Mountain – Land of civilization museum" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B44.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.14, &quot;tris&quot;: 2518, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 45</span>
+    <span class="fc-name">Al-Khobar Water Tower</span>
+    <span class="fc-region">Eastern</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B45.png" alt="Al-Khobar Water Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B45.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.54, &quot;tris&quot;: 18681, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Madinah</h2><span class="files-section-sub">2종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 46</span>
+    <span class="fc-name">Al-Masjid an-Nabawi</span>
+    <span class="fc-region">Madinah</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B46.png" alt="Al-Masjid an-Nabawi" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B46.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.45, &quot;tris&quot;: 30488, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 47</span>
+    <span class="fc-name">Hijaz Railways Museum</span>
+    <span class="fc-region">Madinah</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B47.png" alt="Hijaz Railways Museum" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B47.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.38, &quot;tris&quot;: 13916, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Asir</h2><span class="files-section-sub">1종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 50</span>
+    <span class="fc-name">AL-Mashit Palace</span>
+    <span class="fc-region">Asir</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B50.png" alt="AL-Mashit Palace" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B50.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.22, &quot;tris&quot;: 4268, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Tabuk</h2><span class="files-section-sub">1종</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ 48</span>
+    <span class="fc-name">Tabuk Castle</span>
+    <span class="fc-region">Tabuk</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B48.png" alt="Tabuk Castle" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B48.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.17, &quot;tris&quot;: 2214, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+</main>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
+
+
+<!-- ───── SHARED 3D MODEL MODAL ───── -->
+<div class="model-modal" id="model-modal" aria-hidden="true">
+  <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
+    <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
+    <div class="model-modal-stage">
+      <model-viewer id="modal-mv" camera-controls auto-rotate environment-image="legacy" exposure="0.55" shadow-intensity="1.3" shadow-softness="0.2" tone-mapping="agx" interaction-prompt="none"></model-viewer>
+    </div>
+    <div class="model-modal-foot">
+      <div class="model-modal-tabs" id="modal-tabs"></div>
+      <span class="model-tri" id="modal-tri" hidden></span>
+      <button class="model-wire-toggle" id="modal-wire" aria-pressed="false" title="와이어프레임 토글">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+        <span>와이어프레임</span>
+      </button>
+      
+    </div>
+  </div>
+</div>
+<style>
+.model-modal {
+  position: fixed; inset: 0; z-index: 250;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 20, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+}
+.model-modal.open { display: flex; }
+.model-modal-panel {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+.model-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft); font-size: 20px; line-height: 1;
+}
+.model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
+.model-modal-stage {
+  width: 100%; height: min(64vh, 540px);
+  background: radial-gradient(circle at 50% 38%, #5b6573 0%, #3a414d 55%, #272c34 100%);
+}
+.model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+.model-modal-foot {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.model-modal-tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.model-modal-tab {
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.model-modal-tab:hover { color: var(--ink); }
+.model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-tri {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.model-wire-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 11.5px; font-weight: 500; color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.model-wire-toggle:hover { color: var(--ink); }
+.model-wire-toggle[aria-pressed="true"] {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.model-wire-toggle svg { flex-shrink: 0; }
+.model-modal .model-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--ink); color: var(--bg-elev);
+  font-family: var(--mono); font-size: 11px;
+  flex-shrink: 0;
+}
+.model-modal .model-dl:hover { opacity: 0.88; }
+@media (max-width: 640px) {
+  .model-modal { padding: 16px; }
+  .model-modal-stage { height: 48vh; }
+}
+</style>
+<script>
+(function(){
+  const ASSET_BASE = 'assets/';
+  const modal = document.getElementById('model-modal');
+  if (!modal) return;
+  const mv = document.getElementById('modal-mv');
+  const tabsEl = document.getElementById('modal-tabs');
+  const dl = document.getElementById('modal-dl');
+  const dlLabel = document.getElementById('modal-dl-label');
+  const wireBtn = document.getElementById('modal-wire');
+  const triEl = document.getElementById('modal-tri');
+  let wireOn = false;
+  let currentTris = null;  // 빌드 시 정확 계산된 값
+
+  // model-viewer 내부 Three.js scene 접근 (와이어프레임용)
+  function getScene(){
+    const sym = Object.getOwnPropertySymbols(mv).find(s => s.description === 'scene');
+    return sym ? mv[sym] : null;
+  }
+  function applyWire(){
+    const scene = getScene();
+    if (!scene) return;
+    scene.traverse(o => { if (o.isMesh && o.material) {
+      (Array.isArray(o.material) ? o.material : [o.material]).forEach(mat => mat.wireframe = wireOn);
+    }});
+    if (typeof scene.queueRender === 'function') scene.queueRender();
+  }
+  function updateTri(){
+    // 빌드 시 glTF accessor로 정확히 계산한 값 사용 (뷰어 실시간 카운트는 그림자 평면 포함 오차)
+    if (currentTris == null) { triEl.hidden = true; return; }
+    triEl.hidden = false;
+    triEl.textContent = '△ ' + currentTris.toLocaleString() + ' tris';
+  }
+  // 모델 로드 완료 때마다 와이어 상태 반영
+  mv.addEventListener('load', () => { applyWire(); });
+
+  function load(models, idx){
+    const m = models[idx];
+    const src = ASSET_BASE + m.file;
+    mv.setAttribute('src', src);
+    const name = m.file.split('/').pop();
+    if (dl) {  // 다운로드 버튼이 꺼져 있으면(GLB_DOWNLOAD=False) 없을 수 있음
+      dl.href = src;
+      dl.setAttribute('download', name);
+      dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    }
+    currentTris = (m.tris != null) ? m.tris : null;
+    updateTri();
+    tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+
+  wireBtn.addEventListener('click', () => {
+    wireOn = !wireOn;
+    wireBtn.setAttribute('aria-pressed', wireOn ? 'true' : 'false');
+    applyWire();
+  });
+
+  window.openModelModal = function(models, startIdx){
+    if (!models || !models.length) return;
+    // 와이어프레임 상태 초기화 (이전 세션이 남지 않게)
+    wireOn = false;
+    wireBtn.setAttribute('aria-pressed', 'false');
+    triEl.hidden = true;
+    tabsEl.innerHTML = '';
+    // 모델 1개면 탭 숨김
+    if (models.length > 1) {
+      models.forEach((m, i) => {
+        const b = document.createElement('button');
+        b.className = 'model-modal-tab';
+        b.innerHTML = (m.label || m.file);
+        b.addEventListener('click', () => load(models, i));
+        tabsEl.appendChild(b);
+      });
+    }
+    load(models, startIdx || 0);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function close(){ modal.classList.remove('open'); mv.removeAttribute('src'); document.body.style.overflow=''; }
+  document.getElementById('model-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // 모든 .model-btn 트리거 연결
+  document.querySelectorAll('.model-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      try {
+        const models = JSON.parse(btn.getAttribute('data-models'));
+        window.openModelModal(models, parseInt(btn.getAttribute('data-start')||'0', 10));
+      } catch(err) {}
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  // theme (메인과 같은 localStorage 키 공유)
+  const stored = localStorage.getItem('ksa-theme');
+  if (stored === 'dark') document.body.setAttribute('data-theme', 'dark');
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
+    document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
+  });
+
+  // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
+
+  // 잘린 카드 이름 → 호버 즉시 풀텍스트 툴팁 (네이티브 title 지연 회피)
+  (function(){
+    let tip = null;
+    function ensure(){
+      if (!tip){ tip = document.createElement('div'); tip.className = 'name-tip'; document.body.appendChild(tip); }
+      return tip;
+    }
+    function show(e){
+      const el = e.currentTarget;
+      if (el.scrollWidth <= el.clientWidth + 1) return;  // 안 잘렸으면 패스
+      const t = ensure();
+      t.textContent = el.textContent.trim();
+      const r = el.getBoundingClientRect();
+      t.style.left = Math.round(r.left) + 'px';
+      t.style.top = Math.round(r.bottom + 6) + 'px';
+      // 우측 화면 넘침 방지
+      const tw = t.offsetWidth;
+      if (r.left + tw > window.innerWidth - 12) t.style.left = Math.max(12, window.innerWidth - tw - 12) + 'px';
+      t.classList.add('show');
+    }
+    function hide(){ if (tip) tip.classList.remove('show'); }
+    document.querySelectorAll('.fc-name').forEach(el => {
+      el.addEventListener('mouseenter', show);
+      el.addEventListener('mouseleave', hide);
+    });
+    window.addEventListener('scroll', hide, true);
+  })();
+
+  // lightbox (다운로드 버튼 클릭은 제외)
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.fc-shot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lb.classList.add('open');
+    });
+  });
+  document.querySelectorAll('.shot-dl').forEach(a => {
+    a.addEventListener('click', e => e.stopPropagation());
+  });
+  lb.addEventListener('click', () => { lb.classList.remove('open'); lbImg.src = ''; });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+  });
+})();
+</script>
+</body>
+</html>
