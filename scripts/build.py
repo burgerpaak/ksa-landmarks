@@ -776,7 +776,11 @@ def scan_balady_catalog() -> list:
         if not f.exists():
             continue
         mb = f.stat().st_size / (1024 * 1024)
-        out.append({**e, "model": {
+        # 뷰어 첫 프레임 캡처 썸네일 (있으면 카드 커버로 사용)
+        tid = e["file"].rsplit(".", 1)[0]  # B01.glb → B01
+        thumb_fs = OUTPUT_PROGRESS_ASSETS / "balady" / "thumbs" / f"{tid}.png"
+        thumb = f"assets/balady/thumbs/{tid}.png" if thumb_fs.exists() else None
+        out.append({**e, "thumb": thumb, "model": {
             "file": "balady/" + e["file"], "label": "Balady",
             "mb": round(mb, 2), "tris": glb_triangle_count(f),
             "_textured": glb_has_material(f),
@@ -796,6 +800,11 @@ def render_balady_card(entry: dict) -> str:
     viewer = ('<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
               '<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
               '<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>')
+    # 커버 = 뷰어 첫 프레임 썸네일 (없으면 큐브 플레이스홀더)
+    if entry.get("thumb"):
+        cover = f'<div class="fc-cover fc-cover--model"><img src="{esc(entry["thumb"])}" alt="{esc(name)}" loading="lazy"></div>'
+    else:
+        cover = f'<div class="fc-cover fc-cover--3d">{cube}</div>'
     return f"""
 <article class="file-card">
   <header class="fc-head">
@@ -804,7 +813,7 @@ def render_balady_card(entry: dict) -> str:
     {region_html}
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d">{cube}</div>
+  {cover}
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="{payload}" data-start="0">{viewer}<span>3D Viewer</span></button></div>
 </article>"""
 

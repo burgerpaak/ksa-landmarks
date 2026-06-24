@@ -235,6 +235,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; align-items: center; justify-content: center;
   color: var(--border-strong);
 }
+/* 모델 렌더 썸네일 — 투명 배경 + 여백 있어 전체가 보이도록 contain */
+.fc-cover--model img { object-fit: contain; }
 
 .fc-actions { padding: 14px 16px 6px; }
 /* 버튼이 카드 마지막 요소면(Balady 카드 등) 상하 패딩 대칭 */

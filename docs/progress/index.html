@@ -281,6 +281,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; align-items: center; justify-content: center;
   color: var(--border-strong);
 }
+/* 모델 렌더 썸네일 — 투명 배경 + 여백 있어 전체가 보이도록 contain */
+.fc-cover--model img { object-fit: contain; }
 
 .fc-actions { padding: 14px 16px 6px; }
 /* 버튼이 카드 마지막 요소면(Balady 카드 등) 상하 패딩 대칭 */
@@ -548,7 +550,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B01.png" alt="KAFD – SNB Tower" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B01.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1687, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -559,7 +561,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B02.png" alt="KAFD – Riyadh Bank Tower" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B02.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 2320, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -570,7 +572,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B03.png" alt="KAFD- Capital Market Authority Tower" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B03.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 3406, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -581,7 +583,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B04.png" alt="KAFD- Tower 4" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B04.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2115, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -592,7 +594,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B05.png" alt="KAFD- Tower 5" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B05.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2062, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -603,7 +605,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B06.png" alt="KAFD- Tower 6" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B06.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 6312, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -614,7 +616,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B07.png" alt="KAFD- Tower 7" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B07.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.1, &quot;tris&quot;: 6565, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -625,7 +627,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B08.png" alt="KAFD – Conference Hall" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B08.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 381, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -636,7 +638,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B09.png" alt="Kingdom Center" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B09.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 3.88, &quot;tris&quot;: 29359, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -647,7 +649,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B10.png" alt="Al Masmak Palace" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B10.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 1.09, &quot;tris&quot;: 11462, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -658,7 +660,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B11.png" alt="Al Faisaliyah Center" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B11.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 4.51, &quot;tris&quot;: 22116, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -669,7 +671,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B12.png" alt="Almajdul Tower" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B12.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.31, &quot;tris&quot;: 7961, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -680,7 +682,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B13.png" alt="Boulevard Riyadh City" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B13.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.27, &quot;tris&quot;: 9785, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -691,7 +693,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B14.png" alt="Al-Awal Park / Mrsool Park" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B14.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 5596, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -702,7 +704,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B15.png" alt="Ministry of Municipal Rural Affairs and Housing" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B15.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.21, &quot;tris&quot;: 8933, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -713,7 +715,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B16.png" alt="At-Turaif World Heritage Site" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B16.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 139, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -724,7 +726,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B17.png" alt="King Fahd Stadium" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B17.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.5, &quot;tris&quot;: 17910, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -735,7 +737,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B18.png" alt="Boulevard World – Main Entrance" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B18.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 52, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -746,7 +748,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B19.png" alt="Boulevard World – Japan" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B19.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 922, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -757,7 +759,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B20.png" alt="Boulevard World - Italy" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B20.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 1276, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -768,7 +770,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B21.png" alt="Boulevard World - Greece" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B21.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.39, &quot;tris&quot;: 8151, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -779,7 +781,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B22.png" alt="Boulevard World - France" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B22.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 1418, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -790,7 +792,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B23.png" alt="Boulevard World – The Sphere" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B23.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -801,7 +803,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B24.png" alt="Boulevard World – The Dolphine show" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B24.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1772, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -812,7 +814,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B25.png" alt="Boulevard World - PlayOCity by Hasbro" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B25.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 599, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -823,7 +825,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B26.png" alt="Boulevard City – Fountain Area" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B26.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 58, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -834,7 +836,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B27.png" alt="Boulevard City – Abu Baker Salem Stage" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B27.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 204, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -845,7 +847,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B28.png" alt="Boulevard City – Square 2" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B28.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1288, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -856,7 +858,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B29.png" alt="Boulevard City – Square 1" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B29.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1288, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -867,7 +869,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B30.png" alt="Riyadh Park Mall" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B30.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 7303, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -878,7 +880,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Riyadh</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B31.png" alt="Riyadh Front" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B31.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.13, &quot;tris&quot;: 1274, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -889,7 +891,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B32.png" alt="Royal Clock Tower Hotel" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B32.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.61, &quot;tris&quot;: 25835, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -900,7 +902,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B33.png" alt="Holly Mosque" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B33.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 1.9, &quot;tris&quot;: 76696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -911,7 +913,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B34.png" alt="Holly Quran Holder Gate" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B34.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.17, &quot;tris&quot;: 2836, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -922,7 +924,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B35.png" alt="Jeddah Corniche Circuit" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B35.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.38, &quot;tris&quot;: 16058, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -933,7 +935,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B36.png" alt="Savola Towe" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B36.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.4, &quot;tris&quot;: 13047, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -944,7 +946,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B37.png" alt="Jeddah Flagpole" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B37.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.13, &quot;tris&quot;: 7808, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -955,7 +957,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B38.png" alt="Jeddah Historical Gate" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B38.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1638, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -966,7 +968,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B39.png" alt="Al Jawhara Stadium" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B39.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.43, &quot;tris&quot;: 15297, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -977,7 +979,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B40.png" alt="King Abdulaziz international Airport (KAIA)" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B40.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.66, &quot;tris&quot;: 28303, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -988,7 +990,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Eastern</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B41.png" alt="King Abdulaziz Center for World Culture" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B41.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.15, &quot;tris&quot;: 3552, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -999,7 +1001,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Eastern</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B42.png" alt="Grand Hyatt – Al Khobar" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B42.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.85, &quot;tris&quot;: 27846, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1010,7 +1012,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Eastern</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B43.png" alt="Al-Rashid Mall with indoor floor plan" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B43.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.35, &quot;tris&quot;: 14696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1021,7 +1023,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Eastern</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B44.png" alt="AlQarah Mountain – Land of civilization museum" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B44.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.14, &quot;tris&quot;: 2518, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1032,7 +1034,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Eastern</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B45.png" alt="Al-Khobar Water Tower" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B45.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.54, &quot;tris&quot;: 18681, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1043,7 +1045,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Madinah</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B46.png" alt="Al-Masjid an-Nabawi" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B46.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.45, &quot;tris&quot;: 30488, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1054,7 +1056,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Madinah</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B47.png" alt="Hijaz Railways Museum" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B47.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.38, &quot;tris&quot;: 13916, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1065,7 +1067,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Tabuk</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B48.png" alt="Tabuk Castle" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B48.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.17, &quot;tris&quot;: 2214, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1076,7 +1078,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Makkah Prov.</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B49.png" alt="Shobra Palace" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B49.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.42, &quot;tris&quot;: 17946, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
 
@@ -1087,7 +1089,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-region">Asir</span>
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
-  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-cover fc-cover--model"><img src="assets/balady/thumbs/B50.png" alt="AL-Mashit Palace" loading="lazy"></div>
   <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/B50.glb&quot;, &quot;label&quot;: &quot;Balady&quot;, &quot;mb&quot;: 0.22, &quot;tris&quot;: 4268, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
 </article>
     </div></section>
