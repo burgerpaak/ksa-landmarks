@@ -185,6 +185,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.14s ease;
 }
 .fc-ref:hover { color: var(--accent); }
+.fc-region {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
 .fc-badge {
   flex-shrink: 0;
   font-family: 'Inter', 'Noto Sans KR', sans-serif;

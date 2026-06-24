@@ -1,0 +1,452 @@
+[
+  {
+    "id": "B01",
+    "num": 1,
+    "name": "KAFD – SNB Tower",
+    "file": "B01.glb",
+    "region": "Riyadh",
+    "lon": "46.64218481630087",
+    "lat": "24.76243806741161"
+  },
+  {
+    "id": "B02",
+    "num": 2,
+    "name": "KAFD – Riyadh Bank Tower",
+    "file": "B02.glb",
+    "region": "Riyadh",
+    "lon": "46.64124294184148",
+    "lat": "24.762479929038548"
+  },
+  {
+    "id": "B03",
+    "num": 3,
+    "name": "KAFD- Capital Market Authority Tower",
+    "file": "B03.glb",
+    "region": "Riyadh",
+    "lon": "46.64129541255534",
+    "lat": "24.763606305954596"
+  },
+  {
+    "id": "B04",
+    "num": 4,
+    "name": "KAFD- Tower 4",
+    "file": "B04.glb",
+    "region": "Riyadh",
+    "lon": "46.64249318651855",
+    "lat": "24.763553560780664"
+  },
+  {
+    "id": "B05",
+    "num": 5,
+    "name": "KAFD- Tower 5",
+    "file": "B05.glb",
+    "region": "Riyadh",
+    "lon": "46.64118661545217",
+    "lat": "24.76446012009889"
+  },
+  {
+    "id": "B06",
+    "num": 6,
+    "name": "KAFD- Tower 6",
+    "file": "B06.glb",
+    "region": "Riyadh",
+    "lon": "46.64014348760247",
+    "lat": "24.763706925113212"
+  },
+  {
+    "id": "B07",
+    "num": 7,
+    "name": "KAFD- Tower 7",
+    "file": "B07.glb",
+    "region": "Riyadh",
+    "lon": "46.640542885288596",
+    "lat": "24.7627189967141"
+  },
+  {
+    "id": "B08",
+    "num": 8,
+    "name": "KAFD – Conference Hall",
+    "file": "B08.glb",
+    "region": "Riyadh",
+    "lon": "46.642067302018404",
+    "lat": "24.76063069724306"
+  },
+  {
+    "id": "B09",
+    "num": 9,
+    "name": "Kingdom Center",
+    "file": "B09.glb",
+    "region": "Riyadh",
+    "lon": "46.67444651015103",
+    "lat": "24.71138683743858"
+  },
+  {
+    "id": "B10",
+    "num": 10,
+    "name": "Al Masmak Palace",
+    "file": "B10.glb",
+    "region": "Riyadh",
+    "lon": "46.71332320198417",
+    "lat": "24.631195999151814"
+  },
+  {
+    "id": "B11",
+    "num": 11,
+    "name": "Al Faisaliyah Center",
+    "file": "B11.glb",
+    "region": "Riyadh",
+    "lon": "46.68497619219124",
+    "lat": "24.690202270624965"
+  },
+  {
+    "id": "B12",
+    "num": 12,
+    "name": "Almajdul Tower",
+    "file": "B12.glb",
+    "region": "Riyadh",
+    "lon": "46.65944617241621",
+    "lat": "24.739162874182384"
+  },
+  {
+    "id": "B13",
+    "num": 13,
+    "name": "Boulevard Riyadh City",
+    "file": "B13.glb",
+    "region": "Riyadh",
+    "lon": "46.604572115466",
+    "lat": "24.768687776012854"
+  },
+  {
+    "id": "B14",
+    "num": 14,
+    "name": "Al-Awal Park / Mrsool Park",
+    "file": "B14.glb",
+    "region": "Riyadh",
+    "lon": "46.62383280694485",
+    "lat": "24.729236215236156"
+  },
+  {
+    "id": "B15",
+    "num": 15,
+    "name": "Ministry of Municipal Rural Affairs and Housing",
+    "file": "B15.glb",
+    "region": "Riyadh",
+    "lon": "46.66548206470907",
+    "lat": "24.729825174038723"
+  },
+  {
+    "id": "B16",
+    "num": 16,
+    "name": "At-Turaif World Heritage Site",
+    "file": "B16.glb",
+    "region": "Riyadh",
+    "lon": "46.574965892359614",
+    "lat": "24.733370820685792"
+  },
+  {
+    "id": "B17",
+    "num": 17,
+    "name": "King Fahd Stadium",
+    "file": "B17.glb",
+    "region": "Riyadh",
+    "lon": "46.83926439844072",
+    "lat": "24.788646392488104"
+  },
+  {
+    "id": "B18",
+    "num": 18,
+    "name": "Boulevard World – Main Entrance",
+    "file": "B18.glb",
+    "region": "Riyadh",
+    "lon": "46.59927332773805",
+    "lat": "24.77420793557613"
+  },
+  {
+    "id": "B19",
+    "num": 19,
+    "name": "Boulevard World – Japan",
+    "file": "B19.glb",
+    "region": "Riyadh",
+    "lon": "46.601131008937955",
+    "lat": "24.774403372672424"
+  },
+  {
+    "id": "B20",
+    "num": 20,
+    "name": "Boulevard World - Italy",
+    "file": "B20.glb",
+    "region": "Riyadh",
+    "lon": "46.601931396871805",
+    "lat": "24.77644273432756"
+  },
+  {
+    "id": "B21",
+    "num": 21,
+    "name": "Boulevard World - Greece",
+    "file": "B21.glb",
+    "region": "Riyadh",
+    "lon": "46.60318390466273",
+    "lat": "24.77651252119739"
+  },
+  {
+    "id": "B22",
+    "num": 22,
+    "name": "Boulevard World - France",
+    "file": "B22.glb",
+    "region": "Riyadh",
+    "lon": "46.59899303689599",
+    "lat": "24.775362364650633"
+  },
+  {
+    "id": "B23",
+    "num": 23,
+    "name": "Boulevard World – The Sphere",
+    "file": "B23.glb",
+    "region": "Riyadh",
+    "lon": "46.60186677239835",
+    "lat": "24.77909377067887"
+  },
+  {
+    "id": "B24",
+    "num": 24,
+    "name": "Boulevard World – The Dolphine show",
+    "file": "B24.glb",
+    "region": "Riyadh",
+    "lon": "46.60150861367583",
+    "lat": "24.778357406967245"
+  },
+  {
+    "id": "B25",
+    "num": 25,
+    "name": "Boulevard World - PlayOCity by Hasbro",
+    "file": "B25.glb",
+    "region": "Riyadh",
+    "lon": "46.59926603548229",
+    "lat": "24.778867747970367"
+  },
+  {
+    "id": "B26",
+    "num": 26,
+    "name": "Boulevard City – Fountain Area",
+    "file": "B26.glb",
+    "region": "Riyadh",
+    "lon": "46.60262156277895",
+    "lat": "24.764297547275092"
+  },
+  {
+    "id": "B27",
+    "num": 27,
+    "name": "Boulevard City – Abu Baker Salem Stage",
+    "file": "B27.glb",
+    "region": "Riyadh",
+    "lon": "46.60314258188009",
+    "lat": "24.767657114060228"
+  },
+  {
+    "id": "B28",
+    "num": 28,
+    "name": "Boulevard City – Square 2",
+    "file": "B28.glb",
+    "region": "Riyadh",
+    "lon": "46.60616082139313",
+    "lat": "24.767976314223574"
+  },
+  {
+    "id": "B29",
+    "num": 29,
+    "name": "Boulevard City – Square 1",
+    "file": "B29.glb",
+    "region": "Riyadh",
+    "lon": "46.60296798683703",
+    "lat": "24.76936620293813"
+  },
+  {
+    "id": "B30",
+    "num": 30,
+    "name": "Riyadh Park Mall",
+    "file": "B30.glb",
+    "region": "Riyadh",
+    "lon": "46.62980902008712",
+    "lat": "24.756871943743676"
+  },
+  {
+    "id": "B31",
+    "num": 31,
+    "name": "Riyadh Front",
+    "file": "B31.glb",
+    "region": "Riyadh",
+    "lon": "46.73327992670238",
+    "lat": "24.8414321514788"
+  },
+  {
+    "id": "B32",
+    "num": 32,
+    "name": "Royal Clock Tower Hotel",
+    "file": "B32.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.82538069598377",
+    "lat": "21.419051194751646"
+  },
+  {
+    "id": "B33",
+    "num": 33,
+    "name": "Holly Mosque",
+    "file": "B33.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.826207403093576",
+    "lat": "21.422516779093854"
+  },
+  {
+    "id": "B34",
+    "num": 34,
+    "name": "Holly Quran Holder Gate",
+    "file": "B34.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.66673515737057",
+    "lat": "21.362326644332242"
+  },
+  {
+    "id": "B35",
+    "num": 35,
+    "name": "Jeddah Corniche Circuit",
+    "file": "B35.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.104258408769965",
+    "lat": "21.63157005241699"
+  },
+  {
+    "id": "B36",
+    "num": 36,
+    "name": "Savola Towe",
+    "file": "B36.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.10932191647589",
+    "lat": "21.60236451534969"
+  },
+  {
+    "id": "B37",
+    "num": 37,
+    "name": "Jeddah Flagpole",
+    "file": "B37.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.16971931234002",
+    "lat": "21.507847214774444"
+  },
+  {
+    "id": "B38",
+    "num": 38,
+    "name": "Jeddah Historical Gate",
+    "file": "B38.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.18627927079797",
+    "lat": "21.48923698423539"
+  },
+  {
+    "id": "B39",
+    "num": 39,
+    "name": "Al Jawhara Stadium",
+    "file": "B39.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.16418365202844",
+    "lat": "21.762958420885894"
+  },
+  {
+    "id": "B40",
+    "num": 40,
+    "name": "King Abdulaziz international Airport (KAIA)",
+    "file": "B40.glb",
+    "region": "Makkah Prov.",
+    "lon": "39.17127029970288",
+    "lat": "21.667146144364892"
+  },
+  {
+    "id": "B41",
+    "num": 41,
+    "name": "King Abdulaziz Center for World Culture",
+    "file": "B41.glb",
+    "region": "Eastern",
+    "lon": "50.120325945317745",
+    "lat": "26.33593260484711"
+  },
+  {
+    "id": "B42",
+    "num": 42,
+    "name": "Grand Hyatt – Al Khobar",
+    "file": "B42.glb",
+    "region": "Eastern",
+    "lon": "50.18007927574217",
+    "lat": "26.29238045238491"
+  },
+  {
+    "id": "B43",
+    "num": 43,
+    "name": "Al-Rashid Mall with indoor floor plan",
+    "file": "B43.glb",
+    "region": "Eastern",
+    "lon": "50.18007927574217",
+    "lat": "26.29238045238491"
+  },
+  {
+    "id": "B44",
+    "num": 44,
+    "name": "AlQarah Mountain – Land of civilization museum",
+    "file": "B44.glb",
+    "region": "Eastern",
+    "lon": "49.69287830404937",
+    "lat": "25.41222110733574"
+  },
+  {
+    "id": "B45",
+    "num": 45,
+    "name": "Al-Khobar Water Tower",
+    "file": "B45.glb",
+    "region": "Eastern",
+    "lon": "50.23182277567685",
+    "lat": "26.307829160813277"
+  },
+  {
+    "id": "B46",
+    "num": 46,
+    "name": "Al-Masjid an-Nabawi",
+    "file": "B46.glb",
+    "region": "Madinah",
+    "lon": "39.61109759286046",
+    "lat": "24.468884922278917"
+  },
+  {
+    "id": "B47",
+    "num": 47,
+    "name": "Hijaz Railways Museum",
+    "file": "B47.glb",
+    "region": "Madinah",
+    "lon": "39.600974349305034",
+    "lat": "24.461937143779593"
+  },
+  {
+    "id": "B48",
+    "num": 48,
+    "name": "Tabuk Castle",
+    "file": "B48.glb",
+    "region": "Tabuk",
+    "lon": "36.55663191340864",
+    "lat": "28.382783530183815"
+  },
+  {
+    "id": "B49",
+    "num": 49,
+    "name": "Shobra Palace",
+    "file": "B49.glb",
+    "region": "Makkah Prov.",
+    "lon": "40.415098713710904",
+    "lat": "21.28627902158206"
+  },
+  {
+    "id": "B50",
+    "num": 50,
+    "name": "AL-Mashit Palace",
+    "file": "B50.glb",
+    "region": "Asir",
+    "lon": "42.74268667213619",
+    "lat": "18.27675782802936"
+  }
+]

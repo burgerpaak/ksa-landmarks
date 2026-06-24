@@ -764,16 +764,57 @@ def scan_progress_files(landmarks: list, src_dir: Path = PROGRESS_SRC_DIR, asset
     return groups
 
 
+def scan_balady_catalog() -> list:
+    """data/balady_50.json + balady_plus/ → Balady 50종 카탈로그(모델 메타 포함)."""
+    cat_path = ROOT / "data" / "balady_50.json"
+    if not cat_path.exists() or not BALADY_SRC_DIR.exists():
+        return []
+    catalog = json.loads(cat_path.read_text(encoding="utf-8"))
+    out = []
+    for e in catalog:
+        f = BALADY_SRC_DIR / e["file"]
+        if not f.exists():
+            continue
+        mb = f.stat().st_size / (1024 * 1024)
+        out.append({**e, "model": {
+            "file": "balady/" + e["file"], "label": "Balady",
+            "mb": round(mb, 2), "tris": glb_triangle_count(f),
+            "_textured": glb_has_material(f),
+        }})
+    out.sort(key=lambda e: e["num"])
+    return out
+
+
+def render_balady_card(entry: dict) -> str:
+    """Balady+ 참조 카드 (우리 40종과 무관한 자체 번호·이름·지역)."""
+    name, num, region = entry["name"], entry["num"], entry.get("region", "")
+    payload = esc(json.dumps([entry["model"]], ensure_ascii=False))
+    region_html = f'<span class="fc-region">{esc(region)}</span>' if region else ""
+    cube = ('<svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 '
+            'L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" '
+            'stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg>')
+    viewer = ('<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
+              '<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+              '<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>')
+    return f"""
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-num">№ {num:02d}</span>
+    <span class="fc-name">{esc(name)}</span>
+    {region_html}
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+  </header>
+  <div class="fc-cover fc-cover--3d">{cube}</div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="{payload}" data-start="0">{viewer}<span>3D Viewer</span></button></div>
+</article>"""
+
+
 def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work") -> str:
     lm = lm_map.get(lid)
     lm_name = lm["name"] if lm else ""
     tier = lm["tier"] if lm else 0
     tier_dot = f'<span class="fc-tier" style="background:{TIER_COLOR[tier]}"></span>' if lm else ""
-    # Balady+ 참조 카드 표시 배지
-    badge_html = (
-        '<span class="fc-badge fc-badge--balady">Balady +</span>'
-        if variant == "balady" else ""
-    )
+    badge_html = ""
 
     dl_svg = (
         '<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
@@ -848,12 +889,10 @@ def build_files(landmarks: list, palette: str):
     # 랜드마크 번호 오름차순 정렬
     sorted_ids = sorted(groups.keys())
 
-    # Balady+ 참조 모델 스캔 (별도 소스 폴더 → assets/balady/ 하위경로로 분기)
-    balady_groups = scan_progress_files(landmarks, BALADY_SRC_DIR, "balady/")
-    balady_ids = sorted(balady_groups.keys())
+    # Balady+ 참조 모델 — CSV 카탈로그 기반 50종 (우리 40종과 별개)
+    balady_cat = scan_balady_catalog()
 
-    def _section(title, sub, ids, grp, variant):
-        cards = "\n".join(render_file_card(lid, grp[lid], lm_map, variant) for lid in ids)
+    def _section_html(title, sub, cards):
         return (
             f'<section class="files-section">'
             f'<div class="files-section-head">'
@@ -864,19 +903,17 @@ def build_files(landmarks: list, palette: str):
 
     sections = []
     if sorted_ids:
-        sections.append(_section(
-            "작업 파일", "팀이 제작 중인 3D 모델 · 캡처",
-            sorted_ids, groups, "work"))
-    if balady_ids:
-        sections.append(_section(
-            "Balady+ 참조 모델", "MOMRAH/Balady 기존 3D 자산 · 참조용 (다운로드 비활성)",
-            balady_ids, balady_groups, "balady"))
+        work_cards = "\n".join(render_file_card(lid, groups[lid], lm_map) for lid in sorted_ids)
+        sections.append(_section_html("작업 파일", "팀이 제작 중인 3D 모델 · 캡처", work_cards))
+    if balady_cat:
+        bal_cards = "\n".join(render_balady_card(e) for e in balady_cat)
+        sections.append(_section_html(
+            "Balady+ 참조 모델", "MOMRAH/Balady 기존 3D 자산 50종 · 참조용 (다운로드 비활성)", bal_cards))
 
     if sections:
         cards_html = "\n".join(sections)
         n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
-        n_bal = sum(len(g["models"]) for g in balady_groups.values())
-        count_html = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_ids)} · {n_bal}개"
+        count_html = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_cat)}종"
     else:
         cards_html = (
             '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
@@ -929,7 +966,7 @@ def build_files(landmarks: list, palette: str):
         if g["models"]:
             rep_models[lid] = g["models"][0]
 
-    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(sorted_ids)} landmarks + Balady+ {len(balady_ids)}, +{copied} assets, {len(rep_models)} 3D models)")
+    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(sorted_ids)} landmarks + Balady+ {len(balady_cat)}, +{copied} assets, {len(rep_models)} 3D models)")
     return {"dates": {lid: "" for lid in groups}, "rep_models": rep_models}
 
 
