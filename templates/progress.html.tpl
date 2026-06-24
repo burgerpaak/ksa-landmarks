@@ -137,7 +137,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Balady+ 진입 배너 (메인 Files → 하위 페이지) */
 .balady-entry {
   display: flex; align-items: center; gap: 14px;
-  margin-top: 8px;
+  margin: 4px 0 32px;
   padding: 18px 20px;
   background: var(--bg-elev);
   border: 1px solid var(--border);

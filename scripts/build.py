@@ -967,7 +967,7 @@ def build_files(landmarks: list, palette: str):
             f'<span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 {len(balady_cat)}종 · 클러스터·지역별 정리 · 참조용</span>'
             '</span><span class="balady-entry-arrow">→</span></a>'
         )
-    main_entries = "\n".join(x for x in (work_section, entry) if x) or (
+    main_entries = "\n".join(x for x in (entry, work_section) if x) or (
         '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
         '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
     )
