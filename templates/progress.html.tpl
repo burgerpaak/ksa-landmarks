@@ -218,6 +218,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .fc-actions { padding: 14px 16px 6px; }
+/* 버튼이 카드 마지막 요소면(Balady 카드 등) 상하 패딩 대칭 */
+.fc-actions:last-child { padding-bottom: 14px; }
 .model-btn {
   display: inline-flex;
   align-items: center;
