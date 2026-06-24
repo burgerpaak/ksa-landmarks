@@ -800,7 +800,7 @@ def render_balady_card(entry: dict) -> str:
 <article class="file-card">
   <header class="fc-head">
     <span class="fc-num">№ {num:02d}</span>
-    <span class="fc-name" title="{esc(name)}">{esc(name)}</span>
+    <span class="fc-name">{esc(name)}</span>
     {region_html}
     <span class="fc-badge fc-badge--balady">Balady +</span>
   </header>
@@ -870,7 +870,7 @@ def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work")
   <header class="fc-head">
     {tier_dot}
     <span class="fc-num">№ {esc(lid)}</span>
-    <span class="fc-name" title="{esc(lm_name)}">{esc(lm_name)}</span>
+    <span class="fc-name">{esc(lm_name)}</span>
     {badge_html}
     <a class="fc-ref" href="../#card-{esc(lid)}" title="레퍼런스 카드 보기">↗</a>
   </header>

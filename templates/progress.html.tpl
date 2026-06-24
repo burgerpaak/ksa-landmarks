@@ -178,7 +178,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.01em;
   flex: 1; min-width: 0;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: default;
 }
+/* 잘린 이름 호버 시 즉시 뜨는 풀텍스트 툴팁 (body 직속 → 카드 클리핑 없음) */
+.name-tip {
+  position: fixed;
+  z-index: 2000;
+  background: var(--ink);
+  color: var(--bg-elev);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 12px; font-weight: 500;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  max-width: 340px;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.06s ease;
+}
+.name-tip.show { opacity: 1; }
 .fc-ref {
   font-size: 13px; color: var(--ink-mute);
   flex-shrink: 0;
@@ -365,6 +384,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   });
 
   // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
+
+  // 잘린 카드 이름 → 호버 즉시 풀텍스트 툴팁 (네이티브 title 지연 회피)
+  (function(){
+    let tip = null;
+    function ensure(){
+      if (!tip){ tip = document.createElement('div'); tip.className = 'name-tip'; document.body.appendChild(tip); }
+      return tip;
+    }
+    function show(e){
+      const el = e.currentTarget;
+      if (el.scrollWidth <= el.clientWidth + 1) return;  // 안 잘렸으면 패스
+      const t = ensure();
+      t.textContent = el.textContent.trim();
+      const r = el.getBoundingClientRect();
+      t.style.left = Math.round(r.left) + 'px';
+      t.style.top = Math.round(r.bottom + 6) + 'px';
+      // 우측 화면 넘침 방지
+      const tw = t.offsetWidth;
+      if (r.left + tw > window.innerWidth - 12) t.style.left = Math.max(12, window.innerWidth - tw - 12) + 'px';
+      t.classList.add('show');
+    }
+    function hide(){ if (tip) tip.classList.remove('show'); }
+    document.querySelectorAll('.fc-name').forEach(el => {
+      el.addEventListener('mouseenter', show);
+      el.addEventListener('mouseleave', hide);
+    });
+    window.addEventListener('scroll', hide, true);
+  })();
 
   // lightbox (다운로드 버튼 클릭은 제외)
   const lb = document.getElementById('lightbox');
