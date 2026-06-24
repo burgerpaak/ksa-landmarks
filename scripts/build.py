@@ -22,6 +22,7 @@ DATA_DIR = ROOT / "data"
 TEMPLATE_DIR = ROOT / "templates"
 IMG_DIR = ROOT / "images"
 PROGRESS_SRC_DIR = ROOT / "progress"  # 진행 보고용 glb·스크린샷 원본
+BALADY_SRC_DIR = ROOT / "balady_plus"  # Balady+ 참조 모델(MOMRAH 기존 자산) glb
 # 빌드 결과는 docs/ 에 — GitHub Pages 호스팅 디렉토리
 OUTPUT_DIR = ROOT / "docs"
 OUTPUT = OUTPUT_DIR / "index.html"
@@ -720,14 +721,15 @@ def parse_landmark_id(filename: str):
     return f"{n:02d}" if 1 <= n <= 40 else None
 
 
-def scan_progress_files(landmarks: list) -> dict:
-    """progress/ 폴더 스캔 → 랜드마크 번호별 {models, shots} 그룹핑 (자동 감지)"""
+def scan_progress_files(landmarks: list, src_dir: Path = PROGRESS_SRC_DIR, asset_prefix: str = "") -> dict:
+    """src_dir 폴더 스캔 → 랜드마크 번호별 {models, shots} 그룹핑 (자동 감지).
+    asset_prefix: 모델 file 경로 앞에 붙는 에셋 하위경로(예: 'balady/')."""
     groups = {}
-    if not PROGRESS_SRC_DIR.exists():
+    if not src_dir.exists():
         return groups
     MODEL_EXT = (".glb",)
     IMG_EXT = (".png", ".jpg", ".jpeg", ".webp")
-    for f in sorted(PROGRESS_SRC_DIR.iterdir(), key=lambda p: p.name.lower()):
+    for f in sorted(src_dir.iterdir(), key=lambda p: p.name.lower()):
         if not f.is_file() or f.name.startswith(".") or f.name.lower() == "readme.md":
             continue
         ext = f.suffix.lower()
@@ -739,7 +741,7 @@ def scan_progress_files(landmarks: list) -> dict:
             mb = f.stat().st_size / (1024 * 1024)
             textured = glb_has_material(f)
             g["models"].append({
-                "file": f.name,
+                "file": asset_prefix + f.name,
                 "label": "텍스처" if textured else "기본",
                 "mb": round(mb, 2),
                 "tris": glb_triangle_count(f),  # 빌드 시 정확 계산
@@ -762,11 +764,16 @@ def scan_progress_files(landmarks: list) -> dict:
     return groups
 
 
-def render_file_card(lid: str, group: dict, lm_map: dict) -> str:
+def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work") -> str:
     lm = lm_map.get(lid)
     lm_name = lm["name"] if lm else ""
     tier = lm["tier"] if lm else 0
     tier_dot = f'<span class="fc-tier" style="background:{TIER_COLOR[tier]}"></span>' if lm else ""
+    # Balady+ 참조 카드 표시 배지
+    badge_html = (
+        '<span class="fc-badge fc-badge--balady">Balady +</span>'
+        if variant == "balady" else ""
+    )
 
     dl_svg = (
         '<svg width="11" height="11" viewBox="0 0 11 11" fill="none">'
@@ -823,6 +830,7 @@ def render_file_card(lid: str, group: dict, lm_map: dict) -> str:
     {tier_dot}
     <span class="fc-num">№ {esc(lid)}</span>
     <span class="fc-name">{esc(lm_name)}</span>
+    {badge_html}
     <a class="fc-ref" href="../#card-{esc(lid)}" title="레퍼런스 카드 보기">↗</a>
   </header>
   {cover}
@@ -840,10 +848,35 @@ def build_files(landmarks: list, palette: str):
     # 랜드마크 번호 오름차순 정렬
     sorted_ids = sorted(groups.keys())
 
+    # Balady+ 참조 모델 스캔 (별도 소스 폴더 → assets/balady/ 하위경로로 분기)
+    balady_groups = scan_progress_files(landmarks, BALADY_SRC_DIR, "balady/")
+    balady_ids = sorted(balady_groups.keys())
+
+    def _section(title, sub, ids, grp, variant):
+        cards = "\n".join(render_file_card(lid, grp[lid], lm_map, variant) for lid in ids)
+        return (
+            f'<section class="files-section">'
+            f'<div class="files-section-head">'
+            f'<h2 class="files-section-title">{esc(title)}</h2>'
+            f'<span class="files-section-sub">{esc(sub)}</span></div>'
+            f'<div class="files-grid">\n{cards}\n    </div></section>'
+        )
+
+    sections = []
     if sorted_ids:
-        cards_html = "\n".join(render_file_card(lid, groups[lid], lm_map) for lid in sorted_ids)
-        n_files = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
-        count_html = f"{len(sorted_ids)} landmarks · {n_files} files"
+        sections.append(_section(
+            "작업 파일", "팀이 제작 중인 3D 모델 · 캡처",
+            sorted_ids, groups, "work"))
+    if balady_ids:
+        sections.append(_section(
+            "Balady+ 참조 모델", "MOMRAH/Balady 기존 3D 자산 · 참조용 (다운로드 비활성)",
+            balady_ids, balady_groups, "balady"))
+
+    if sections:
+        cards_html = "\n".join(sections)
+        n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
+        n_bal = sum(len(g["models"]) for g in balady_groups.values())
+        count_html = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_ids)} · {n_bal}개"
     else:
         cards_html = (
             '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
@@ -875,13 +908,28 @@ def build_files(landmarks: list, palette: str):
         for name in dst_files - src_files:
             (OUTPUT_PROGRESS_ASSETS / name).unlink()
 
+    # Balady+ 에셋 동기화: balady_plus/ → docs/progress/assets/balady/
+    balady_dst = OUTPUT_PROGRESS_ASSETS / "balady"
+    if BALADY_SRC_DIR.exists():
+        import shutil
+        balady_dst.mkdir(parents=True, exist_ok=True)
+        b_src = {f.name for f in BALADY_SRC_DIR.iterdir() if f.is_file() and not f.name.startswith(".")}
+        b_dst = {f.name for f in balady_dst.iterdir() if f.is_file() and not f.name.startswith(".")}
+        for name in b_src:
+            src, dst = BALADY_SRC_DIR / name, balady_dst / name
+            if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+                shutil.copy2(src, dst)
+                copied += 1
+        for name in b_dst - b_src:
+            (balady_dst / name).unlink()
+
     # Reference 카드 3D 버튼용: 랜드마크별 대표 모델(첫 glb)
     rep_models = {}
     for lid, g in groups.items():
         if g["models"]:
             rep_models[lid] = g["models"][0]
 
-    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(sorted_ids)} landmarks, +{copied} assets, {len(rep_models)} 3D models)")
+    print(f"✓ {(OUTPUT_PROGRESS_DIR / 'index.html').relative_to(ROOT)} ({len(sorted_ids)} landmarks + Balady+ {len(balady_ids)}, +{copied} assets, {len(rep_models)} 3D models)")
     return {"dates": {lid: "" for lid in groups}, "rep_models": rep_models}
 
 

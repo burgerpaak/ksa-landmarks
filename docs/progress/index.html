@@ -172,6 +172,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink-mute);
 }
 
+/* ───── FILES SECTION (작업 / Balady+ 분기) ───── */
+.files-section { margin-bottom: 40px; }
+.files-section:last-child { margin-bottom: 0; }
+.files-section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.files-section-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.files-section-sub {
+  font-size: 12px; color: var(--ink-mute);
+}
+
 /* ───── FILES GRID (랜드마크별 파일 카드) ───── */
 .files-grid {
   display: grid;
@@ -214,6 +231,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.14s ease;
 }
 .fc-ref:hover { color: var(--accent); }
+.fc-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px; border-radius: 999px;
+}
+.fc-badge--balady {
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+}
 
 .fc-cover {
   position: relative;
@@ -351,16 +380,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="page-eyebrow">Files</div>
     <h1 class="page-title">Model Files</h1>
     <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다.</p>
-    <div class="page-count">9 landmarks · 31 files</div>
+    <div class="page-count">작업 9 · 31개 파일   |   Balady+ 참조 9 · 9개</div>
   </div>
 
-  <div class="files-grid">
+  <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">작업 파일</h2><span class="files-section-sub">팀이 제작 중인 3D 모델 · 캡처</span></div><div class="files-grid">
 
 <article class="file-card">
   <header class="fc-head">
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 01</span>
     <span class="fc-name">National Museum of Saudi Arabia</span>
+    
     <a class="fc-ref" href="../#card-01" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/01-1.png" alt="National Museum of Saudi Arabia" loading="lazy"></div>
@@ -374,6 +404,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 02</span>
     <span class="fc-name">Murabba Palace</span>
+    
     <a class="fc-ref" href="../#card-02" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/02-1.png" alt="Murabba Palace" loading="lazy"></div>
@@ -387,6 +418,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 03</span>
     <span class="fc-name">Kingdom Arena</span>
+    
     <a class="fc-ref" href="../#card-03" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/03-1png.png" alt="Kingdom Arena" loading="lazy"></div>
@@ -400,6 +432,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 04</span>
     <span class="fc-name">King Saud University Stadium (Alawwal Park)</span>
+    
     <a class="fc-ref" href="../#card-04" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/04-1.png" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"></div>
@@ -413,6 +446,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 05</span>
     <span class="fc-name">Imam Muhammad Ibn Saud Islamic University Football Stadium</span>
+    
     <a class="fc-ref" href="../#card-05" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/05-1.png" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"></div>
@@ -426,6 +460,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 06</span>
     <span class="fc-name">Al Shabab Stadium</span>
+    
     <a class="fc-ref" href="../#card-06" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/06-1.png" alt="Al Shabab Stadium" loading="lazy"></div>
@@ -439,6 +474,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 07</span>
     <span class="fc-name">Nassif House (Bayt Nassif)</span>
+    
     <a class="fc-ref" href="../#card-07" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/07-1.png" alt="Nassif House (Bayt Nassif)" loading="lazy"></div>
@@ -452,6 +488,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#2c5588"></span>
     <span class="fc-num">№ 08</span>
     <span class="fc-name">Al Rahma Mosque (Floating Mosque)</span>
+    
     <a class="fc-ref" href="../#card-08" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/08-1_0090.png" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"></div>
@@ -465,6 +502,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <span class="fc-tier" style="background:#3a8a78"></span>
     <span class="fc-num">№ 13</span>
     <span class="fc-name">King Fahad National Library</span>
+    
     <a class="fc-ref" href="../#card-13" title="레퍼런스 카드 보기">↗</a>
   </header>
   <div class="fc-cover"><img src="assets/013-1_0090.png" alt="King Fahad National Library" loading="lazy"></div>
@@ -472,7 +510,135 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   
   <div class="fc-shots"><div class="fc-shot"><img src="assets/013-1_0090.png" alt="King Fahad National Library" loading="lazy"><a class="shot-dl" href="assets/013-1_0090.png" download title="013-1_0090.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
-  </div>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">Balady+ 참조 모델</h2><span class="files-section-sub">MOMRAH/Balady 기존 3D 자산 · 참조용 (다운로드 비활성)</span></div><div class="files-grid">
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#2c5588"></span>
+    <span class="fc-num">№ 04</span>
+    <span class="fc-name">King Saud University Stadium (Alawwal Park)</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-04" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-04.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 5596, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#3a8a78"></span>
+    <span class="fc-num">№ 11</span>
+    <span class="fc-name">Diriyah (Ad Diriyah)</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-11" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-11.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 139, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#3a8a78"></span>
+    <span class="fc-num">№ 16</span>
+    <span class="fc-name">Riyadh Park Mall</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-16" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-16.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 7303, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#3a8a78"></span>
+    <span class="fc-num">№ 21</span>
+    <span class="fc-name">MoMRAH</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-21" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-21.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.21, &quot;tris&quot;: 8933, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#3a8a78"></span>
+    <span class="fc-num">№ 29</span>
+    <span class="fc-name">Al Rashid Mall</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-29" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-29.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.35, &quot;tris&quot;: 14696, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#8696a8"></span>
+    <span class="fc-num">№ 37</span>
+    <span class="fc-name">Savola Tower</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-37" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-37.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.4, &quot;tris&quot;: 13047, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#8696a8"></span>
+    <span class="fc-num">№ 38</span>
+    <span class="fc-name">Al-Majdoul Tower</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-38" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-38.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.31, &quot;tris&quot;: 7961, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#8696a8"></span>
+    <span class="fc-num">№ 39</span>
+    <span class="fc-name">Makkah Clock Royal Tower (Fairmont / Abraj Al Bait)</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-39" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-39.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.61, &quot;tris&quot;: 25835, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+
+<article class="file-card">
+  <header class="fc-head">
+    <span class="fc-tier" style="background:#8696a8"></span>
+    <span class="fc-num">№ 40</span>
+    <span class="fc-name">Boulevard World</span>
+    <span class="fc-badge fc-badge--balady">Balady +</span>
+    <a class="fc-ref" href="../#card-40" title="레퍼런스 카드 보기">↗</a>
+  </header>
+  <div class="fc-cover fc-cover--3d"><svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;balady/KSA-40.glb&quot;, &quot;label&quot;: &quot;텍스처&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1772, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+  
+  
+</article>
+    </div></section>
 </main>
 
 <div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>

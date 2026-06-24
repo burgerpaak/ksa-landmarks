@@ -126,6 +126,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink-mute);
 }
 
+/* ───── FILES SECTION (작업 / Balady+ 분기) ───── */
+.files-section { margin-bottom: 40px; }
+.files-section:last-child { margin-bottom: 0; }
+.files-section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.files-section-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.files-section-sub {
+  font-size: 12px; color: var(--ink-mute);
+}
+
 /* ───── FILES GRID (랜드마크별 파일 카드) ───── */
 .files-grid {
   display: grid;
@@ -168,6 +185,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.14s ease;
 }
 .fc-ref:hover { color: var(--accent); }
+.fc-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px; border-radius: 999px;
+}
+.fc-badge--balady {
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+}
 
 .fc-cover {
   position: relative;
@@ -308,9 +337,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="page-count">{{COUNT}}</div>
   </div>
 
-  <div class="files-grid">
-{{ENTRIES}}
-  </div>
+  {{ENTRIES}}
 </main>
 
 <div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
