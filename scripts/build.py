@@ -36,7 +36,7 @@ def esc(text: str) -> str:
 
 
 # Tier 색상 매핑 — 한색 계열 구분 강화 (deep blue / saturated teal / neutral slate)
-TIER_COLOR = {1: "#2c5588", 2: "#3a8a78", 3: "#8696a8"}
+TIER_COLOR = {1: "#2663c9", 2: "#1c8a54", 3: "#b07d1e"}  # 대비 강화: 파랑 / 초록 / 앰버
 TIER_LABEL = {1: "Tier 1", 2: "Tier 2", 3: "Tier 3"}
 TIER_SUBTITLE = {1: "핵심", 2: "주요", 3: "추가"}
 

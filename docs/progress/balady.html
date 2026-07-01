@@ -23,10 +23,10 @@
   --ink-mute: #8a94a3;
   --accent: #4a6585;
   --accent-soft: #dde5f0;
-  /* Tier — 한색 계열, 구분 강화 (deep blue / saturated teal / neutral slate) */
-  --tier-1: #2c5588;
-  --tier-2: #3a8a78;
-  --tier-3: #8696a8;
+  /* Tier — 대비 강화: 파랑 / 초록 / 앰버 (서로 먼 색상으로 구분) */
+  --tier-1: #2663c9;
+  --tier-2: #1c8a54;
+  --tier-3: #b07d1e;
   /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
   --dup: #2470c8;
   /* Alert — cool muted plum (한색 계열 경고) */
@@ -49,10 +49,10 @@
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
   --accent-soft: #1f2530;
-  /* Tier — dark: 밝기 보정 + hue 강조 유지 */
-  --tier-1: #7ea4d5;
-  --tier-2: #6db8a4;
-  --tier-3: #a5b3c5;
+  /* Tier — dark: 밝기 보정, 파랑/초록/앰버 유지 */
+  --tier-1: #5b93e6;
+  --tier-2: #35ad78;
+  --tier-3: #d6a24a;
   --dup: #6aa6ef;
   --alert: #c39aac;
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
