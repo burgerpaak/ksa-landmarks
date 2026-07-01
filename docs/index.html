@@ -4135,11 +4135,14 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const tierOk = state.tier === 'all' || t === state.tier;
       const cityOk = state.cities.size === 0 || state.cities.has(c);
       const typeOk = state.types.size === 0 || state.types.has(ty);
-      const has3dOk = !state.has3d || card.dataset.has3d === 'yes';
-      const dupOk = !state.dup || card.dataset.dup === 'yes';
+      // 3D Model 그룹(모델 있음 / Balady +)은 같은 그룹이라 OR(합집합)로 결합
+      const model3dActive = state.has3d || state.dup;
+      const model3dOk = !model3dActive
+        || (state.has3d && card.dataset.has3d === 'yes')
+        || (state.dup && card.dataset.dup === 'yes');
       const searchOk = !state.search || s.includes(state.search);
 
-      const show = tierOk && cityOk && typeOk && has3dOk && dupOk && searchOk;
+      const show = tierOk && cityOk && typeOk && model3dOk && searchOk;
       card.classList.toggle('hidden', !show);
       
       // sync nav
