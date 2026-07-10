@@ -1696,6 +1696,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
           <svg width="11" height="11" viewBox="0 0 13 13" fill="none" style="margin-right:4px"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
           모델 있음
         </button>
+        <button class="chip" data-filter-group-override="nomodel" data-filter="nomodel-yes">
+          <svg width="11" height="11" viewBox="0 0 13 13" fill="none" style="margin-right:4px"><rect x="1.8" y="1.8" width="9.4" height="9.4" rx="1.6" stroke="currentColor" stroke-width="1.1" stroke-dasharray="2.2 1.8"/></svg>
+          모델 없음
+        </button>
         <button class="chip chip--dup" data-filter-group-override="dup" data-filter="dup-yes">
           <span class="chip-dot"></span>
           Balady +
@@ -1915,7 +1919,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
   }
   
   // ─── FILTERS ───
-  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, dup: false, search: '' };
+  const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, nomodel: false, dup: false, search: '' };
 
   document.querySelectorAll('.filter-chips').forEach(group => {
     group.addEventListener('click', e => {
@@ -1934,6 +1938,10 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
         // toggle (단일 boolean)
         state.has3d = !state.has3d;
         btn.classList.toggle('active', state.has3d);
+      } else if (groupType === 'nomodel') {
+        // toggle (모델 없음)
+        state.nomodel = !state.nomodel;
+        btn.classList.toggle('active', state.nomodel);
       } else if (groupType === 'dup') {
         // toggle (Balady +)
         state.dup = !state.dup;
@@ -1987,10 +1995,11 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const tierOk = state.tier === 'all' || t === state.tier;
       const cityOk = state.cities.size === 0 || state.cities.has(c);
       const typeOk = state.types.size === 0 || state.types.has(ty);
-      // 3D Model 그룹(모델 있음 / Balady +)은 같은 그룹이라 OR(합집합)로 결합
-      const model3dActive = state.has3d || state.dup;
+      // 3D Model 그룹(모델 있음 / 모델 없음 / Balady +)은 같은 그룹이라 OR(합집합)로 결합
+      const model3dActive = state.has3d || state.nomodel || state.dup;
       const model3dOk = !model3dActive
         || (state.has3d && card.dataset.has3d === 'yes')
+        || (state.nomodel && card.dataset.has3d === 'no')
         || (state.dup && card.dataset.dup === 'yes');
       const searchOk = !state.search || s.includes(state.search);
 
