@@ -856,8 +856,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
 }
 
-/* compact 모드: 필수요소 + Structure만 노출, Key Points·Modeling Notes 숨김 */
-body.density-compact .card-section:not(.card-section--must-have):not(.card-section--structure) {
+/* compact 모드: 썸네일 + 제목 + 태그 + 링크만 노출. 텍스트 섹션(Essentials·Structure·Key Points) 전부 숨김 */
+body.density-compact .card-section {
   display: none;
 }
 
