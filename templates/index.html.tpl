@@ -1999,7 +1999,7 @@ body.density-compact .card-section:not(.card-section--must-have):not(.card-secti
       const model3dActive = state.has3d || state.nomodel || state.dup;
       const model3dOk = !model3dActive
         || (state.has3d && card.dataset.has3d === 'yes')
-        || (state.nomodel && card.dataset.has3d === 'no')
+        || (state.nomodel && card.dataset.has3d === 'no' && card.dataset.dup === 'no')
         || (state.dup && card.dataset.dup === 'yes');
       const searchOk = !state.search || s.includes(state.search);
 
