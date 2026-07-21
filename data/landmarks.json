@@ -2713,71 +2713,81 @@
     "type": "tower",
     "badge": "MIXED-USE",
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ajdan_Walk%2C_Saudi_Arabia.png/960px-Ajdan_Walk%2C_Saudi_Arabia.png",
-      "wiki_query": "Ajdan Walk",
-      "fallback": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ajdan_Infinity_AlKhobar.jpg/640px-Ajdan_Infinity_AlKhobar.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ajdan_Infinity_AlKhobar.jpg/640px-Ajdan_Infinity_AlKhobar.jpg",
+      "wiki_query": "Infiniti by Ajdan",
+      "fallback": "",
       "local_path": "31_ajdan-infinity.png"
     },
     "key_points": [
-      "Al Khobar 코르니쉬 복합 리테일/F&B — 2019년 개장 / Benoy 디자인 (Foster X)",
-      "중앙 플라자를 둘러싼 저층 매스 군집 — 동부주 최초 푸드빌리지",
-      "⚠ 인접 'Ajdan Rise/Waterfront' 타워와 혼동 주의 — 본 단지는 저층 평이한 모던 입면"
+      "Al Khobar 동부 해안 초고층 복합 — 타워 3동 (35F / 40F / 45F), 주거 480+ 세대",
+      "프로젝트명 'Infiniti'는 타워 저층부를 잇는 인피니티 풀에서 유래 — 수공간이 3개 동을 연결",
+      "저층 리테일/F&B 포디움 20,000 m² — 곡면 캐노피 + 기하 패턴 스크린 파사드",
+      "⚠ 인접 'Ajdan Walk'(2019 개장 저층 리테일)와 혼동 주의 — 본 프로젝트는 초고층 타워 3동"
     ],
     "structure": [
       {
         "label": "형태",
-        "value": "저층 다중 매스 + 중앙 광장"
+        "value": "초고층 타워 3동 (35F / 40F / 45F) + 저층 리테일 포디움 · 저층부 수공간(인피니티 풀)으로 연결"
       },
       {
         "label": "재료",
-        "value": "백색 회벽, 유리 점포, 알루미늄 트림, 따뜻한 톤 석재 포장"
+        "value": "유리 커튼월 + 알루미늄 수직 핀·발코니 슬래브, 포디움 기하 패턴 스크린 + 곡면 캐노피, 석재 포장 + 수공간"
       },
       {
         "label": "규모",
-        "value": "부지 ~15,120 m² · GFA ~12,000 m²"
+        "value": "부지 45,510 m² · 주거 480+ 세대 · 리테일/F&B 20,000 m² · 총사업비 ~US$298M"
       },
       {
         "label": "시대",
-        "value": "2019 개장"
+        "value": "건설 중 — 리테일 2026 초 개장, 주거·호스피탈리티 2028까지 단계 준공"
       },
       {
         "label": "설계",
-        "value": "Benoy (concept)"
+        "value": "국제 건축 스튜디오 (사명 미공개) · Benoy (complex/landscape)"
+      },
+      {
+        "label": "확인필요",
+        "value": "리드 건축가 사명 · 타워 실제 높이(m) · 외장 상세"
       }
     ],
     "tags": [
-      "∞형타워",
-      "스카이브리지",
-      "Benoy"
+      "타워3동",
+      "인피니티풀",
+      "유리커튼월",
+      "리테일포디움"
     ],
     "remarks": [],
     "links": {
-      "google_maps_query": "Ajdan Walk Infinity Al Khobar",
+      "google_maps_query": "INFINITI by Ajdan Al Khobar",
       "extras": [
+        {
+          "label": "Infiniti 공식",
+          "url": "https://infiniti.ajdan.com/"
+        },
         {
           "label": "Benoy 공식",
           "url": "https://benoy.com/projects/ajdan-infinity-complex/"
         },
         {
+          "label": "Arab News",
+          "url": "https://www.arabnews.com/node/2233586/corporate-news"
+        },
+        {
+          "label": "Gulf Construction",
+          "url": "https://gulfconstructiononline.com/ArticleTA/270967/ajdan-unveils-480-unit-premium-mixed-use-project-in-al-khobar"
+        },
+        {
           "label": "Google 이미지",
-          "url": "https://www.google.com/search?tbm=isch&q=Ajdan+Infinity+Al+Khobar"
-        },
-        {
-          "label": "Benoy",
-          "url": "https://www.benoy.com/projects/ajdan-walk/"
-        },
-        {
-          "label": "Middle East Architect",
-          "url": "https://www.middleeastarchitect.com/projects/42466-benoy-designs-a-cultural-and-retail-destination-in-al-khobar-saudi-arabia"
+          "url": "https://www.google.com/search?tbm=isch&q=INFINITI+by+Ajdan+Al+Khobar"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/BcfBwhnDxoDPws3r8"
     },
     "must_have": [
-      "흰 저층 매스 군집 (고층 X)",
-      "중앙 광장 + 푸드빌리지",
-      "코르니쉬 해변 인접 산책로",
-      "대형 캔틸레버 캐노피"
+      "초고층 타워 3동 — 층수 차등 (35F / 40F / 45F)",
+      "저층 리테일 포디움 + 곡면 캐노피",
+      "타워 저층부를 잇는 수공간(인피니티 풀)",
+      "유리 커튼월 + 수직 핀 입면 (저층 매스 X)"
     ],
     "modeling": {
       "wgs84": {
@@ -2786,10 +2796,10 @@
       },
       "size_class": "대형",
       "tri_budget": 20000,
-      "status": "완공",
+      "status": "건설 중",
       "task_type": "신규제작",
-      "data_confidence": "low",
-      "data_confidence_note": "복합 시설 — 자료 부족"
+      "data_confidence": "partial",
+      "data_confidence_note": "규모·층수·상태는 개발사/뉴스 자료로 확인 (2026.1 기준 건설 중). 리드 건축가·정확 높이·외장 상세 미확인"
     }
   },
   {
