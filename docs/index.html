@@ -1302,6 +1302,25 @@ body.density-compact .card-section {
   text-transform: uppercase;
 }
 
+/* 즉시 뜨는 힌트 툴팁 (DRAFT / DATA LOW) — body 직속이라 카드 클리핑 없음 */
+.hint-tip {
+  position: fixed;
+  z-index: 2000;
+  background: var(--ink);
+  color: var(--bg-elev);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 12px; font-weight: 500;
+  line-height: 1.45;
+  padding: 7px 11px;
+  border-radius: 8px;
+  max-width: 320px;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.06s ease;
+}
+.hint-tip.show { opacity: 1; }
+
 .tag-draft:hover {
   background: var(--bg);
   color: var(--ink-soft);
@@ -4066,6 +4085,32 @@ body.density-compact .card-section {
     mobileToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
   }
   
+  // ─── 즉시 툴팁 (네이티브 title ~1초 지연 회피) — DRAFT / DATA LOW 배지 ───
+  (function(){
+    let tip = null;
+    function ensure(){
+      if (!tip){ tip = document.createElement('div'); tip.className = 'hint-tip'; document.body.appendChild(tip); }
+      return tip;
+    }
+    function hide(){ if (tip) tip.classList.remove('show'); }
+    document.querySelectorAll('.tag-draft[title], .card-warning[title]').forEach(el => {
+      el.dataset.tip = el.getAttribute('title');
+      el.removeAttribute('title');  // 네이티브 지연 툴팁 제거 (중복 방지)
+      el.addEventListener('mouseenter', () => {
+        const t = ensure();
+        t.textContent = el.dataset.tip;
+        const r = el.getBoundingClientRect();
+        t.style.left = Math.round(r.left) + 'px';
+        t.style.top = Math.round(r.bottom + 8) + 'px';
+        const tw = t.offsetWidth;
+        if (r.left + tw > window.innerWidth - 12) t.style.left = Math.max(12, window.innerWidth - tw - 12) + 'px';
+        t.classList.add('show');
+      });
+      el.addEventListener('mouseleave', hide);
+    });
+    window.addEventListener('scroll', hide, true);
+  })();
+
   // ─── FILTERS ───
   const state = { tier: 'all', cities: new Set(), types: new Set(), has3d: false, nomodel: false, dup: false, search: '' };
 
