@@ -266,8 +266,8 @@
           "url": "https://en.wikipedia.org/wiki/Kingdom_Arena"
         },
         {
-          "label": "AFC Asian Cup 2027",
-          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+          "label": "AFC Asian Cup",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup.html"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/RmcsVHgtRgh7MpH38"
@@ -473,16 +473,16 @@
       "google_maps_query": "Imam Muhammad Ibn Saud Islamic University Football Stadium",
       "extras": [
         {
-          "label": "StadiumDB",
-          "url": "https://stadiumdb.com/stadiums/ksa/imam_muhammad_ibn_saud_stadium"
+          "label": "StadiumDB (KSA)",
+          "url": "https://stadiumdb.com/stadiums/ksa"
         },
         {
           "label": "Google 이미지",
           "url": "https://www.google.com/search?tbm=isch&q=Imam+Mohammed+Ibn+Saud+University+Stadium"
         },
         {
-          "label": "AFC Asian Cup 2027",
-          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+          "label": "AFC Asian Cup",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup.html"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/2sBW9cXNqFaXLmUj7"
@@ -564,16 +564,16 @@
       "google_maps_query": "Al Shabab Club Stadium Riyadh ملعب الشباب",
       "extras": [
         {
-          "label": "StadiumDB",
-          "url": "https://stadiumdb.com/stadiums/ksa/al-shabab_club_stadium"
+          "label": "StadiumDB (KSA)",
+          "url": "https://stadiumdb.com/stadiums/ksa"
         },
         {
           "label": "Google 이미지",
           "url": "https://www.google.com/search?tbm=isch&q=Al+Shabab+Stadium+Riyadh"
         },
         {
-          "label": "AFC Asian Cup 2027",
-          "url": "https://www.the-afc.com/en/national/afc_asian_cup/news/saudi-arabia-2027-host-cities-and-venues.html"
+          "label": "AFC Asian Cup",
+          "url": "https://www.the-afc.com/en/national/afc_asian_cup.html"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/S75LYZuXueh6Yyoh6"
@@ -963,8 +963,8 @@
           "url": "https://www.google.com/search?q=Aramco+Stadium+Al+Khobar+design+render"
         },
         {
-          "label": "StadiumDB",
-          "url": "https://stadiumdb.com/designs/ksa/aramco_stadium"
+          "label": "StadiumDB (KSA)",
+          "url": "https://stadiumdb.com/stadiums/ksa"
         },
         {
           "label": "Populous",
@@ -1232,8 +1232,8 @@
       "google_maps_query": "King Fahad National Library Riyadh مكتبة الملك فهد",
       "extras": [
         {
-          "label": "ArchDaily",
-          "url": "https://www.archdaily.com/tag/king-fahad-national-library"
+          "label": "ArchDaily 검색",
+          "url": "https://www.archdaily.com/search/all?q=king%20fahad%20national%20library"
         },
         {
           "label": "Google 이미지",
@@ -1503,10 +1503,6 @@
         {
           "label": "Google 이미지",
           "url": "https://www.google.com/search?tbm=isch&q=Riyadh+Park+Mall+exterior"
-        },
-        {
-          "label": "Riyadh Park 공식",
-          "url": "https://www.riyadhpark.com/"
         },
         {
           "label": "Wikipedia",
@@ -2357,8 +2353,8 @@
           "url": "https://www.google.com/search?tbm=isch&q=Abdul+Raouf+Khalil+Museum+Jeddah"
         },
         {
-          "label": "Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Abdul_Raouf_Khalil_Museum"
+          "label": "Wikipedia 검색",
+          "url": "https://en.wikipedia.org/w/index.php?search=Abdul+Raouf+Khalil+Museum"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/2ADfEHRip6AiQ89r7"
@@ -2503,10 +2499,6 @@
         {
           "label": "Google 이미지",
           "url": "https://www.google.com/search?tbm=isch&q=Fakieh+Aquarium+Jeddah"
-        },
-        {
-          "label": "Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Fakieh_Aquarium"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/HwykPzWKRhjeUZVm6"
@@ -2761,8 +2753,12 @@
       "google_maps_query": "INFINITI by Ajdan Al Khobar",
       "extras": [
         {
-          "label": "Infiniti 공식",
-          "url": "https://infiniti.ajdan.com/"
+          "label": "Ajdan 개발사",
+          "url": "https://ajdan.com/"
+        },
+        {
+          "label": "DTC 시공 프로젝트",
+          "url": "https://dtc.sa/portfolio/ajdan-infinity-project-in-khobar/"
         },
         {
           "label": "Benoy 공식",
@@ -3221,11 +3217,11 @@
         },
         {
           "label": "Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Jabal_AlFil"
+          "url": "https://en.wikipedia.org/wiki/Elephant_Rock_(Saudi_Arabia)"
         },
         {
           "label": "Experience AlUla",
-          "url": "https://www.experiencealula.com/en/discover-alula/jabal-alfil-elephant-rock"
+          "url": "https://www.experiencealula.com/en"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/KYwjn3RY8LzGpkci6"
