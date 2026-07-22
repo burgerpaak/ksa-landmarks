@@ -102,6 +102,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   -webkit-user-select: text;
 }
 
+a.brand { cursor: pointer; transition: opacity 0.14s ease; }
+a.brand:hover { opacity: 0.65; }
+
 .brand {
   display: flex;
   flex-direction: column;
@@ -1637,10 +1640,10 @@ body.density-compact .card-section {
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
   </button>
 
-  <div class="brand">
+  <a class="brand" href="./" title="홈으로">
     <span class="brand-mark">KSA Landmarks</span>
     <span class="brand-meta">3D · Reference</span>
-  </div>
+  </a>
 
   <nav class="topbar-nav">
     <a href="./" class="active">Reference</a>

@@ -89,6 +89,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   user-select: none;
 }
 
+a.brand { cursor: pointer; transition: opacity 0.14s ease; }
+a.brand:hover { opacity: 0.65; }
+
 .brand {
   display: flex;
   flex-direction: column;
@@ -425,10 +428,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <body data-theme="light">
 
 <header class="topbar">
-  <div class="brand">
+  <a class="brand" href="../" title="홈으로">
     <span class="brand-mark">KSA Landmarks</span>
     <span class="brand-meta">3D · Reference</span>
-  </div>
+  </a>
   <nav class="topbar-nav">
     <a href="../">Reference</a>
     <a href="./" class="active">Files</a>
