@@ -1312,7 +1312,7 @@
       },
       {
         "label": "시대",
-        "value": "2025년 12월 개장"
+        "value": "2025년 12월 31일 개장 (운영 중)"
       },
       {
         "label": "설계",
@@ -1360,10 +1360,10 @@
       },
       "size_class": "단지",
       "tri_budget": null,
-      "status": "건설 중",
+      "status": "완공",
       "task_type": "신규제작",
-      "data_confidence": "low",
-      "data_confidence_note": "건설 중, 단지 구성 비공개"
+      "data_confidence": "partial",
+      "data_confidence_note": "2025.12.31 개장 확인(SPA·운영사). 단지 세부 존 구성·정확 치수는 비공개"
     }
   },
   {
