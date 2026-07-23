@@ -21,16 +21,16 @@
   --ink: #0e131b;
   --ink-soft: #44505f;
   --ink-mute: #8a94a3;
+  /* BRAND — 파랑 계열 독점 */
   --accent: #4a6585;
-  --accent-soft: #dde5f0;
-  /* Tier — 대비 강화: 파랑 / 초록 / 앰버 (서로 먼 색상으로 구분) */
-  --tier-1: #2663c9;
-  --tier-2: #1c8a54;
-  --tier-3: #b07d1e;
-  /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
-  --dup: #2470c8;
-  /* Alert — cool muted plum (한색 계열 경고) */
-  --alert: #8a6878;
+  --accent-strong: #2e62be;
+  --accent-soft: #dce8f5;
+  /* STATUS — 의미 전달 (초록/앰버/레드 독점) */
+  --success: #2e7a5e;
+  --warning: #96631a;
+  --danger: #b4474c;
+  /* Balady + 는 브랜드 Primary로 통합 */
+  --dup: var(--accent-strong);
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
   --shadow-sm: 0 1px 0 rgba(15, 25, 40, 0.04);
   --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
@@ -48,13 +48,12 @@
   --ink-soft: #b4bcca;
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
+  --accent-strong: #6ba6ef;
   --accent-soft: #1f2530;
-  /* Tier — dark: 밝기 보정, 파랑/초록/앰버 유지 */
-  --tier-1: #5b93e6;
-  --tier-2: #35ad78;
-  --tier-3: #d6a24a;
-  --dup: #6aa6ef;
-  --alert: #c39aac;
+  --success: #5fc49b;
+  --warning: #e0a94a;
+  --danger: #e58a8e;
+  --dup: var(--accent-strong);
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
 }

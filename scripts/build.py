@@ -36,7 +36,6 @@ def esc(text: str) -> str:
 
 
 # Tier 색상 매핑 — 한색 계열 구분 강화 (deep blue / saturated teal / neutral slate)
-TIER_COLOR = {1: "#2663c9", 2: "#1c8a54", 3: "#b07d1e"}  # 대비 강화: 파랑 / 초록 / 앰버
 TIER_LABEL = {1: "Tier 1", 2: "Tier 2", 3: "Tier 3"}
 TIER_SUBTITLE = {1: "핵심", 2: "주요", 3: "추가"}
 
@@ -558,7 +557,7 @@ def render_card(lm: dict) -> str:
       <span class="card-num">№ {idx_str}</span>
       <div class="card-image-meta-right">
         {confidence_html}
-        <span class="card-tier-pill" style="--pill-color: {TIER_COLOR[tier]}">T{tier}</span>
+        <span class="card-tier-pill tier-{tier}">T{tier}</span>
       </div>
     </div>
     {progress_badge_html}
@@ -603,7 +602,7 @@ def render_sidebar_item(lm: dict) -> str:
         f'data-search="{esc(lm["name"].lower())}">'
         f'<span class="nav-num">{idx_str}</span>'
         f'<span class="nav-label">{esc(lm["name"])}</span>'
-        f'<span class="nav-tier" style="background: {TIER_COLOR[lm["tier"]]}"></span>'
+        f'<span class="nav-tier tier-{lm["tier"]}"></span>'
         f"</a>"
     )
 
@@ -851,7 +850,7 @@ def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work")
     lm = lm_map.get(lid)
     lm_name = lm["name"] if lm else ""
     tier = lm["tier"] if lm else 0
-    tier_dot = f'<span class="fc-tier" style="background:{TIER_COLOR[tier]}"></span>' if lm else ""
+    tier_dot = f'<span class="fc-tier tier-{tier}"></span>' if lm else ""
     badge_html = ""
 
     dl_svg = (
@@ -1058,7 +1057,7 @@ def build():
             count = sum(1 for x in landmarks_sorted if x["tier"] == current_tier)
             parts.append(
                 f'<div class="tier-header" data-tier="tier-{current_tier}">'
-                f'<span class="tier-header-mark" style="background:{TIER_COLOR[current_tier]}"></span>'
+                f'<span class="tier-header-mark tier-{current_tier}"></span>'
                 f'<span class="tier-header-label">{TIER_LABEL[current_tier]}</span>'
                 f'<span class="tier-header-sub">· {TIER_SUBTITLE[current_tier]}</span>'
                 f'<span class="tier-header-count">{count} items</span>'

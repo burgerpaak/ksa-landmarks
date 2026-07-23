@@ -21,16 +21,16 @@
   --ink: #0e131b;
   --ink-soft: #44505f;
   --ink-mute: #8a94a3;
+  /* BRAND — 파랑 계열 독점 */
   --accent: #4a6585;
-  --accent-soft: #dde5f0;
-  /* Tier — 대비 강화: 파랑 / 초록 / 앰버 (서로 먼 색상으로 구분) */
-  --tier-1: #2663c9;
-  --tier-2: #1c8a54;
-  --tier-3: #b07d1e;
-  /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
-  --dup: #2470c8;
-  /* Alert — cool muted plum (한색 계열 경고) */
-  --alert: #8a6878;
+  --accent-strong: #2e62be;
+  --accent-soft: #dce8f5;
+  /* STATUS — 의미 전달 (초록/앰버/레드 독점) */
+  --success: #2e7a5e;
+  --warning: #96631a;
+  --danger: #b4474c;
+  /* Balady + 는 브랜드 Primary로 통합 */
+  --dup: var(--accent-strong);
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
   --shadow-sm: 0 1px 0 rgba(15, 25, 40, 0.04);
   --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
@@ -48,13 +48,12 @@
   --ink-soft: #b4bcca;
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
+  --accent-strong: #6ba6ef;
   --accent-soft: #1f2530;
-  /* Tier — dark: 밝기 보정, 파랑/초록/앰버 유지 */
-  --tier-1: #5b93e6;
-  --tier-2: #35ad78;
-  --tier-3: #d6a24a;
-  --dup: #6aa6ef;
-  --alert: #c39aac;
+  --success: #5fc49b;
+  --warning: #e0a94a;
+  --danger: #e58a8e;
+  --dup: var(--accent-strong);
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
@@ -457,7 +456,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 01</span>
     <span class="fc-name">National Museum of Saudi Arabia</span>
     
@@ -471,7 +470,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 02</span>
     <span class="fc-name">Murabba Palace</span>
     
@@ -485,7 +484,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 03</span>
     <span class="fc-name">Kingdom Arena</span>
     
@@ -499,7 +498,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 04</span>
     <span class="fc-name">King Saud University Stadium (Alawwal Park)</span>
     
@@ -513,7 +512,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 05</span>
     <span class="fc-name">Imam Muhammad Ibn Saud Islamic University Football Stadium</span>
     
@@ -527,7 +526,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 06</span>
     <span class="fc-name">Al Shabab Stadium</span>
     
@@ -541,7 +540,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 07</span>
     <span class="fc-name">Nassif House (Bayt Nassif)</span>
     
@@ -555,7 +554,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 08</span>
     <span class="fc-name">Al Rahma Mosque (Floating Mosque)</span>
     
@@ -569,7 +568,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 09</span>
     <span class="fc-name">Prince Abdullah Al Faisal Sports City Stadium</span>
     
@@ -583,7 +582,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#2663c9"></span>
+    <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 10</span>
     <span class="fc-name">AL KHOBAR New Stadium (Aramco Stadium)</span>
     
@@ -597,7 +596,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 12</span>
     <span class="fc-name">Salam Park</span>
     
@@ -611,7 +610,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 13</span>
     <span class="fc-name">King Fahad National Library</span>
     
@@ -625,7 +624,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 14</span>
     <span class="fc-name">Six Flags Qiddiya City</span>
     
@@ -639,7 +638,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 15</span>
     <span class="fc-name">King Khalid International Airport</span>
     
@@ -653,7 +652,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 17</span>
     <span class="fc-name">King Saud University</span>
     
@@ -667,7 +666,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 18</span>
     <span class="fc-name">Princess Nourah Bint Abdulrahman University</span>
     
@@ -681,7 +680,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 19</span>
     <span class="fc-name">Riyadh Golf Club</span>
     
@@ -695,7 +694,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 20</span>
     <span class="fc-name">KAFD Metro Station</span>
     
@@ -709,7 +708,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 22</span>
     <span class="fc-name">Al Rajhi Mosque</span>
     
@@ -723,7 +722,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 23</span>
     <span class="fc-name">Bab Makkah</span>
     
@@ -737,7 +736,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 24</span>
     <span class="fc-name">Red Sea Mall</span>
     
@@ -751,7 +750,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 25</span>
     <span class="fc-name">King Fahd&#x27;s Fountain</span>
     
@@ -765,7 +764,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 26</span>
     <span class="fc-name">Abdul Raouf Khalil Museum</span>
     
@@ -779,7 +778,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 27</span>
     <span class="fc-name">Hassan Enany Mosque</span>
     
@@ -793,7 +792,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 28</span>
     <span class="fc-name">Fakieh Aquarium</span>
     
@@ -807,7 +806,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 30</span>
     <span class="fc-name">Al Othman Office Tower</span>
     
@@ -821,7 +820,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 32</span>
     <span class="fc-name">Jawza Al Qahtani Mosque</span>
     
@@ -835,7 +834,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 33</span>
     <span class="fc-name">Al Othaim Mall</span>
     
@@ -849,7 +848,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 34</span>
     <span class="fc-name">Westfield Dammam</span>
     
@@ -863,7 +862,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#1c8a54"></span>
+    <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 35</span>
     <span class="fc-name">King Fahd Causeway</span>
     
@@ -877,7 +876,7 @@ a.brand:hover { opacity: 0.65; }
 
 <article class="file-card">
   <header class="fc-head">
-    <span class="fc-tier" style="background:#b07d1e"></span>
+    <span class="fc-tier tier-3"></span>
     <span class="fc-num">№ 36</span>
     <span class="fc-name">Elephant Rock (Jabal AlFil, AlUla)</span>
     

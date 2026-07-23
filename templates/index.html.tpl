@@ -21,16 +21,16 @@
   --ink: #0e131b;
   --ink-soft: #44505f;
   --ink-mute: #8a94a3;
+  /* BRAND — 파랑 계열 독점 */
   --accent: #4a6585;
-  --accent-soft: #dde5f0;
-  /* Tier — 대비 강화: 파랑 / 초록 / 앰버 (서로 먼 색상으로 구분) */
-  --tier-1: #2663c9;
-  --tier-2: #1c8a54;
-  --tier-3: #b07d1e;
-  /* Balady + 태그 — 완공(teal)급 채도의 선명한 블루 */
-  --dup: #2470c8;
-  /* Alert — cool muted plum (한색 계열 경고) */
-  --alert: #8a6878;
+  --accent-strong: #2e62be;
+  --accent-soft: #dce8f5;
+  /* STATUS — 의미 전달 (초록/앰버/레드 독점) */
+  --success: #2e7a5e;
+  --warning: #96631a;
+  --danger: #b4474c;
+  /* Balady + 는 브랜드 Primary로 통합 */
+  --dup: var(--accent-strong);
   --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
   --shadow-sm: 0 1px 0 rgba(15, 25, 40, 0.04);
   --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
@@ -48,13 +48,12 @@
   --ink-soft: #b4bcca;
   --ink-mute: #6e7787;
   --accent: #8aa5cc;
+  --accent-strong: #6ba6ef;
   --accent-soft: #1f2530;
-  /* Tier — dark: 밝기 보정, 파랑/초록/앰버 유지 */
-  --tier-1: #5b93e6;
-  --tier-2: #35ad78;
-  --tier-3: #d6a24a;
-  --dup: #6aa6ef;
-  --alert: #c39aac;
+  --success: #5fc49b;
+  --warning: #e0a94a;
+  --danger: #e58a8e;
+  --dup: var(--accent-strong);
   --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
@@ -307,9 +306,16 @@ a.brand:hover { opacity: 0.65; }
   color: var(--bg-elev);
 }
 
-.chip[data-tier="tier-1"].active { background: var(--tier-1); color: #fff; }
-.chip[data-tier="tier-2"].active { background: var(--tier-2); color: #fff; }
-.chip[data-tier="tier-3"].active { background: var(--tier-3); color: #fff; }
+/* Tier 칩 — 색이 아닌 '무게'로 구분 (T1 채움 / T2 틴트 / T3 아웃라인) */
+.chip[data-tier="tier-1"].active { background: var(--accent-strong); color: #fff; }
+.chip[data-tier="tier-2"].active {
+  background: var(--accent-soft); color: var(--accent-strong);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-strong) 28%, transparent);
+}
+.chip[data-tier="tier-3"].active {
+  background: transparent; color: var(--ink-soft);
+  box-shadow: inset 0 0 0 1px var(--border-strong);
+}
 
 /* Balady + 필터 칩 — 태그와 동일한 --dup 블루 */
 .chip--dup .chip-dot {
@@ -365,6 +371,18 @@ a.brand:hover { opacity: 0.65; }
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+
+/* Tier 도트 공통 — 채움(T1) / 반투명(T2) / 아웃라인(T3) */
+.nav-tier.tier-1, .tier-header-mark.tier-1, .fc-tier.tier-1 {
+  background: var(--accent-strong);
+}
+.nav-tier.tier-2, .tier-header-mark.tier-2, .fc-tier.tier-2 {
+  background: color-mix(in srgb, var(--accent-strong) 42%, transparent);
+}
+.nav-tier.tier-3, .tier-header-mark.tier-3, .fc-tier.tier-3 {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--border-strong);
 }
 
 /* ───── MAIN ───── */
@@ -811,9 +829,9 @@ a.brand:hover { opacity: 0.65; }
   color: var(--ink);
 }
 
-.tier-header[data-tier="tier-1"] .tier-header-label { color: var(--tier-1); }
-.tier-header[data-tier="tier-2"] .tier-header-label { color: var(--tier-2); }
-.tier-header[data-tier="tier-3"] .tier-header-label { color: var(--tier-3); }
+.tier-header[data-tier="tier-1"] .tier-header-label { color: var(--accent-strong); }
+.tier-header[data-tier="tier-2"] .tier-header-label { color: var(--accent); }
+.tier-header[data-tier="tier-3"] .tier-header-label { color: var(--ink-soft); }
 
 .tier-header-sub {
   font-size: 12px;
@@ -1044,11 +1062,14 @@ body.density-compact .card-section {
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #fff;
-  background: var(--pill-color);
   padding: 4px 8px;
   border-radius: 4px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+/* 사진 위 배지 — 아웃라인은 가독성이 없어 '채도 강도'로 무게 표현 (전부 흰 텍스트 유지) */
+.card-tier-pill.tier-1 { background: var(--accent-strong); }
+.card-tier-pill.tier-2 { background: color-mix(in srgb, var(--accent-strong) 58%, #1b2431); }
+.card-tier-pill.tier-3 { background: #3a4657; }
 
 .card-image-meta-right {
   display: flex;
@@ -1177,8 +1198,8 @@ body.density-compact .card-section {
 }
 
 .tag-alert {
-  color: var(--alert);
-  background: color-mix(in srgb, var(--alert) 10%, var(--bg-elev));
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 11%, var(--bg-elev));
   font-weight: 600;
 }
 
@@ -1336,21 +1357,22 @@ body.density-compact .card-section {
 }
 
 .tag-status-done {
-  background: color-mix(in srgb, var(--tier-2) 14%, var(--bg-elev));
-  color: var(--tier-2);
-  border-color: color-mix(in srgb, var(--tier-2) 30%, var(--border));
+  background: color-mix(in srgb, var(--success) 14%, var(--bg-elev));
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 30%, var(--border));
 }
 
 .tag-status-wip {
-  background: color-mix(in srgb, var(--alert) 12%, var(--bg-elev));
-  color: var(--alert);
-  border-color: color-mix(in srgb, var(--alert) 30%, var(--border));
+  background: color-mix(in srgb, var(--warning) 13%, var(--bg-elev));
+  color: var(--warning);
+  border-color: color-mix(in srgb, var(--warning) 30%, var(--border));
 }
 
+/* 계획 = 아직 미착수 → 중립 (의미색 소모하지 않음) */
 .tag-status-plan {
-  background: color-mix(in srgb, var(--tier-3) 14%, var(--bg-elev));
-  color: var(--tier-3);
-  border-color: color-mix(in srgb, var(--tier-3) 30%, var(--border));
+  background: var(--bg-sunken);
+  color: var(--ink-soft);
+  border-color: var(--border-strong);
 }
 
 /* Structure 섹션을 카드 하단에 정렬 (footer 위로) */

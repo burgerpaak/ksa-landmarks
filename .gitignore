@@ -14,3 +14,9 @@ Balady_plus_models/
 
 # 공유용 파일명 대조표 (로컬 전용)
 파일명_대조표.txt
+
+# 팔레트 스와치 (로컬 산출물)
+팔레트_스와치.svg
+palette-swatch.png
+팔레트_수정안.svg
+palette-v2.png
