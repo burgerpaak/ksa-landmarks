@@ -244,6 +244,9 @@ a.brand:hover { opacity: 0.65; }
   border-right: 1px solid var(--border);
   background: var(--bg-elev);
   overflow-y: auto;
+  /* 필터로 목록이 줄어 스크롤바가 사라져도 폭이 변하지 않도록 자리 예약
+     (없으면 칩 줄바꿈이 밀려 정렬이 바뀜) */
+  scrollbar-gutter: stable;
   padding: 20px 0;
   user-select: none;
   -webkit-user-select: none;
