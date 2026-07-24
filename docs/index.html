@@ -884,6 +884,9 @@ a.brand:hover { opacity: 0.65; }
 body.density-compact .card-section {
   display: none;
 }
+/* compact에선 링크 개수 차이로 카드 높이가 크게 갈려 stretch 시 아래 여백이 생김
+   → 각 카드가 콘텐츠 높이만큼만 차지하도록. (Detailed는 기존처럼 정렬 유지) */
+body.density-compact .cards-grid { align-items: start; }
 
 /* ───── CARD — iOS soft elevation ───── */
 .card {
