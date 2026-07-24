@@ -1642,6 +1642,12 @@ body.density-compact .card-section {
   justify-content: center;
 }
 
+/* 노트북 구간(≈1400~1727px)만 3열 고정.
+   이 위(데스크탑)는 기존 auto-fill minmax(380px) 규칙을 그대로 두어 영향 없음 */
+@media (min-width: 1400px) and (max-width: 1727px) {
+  .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (max-width: 1024px) {
   :root { --sidebar-width: 240px; }
   .main { padding: 28px 28px 60px; }
