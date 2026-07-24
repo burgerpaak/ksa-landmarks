@@ -833,8 +833,12 @@ def render_balady_card(entry: dict) -> str:
         cover = f'<div class="fc-cover fc-cover--model"><img src="{esc(entry["thumb"])}" alt="{esc(name)}" loading="lazy"></div>'
     else:
         cover = f'<div class="fc-cover fc-cover--3d">{cube}</div>'
+    search_str = " ".join([
+        name.lower(), f"{num:02d}", str(num), region.lower(),
+        entry["model"]["file"].split("/")[-1].lower(), "balady",
+    ])
     return f"""
-<article class="file-card">
+<article class="file-card" data-search="{esc(search_str)}">
   <header class="fc-head">
     <span class="fc-num">№ {num:02d}</span>
     <span class="fc-name">{esc(name)}</span>
@@ -902,8 +906,15 @@ def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work")
     )
     thumbs_html = f'<div class="fc-shots">{thumbs}</div>' if thumbs else ""
 
+    search_str = " ".join([
+        lm_name.lower(), lid, str(int(lid)),
+        (lm.get("city", "") if lm else "").lower(),
+        (lm.get("type", "") if lm else "").lower(),
+        " ".join(m["file"].split("/")[-1].lower() for m in models),
+    ])
+
     return f"""
-<article class="file-card">
+<article class="file-card" data-search="{esc(search_str)}">
   <header class="fc-head">
     {tier_dot}
     <span class="fc-num">№ {esc(lid)}</span>

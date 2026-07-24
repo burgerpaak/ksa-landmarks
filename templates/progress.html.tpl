@@ -79,6 +79,57 @@ a.brand:hover { opacity: 0.65; }
 
 .topbar-spacer { flex: 1; }
 
+/* ───── SEARCH (Reference와 동일 스펙) ───── */
+.search-wrap { flex: 1; max-width: 420px; position: relative; }
+.search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 16px 0 38px;
+  background: var(--bg-sunken);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.search-input:focus {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  background: var(--bg-elev);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.search-icon {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-mute); pointer-events: none;
+}
+.search-kbd {
+  position: absolute; right: 10px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px;
+  color: var(--ink-mute);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 2px 6px; border-radius: 4px;
+  pointer-events: none;
+}
+/* 검색으로 숨겨진 카드·섹션 */
+.file-card.hidden, .files-section.hidden, .balady-entry.hidden { display: none; }
+.search-empty {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 14px;
+}
+.search-empty strong { color: var(--ink-soft); }
+
+@media (max-width: 720px) {
+  .search-wrap { max-width: none; }
+  .search-kbd { display: none; }
+}
+
 .icon-btn {
   width: 36px; height: 36px;
   border: 1px solid var(--border);
@@ -390,6 +441,14 @@ a.brand:hover { opacity: 0.65; }
     <a href="../">Reference</a>
     <a href="./" class="active">Files</a>
   </nav>
+  <div class="search-wrap">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M9.5 9.5 L13 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <input type="text" class="search-input" id="search" placeholder="검색 — 이름, 번호, 파일명..." autocomplete="off">
+    <span class="search-kbd">⌘K</span>
+  </div>
   <div class="topbar-spacer"></div>
   <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
     <svg class="sun-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -423,6 +482,55 @@ a.brand:hover { opacity: 0.65; }
     document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
+
+  // ─── SEARCH ───
+  (function(){
+    const input = document.getElementById('search');
+    if (!input) return;
+    const main = document.querySelector('.main--files');
+    const cards = [...document.querySelectorAll('.file-card')];
+    const sections = [...document.querySelectorAll('.files-section')];
+    const entry = document.querySelector('.balady-entry');
+    const countEl = document.querySelector('.page-count');
+    const baseCount = countEl ? countEl.textContent : '';
+
+    // 결과 없음 안내
+    const empty = document.createElement('div');
+    empty.className = 'search-empty';
+    empty.style.display = 'none';
+    main.appendChild(empty);
+
+    function apply(){
+      const q = input.value.toLowerCase().trim();
+      let shown = 0;
+      cards.forEach(c => {
+        const hit = !q || (c.dataset.search || '').includes(q);
+        c.classList.toggle('hidden', !hit);
+        if (hit) shown++;
+      });
+      // 카드가 하나도 안 남은 섹션은 헤더까지 숨김
+      sections.forEach(s => {
+        const any = [...s.querySelectorAll('.file-card')].some(c => !c.classList.contains('hidden'));
+        s.classList.toggle('hidden', !any);
+      });
+      // 검색 중엔 Balady 진입 배너 숨김 (카드가 아니라 링크라 혼동 방지)
+      if (entry) entry.classList.toggle('hidden', !!q);
+
+      empty.style.display = (q && shown === 0) ? '' : 'none';
+      if (q && shown === 0) {
+        empty.innerHTML = '검색 결과가 없습니다 — <strong>' + input.value.replace(/[<>&]/g, '') + '</strong>';
+      }
+      if (countEl) countEl.textContent = q ? (shown + '개 검색됨') : baseCount;
+    }
+
+    input.addEventListener('input', apply);
+    document.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); input.focus(); input.select(); }
+      if (e.key === 'Escape' && document.activeElement === input) {
+        input.value = ''; apply(); input.blur();
+      }
+    });
+  })();
 
   // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
 
