@@ -4014,8 +4014,28 @@ body.density-compact .cards-grid { align-items: start; }
     triEl.hidden = false;
     triEl.textContent = '△ ' + currentTris.toLocaleString() + ' tris';
   }
-  // 모델 로드 완료 때마다 와이어 상태 반영
-  mv.addEventListener('load', () => { applyWire(); });
+  // ── 초기 프레이밍 보정 ──────────────────────────────────────
+  // model-viewer 기본 프레이밍은 모델의 '최대 폭' 기준이라, 평면이 넓고 낮은 모델일수록
+  // 화면 상하에 빈 공간이 크게 남아 실제보다 줌아웃돼 보인다.
+  // 바운딩의 대각 폭 대비 높이를 보고, 납작할수록 카메라를 더 당겨 화면 점유율을 맞춘다.
+  function fitFraming(){
+    try {
+      const d = mv.getDimensions();
+      if (!d) return;
+      const foot = Math.hypot(d.x, d.z);      // 평면 대각 폭
+      const h = d.y || 1;
+      const ratio = foot / h;                  // 클수록 납작
+      // ratio 1.5 이하는 보정 없음, 커질수록 최대 55%까지 당김 (납작할수록 강하게)
+      const k = Math.min(0.55, Math.max(0, (ratio - 1.5) * 0.11));
+      const zoom = (100 - k * 100).toFixed(1) + '%';
+      const o = mv.getCameraOrbit();
+      mv.cameraOrbit = `${o.theta}rad ${o.phi}rad ${zoom}`;
+      mv.jumpCameraToGoal();
+    } catch (e) {}
+  }
+
+  // 모델 로드 완료 때마다 와이어 상태 반영 + 프레이밍 보정
+  mv.addEventListener('load', () => { applyWire(); fitFraming(); });
 
   function load(models, idx){
     const m = models[idx];
