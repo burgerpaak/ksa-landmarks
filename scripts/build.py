@@ -82,8 +82,14 @@ MODEL_MODAL = """
   </div>
 </div>
 <style>
+/* 모달을 열면 body 스크롤을 잠근다. 창 스크롤바가 사라지는 만큼(--sb-lock)
+   body와 뷰포트 기준 fixed 요소를 밀어 페이지가 옆으로 튀는 것을 막는다.
+   오버레이 스크롤바(macOS)에서는 --sb-lock이 0이라 아무 영향이 없다. */
+body.modal-lock { overflow: hidden; padding-right: var(--sb-lock, 0px); }
+body.modal-lock .topbar { right: var(--sb-lock, 0px); }
+
 .model-modal {
-  position: fixed; inset: 0; z-index: 250;
+  position: fixed; inset: 0; right: var(--sb-lock, 0px); z-index: 250;
   display: none; align-items: center; justify-content: center;
   background: rgba(8, 12, 20, 0.78);
   backdrop-filter: blur(6px);
@@ -263,10 +269,18 @@ MODEL_MODAL = """
     }
     load(models, startIdx || 0);
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    // 스크롤바 폭만큼 보정값을 넘겨준다 (오버레이 스크롤바면 0)
+    const sb = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--sb-lock', sb + 'px');
+    document.body.classList.add('modal-lock');
   };
 
-  function close(){ modal.classList.remove('open'); mv.removeAttribute('src'); document.body.style.overflow=''; }
+  function close(){
+    modal.classList.remove('open');
+    mv.removeAttribute('src');
+    document.body.classList.remove('modal-lock');
+    document.documentElement.style.removeProperty('--sb-lock');
+  }
   document.getElementById('model-modal-close').addEventListener('click', close);
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
