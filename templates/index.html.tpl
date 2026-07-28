@@ -60,7 +60,9 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* 3D 모달을 열면 body에 overflow:hidden이 걸려 창 스크롤바가 사라진다.
+   자리를 미리 잡아두지 않으면 모달이 뜨는 순간 페이지 전체가 옆으로 밀린다. */
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
 body {
   background: var(--bg);

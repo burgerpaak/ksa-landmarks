@@ -209,8 +209,10 @@ MODEL_MODAL = """
       const foot = Math.hypot(d.x, d.z);      // 평면 대각 폭
       const h = d.y || 1;
       const ratio = foot / h;                  // 클수록 납작
-      // ratio 1.5 이하는 보정 없음, 커질수록 최대 55%까지 당김 (납작할수록 강하게)
-      const k = Math.min(0.55, Math.max(0, (ratio - 1.5) * 0.11));
+      // ratio 1.5 이하는 보정 없음, 커질수록 당기되 최대 25%까지만.
+      // 계수를 0.11/최대 0.55로 두면 납작한 모델이 45%까지 당겨져 스테이지를
+      // 100% 채우고 좌우가 잘린다. 실측(ratio 3~12, 10종)으로 역산한 값이 아래.
+      const k = Math.min(0.25, Math.max(0, (ratio - 1.5) * 0.022));
       const zoom = (100 - k * 100).toFixed(1) + '%';
       const o = mv.getCameraOrbit();
       mv.cameraOrbit = `${o.theta}rad ${o.phi}rad ${zoom}`;
