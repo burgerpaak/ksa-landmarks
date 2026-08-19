@@ -1112,7 +1112,9 @@ def build():
             )
         parts.append(render_card(lm))
     cards_html = "\n".join(parts)
-    sidebar_html = "\n".join(render_sidebar_item(lm) for lm in landmarks_sorted)
+    # INDEX는 번호순 — 티어 그룹핑(landmarks_sorted)을 따르면 새 항목이 티어 블록
+    # 끝에 끼어들어 번호가 중간에 튄다 (35 → 41 → 36). 카드 본문만 티어 순서 유지.
+    sidebar_html = "\n".join(render_sidebar_item(lm) for lm in sorted(landmarks, key=lambda x: x["idx"]))
     glossary_html = render_glossary(glossary)
 
     total = len(landmarks)
