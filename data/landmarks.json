@@ -3650,5 +3650,97 @@
       "data_confidence": "low",
       "data_confidence_note": "테마 단지 — 임시 구조 다수, 자료 부족"
     }
+  },
+  {
+    "id": "41",
+    "idx": 41,
+    "name": "KAFD Grand Mosque",
+    "name_lines": [
+      "KAFD Grand Mosque"
+    ],
+    "tier": 2,
+    "city": "Riyadh",
+    "type": "mosque",
+    "badge": "MOSQUE",
+    "image": {
+      "url": null,
+      "wiki_query": "KAFD Grand Mosque",
+      "fallback": null,
+      "local_path": null
+    },
+    "key_points": [
+      "2017년 완공 · Omrania 설계 — KAFD 금융지구의 대모스크, Al Fozan 모스크 건축상(2021) 수상",
+      "사막장미(desert rose) 결정판이 교차하는 형상 — 파라메트릭 다면체 매스",
+      "무주(無柱) 내부 — 깊이 ~2.8m 구조 스킨이 하중을 전달, 메자닌은 스킨에 매달린 구조",
+      "3개 와디(지하 보행로) 합류부에 위치, 광장이 야외 기도 공간으로 확장"
+    ],
+    "structure": [
+      {
+        "label": "형태",
+        "value": "다면 결정형 매스 + 조각형 미나레트 2기"
+      },
+      {
+        "label": "규모",
+        "value": "부지 10,760 m² · 연면적 6,103 m² · 내부 높이 ~16m · 수용 ~1,500"
+      },
+      {
+        "label": "재료",
+        "value": "테셀레이션 석재 스킨, 내부 다면 라이닝 + 삼각 컬러 유리"
+      },
+      {
+        "label": "시대",
+        "value": "2017년 완공"
+      },
+      {
+        "label": "설계",
+        "value": "Omrania and Associates"
+      }
+    ],
+    "tags": [
+      "사막장미",
+      "다면파사드",
+      "무주공간",
+      "미나렛×2"
+    ],
+    "remarks": [],
+    "links": {
+      "google_maps_query": "KAFD Grand Mosque Riyadh",
+      "extras": [
+        {
+          "label": "Google 이미지",
+          "url": "https://www.google.com/search?tbm=isch&q=KAFD+Grand+Mosque+Riyadh"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/KAFD_Grand_Mosque"
+        },
+        {
+          "label": "Omrania 설계",
+          "url": "https://omrania.com/project/kafd-grand-mosque/"
+        },
+        {
+          "label": "Mosqpedia",
+          "url": "https://mosqpedia.org/masajid/kafd-grand-mosque/"
+        }
+      ]
+    },
+    "must_have": [
+      "교차 결정판(사막장미) 다면체 매스",
+      "조각형 미나레트 2기 (각 60m)",
+      "테셀레이션 석재 스킨 패턴",
+      "우르반 플라자(광장) + 와디 합류부 배치"
+    ],
+    "modeling": {
+      "wgs84": {
+        "lat": 24.761417,
+        "lon": 46.639222
+      },
+      "size_class": "중형",
+      "tri_budget": 10000,
+      "status": "완공",
+      "task_type": "신규제작",
+      "data_confidence": "partial",
+      "data_confidence_note": "완공 연도 자료 상이 (Wikipedia 2017 / Omrania 자체 표기 2019) · 사진 자료는 외부 링크 참조"
+    }
   }
 ]
