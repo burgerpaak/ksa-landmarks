@@ -3666,7 +3666,7 @@
       "url": null,
       "wiki_query": "KAFD Grand Mosque",
       "fallback": null,
-      "local_path": null
+      "local_path": "41_kafd-grand-mosque.jpg"
     },
     "key_points": [
       "2017년 완공 · Omrania 설계 — KAFD 금융지구의 대모스크, Al Fozan 모스크 건축상(2021) 수상",
@@ -3740,7 +3740,7 @@
       "status": "완공",
       "task_type": "신규제작",
       "data_confidence": "partial",
-      "data_confidence_note": "완공 연도 자료 상이 (Wikipedia 2017 / Omrania 자체 표기 2019) · 사진 자료는 외부 링크 참조"
+      "data_confidence_note": "완공 연도 자료 상이 (Wikipedia 2017 / Omrania 자체 표기 2019)"
     }
   }
 ]
