@@ -753,7 +753,8 @@ def parse_landmark_id(filename: str):
     if not m:
         return None
     n = int(m.group(1))
-    return f"{n:02d}" if 1 <= n <= 40 else None
+    # 상한을 랜드마크 수에 묶지 않는다 — 데이터에 없는 번호의 그룹은 소비처에서 무시됨
+    return f"{n:02d}" if 1 <= n <= 999 else None
 
 
 def scan_progress_files(landmarks: list, src_dir: Path = PROGRESS_SRC_DIR, asset_prefix: str = "") -> dict:
