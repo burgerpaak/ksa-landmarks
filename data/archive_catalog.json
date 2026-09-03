@@ -1,7 +1,20 @@
 [
  {
   "num": 1,
-  "name": "Boulevard Riyadh City · World",
+  "name": "Boulevard World",
+  "sub": "Riyadh",
+  "group": "단지 병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/Boulevard-World.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "188동"
+ },
+ {
+  "num": 58,
+  "name": "Boulevard City",
   "sub": "Riyadh",
   "group": "단지 병합본",
   "files": [
@@ -10,7 +23,7 @@
     "label": "병합본"
    }
   ],
-  "note": "302동"
+  "note": "114동"
  },
  {
   "num": 2,
