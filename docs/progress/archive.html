@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>Files · KSA Landmarks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+
+:root {
+  /* Light theme — cool gray palette (iOS doc tone) */
+  --bg: #f4f6f9;
+  --bg-elev: #ffffff;
+  --bg-sunken: #eef1f5;
+  --border: #e3e7ed;
+  --border-strong: #c8cfd9;
+  --ink: #0e131b;
+  --ink-soft: #44505f;
+  --ink-mute: #8a94a3;
+  /* BRAND — 파랑 계열 독점 */
+  --accent: #4a6585;
+  --accent-strong: #2e62be;
+  --accent-soft: #dce8f5;
+  /* STATUS — 의미 전달 (초록/앰버/레드 독점) */
+  --success: #2e7a5e;
+  --warning: #96631a;
+  --danger: #b4474c;
+  /* Balady + 는 브랜드 Primary로 통합 */
+  --dup: var(--accent-strong);
+  --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --shadow-sm: 0 1px 0 rgba(15, 25, 40, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
+  --sidebar-width: 280px;
+  --topbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg: #0c1018;
+  --bg-elev: #181c24;
+  --bg-sunken: #12161e;
+  --border: #2a3140;
+  --border-strong: #3a4250;
+  --ink: #ecf0f7;
+  --ink-soft: #b4bcca;
+  --ink-mute: #6e7787;
+  --accent: #8aa5cc;
+  --accent-strong: #6ba6ef;
+  --accent-soft: #1f2530;
+  --success: #5fc49b;
+  --warning: #e0a94a;
+  --danger: #e58a8e;
+  --dup: var(--accent-strong);
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+/* ───── TOP BAR ───── */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
+  user-select: none;
+}
+
+a.brand { cursor: pointer; transition: opacity 0.14s ease; }
+a.brand:hover { opacity: 0.65; }
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.brand-mark { font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: var(--ink); line-height: 1.1; }
+.brand-meta {
+  font-family: var(--mono);
+  font-size: 9.5px; color: var(--ink-mute);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 3px; line-height: 1;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 4px;
+}
+.topbar-nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-sunken);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.topbar-nav a:hover { color: var(--ink); }
+.topbar-nav a.active { background: var(--ink); color: var(--bg-elev); }
+
+
+/* ───── SEARCH (Reference와 동일 스펙) ───── */
+.search-wrap { flex: 1; max-width: 480px; position: relative; }
+.search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 16px 0 38px;
+  background: var(--bg-sunken);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.search-input:focus {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  background: var(--bg-elev);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.search-icon {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-mute); pointer-events: none;
+}
+.search-kbd {
+  position: absolute; right: 10px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px;
+  color: var(--ink-mute);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 2px 6px; border-radius: 4px;
+  pointer-events: none;
+}
+/* 검색으로 숨겨진 카드·섹션 */
+.file-card.hidden, .files-section.hidden, .balady-entry.hidden { display: none; }
+.search-empty {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 14px;
+}
+.search-empty strong { color: var(--ink-soft); }
+
+@media (max-width: 720px) {
+  .search-wrap { max-width: none; }
+  .search-kbd { display: none; }
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft);
+  background: var(--bg-elev);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.icon-btn:hover { background: var(--bg-sunken); color: var(--ink); }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="light"] .moon-icon { display: none; }
+.moon-icon { transform: translate(1px, -1px); }
+
+/* ───── MAIN ───── */
+.main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: calc(var(--topbar-height) + 40px) 32px 100px;
+}
+.main--files { max-width: 1200px; }
+
+.page-head { margin-bottom: 44px; }
+.page-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.page-title {
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.page-sub {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 760px;
+}
+.page-count {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.page-back {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--mono);
+  font-size: 12px; color: var(--ink-mute);
+  margin-bottom: 14px;
+  transition: color 0.14s ease;
+}
+.page-back:hover { color: var(--accent); }
+
+/* Balady+ 진입 배너 (메인 Files → 하위 페이지) */
+.balady-entry {
+  display: flex; align-items: center; gap: 14px;
+  margin: 4px 0 32px;
+  padding: 18px 20px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.14s ease, transform 0.14s ease;
+}
+.balady-entry:hover { border-color: color-mix(in srgb, var(--dup) 45%, var(--border)); transform: translateY(-1px); }
+.balady-entry-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+  padding: 5px 10px; border-radius: 999px;
+}
+.balady-entry-text { flex: 1; min-width: 0; }
+.balady-entry-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); }
+.balady-entry-sub { display: block; font-size: 12.5px; color: var(--ink-mute); margin-top: 3px; }
+.balady-entry-arrow { flex-shrink: 0; font-size: 18px; color: var(--ink-mute); }
+.balady-entry:hover .balady-entry-arrow { color: var(--dup); }
+
+/* ───── FILES SECTION (작업 / Balady+ 분기) ───── */
+.files-section { margin-bottom: 40px; }
+.files-section:last-child { margin-bottom: 0; }
+.files-section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.files-section-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.files-section-sub {
+  font-size: 12px; color: var(--ink-mute);
+}
+
+/* ───── FILES GRID (랜드마크별 파일 카드) ───── */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.file-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.fc-tier { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.fc-num {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--ink-mute);
+}
+.fc-name {
+  font-size: 14px; font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  flex: 1; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: default;
+}
+/* 잘린 이름 호버 시 즉시 뜨는 풀텍스트 툴팁 (body 직속 → 카드 클리핑 없음) */
+.name-tip {
+  position: fixed;
+  z-index: 2000;
+  background: var(--ink);
+  color: var(--bg-elev);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 12px; font-weight: 500;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  max-width: 340px;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.06s ease;
+}
+.name-tip.show { opacity: 1; }
+.fc-ref {
+  font-size: 13px; color: var(--ink-mute);
+  flex-shrink: 0;
+  transition: color 0.14s ease;
+}
+.fc-ref:hover { color: var(--accent); }
+.fc-region {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+.fc-badge {
+  flex-shrink: 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px; border-radius: 999px;
+}
+.fc-badge--balady {
+  color: var(--dup);
+  background: color-mix(in srgb, var(--dup) 16%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--dup) 42%, var(--border));
+}
+
+.fc-cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-sunken);
+  overflow: hidden;
+}
+.fc-cover img { width: 100%; height: 100%; object-fit: cover; }
+.fc-cover--3d {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--border-strong);
+}
+/* 모델 렌더 썸네일 — 투명 배경 + 여백 있어 전체가 보이도록 contain */
+.fc-cover--model img { object-fit: contain; }
+
+.fc-actions { padding: 14px 16px 6px; }
+/* 버튼이 카드 마지막 요소면(Balady 카드 등) 상하 패딩 대칭 */
+.fc-actions:last-child { padding-bottom: 14px; }
+.model-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  width: 100%;
+  justify-content: center;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+.model-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.model-btn svg { flex-shrink: 0; display: block; }
+
+.fc-dls { padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 6px; }
+.fc-dl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  transition: color 0.14s ease, background 0.14s ease;
+}
+.fc-dl:hover { color: var(--ink); background: color-mix(in srgb, var(--accent) 8%, var(--bg-sunken)); }
+.fc-dl svg { flex-shrink: 0; color: var(--accent); }
+.fc-dl > span:nth-of-type(1) { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fc-dl-size { color: var(--ink-mute); flex-shrink: 0; }
+
+.fc-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+  padding: 4px 16px 16px;
+}
+.fc-shot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 1px solid var(--border);
+  background: var(--bg-sunken);
+  clip-path: inset(0 round 8px);
+}
+.fc-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.fc-shot:hover img { transform: scale(1.06); }
+.shot-dl {
+  position: absolute;
+  top: 5px; right: 5px;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--bg-elev) 86%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+.fc-shot:hover .shot-dl { opacity: 1; }
+.shot-dl:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* 빈 상태 */
+.empty {
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--ink-mute);
+}
+.empty-title { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+
+/* lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.88);
+  display: none; align-items: center; justify-content: center;
+  cursor: zoom-out; padding: 40px;
+  backdrop-filter: blur(4px);
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 100%; max-height: calc(100vh - 80px);
+  object-fit: contain; border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 640px) {
+  .main { padding: calc(var(--topbar-height) + 28px) 18px 60px; }
+  .files-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body data-theme="light">
+
+<header class="topbar">
+  <a class="brand" href="../" title="홈으로">
+    <span class="brand-mark">KSA Landmarks</span>
+    <span class="brand-meta">3D · Reference</span>
+  </a>
+  <nav class="topbar-nav">
+    <a href="../">Reference</a>
+    <a href="./" class="active">Files</a>
+  </nav>
+  <div class="search-wrap">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M9.5 9.5 L13 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <input type="text" class="search-input" id="search" placeholder="검색 — 이름, 번호, 파일명..." autocomplete="off">
+    <span class="search-kbd">⌘K</span>
+  </div>
+  <div class="topbar-actions">
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+      <svg class="sun-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <svg class="moon-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 9.5A6 6 0 1 1 6.5 3a4.5 4.5 0 0 0 6.5 6.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="main main--files">
+  <div class="page-head">
+    <a class="page-back" href="./">← Files</a>
+    <div class="page-eyebrow">Files · Archive</div>
+    <h1 class="page-title">Balady 아카이브</h1>
+    <p class="page-sub">Balady 원본 아카이브 중 카탈로그 외 자산 — 단지 병합본·KAFD 개별동·At-Turaif 구역·신규 건물 · 참조용 (다운로드 비활성)</p>
+    <div class="page-count">57종 · 5개 그룹</div>
+  </div>
+
+  <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">단지 병합본</h2><span class="files-section-sub">3종</span></div><div class="files-grid">
+
+<article class="file-card" data-search="boulevard riyadh city · world a01 riyadh 302동 archive boulevard-city.glb">
+  <header class="fc-head">
+    <span class="fc-num">A01</span>
+    <span class="fc-name">Boulevard Riyadh City · World</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">302동</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A01.png" alt="Boulevard Riyadh City · World" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/Boulevard-City.glb&quot;, &quot;label&quot;: &quot;병합본&quot;, &quot;mb&quot;: 9.99, &quot;tris&quot;: 204793, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="riyadh front a02 riyadh 33동 archive riyadh-front.glb">
+  <header class="fc-head">
+    <span class="fc-num">A02</span>
+    <span class="fc-name">Riyadh Front</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">33동</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A02.png" alt="Riyadh Front" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/Riyadh-Front.glb&quot;, &quot;label&quot;: &quot;병합본&quot;, &quot;mb&quot;: 2.36, &quot;tris&quot;: 22225, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="neom community camp a03 neom 65종 archive neom-camp.glb">
+  <header class="fc-head">
+    <span class="fc-num">A03</span>
+    <span class="fc-name">NEOM Community Camp</span>
+    <span class="fc-region">NEOM</span><span class="fc-region">65종</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A03.png" alt="NEOM Community Camp" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/NEOM-Camp.glb&quot;, &quot;label&quot;: &quot;병합본&quot;, &quot;mb&quot;: 0.82, &quot;tris&quot;: 11083, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">KAFD 금융지구</h2><span class="files-section-sub">20종</span></div><div class="files-grid">
+
+<article class="file-card" data-search="kafd – snb tower a04 riyadh  archive 70030076201847993.glb 70030076201847993lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A04</span>
+    <span class="fc-name">KAFD – SNB Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A04.png" alt="KAFD – SNB Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201847993.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.67, &quot;tris&quot;: 21184, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201847993lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 1687, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – riyadh bank tower a05 riyadh  archive 70030076201848455.glb 70030076201848455lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A05</span>
+    <span class="fc-name">KAFD – Riyadh Bank Tower</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A05.png" alt="KAFD – Riyadh Bank Tower" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201848455.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.19, &quot;tris&quot;: 3990, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201848455lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 2320, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – cma tower (pif) a06 riyadh  archive 70030076201848898.glb 70030076201848898lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A06</span>
+    <span class="fc-name">KAFD – CMA Tower (PIF)</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A06.png" alt="KAFD – CMA Tower (PIF)" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201848898.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.28, &quot;tris&quot;: 5848, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201848898lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 3406, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – tower 4 a07 riyadh  archive 70030076201849486.glb 70030076201849486lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A07</span>
+    <span class="fc-name">KAFD – Tower 4</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A07.png" alt="KAFD – Tower 4" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201849486.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.26, &quot;tris&quot;: 12485, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201849486lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2115, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – tower 5 a08 riyadh  archive 70030076431357692.glb 70030076431357692lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A08</span>
+    <span class="fc-name">KAFD – Tower 5</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A08.png" alt="KAFD – Tower 5" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431357692.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.3, &quot;tris&quot;: 8243, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431357692lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2062, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – tower 6 a09 riyadh  archive 70030076431362735.glb 70030076431362735lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A09</span>
+    <span class="fc-name">KAFD – Tower 6</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A09.png" alt="KAFD – Tower 6" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431362735.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.44, &quot;tris&quot;: 16158, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431362735lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 6312, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – tower 7 a10 riyadh  archive 70030076201848675.glb 70030076201848675lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A10</span>
+    <span class="fc-name">KAFD – Tower 7</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A10.png" alt="KAFD – Tower 7" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201848675.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.43, &quot;tris&quot;: 12215, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201848675lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.1, &quot;tris&quot;: 6565, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd – conference hall a11 riyadh  archive 70030076203820556.glb 70030076203820556lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A11</span>
+    <span class="fc-name">KAFD – Conference Hall</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A11.png" alt="KAFD – Conference Hall" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076203820556.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.16, &quot;tris&quot;: 1653, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076203820556lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 381, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 01 a12 riyadh 70000001084889903 archive 70000001084889903.glb 70000001084889903lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A12</span>
+    <span class="fc-name">KAFD District — 파셀 01</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70000001084889903</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A12.png" alt="KAFD District — 파셀 01" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70000001084889903.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.19, &quot;tris&quot;: 4199, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70000001084889903lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2750, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 02 a13 riyadh 70030076201574217 archive 70030076201574217.glb 70030076201574217lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A13</span>
+    <span class="fc-name">KAFD District — 파셀 02</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076201574217</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A13.png" alt="KAFD District — 파셀 02" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201574217.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.18, &quot;tris&quot;: 2709, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201574217lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 901, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 03 a14 riyadh 70030076201844685 archive 70030076201844685.glb 70030076201844685lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A14</span>
+    <span class="fc-name">KAFD District — 파셀 03</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076201844685</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A14.png" alt="KAFD District — 파셀 03" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201844685.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.18, &quot;tris&quot;: 3679, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201844685lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 662, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 04 a15 riyadh 70030076201846811 archive 70030076201846811.glb 70030076201846811lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A15</span>
+    <span class="fc-name">KAFD District — 파셀 04</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076201846811</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A15.png" alt="KAFD District — 파셀 04" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201846811.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.29, &quot;tris&quot;: 6816, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201846811lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 1232, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 05 a16 riyadh 70030076201858757 archive 70030076201858757.glb 70030076201858757lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A16</span>
+    <span class="fc-name">KAFD District — 파셀 05</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076201858757</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A16.png" alt="KAFD District — 파셀 05" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076201858757.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.28, &quot;tris&quot;: 7215, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076201858757lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 1997, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 06 a17 riyadh 70030076431343140 archive 70030076431343140.glb 70030076431343140lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A17</span>
+    <span class="fc-name">KAFD District — 파셀 06</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431343140</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A17.png" alt="KAFD District — 파셀 06" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431343140.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.29, &quot;tris&quot;: 8856, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431343140lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 1042, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 07 a18 riyadh 70030076431356650 archive 70030076431356650.glb 70030076431356650lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A18</span>
+    <span class="fc-name">KAFD District — 파셀 07</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431356650</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A18.png" alt="KAFD District — 파셀 07" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431356650.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.43, &quot;tris&quot;: 12895, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431356650lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 3471, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 08 a19 riyadh 70030076431358207 archive 70030076431358207.glb 70030076431358207lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A19</span>
+    <span class="fc-name">KAFD District — 파셀 08</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431358207</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A19.png" alt="KAFD District — 파셀 08" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431358207.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 119, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431358207lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.0, &quot;tris&quot;: 29, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 09 a20 riyadh 70030076431358239 archive 70030076431358239.glb 70030076431358239lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A20</span>
+    <span class="fc-name">KAFD District — 파셀 09</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431358239</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A20.png" alt="KAFD District — 파셀 09" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431358239.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 117, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431358239lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.0, &quot;tris&quot;: 23, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 10 a21 riyadh 70030076431368431 archive 70030076431368431.glb 70030076431368431lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A21</span>
+    <span class="fc-name">KAFD District — 파셀 10</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431368431</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A21.png" alt="KAFD District — 파셀 10" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431368431.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.15, &quot;tris&quot;: 1730, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431368431lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.03, &quot;tris&quot;: 984, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 11 a22 riyadh 70030076431901258 archive 70030076431901258.glb 70030076431901258lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A22</span>
+    <span class="fc-name">KAFD District — 파셀 11</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076431901258</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A22.png" alt="KAFD District — 파셀 11" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076431901258.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.01, &quot;tris&quot;: 44, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076431901258lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.0, &quot;tris&quot;: 20, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kafd district — 파셀 12 a23 riyadh 70030076432380265 archive 70030076432380265.glb 70030076432380265lod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A23</span>
+    <span class="fc-name">KAFD District — 파셀 12</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076432380265</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A23.png" alt="KAFD District — 파셀 12" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076432380265.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 599, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/70030076432380265lod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.01, &quot;tris&quot;: 201, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">At-Turaif 세계유산 상세</h2><span class="files-section-sub">14종</span></div><div class="files-grid">
+
+<article class="file-card" data-search="at-turaif — 구역 01 a24 riyadh 70030076209992609 archive atturaifworldheritagesite70030076209992609.glb">
+  <header class="fc-head">
+    <span class="fc-num">A24</span>
+    <span class="fc-name">At-Turaif — 구역 01</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992609</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A24.png" alt="At-Turaif — 구역 01" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992609.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 139, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 02 a25 riyadh 70030076209992629 archive atturaifworldheritagesite70030076209992629.glb">
+  <header class="fc-head">
+    <span class="fc-num">A25</span>
+    <span class="fc-name">At-Turaif — 구역 02</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992629</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A25.png" alt="At-Turaif — 구역 02" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992629.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.07, &quot;tris&quot;: 171, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 03 a26 riyadh 70030076209992634 archive atturaifworldheritagesite70030076209992634.glb">
+  <header class="fc-head">
+    <span class="fc-num">A26</span>
+    <span class="fc-name">At-Turaif — 구역 03</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992634</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A26.png" alt="At-Turaif — 구역 03" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992634.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.1, &quot;tris&quot;: 333, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 04 a27 riyadh 70030076209992635 archive atturaifworldheritagesite70030076209992635.glb">
+  <header class="fc-head">
+    <span class="fc-num">A27</span>
+    <span class="fc-name">At-Turaif — 구역 04</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992635</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A27.png" alt="At-Turaif — 구역 04" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992635.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.08, &quot;tris&quot;: 294, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 05 a28 riyadh 70030076209992704 archive atturaifworldheritagesite70030076209992704.glb">
+  <header class="fc-head">
+    <span class="fc-num">A28</span>
+    <span class="fc-name">At-Turaif — 구역 05</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992704</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A28.png" alt="At-Turaif — 구역 05" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992704.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.08, &quot;tris&quot;: 254, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 06 a29 riyadh 70030076209992979 archive atturaifworldheritagesite70030076209992979.glb">
+  <header class="fc-head">
+    <span class="fc-num">A29</span>
+    <span class="fc-name">At-Turaif — 구역 06</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992979</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A29.png" alt="At-Turaif — 구역 06" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992979.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 152, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 07 a30 riyadh 70030076209992983 archive atturaifworldheritagesite70030076209992983.glb">
+  <header class="fc-head">
+    <span class="fc-num">A30</span>
+    <span class="fc-name">At-Turaif — 구역 07</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992983</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A30.png" alt="At-Turaif — 구역 07" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992983.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.07, &quot;tris&quot;: 200, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 08 a31 riyadh 70030076209992995 archive atturaifworldheritagesite70030076209992995.glb">
+  <header class="fc-head">
+    <span class="fc-num">A31</span>
+    <span class="fc-name">At-Turaif — 구역 08</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076209992995</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A31.png" alt="At-Turaif — 구역 08" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076209992995.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.07, &quot;tris&quot;: 227, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 09 a32 riyadh 70030076527609092 archive atturaifworldheritagesite70030076527609092.glb">
+  <header class="fc-head">
+    <span class="fc-num">A32</span>
+    <span class="fc-name">At-Turaif — 구역 09</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076527609092</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A32.png" alt="At-Turaif — 구역 09" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076527609092.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 78, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 10 a33 riyadh 70030076676983761 archive atturaifworldheritagesite70030076676983761.glb">
+  <header class="fc-head">
+    <span class="fc-num">A33</span>
+    <span class="fc-name">At-Turaif — 구역 10</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076676983761</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A33.png" alt="At-Turaif — 구역 10" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076676983761.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 66, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 11 a34 riyadh 70030076676983790 archive atturaifworldheritagesite70030076676983790.glb">
+  <header class="fc-head">
+    <span class="fc-num">A34</span>
+    <span class="fc-name">At-Turaif — 구역 11</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076676983790</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A34.png" alt="At-Turaif — 구역 11" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076676983790.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 62, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 12 a35 riyadh 70030076676985002 archive atturaifworldheritagesite70030076676985002.glb">
+  <header class="fc-head">
+    <span class="fc-num">A35</span>
+    <span class="fc-name">At-Turaif — 구역 12</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076676985002</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A35.png" alt="At-Turaif — 구역 12" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076676985002.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 122, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 13 a36 riyadh 70030076676985436 archive atturaifworldheritagesite70030076676985436.glb">
+  <header class="fc-head">
+    <span class="fc-num">A36</span>
+    <span class="fc-name">At-Turaif — 구역 13</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076676985436</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A36.png" alt="At-Turaif — 구역 13" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076676985436.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 122, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="at-turaif — 구역 14 a37 riyadh 70030076676985563 archive atturaifworldheritagesite70030076676985563.glb">
+  <header class="fc-head">
+    <span class="fc-num">A37</span>
+    <span class="fc-name">At-Turaif — 구역 14</span>
+    <span class="fc-region">Riyadh</span><span class="fc-region">70030076676985563</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A37.png" alt="At-Turaif — 구역 14" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/atturaifworldheritagesite70030076676985563.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.06, &quot;tris&quot;: 122, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">신규 — Riyadh</h2><span class="files-section-sub">10종</span></div><div class="files-grid">
+
+<article class="file-card" data-search="momra — 별관 2 a38 riyadh  archive momra2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A38</span>
+    <span class="fc-name">MOMRA — 별관 2</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A38.png" alt="MOMRA — 별관 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/momra2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.05, &quot;tris&quot;: 702, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="momra — 별관 3 a39 riyadh  archive momra3.glb">
+  <header class="fc-head">
+    <span class="fc-num">A39</span>
+    <span class="fc-name">MOMRA — 별관 3</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A39.png" alt="MOMRA — 별관 3" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/momra3.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.07, &quot;tris&quot;: 1350, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="momra — 별관 4 a40 riyadh  archive momra4.glb">
+  <header class="fc-head">
+    <span class="fc-num">A40</span>
+    <span class="fc-name">MOMRA — 별관 4</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A40.png" alt="MOMRA — 별관 4" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/momra4.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 102, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="momra — 별관 5 a41 riyadh  archive momra5.glb">
+  <header class="fc-head">
+    <span class="fc-num">A41</span>
+    <span class="fc-name">MOMRA — 별관 5</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A41.png" alt="MOMRA — 별관 5" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/momra5.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 102, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="metro station a42 riyadh  archive metrostantion.glb metrostantionlod.glb">
+  <header class="fc-head">
+    <span class="fc-num">A42</span>
+    <span class="fc-name">Metro Station</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A42.png" alt="Metro Station" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/metrostantion.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.32, &quot;tris&quot;: 22269, &quot;_textured&quot;: true}, {&quot;file&quot;: &quot;archive/metrostantionlod.glb&quot;, &quot;label&quot;: &quot;LOD&quot;, &quot;mb&quot;: 0.04, &quot;tris&quot;: 2300, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="soliman hospital — 1 a43 riyadh  archive solimanhospital1.glb">
+  <header class="fc-head">
+    <span class="fc-num">A43</span>
+    <span class="fc-name">Soliman Hospital — 1</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A43.png" alt="Soliman Hospital — 1" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/solimanhospital1.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.16, &quot;tris&quot;: 2031, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="soliman hospital — 2 a44 riyadh  archive solimanhospital2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A44</span>
+    <span class="fc-name">Soliman Hospital — 2</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A44.png" alt="Soliman Hospital — 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/solimanhospital2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.08, &quot;tris&quot;: 245, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="utility structure — 1 a45 riyadh  archive utility_structure_1.glb">
+  <header class="fc-head">
+    <span class="fc-num">A45</span>
+    <span class="fc-name">Utility Structure — 1</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A45.png" alt="Utility Structure — 1" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/Utility_structure_1.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.0, &quot;tris&quot;: 54, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="utility structure — 2 a46 riyadh  archive utility_structure_2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A46</span>
+    <span class="fc-name">Utility Structure — 2</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A46.png" alt="Utility Structure — 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/Utility_structure_2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.0, &quot;tris&quot;: 54, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="kingdom arena — 부속동 a47 riyadh  archive 70030076682030667.glb">
+  <header class="fc-head">
+    <span class="fc-num">A47</span>
+    <span class="fc-name">Kingdom Arena — 부속동</span>
+    <span class="fc-region">Riyadh</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A47.png" alt="Kingdom Arena — 부속동" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/70030076682030667.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.02, &quot;tris&quot;: 216, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">신규 — 타도시</h2><span class="files-section-sub">10종</span></div><div class="files-grid">
+
+<article class="file-card" data-search="king abdulaziz control tower — 1 a48 jeddah  archive kingabdulazizcontroltower1.glb">
+  <header class="fc-head">
+    <span class="fc-num">A48</span>
+    <span class="fc-name">King Abdulaziz Control Tower — 1</span>
+    <span class="fc-region">Jeddah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A48.png" alt="King Abdulaziz Control Tower — 1" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingabdulazizcontroltower1.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.11, &quot;tris&quot;: 1646, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king abdulaziz control tower — 2 a49 jeddah  archive kingabdulazizcontroltower2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A49</span>
+    <span class="fc-name">King Abdulaziz Control Tower — 2</span>
+    <span class="fc-region">Jeddah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A49.png" alt="King Abdulaziz Control Tower — 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingabdulazizcontroltower2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.09, &quot;tris&quot;: 1326, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king abdulaziz railway station a50 jeddah  archive kingabdulazizrailwaystation.glb">
+  <header class="fc-head">
+    <span class="fc-num">A50</span>
+    <span class="fc-name">King Abdulaziz Railway Station</span>
+    <span class="fc-region">Jeddah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A50.png" alt="King Abdulaziz Railway Station" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingabdulazizrailwaystation.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.27, &quot;tris&quot;: 11497, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king abdulaziz fire station a51 jeddah  archive kingabdulazizfirestation.glb">
+  <header class="fc-head">
+    <span class="fc-num">A51</span>
+    <span class="fc-name">King Abdulaziz Fire Station</span>
+    <span class="fc-region">Jeddah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A51.png" alt="King Abdulaziz Fire Station" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingabdulazizfirestation.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.09, &quot;tris&quot;: 1198, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="masjid al-khaif a52 makkah  archive masjidalkhaif.glb">
+  <header class="fc-head">
+    <span class="fc-num">A52</span>
+    <span class="fc-name">Masjid Al-Khaif</span>
+    <span class="fc-region">Makkah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A52.png" alt="Masjid Al-Khaif" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/masjidalkhaif.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.53, &quot;tris&quot;: 22514, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="mecca jabal a53 makkah  archive meccajabal.glb">
+  <header class="fc-head">
+    <span class="fc-num">A53</span>
+    <span class="fc-name">Mecca Jabal</span>
+    <span class="fc-region">Makkah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A53.png" alt="Mecca Jabal" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/meccajabal.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.68, &quot;tris&quot;: 51712, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king fahd complex — 1 a54 madinah  archive kingfahdcomplex1.glb">
+  <header class="fc-head">
+    <span class="fc-num">A54</span>
+    <span class="fc-name">King Fahd Complex — 1</span>
+    <span class="fc-region">Madinah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A54.png" alt="King Fahd Complex — 1" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingfahdcomplex1.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.3, &quot;tris&quot;: 10566, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king fahd complex — 2 a55 madinah  archive kingfahdcomplex2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A55</span>
+    <span class="fc-name">King Fahd Complex — 2</span>
+    <span class="fc-region">Madinah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A55.png" alt="King Fahd Complex — 2" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingfahdcomplex2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.16, &quot;tris&quot;: 1018, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="king fahd complex — 3 a56 madinah  archive kingfahdcomplex3.glb">
+  <header class="fc-head">
+    <span class="fc-num">A56</span>
+    <span class="fc-name">King Fahd Complex — 3</span>
+    <span class="fc-region">Madinah</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A56.png" alt="King Fahd Complex — 3" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingfahdcomplex3.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.17, &quot;tris&quot;: 2921, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+
+<article class="file-card" data-search="ithra — 추가동 a57 dammam  archive kingabdulazizcentre_low_2.glb">
+  <header class="fc-head">
+    <span class="fc-num">A57</span>
+    <span class="fc-name">Ithra — 추가동</span>
+    <span class="fc-region">Dammam</span>
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  <div class="fc-cover fc-cover--model"><img src="assets/archive/thumbs/A57.png" alt="Ithra — 추가동" loading="lazy"></div>
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="[{&quot;file&quot;: &quot;archive/kingabdulazizcentre_low_2.glb&quot;, &quot;label&quot;: &quot;기본&quot;, &quot;mb&quot;: 0.12, &quot;tris&quot;: 900, &quot;_textured&quot;: true}]" data-start="0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg><span>3D Viewer</span></button></div>
+</article>
+    </div></section>
+</main>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
+
+
+<!-- ───── SHARED 3D MODEL MODAL ───── -->
+<div class="model-modal" id="model-modal" aria-hidden="true">
+  <div class="model-modal-panel" role="dialog" aria-modal="true" aria-label="3D 모델 뷰어">
+    <button class="model-modal-close" id="model-modal-close" aria-label="닫기">&times;</button>
+    <div class="model-modal-stage">
+      <model-viewer id="modal-mv" camera-controls auto-rotate environment-image="legacy" exposure="0.55" shadow-intensity="1.3" shadow-softness="0.2" tone-mapping="agx" interaction-prompt="none"></model-viewer>
+    </div>
+    <div class="model-modal-foot">
+      <div class="model-modal-tabs" id="modal-tabs"></div>
+      <span class="model-tri" id="modal-tri" hidden></span>
+      <button class="model-wire-toggle" id="modal-wire" aria-pressed="false" title="와이어프레임 토글">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12 M1.5 6.5 L11.5 6.5 M6.5 1 L6.5 6.3" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+        <span>와이어프레임</span>
+      </button>
+      
+    </div>
+  </div>
+</div>
+<style>
+/* 모달을 열면 body 스크롤을 잠근다. 창 스크롤바가 사라지는 만큼(--sb-lock)
+   body와 뷰포트 기준 fixed 요소를 밀어 페이지가 옆으로 튀는 것을 막는다.
+   오버레이 스크롤바(macOS)에서는 --sb-lock이 0이라 아무 영향이 없다. */
+body.modal-lock { overflow: hidden; padding-right: var(--sb-lock, 0px); }
+body.modal-lock .topbar { right: var(--sb-lock, 0px); }
+
+.model-modal {
+  position: fixed; inset: 0; right: var(--sb-lock, 0px); z-index: 250;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(8, 12, 20, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+}
+.model-modal.open { display: flex; }
+.model-modal-panel {
+  position: relative;
+  width: min(880px, 100%);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+}
+.model-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 10;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--ink-soft); font-size: 20px; line-height: 1;
+}
+.model-modal-close:hover { color: var(--ink); background: var(--bg-sunken); }
+.model-modal-stage {
+  width: 100%; height: min(64vh, 540px);
+  background: radial-gradient(circle at 50% 38%, #5b6573 0%, #3a414d 55%, #272c34 100%);
+}
+.model-modal-stage model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+.model-modal-foot {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.model-modal-tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+.model-modal-tab {
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.model-modal-tab:hover { color: var(--ink); }
+.model-modal-tab.active { border-color: var(--accent); color: var(--ink); }
+.model-tri {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.model-wire-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; border-radius: 8px;
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  font-size: 11.5px; font-weight: 500; color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.model-wire-toggle:hover { color: var(--ink); }
+.model-wire-toggle[aria-pressed="true"] {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.model-wire-toggle svg { flex-shrink: 0; }
+.model-modal .model-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--ink); color: var(--bg-elev);
+  font-family: var(--mono); font-size: 11px;
+  flex-shrink: 0;
+}
+.model-modal .model-dl:hover { opacity: 0.88; }
+@media (max-width: 640px) {
+  .model-modal { padding: 16px; }
+  .model-modal-stage { height: 48vh; }
+}
+</style>
+<script>
+(function(){
+  const ASSET_BASE = 'assets/';
+  const modal = document.getElementById('model-modal');
+  if (!modal) return;
+  const mv = document.getElementById('modal-mv');
+  const tabsEl = document.getElementById('modal-tabs');
+  const dl = document.getElementById('modal-dl');
+  const dlLabel = document.getElementById('modal-dl-label');
+  const wireBtn = document.getElementById('modal-wire');
+  const triEl = document.getElementById('modal-tri');
+  let wireOn = false;
+  let currentTris = null;  // 빌드 시 정확 계산된 값
+
+  // model-viewer 내부 Three.js scene 접근 (와이어프레임용)
+  function getScene(){
+    const sym = Object.getOwnPropertySymbols(mv).find(s => s.description === 'scene');
+    return sym ? mv[sym] : null;
+  }
+  function applyWire(){
+    const scene = getScene();
+    if (!scene) return;
+    scene.traverse(o => { if (o.isMesh && o.material) {
+      (Array.isArray(o.material) ? o.material : [o.material]).forEach(mat => mat.wireframe = wireOn);
+    }});
+    if (typeof scene.queueRender === 'function') scene.queueRender();
+  }
+  function updateTri(){
+    // 빌드 시 glTF accessor로 정확히 계산한 값 사용 (뷰어 실시간 카운트는 그림자 평면 포함 오차)
+    if (currentTris == null) { triEl.hidden = true; return; }
+    triEl.hidden = false;
+    triEl.textContent = '△ ' + currentTris.toLocaleString() + ' tris';
+  }
+  // ── 초기 프레이밍 보정 ──────────────────────────────────────
+  // model-viewer 기본 프레이밍은 모델의 '최대 폭' 기준이라, 평면이 넓고 낮은 모델일수록
+  // 화면 상하에 빈 공간이 크게 남아 실제보다 줌아웃돼 보인다.
+  // 바운딩의 대각 폭 대비 높이를 보고, 납작할수록 카메라를 더 당겨 화면 점유율을 맞춘다.
+  function fitFraming(){
+    try {
+      const d = mv.getDimensions();
+      if (!d) return;
+      const foot = Math.hypot(d.x, d.z);      // 평면 대각 폭
+      const h = d.y || 1;
+      const ratio = foot / h;                  // 클수록 납작
+      // ratio 1.5 이하는 보정 없음, 커질수록 당기되 최대 25%까지만.
+      // 계수를 0.11/최대 0.55로 두면 납작한 모델이 45%까지 당겨져 스테이지를
+      // 100% 채우고 좌우가 잘린다. 실측(ratio 3~12, 10종)으로 역산한 값이 아래.
+      const k = Math.min(0.25, Math.max(0, (ratio - 1.5) * 0.022));
+      const zoom = (100 - k * 100).toFixed(1) + '%';
+      const o = mv.getCameraOrbit();
+      mv.cameraOrbit = `${o.theta}rad ${o.phi}rad ${zoom}`;
+      mv.jumpCameraToGoal();
+    } catch (e) {}
+  }
+
+  // 모델 로드 완료 때마다 와이어 상태 반영 + 프레이밍 보정
+  mv.addEventListener('load', () => { applyWire(); fitFraming(); });
+
+  function load(models, idx){
+    const m = models[idx];
+    const src = ASSET_BASE + m.file;
+    mv.setAttribute('src', src);
+    const name = m.file.split('/').pop();
+    if (dl) {  // 다운로드 버튼이 꺼져 있으면(GLB_DOWNLOAD=False) 없을 수 있음
+      dl.href = src;
+      dl.setAttribute('download', name);
+      dlLabel.textContent = name + ' (' + (m.mb!=null? m.mb.toFixed(1):'0.0') + ' MB)';
+    }
+    currentTris = (m.tris != null) ? m.tris : null;
+    updateTri();
+    tabsEl.querySelectorAll('.model-modal-tab').forEach((t,i)=> t.classList.toggle('active', i===idx));
+  }
+
+  wireBtn.addEventListener('click', () => {
+    wireOn = !wireOn;
+    wireBtn.setAttribute('aria-pressed', wireOn ? 'true' : 'false');
+    applyWire();
+  });
+
+  window.openModelModal = function(models, startIdx){
+    if (!models || !models.length) return;
+    // 와이어프레임 상태 초기화 (이전 세션이 남지 않게)
+    wireOn = false;
+    wireBtn.setAttribute('aria-pressed', 'false');
+    triEl.hidden = true;
+    tabsEl.innerHTML = '';
+    // 모델 1개면 탭 숨김
+    if (models.length > 1) {
+      models.forEach((m, i) => {
+        const b = document.createElement('button');
+        b.className = 'model-modal-tab';
+        b.innerHTML = (m.label || m.file);
+        b.addEventListener('click', () => load(models, i));
+        tabsEl.appendChild(b);
+      });
+    }
+    load(models, startIdx || 0);
+    modal.classList.add('open');
+    // 스크롤바 폭만큼 보정값을 넘겨준다 (오버레이 스크롤바면 0)
+    const sb = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--sb-lock', sb + 'px');
+    document.body.classList.add('modal-lock');
+  };
+
+  function close(){
+    modal.classList.remove('open');
+    mv.removeAttribute('src');
+    document.body.classList.remove('modal-lock');
+    document.documentElement.style.removeProperty('--sb-lock');
+  }
+  document.getElementById('model-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // 모든 .model-btn 트리거 연결
+  document.querySelectorAll('.model-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      try {
+        const models = JSON.parse(btn.getAttribute('data-models'));
+        window.openModelModal(models, parseInt(btn.getAttribute('data-start')||'0', 10));
+      } catch(err) {}
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  // theme (메인과 같은 localStorage 키 공유)
+  const stored = localStorage.getItem('ksa-theme');
+  if (stored === 'dark') document.body.setAttribute('data-theme', 'dark');
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
+    document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
+  });
+
+  // ─── SEARCH ───
+  (function(){
+    const input = document.getElementById('search');
+    if (!input) return;
+    const main = document.querySelector('.main--files');
+    const cards = [...document.querySelectorAll('.file-card')];
+    const sections = [...document.querySelectorAll('.files-section')];
+    const entry = document.querySelector('.balady-entry');
+    const countEl = document.querySelector('.page-count');
+    const baseCount = countEl ? countEl.textContent : '';
+
+    // 결과 없음 안내
+    const empty = document.createElement('div');
+    empty.className = 'search-empty';
+    empty.style.display = 'none';
+    main.appendChild(empty);
+
+    function apply(){
+      const q = input.value.toLowerCase().trim();
+      let shown = 0;
+      cards.forEach(c => {
+        const hit = !q || (c.dataset.search || '').includes(q);
+        c.classList.toggle('hidden', !hit);
+        if (hit) shown++;
+      });
+      // 카드가 하나도 안 남은 섹션은 헤더까지 숨김
+      sections.forEach(s => {
+        const any = [...s.querySelectorAll('.file-card')].some(c => !c.classList.contains('hidden'));
+        s.classList.toggle('hidden', !any);
+      });
+      // 검색 중엔 Balady 진입 배너 숨김 (카드가 아니라 링크라 혼동 방지)
+      if (entry) entry.classList.toggle('hidden', !!q);
+
+      empty.style.display = (q && shown === 0) ? '' : 'none';
+      if (q && shown === 0) {
+        empty.innerHTML = '검색 결과가 없습니다 — <strong>' + input.value.replace(/[<>&]/g, '') + '</strong>';
+      }
+      if (countEl) countEl.textContent = q ? (shown + '개 검색됨') : baseCount;
+    }
+
+    input.addEventListener('input', apply);
+    document.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); input.focus(); input.select(); }
+      if (e.key === 'Escape' && document.activeElement === input) {
+        input.value = ''; apply(); input.blur();
+      }
+    });
+  })();
+
+  // 3D 모델은 공유 모달이 처리 (.model-btn → window.openModelModal)
+
+  // 잘린 카드 이름 → 호버 즉시 풀텍스트 툴팁 (네이티브 title 지연 회피)
+  (function(){
+    let tip = null;
+    function ensure(){
+      if (!tip){ tip = document.createElement('div'); tip.className = 'name-tip'; document.body.appendChild(tip); }
+      return tip;
+    }
+    function show(e){
+      const el = e.currentTarget;
+      if (el.scrollWidth <= el.clientWidth + 1) return;  // 안 잘렸으면 패스
+      const t = ensure();
+      t.textContent = el.textContent.trim();
+      const r = el.getBoundingClientRect();
+      t.style.left = Math.round(r.left) + 'px';
+      t.style.top = Math.round(r.bottom + 6) + 'px';
+      // 우측 화면 넘침 방지
+      const tw = t.offsetWidth;
+      if (r.left + tw > window.innerWidth - 12) t.style.left = Math.max(12, window.innerWidth - tw - 12) + 'px';
+      t.classList.add('show');
+    }
+    function hide(){ if (tip) tip.classList.remove('show'); }
+    document.querySelectorAll('.fc-name').forEach(el => {
+      el.addEventListener('mouseenter', show);
+      el.addEventListener('mouseleave', hide);
+    });
+    window.addEventListener('scroll', hide, true);
+  })();
+
+  // lightbox (다운로드 버튼 클릭은 제외)
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.fc-shot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lb.classList.add('open');
+    });
+  });
+  document.querySelectorAll('.shot-dl').forEach(a => {
+    a.addEventListener('click', e => e.stopPropagation());
+  });
+  lb.addEventListener('click', () => { lb.classList.remove('open'); lbImg.src = ''; });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+  });
+})();
+</script>
+</body>
+</html>

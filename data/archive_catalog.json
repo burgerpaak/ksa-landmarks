@@ -1,0 +1,827 @@
+[
+ {
+  "num": 1,
+  "name": "Boulevard Riyadh City · World",
+  "sub": "Riyadh",
+  "group": "단지 병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/Boulevard-City.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "302동"
+ },
+ {
+  "num": 2,
+  "name": "Riyadh Front",
+  "sub": "Riyadh",
+  "group": "단지 병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/Riyadh-Front.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "33동"
+ },
+ {
+  "num": 3,
+  "name": "NEOM Community Camp",
+  "sub": "NEOM",
+  "group": "단지 병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/NEOM-Camp.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "65종"
+ },
+ {
+  "num": 4,
+  "name": "KAFD – SNB Tower",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-SNB-Tower/70030076201847993.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-SNB-Tower/70030076201847993lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 5,
+  "name": "KAFD – Riyadh Bank Tower",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Riyadh-Bank-Tower/70030076201848455.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Riyadh-Bank-Tower/70030076201848455lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 6,
+  "name": "KAFD – CMA Tower (PIF)",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-CMA-Tower/70030076201848898.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-CMA-Tower/70030076201848898lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 7,
+  "name": "KAFD – Tower 4",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-4/70030076201849486.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-4/70030076201849486lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 8,
+  "name": "KAFD – Tower 5",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-5/70030076431357692.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-5/70030076431357692lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 9,
+  "name": "KAFD – Tower 6",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-6/70030076431362735.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-6/70030076431362735lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 10,
+  "name": "KAFD – Tower 7",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-7/70030076201848675.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Tower-7/70030076201848675lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 11,
+  "name": "KAFD – Conference Hall",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Conference-Hall/70030076203820556.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-Conference-Hall/70030076203820556lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 12,
+  "name": "KAFD District — 파셀 01",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70000001084889903.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70000001084889903lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70000001084889903"
+ },
+ {
+  "num": 13,
+  "name": "KAFD District — 파셀 02",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201574217.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201574217lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076201574217"
+ },
+ {
+  "num": 14,
+  "name": "KAFD District — 파셀 03",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201844685.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201844685lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076201844685"
+ },
+ {
+  "num": 15,
+  "name": "KAFD District — 파셀 04",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201846811.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201846811lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076201846811"
+ },
+ {
+  "num": 16,
+  "name": "KAFD District — 파셀 05",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201858757.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076201858757lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076201858757"
+ },
+ {
+  "num": 17,
+  "name": "KAFD District — 파셀 06",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431343140.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431343140lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431343140"
+ },
+ {
+  "num": 18,
+  "name": "KAFD District — 파셀 07",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431356650.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431356650lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431356650"
+ },
+ {
+  "num": 19,
+  "name": "KAFD District — 파셀 08",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431358207.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431358207lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431358207"
+ },
+ {
+  "num": 20,
+  "name": "KAFD District — 파셀 09",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431358239.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431358239lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431358239"
+ },
+ {
+  "num": 21,
+  "name": "KAFD District — 파셀 10",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431368431.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431368431lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431368431"
+ },
+ {
+  "num": 22,
+  "name": "KAFD District — 파셀 11",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431901258.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076431901258lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076431901258"
+ },
+ {
+  "num": 23,
+  "name": "KAFD District — 파셀 12",
+  "sub": "Riyadh",
+  "group": "KAFD 금융지구",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076432380265.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/KAFD-District/70030076432380265lod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": "70030076432380265"
+ },
+ {
+  "num": 24,
+  "name": "At-Turaif — 구역 01",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992609.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992609"
+ },
+ {
+  "num": 25,
+  "name": "At-Turaif — 구역 02",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992629.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992629"
+ },
+ {
+  "num": 26,
+  "name": "At-Turaif — 구역 03",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992634.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992634"
+ },
+ {
+  "num": 27,
+  "name": "At-Turaif — 구역 04",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992635.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992635"
+ },
+ {
+  "num": 28,
+  "name": "At-Turaif — 구역 05",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992704.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992704"
+ },
+ {
+  "num": 29,
+  "name": "At-Turaif — 구역 06",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992979.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992979"
+ },
+ {
+  "num": 30,
+  "name": "At-Turaif — 구역 07",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992983.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992983"
+ },
+ {
+  "num": 31,
+  "name": "At-Turaif — 구역 08",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076209992995.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076209992995"
+ },
+ {
+  "num": 32,
+  "name": "At-Turaif — 구역 09",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076527609092.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076527609092"
+ },
+ {
+  "num": 33,
+  "name": "At-Turaif — 구역 10",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076676983761.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076676983761"
+ },
+ {
+  "num": 34,
+  "name": "At-Turaif — 구역 11",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076676983790.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076676983790"
+ },
+ {
+  "num": 35,
+  "name": "At-Turaif — 구역 12",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076676985002.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076676985002"
+ },
+ {
+  "num": 36,
+  "name": "At-Turaif — 구역 13",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076676985436.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076676985436"
+ },
+ {
+  "num": 37,
+  "name": "At-Turaif — 구역 14",
+  "sub": "Riyadh",
+  "group": "At-Turaif 세계유산 상세",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/At-Turaif-World-Heritage-Site/atturaifworldheritagesite70030076676985563.glb",
+    "label": "기본"
+   }
+  ],
+  "note": "70030076676985563"
+ },
+ {
+  "num": 38,
+  "name": "MOMRA — 별관 2",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/MOMRA/momra2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 39,
+  "name": "MOMRA — 별관 3",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/MOMRA/momra3.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 40,
+  "name": "MOMRA — 별관 4",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/MOMRA/momra4.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 41,
+  "name": "MOMRA — 별관 5",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/MOMRA/momra5.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 42,
+  "name": "Metro Station",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Metro-Station/metrostantion.glb",
+    "label": "기본"
+   },
+   {
+    "src": "glb/by_landmark/riyadh/Metro-Station/metrostantionlod.glb",
+    "label": "LOD"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 43,
+  "name": "Soliman Hospital — 1",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Soliman-Hospital/solimanhospital1.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 44,
+  "name": "Soliman Hospital — 2",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Soliman-Hospital/solimanhospital2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 45,
+  "name": "Utility Structure — 1",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Utility-Structure/Utility_structure_1.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 46,
+  "name": "Utility Structure — 2",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Utility-Structure/Utility_structure_2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 47,
+  "name": "Kingdom Arena — 부속동",
+  "sub": "Riyadh",
+  "group": "신규 — Riyadh",
+  "files": [
+   {
+    "src": "glb/by_landmark/riyadh/Kingdom-Arena/70030076682030667.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 48,
+  "name": "King Abdulaziz Control Tower — 1",
+  "sub": "Jeddah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/jeddah/King-Abdulaziz-Control-Tower/kingabdulazizcontroltower1.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 49,
+  "name": "King Abdulaziz Control Tower — 2",
+  "sub": "Jeddah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/jeddah/King-Abdulaziz-Control-Tower/kingabdulazizcontroltower2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 50,
+  "name": "King Abdulaziz Railway Station",
+  "sub": "Jeddah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/jeddah/King-Abdulaziz-Railway-Station/kingabdulazizrailwaystation.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 51,
+  "name": "King Abdulaziz Fire Station",
+  "sub": "Jeddah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/jeddah/King-Abdulaziz-Fire-Station/kingabdulazizfirestation.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 52,
+  "name": "Masjid Al-Khaif",
+  "sub": "Makkah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/makkah/Masjid-Al-Khaif/masjidalkhaif.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 53,
+  "name": "Mecca Jabal",
+  "sub": "Makkah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/makkah/Mecca-Jabal/meccajabal.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 54,
+  "name": "King Fahd Complex — 1",
+  "sub": "Madinah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex1.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 55,
+  "name": "King Fahd Complex — 2",
+  "sub": "Madinah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 56,
+  "name": "King Fahd Complex — 3",
+  "sub": "Madinah",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex3.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ },
+ {
+  "num": 57,
+  "name": "Ithra — 추가동",
+  "sub": "Dammam",
+  "group": "신규 — 타도시",
+  "files": [
+   {
+    "src": "glb/by_landmark/dammam/King-Abdulaziz-Centre-Ithra/kingabdulazizcentre_low_2.glb",
+    "label": "기본"
+   }
+  ],
+  "note": ""
+ }
+]

@@ -23,6 +23,7 @@ TEMPLATE_DIR = ROOT / "templates"
 IMG_DIR = ROOT / "images"
 PROGRESS_SRC_DIR = ROOT / "progress"  # 진행 보고용 glb·스크린샷 원본
 BALADY_SRC_DIR = ROOT / "balady_plus"  # Balady+ 참조 모델(MOMRAH 기존 자산) glb
+ARCHIVE_SRC_DIR = ROOT / "Archive_901"  # Balady 원본 아카이브 (로컬 전용·gitignore)
 # 빌드 결과는 docs/ 에 — GitHub Pages 호스팅 디렉토리
 OUTPUT_DIR = ROOT / "docs"
 OUTPUT = OUTPUT_DIR / "index.html"
@@ -887,6 +888,71 @@ def render_balady_card(entry: dict) -> str:
 </article>"""
 
 
+def scan_archive_catalog() -> list:
+    """data/archive_catalog.json + Archive_901/ → 아카이브 카드 목록.
+    Archive_901은 로컬 전용(gitignore) — 폴더가 없으면 빈 목록을 반환하고
+    docs에 이미 복사된 에셋·페이지는 그대로 둔다 (재빌드 안전)."""
+    cat_path = ROOT / "data" / "archive_catalog.json"
+    if not cat_path.exists() or not ARCHIVE_SRC_DIR.exists():
+        return []
+    out = []
+    for e in json.loads(cat_path.read_text(encoding="utf-8")):
+        models = []
+        for f in e["files"]:
+            src = ARCHIVE_SRC_DIR / f["src"]
+            if not src.exists():
+                models = []
+                break
+            models.append({
+                "file": "archive/" + src.name,
+                "label": f["label"],
+                "mb": round(src.stat().st_size / (1024 * 1024), 2),
+                "tris": glb_triangle_count(src),
+                "_textured": glb_has_material(src),
+                "_src": str(src),
+            })
+        if not models:
+            continue
+        tid = f"A{e['num']:02d}"
+        thumb_fs = OUTPUT_PROGRESS_ASSETS / "archive" / "thumbs" / f"{tid}.png"
+        out.append({**e, "tid": tid, "models": models,
+                    "thumb": f"assets/archive/thumbs/{tid}.png" if thumb_fs.exists() else None})
+    return out
+
+
+def render_archive_card(entry: dict) -> str:
+    """아카이브 카드 — balady 카드와 동일 골격, 원본/LOD는 뷰어 탭."""
+    name, num, region = entry["name"], entry["num"], entry.get("sub", "")
+    models_pub = [{k: v for k, v in m.items() if k != "_src"} for m in entry["models"]]
+    payload = esc(json.dumps(models_pub, ensure_ascii=False))
+    region_html = f'<span class="fc-region">{esc(region)}</span>' if region else ""
+    note_html = f'<span class="fc-region">{esc(entry["note"])}</span>' if entry.get("note") else ""
+    cube = ('<svg width="34" height="34" viewBox="0 0 13 13" fill="none"><path d="M6.5 1 L11.5 3.6 '
+            'L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" '
+            'stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/></svg>')
+    viewer = ('<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">'
+              '<path d="M6.5 1 L11.5 3.6 L11.5 9.4 L6.5 12 L1.5 9.4 L1.5 3.6 Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>'
+              '<path d="M1.5 3.6 L6.5 6.3 L11.5 3.6 M6.5 6.3 L6.5 12" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>')
+    if entry.get("thumb"):
+        cover = f'<div class="fc-cover fc-cover--model"><img src="{esc(entry["thumb"])}" alt="{esc(name)}" loading="lazy"></div>'
+    else:
+        cover = f'<div class="fc-cover fc-cover--3d">{cube}</div>'
+    search_str = " ".join(
+        [name.lower(), entry["tid"].lower(), region.lower(), entry.get("note", "").lower(), "archive"]
+        + [m["file"].split("/")[-1].lower() for m in entry["models"]])
+    return f"""
+<article class="file-card" data-search="{esc(search_str)}">
+  <header class="fc-head">
+    <span class="fc-num">{entry["tid"]}</span>
+    <span class="fc-name">{esc(name)}</span>
+    {region_html}{note_html}
+    <span class="fc-badge fc-badge--balady">Archive</span>
+  </header>
+  {cover}
+  <div class="fc-actions"><button class="model-btn fc-3d" data-models="{payload}" data-start="0">{viewer}<span>3D Viewer</span></button></div>
+</article>"""
+
+
 def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work") -> str:
     lm = lm_map.get(lid)
     lm_name = lm["name"] if lm else ""
@@ -976,6 +1042,7 @@ def build_files(landmarks: list, palette: str):
 
     # Balady+ 참조 모델 — CSV 카탈로그 기반 50종 (우리 40종과 별개)
     balady_cat = scan_balady_catalog()
+    archive_cat = scan_archive_catalog()
 
     def _section_html(title, sub, cards):
         return (
@@ -1014,7 +1081,18 @@ def build_files(landmarks: list, palette: str):
             f'<span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 {len(balady_cat)}종 · 클러스터·지역별 정리 · 참조용</span>'
             '</span><span class="balady-entry-arrow">→</span></a>'
         )
-    main_entries = "\n".join(x for x in (entry, work_section) if x) or (
+    entry_arc = ""
+    if archive_cat:
+        n_arc_files = sum(len(e["models"]) for e in archive_cat)
+        entry_arc = (
+            '<a class="balady-entry" href="archive.html">'
+            '<span class="balady-entry-badge">Archive</span>'
+            '<span class="balady-entry-text">'
+            '<span class="balady-entry-title">Balady 아카이브</span>'
+            f'<span class="balady-entry-sub">카탈로그 외 원본 자산 — 단지 병합본·KAFD 개별동·At-Turaif 상세 등 {len(archive_cat)}종 ({n_arc_files}파일) · 참조용</span>'
+            '</span><span class="balady-entry-arrow">→</span></a>'
+        )
+    main_entries = "\n".join(x for x in (entry, entry_arc, work_section) if x) or (
         '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
         '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
     )
@@ -1038,6 +1116,25 @@ def build_files(landmarks: list, palette: str):
         (OUTPUT_PROGRESS_DIR / "balady.html").write_text(
             fill(bal_entries, bal_count, "Files · Balady+", "Balady+ 참조 모델",
                  "MOMRAH/Balady 기존 3D 자산 50종 · 클러스터·지역별 정리 · 참조용 (다운로드 비활성)",
+                 '<a class="page-back" href="./">← Files</a>'),
+            encoding="utf-8")
+
+    # ── 아카이브 하위 페이지: 카탈로그 그룹 순서 유지 ──
+    if archive_cat:
+        arc_groups = []
+        for e in archive_cat:
+            if not arc_groups or arc_groups[-1]["title"] != e["group"]:
+                arc_groups.append({"title": e["group"], "items": []})
+            arc_groups[-1]["items"].append(e)
+        arc_entries = "\n".join(
+            _section_html(g["title"], f'{len(g["items"])}종',
+                          "\n".join(render_archive_card(e) for e in g["items"]))
+            for g in arc_groups
+        )
+        arc_count = f"{len(archive_cat)}종 · {len(arc_groups)}개 그룹"
+        (OUTPUT_PROGRESS_DIR / "archive.html").write_text(
+            fill(arc_entries, arc_count, "Files · Archive", "Balady 아카이브",
+                 "Balady 원본 아카이브 중 카탈로그 외 자산 — 단지 병합본·KAFD 개별동·At-Turaif 구역·신규 건물 · 참조용 (다운로드 비활성)",
                  '<a class="page-back" href="./">← Files</a>'),
             encoding="utf-8")
 
@@ -1070,6 +1167,25 @@ def build_files(landmarks: list, palette: str):
                 copied += 1
         for name in b_dst - b_src:
             (balady_dst / name).unlink()
+
+    # 아카이브 에셋 동기화: Archive_901 → docs/progress/assets/archive/
+    # (Archive_901이 없으면 건드리지 않음 — docs의 기존 복사본 유지)
+    if archive_cat:
+        import shutil
+        arc_dst = OUTPUT_PROGRESS_ASSETS / "archive"
+        arc_dst.mkdir(parents=True, exist_ok=True)
+        wanted = {}
+        for e in archive_cat:
+            for m in e["models"]:
+                wanted[m["file"].split("/", 1)[1]] = Path(m["_src"])
+        for name, src in wanted.items():
+            dst = arc_dst / name
+            if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+                shutil.copy2(src, dst)
+                copied += 1
+        for f in arc_dst.iterdir():
+            if f.is_file() and not f.name.startswith(".") and f.name not in wanted:
+                f.unlink()
 
     # Reference 카드 3D 버튼용: 랜드마크별 대표 모델(첫 glb)
     rep_models = {}
