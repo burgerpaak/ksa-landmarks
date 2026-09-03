@@ -698,7 +698,7 @@
   "num": 48,
   "name": "King Abdulaziz Control Tower — 1",
   "sub": "Jeddah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Jeddah",
   "files": [
    {
     "src": "glb/by_landmark/jeddah/King-Abdulaziz-Control-Tower/kingabdulazizcontroltower1.glb",
@@ -711,7 +711,7 @@
   "num": 49,
   "name": "King Abdulaziz Control Tower — 2",
   "sub": "Jeddah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Jeddah",
   "files": [
    {
     "src": "glb/by_landmark/jeddah/King-Abdulaziz-Control-Tower/kingabdulazizcontroltower2.glb",
@@ -724,7 +724,7 @@
   "num": 50,
   "name": "King Abdulaziz Railway Station",
   "sub": "Jeddah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Jeddah",
   "files": [
    {
     "src": "glb/by_landmark/jeddah/King-Abdulaziz-Railway-Station/kingabdulazizrailwaystation.glb",
@@ -737,7 +737,7 @@
   "num": 51,
   "name": "King Abdulaziz Fire Station",
   "sub": "Jeddah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Jeddah",
   "files": [
    {
     "src": "glb/by_landmark/jeddah/King-Abdulaziz-Fire-Station/kingabdulazizfirestation.glb",
@@ -750,7 +750,7 @@
   "num": 52,
   "name": "Masjid Al-Khaif",
   "sub": "Makkah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Makkah",
   "files": [
    {
     "src": "glb/by_landmark/makkah/Masjid-Al-Khaif/masjidalkhaif.glb",
@@ -763,7 +763,7 @@
   "num": 53,
   "name": "Mecca Jabal",
   "sub": "Makkah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Makkah",
   "files": [
    {
     "src": "glb/by_landmark/makkah/Mecca-Jabal/meccajabal.glb",
@@ -776,7 +776,7 @@
   "num": 54,
   "name": "King Fahd Complex — 1",
   "sub": "Madinah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Madinah",
   "files": [
    {
     "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex1.glb",
@@ -789,7 +789,7 @@
   "num": 55,
   "name": "King Fahd Complex — 2",
   "sub": "Madinah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Madinah",
   "files": [
    {
     "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex2.glb",
@@ -802,7 +802,7 @@
   "num": 56,
   "name": "King Fahd Complex — 3",
   "sub": "Madinah",
-  "group": "신규 — 타도시",
+  "group": "신규 — Madinah",
   "files": [
    {
     "src": "glb/by_landmark/madinah/King-Fahd-Complex/kingfahdcomplex3.glb",
@@ -815,7 +815,7 @@
   "num": 57,
   "name": "Ithra — 추가동",
   "sub": "Dammam",
-  "group": "신규 — 타도시",
+  "group": "신규 — Dammam",
   "files": [
    {
     "src": "glb/by_landmark/dammam/King-Abdulaziz-Centre-Ithra/kingabdulazizcentre_low_2.glb",
