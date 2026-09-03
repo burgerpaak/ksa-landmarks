@@ -3,7 +3,7 @@
   "num": 1,
   "name": "Boulevard World",
   "sub": "Riyadh",
-  "group": "단지 병합본",
+  "group": "병합본",
   "files": [
    {
     "src": "glb/combined_web/Boulevard-World.glb",
@@ -16,7 +16,7 @@
   "num": 58,
   "name": "Boulevard City",
   "sub": "Riyadh",
-  "group": "단지 병합본",
+  "group": "병합본",
   "files": [
    {
     "src": "glb/combined_web/Boulevard-City.glb",
@@ -29,7 +29,7 @@
   "num": 2,
   "name": "Riyadh Front",
   "sub": "Riyadh",
-  "group": "단지 병합본",
+  "group": "병합본",
   "files": [
    {
     "src": "glb/combined_web/Riyadh-Front.glb",
@@ -42,7 +42,7 @@
   "num": 3,
   "name": "NEOM Community Camp",
   "sub": "NEOM",
-  "group": "단지 병합본",
+  "group": "병합본",
   "files": [
    {
     "src": "glb/combined_web/NEOM-Camp.glb",
@@ -50,6 +50,58 @@
    }
   ],
   "note": "65종"
+ },
+ {
+  "num": 59,
+  "name": "At-Turaif — 중심 구역 병합",
+  "sub": "Riyadh",
+  "group": "병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/At-Turaif.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "14동"
+ },
+ {
+  "num": 60,
+  "name": "Soliman Hospital — 병합",
+  "sub": "Riyadh",
+  "group": "병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/Soliman-Hospital.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "2동"
+ },
+ {
+  "num": 61,
+  "name": "KA Control Tower — 병합",
+  "sub": "Jeddah",
+  "group": "병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/KA-Control-Tower.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "2동"
+ },
+ {
+  "num": 62,
+  "name": "Rashid Mall + Grand Hyatt",
+  "sub": "Khobar",
+  "group": "병합본",
+  "files": [
+   {
+    "src": "glb/combined_web/Rashid-Mall-Hyatt.glb",
+    "label": "병합본"
+   }
+  ],
+  "note": "2동"
  },
  {
   "num": 4,
