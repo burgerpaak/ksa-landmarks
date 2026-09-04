@@ -229,15 +229,20 @@ a.brand:hover { opacity: 0.65; }
   margin-top: 10px;
   padding: 7px 12px;
   border-radius: 8px;
-  background: var(--bg-sunken, var(--bg-elev));
-  border: 1px solid var(--border);
+  /* 행동 요소는 액센트 계열 — 회색 칩은 비활성/정적 라벨로 읽힌다 */
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
   font-size: 12px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-weight: 600;
+  color: var(--accent);
   text-decoration: none;
   transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
 }
-.page-doc-link:hover { color: var(--ink); border-color: var(--ink-soft); }
+.page-doc-link:hover {
+  background: color-mix(in srgb, var(--accent) 20%, var(--bg-elev));
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border));
+}
+.files-section-head .page-doc-link { margin-left: auto; margin-top: 0; padding: 5px 10px; }
 
 .page-count {
   margin-top: 18px;

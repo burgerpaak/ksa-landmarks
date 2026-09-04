@@ -1044,12 +1044,12 @@ def build_files(landmarks: list, palette: str):
     balady_cat = scan_balady_catalog()
     archive_cat = scan_archive_catalog()
 
-    def _section_html(title, sub, cards):
+    def _section_html(title, sub, cards, extra=""):
         return (
             f'<section class="files-section">'
             f'<div class="files-section-head">'
             f'<h2 class="files-section-title">{esc(title)}</h2>'
-            f'<span class="files-section-sub">{esc(sub)}</span></div>'
+            f'<span class="files-section-sub">{esc(sub)}</span>{extra}</div>'
             f'<div class="files-grid">\n{cards}\n    </div></section>'
         )
 
@@ -1127,19 +1127,20 @@ def build_files(landmarks: list, palette: str):
             if not arc_groups or arc_groups[-1]["title"] != e["group"]:
                 arc_groups.append({"title": e["group"], "items": []})
             arc_groups[-1]["items"].append(e)
+        arc_doc_link = ('<a class="page-doc-link" href="merge-criteria.pdf" target="_blank" rel="noopener" title="병합본을 어떤 기준으로 만들고 검증했는지 (PDF)">'
+            '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>'
+            '<span>병합 기준 문서</span></a>')
         arc_entries = "\n".join(
             _section_html(g["title"], f'{len(g["items"])}종',
-                          "\n".join(render_archive_card(e) for e in g["items"]))
+                          "\n".join(render_archive_card(e) for e in g["items"]),
+                          extra=arc_doc_link if g["title"] == "병합본" else "")
             for g in arc_groups
         )
         arc_count = f"{len(archive_cat)}종 · {len(arc_groups)}개 그룹"
         (OUTPUT_PROGRESS_DIR / "archive.html").write_text(
             fill(arc_entries, arc_count, "Files · Archive", "Balady 아카이브",
                  "Balady 원본 아카이브 중 카탈로그 외 자산 — 단지 병합본·KAFD 개별동·At-Turaif 구역·신규 건물 · 참조용 (다운로드 비활성)",
-                 '<a class="page-back" href="./">← Files</a>',
-                 '<a class="page-doc-link" href="merge-criteria.pdf" target="_blank" rel="noopener" title="병합본을 어떤 기준으로 만들고 검증했는지 (PDF)">'
-                 '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>'
-                 '<span>병합 기준 문서</span></a>'),
+                 '<a class="page-back" href="./">← Files</a>'),
             encoding="utf-8")
 
     # 에셋 동기화: progress/ → docs/progress/assets/

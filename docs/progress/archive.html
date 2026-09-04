@@ -229,15 +229,20 @@ a.brand:hover { opacity: 0.65; }
   margin-top: 10px;
   padding: 7px 12px;
   border-radius: 8px;
-  background: var(--bg-sunken, var(--bg-elev));
-  border: 1px solid var(--border);
+  /* 행동 요소는 액센트 계열 — 회색 칩은 비활성/정적 라벨로 읽힌다 */
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-elev));
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
   font-size: 12px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-weight: 600;
+  color: var(--accent);
   text-decoration: none;
   transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
 }
-.page-doc-link:hover { color: var(--ink); border-color: var(--ink-soft); }
+.page-doc-link:hover {
+  background: color-mix(in srgb, var(--accent) 20%, var(--bg-elev));
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border));
+}
+.files-section-head .page-doc-link { margin-left: auto; margin-top: 0; padding: 5px 10px; }
 
 .page-count {
   margin-top: 18px;
@@ -530,10 +535,10 @@ a.brand:hover { opacity: 0.65; }
     <h1 class="page-title">Balady 아카이브</h1>
     <p class="page-sub">Balady 원본 아카이브 중 카탈로그 외 자산 — 단지 병합본·KAFD 개별동·At-Turaif 구역·신규 건물 · 참조용 (다운로드 비활성)</p>
     <div class="page-count">62종 · 8개 그룹</div>
-    <a class="page-doc-link" href="merge-criteria.pdf" target="_blank" rel="noopener" title="병합본을 어떤 기준으로 만들고 검증했는지 (PDF)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg><span>병합 기준 문서</span></a>
+    
   </div>
 
-  <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">병합본</h2><span class="files-section-sub">8종</span></div><div class="files-grid">
+  <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">병합본</h2><span class="files-section-sub">8종</span><a class="page-doc-link" href="merge-criteria.pdf" target="_blank" rel="noopener" title="병합본을 어떤 기준으로 만들고 검증했는지 (PDF)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg><span>병합 기준 문서</span></a></div><div class="files-grid">
 
 <article class="file-card" data-search="boulevard world a01 riyadh 188동 archive boulevard-world.glb">
   <header class="fc-head">
