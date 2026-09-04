@@ -23,6 +23,10 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 한글은 기본값에서 음절 단위로 꺾인다 — 어절 단위로만 줄바꿈.
+     keep-all로 넘칠 수 있는 긴 URL·파일명은 break-word가 받는다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
