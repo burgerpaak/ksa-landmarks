@@ -177,6 +177,23 @@ a.brand:hover { opacity: 0.65; }
   color: var(--ink-soft);
   max-width: 760px;
 }
+.page-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: var(--bg-sunken, var(--bg-elev));
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.page-doc-link:hover { color: var(--ink); border-color: var(--ink-soft); }
+
 .page-count {
   margin-top: 18px;
   font-family: var(--mono);
@@ -468,6 +485,7 @@ a.brand:hover { opacity: 0.65; }
     <h1 class="page-title">{{PAGE_TITLE}}</h1>
     <p class="page-sub">{{PAGE_SUB}}</p>
     <div class="page-count">{{COUNT}}</div>
+    {{PAGE_DOC}}
   </div>
 
   {{ENTRIES}}

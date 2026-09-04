@@ -222,6 +222,23 @@ a.brand:hover { opacity: 0.65; }
   color: var(--ink-soft);
   max-width: 760px;
 }
+.page-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: var(--bg-sunken, var(--bg-elev));
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+.page-doc-link:hover { color: var(--ink); border-color: var(--ink-soft); }
+
 .page-count {
   margin-top: 18px;
   font-family: var(--mono);
@@ -513,6 +530,7 @@ a.brand:hover { opacity: 0.65; }
     <h1 class="page-title">Model Files</h1>
     <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다.</p>
     <div class="page-count">작업 32 · 98개 파일   |   Balady+ 참조 50종 →</div>
+    
   </div>
 
   <a class="balady-entry" href="balady.html"><span class="balady-entry-badge">Balady +</span><span class="balady-entry-text"><span class="balady-entry-title">Balady+ 참조 모델</span><span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 50종 · 클러스터·지역별 정리 · 참조용</span></span><span class="balady-entry-arrow">→</span></a>

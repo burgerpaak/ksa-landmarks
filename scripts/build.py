@@ -1055,11 +1055,12 @@ def build_files(landmarks: list, palette: str):
 
     template = (TEMPLATE_DIR / "progress.html.tpl").read_text(encoding="utf-8")
 
-    def fill(entries, count, eyebrow, title, sub, back=""):
+    def fill(entries, count, eyebrow, title, sub, back="", doc=""):
         o = template.replace("{{PALETTE}}", palette)
         o = o.replace("{{ENTRIES}}", entries)
         o = o.replace("{{COUNT}}", count)
         o = o.replace("{{PAGE_BACK}}", back)
+        o = o.replace("{{PAGE_DOC}}", doc)
         o = o.replace("{{PAGE_EYEBROW}}", eyebrow)
         o = o.replace("{{PAGE_TITLE}}", esc(title))
         o = o.replace("{{PAGE_SUB}}", esc(sub))
@@ -1135,7 +1136,10 @@ def build_files(landmarks: list, palette: str):
         (OUTPUT_PROGRESS_DIR / "archive.html").write_text(
             fill(arc_entries, arc_count, "Files · Archive", "Balady 아카이브",
                  "Balady 원본 아카이브 중 카탈로그 외 자산 — 단지 병합본·KAFD 개별동·At-Turaif 구역·신규 건물 · 참조용 (다운로드 비활성)",
-                 '<a class="page-back" href="./">← Files</a>'),
+                 '<a class="page-back" href="./">← Files</a>',
+                 '<a class="page-doc-link" href="merge-criteria.pdf" target="_blank" rel="noopener" title="병합본을 어떤 기준으로 만들고 검증했는지 (PDF)">'
+                 '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>'
+                 '<span>병합 기준 문서</span></a>'),
             encoding="utf-8")
 
     # 에셋 동기화: progress/ → docs/progress/assets/
