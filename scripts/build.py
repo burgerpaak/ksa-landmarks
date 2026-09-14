@@ -3,7 +3,7 @@
 data/landmarks.json + data/glossary.json을 읽어 단일 HTML 파일을 생성.
 
 사용법:
-    python scripts/build.py             # output/index.html 생성
+    python scripts/build.py             # docs/index.html 및 docs/progress/*.html 생성
     python scripts/build.py --watch     # 파일 변경 감지 (간단 폴링)
 
 생성된 HTML은 self-contained 단일 파일이며 images/ 폴더의 이미지를 상대경로로 참조.
@@ -890,16 +890,18 @@ def render_balady_card(entry: dict) -> str:
 
 def scan_archive_catalog() -> list:
     """data/archive_catalog.json + Archive_901/ → 아카이브 카드 목록.
-    Archive_901은 로컬 전용(gitignore) — 폴더가 없으면 빈 목록을 반환하고
-    docs에 이미 복사된 에셋·페이지는 그대로 둔다 (재빌드 안전)."""
+    Archive_901은 로컬 전용(gitignore). 원본 폴더가 없는 체크아웃에서는
+    docs의 배포용 에셋을 읽어 아카이브 페이지와 진입 링크를 재생성한다."""
     cat_path = ROOT / "data" / "archive_catalog.json"
-    if not cat_path.exists() or not ARCHIVE_SRC_DIR.exists():
+    if not cat_path.exists():
         return []
+    use_source = ARCHIVE_SRC_DIR.exists()
     out = []
     for e in json.loads(cat_path.read_text(encoding="utf-8")):
         models = []
         for f in e["files"]:
-            src = ARCHIVE_SRC_DIR / f["src"]
+            src = (ARCHIVE_SRC_DIR / f["src"] if use_source else
+                   OUTPUT_PROGRESS_ASSETS / "archive" / Path(f["src"]).name)
             if not src.exists():
                 models = []
                 break
@@ -1175,7 +1177,7 @@ def build_files(landmarks: list, palette: str):
 
     # 아카이브 에셋 동기화: Archive_901 → docs/progress/assets/archive/
     # (Archive_901이 없으면 건드리지 않음 — docs의 기존 복사본 유지)
-    if archive_cat:
+    if archive_cat and ARCHIVE_SRC_DIR.exists():
         import shutil
         arc_dst = OUTPUT_PROGRESS_ASSETS / "archive"
         arc_dst.mkdir(parents=True, exist_ok=True)

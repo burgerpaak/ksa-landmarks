@@ -216,18 +216,18 @@
       "local_path": "03_kingdom-arena.jpg"
     },
     "key_points": [
-      "실내 다목적 아레나 — 축구 경기장이 아닌 콘서트·복싱·이벤트 베뉴",
-      "2022년 완공 · Boulevard Riyadh City 단지의 핵심 시설",
-      "아시안컵 2027에서는 임시 경기장 변환 가능성 (개막식·개회식 등 활용)"
+      "Al-Hilal 홈구장 — 축구 경기와 복싱·콘서트 등을 개최하는 실내 다목적 경기장",
+      "2024년 1월 29일 첫 축구 경기 개최 (Al-Hilal vs Inter Miami)",
+      "AFC Asian Cup 2027 공식 개최 경기장 — AFC 2026년 2월 일정표 기준 26,000석"
     ],
     "structure": [
       {
         "label": "형태",
-        "value": "직사각형 실내 아레나 (Indoor multi-purpose)"
+        "value": "직사각형 실내 경기장 · 중앙 경기장 상부가 더 높은 지붕"
       },
       {
         "label": "재료",
-        "value": "백색 메탈 패널 + LED 외벽"
+        "value": "철골 구조 · 베이지색 외장 패널 + 짙은 유리"
       },
       {
         "label": "지붕",
@@ -235,17 +235,13 @@
       },
       {
         "label": "수용",
-        "value": "약 22,500–26,000 (이벤트별 가변)"
-      },
-      {
-        "label": "시대",
-        "value": "2022년 완공"
+        "value": "26,000석 (AFC Asian Cup 2027 대회 기준 · 2026-02 일정표)"
       }
     ],
     "tags": [
-      "원형",
-      "반개방지붕",
-      "LED파사드"
+      "직사각형",
+      "완전폐쇄지붕",
+      "철골구조"
     ],
     "remarks": [
       "ASIAN CUP 2027"
@@ -266,17 +262,21 @@
           "url": "https://en.wikipedia.org/wiki/Kingdom_Arena"
         },
         {
-          "label": "AFC Asian Cup",
-          "url": "https://www.the-afc.com/en/national/afc_asian_cup.html"
+          "label": "Al-Hilal 공식 경기 기록",
+          "url": "https://alhilal.com/en/matches/mens-team/results/2023/saudi-arabian-league"
+        },
+        {
+          "label": "AFC 2027 공식 일정 (2026-02 PDF)",
+          "url": "https://assets.the-afc.com/2027_AFC_Asian_Cup/AFC-Asian-Cup-Saudi-Arabia-2027%E2%84%A2_Match-Schedule_Feb-2026.pdf"
         }
       ],
       "google_maps_url": "https://maps.app.goo.gl/RmcsVHgtRgh7MpH38"
     },
     "must_have": [
-      "직사각형 실내 아레나 매스 (보울 X)",
+      "직사각형 외곽 매스 + 내부 축구장·관람석",
       "완전 폐쇄형 지붕",
-      "백색 메탈 외피 + LED 동적 조명",
-      "Boulevard Riyadh City 엔터테인먼트 구역 인접"
+      "중앙 경기장 상부와 주변부 지붕의 높이 차이",
+      "베이지색 외장 패널 + 짙은 유리"
     ],
     "modeling": {
       "wgs84": {
@@ -289,37 +289,26 @@
       "task_type": "신규제작",
       "part_heights": [
         {
-          "part": "메인 아레나 매스 높이",
+          "part": "건물 높이 (StadiumDB 기재)",
           "value": "47 m"
         },
         {
-          "part": "로비/엔트런스 매스 높이",
-          "value": "약 15-20 m (추정)"
-        },
-        {
-          "part": "외부 평면",
-          "value": "220 × 150 m"
-        },
-        {
-          "part": "지붕 표면적",
-          "value": "37,991 m²"
-        },
-        {
-          "part": "수용 인원",
-          "value": "28,000"
+          "part": "외곽 치수 (StadiumDB 기재)",
+          "value": "220 × 150 m · 2024년 증축 후 적용 범위 재확인 필요"
         }
       ],
       "data_confidence": "partial",
-      "data_confidence_note": "StadiumDB·Wikipedia 검증 (47m·220×150m), 로비 높이는 추정",
+      "data_confidence_note": "Al-Hilal 공식 경기 기록·AFC 2027 일정표·StadiumDB 확인 (2026-09-14). 47m·220×150m는 StadiumDB 기재값이며 증축 후 외곽 치수 적용 범위와 로비 높이는 미확인. 수용 인원은 AFC 대회 기준.",
       "must_have": [
-        "직사각형 실내 아레나 매스 (보울 X)",
+        "직사각형 외곽 매스 + 내부 축구장·관람석",
         "완전 폐쇄형 지붕",
-        "메인 아레나 + 주변 로비 2단 매스",
-        "Boulevard Riyadh City 엔터테인먼트 구역 인접"
+        "중앙 경기장 상부와 주변부 지붕의 높이 차이",
+        "베이지색 외장 패널 + 짙은 유리"
       ],
       "modeling_notes": [
-        "오픈 보울이 아닌 박스형 실내 매스로 모델링 — 지붕은 완전 폐쇄",
-        "메인 아레나(중앙 ~47m)와 로비(주변 ~18m) 매스 분리"
+        "박스형 외곽과 내부 축구장·관람석을 구분하고, 중앙 경기장 상부가 더 높은 폐쇄형 지붕을 반영",
+        "로비 높이는 공개 근거를 확보하지 못해 수치를 비워 둠",
+        "2024년 동측 관람석 증축으로 건물 외곽이 확장됨 — 최종 footprint를 수령하면 외곽 치수 재확인"
       ]
     }
   },

@@ -28,14 +28,14 @@ watch:
 	$(PYTHON) scripts/build.py --watch
 
 serve:
-	@echo "→ http://localhost:$(PORT)/output/index.html"
+	@echo "→ http://localhost:$(PORT)/docs/index.html"
 	@$(PYTHON) -m http.server $(PORT)
 
 all: fetch build
 
 clean:
-	rm -f output/index.html
-	@echo "✓ output/index.html 삭제됨"
+	rm -f docs/index.html docs/progress/index.html docs/progress/balady.html docs/progress/archive.html
+	@echo "✓ 생성된 HTML 삭제됨 (이미지·모델·PDF 유지)"
 
 clean-images:
 	rm -rf images/*.jpg images/*.png images/*.webp
