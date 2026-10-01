@@ -38,6 +38,9 @@
   --topbar-height: 64px;
   --nav-link-inset: 10px;
   --nav-group-inset: 4px;
+  --reference-resource-gap: 14px;
+  --reference-resource-inset: 24px;
+  --reference-list-gap: 36px;
 }
 
 [data-theme="dark"] {
@@ -402,7 +405,7 @@ a.brand:hover { opacity: 0.65; }
 }
 
 .hero {
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   padding-bottom: 32px;
   border-bottom: 1px solid var(--border);
 }
@@ -470,28 +473,59 @@ a.brand:hover { opacity: 0.65; }
   color: var(--ink-mute);
 }
 
-/* ───── DELIVERY SPEC (글로벌 납품 사양) — iOS doc-style ───── */
-.delivery-spec {
-  margin-bottom: 40px;
+/* ───── 공통 참고 정보 — 같은 높이의 접이식 행 ───── */
+.reference-resources {
+  display: grid;
+  gap: var(--reference-resource-gap);
+  margin-bottom: var(--reference-list-gap);
+}
+
+.delivery-spec,
+.glossary {
   background: var(--bg-elev);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px 26px 24px;
-  box-shadow: var(--shadow-sm), var(--shadow-md);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .delivery-spec-head {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-align: left;
-  cursor: pointer;
+  position: relative;
 }
 
-.delivery-spec-head-text { flex: 1; min-width: 0; }
+.delivery-spec-toggle,
+.glossary-head {
+  width: 100%;
+  min-height: 80px;
+  padding: 23px var(--reference-resource-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.delivery-spec-toggle:hover,
+.glossary-head:hover { background: var(--bg-sunken); }
+
+.delivery-spec-head-text,
+.glossary-head-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.delivery-spec-head-text { padding-right: 170px; }
 
 .spec-method-link {
+  position: absolute;
+  right: 54px;
+  top: 50%;
+  transform: translateY(-50%);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -512,52 +546,42 @@ a.brand:hover { opacity: 0.65; }
 }
 .spec-method-link svg { flex-shrink: 0; }
 
-.delivery-spec-arrow {
+.delivery-spec-arrow,
+.glossary-arrow {
   flex-shrink: 0;
-  color: var(--ink-mute);
+  color: var(--ink-soft);
   transition: transform 0.25s ease;
 }
-.delivery-spec.open .delivery-spec-arrow { transform: rotate(180deg); }
+.delivery-spec.open .delivery-spec-arrow,
+.glossary.open .glossary-arrow { transform: rotate(180deg); }
 
-/* 접기/펼치기 본문 */
 .delivery-spec-body {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.4s ease;
-  margin-top: 0;
-}
-.delivery-spec.open .delivery-spec-body {
-  max-height: 1200px;
-  opacity: 1;
-  margin-top: 28px;
+  margin: 0 var(--reference-resource-inset);
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
 }
 
-.delivery-spec-eyebrow {
-  display: block;
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
+.delivery-spec-body[hidden],
+.glossary-body[hidden] {
+  display: none;
 }
 
-.delivery-spec-title {
+.delivery-spec-title,
+.glossary-head-title {
   font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink);
-  line-height: 1.2;
+  line-height: 1.5;
   margin: 0;
 }
 
-.delivery-spec-sub {
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: var(--ink-mute);
+.delivery-spec-sub,
+.glossary-head-sub {
+  margin: 0;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--ink-soft) 65%, var(--ink-mute));
   letter-spacing: 0;
 }
 
@@ -650,72 +674,33 @@ a.brand:hover { opacity: 0.65; }
 }
 
 @media (max-width: 640px) {
-  .delivery-spec {
-    padding: 24px 22px;
-  }
-  .spec-item {
+  .reference-resources { --reference-resource-inset: 20px; }
+  .delivery-spec-toggle,
+  .glossary-head { padding: 18px var(--reference-resource-inset); }
+  .delivery-spec-head-text,
+  .glossary-head-text { display: block; }
+  .delivery-spec-sub,
+  .glossary-head-sub { display: block; margin-top: 3px; }
+  .delivery-spec .spec-item {
     grid-template-columns: 1fr;
     gap: 4px;
   }
 }
 
-/* ───── GLOSSARY (collapsible) ───── */
-.glossary {
-  margin-bottom: 56px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--bg-elev);
-  overflow: hidden;
-  box-shadow: 0 1px 0 rgba(15, 25, 40, 0.02);
+@media (max-width: 480px) {
+  .delivery-spec-head-text { padding-right: 0; }
+  .spec-method-link {
+    display: flex;
+    position: static;
+    transform: none;
+    width: max-content;
+    margin: 0 50px 18px auto;
+  }
 }
-
-.glossary-head {
-  width: 100%;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: background 0.12s;
-}
-
-.glossary-head:hover { background: var(--bg-sunken); }
-
-.glossary-head-text {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.glossary-head-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.glossary-head-sub {
-  font-size: 12px;
-  color: var(--ink-mute);
-}
-
-.glossary-arrow {
-  transition: transform 0.25s;
-  color: var(--ink-soft);
-}
-
-.glossary.open .glossary-arrow { transform: rotate(180deg); }
-
-.glossary-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glossary.open .glossary-body { max-height: 6000px; }
 
 .glossary-inner {
-  padding: 8px 24px 24px;
+  margin: 0 var(--reference-resource-inset);
+  padding: 20px 0 24px;
   border-top: 1px solid var(--border);
 }
 
@@ -805,7 +790,7 @@ a.brand:hover { opacity: 0.65; }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
 
@@ -1652,9 +1637,12 @@ body.density-compact .cards-grid { align-items: start; }
   justify-content: center;
 }
 
-/* 노트북 구간(≈1400~1727px)만 3열 고정.
-   이 위(데스크탑)는 기존 auto-fill minmax(380px) 규칙을 그대로 두어 영향 없음 */
-@media (min-width: 1400px) and (max-width: 1727px) {
+/* 사이드바를 제외한 본문 폭에 맞춰 일반 화면은 2열, 넓은 화면은 3열. */
+@media (min-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1400px) {
   .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -1840,21 +1828,23 @@ body.density-compact .cards-grid { align-items: start; }
     </section>
 
     <!-- ───── DELIVERY SPEC (글로벌 납품 사양 헤더) ───── -->
-    <section class="delivery-spec open" id="delivery-spec">
-      <div class="delivery-spec-head" id="delivery-spec-toggle" role="button" tabindex="0" aria-expanded="true">
-        <div class="delivery-spec-head-text">
-          <span class="delivery-spec-eyebrow">Delivery Spec</span>
-          <h2 class="delivery-spec-title">납품 사양</h2>
-          <p class="delivery-spec-sub">전 카드 공통 모델링 룰</p>
-        </div>
-        <a class="spec-method-link" href="methodology.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="자료를 어떻게·어떤 기준으로 수집했는지 (PDF)">
+    <div class="reference-resources">
+    <section class="delivery-spec" id="delivery-spec">
+      <div class="delivery-spec-head">
+        <button class="delivery-spec-toggle" id="delivery-spec-toggle" type="button" aria-expanded="false" aria-controls="delivery-spec-body">
+          <span class="delivery-spec-head-text">
+            <span class="delivery-spec-title">납품 사양</span>
+            <span class="delivery-spec-sub">전 카드 공통 모델링 룰</span>
+          </span>
+          <svg class="delivery-spec-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="spec-method-link" href="methodology.pdf" target="_blank" rel="noopener" title="자료를 어떻게·어떤 기준으로 수집했는지 (PDF)">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 1 L7.5 1 L10 3.5 L10 11 L3 11 Z M7.5 1 L7.5 3.5 L10 3.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
           <span>자료 수집 방법론</span>
         </a>
-        <svg class="delivery-spec-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
 
-      <div class="delivery-spec-body">
+      <div class="delivery-spec-body" id="delivery-spec-body" hidden>
 
       <div class="spec-group">
         <div class="spec-group-head">Delivery Format</div>
@@ -1905,19 +1895,20 @@ body.density-compact .cards-grid { align-items: start; }
     </section>
 
     <section class="glossary" id="glossary">
-      <button class="glossary-head" onclick="document.getElementById('glossary').classList.toggle('open')">
-        <div class="glossary-head-text">
-          <span class="glossary-head-title">Glossary</span>
-          <span class="glossary-head-sub">건축 양식 · 용어 사전</span>
-        </div>
-        <svg class="glossary-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <button class="glossary-head" id="glossary-toggle" type="button" aria-expanded="false" aria-controls="glossary-body">
+        <span class="glossary-head-text">
+          <span class="glossary-head-title">건축 용어 사전</span>
+          <span class="glossary-head-sub">건축 양식 · 외관 용어</span>
+        </span>
+        <svg class="glossary-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div class="glossary-body">
+      <div class="glossary-body" id="glossary-body" hidden>
         <div class="glossary-inner">
 {{GLOSSARY}}
         </div>
       </div>
     </section>
+    </div>
 
     <section>
       <div class="cards-header">
@@ -1988,17 +1979,28 @@ body.density-compact .cards-grid { align-items: start; }
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
 
-  // ─── DELIVERY SPEC 접기/펼치기 ───
-  const specEl = document.getElementById('delivery-spec');
-  const specToggle = document.getElementById('delivery-spec-toggle');
-  if (specEl && specToggle) {
-    if (localStorage.getItem('ksa-spec') === 'closed') specEl.classList.remove('open');
-    specToggle.addEventListener('click', () => {
-      const open = specEl.classList.toggle('open');
-      specToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      localStorage.setItem('ksa-spec', open ? 'open' : 'closed');
+  // ─── 공통 참고 정보 접기/펼치기 ───
+  const disclosures = [
+    { id: 'delivery-spec', toggle: 'delivery-spec-toggle', body: 'delivery-spec-body', storage: 'ksa-spec' },
+    { id: 'glossary', toggle: 'glossary-toggle', body: 'glossary-body' },
+  ];
+  disclosures.forEach(({ id, toggle, body, storage }) => {
+    const section = document.getElementById(id);
+    const button = document.getElementById(toggle);
+    const content = document.getElementById(body);
+    if (!section || !button || !content) return;
+    const setOpen = open => {
+      section.classList.toggle('open', open);
+      button.setAttribute('aria-expanded', String(open));
+      content.hidden = !open;
+    };
+    setOpen(storage ? localStorage.getItem(storage) === 'open' : false);
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      setOpen(open);
+      if (storage) localStorage.setItem(storage, open ? 'open' : 'closed');
     });
-  }
+  });
 
   // ─── DENSITY (Detailed / Compact) ───
   const densityBtns = document.querySelectorAll('.density-btn');
