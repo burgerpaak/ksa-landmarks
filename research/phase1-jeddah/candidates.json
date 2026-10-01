@@ -892,7 +892,7 @@
       "name": "Bicycle Sculpture / Midan al-Darrajah",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "King Fahd Road × Al Rawdah Street 권역",
+      "area": "Al-Darraja Square",
       "visual_recommendation": "보통",
       "character": "거대한 자전거 형상이 직관적이다. 두 바퀴와 프레임만으로도 강한 식별력을 갖는다.",
       "location_and_state_evidence": "자전거 식별 보도·2022 촬영자 이동 관찰 · 최신 핀 미확인",
@@ -909,6 +909,10 @@
         {
           "title": "촬영자 기록 · 이동된 조형물 (2022)",
           "url": "https://susieofarabia.wordpress.com/2022/03/29/jeddah-sculptures-moved/"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-bicycle"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Bicycle%20Sculpture%20%2F%20Midan%20al-Darrajah%20Jeddah%20Saudi%20Arabia",
@@ -959,14 +963,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-bicycle",
+        "location": "Al-Darraja Square",
+        "checked_at": "2026-10-01",
+        "previous_area": "King Fahd Road × Al Rawdah Street 권역",
+        "map_query": "Al-Darraja Square Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. 이전 관찰 기록이 있어 Al-Darraja Square를 현재 설치 위치로 확정하지 않는다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J16",
       "name": "The Globe Roundabout",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "북부 · Al Mohammadiyah 권역",
+      "area": "King’s Road, North Obhur district",
       "visual_recommendation": "높음",
       "character": "지구본 구체와 대륙 형상이 핵심. 지역 표지성이 강하나 단순 구만 남기면 특징이 약해질 수 있다.",
       "location_and_state_evidence": "2026 보도 확인 · 핀 미검증",
@@ -979,6 +993,10 @@
         {
           "title": "SPA 표기 재전재 · Globe (2026-04)",
           "url": "https://www.saudiarabiapr.com/travel-tourism-hotels-asp/191666-iconic-globe-roundabout-celebrates-jeddah-s-national-and-international-milestone"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-globe"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Globe%20Roundabout%20Jeddah%20Saudi%20Arabia",
@@ -1027,14 +1045,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-globe",
+        "location": "King’s Road, North Obhur district",
+        "checked_at": "2026-10-01",
+        "previous_area": "북부 · Al Mohammadiyah 권역",
+        "map_query": "King’s Road, North Obhur district Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. 기존 지도 대조는 Al Mohammadiyah 권역의 장소 항목이다. 사이트의 North Obhur 표기와 정확한 설치 지점은 별도 대조가 필요하다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J17",
       "name": "Engineering Roundabout / Engineers’ Tools",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Engineering Square 권역",
+      "area": "Intersection of Sari and Macarona Streets",
       "visual_recommendation": "높음",
       "character": "컴퍼스·자·각도기 등 제도 도구를 크게 세운 구성. 다른 조형물과 주제가 명확히 구별된다.",
       "location_and_state_evidence": "과거 기록·사진 · 최신 위치 보강",
@@ -1051,6 +1079,10 @@
         {
           "title": "촬영자 기록 · Drawing Tools (2008)",
           "url": "https://susieofarabia.wordpress.com/2008/05/19/drawing-tools-sculpture/"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/engineers-tools"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Engineering%20Roundabout%20%2F%20Engineers%E2%80%99%20Tools%20Jeddah%20Saudi%20Arabia",
@@ -1099,14 +1131,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/engineers-tools",
+        "location": "Intersection of Sari and Macarona Streets",
+        "checked_at": "2026-10-01",
+        "previous_area": "Engineering Square 권역",
+        "map_query": "Intersection of Sari and Macarona Streets Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. Sari Street와 Macarona Street 교차로를 기재한다. 도구의 현재 배치와 개별 핀은 추가 확인이 필요하다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J18",
       "name": "Cosmos / Al-Falak Sculpture",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al-Falak 권역",
+      "area": "Intersection of Sari Street and Fahd Road",
       "visual_recommendation": "보통",
       "character": "금속 곡선과 구체가 천체 궤도를 이루는 구조. 구체 하나인 Globe와 별개 대상이며 빈 공간이 많은 실루엣이다.",
       "location_and_state_evidence": "이전 관찰 기록 · 최신 핀 미확인",
@@ -1131,6 +1173,10 @@
         {
           "title": "Sada · 시청 이전 완료 발표 인용 (2020-01-03)",
           "url": "https://slaati.com/2020/01/03/p1555609.html"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/cosmos"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Cosmos%20%2F%20Al-Falak%20Sculpture%20Jeddah%20Saudi%20Arabia",
@@ -1180,18 +1226,28 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/cosmos",
+        "location": "Intersection of Sari Street and Fahd Road",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al-Falak 권역",
+        "map_query": "Intersection of Sari Street and Fahd Road Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. 2020년 시청 발표를 인용한 보도는 같은 교차로의 교량 옆으로 이전했다고 설명한다. 교차로 중심을 작품의 핀으로 사용하지 않는다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J19",
       "name": "Accident! / Crazy Speed",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Prince Faisal bin Fahd Street · 2025 이전 보도",
+      "area": "Northern Corniche, Obhur district",
       "visual_recommendation": "보통",
       "character": "백색 콘크리트 덩어리에서 다섯 대의 자동차가 엇갈려 돌출되는 조형물. 사고 장면을 과장한 구성이 강한 식별 요소다.",
       "location_and_state_evidence": "2025 시청 대변인 인용 이전 보도",
-      "followup": "Accident / Crazy Speed / Traffic Accident는 한 작품으로 처리. 2025 보도가 새 위치를 Prince Faisal bin Fahd Street로 명시하므로 과거 North Corniche 위치를 현재 위치로 사용하지 않음. 보도일이 정확한 이전 공사일을 뜻하지 않으며, 2026 현장 존치 확인과도 구분. 개별 차량 방향은 사진 대조 전 확정하지 않음.",
+      "followup": "Accident / Crazy Speed / Traffic Accident는 한 작품으로 처리. 사이트의 Northern Corniche 위치는 이전 전 기록이다. 2025년 Sabq 보도는 2021년 Prince Faisal bin Fahd Street로 이전했다고 명시한다. 현재 개별 핀과 2026 현장 존치는 미확인이며, 차량 방향은 사진 대조 전 확정하지 않음.",
       "confidence": "partial",
       "coordinates": null,
       "footprint": null,
@@ -1212,6 +1268,14 @@
         {
           "title": "Al Madina · 시청 대변인 인용, 이전 위치·차량 구성 (2025-04-16)",
           "url": "https://www.al-madina.com/article/930857/محليات/مجسم-سرعة-جنونية-تحفة-فنية-تتنازل-عن-موقعها-لصالح-حلبة-كورنيش-جدة"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/accident-crazy-speed"
+        },
+        {
+          "title": "Sabq · 2021년 이전 기록 (2025-04-16 보도)",
+          "url": "https://sabq.org/article/3muqnmf"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Accident!%20%2F%20Crazy%20Speed%20Jeddah%20Saudi%20Arabia",
@@ -1227,7 +1291,7 @@
         "model_overlap_verified": false,
         "checked_scope": "general"
       },
-      "overview": "Jeddah의 도로변 공공미술 작품으로 Accident! 또는 Crazy Speed로 알려져 있다. 2025년 보도는 North Corniche에서 Prince Faisal bin Fahd Street로의 이전을 다룬다.",
+      "overview": "Jeddah의 도로변 공공미술 작품으로 Accident! 또는 Crazy Speed로 알려져 있다. 2025년 보도는 North Corniche에서 Prince Faisal bin Fahd Street로 2021년에 이전한 경위를 설명한다.",
       "recommendation_review": {
         "date": "2026-09-29",
         "previous": "추천",
@@ -1260,14 +1324,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/accident-crazy-speed",
+        "location": "Northern Corniche, Obhur district",
+        "checked_at": "2026-10-01",
+        "previous_area": "Prince Faisal bin Fahd Street · 2025 이전 보도",
+        "map_query": "Northern Corniche, Obhur district Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. 이 사이트의 위치는 이전 전 기록이다. 2025년 Sabq 보도는 2021년에 Prince Faisal bin Fahd Street로 이전했다고 설명한다. 최신 개별 핀은 미확인이다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J20",
       "name": "Four Lanterns",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "과거 Tahlia Street 기록 · 지도 장소 대조, 최근 설치 상태 확인 필요",
+      "area": "Al-Tahliah Street",
       "visual_recommendation": "보통",
       "character": "프레임에 매단 대형 전통 등 네 개. 장식색을 줄여도 등과 지지 구조의 윤곽을 남길 수 있다.",
       "location_and_state_evidence": "과거 학술 조사·도판 · 현재 위치 보강",
@@ -1280,6 +1354,10 @@
         {
           "title": "2017 학술 조사 · Artscaping in public places",
           "url": "https://visualcompublications.es/SAUC/article/download/5558/3872/21345"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-four-lanterns"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Four%20Lanterns%20Jeddah%20Saudi%20Arabia",
@@ -1329,14 +1407,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-four-lanterns",
+        "location": "Al-Tahliah Street",
+        "checked_at": "2026-10-01",
+        "previous_area": "과거 Tahlia Street 기록 · 지도 장소 대조, 최근 설치 상태 확인 필요",
+        "map_query": "Al-Tahliah Street Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. Al-Tahliah Street는 사이트 기재 위치이며, 기존 지도 장소 대조와 최근 설치 상태·정밀 핀 검증은 구분한다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J21",
       "name": "The Seagull",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "북부 Corniche · 과거 기록",
+      "area": "Northern Corniche, Obhur district",
       "visual_recommendation": "보통",
       "character": "길게 솟은 날개형 판과 낮은 곡면 판의 대비. 새 문양을 단순화해도 높낮이와 판의 윤곽이 남는다.",
       "location_and_state_evidence": "2017 학술 도판·과거 보도/촬영자 기록 · 최신 핀 미확인",
@@ -1361,6 +1449,10 @@
         {
           "title": "관광언론연합 · Nawras Square와 조형물 (2025-02-10)",
           "url": "https://arabutm.org/19048/"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-seagull"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Seagull%20Jeddah%20Saudi%20Arabia",
@@ -1411,14 +1503,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-seagull",
+        "location": "Northern Corniche, Obhur district",
+        "checked_at": "2026-10-01",
+        "previous_area": "북부 Corniche · 과거 기록",
+        "map_query": "Northern Corniche, Obhur district Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. 사이트의 Northern Corniche·Obhur 표기와 기존 Nawras Square 자료를 함께 보존한다. 조형물의 최근 존치와 개별 핀은 추가 확인이 필요하다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J22",
       "name": "The Fist",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Jeddah 도로변 · 현재 위치 확인 필요",
+      "area": "Prince Sultan Street",
       "visual_recommendation": "보통",
       "character": "주먹을 크게 확대해 세운 단순하고 강한 형태. 원거리 실루엣의 식별력이 좋다.",
       "location_and_state_evidence": "복원 보도 · 현재 위치 보강",
@@ -1431,6 +1533,10 @@
         {
           "title": "Saudi Gazette · Fist 복원 (2014)",
           "url": "https://saudigazette.com.sa/article/106009"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-fist"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Fist%20Jeddah%20Saudi%20Arabia",
@@ -1480,18 +1586,28 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-fist",
+        "location": "Prince Sultan Street",
+        "checked_at": "2026-10-01",
+        "previous_area": "Jeddah 도로변 · 현재 위치 확인 필요",
+        "map_query": "Prince Sultan Street Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 지도 검색은 이 기록의 지역·시설을 검색하며 작품의 정확한 핀을 뜻하지 않는다. Prince Sultan Street는 도로 수준의 위치 기록이다. 조형물의 현재 설치 지점과 개별 핀은 미확인이다.",
+        "map_search_available": true
+      }
     },
     {
       "id": "J23",
       "name": "Circular Mass",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al Arbaeen Lagoon",
+      "area": "Jeddah Sculpture Museum",
       "visual_recommendation": "보통",
       "character": "원기둥형 몸체와 길게 패인 홈·표면 요철이 특징. 공식 사진에서 큰 윤곽은 보이지만 절개의 깊이와 가려진 면은 추가 대조가 필요하다.",
       "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
-      "followup": "2025 설치 보도에서 작품명·작가·Al Arbaeen 구역 확인. 같은 작가의 다른 원형 조각 사진을 혼용하지 않음. 작품별 외형과 개별 핀은 추가 대조. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 원문 404로 카드 출처에는 추가하지 않음. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
+      "followup": "2025 설치 보도에서 작품명·작가·Al Arbaeen 구역 확인. 같은 작가의 다른 원형 조각 사진을 혼용하지 않음. 작품별 외형과 개별 핀은 추가 대조. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 일부 접속에서 원문 오류가 있었으므로 현장 위치 검증과 구분한다. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
       "confidence": "partial",
       "coordinates": null,
       "footprint": null,
@@ -1504,6 +1620,10 @@
         {
           "title": "Jeddah Historic District · 작품별 공식 소개",
           "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/circular-mass"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Circular%20Mass%20Jeddah%20Saudi%20Arabia",
@@ -1553,14 +1673,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/circular-mass",
+        "location": "Jeddah Sculpture Museum",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al Arbaeen Lagoon",
+        "map_query": "Jeddah Sculpture Museum Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 이 사이트는 Jeddah Sculpture Museum을 기재하지만, Jeddah Historic District의 공식 작품 목록은 Al Arbaeen Lagoon을 기재한다. 두 기록을 구분하며 작품별 현재 위치·정밀 핀은 추가 확인이 필요하다. Google 지도에서 이 시설명으로 고유 장소를 확인하지 못해 지도 링크는 위치 미확인으로 표시한다.",
+        "map_search_available": false
+      }
     },
     {
       "id": "J24",
       "name": "The Illusion of the Second Cube",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al Arbaeen Lagoon",
+      "area": "Jeddah Sculpture Museum",
       "visual_recommendation": "보통",
       "character": "입방체 착시를 만드는 기하학적 구성과 색면 배치. 단색으로 단순화할 때 입체적 식별력이 유지되는지 검토가 필요하다.",
       "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
@@ -1577,6 +1707,10 @@
         {
           "title": "Jeddah Historic District · 작품별 공식 소개",
           "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-illusion-of-a-second-cube"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Illusion%20of%20the%20Second%20Cube%20Jeddah%20Saudi%20Arabia",
@@ -1625,18 +1759,28 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/the-illusion-of-a-second-cube",
+        "location": "Jeddah Sculpture Museum",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al Arbaeen Lagoon",
+        "map_query": "Jeddah Sculpture Museum Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 이 사이트는 Jeddah Sculpture Museum을 기재하지만, Jeddah Historic District의 공식 작품 목록은 Al Arbaeen Lagoon을 기재한다. 두 기록을 구분하며 작품별 현재 위치·정밀 핀은 추가 확인이 필요하다. Google 지도에서 이 시설명으로 고유 장소를 확인하지 못해 지도 링크는 위치 미확인으로 표시한다.",
+        "map_search_available": false
+      }
     },
     {
       "id": "J25",
       "name": "Flexibility of Balance",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al Arbaeen Lagoon",
+      "area": "Jeddah Sculpture Museum",
       "visual_recommendation": "보통",
       "character": "붉은 곡면 판이 비대칭으로 겹치고 판 사이 빈 공간이 생기는 조각. 큰 윤곽은 공식 사진에서 보이며, 판의 깊이와 가려진 구성은 추가 자료로 대조해야 한다.",
       "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
-      "followup": "기존 설치 보도와 공식 작품 사진으로 작품명·설치 구역·큰 윤곽을 확인. 개별 위치·판의 깊이·받침과 수공간의 모델 범위는 미확인. 오연결 지도 검색은 노출하지 않음.",
+      "followup": "기존 설치 보도와 공식 작품 사진으로 작품명·설치 구역·큰 윤곽을 확인. 개별 위치·판의 깊이·받침과 수공간의 모델 범위는 미확인. 기존 작품명 검색의 업체 오연결은 노출하지 않으며, 사이트에 기재된 시설을 검색하는 링크로 제공한다.",
       "confidence": "partial",
       "coordinates": null,
       "footprint": null,
@@ -1649,6 +1793,10 @@
         {
           "title": "Jeddah Historic District · 작품별 공식 소개",
           "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/flexibility-of-balance"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Flexibility%20of%20Balance%20Jeddah%20Saudi%20Arabia",
@@ -1698,18 +1846,28 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/flexibility-of-balance",
+        "location": "Jeddah Sculpture Museum",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al Arbaeen Lagoon",
+        "map_query": "Jeddah Sculpture Museum Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 이 사이트는 Jeddah Sculpture Museum을 기재하지만, Jeddah Historic District의 공식 작품 목록은 Al Arbaeen Lagoon을 기재한다. 두 기록을 구분하며 작품별 현재 위치·정밀 핀은 추가 확인이 필요하다. Google 지도에서 이 시설명으로 고유 장소를 확인하지 못해 지도 링크는 위치 미확인으로 표시한다.",
+        "map_search_available": false
+      }
     },
     {
       "id": "J26",
       "name": "The Bird (Joan Miró)",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al Arbaeen Lagoon",
+      "area": "Jeddah Sculpture Museum",
       "visual_recommendation": "보통",
       "character": "추상적인 몸체와 돌출부, 두 다리의 조합이 특징. 큰 덩어리와 사이의 빈 공간이 단색에서도 구별된다.",
       "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
-      "followup": "2025 보도의 The Bird / Joan Miró로 대표 명칭 정렬. Oiseau Bird를 검증된 공식 별칭으로 단정하던 문구 제거. The Seagull과 별개이며 작품별 사진·핀 보강 필요. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 원문 404로 카드 출처에는 추가하지 않음. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
+      "followup": "2025 보도의 The Bird / Joan Miró로 대표 명칭 정렬. Oiseau Bird를 검증된 공식 별칭으로 단정하던 문구 제거. The Seagull과 별개이며 작품별 사진·핀 보강 필요. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 일부 접속에서 원문 오류가 있었으므로 현장 위치 검증과 구분한다. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
       "confidence": "partial",
       "coordinates": null,
       "footprint": null,
@@ -1722,6 +1880,10 @@
         {
           "title": "Jeddah Historic District · 작품별 공식 소개",
           "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/oiseau-bird"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Bird%20%28Joan%20Mir%C3%B3%29%20Jeddah%20Saudi%20Arabia",
@@ -1771,14 +1933,24 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/oiseau-bird",
+        "location": "Jeddah Sculpture Museum",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al Arbaeen Lagoon",
+        "map_query": "Jeddah Sculpture Museum Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 이 사이트는 Jeddah Sculpture Museum을 기재하지만, Jeddah Historic District의 공식 작품 목록은 Al Arbaeen Lagoon을 기재한다. 두 기록을 구분하며 작품별 현재 위치·정밀 핀은 추가 확인이 필요하다. Google 지도에서 이 시설명으로 고유 장소를 확인하지 못해 지도 링크는 위치 미확인으로 표시한다.",
+        "map_search_available": false
+      }
     },
     {
       "id": "J27",
       "name": "Oval with Points",
       "city": "Jeddah",
       "type": "조형물",
-      "area": "Al Arbaeen Lagoon · 정밀 핀 미확인",
+      "area": "Jeddah Sculpture Museum",
       "visual_recommendation": "보통",
       "character": "타원형 외곽과 안쪽을 향한 뾰족한 돌출부, 가운데 빈 공간이 핵심. 단색 모델에서도 캐릭터가 남는다.",
       "location_and_state_evidence": "2026 Henry Moore Foundation 공개 학술 초록의 Jeddah 이전·복원 서술",
@@ -1799,6 +1971,10 @@
         {
           "title": "Jeddah Historic District · 작품별 공식 소개",
           "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        },
+        {
+          "title": "Sculptures of Jeddah · 작품 소개·Location",
+          "url": "http://www.sculpturesofjeddah.com/sculptures/detail/oval-with-points"
         }
       ],
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Oval%20with%20Points%20Jeddah%20Saudi%20Arabia",
@@ -1848,7 +2024,17 @@
           "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
         }
       ],
-      "landmark_type": "sculpture"
+      "landmark_type": "sculpture",
+      "catalogue_location": {
+        "source": "Sculptures of Jeddah",
+        "source_url": "http://www.sculpturesofjeddah.com/sculptures/detail/oval-with-points",
+        "location": "Jeddah Sculpture Museum",
+        "checked_at": "2026-10-01",
+        "previous_area": "Al Arbaeen Lagoon · 정밀 핀 미확인",
+        "map_query": "Jeddah Sculpture Museum Jeddah Saudi Arabia",
+        "note": "Sculptures of Jeddah의 Location을 우선 표시한다. 이 사이트는 Jeddah Sculpture Museum을 기재하지만, Jeddah Historic District의 공식 작품 목록은 Al Arbaeen Lagoon을 기재한다. 두 기록을 구분하며 작품별 현재 위치·정밀 핀은 추가 확인이 필요하다. Google 지도에서 이 시설명으로 고유 장소를 확인하지 못해 지도 링크는 위치 미확인으로 표시한다.",
+        "map_search_available": false
+      }
     }
   ],
   "holds": [

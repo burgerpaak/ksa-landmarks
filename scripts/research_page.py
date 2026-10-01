@@ -94,7 +94,8 @@ def load_candidates(root):
                 raise ValueError(f"Invalid coordinate map link: {item['id']}")
         item["map_record"] = record
     # N08 was excluded before web admission. Do not import the preliminary exclusion file.
-    checked_date = max(riyadh["fact_check_date"], *(c["fact_check"]["date"] for c in candidates))
+    checked_date = max(riyadh["fact_check_date"], *(c["fact_check"]["date"] for c in candidates),
+                       *(c["catalogue_location"]["checked_at"] for c in candidates if c.get("catalogue_location")))
     return sorted(candidates, key=lambda c: (PRIORITIES[c["selection_suggestion"]], c["id"])), checked_date
 
 
@@ -118,12 +119,25 @@ def render_image_gallery(images):
 
 def render_card(item):
     map_record = item["map_record"]
+    catalogue_location = item.get("catalogue_location")
     place_verified = map_record["status"] == "matched"
     coordinate_verified = map_record["status"] == "coordinate_matched"
     map_url = map_record["url"] if place_verified or coordinate_verified else item["map_search_url"]
     map_label = "지도 (좌표)" if coordinate_verified else "지도" if place_verified else "지도 검색"
+    # Catalogue Location is a named area, not a verified sculpture pin. Keep the
+    # place audit intact; the user's catalogue view deliberately uses area search.
+    if catalogue_location:
+        map_url = 'https://www.google.com/maps/search/?' + urlencode({
+            'api': 1, 'query': catalogue_location['map_query']
+        })
+        map_label = '지도 검색'
+    suppress_map = (not catalogue_location.get('map_search_available', True) if catalogue_location
+                    else map_record.get('suppress_search', False))
     map_control = ('<span class="map-unavailable">위치 미확인</span>'
-                   if map_record.get("suppress_search") else link(map_url, map_label, 'map-link'))
+                   if suppress_map else link(map_url, map_label, 'map-link'))
+    area_text = f'사이트 기재 위치 · {item["area"]}' if catalogue_location else item["area"]
+    location_detail = (f'<section class="location-record"><h5>위치 기록</h5>'
+                       f'<p>{esc(catalogue_location["note"])}</p></section>' if catalogue_location else '')
     image_search_url = 'https://www.google.com/search?' + urlencode({
         'tbm': 'isch', 'q': item.get("image_search_name", item["name"])
     })
@@ -181,13 +195,13 @@ def render_card(item):
       </div>
       <div class="card-body"><div class="card-heading"><{title_tag} id="title-{esc(item['id'])}">{esc(item['name'])}</{title_tag}>
         <button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{esc(tip_reason)}" aria-label="추천 등급: {esc(item['selection_suggestion'])}">{esc(item['selection_suggestion'])}</button></div>
-        <p class="area">{esc(item['area'])}</p>
+        <p class="area">{esc(area_text)}</p>
         {related_link}
         {tag}
         <p class="character">{esc(item['visual_character'])}</p>
         {decision_note}
         <div class="card-actions"><details><summary>상세 정보 <svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></summary>
-          <div class="detail-body">{overview}{reason}{relation_detail}{appearance}{checked}
+          <div class="detail-body">{overview}{location_detail}{reason}{relation_detail}{appearance}{checked}
             <h5>미확인 사항</h5><p>{esc(check['remaining'])}</p>
             <h5>검토 메모</h5><p>{esc(item['verification_notes'])}</p>
             <h5>출처</h5><ul class="sources">{sources}</ul>{render_image_gallery(images)}</div>
