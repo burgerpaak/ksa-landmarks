@@ -1,0 +1,1857 @@
+{
+  "research_date": "2026-09-23",
+  "scope": "Riyadh King Fahd Road 주변 19건 + 권역 확장 6건; N08 제외 유지",
+  "excluded_inventory": [
+    "data/landmarks.json",
+    "data/balady_50.json",
+    "data/archive_catalog.json"
+  ],
+  "not_final_selection": true,
+  "coordinates_verified": false,
+  "candidates": [
+    {
+      "id": "N01",
+      "name": "SAB Head Office",
+      "area": "북부 · Al Yasmin",
+      "road_relationship": "도로변",
+      "selection_suggestion": "보류",
+      "visual_character": "은행 본사 주소가 확인되는 후보. 외형의 독창성과 타워·저층부 구성은 최신 외관 사진 대조 후 판단.",
+      "status_evidence": "공식 본사 주소·신본사 명칭 확인",
+      "confidence": "low",
+      "verification_notes": "은행 자체 발표가 신본사를 SAB Tower로 명시한다. 명칭·본사 여부는 확인했으나 구 본사 및 착공 렌더와의 외관 대조는 미완료. SmartScore 인증은 준공 외관이나 공사 완료의 근거로 확대하지 않음.",
+      "sources": [
+        "https://www.sab.com/ar/about-us/",
+        "https://sabinvest.com/en/contact-us",
+        "https://gulfconstructiononline.com/news/1622479_SABB-tower-breaks-ground-.html",
+        "https://www.sab.com/en/about-us/newsroom/news-year-2023/saudi-awwal-bank-achieves-smartscore-platinum-certification/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=SAB%20Head%20Office%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "은행 공식 주소와 2023-10-12 발표에서 신본사 명칭 SAB Tower 확인. 일반 지점·SAB Invest 주소와 구분.",
+        "remaining": "신본사의 실제 외관과 렌더링 대응, 구 본사와의 구분·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "신본사 SAB Tower 확인 · 실제 외관 사진 대조 필요",
+      "overview": "Riyadh 북부 Al Yasmin에 위치한 Saudi Awwal Bank(SAB)의 본사다. 일반 영업 지점이나 SAB Invest 사무실과 구분되는 SAB Tower를 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "보류",
+        "result": "보류",
+        "reason": "실제 외관 대조가 완료되지 않은 렌더링 중심 자료라 형태 판단을 보류한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "보류",
+        "result": "보류",
+        "reason": "신본사 명칭과 주소는 확인됐지만 확보 이미지는 설계 렌더링이다. 실제 신본사의 외관과 렌더링이 대응하는지 확인되지 않아 추천 판단을 보류한다.",
+        "remaining": "신본사의 실제 외관과 렌더링 대응, 구 본사와의 구분·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n01-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "SAB Head Office",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "보류",
+          "result": "보류",
+          "reason": "대상 대응 또는 실제 외관 확인의 선행 문제가 남아 보류한다.",
+          "remaining": "신본사의 실제 외관 사진과 형태 대조·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N02",
+      "name": "Tamkeen Tower",
+      "area": "북부 · Al Yasmin/Olaya 축",
+      "road_relationship": "인접",
+      "selection_suggestion": "추천",
+      "visual_character": "곡면 유리 몸체와 길게 솟는 상부가 만드는 수직 실루엣. 북부 스카이라인 기준점으로 적합.",
+      "status_evidence": "완공 기록",
+      "confidence": "partial",
+      "verification_notes": "King Fahd Road 직접 접면으로 단정하지 않음. CTBUH 주소는 Ulaya Road. ARIJ Tower와 동일 건물.",
+      "sources": [
+        "https://www.skyscrapercenter.com/building/tamkeen-tower/13955"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tamkeen%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH의 Tamkeen/ARIJ 동일 명칭·Ulaya Road·완공 기록 확인.",
+        "remaining": "상부 세부와 최신 외관 재대조·정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh 북부 Olaya 축의 고층 건물이다. 자료에 쓰이는 ARIJ와 Tamkeen Tower는 이 후보의 별칭으로 함께 관리한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "가늘게 솟은 몸체와 상부 윤곽이 단순화 후에도 구분된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "전체 외관 사진에서 곡면 몸체와 길게 솟은 상부가 함께 보인다. 주요 실루엣을 판단할 자료가 있고 단순화해도 수직 윤곽이 남아 추천한다.",
+        "remaining": "상부 세부와 최신 외관 재대조·정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n02-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Tamkeen Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "현재 외관 사진과 상부 형상 재대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N03",
+      "name": "Burj Rafal",
+      "area": "북부 · As Sahafah",
+      "road_relationship": "도로변",
+      "selection_suggestion": "추천",
+      "visual_character": "가늘고 높은 비례와 상부 크라운. 낮은 주변 건물과 대비되어 지도 축소 시에도 식별력이 좋음.",
+      "status_evidence": "완공·운영 자료",
+      "confidence": "partial",
+      "verification_notes": "Burj Rafal/JW Marriott 계열 명칭을 별개 건물로 세지 않음. Rafal Residence와는 별개.",
+      "sources": [
+        "https://www.skyscrapercenter.com/riyadh/burj-rafal/9554",
+        "https://rafal.com.sa/en/our-communities/burj-rafal/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Burj%20Rafal%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH의 Burj Rafal·King Fahad Road·완공 기록 확인.",
+        "remaining": "사진 이후 외관 변화·현행 호텔 브랜드, 정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh As Sahafah의 King Fahd Road에 위치한 고층 랜드마크다. RAFAL Residence와는 별개 건물이며, 호텔 관련 명칭과 타워 이름을 구분해 확인할 대상이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "높고 가는 비례와 상부 윤곽이 주변 저층과 대비된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "준공 기록과 확보 전경에서 가늘고 긴 몸체와 상부 크라운을 확인할 수 있다. 주요 비례가 읽히고 주변 저층 건물과 구별되는 실루엣이 있어 추천한다.",
+        "remaining": "사진 이후 외관 변화·현행 호텔 브랜드, 정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n03-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Burj Rafal",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "현재 호텔 브랜드 별칭·최신 외관 사진과 형태 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N04",
+      "name": "RAFAL Residence / Ascott Rafal Olaya",
+      "area": "북부 · As Sahafah",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "주거층과 서비스드 아파트를 포함한 수직 복합건물. 외관의 독창성은 최신 사진으로 비교.",
+      "status_evidence": "개관 공식 자료",
+      "confidence": "partial",
+      "verification_notes": "개발사 개관 자료는 서비스드 아파트가 건물 하부 층에 포함된다고 설명한다. 별도 저층 호텔동으로 단정하지 않음. Burj Rafal과는 별개이며 현재 외관·운영 명칭 확인 필요.",
+      "sources": [
+        "https://rafal.com.sa/en/news-updates/press-releases/driven-by-the-increasing-demand-for-branded-residential-serviced-apartments-rafal-inaugurates-rafal-residence-and-ascott-rafal-olaya-riyadh/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=RAFAL%20Residence%20%2F%20Ascott%20Rafal%20Olaya%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "개발사 개관 자료의 주거·서비스드 아파트 구성 확인. 별도 호텔동 표현 완화.",
+        "remaining": "실제 준공 외관·타워와 저층부 구성, 현재 운영 명칭·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh As Sahafah의 주거·서비스드 아파트 복합시설이다. 장기 체류를 위한 주거 공간과 숙박 서비스를 결합한 후보로, Burj Rafal과 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "단차는 보이나 반복되는 주거 입면의 차별성과 실제 외관 대조가 더 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "운영 건물은 식별되지만 현재 확보한 형태 자료는 개발사 렌더링이다. 실제 타워·저층부가 설계와 어떻게 대응하는지 대조할 외관 자료가 필요해 검토를 유지한다.",
+        "remaining": "실제 준공 외관·타워와 저층부 구성, 현재 운영 명칭·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n04-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "RAFAL Residence",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "현재 운영 명칭·도로변 사진과 형태 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N05",
+      "name": "Al Nakhlah Tower",
+      "area": "북부 · As Sahafah / King Fahd Road",
+      "road_relationship": "인접",
+      "selection_suggestion": "추천",
+      "visual_character": "큰 상부 개구부와 이를 둘러싼 외곽 프레임이 식별점. King Fahd Road 소재는 입주사 공식 주소로 확인.",
+      "status_evidence": "완공 기록",
+      "confidence": "partial",
+      "verification_notes": "King Fahd Road 소재는 MUFG 공식 주소로 확인. CTBUH의 Prince Mohammed Ibn Salman Road 표기와 병기하되, 도로명 주소를 근거로 직접 접면이나 거리를 확정하지 않음. 기존 인접 분류 유지.",
+      "sources": [
+        "https://www.skyscrapercenter.com/building/al-nakhlah-tower/36234",
+        "https://www.mufgemea.com/governance/ksa-privacy-notice/",
+        "https://www.mha.com.sa/ar/work/al-nakhlah-tower"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al%20Nakhlah%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "입주사 MUFG의 공식 주소에서 Al Nakhlah Tower, King Fahd Road, As Sahafah 확인. 설계사 MHA가 같은 이름의 Riyadh 프로젝트를 기재.",
+        "remaining": "프레임 깊이·대지 접면·도로 거리·정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh As Sahafah의 업무용 타워다. MUFG의 공식 사무실 주소에 건물명과 King Fahd Road 소재가 기재되어 있다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "사진의 큰 상부 개구부와 이를 둘러싼 프레임이 명확한 식별 요소다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "전체 전경과 상부 사진에서 큰 개구부와 외곽 프레임이 일관되게 보인다. 대상 주소도 공식 자료로 뒷받침돼 주요 형태와 강한 식별력을 함께 판단할 수 있다.",
+        "remaining": "프레임 깊이·대지 접면·도로 거리·정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n05-01.webp",
+          "research-n05-02.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Al Nakhlah Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "정확한 대지 접면·도로 거리·납품 핀 및 외관 사진과 형태 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N06",
+      "name": "Al Rajhi Bank Headquarters",
+      "area": "중북부 · Al Muruj",
+      "road_relationship": "도로변",
+      "selection_suggestion": "추천",
+      "visual_character": "유리 본체를 감싸는 네 개의 육중한 수직 코어와 비틀리는 하부. 재료색을 단순화해도 형태가 남음.",
+      "status_evidence": "준공 프로젝트·사용 자료",
+      "confidence": "partial",
+      "verification_notes": "형태 근거는 RSP의 Al Rajhi Bank Headquarters 프로젝트로 통일. 초기 다른 설계안은 모델링 근거에서 제외. 출처별 높이·층수 차이가 있어 수치는 미채택. 이번 검증은 설계사 본문 기준이며 최신 현장 사진 대조를 완료한 것은 아님.",
+      "sources": [
+        "https://rsp.design/project/al-rajhi-bank-headquarters/",
+        "https://en.wikipedia.org/wiki/Alrajhi_Bank_Tower"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al%20Rajhi%20Bank%20Headquarters%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "RSP의 Al Rajhi Bank Headquarters 프로젝트에서 네 개의 수직 코어·유리 몸체·비틀리는 하부와 준공 항목을 확인. 형태 설명의 대상 출처를 특정.",
+        "remaining": "하부 접합 세부·출처별 치수 차이·정밀 핀·모델 경계",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Al Muruj에 있는 Al Rajhi Bank 본사 건물이다. 은행의 일반 지점이 아닌 본사 건축물을 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "굵은 수직 코어와 유리 몸체의 대비가 큰 구조로 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "전체 외관과 설계사 하부 사진에서 네 수직 코어와 유리 본체의 구성을 확인할 수 있다. 큰 구조가 재료색을 줄여도 남아 추천한다.",
+        "remaining": "하부 접합 세부·출처별 치수 차이·정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n06-01.webp",
+          "research-n06-02.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Al Rajhi Bank Headquarters",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "세부 외관 사진·정확한 핀·출처별 치수 차이",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N07",
+      "name": "Elegance Tower",
+      "area": "중북부 · Al Muruj",
+      "road_relationship": "인접",
+      "selection_suggestion": "추천",
+      "visual_character": "유리 타워 입면의 깊은 후퇴부와 돌출 매스가 특징. 공개 자산평가 보고서의 외관 사진으로 확인.",
+      "status_evidence": "소유사 공개 자산평가 보고서의 업무용 건물 식별·현장 사진",
+      "confidence": "partial",
+      "verification_notes": "2024·2026 공식 자산평가 자료를 대상 식별의 우선 근거로 채택해 용도·주소 충돌을 처리. 상충하는 CTBUH 항목 자체가 정정됐다는 뜻은 아님. 기존 보고서의 도로 경계를 따라 인접 분류를 유지하며 보고서 좌표를 납품 핀으로 전용하지 않음.",
+      "sources": [
+        "https://s3.eu-central-2.wasabisys.com/akc2026/wp-media-folder-alkhabeer-capital/media/2026/07/Elegance-Tower-Alkhabeer-report-R260321.pdf",
+        "https://s3.eu-central-2.wasabisys.com/akc2026/wp-media-folder-alkhabeer-capital/media/2025/01/Elegance-Tower-Esnad-December-2024-English.pdf",
+        "https://www.alkhabeer.com/reit/",
+        "https://www.rafikelkhoury.com/content/elegance-tower-project-riyadh-ksa"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Elegance%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "기존 공식 자산평가 자료에 따른 Al Muruj 업무용 건물 식별을 유지. 추가 정면 사진과 기존 사선·상세 사진에서 중앙 후퇴부·큰 빈 공간·측면 돌출부를 함께 대조.",
+        "remaining": "직접 도로 접면·정밀 핀·저층부 경계와 세부 외피",
+        "visual_claim_check": "확보 사진에서 주요 매스와 입면 후퇴를 대조; 정밀 치수·전체 제작 검증은 미완료",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Al Muruj의 업무용 건물이다. 이 후보는 자산평가 자료에 실린 Elegance Tower를 가리키며, 유사 이름의 병원 관련 기록과 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "신규 정면 사진과 기존 사진에서 중앙 후퇴부·큰 빈 공간·측면 돌출부가 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "추가 정면 사진과 기존 사선·상세 사진을 함께 보면 중앙 후퇴부, 큰 빈 공간과 측면 돌출부를 판단할 수 있다. 공식 자산평가 자료로 대상도 구분돼 추천으로 올린다.",
+        "remaining": "직접 도로 접면·정밀 핀·저층부 경계와 세부 외피",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n07-user-01.png",
+          "research-n07-01.webp",
+          "research-n07-02.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Elegance Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "정면·부분 외관은 보강됐지만 제작용 측후면과 전체 구성 자료가 더 필요하다.",
+          "remaining": "직접 접면·납품 핀과 제작용 외관 자료",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "fact_check_history": [
+        {
+          "date": "2026-09-26",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "공식 자산평가 자료와 구조설계사 기록을 기준으로 Al Muruj의 업무용 Elegance Tower로 식별. CTBUH의 Hospital/Olaya 기록은 이 후보의 근거에서 제외. 주요 형태를 출처 본문 또는 사진·도판과 대조.",
+          "remaining": "직접 접면·납품 핀과 제작용 외관 자료",
+          "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N10",
+      "name": "Moon Tower",
+      "area": "중부 · Ar Rahmaniyyah/Al Urubah 교차권",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "곡면 유리 입면과 상부의 큰 원형 윤곽이 특징. 원형 안쪽에도 유리면이 있어 관통 개구부로 표현하면 안 됨.",
+      "status_evidence": "운영사 공식 외관 사진·CTBUH 완공 기록",
+      "confidence": "partial",
+      "verification_notes": "현재 채택한 기본 외형은 Motoon 자료 기준. Lemay의 진입부·로비 리노베이션은 설계사 표기가 In progress이므로 준공 상태로 옮기지 않음. 기존 관통 원형 개구부 설명은 정정 상태 유지.",
+      "sources": [
+        "https://motoon.com.sa/en/our-projects/moon-tower",
+        "https://lemay.com/projects/moon-tower/",
+        "https://www.skyscrapercenter.com/riyadh/moon-tower/14453",
+        "https://mkkn.com.sa/contact-us/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Moon%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Motoon 공식 사진 기준 원형 내부는 유리로 채워져 있음. Lemay의 진입부·로비 리노베이션 페이지는 이번 재조회에도 In progress 표기.",
+        "remaining": "진입부 리노베이션 완료 자료·최신 진입부 형태·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "진입부 리노베이션은 설계사상 진행 중 · 렌더와 기존 외관 구분",
+      "overview": "Riyadh Ar Rahmaniyyah의 Al Urubah 교차권에 있는 타워다. 기존 건물 외관과 별도로 공개된 진입부·로비 리노베이션 계획을 구분해 살펴볼 대상이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "원형 윤곽과 곡면 몸체가 특징적이다. 원형 내부는 유리면으로 유지하며 관통 구멍으로 해석하지 않는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "곡면 입면과 상부 원형 윤곽은 사진에서 분명하다. 다만 진행 중으로 기록된 진입부 리노베이션의 완료 상태와 최종 하부 형태를 확인할 자료가 부족해 검토를 유지한다.",
+        "remaining": "진입부 리노베이션 완료 자료·최신 진입부 형태·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n10-01.png",
+          "research-n10-02.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Moon Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "리노베이션 이후 진입부 상태를 확인할 자료가 부족하다.",
+          "remaining": "리노베이션 완료를 입증하는 후속 자료 및 최신 진입부 사진",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N11",
+      "name": "The Oval",
+      "area": "중부 · King Fahd Road",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "둥근 평면과 겹겹이 둘러진 발코니·수평 띠. 각진 오피스 타워들 사이에 형태적 변화를 줌.",
+      "status_evidence": "완공 기록",
+      "confidence": "partial",
+      "verification_notes": "개발사 미래형 홍보문보다 CTBUH 완공 상태를 우선 참고. 후속 단계에서 준공 외관·정확한 핀 대조.",
+      "sources": [
+        "https://www.skyscrapercenter.com/building/the-oval/49134",
+        "https://www.mobtakeron.com.sa/en/%D8%B0%D8%A7-%D8%A7%D9%88%D9%81%D9%84/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Oval%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH의 The Oval·King Fahd Road·완공 기록 확인.",
+        "remaining": "기단·진입부와 타워의 연결, 설계와 준공 외관 대응·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "기단·진입부와 타워의 연결 구성 보강 필요",
+      "overview": "Riyadh King Fahd Road에 위치한 고층 건물이다. 도로변 랜드마크 후보로 조사하며, 개발 이미지와 실제 외관을 함께 비교한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "둥근 몸체와 반복 발코니가 단순화된 윤곽에도 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "실제 외관 사진에서 곡면 발코니와 수직 몸체는 확인된다. 하부가 프레임 밖이라 타워와 기단의 전체 구성 및 설계와의 대응을 판단하기 어려워 검토를 유지한다.",
+        "remaining": "기단·진입부와 타워의 연결, 설계와 준공 외관 대응·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n11-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "The Oval",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "개발 렌더와 준공 외관·발코니를 대조할 근거가 더 필요하다.",
+          "remaining": "준공 외관·발코니와 개발 렌더 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N12",
+      "name": "DAMAC Towers Riyadh",
+      "area": "중부 · Kingdom Centre 인근",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "반복되는 주거층과 상부 형상의 조합. 주변 호텔·업무 타워와 묶어 비교하기 좋은 후보.",
+      "status_evidence": "개발사 쌍타워·완공 안내",
+      "confidence": "partial",
+      "verification_notes": "개발사 페이지에서 A·B 쌍타워를 확인하여 단지 1건으로 유지. DAMAC Towers/Burj DAMAC/Esclusiva의 별칭과 모델 경계는 최종 핀 대조 전까지 별도 건물로 세지 않음. 이번 점검에서 서로 다른 프로젝트를 섞었다는 오류는 확정하지 않았음.",
+      "sources": [
+        "https://preprod.damacproperties.com/en/projects/damac-towers-riyadh/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=DAMAC%20Towers%20Riyadh%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "개발사 A·B 쌍타워·완공 안내 확인. 복합단지 1건 유지.",
+        "remaining": "두 동의 하부·독립 모델 범위, Esclusiva/Burj DAMAC 별칭·동별 정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Kingdom Centre 인근의 DAMAC 개발 복합시설이다. A·B 두 타워를 개별 후보로 나누지 않고 하나의 단지로 관리한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "짝을 이루는 타워는 보이나 큰 매스만으로 다른 주거 타워와 구분되는 정도는 추가 비교가 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "두 타워의 반복 층과 외곽 틀은 전경에서 보인다. 동별 대상 범위와 하부 구성을 더 구분해야 하고, 큰 윤곽의 차별성도 다른 주거 타워와 비교할 필요가 있다.",
+        "remaining": "두 동의 하부·독립 모델 범위, Esclusiva/Burj DAMAC 별칭·동별 정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n12-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "DAMAC Towers Riyadh",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "Esclusiva/Burj DAMAC 별칭·동별 핀·세부 외형 사진 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N13",
+      "name": "Hilton Riyadh Olaya",
+      "area": "중부 · Kingdom Centre 인근",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "호텔 타워의 수직 실루엣과 저층부. 주변 초고층의 위치 관계를 보완할 후보.",
+      "status_evidence": "현재 공식 호텔 페이지의 운영·예약 안내 확인",
+      "confidence": "partial",
+      "verification_notes": "Hilton 공식 영국 영문 페이지에서 운영·예약 안내 및 8508 King Fahd Branch Road 주소 확인. 과거 개관 예정 기사만으로 상태를 표시하던 내용을 갱신. 동북부 Hilton Riyadh Hotel & Residences와 구분.",
+      "sources": [
+        "https://www.hilton.com/en-gb/hotels/ruhkfhi-hilton-riyadh-olaya/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hilton%20Riyadh%20Olaya%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "현재 Hilton 공식 운영·예약 안내와 King Fahd Branch Road 주소 확인.",
+        "remaining": "타워·저층부 모델 범위와 깊이, 주변 DAMAC 동과의 경계·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Olaya의 King Fahd Branch Road에 위치한 Hilton 호텔이다. Kingdom Centre 주변 숙박시설을 대표하는 후보 중 하나다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "원통형 몸체는 확인되지만 외형의 차별성은 주변 타워와 비교가 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 호텔 자료와 사진으로 원통형 타워는 식별된다. 현재 전경만으로 저층부 범위를 판단하기 어렵고 일반적인 호텔 타워 대비 실루엣의 차별성이 제한적이라 검토로 둔다.",
+        "remaining": "타워·저층부 모델 범위와 깊이, 주변 DAMAC 동과의 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n13-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Hilton Riyadh Olaya",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "모델 범위·최신 외관 사진과 형태 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N14",
+      "name": "Al Anoud Towers (1·2)",
+      "area": "중부 · Al Olaya",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "두 타워의 곡선 크라운과 첨탑이 만드는 짝 구조. 직선 위주의 스카이라인에서 구분이 쉬움.",
+      "status_evidence": "두 타워 완공 기록",
+      "confidence": "partial",
+      "verification_notes": "Al Anoud/Al Anood/Alnood 별칭 통합. Novotel과 은행 입주 명칭으로 중복 집계하지 않음. 이번에는 2동을 1건으로 계산.",
+      "sources": [
+        "https://www.skyscrapercenter.com/riyadh/burj-al-anoud/11268/",
+        "https://www.skyscrapercenter.com/riyadh/alnood-tower-2/13954/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al%20Anoud%20Towers%20(1%C2%B72)%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "두 CTBUH 레코드로 Al Anoud 1·2 식별·완공 기록 확인.",
+        "remaining": "두 동 각각의 외관·하부·부속 영역 대응 및 모델 범위·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Al Olaya에 위치한 Al Anoud 1·2 두 타워를 묶은 후보다. 자료에 각각 등록된 건물을 한 쌍의 단지로 검토한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "두 동의 곡선 상부와 첨탑 구성이 뚜렷하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "곡선 크라운을 가진 두 타워의 짝 구조는 매력적이다. 확보 사진과 호텔 자료를 각 동·부속 영역에 일대일로 대응시키는 작업이 남아 검토를 유지한다.",
+        "remaining": "두 동 각각의 외관·하부·부속 영역 대응 및 모델 범위·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n14-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Al Anoud Towers",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "두 동 각각의 외관과 부속 영역을 일대일로 대조하지 못했다.",
+          "remaining": "두 동의 외관·부속 영역 일대일 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N16",
+      "name": "Olaya Towers",
+      "area": "중부 · Olaya × Tahlia",
+      "road_relationship": "인접",
+      "selection_suggestion": "추천",
+      "visual_character": "높이가 다른 한 쌍의 유리 타워와 곡면 상부. 두 동의 비례 차이가 지도용 실루엣을 만듦.",
+      "status_evidence": "운영사·완공 기록",
+      "confidence": "partial",
+      "verification_notes": "King Fahd Road 바로 접면이 아니라 Olaya/Tahlia 교차부. 두 타워를 1개 단지로 계산.",
+      "sources": [
+        "https://www.osoolre.com/projects-posts/olaya-towers/",
+        "https://www.skyscrapercenter.com/complex/753"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Olaya%20Towers%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Osool에서 두 업무용 타워 및 Olaya/Prince Mohammed bin Abdul Aziz 교차부 확인.",
+        "remaining": "상부 세부·동별 높이 비례와 정밀 핀·모델 경계",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Olaya Street와 Prince Mohammed bin Abdul Aziz Street 교차부의 두 업무용 타워다. 두 동을 묶어 하나의 랜드마크 후보로 검토한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "두 동의 높이 차이와 상부 크라운이 짝 구조의 식별점이다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "제공 전경에서 두 타워의 전체 윤곽과 높이 차이, 곡면 상부를 함께 확인할 수 있다. 주변의 별도 건물과 구분되며 한 쌍의 비례가 지도 크기에서도 남아 추천한다.",
+        "remaining": "상부 세부·동별 높이 비례와 정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n16-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Olaya Towers",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "상부 형상·높이 비례 사진 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N17",
+      "name": "Narcissus Hotel & Residence Riyadh",
+      "area": "중부 · Olaya × Tahlia",
+      "road_relationship": "인접",
+      "selection_suggestion": "검토",
+      "visual_character": "장식적인 상부와 고전적인 입면 분위기의 호텔. 유리 오피스 타워와 다른 외형 유형.",
+      "status_evidence": "호텔 운영 확인",
+      "confidence": "partial",
+      "verification_notes": "실내 화려함과 외부 모델의 식별성을 구분. 외장 장식은 지도 축척에 맞춰 단순화 필요.",
+      "sources": [
+        "https://narcissushotels.com/riyadh/",
+        "https://narcissushotels.com/narcissusriyadhgallery/"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Narcissus%20Hotel%20%26%20Residence%20Riyadh%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "공식 호텔 운영 소개와 Riyadh 호텔 식별 확인.",
+        "remaining": "주간 외장·장식의 깊이와 단순화 수준, 현행 브랜드·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Olaya와 Tahlia 교차권의 호텔·레지던스다. 동일 브랜드의 다른 지역 숙박시설과 구분되는 Riyadh 건물을 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "상부 장식은 뚜렷하나 축소 시 장식 생략에 따른 식별력 감소를 검토해야 한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "코너 타워와 장식적인 입면은 확인되지만 확보 자료는 야간 조명의 영향이 크다. 주간 외장과 큰 윤곽을 더 확인해야 하고 작은 모델에서 장식의 식별력이 유지되는지도 검토가 필요하다.",
+        "remaining": "주간 외장·장식의 깊이와 단순화 수준, 현행 브랜드·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n17-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Narcissus Hotel & Residence Riyadh",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "외관 장식 사진 대조·현행 브랜드 표기",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N18",
+      "name": "Hamad Tower",
+      "area": "중부 · Al Faisaliah 인근",
+      "road_relationship": "도로변",
+      "selection_suggestion": "추천",
+      "visual_character": "푸른 유리면을 가르는 굵은 흰색 사선과 테이퍼 형태. 작은 모델에도 남길 특징이 분명함.",
+      "status_evidence": "CTBUH 완공 기록",
+      "confidence": "partial",
+      "verification_notes": "입주사 사진 중 다른 타워가 섞이는 경우가 있어 CTBUH 사진과 명칭을 함께 대조. 층수는 출처 차이로 미채택.",
+      "sources": [
+        "https://www.skyscrapercenter.com/riyadh/hamad-tower/14452"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hamad%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH 완공·King Fahad Road 기록 확인. 운영사 출처라는 표시 제거.",
+        "remaining": "사선 구조의 깊이·접합부, 층수 출처 충돌·정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh King Fahd Road의 고층 건물이다. Al Faisaliah 인근 도로축의 랜드마크 후보로 조사하고 있다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "기울어진 상부와 굵은 사선 구조가 축소 시에도 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "제공 사진에서 뾰족한 상부와 테이퍼 몸체, 굵은 사선 구조가 함께 읽힌다. 핵심 형태를 판단할 자료가 있고 작은 모델에도 남길 구조가 명확해 추천한다.",
+        "remaining": "사선 구조의 깊이·접합부, 층수 출처 충돌·정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n18-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Hamad Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "사선 입면 최신 사진 대조, 층수 충돌",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N19",
+      "name": "King Faisal Foundation Headquarters",
+      "area": "중부 · Al Faisaliah 인근",
+      "road_relationship": "인접",
+      "selection_suggestion": "검토",
+      "visual_character": "마주 보는 두 타워와 높이가 다른 상부 연결 브리지 두 개. 타워 사이 빈 공간과 연결 구조가 식별점.",
+      "status_evidence": "CSBE 건축 연구·역사 외관 사진",
+      "confidence": "partial",
+      "verification_notes": "CSBE Figure 19의 외관 사진에서 두 타워와 연결부를 확인. 재단 공식 자료라는 기존 출처 표시는 정정. 삼각 평면은 별도 도면 대조 전까지 단정하지 않음. 기존 B11 Al Faisaliah Center 모델의 부속 영역과 겹치는지 footprint 대조 필요. 로컬 B11.glb의 노드명 alfaisaliahtower_bake와 단일 메시를 확인했으나, 메시명·바운딩박스만으로 재단 부속동 포함 여부는 확정할 수 없음.",
+      "sources": [
+        "https://www.csbe.org/riyadh-architecture-in-one-hundred-years-1"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King%20Faisal%20Foundation%20Headquarters%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CSBE Figure 19에서 두 타워·상부 연결부 확인. 재단 공식 출처라는 표시 정정.",
+        "remaining": "B11 모델 부속 영역과 중복, 평면·모델 경계·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "appearance"
+      },
+      "decision_note": "기존 B11 Al Faisaliah 모델 부속 영역과 중복 확인",
+      "overview": "Riyadh의 King Faisal Foundation 본사 건물이다. Al Faisaliah 인근에 있어 기존 Al Faisaliah 모델에 포함된 주변 건축물과 범위를 비교할 필요가 있다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "마주 보는 두 벽체와 두 연결 브리지 사이의 빈 공간이 강한 식별점이다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "두 타워 사이의 빈 공간과 두 연결 브리지는 사진에서 분명하다. 다만 기존 B11 Al Faisaliah 모델의 부속 영역과 겹치는지 확인되지 않아 추천으로 올리지 않는다.",
+        "remaining": "B11 모델 부속 영역과 중복, 평면·모델 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n19-01.png"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "King Faisal Foundation Headquarters",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "기존 B11 Al Faisaliah 모델의 부속 영역과 중복 여부가 미해결이다.",
+          "remaining": "평면·B11 모델 부속 범위·현재 외관",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N20",
+      "name": "Ministry of Interior Headquarters",
+      "area": "중남부 · 남부 Al Olaya",
+      "road_relationship": "도로변",
+      "selection_suggestion": "추천",
+      "visual_character": "위로 넓어지는 역피라미드와 중앙 돔. 형태만으로 알아볼 수 있어 최우선 검토 가치가 큼.",
+      "status_evidence": "공식 기관·기존 청사 자료",
+      "confidence": "partial",
+      "verification_notes": "기존 MoMRAH(21/B15)와 별개 기관·건물. 내부 구조보다 공개된 외부 윤곽을 기준으로 선정.",
+      "sources": [
+        "https://saudipedia.com/en/ministry-of-interior",
+        "https://saudipedia.com/en/visual-icons-in-riyadh"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ministry%20of%20Interior%20Headquarters%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia에서 역피라미드와 상부 돔 형상 확인.",
+        "remaining": "부속 영역·현장 모델 경계·정밀 핀·치수",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "appearance"
+      },
+      "overview": "Riyadh 남부 Olaya 권역의 사우디 내무부 본사 청사다. 고층 업무 타워와 다른 관공서 건축 유형을 대표하는 후보다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "위로 넓어지는 역피라미드와 중앙 돔이 독특한 큰 윤곽을 이룬다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "공식 자료와 외관 사진에서 역피라미드 몸체와 중앙 돔의 큰 구성을 확인할 수 있다. 입면 세부를 줄여도 형태 자체의 식별력이 높아 추천한다.",
+        "remaining": "부속 영역·현장 모델 경계·정밀 핀·치수",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n20-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Ministry of Interior Headquarters",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "현장 모델 경계·정밀 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "government"
+    },
+    {
+      "id": "N22",
+      "name": "Riyadh TV Tower",
+      "area": "남부 · Al Wisham",
+      "road_relationship": "확장",
+      "selection_suggestion": "검토",
+      "visual_character": "가는 기둥 위의 둥근 방송·전망부와 안테나. 일반 건축물과 실루엣 차이가 큼.",
+      "status_evidence": "기존 시설 자료",
+      "confidence": "partial",
+      "verification_notes": "방송탑이므로 엄밀한 건축물만 원하는 경우 제외 가능. 높이·준공연도는 출처 차이로 이번 목록에서 생략. 방송 본부 개관과 탑 준공을 같은 연도로 단정하지 않음.",
+      "sources": [
+        "https://saudipedia.com/en/saudi-television-evolution-timeline",
+        "https://en.wikipedia.org/wiki/Riyadh_TV_Tower"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh%20TV%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "공식 TV 연혁과 기존 방송탑 기록 확인. 개관과 준공연도는 구분.",
+        "remaining": "가려진 하부·기단과 연결 건물 범위, 최신 외관·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Al Wisham의 방송탑이다. 도시의 방송 역사와 연결된 시설로, 일반 업무·주거 타워와 구분해 검토한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "가는 기둥과 상부 방송 구조·안테나의 대비가 명확하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "방송·전망부와 안테나는 강한 실루엣을 만든다. 제공 사진에서 하부가 주변 건물과 나무에 가려져 탑의 기단·연결 건물 범위를 판단할 자료가 부족해 검토를 유지한다.",
+        "remaining": "가려진 하부·기단과 연결 건물 범위, 최신 외관·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n22-user-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Riyadh TV Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "현재 확보 사진은 하부가 가려져 있고 최신 외관·하부 구성을 확인할 자료가 부족하다.",
+          "remaining": "최신 외관 사진과 형태 대조·정밀 핀; 연도·높이 미채택",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "infra"
+    },
+    {
+      "id": "N23",
+      "name": "Riyadh Water Tower",
+      "area": "남부 · Al Futah/Al Watan Park",
+      "road_relationship": "확장",
+      "selection_suggestion": "검토",
+      "visual_character": "가느다란 원통 기둥과 크게 벌어진 수조의 버섯형 윤곽. 단순한 모델로도 캐릭터 유지 가능.",
+      "status_evidence": "공식 시설 자료",
+      "confidence": "partial",
+      "verification_notes": "National Museum·Murabba Palace와 별개. 기존 Al Khobar Water Tower(B45)와 도시·대상이 다름. King Abdulaziz Historical Center 권역의 시설이므로 보유 Museum/Murabba 모델의 주변 영역 포함 여부는 별도 대조. 기존 Reference 01 National Museum·02 Murabba Palace는 별도 항목으로 확인. 카탈로그에 주변부 모델 포함 범위가 없어 물탑 중복 여부는 판단하지 않음.",
+      "sources": [
+        "https://saudipedia.com/en/riyadh-water-tower"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh%20Water%20Tower%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia의 Al Futah/Al Watan Park 위치·버섯형 구조 확인.",
+        "remaining": "Museum/Murabba 보유 모델의 포함 여부·모델 경계·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "보유 Museum·Murabba 모델의 주변부 포함 여부 확인",
+      "overview": "Riyadh Al Futah의 Al Watan Park에 위치한 급수탑이다. 기존 Museum·Murabba 모델과 인접 지역의 포함 범위를 비교하는 후보다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "기둥에서 넓어지는 수조의 윤곽만으로 형태가 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "제공 사진에서 넓게 벌어진 수조와 기둥의 전체 형태는 읽힌다. 기존 Museum·Murabba 모델에 주변 시설로 포함됐는지 확인되지 않아 검토를 유지한다.",
+        "remaining": "Museum/Murabba 보유 모델의 포함 여부·모델 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n23-user-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Riyadh Water Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "기존 Museum·Murabba 모델에 주변부로 포함됐는지 미확인이다.",
+          "remaining": "Museum/Murabba 보유 모델과 주변부 중복",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "infra"
+    },
+    {
+      "id": "N24",
+      "name": "Ministry of Foreign Affairs Headquarters",
+      "area": "남부 서측 · Al Nasiriyah 권역",
+      "road_relationship": "확장",
+      "selection_suggestion": "추천",
+      "visual_character": "기하학적 저층 배치와 중정, 두꺼운 외벽의 조합. 타워 이외 관공서 유형을 보완.",
+      "status_evidence": "준공 프로젝트·기관 자료",
+      "confidence": "partial",
+      "verification_notes": "승인된 권역 확장 항목을 유지하며 King Fahd Road 도로변으로 표현하지 않음. 외벽·조감 사진에서 주요 외부 형태를 대조했고, 실내 중정의 특징만을 추천 근거로 사용하지 않음.",
+      "sources": [
+        "https://henninglarsen.com/projects/ministry-of-foreign-affairs-in-riyadh",
+        "https://saudipedia.com/en/ministry-of-foreign-affairs"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ministry%20of%20Foreign%20Affairs%20Headquarters%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Henning Larsen 프로젝트 페이지에서 Riyadh 외교부 청사와 Completed 상태를 재확인. 기존 외벽 사진과 제공 조감 사진에서 저층 배치·곡면 외벽·지붕 구성을 대조.",
+        "remaining": "부속 영역·현장 모델 경계·도로 관계·정밀 핀·치수",
+        "visual_claim_check": "외부 전경과 조감 사진으로 주요 외부 형태를 대조; 제공 사진의 촬영 시점은 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Al Nasiriyah 권역의 사우디 외교부 청사다. 설계사 자료에 소개된 Riyadh 본부 건축물을 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "사진이 부분 외관 중심이라 저층 단지 전체 구성과 외부 식별력을 더 확인해야 한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "추가 조감 사진과 기존 외벽 사진으로 저층 청사의 배치, 곡면 외벽과 지붕 구성을 함께 판단할 수 있다. 설계사의 준공 기록도 확인돼 외부 형태의 캐릭터를 근거로 추천으로 올린다.",
+        "remaining": "부속 영역·현장 모델 경계·도로 관계·정밀 핀·치수",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n24-01.webp",
+          "research-n24-user-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Ministry of Foreign Affairs Headquarters",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "현장 모델 경계·도로 관계",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "fact_check_history": [
+        {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "설계사에서 Riyadh 외교부 건축과 중정 구성 확인.",
+          "remaining": "현장 모델 경계·도로 관계",
+          "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "landmark_type": "government"
+    },
+    {
+      "id": "N25",
+      "name": "Qasr Al Hukm",
+      "area": "남부 · Ad Dirah 구도심",
+      "road_relationship": "확장",
+      "selection_suggestion": "검토",
+      "visual_character": "성곽형 벽체, 모서리 타워, 중정이 이루는 전통 관공서 건축. 구도심을 대표하는 유형.",
+      "status_evidence": "공식 역사·건물 자료",
+      "confidence": "partial",
+      "verification_notes": "기존 Murabba Palace(02), Al Masmak Palace(B10)와 다른 건물. 별개 궁전 이름을 통합하지 않음.",
+      "sources": [
+        "https://saudipedia.com/en/qasr-al-hukm",
+        "https://www.spa.gov.sa/en/N2406238",
+        "https://www.rcrc.gov.sa/wp-content/uploads/2023/06/Tatweer_57.pdf",
+        "https://www.aldirah.sa/visit-places"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Qasr%20Al%20Hukm%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia에서 Qasr Al Hukm 건축과 재건 이력 확인.",
+        "remaining": "궁전 전체 경계·중정 구성·Imam Turki 모스크 연결부 범위",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh 구도심 Ad Dirah의 통치·행정 기능을 갖춘 역사 궁전이다. 공식 자료에는 국왕·Riyadh 주지사와 부지사 집무실, 행정 사무실 및 회의장이 있는 것으로 설명된다.",
+      "connected_building": {
+        "id": "N26",
+        "label": "Imam Turki 모스크",
+        "description": "Qasr Al-Hukm 궁전과 Imam Turki Bin Abdullah Grand Mosque는 인접한 별개 건물이며 연결 통로로 이어져 있다. 연결 통로를 어느 건물의 모델에 포함할지는 미확정이다.",
+        "source_url": "https://saudipedia.com/en/qasr-al-hukm"
+      },
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "성곽형 외벽은 보이나 궁전 전체 경계와 연결부를 포함한 형태 비교가 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 위치와 외벽 사진으로 궁전 청사를 식별할 수 있다. 광장 사진에는 인접 건물도 포함돼 궁전의 전체 경계와 모스크 연결부의 모델 범위를 더 구분해야 한다.",
+        "remaining": "궁전 전체 경계·중정 구성·Imam Turki 모스크 연결부 범위",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n25-01.webp",
+          "research-n25-user-20260930-01.png"
+        ],
+        "map_identification_status": "coordinate_matched"
+      },
+      "image_search_name": "Qasr Al Hukm",
+      "relation_notes": [
+        "Riyadh General Court가 속한 법원 주변 권역과 Qasr Al Hukm 궁전·Imam Turki 모스크 권역은 구분한다. 법원 바로 옆의 모스크는 Sheikh Mohammed Bin Ibrahim Mosque이며 Imam Turki 모스크와 다른 건물이다.",
+        "공식 방문 안내의 궁전 좌표를 사용해 지도 핀으로 이동한다. Google 장소 상세 항목은 비어 있어 좌표로 표시한다. 납품용 정밀 좌표 검증은 별도다."
+      ],
+      "spatial_relation_review": {
+        "date": "2026-09-30",
+        "source_url": "https://www.rcrc.gov.sa/wp-content/uploads/2023/06/Tatweer_57.pdf",
+        "correction": "궁전–법원 동일 블록 직접 인접 표시 철회. 법원 주변 모스크는 Sheikh Mohammed Bin Ibrahim Mosque. 궁전–Imam Turki 모스크 연결 관계 유지.",
+        "basis": "RCRC Tatweer 57의 법원·모스크·Qasr Al Hukm 권역 관계 설명 및 제공 항공 사진의 지붕·미나레트 배치 대조"
+      },
+      "map_location_note": "공식 방문 안내의 궁전 좌표를 사용해 지도 핀으로 이동한다. Google 장소 상세 항목은 비어 있어 좌표로 표시한다. 납품용 정밀 좌표 검증은 별도다.",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "현재 궁전 경계와 주변 모스크 연결부",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "heritage"
+    },
+    {
+      "id": "N26",
+      "name": "Imam Turki Bin Abdullah Grand Mosque",
+      "area": "남부 · Qasr Al Hukm 지구",
+      "road_relationship": "확장",
+      "selection_suggestion": "검토",
+      "visual_character": "각진 쌍 미나레트와 넓은 중정, 낮은 예배당의 대비. 돔 중심 모스크와 다른 외형.",
+      "status_evidence": "공식 모스크 자료",
+      "confidence": "partial",
+      "verification_notes": "기존 Al Rajhi Mosque(22) 및 KAFD Grand Mosque(41)와 다름. 궁전 연결부의 모델 경계를 정리할 것.",
+      "sources": [
+        "https://saudipedia.com/en/imam-turki-bin-abdullah-grand-mosque",
+        "https://www.spa.gov.sa/w1881614",
+        "https://saudipedia.com/en/qasr-al-hukm",
+        "https://www.rcrc.gov.sa/wp-content/uploads/2023/06/Tatweer_57.pdf"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Imam%20Turki%20Bin%20Abdullah%20Grand%20Mosque%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia에서 Qasr Al Hukm 지구 모스크 식별·쌍 미나레트 확인.",
+        "remaining": "전체 배치·중정 깊이·궁전 연결부 모델 경계·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh Qasr Al Hukm 지구의 대형 모스크다. 같은 지구의 궁전·광장·관공서와 함께 도시 중심부를 이루는 종교시설 후보다.",
+      "connected_building": {
+        "id": "N25",
+        "label": "Qasr Al-Hukm 궁전",
+        "description": "Qasr Al-Hukm 궁전과 Imam Turki Bin Abdullah Grand Mosque는 인접한 별개 건물이며 연결 통로로 이어져 있다. 연결 통로를 어느 건물의 모델에 포함할지는 미확정이다.",
+        "source_url": "https://saudipedia.com/en/qasr-al-hukm"
+      },
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "쌍 미나레트와 중정이 후보 가치가 있으나 저층 전체 범위와 다른 전통 모스크와의 차이를 더 비교해야 한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "각진 쌍 미나레트와 낮은 예배당은 기존 사진과 기록에서 확인된다. 모스크 전체 배치와 궁전으로 이어지는 연결부의 깊이·범위 자료가 더 필요해 검토로 둔다.",
+        "remaining": "전체 배치·중정 깊이·궁전 연결부 모델 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n26-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Imam Turki Bin Abdullah Grand Mosque",
+      "relation_notes": [
+        "Riyadh General Court 주변의 Sheikh Mohammed Bin Ibrahim Mosque와 별개 건물이다. 법원과 함께 보이는 해당 모스크 항공 사진을 Imam Turki 모스크 외관 자료로 사용하지 않는다."
+      ],
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "재건 후 외관·연결부 모델 경계",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "mosque"
+    },
+    {
+      "id": "N27",
+      "name": "Riyadh General Court — Qasr Al Hukm 지구 건물",
+      "area": "남부 · 구도심",
+      "road_relationship": "확장",
+      "selection_suggestion": "검토",
+      "visual_character": "육중한 석재 몸체와 정면 중앙의 깊고 높은 개구부가 특징. 탑뷰에서 지붕 배치가 보이며, 옆 모스크와 별개 건물로 다룬다.",
+      "status_evidence": "SPA의 법원 기사 외관 사진·지도 장소 이름과 주소 대조",
+      "confidence": "low",
+      "verification_notes": "정면 기사 사진·제공 탑뷰와 지도 장소 대조로 대상 식별을 보강. 정밀 좌표·치수·부속동의 모델 범위는 미검증이며 DATA LOW를 유지.",
+      "sources": [
+        "https://saudipedia.com/en/visual-icons-in-riyadh",
+        "https://www.rcrc.gov.sa/wp-content/uploads/2023/06/Tatweer_57.pdf",
+        "https://www.spa.gov.sa/2046561"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh%20General%20Court%20Riyadh%20Saudi%20Arabia",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "scope_history": [
+        {
+          "date": "2026-09-23",
+          "action": "excluded",
+          "reason": "사용자 요청: 주변 권역 확장 후보 제외"
+        },
+        {
+          "date": "2026-09-23",
+          "action": "restored_for_review",
+          "reason": "사용자 요청: 권역 확장 항목을 검토 중으로 복귀"
+        }
+      ],
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "SPA의 Riyadh General Court 기사 외관 사진과 제공 탑뷰, 기존 지도 장소의 이름·주소·석재 매스와 중앙 수직 개구부 대조 기록을 함께 검토. 구도심의 대상 청사를 구분하며 형사법원·집행법원으로 확대하지 않음.",
+        "remaining": "측면 깊이·부속 영역·모델 경계·정밀 핀·치수; DATA LOW 유지",
+        "visual_claim_check": "정면과 탑뷰의 큰 매스·중앙 개구부를 대조; 측면 깊이·부속 영역은 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "측면 깊이·부속 영역의 모델 범위 확인 · DATA LOW",
+      "overview": "Riyadh 구도심 Qasr Al Hukm 지구의 일반법원 청사다. SPA의 법원 기사 외관 사진과 장소 대조 기록을 기준으로 이 석재 청사를 대상으로 하며, 다른 법원 청사와 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "보류",
+        "result": "보류",
+        "reason": "사진이 있어도 동명 청사·별관과 대상 건물의 대응이 미해결이므로 보류한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "보류",
+        "result": "검토",
+        "reason": "SPA의 법원 정면 사진, 제공 탑뷰와 지도 장소 대조로 대상 식별이 보강돼 보류에서 검토로 올린다. 깊은 중앙 개구부는 특징적이지만 측면 깊이와 부속 범위 자료가 더 필요하다.",
+        "remaining": "측면 깊이·부속 영역·모델 경계·정밀 핀·치수; DATA LOW 유지",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n27-01.webp",
+          "research-n27-user-20260930-02.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Riyadh General Court",
+      "relation_notes": [
+        "Riyadh General Court가 속한 법원 주변 권역과 Qasr Al Hukm 궁전·Imam Turki 모스크 권역은 구분한다. 법원 바로 옆의 모스크는 Sheikh Mohammed Bin Ibrahim Mosque이며 Imam Turki 모스크와 다른 건물이다."
+      ],
+      "spatial_relation_review": {
+        "date": "2026-09-30",
+        "source_url": "https://www.rcrc.gov.sa/wp-content/uploads/2023/06/Tatweer_57.pdf",
+        "correction": "궁전–법원 동일 블록 직접 인접 표시 철회. 법원 주변 모스크는 Sheikh Mohammed Bin Ibrahim Mosque. 궁전–Imam Turki 모스크 연결 관계 유지.",
+        "basis": "RCRC Tatweer 57의 법원·모스크·Qasr Al Hukm 권역 관계 설명 및 제공 항공 사진의 지붕·미나레트 배치 대조"
+      },
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "보류",
+          "result": "보류",
+          "reason": "대상 대응 또는 실제 외관 확인의 선행 문제가 남아 보류한다.",
+          "remaining": "사진을 통한 동명 법원·별관 외형 구분·정확한 핀; DATA LOW",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "fact_check_history": [
+        {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "Saudipedia가 Qasr Al Hukm 지구 법원과 주변 도로를 명시.",
+          "remaining": "사진을 통한 동명 법원·별관 외형 구분·정확한 핀; DATA LOW",
+          "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "landmark_type": "government"
+    },
+    {
+      "id": "N30",
+      "name": "Hital Tower",
+      "area": "북부 · As Sahafah / King Fahd Branch Road",
+      "visual_character": "휘어진 유리 몸체와 타워 바깥에서 교차하는 큰 프레임, 상부로 솟은 끝단이 특징. 야간 조명을 제외해도 외곽 윤곽과 프레임을 식별 요소로 남길 수 있다.",
+      "overview": "Riyadh 북부 As Sahafah의 King Fahd Branch Road에 위치한 업무용 타워다. Al Ajlan Global이 소개하는 부동산 프로젝트로, 여러 기업의 사무실이 입주해 있다.",
+      "status_evidence": "개발사 외관 사진·입주사 공식 주소로 건물 및 사용 확인",
+      "verification_notes": "개발사 Hital Tower 페이지의 야간 외관 사진과 입주사 주소, Google 지도 명칭·소재지를 대조했다. Hetal·Hilal 등 유사 표기 및 KAFD Hilal Tower와 혼동하지 않는다. 야간 조명색은 주간 외장색으로 채택하지 않으며, 측후면·프레임 깊이·치수는 추가 자료가 필요하다.",
+      "sources": [
+        "https://www.alajlan-global.sa/project/2",
+        "https://www.boopin.com/en/contact-us-2026/",
+        "https://www.x-elio.com/contact/"
+      ],
+      "decision_note": "측후면·프레임 깊이와 주간 외장 자료 보강 필요",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hital+Tower+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "image_search_name": "Hital Tower",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "개발사가 Hital Tower로 공개한 실제 야간 외관을 확인. Boopin 및 X-ELIO 공식 입주 주소가 King Fahd Road의 Hital Tower를 명시하며, 지도 As Sahafah 장소와 대조. 현재 보유 목록에 동일 이름 없음.",
+        "remaining": "프레임 깊이·접합부·주간 외장·저층부 모델 경계·정밀 핀",
+        "visual_claim_check": "공개 사진·설계 자료 확인; 현재 전체 외관 대조는 미완료",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "개발사 사진에서 교차 프레임과 휘어진 몸체는 뚜렷하다. 야간 전경만으로 프레임과 몸체 사이 깊이·접합부 및 주간 외장을 판단하기 어려워 검토를 유지한다.",
+        "remaining": "프레임 깊이·접합부·주간 외장·저층부 모델 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-n30-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-30",
+          "criteria": "종합 추천 v1",
+          "result": "검토",
+          "reason": "교차 프레임과 휘어진 몸체의 캐릭터는 뚜렷하지만, 현재 확보한 야간 사진만으로 측후면과 구조 깊이를 판단하기 어려워 검토로 둔다.",
+          "remaining": "주간 외장색, 측후면과 교차 프레임의 깊이·접합부, 저층부 모델 경계·정밀 좌표·치수",
+          "scope": "현재 확보 사진·공식 자료·기존 명칭 목록 대조; 공개 리소스 전체 수량이나 정밀 제작 검증을 뜻하지 않음"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "N31",
+      "name": "Tuwaiq Gate",
+      "area": "중부 · Ar Rahmaniyyah / King Fahd Road",
+      "overview": "Riyadh King Fahd Road의 주거·업무·상업 복합단지다. 여러 저층 건물에 기업 사무실과 주거 공간, 식음·상업 시설을 배치하고 공용 중정과 보행로를 연결한다.",
+      "visual_character": "중앙에서 높게 솟았다가 양쪽으로 낮아지는 파형 지붕과 석재 사무동이 특징. 저층 건물군과 중정의 반복 배치가 타워 위주 목록에 다른 외형 유형을 보완한다.",
+      "status_evidence": "공식 임대 안내·야간 외관 사진·입주사 운영 주소 확인",
+      "verification_notes": "Tuwaiq Gate 복합단지를 대상으로 하며 Tuwaiq Heritage Tower·Tuwaiq Palace·동명 컨설팅 업체와 구분한다. 입주사 주소와 공식 사이트를 지도 장소에 대조했으며, 단지 전체의 준공일·현재 모든 구역의 상태를 확정한 것은 아니다. 중앙 진입부와 주변 사무동·주거동의 모델 범위는 미정.",
+      "sources": [
+        "https://tg-sa.com/gallery/",
+        "https://tg-sa.com/Space_/office-spaces/",
+        "https://tg-sa.com/project-location/",
+        "https://letscolab.space/contacts/"
+      ],
+      "decision_note": "중앙 진입부·사무동·주거동의 모델 포함 범위 확인",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tuwaiq+Gate+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "image_search_name": "Tuwaiq Gate",
+      "duplicate_check": "Reference·Balady+·Archive·현재 Research 명칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "공식 사이트에서 주거·업무·상업 복합 용도, 야간 전경과 사무공간 유형별 평면·배치 자료를 확인. Colab 입주 주소의 King Fahd Rd·Ar Rahmaniyyah를 지도 Tuwaiq Gate의 장소명·소재지·공식 웹사이트·전화번호와 대조. 사진의 중앙 파형 지붕과 양쪽 석재 건물군을 배치 조감도와 비교.",
+        "remaining": "중앙 지붕의 구조 깊이·접합부, 중앙 진입부와 사무동·주거동의 모델 포함 범위, 정밀 핀·치수",
+        "visual_claim_check": "공식 전경과 사무공간 배치 조감도의 큰 구성 대조; 지붕 구조 세부·제작 범위는 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "공식 외관과 배치 자료에서 중앙 파형 지붕과 석재 건물군의 구성이 읽힌다. 단지 전체를 포함할 모델 범위와 지붕 구조의 깊이를 더 대조해야 해 검토로 둔다.",
+        "remaining": "중앙 지붕의 구조 깊이·접합부, 중앙 진입부와 사무동·주거동의 모델 포함 범위, 정밀 핀·치수",
+        "scope": "공식 외관·배치 자료와 입주사 주소·지도 장소 및 기존 명칭 목록 대조. 공개 리소스 전체량·최신 현장 상태·정밀 제작 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n31-01.jpg",
+          "research-n31-02.jpg"
+        ],
+        "map_identification_status": "matched"
+      },
+      "landmark_type": "complex"
+    }
+  ],
+  "link_check_date": "2026-09-23",
+  "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
+  "count": 25,
+  "scope_update": {
+    "date": "2026-09-23",
+    "excluded_ids": [
+      "N08"
+    ],
+    "restored_for_review_ids": [
+      "N21",
+      "N22",
+      "N23",
+      "N24",
+      "N25",
+      "N26",
+      "N27",
+      "N28"
+    ],
+    "excluded_records": "excluded_candidates.json",
+    "note": "후속 사용자 요청에 따라 권역 확장 8건을 검토 중으로 복귀. 도로변·인접 19건과 분리; N08은 제외 유지."
+  },
+  "counts_by_scope": {
+    "core": 19,
+    "extension_under_review": 6
+  },
+  "fact_check_date": "2026-09-23",
+  "fact_check_report": "../FACT_CHECK_2026-09-23.md",
+  "fact_check_note": "기본 식별·출처 본문과 일부 외형을 대조한 검증. 전체 최신 외관·정밀 핀·치수·모델 중복 검증 완료를 뜻하지 않음.",
+  "review_status_note": "Research 상태는 검토 중 / 선정 / 제외. 권역·자료 등급·추천 의견과 독립적으로 관리하며, 선정·제외 후에도 조사 기록 유지.",
+  "selection_check_review_date": "2026-09-26",
+  "recommendation_review_date": "2026-09-30",
+  "recommendation_criteria": "종합 추천 v1",
+  "inventory_update": {
+    "date": "2026-09-30",
+    "added_ids": [
+      "N31"
+    ],
+    "removed_ids": [],
+    "reason": "사용자 요청: Tuwaiq Gate를 검토 등급으로 추가. 기존 모델의 Al Faisaliah Tower는 신규 후보에서 제외."
+  },
+  "inventory_update_history": [
+    {
+      "date": "2026-09-30",
+      "added_ids": [
+        "N29",
+        "N30"
+      ],
+      "removed_ids": [
+        "N09"
+      ],
+      "retained_id": "N11",
+      "reason": "사용자 요청: 두 후보 추가, Tatweer Towers 삭제, The Oval 유지"
+    },
+    {
+      "date": "2026-09-30",
+      "added_ids": [],
+      "removed_ids": [
+        "N29"
+      ],
+      "retained_ids": [
+        "N11",
+        "N30"
+      ],
+      "reason": "사용자 요청: Sky Gardens 완공 미확정으로 삭제. The Oval과 Hital Tower는 유지."
+    }
+  ],
+  "recommendation_review_summary": {
+    "date": "2026-09-30",
+    "count": 25,
+    "counts": {
+      "보류": 1,
+      "추천": 9,
+      "검토": 15
+    },
+    "report": "research/COMPOSITE_REVIEW_2026-09-30.md",
+    "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님."
+  }
+}

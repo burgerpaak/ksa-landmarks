@@ -16,6 +16,7 @@ import struct
 import sys
 import time
 from pathlib import Path
+from research_page import build_research
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -1046,11 +1047,11 @@ def build_files(landmarks: list, palette: str):
     balady_cat = scan_balady_catalog()
     archive_cat = scan_archive_catalog()
 
-    def _section_html(title, sub, cards, extra=""):
+    def _section_html(title, sub, cards, extra="", count=""):
         return (
             f'<section class="files-section">'
             f'<div class="files-section-head">'
-            f'<h2 class="files-section-title">{esc(title)}</h2>'
+            f'<h2 class="files-section-title">{esc(title)}</h2>{count}'
             f'<span class="files-section-sub">{esc(sub)}</span>{extra}</div>'
             f'<div class="files-grid">\n{cards}\n    </div></section>'
         )
@@ -1060,7 +1061,8 @@ def build_files(landmarks: list, palette: str):
     def fill(entries, count, eyebrow, title, sub, back="", doc=""):
         o = template.replace("{{PALETTE}}", palette)
         o = o.replace("{{ENTRIES}}", entries)
-        o = o.replace("{{COUNT}}", count)
+        o = o.replace('<div class="page-count">{{COUNT}}</div>',
+                      f'<div class="page-count">{count}</div>' if count else "")
         o = o.replace("{{PAGE_BACK}}", back)
         o = o.replace("{{PAGE_DOC}}", doc)
         o = o.replace("{{PAGE_EYEBROW}}", eyebrow)
@@ -1071,17 +1073,18 @@ def build_files(landmarks: list, palette: str):
 
     # ── 메인 Files 페이지: 작업 파일 + Balady+ 진입 배너 ──
     work_section = ""
+    n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
     if sorted_ids:
         work_cards = "\n".join(render_file_card(lid, groups[lid], lm_map) for lid in sorted_ids)
-        work_section = _section_html("작업 파일", "팀이 제작 중인 3D 모델 · 캡처", work_cards)
+        work_count = f'<span class="work-count" aria-live="polite">{len(sorted_ids)}건 · {n_work}개 파일</span>'
+        work_section = _section_html("작업 파일", "팀이 제작 중인 3D 모델 · 캡처", work_cards, count=work_count)
     entry = ""
     if balady_cat:
         entry = (
             '<a class="balady-entry" href="balady.html">'
-            '<span class="balady-entry-badge">Balady +</span>'
             '<span class="balady-entry-text">'
             '<span class="balady-entry-title">Balady+ 참조 모델</span>'
-            f'<span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 {len(balady_cat)}종 · 클러스터·지역별 정리 · 참조용</span>'
+            f'<span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 {len(balady_cat)}종</span>'
             '</span><span class="balady-entry-arrow">→</span></a>'
         )
     entry_arc = ""
@@ -1089,18 +1092,17 @@ def build_files(landmarks: list, palette: str):
         n_arc_files = sum(len(e["models"]) for e in archive_cat)
         entry_arc = (
             '<a class="balady-entry" href="archive.html">'
-            '<span class="balady-entry-badge">Archive</span>'
             '<span class="balady-entry-text">'
             '<span class="balady-entry-title">Balady 아카이브</span>'
-            f'<span class="balady-entry-sub">카탈로그 외 원본 자산 — 단지 병합본·KAFD 개별동·At-Turaif 상세 등 {len(archive_cat)}종 ({n_arc_files}파일) · 참조용</span>'
+            f'<span class="balady-entry-sub">카탈로그 외 원본 자산 {len(archive_cat)}종 · {n_arc_files}개 파일</span>'
             '</span><span class="balady-entry-arrow">→</span></a>'
         )
-    main_entries = "\n".join(x for x in (entry, entry_arc, work_section) if x) or (
+    reference_entries = f'<nav class="reference-entries" aria-label="참조 자료">{entry}{entry_arc}</nav>' if entry or entry_arc else ""
+    main_entries = "\n".join(x for x in (reference_entries, work_section) if x) or (
         '<div class="empty"><div class="empty-title">아직 업로드된 파일이 없습니다</div>'
         '<p>progress/ 폴더에 KSA-NN.glb · NN-1.png 형식으로 파일을 넣으세요.</p></div>'
     )
-    n_work = sum(len(g["models"]) + len(g["shots"]) for g in groups.values())
-    main_count = f"작업 {len(sorted_ids)} · {n_work}개 파일   |   Balady+ 참조 {len(balady_cat)}종 →"
+    main_count = ""
 
     OUTPUT_PROGRESS_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_PROGRESS_DIR / "index.html").write_text(
@@ -1212,6 +1214,7 @@ def build():
 
     # Files 페이지 먼저 빌드 → Reference 카드 3D 버튼용 맵 확보
     palette = extract_palette(template)
+    build_research(ROOT, OUTPUT_DIR, palette)
     prog = build_files(landmarks, palette)
     PROGRESS_LATEST = prog["dates"]
     PROGRESS_REP_MODELS = prog["rep_models"]
@@ -1321,7 +1324,9 @@ def watch():
     last_mtimes = {}
 
     def collect_mtimes():
-        files = list(DATA_DIR.glob("*.json")) + list(TEMPLATE_DIR.glob("*"))
+        files = (list(DATA_DIR.glob("*.json")) + list(TEMPLATE_DIR.glob("*"))
+                 + list((ROOT / "research" / "phase1-king-fahd-road").glob("*.json"))
+                 + list((ROOT / "research" / "phase1-jeddah").glob("*.json")))
         return {f: f.stat().st_mtime for f in files if f.is_file()}
 
     build()

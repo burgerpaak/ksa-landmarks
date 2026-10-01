@@ -1,0 +1,449 @@
+{
+  "checked_at": "2026-09-29",
+  "scope": "Research only; 장소 항목 식별은 납품 정밀 좌표 검증과 별개",
+  "candidates": {
+    "J01": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=17374210153825786399",
+      "cid": "17374210153825786399",
+      "place_name": "The Headquarters Business Park",
+      "address": "Al Kurnaysh Br Rd, Ash Shati, Jeddah 23511",
+      "checked_at": "2026-09-29",
+      "note": "Corniche 업무단지 이름·주소 일치"
+    },
+    "J02": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=16109605854973766386",
+      "cid": "16109605854973766386",
+      "place_name": "King's Road Tower",
+      "address": "King Abdul Aziz Rd, Ash Shati, Jeddah 23412",
+      "checked_at": "2026-09-29",
+      "note": "건물 자체 타워 항목, 입주 업체 디렉터리와 구분"
+    },
+    "J03": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=2753461415726953360",
+      "cid": "2753461415726953360",
+      "place_name": "Golden Tower",
+      "address": "Al Khalifah Al Mahdi, Ash Shati, Jeddah 23612",
+      "checked_at": "2026-09-29",
+      "note": "North Corniche Golden Tower 건물 항목 일치"
+    },
+    "J04": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=16225372396642257462",
+      "cid": "16225372396642257462",
+      "place_name": "Al Jawharah",
+      "address": "Said Ibn Amir, Ash Shati, Jeddah 23415",
+      "checked_at": "2026-09-29",
+      "note": "Al Jawharah 건물 항목·Corniche 위치 일치"
+    },
+    "J05": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13538314350644142792",
+      "cid": "13538314350644142792",
+      "place_name": "Shangri-La Jeddah",
+      "address": "Burj Assila, Al Kurnaysh Br Rd, Ash Shati, Jeddah 23611",
+      "checked_at": "2026-09-29",
+      "note": "주소에 Burj Assila 명시; 후보에 포함된 Shangri-La 호텔 항목"
+    },
+    "J06": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=2219529531716934112",
+      "cid": "2219529531716934112",
+      "place_name": "Saudi National Bank (SNB) - HQ",
+      "address": "Al-Baghdadiyah Al-Gharbiyah, Jeddah 22233",
+      "checked_at": "2026-09-29",
+      "note": "옛 항구권 핀 및 큰 삼각 내부 개구부 사진 대조; 다른 NCB 영업지점 제외"
+    },
+    "J07": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13485734704728704443",
+      "cid": "13485734704728704443",
+      "place_name": "The Islamic Development Bank",
+      "address": "8111 King Khalid Road, Jeddah 22332",
+      "checked_at": "2026-09-29",
+      "note": "공식 본사 도로와 주소 일치"
+    },
+    "J08": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=11078722752726096999",
+      "cid": "11078722752726096999",
+      "place_name": "Jeddah Superdome",
+      "address": "Al-Madinah Al-Munawarah Rd, Jeddah 23735",
+      "checked_at": "2026-09-29",
+      "note": "북부 공항권 전시시설 이름과 위치 일치"
+    },
+    "J09": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=14253083089385696079",
+      "cid": "14253083089385696079",
+      "place_name": "King Saud Grand Mosque",
+      "address": "Al-Madinah Al-Munawarah Rd, Al Sharafeyah, Jeddah",
+      "checked_at": "2026-09-29",
+      "note": "Al Sharafeyah 대모스크 이름·지역 일치"
+    },
+    "J10": {
+      "status": "unresolved",
+      "note": "Al Ruwais 검색 결과 Masjid Al Faroosa는 미나레트·돔 구성이 조사 사진과 달라 제외. Mosqpedia에 좌표만 있고 해당 핀에서 장소 고유 항목 미확인.",
+      "checked_at": "2026-09-29",
+      "sources": [
+        "https://mosqpedia.org/masajid/al-ruwais-mosque/"
+      ]
+    },
+    "J13": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6783104426613884377",
+      "cid": "6783104426613884377",
+      "place_name": "Bayt Al-Sharbatly",
+      "address": "Al-Matthaf Ln, Al Balad District, Jeddah 22236",
+      "checked_at": "2026-09-29",
+      "note": "Al Balad 주택 항목 일치"
+    },
+    "J14": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=10855418278935279621",
+      "cid": "10855418278935279621",
+      "place_name": "Khuzam Palace",
+      "address": "Qasr Khouzam, Al-Nazlah Al-Yamaniyah, Jeddah 22333",
+      "checked_at": "2026-09-29",
+      "note": "궁전명·Al Nazlah 지역 일치"
+    },
+    "J15": {
+      "status": "unresolved",
+      "note": "The Cycle 항목은 찾았으나 이전 후 실제 조형물 위치와 핀 일치 추가 확인 필요.",
+      "checked_at": "2026-09-29"
+    },
+    "J16": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=12772767417012118695",
+      "cid": "12772767417012118695",
+      "place_name": "Globe Roundabout",
+      "address": "Al Mohammadiyyah, Jeddah 23618",
+      "checked_at": "2026-09-29",
+      "note": "북부 Globe Roundabout 선택; 남부 MONUMENT GLOBE 제외"
+    },
+    "J17": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=4988929099513631424",
+      "cid": "4988929099513631424",
+      "place_name": "Engineering Square",
+      "address": "Engineering Roundabout, Jeddah 23448",
+      "checked_at": "2026-09-29",
+      "note": "컴퍼스·각도기 조형물 사진 및 교차로 핀 대조"
+    },
+    "J18": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=14929048901555226350",
+      "cid": "14929048901555226350",
+      "place_name": "AL FALAK ROUNDABOUT, JEDDAH",
+      "address": "Al Faisaliyyah, Jeddah 23445",
+      "checked_at": "2026-09-29",
+      "note": "Al Falak 조형물 사진과 이름 대조. 2020 교량 옆 이전 보도와 구분; 납품 정밀 핀 검증 아님"
+    },
+    "J19": {
+      "status": "unresolved",
+      "note": "Cars Cube Sculpture 사진은 동일 작품이나 2025 Prince Faisal bin Fahd Street 이전 위치와 핀 일치 추가 확인 필요.",
+      "checked_at": "2026-09-29"
+    },
+    "J20": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=9067635146850155997",
+      "cid": "9067635146850155997",
+      "place_name": "The Four Lanterns monument by Julio Lafuente",
+      "address": "6340 Hisham Ibn Hakim, Al Andalus District, Jeddah",
+      "checked_at": "2026-09-29",
+      "note": "네 개 랜턴 형상과 작가명 일치. 지도 장소 식별이며 최근 현장 실측 아님"
+    },
+    "J21": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=5676363594014908882",
+      "cid": "5676363594014908882",
+      "place_name": "Sculpture: 'The Seagull' by Mustafa Senbel",
+      "address": "6770 Al Kurnaysh Br Rd, Ash Shati District, Jeddah 23511",
+      "checked_at": "2026-09-29",
+      "note": "The Seagull·Mustafa Senbel 명칭과 북부 Corniche 위치 일치"
+    },
+    "J22": {
+      "status": "unresolved",
+      "note": "The Fist 검색이 다른 작품 Shahada al-Tawhid로 자동 연결됨. 오연결 제외.",
+      "checked_at": "2026-09-29"
+    },
+    "J23": {
+      "status": "unresolved",
+      "note": "Circular Mass 검색은 Magic Carpet·Globe 등 다른 작품 목록. 공식 Al Arbaeen 배치 기록만으로 개별 장소 ID를 확정하지 않음.",
+      "checked_at": "2026-09-29"
+    },
+    "J24": {
+      "status": "unresolved",
+      "note": "작품명 검색이 제다 도시 전체로 연결됨. 개별 장소 미확보.",
+      "checked_at": "2026-09-29"
+    },
+    "J25": {
+      "status": "unresolved",
+      "note": "작품명 검색이 Flow Pilates House로 오연결. 해당 업체 제외.",
+      "checked_at": "2026-09-29",
+      "suppress_search": true
+    },
+    "J26": {
+      "status": "unresolved",
+      "note": "작품명 검색이 제다 도시 전체로 연결됨. 개별 장소 미확보.",
+      "checked_at": "2026-09-29"
+    },
+    "J27": {
+      "status": "unresolved",
+      "note": "Magic Carpet·Oval Offices·Globe 등 다른 장소 목록. 공식 Al Arbaeen 배치와 일치하는 개별 항목 미확보.",
+      "checked_at": "2026-09-29"
+    },
+    "N01": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=5790001582004100401",
+      "cid": "5790001582004100401",
+      "place_name": "SAB Tower – Head Office",
+      "address": "2338 King Fahd Branch Rd, Al Yasmin, Riyadh 13325",
+      "checked_at": "2026-09-29",
+      "note": "SAB 신본사 타워 이름·Al Yasmin 공식 주소 일치; 지점 제외"
+    },
+    "N02": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=11807335674939948613",
+      "cid": "11807335674939948613",
+      "place_name": "Burj Tamkeen",
+      "address": "Olaya St, Riyadh 13325",
+      "checked_at": "2026-09-29",
+      "note": "Burj Tamkeen 선택; Aramex·Regus 입주업체 제외"
+    },
+    "N03": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13923131332281133797",
+      "cid": "13923131332281133797",
+      "place_name": "Burj Rafal",
+      "address": "King Fahd Rd, Sahafah, Riyadh",
+      "checked_at": "2026-09-29",
+      "note": "Burj Rafal 건물 선택; JW Marriott 호텔별칭과 구분"
+    },
+    "N04": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=9153880028467198589",
+      "cid": "9153880028467198589",
+      "place_name": "Ascott Rafal Riyadh",
+      "address": "7706 Olaya St, As Sahafah, Riyadh 13321",
+      "checked_at": "2026-09-29",
+      "note": "Ascott Rafal 숙박시설 주소 확인; Burj Rafal과 다른 위치"
+    },
+    "N05": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=14192267737153403590",
+      "cid": "14192267737153403590",
+      "place_name": "Al Nakhlah Tower",
+      "address": "3026 Prince Mohammed Ibn Salman Ibn Abdulaziz Rd, As Sahafah, Riyadh 13315",
+      "checked_at": "2026-09-29",
+      "note": "Al Nakhlah 타워 일치; 기존 조사에도 King Fahd Road와 CTBUH 도로명 병기 기록"
+    },
+    "N06": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=3194292657552654276",
+      "cid": "3194292657552654276",
+      "place_name": "مصرف الراجحي | alrajhi bank",
+      "address": "King Fahd Branch Rd, Al Muruj, Riyadh 12263",
+      "checked_at": "2026-09-29",
+      "note": "본사 아랍어 표기·수직 석재코어 사진 일치; 은행 지점과 구분"
+    },
+    "N07": {
+      "status": "unresolved",
+      "note": "검색이 Elegance Tower Heliport로 연결됨. 건물 자체와 다른 시설 항목이므로 미채택.",
+      "checked_at": "2026-09-29"
+    },
+    "N10": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=7391634241064582847",
+      "cid": "7391634241064582847",
+      "place_name": "Moon Tower",
+      "address": "Al Hadrawi, Ar Rahmaniyyah, Riyadh 12341",
+      "checked_at": "2026-09-29",
+      "note": "Moon Tower 건물 항목·Ar Rahmaniyyah 일치"
+    },
+    "N11": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=18278563418778285200",
+      "cid": "18278563418778285200",
+      "place_name": "THE OVAL",
+      "address": "King Fahd Branch Rd, Ar Rahmaniyyah, Riyadh 12341",
+      "checked_at": "2026-09-29",
+      "note": "The Oval 건물 항목·King Fahd Road 일치"
+    },
+    "N12": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6709247358354182510",
+      "cid": "6709247358354182510",
+      "place_name": "Damac Towers",
+      "address": "King Fahd Rd, Al Olaya, Riyadh 12333",
+      "checked_at": "2026-09-29",
+      "note": "Damac Towers 주거건물 선택; DAMAC Sales Office 제외"
+    },
+    "N13": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13210759087320518797",
+      "cid": "13210759087320518797",
+      "place_name": "Hilton Riyadh Olaya",
+      "address": "8508 King Fahd Branch Rd, Al Olaya, Riyadh 12333",
+      "checked_at": "2026-09-29",
+      "note": "Hilton Riyadh Olaya 확인; 다른 Hilton 지점 제외"
+    },
+    "N14": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13680652004948439945",
+      "cid": "13680652004948439945",
+      "place_name": "Princess Al Anoud Tower",
+      "address": "King Fahd Branch Rd, Al Olaya, Riyadh 12214",
+      "checked_at": "2026-09-29",
+      "note": "1·2 타워 중 Princess Al Anoud Tower를 대표 링크로 사용; 인접 Tower 2 별도 항목 존재, 동부 동명 장소 제외",
+      "secondary_place_id": "ChIJmbfz-7UDLz4RWT1j_rQjEu0"
+    },
+    "N16": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6687332482088462613",
+      "cid": "6687332482088462613",
+      "place_name": "Olaya Towers",
+      "address": "Olaya St, Al Olaya, Riyadh 12213",
+      "checked_at": "2026-09-29",
+      "note": "Olaya Towers 단지 항목; 인접 Hyatt 및 Servcorp 입주사 제외"
+    },
+    "N17": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=18239161405427219653",
+      "cid": "18239161405427219653",
+      "place_name": "Narcissus Hotel Riyadh",
+      "address": "Olaya St, Al Olaya, Riyadh 12212",
+      "checked_at": "2026-09-29",
+      "note": "공식 Narcissus Riyadh 호텔명·Olaya 주소 일치"
+    },
+    "N18": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=11220770289841072617",
+      "cid": "11220770289841072617",
+      "place_name": "Hamad Tower",
+      "address": "King Fahd Branch Rd, Al Olaya, Riyadh",
+      "checked_at": "2026-09-29",
+      "note": "Hamad Tower 건물 항목·Al Faisaliah 인근 소재지 일치"
+    },
+    "N19": {
+      "status": "unresolved",
+      "place_name": "King Faisal Center for Research and Islamic Studies",
+      "address": "No. 38, Al Olaya, Riyadh 12212",
+      "checked_at": "2026-09-29",
+      "note": "재단 단지 연구센터 명칭 항목. 본부 건물의 개별 장소 항목인지 추가 확인 필요",
+      "candidate_url": "https://www.google.com/maps?cid=18434136159728422736"
+    },
+    "N20": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6065776810786492898",
+      "cid": "6065776810786492898",
+      "place_name": "Ministry of Interior",
+      "address": "King Fahd Rd, Al Olaya, Riyadh 12611",
+      "checked_at": "2026-09-29",
+      "note": "역피라미드 본부 사진 확인; 북부 Al Muruj의 동명 청사 제외"
+    },
+    "N22": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6053569148660451442",
+      "cid": "6053569148660451442",
+      "place_name": "Riyadh TV Tower",
+      "address": "Al Wisham, Riyadh 12735",
+      "checked_at": "2026-09-29",
+      "note": "방송탑 자체 항목과 Al Wisham 소재지 일치"
+    },
+    "N23": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=5042617912797611311",
+      "cid": "5042617912797611311",
+      "place_name": "리야드 워터 타워",
+      "address": "8466 King Saud Rd, Al Futah, Riyadh 12632",
+      "checked_at": "2026-09-29",
+      "note": "워터타워 자체 항목과 Al Futah 소재지 일치"
+    },
+    "N24": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=15588427470632734881",
+      "cid": "15588427470632734881",
+      "place_name": "Ministry of Foreign Affairs Central office.",
+      "address": "Al Washm St, An Namudhajiyah, Riyadh 12735",
+      "checked_at": "2026-09-29",
+      "note": "Henning Larsen 본청 외형 사진 대조; 북부 사무소·문서인증센터 제외"
+    },
+    "N25": {
+      "status": "coordinate_matched",
+      "url": "https://www.google.com/maps/search/?api=1&query=24.6299897%2C46.7108276",
+      "latitude": 24.6299897,
+      "longitude": 46.7108276,
+      "coordinate_strings": [
+        "24.6299897",
+        "46.7108276"
+      ],
+      "place_name": "Qasr Al Hukm / Al Hukm Palace",
+      "checked_at": "2026-09-30",
+      "sources": [
+        "https://www.aldirah.sa/visit-places",
+        "https://maps.app.goo.gl/6DzSgF8JdAzjHNGA6",
+        "https://saudipedia.com/en/qasr-al-hukm",
+        "https://saudipedia.com/ساحة-الصفاة"
+      ],
+      "note": "Al Dirah 궁전 방문 안내 링크가 Al Hukm Palace 이름과 !3d24.6299897!4d46.7108276으로 리다이렉트됨. Google 장소 상세는 제목 없이 빈 항목으로 열려 CID 링크 미채택. 공식 설명의 Al-Safat 광장·Imam Turki 모스크 연결 관계와 위성 배치를 대조해 좌표 핀 링크 사용. 지도 탐색용이며 납품 정밀 좌표 검증과 별개.",
+      "previous_record": {
+        "status": "unresolved",
+        "note": "Qasr Al Hukm 검색 결과는 동명 지하철역. Al Dirah 공식 방문 안내의 궁전 공유 링크도 장소 상세 없는 빈 지도로 열려 미채택.",
+        "checked_at": "2026-09-29",
+        "sources": [
+          "https://www.aldirah.sa/visit-places",
+          "https://maps.app.goo.gl/6DzSgF8JdAzjHNGA6"
+        ],
+        "suppress_search": true
+      }
+    },
+    "N26": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=4376823204752332637",
+      "cid": "4376823204752332637",
+      "place_name": "Mosque Imam Turki Bin Abdullah",
+      "address": "Ad Dirah, Riyadh 12634",
+      "checked_at": "2026-09-29",
+      "note": "구도심 Imam Turki 대모스크 이름과 지역 일치"
+    },
+    "N27": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=18064547133076340614",
+      "cid": "18064547133076340614",
+      "place_name": "Riyadh General Court",
+      "address": "7514 Al Qadi Al Ashili, Riyadh 12654",
+      "checked_at": "2026-09-29",
+      "note": "구도심 일반법원 석재 매스·중앙 수직 개구부 사진 대조; 형사법원과 집행법원 제외"
+    },
+    "N30": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=6790674533107868650",
+      "cid": "6790674533107868650",
+      "place_name": "Hital Tower",
+      "address": "King Fahd Branch Rd, As Sahafah, Riyadh 13315",
+      "checked_at": "2026-09-30",
+      "coordinate_strings": [
+        "24.7870845",
+        "46.6347366"
+      ],
+      "note": "Google 지도 실제 장소 상세의 이름·소재지를 공식 자료와 대조. 현재 외관·시공 상태 및 납품 정밀 좌표 검증과 별개."
+    },
+    "N31": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=13647575403733990949",
+      "cid": "13647575403733990949",
+      "place_name": "Tuwaiq Gate / بوابة طويق",
+      "address": "7838 King Fahd Road, Ar Rahmaniyyah, Riyadh 12343 3936",
+      "checked_at": "2026-09-30",
+      "coordinate_strings": [
+        "24.7212546",
+        "46.6663879"
+      ],
+      "note": "Google 지도 장소의 이름·King Fahd Road/Ar Rahmaniyyah 소재지·공식 사이트 tg-sa.com·대표 전화 9200 12972를 공식 프로젝트와 입주사 주소에 대조. 동명 컨설팅 업체·Tuwaiq Heritage Tower 제외. 장소 식별은 납품 정밀 좌표 검증과 별개."
+    }
+  },
+  "method": "Google Maps 실제 장소 상세에서 명칭·소재지와 기존 조사자료 대조. 동명·입주사·이전 이력은 사진/기록 추가 확인. CID는 관찰한 장소 URL의 feature ID에서 변환; 검색어로 추정하지 않음."
+}

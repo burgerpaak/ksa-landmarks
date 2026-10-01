@@ -1,0 +1,215 @@
+{
+  "candidates": [
+    {
+      "removed_at": "2026-09-30",
+      "reason": "사용자 요청: Al-Shafii Mosque만 Research 목록에서 삭제",
+      "candidate": {
+        "id": "J11",
+        "name": "Al-Shafii Mosque",
+        "city": "Jeddah",
+        "type": "건축물",
+        "area": "Historic Jeddah · Al Balad",
+        "visual_recommendation": "보통",
+        "character": "전통 예배당·중정과 오래된 미나레트의 조합. 현대식 돔 모스크와 다른 구도심 유형.",
+        "location_and_state_evidence": "전문 DB·학술 연구",
+        "followup": "Al-Shafii / Al-Shafae 표기 통합. 주변과 붙어 있는 건물 경계 및 복원 후 외관을 확인.",
+        "confidence": "partial",
+        "coordinates": null,
+        "footprint": null,
+        "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+        "sources": [
+          {
+            "title": "Mosqpedia · Al-Shafae Mosque",
+            "url": "https://mosqpedia.org/masajid/alshafae-mosque/"
+          },
+          {
+            "title": "학술 연구 · Jeddah 모스크",
+            "url": "https://www.witpress.com/Secure/elibrary/papers/IHA20/IHA20011FU1.pdf"
+          }
+        ],
+        "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Shafii%20Mosque%20Jeddah%20Saudi%20Arabia",
+        "review_status": "선정 전",
+        "scope_group": "Jeddah",
+        "fact_check": {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "Mosqpedia 및 2020 학술 자료의 Al-Shafii 식별·복원 후 중정·미나레트 확인.",
+          "remaining": "현재 외관·주변 건물 경계",
+          "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        },
+        "overview": "Historic Jeddah의 Al-Balad에 있는 역사 모스크다. 복원 후의 중정과 미나레트가 자료에 기록되어 있으며, 구도심 종교시설 유형을 보완하는 후보다.",
+        "recommendation_review": {
+          "date": "2026-09-29",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "미나레트와 부분 외벽 자료로 전체 매스를 판단하기 어려워 검토를 유지한다.",
+          "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+        },
+        "recommendation_assessment": {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "현재 외관·주변 건물 경계",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        },
+        "image_search_name": "Al-Shafii Mosque"
+      },
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps?cid=14124884148548335196",
+        "cid": "14124884148548335196",
+        "place_name": "Al Shafee Mosque",
+        "address": "3214 Suq Al Jami, Historic Jeddah",
+        "checked_at": "2026-09-29",
+        "note": "구도심 항목 선택; 동쪽 동명 Shafi Masjid 제외"
+      },
+      "images": [
+        {
+          "file": "research-j11-01.webp",
+          "width": 1600,
+          "height": 1067,
+          "alt": "Al-Shafii Mosque · Al-Shafii Mosque의 외벽과 미나레트. 좁은 골목에서 올려다본 부분 외관.",
+          "caption": "Al-Shafii Mosque의 외벽과 미나레트. 좁은 골목에서 올려다본 부분 외관.",
+          "kind": "외관 사진",
+          "source": "Mosqpedia",
+          "source_url": "https://mosqpedia.org/masajid/alshafae-mosque/",
+          "original_url": "https://mosqpedia.org/wp-content/uploads/2024/08/Fto9T04ml7rhEGlT69w1vGyRHXOBDBriG1tqeexS.jpeg",
+          "photographer": null,
+          "date_note": "촬영일 미확인",
+          "license": "원저작권자 확인·재사용 허가 필요 (Mosqpedia 고지)",
+          "license_url": null,
+          "accessed_at": "2026-09-28",
+          "processing": "원본 프레임 유지 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "65405151df11ca2a0f713d7bd71ddc5064107e7766ab7cf61ab409e18cb734c9",
+          "thumbnail_position": "50% 45%"
+        },
+        {
+          "file": "research-j11-02.webp",
+          "width": 1600,
+          "height": 1067,
+          "alt": "Al-Shafii Mosque · 미나레트의 층별 형태와 장식 상세.",
+          "caption": "미나레트의 층별 형태와 장식 상세.",
+          "kind": "외관 사진",
+          "source": "Mosqpedia",
+          "source_url": "https://mosqpedia.org/masajid/alshafae-mosque/",
+          "original_url": "https://mosqpedia.org/wp-content/uploads/2024/08/LDdb202JRydkCDCnOdH8OOlBu3l7SfxEZKxPq1hh.jpeg",
+          "photographer": null,
+          "date_note": "촬영일 미확인",
+          "license": "원저작권자 확인·재사용 허가 필요 (Mosqpedia 고지)",
+          "license_url": null,
+          "accessed_at": "2026-09-28",
+          "processing": "원본 프레임 유지 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "6775a81627460df7b73eb4012924b4fda967168f3482ea9edbc0e087824423e8",
+          "thumbnail_position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "removed_at": "2026-09-30",
+      "reason": "사용자 요청: Matbouli House를 Research 목록에서 삭제",
+      "candidate": {
+        "id": "J12",
+        "name": "Matbouli House",
+        "city": "Jeddah",
+        "type": "건축물",
+        "area": "Historic Jeddah · Al Balad",
+        "visual_recommendation": "보통",
+        "character": "돌출된 목재 로샨과 전통 입면. 구도심 주택형 랜드마크 후보.",
+        "location_and_state_evidence": "운영 주체 공식 자료",
+        "followup": "Beit Al-Sharbatly와 별개 건물이며 확보 사진의 큰 입면 구성을 비교해 차이를 확인. Matbouli 자체의 복원 후 전체 매스·측면 깊이와 주변 경계는 추가 자료로 보강.",
+        "confidence": "partial",
+        "coordinates": null,
+        "footprint": null,
+        "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+        "sources": [
+          {
+            "title": "Matbouli House · 공식",
+            "url": "https://beitalmatbouli.com/en/about"
+          }
+        ],
+        "map_search_url": "https://www.google.com/maps/search/?api=1&query=Matbouli%20House%20Jeddah%20Saudi%20Arabia",
+        "review_status": "선정 전",
+        "scope_group": "Jeddah",
+        "fact_check": {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "공식 소개에서 Historic Jeddah 주택과 돌출 목재 rawasheen 확인.",
+          "remaining": "복원 후 전체 매스·측면 깊이와 경계·정밀 핀",
+          "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        },
+        "decision_note": "전체 매스·측면 깊이와 주변 경계 자료 보강 필요",
+        "overview": "Jeddah Al-Balad의 전통 주택이자 박물관으로 소개되는 건물이다. 옛 Jeddah 주택의 실내 공간과 생활문화를 살펴볼 수 있는 장소이며, Nassif House와는 별개다.",
+        "recommendation_review": {
+          "date": "2026-09-29",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "정면 로샨은 보이나 전체 매스와 다른 역사 주택과의 차별성을 더 확인해야 한다.",
+          "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+        },
+        "recommendation_assessment": {
+          "date": "2026-09-30",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "목재 로샨이 돌출된 정면은 확인되지만 확보 사진으로는 건물 전체 덩어리와 깊이를 판단하기 어렵다. 지역 건축의 후보 가치는 있어 전체 구성 자료를 보강하며 검토한다.",
+          "remaining": "복원 후 전체 매스·측면 깊이와 경계·정밀 핀",
+          "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+          "evidence_images": [
+            "research-j12-01.webp"
+          ],
+          "map_identification_status": "matched"
+        },
+        "image_search_name": "Matbouli House",
+        "recommendation_assessment_history": [
+          {
+            "date": "2026-09-29",
+            "criteria": "종합 추천 v1",
+            "previous": "검토",
+            "result": "검토",
+            "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+            "remaining": "복원 후 현장 사진·전체 매스",
+            "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+          }
+        ]
+      },
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps?cid=548454123914005735",
+        "cid": "548454123914005735",
+        "place_name": "Beit Al Matbouli",
+        "address": "6974 زقاق القمصاني, Al Balad District, Jeddah 22236",
+        "checked_at": "2026-09-29",
+        "note": "Al Balad Matbouli 주택박물관; Nassif House와 다른 항목"
+      },
+      "images": [
+        {
+          "file": "research-j12-01.webp",
+          "width": 1600,
+          "height": 1569,
+          "alt": "Matbouli House · Matbouli House의 목재 로샨과 정면 출입구.",
+          "caption": "Matbouli House의 목재 로샨과 정면 출입구.",
+          "kind": "외관 사진",
+          "source": "Visit Al Balad",
+          "source_url": "https://www.visitalbalad.com/discover",
+          "original_url": "https://uploads-ssl.webflow.com/63e28174a8486e1fe6e2efe4/63f204457a954ce10e942768_Beit-Matbouli-Museum-Exterior-6-Vertical-Sky-very-s-p-2000.jpg",
+          "photographer": null,
+          "date_note": "촬영일 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-09-28",
+          "processing": "원본 프레임 유지 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "0b08014957f55d640e52842f482ca1340fb8e4e46c25d2b4f53c6096819dc0d1",
+          "thumbnail_position": "50% 0%"
+        }
+      ]
+    }
+  ]
+}

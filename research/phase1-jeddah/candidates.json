@@ -1,0 +1,1975 @@
+{
+  "research_date": "2026-09-23",
+  "city": "Jeddah",
+  "status": "selection_research_draft",
+  "scope": "Phase 1 신규 건축물·회전교차로·해안·공원 조형물",
+  "inventory_exclusion": "Reference, Balady+, Archive 모두 제외; 카탈로그 명칭·별칭 대조",
+  "count": 25,
+  "counts_by_type": {
+    "buildings": 12,
+    "sculptures": 13
+  },
+  "map_links_are_searches": true,
+  "visual_recommendation_is_subjective": true,
+  "candidates": [
+    {
+      "id": "J01",
+      "name": "The Headquarters Business Park",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Corniche · 해안 업무지구",
+      "visual_recommendation": "높음",
+      "character": "상부로 돌출된 헬리패드와 각진 고층 타워, 낮은 동을 잇는 긴 기단. 상부 윤곽과 단지 구성이 뚜렷하다.",
+      "location_and_state_evidence": "준공 기록·설계사 사진",
+      "followup": "현재 정확한 footprint와 타워·기단 범위 확인. 고층·저층을 합쳐 한 후보로 계산.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Batley Partners · 설계·외관",
+          "url": "https://www.batleypartners.com/projects/the-headquarters-business-park"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Headquarters%20Business%20Park%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "설계사에서 서측 고층·동측 저층·기단·상부 헬리패드 구성 확인.",
+        "remaining": "단지 footprint·타워와 기단의 세부 경계·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah Corniche의 해안 업무 복합시설이다. 고층 타워와 저층 동이 함께 있는 단지로, 타워뿐 아니라 연결 기단까지 검토 대상에 포함한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "각진 타워·상부 헬리패드·긴 기단의 조합이 뚜렷하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "설계사 기록과 외관 사진으로 타워와 긴 저층 기단의 구성을 확인할 수 있다. 각진 상부와 돌출된 헬리패드가 지도 크기에서도 남아 추천한다.",
+        "remaining": "단지 footprint·타워와 기단의 세부 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j01-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "The Headquarters Business Park",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "정확한 단지 footprint",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J02",
+      "name": "King’s Road Tower",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "King Abdulaziz Road 축",
+      "visual_recommendation": "보통",
+      "character": "대형 미디어 파사드가 장소성을 만드는 타워. 지도 모델에서는 화면 효과를 제외한 몸체·상부 형상의 식별력을 비교할 필요가 있다.",
+      "location_and_state_evidence": "완공 기록·파사드 시공 자료",
+      "followup": "King Road / King’s Road 별칭 통합. 광고 영상이나 일시적 조명을 고정 외관으로 만들지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "CTBUH · King’s Road Tower",
+          "url": "https://www.skyscrapercenter.com/jeddah/kings-road-tower/8886/"
+        },
+        {
+          "title": "SACO · 미디어 파사드",
+          "url": "https://saco.com/kings-road-tower/"
+        },
+        {
+          "title": "Servcorp · 입주사 건물 소개",
+          "url": "https://www.servcorp.com.sa/en/locations/jeddah/kings-road-tower/"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King%E2%80%99s%20Road%20Tower%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-29",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH에서 건물 식별, Servcorp 공식 소개에서 업무 용도·King Abdulaziz Road 주소, SACO 프로젝트에서 외벽 일체형 LED 미디어 파사드를 확인.",
+        "remaining": "타워·기단 깊이와 상부 세부, 광고 없이 남는 실루엣 비교·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah King Abdulaziz Road의 업무용 타워로, Servcorp 등 사무실과 상업·편의시설이 입주한다. 건물 외벽에 통합된 대형 LED 미디어 파사드로도 알려져 있다.",
+      "appearance_description": "푸른 유리로 마감된 높은 직육면체 타워와 흰색 저층 기단으로 구성된다. 정면 중앙의 깊은 수직 홈과 상부의 둥근 돌출부가 식별 요소다. 외벽의 광고 영상·조명은 고정된 건축 형태와 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "상부 분절은 보이나 미디어 화면을 생략한 몸체의 차별성은 추가 비교가 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "제공 사진으로 광고 효과를 제외한 유리 몸체와 중앙 돌출부, 기단을 확인할 수 있다. 다른 타워와 구별되는 큰 윤곽 및 몸체·기단 깊이를 더 비교해야 해 검토를 유지한다.",
+        "remaining": "타워·기단 깊이와 상부 세부, 광고 없이 남는 실루엣 비교·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j02-user-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "King’s Road Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "광고를 제외한 외형·상부 사진 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J03",
+      "name": "Golden Tower",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "North Corniche",
+      "visual_recommendation": "보통",
+      "character": "매스가 조금 어긋나는 실루엣과 깊게 들어간 발코니·로샨형 개구부, 유리·석재를 조합한 입면.",
+      "location_and_state_evidence": "공식 건물·설계 자료",
+      "followup": "설계사 현재 상세 페이지의 설명·외관을 대조. 겹겹이 돌출된 발코니로 단순화하지 않음. 구 프로젝트 페이지의 다른 건물 설명·연도와 혼용하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Golden Tower · 공식",
+          "url": "https://www.goldentower.com.sa/"
+        },
+        {
+          "title": "설계사 · Golden Tower 현재 상세 페이지",
+          "url": "https://www.nabilgholam.com/works/golden-tower"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Golden%20Tower%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "현재 설계사 설명·사진에서 후퇴형 발코니와 어긋나는 매스 확인.",
+        "remaining": "발코니·매스 어긋남을 보여주는 실제 외관, 렌더와 준공 대응·모델 경계",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "appearance"
+      },
+      "overview": "Jeddah North Corniche의 해안 타워다. 설계사 nabilgholam architects가 소개하는 Golden Tower 프로젝트를 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "원경 자료에서는 세부 매스와 깊은 발코니를 판단하기 어려워 검토를 유지한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "추가 이미지는 설계 렌더링으로 추정돼 준공 외관 근거로 사용할 수 없다. 기존 원경 사진으로는 깊은 발코니와 어긋난 매스의 실제 구성을 판단하기 어려워 검토를 유지한다.",
+        "remaining": "발코니·매스 어긋남을 보여주는 실제 외관, 렌더와 준공 대응·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j03-01.webp",
+          "research-j03-user-20260930-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Golden Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "준공 사진 시점·정밀 경계",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J04",
+      "name": "Al Jawharah Tower",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Corniche · Ash Shati",
+      "visual_recommendation": "높음",
+      "character": "굴곡 있는 외곽과 반복되는 발코니가 만드는 주거 타워의 실루엣. 해안 스카이라인 보완 후보.",
+      "location_and_state_evidence": "개발사 건물 자료",
+      "followup": "기존 B39 Al Jawhara Stadium과 다른 대상. Tower / Stadium을 반드시 구분.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "DAMAC · Al Jawharah",
+          "url": "https://preprod.damacproperties.com/en/projects/al-jawharah/"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al%20Jawharah%20Tower%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "개발사에서 Ash Shati의 완공된 해안 주거 타워 확인.",
+        "remaining": "주간 외장·발코니 깊이와 세부, 정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah Ash Shati의 해안 주거 타워다. DAMAC이 개발한 Al Jawharah를 대상으로 하며, 호텔 타워와 구분되는 주거시설 후보다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "굴곡 있는 타워 윤곽과 발코니 반복이 큰 형태로 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "준공 기록과 확보 외관에서 굴곡진 몸체와 반복 발코니가 읽힌다. 주거 타워의 큰 윤곽이 단순한 직육면체와 구별돼 추천한다.",
+        "remaining": "주간 외장·발코니 깊이와 세부, 정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j04-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Al Jawharah Tower",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "굴곡·발코니 외형을 준공 사진과 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J05",
+      "name": "Burj Assila / Shangri-La Jeddah",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "North Corniche",
+      "visual_recommendation": "높음",
+      "character": "돛을 연상시키는 길고 휘어진 타워 윤곽. 사각형 타워와 형태 차이가 크다.",
+      "location_and_state_evidence": "호텔 운영 자료·완공 기록",
+      "followup": "Sail Tower / Assila Tower / Shangri-La를 하나로 처리. Tahlia의 Assila Hotel과 혼동 금지.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Shangri-La Jeddah · 공식",
+          "url": "https://www.shangri-la.com/jeddah/shangrila/"
+        },
+        {
+          "title": "CTBUH · Burj Assila",
+          "url": "https://www.skyscrapercenter.com/building/assila-tower/9817"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Burj%20Assila%20%2F%20Shangri-La%20Jeddah%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH의 Burj Assila/Shangri-La 식별·완공 기록과 호텔 운영 소개 확인.",
+        "remaining": "곡면 정도·상부 세부·기단 모델 경계·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah North Corniche에서 Shangri-La 호텔이 입주한 고층 타워다. Burj Assila와 Shangri-La Jeddah 명칭이 같은 건물을 가리키는지 확인해 한 후보로 관리한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "기울고 꺾이는 외곽과 상부 윤곽이 일반 직육면체 타워와 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "호텔·준공 기록으로 대상이 식별되고 확보 사진에서 길고 휘어진 타워 윤곽을 확인할 수 있다. 돛을 연상시키는 큰 형상이 단순화 후에도 남아 추천한다.",
+        "remaining": "곡면 정도·상부 세부·기단 모델 경계·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j05-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Shangri-La Jeddah",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "Sail 별칭 및 실제 곡면 정도를 사진 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J06",
+      "name": "National Commercial Bank — Jeddah historic headquarters",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "구도심 · 옛 항구권",
+      "visual_recommendation": "높음",
+      "character": "삼각형 매스와 크게 파인 개구부·중정. 창문 텍스처를 줄여도 큰 빈 공간이 특징으로 남는다.",
+      "location_and_state_evidence": "완공 DB 확인 · 설계사 원문은 접속 제한",
+      "followup": "기존 Riyadh KAFD SNB Tower와 별개. 현재 은행 브랜드보다 Jeddah의 해당 건물을 기준으로 식별.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "CTBUH · National Commercial Bank",
+          "url": "https://www.skyscrapercenter.com/building/national-commercial-bank/4655"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=National%20Commercial%20Bank%20%E2%80%94%20Jeddah%20historic%20headquarters%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "CTBUH에서 Jeddah의 구 NCB 본사·Hail Road·완공 기록 확인.",
+        "remaining": "삼각 평면과 개구부 깊이의 제작용 대조·정밀 핀·모델 경계",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah 구도심 Hail Road의 옛 National Commercial Bank 본사다. 다른 지역의 현 은행 청사와 구분해 역사적 본사 건물을 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "삼각형 매스와 큰 개구부가 단색 모델에도 식별점을 제공한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "건축 기록과 사진에서 삼각형 매스와 큰 개구부를 확인할 수 있다. 표면 창문을 줄여도 몸체의 빈 공간이 주요 식별점으로 남아 추천한다.",
+        "remaining": "삼각 평면과 개구부 깊이의 제작용 대조·정밀 핀·모델 경계",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j06-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "National Commercial Bank Jeddah",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "삼각 평면·큰 개구부를 도면·사진 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "tower"
+    },
+    {
+      "id": "J07",
+      "name": "Islamic Development Bank Headquarters",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "King Khalid Road · 본사 권역",
+      "visual_recommendation": "높음",
+      "character": "은행 본부와 연구·교육시설의 두 부분을 큰 지붕으로 통합한 구성. 두꺼운 외벽, 적은 개구부와 내부 채광 중정이 특징.",
+      "location_and_state_evidence": "공식 본사 주소·설계사 HTML 본문 확인",
+      "followup": "설계사는 두 wings를 큰 지붕 아래 통합했다고 설명한다. 두 독립 고층 타워로 단정하지 않음. 본사 캠퍼스에서 주동·부속동의 모델 경계 확인.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Nikken Sekkei · IsDB 본사 프로젝트 역사",
+          "url": "https://www.nikken.jp/en/about/projects_history/corporate_history/11_04.html"
+        },
+        {
+          "title": "IsDB · 공식 사무소",
+          "url": "https://www.isdb.org/offices"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Islamic%20Development%20Bank%20Headquarters%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Nikken 원문의 두 wings·공통 지붕·채광 중정 및 IsDB 주소 확인.",
+        "remaining": "주동·부속동 경계·중정 깊이·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah에 있는 Islamic Development Bank(IsDB)의 본부다. 은행 본부와 연구·교육시설을 함께 구성한 Nikken Sekkei 설계 프로젝트다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "큰 프레임과 깊은 중앙 빈 공간이 단순화 후에도 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "공식 건축 기록과 정면 사진으로 큰 지붕, 두꺼운 벽체와 중앙 개구부의 구성을 판단할 수 있다. 큰 구조를 중심으로 단순화할 수 있어 추천한다.",
+        "remaining": "주동·부속동 경계·중정 깊이·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j07-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Islamic Development Bank Headquarters",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "주동·부속동 모델 경계",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "complex"
+    },
+    {
+      "id": "J08",
+      "name": "Jeddah Superdome",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "북부 Jeddah",
+      "visual_recommendation": "높음",
+      "character": "넓고 낮게 퍼지는 지오데식 돔 지붕. 타워·모스크와 실루엣이 달라 상공 시점의 후보로 검토.",
+      "location_and_state_evidence": "공식 관광·운영 자료",
+      "followup": "반구라는 엄밀한 기하 형태로 단정하지 않음. 돔과 부속시설의 모델 범위를 확인하고 내부 행사 연출은 외형에서 제외.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Saudipedia · Jeddah Superdome",
+          "url": "https://saudipedia.com/en/jeddah-superdome"
+        },
+        {
+          "title": "Visit Saudi · Jeddah Superdome",
+          "url": "https://www.visitsaudi.com/en/jeddah/attractions/jeddah-superdome"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Jeddah%20Superdome%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia에서 지오데식 돔 시설 식별·개장 기록 확인.",
+        "remaining": "돔 곡률·출입부·부속 시설 범위·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah 북부의 대형 돔 행사시설이다. 타워와 주거시설 외에 대규모 실내 행사 공간을 대표하는 랜드마크 후보로 검토한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "낮고 넓은 돔의 비례가 타워 중심 목록에서 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "공식 시설 자료와 외관 사진에서 넓고 낮은 돔의 전체 윤곽을 확인할 수 있다. 타워·모스크와 다른 실루엣을 제공해 추천한다.",
+        "remaining": "돔 곡률·출입부·부속 시설 범위·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j08-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Jeddah Superdome",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "정확한 돔 곡률·부속 시설 범위",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "event-venue"
+    },
+    {
+      "id": "J09",
+      "name": "King Saud Mosque — Jeddah",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Al Sharafeyyah",
+      "visual_recommendation": "높음",
+      "character": "큰 돔, 미나레트와 중정이 이루는 저층 건축군. 덩어리의 높낮이가 읽히는 모스크 후보.",
+      "location_and_state_evidence": "건축 유산 기록",
+      "followup": "Riyadh의 유사 명칭 모스크와 구분. 같은 이름 검색으로 나온 다른 도시 사진을 섞지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "IRCICA · King Saud Mosque",
+          "url": "https://www.islamicarchitecturalheritage.com/listings/king-saud-mosque"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King%20Saud%20Mosque%20%E2%80%94%20Jeddah%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "IRCICA의 Jeddah King Saud Mosque 기록을 재확인. 제공 조감 사진과 기존 지상 사진에서 돔·미나레트·저층 몸체 배치를 함께 대조하며 타도시 동명 모스크와 구분.",
+        "remaining": "사진 촬영 시점·세부 지붕과 중정 범위·정밀 핀; 타도시 동명 사진 혼입 방지",
+        "visual_claim_check": "조감·지상 사진으로 주요 건축군 구성을 대조; 제공 사진의 촬영 시점은 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah Al Sharafeyyah에 위치한 King Saud Mosque다. 다른 도시의 동명 모스크와 구분되는 Jeddah의 종교 건축물이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "돔·미나레트·저층 몸체의 높낮이 구성이 분명하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "추가 조감 사진과 기존 지상 사진을 함께 보면 큰 돔·미나레트와 저층 몸체의 전체 배치를 판단할 수 있다. Jeddah 대상 식별 기록도 있어 담장 뒤 자료 부족을 해소한 것으로 보고 추천으로 올린다.",
+        "remaining": "사진 촬영 시점·세부 지붕과 중정 범위·정밀 핀; 타도시 동명 사진 혼입 방지",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j09-user-20260930-01.png",
+          "research-j09-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "King Saud Mosque Jeddah",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "담장 뒤 전체 구성과 현재 외관의 대조 자료가 부족하다. 동명 타도시 사진도 구분해야 한다.",
+          "remaining": "현재 외관 사진과 형태 대조·정확한 핀; 동명 타도시 사진 배제",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "fact_check_history": [
+        {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "IRCICA에서 Jeddah의 King Saud Mosque 식별·유산 기록 확인.",
+          "remaining": "현재 외관 사진과 형태 대조·정확한 핀; 동명 타도시 사진 배제",
+          "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "landmark_type": "mosque"
+    },
+    {
+      "id": "J10",
+      "name": "Al-Ruwais Mosque / Al-Farsi Mosque",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Ruwais · 해안 남측 권역",
+      "visual_recommendation": "보통",
+      "character": "나란한 세 돔과 팔각 미나레트, 반복되는 볼트 지붕. 작은 건축물 자체가 조형물처럼 읽힌다.",
+      "location_and_state_evidence": "전문 DB·학술 연구",
+      "followup": "1989 Aga Khan 원형 사진과 2020 논문에 기록된 변경 상태를 구분. 백색 미장·유리 막음은 2020 연구의 관찰 기록이며 2026 현장 확인을 뜻하지 않음. 다른 사례인 Al-Shafi’i의 2012 복원이나 카타르 동명 모스크의 복원 기록은 적용하지 않음. 연도·면적 수치는 미채택.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Mosqpedia · Al-Ruwais / Al-Farsi",
+          "url": "https://mosqpedia.org/masajid/al-ruwais-mosque/"
+        },
+        {
+          "title": "학술 연구 · Jeddah 모스크",
+          "url": "https://www.witpress.com/Secure/elibrary/papers/IHA20/IHA20011FU1.pdf"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Ruwais%20Mosque%20%2F%20Al-Farsi%20Mosque%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2020 학술 연구 §3.2에서 Ruwais/Farsi 동일 대상·세 돔·팔각 미나레트 확인. 변경 사항으로 벽돌면 백색 미장과 개구부 유리 막음을 명시.",
+        "remaining": "2020 이후 외장·유리 막음 등 개구부 변경 상태·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "원형 사진과 백색 미장·유리 막음 상태 구분 · 최신 외장 미확인",
+      "overview": "Jeddah Ruwais의 해안 모스크로, Al-Farsi Mosque라는 이름으로도 기록된다. 학술 자료에 외장과 개구부의 변경 이력이 있어 시기별 모습을 구분해야 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "세 돔과 볼트 구성은 특징적이나 현재 외장·막힌 개구부 등 표현 상태를 결정할 근거가 더 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "추가 사진은 세 돔·미나레트·반복 볼트 지붕을 잘 보여주지만 적갈색 외장 시기의 자료다. 이후 도장·개구부 변경이 기록돼 현재 모습의 근거를 보강해야 한다.",
+        "remaining": "2020 이후 외장·유리 막음 등 개구부 변경 상태·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j10-user-20260930-01.png",
+          "research-j10-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Al-Ruwais Mosque",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "2020 이후 최신 외장·개구부 상태 및 정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "mosque"
+    },
+    {
+      "id": "J13",
+      "name": "Beit Al-Sharbatly",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Historic Jeddah · Al Balad",
+      "visual_recommendation": "높음",
+      "character": "모서리를 감싸는 연속 목재 발코니와 로샨, 아치·기둥의 반복이 특징. 정면과 측면의 입체 구성이 지도용 식별 요소가 된다.",
+      "location_and_state_evidence": "공식 관광 자료",
+      "followup": "Matbouli와 별개 건물이며 확보 사진의 큰 입면 구성을 비교해 차이를 확인. 사진 촬영 시점·주변 경계와 세부 깊이는 제작 전에 보강.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Visit Saudi · Beit Al-Sharbatly",
+          "url": "https://www.visitsaudi.com/en/jeddah/attractions/beit-al-sharbatly"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Beit%20Al-Sharbatly%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-30",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "기존 공식 관광 기록의 대상 식별을 유지. 제공 사진의 연속 목재 발코니·아치·모서리 구성과 Matbouli 사진의 개별 돌출 로샨 중심 입면을 비교해 큰 구성의 차이를 확인.",
+        "remaining": "사진 촬영 시점·주변 경계·발코니 깊이 세부·정밀 핀",
+        "visual_claim_check": "정면·측면·지붕·지상층의 주요 구성을 대조; 정밀 평면·치수는 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "appearance"
+      },
+      "overview": "Jeddah Al-Balad에 있는 역사 주택이다. 전통 주거 건축을 대표하는 후보로, 인근 Matbouli House와는 다른 건물이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "제공 사진에서 정면·측면의 연속 발코니와 로샨, 독립된 모서리 구성이 읽힌다. 다른 주택과의 중복 비교는 별도로 남긴다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "제공 사진에서 정면·측면·지붕·지상층을 함께 볼 수 있어 연속 목재 발코니와 아치의 전체 구성을 판단할 수 있다. Matbouli의 개별 돌출 로샨 중심 입면과 큰 구성도 달라 추천으로 올린다.",
+        "remaining": "사진 촬영 시점·주변 경계·발코니 깊이 세부·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j13-user-01.png"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Beit Al-Sharbatly",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "Matbouli House와 함께 선정할 때 외형 유사도 비교가 남아 있다.",
+          "remaining": "주변 건물 경계·사진 촬영 시점",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "fact_check_history": [
+        {
+          "date": "2026-09-23",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "Visit Saudi 제목·외관 사진에서 전통 목재 창과 돌출 입면 확인.",
+          "remaining": "주변 건물 경계·사진 촬영 시점",
+          "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "appearance"
+        }
+      ],
+      "landmark_type": "heritage"
+    },
+    {
+      "id": "J14",
+      "name": "Khuzam Palace",
+      "city": "Jeddah",
+      "type": "건축물",
+      "area": "Al Nazlah al Yamaniyah",
+      "visual_recommendation": "보통",
+      "character": "궁전 본체와 담장이 이루는 저층 단지. 대표 정문은 기존 B38과의 중복 확인 전 모델 범위에서 제외.",
+      "location_and_state_evidence": "Saudipedia 건축 기록",
+      "followup": "이번 신규 후보는 궁전 본체 중심. 대표 정문은 B38 Historical Gate와 형상 대조 전 포함하지 않음. 문서와 JSON의 제작 범위를 일치시킴. 로컬 B38.glb가 존재하고 Jeddah Historical Gate로 등록되어 있으나, 노드명 txt만으로 Khuzam 정문 동일성을 확정할 수 없음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Saudipedia · Khuzam Palace",
+          "url": "https://saudipedia.com/en/khuzam-palace"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Khuzam%20Palace%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Saudipedia에서 궁전 본체·담장·출입구 구성 확인. 정문 제외 범위 정렬.",
+        "remaining": "궁전 본체 전체 배치·담장 경계, B38 정문 중복·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "정문은 기존 B38 모델과 대조 전 포함 보류",
+      "overview": "Jeddah Al Nazlah al Yamaniyah의 역사 궁전이다. 이번 후보는 궁전 본체와 단지를 대상으로 하며, 기존 Reference의 Khuzam Palace Gate와 범위를 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "썸네일 대문은 기존 보유 모델과 중복 확인 대상이며, 실제 후보인 궁전 본체의 전체 형태 자료가 부족하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "새 썸네일은 궁전 대문이므로 궁전 본체의 전체 형태를 보강하지 않는다. 기존 B38 정문과의 중복 및 본체·담장 범위를 확인해야 해 검토를 유지한다.",
+        "remaining": "궁전 본체 전체 배치·담장 경계, B38 정문 중복·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j14-user-01.png",
+          "research-j14-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Khuzam Palace",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "궁전 본체 footprint; B38 정문 형상 대조",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "heritage"
+    },
+    {
+      "id": "J15",
+      "name": "Bicycle Sculpture / Midan al-Darrajah",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "King Fahd Road × Al Rawdah Street 권역",
+      "visual_recommendation": "보통",
+      "character": "거대한 자전거 형상이 직관적이다. 두 바퀴와 프레임만으로도 강한 식별력을 갖는다.",
+      "location_and_state_evidence": "자전거 식별 보도·2022 촬영자 이동 관찰 · 최신 핀 미확인",
+      "followup": "SPA의 자전거 식별 보도와 2022 촬영자의 이동 관찰 기록을 구분. 이번 재점검에서 SPA 이전 보도 본문은 충분히 재확인하지 못했으므로 이전 근거를 촬영자 기록으로 제한. 옛 교차로 중심 좌표는 재사용하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "SPA · 자전거 조형물 식별 보도 (2020-05-14)",
+          "url": "https://www.spa.gov.sa/2086480"
+        },
+        {
+          "title": "촬영자 기록 · 이동된 조형물 (2022)",
+          "url": "https://susieofarabia.wordpress.com/2022/03/29/jeddah-sculptures-moved/"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Bicycle%20Sculpture%20%2F%20Midan%20al-Darrajah%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "SPA의 자전거 식별 및 2022 촬영자 이동 관찰 기록 확인.",
+        "remaining": "이전 이후 최근 설치 상태·받침과 프레임 세부·정밀 핀; 옛 위치 사용 금지",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "이전 후 현 위치 확인 필요 · 옛 교차로 좌표 사용 금지",
+      "overview": "Jeddah의 도로변 공공미술을 대표하는 대형 자전거 조형물이다. 옛 교차로의 이름과 사진이 널리 쓰이지만 이전 기록이 있어 현재 설치 장소를 별도로 확인해야 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "두 바퀴와 프레임의 자전거 윤곽이 직관적이다. 현 위치 확인과는 별개다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "자전거의 두 바퀴와 프레임은 형태가 강하고 옛 사진에서 전체 윤곽도 읽힌다. 이전 이후 자료는 원경 중심이라 현재 설치 상태와 받침 구성을 더 확인해야 한다.",
+        "remaining": "이전 이후 최근 설치 상태·받침과 프레임 세부·정밀 핀; 옛 위치 사용 금지",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j15-01.webp",
+          "research-j15-02.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Midan al-Darrajah",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "이전 전 사진 중심이며 이전 후 현재 설치 상태·세부 구성을 확인할 자료가 부족하다.",
+          "remaining": "최근 존치·정확한 핀·세부 외형 사진 대조; 옛 회전교차로 좌표 사용 금지",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J16",
+      "name": "The Globe Roundabout",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "북부 · Al Mohammadiyah 권역",
+      "visual_recommendation": "높음",
+      "character": "지구본 구체와 대륙 형상이 핵심. 지역 표지성이 강하나 단순 구만 남기면 특징이 약해질 수 있다.",
+      "location_and_state_evidence": "2026 보도 확인 · 핀 미검증",
+      "followup": "2026-04 SPA 표기 기사의 재전재를 확인했으며 SPA 원문은 미확보. 행사별 조명·장식을 기본 형태와 구분.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "SPA 표기 재전재 · Globe (2026-04)",
+          "url": "https://www.saudiarabiapr.com/travel-tourism-hotels-asp/191666-iconic-globe-roundabout-celebrates-jeddah-s-national-and-international-milestone"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Globe%20Roundabout%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2026-04 SPA 표기 재전재에서 Globe 식별. SPA 원문은 미확보.",
+        "remaining": "대륙의 세부 배치·받침 치수·정밀 핀; 연도·치수 미채택 유지",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah 북부 Al Mohammadiyah 권역의 지구본 조형물이다. 도로 교차부의 지역 표지로 알려진 대상이며 Cosmos와는 별개 작품이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "구체와 대륙 형상을 함께 남기면 지구본으로 식별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "확보 주간 사진에서 구체·대륙 형상과 받침대를 함께 확인할 수 있다. 큰 형태를 판단할 자료가 있고 대륙 윤곽을 남기면 장소의 식별력이 유지돼 추천한다.",
+        "remaining": "대륙의 세부 배치·받침 치수·정밀 핀; 연도·치수 미채택 유지",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j16-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "The Globe Roundabout",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "공식 원문·현 핀·세부 외형 사진 대조; 연도·치수 미채택",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J17",
+      "name": "Engineering Roundabout / Engineers’ Tools",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Engineering Square 권역",
+      "visual_recommendation": "높음",
+      "character": "컴퍼스·자·각도기 등 제도 도구를 크게 세운 구성. 다른 조형물과 주제가 명확히 구별된다.",
+      "location_and_state_evidence": "과거 기록·사진 · 최신 위치 보강",
+      "followup": "Drawing Tools라는 별칭도 사용. 교통섬 경계와 도구의 현재 배열을 최근 사진·핀으로 확인.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "2017 학술 조사 · Artscaping in public places",
+          "url": "https://visualcompublications.es/SAUC/article/download/5558/3872/21345"
+        },
+        {
+          "title": "촬영자 기록 · Drawing Tools (2008)",
+          "url": "https://susieofarabia.wordpress.com/2008/05/19/drawing-tools-sculpture/"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Engineering%20Roundabout%20%2F%20Engineers%E2%80%99%20Tools%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2017 논문 Fig. 1에서 Engineers’ Tools와 제도 도구 형상 확인.",
+        "remaining": "현재 배치의 세부·지지 구조 접합·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah Engineering Square와 연결된 공공 조형물이다. 건축·설계에 쓰이는 제도 도구를 소재로 한 Engineers’ Tools를 대상으로 한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "제도 도구의 큰 프레임과 빈 공간이 분명하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "확보 사진과 장소 대조에서 컴퍼스·각도기·삼각자의 큰 구성을 확인할 수 있다. 도구의 윤곽과 사이의 빈 공간이 다른 조형물과 구별돼 추천한다.",
+        "remaining": "현재 배치의 세부·지지 구조 접합·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j17-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Engineering Roundabout",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "추천",
+          "reason": "기존 조사에서 대상·범위와 주요 외형을 확인할 근거가 있고 큰 형태의 식별력이 높다. 아래 제작 전 확인 사항은 별도로 남긴다.",
+          "remaining": "현재 배치·위치",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J18",
+      "name": "Cosmos / Al-Falak Sculpture",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al-Falak 권역",
+      "visual_recommendation": "보통",
+      "character": "금속 곡선과 구체가 천체 궤도를 이루는 구조. 구체 하나인 Globe와 별개 대상이며 빈 공간이 많은 실루엣이다.",
+      "location_and_state_evidence": "이전 관찰 기록 · 최신 핀 미확인",
+      "followup": "시청 발표를 인용한 2020 보도에서 교량 공사에 따른 이전 완료와 교량 옆 위치를 확인. 옛 회전교차로 중심 좌표는 사용하지 않음. 2026 존치·정밀 핀까지 확인한 것은 아님.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Jeddah 공공미술",
+          "url": "https://www.arabnews.com/art-culture/jeddah-the-city-of-arts-and-culture-490361"
+        },
+        {
+          "title": "촬영자 기록 · Cosmos (2009)",
+          "url": "https://susieofarabia.wordpress.com/2009/03/17/cosmos/"
+        },
+        {
+          "title": "촬영자 기록 · 이동된 조형물 (2022)",
+          "url": "https://susieofarabia.wordpress.com/2022/03/29/jeddah-sculptures-moved/"
+        },
+        {
+          "title": "Sada · 시청 이전 완료 발표 인용 (2020-01-03)",
+          "url": "https://slaati.com/2020/01/03/p1555609.html"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Cosmos%20%2F%20Al-Falak%20Sculpture%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2020-01-03 보도가 제다 시청의 이전 완료 발표를 인용. Sari Street × King Fahd Road 교량 옆으로 이동한 경위 확인. 2022 촬영자 기록과 구분해 보강.",
+        "remaining": "이전 이후 최근 설치 상태·궤도 부재 깊이와 받침·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "교량 옆 이전 확인 · 최근 현장 사진·정확한 핀 미확인",
+      "overview": "Jeddah의 천체·궤도 모티브 공공 조형물이다. Al-Falak이라는 이름으로도 불리며, 교량 공사와 관련된 이전 보도가 있어 과거 설치 장소와 구분한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "궤도형 금속 구조와 구체의 조합이 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "금속 궤도와 구체의 큰 구조는 사진에서 보인다. 이전을 다룬 자료 이후의 설치 상태와 받침·부재 깊이를 확인할 자료가 부족해 검토를 유지한다.",
+        "remaining": "이전 이후 최근 설치 상태·궤도 부재 깊이와 받침·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j18-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Al-Falak Sculpture",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "이전 기록은 있으나 이전 장소의 최근 형태·받침대 자료가 부족하다.",
+          "remaining": "이전된 자리의 최근 사진과 형태 대조·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J19",
+      "name": "Accident! / Crazy Speed",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Prince Faisal bin Fahd Street · 2025 이전 보도",
+      "visual_recommendation": "보통",
+      "character": "백색 콘크리트 덩어리에서 다섯 대의 자동차가 엇갈려 돌출되는 조형물. 사고 장면을 과장한 구성이 강한 식별 요소다.",
+      "location_and_state_evidence": "2025 시청 대변인 인용 이전 보도",
+      "followup": "Accident / Crazy Speed / Traffic Accident는 한 작품으로 처리. 2025 보도가 새 위치를 Prince Faisal bin Fahd Street로 명시하므로 과거 North Corniche 위치를 현재 위치로 사용하지 않음. 보도일이 정확한 이전 공사일을 뜻하지 않으며, 2026 현장 존치 확인과도 구분. 개별 차량 방향은 사진 대조 전 확정하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Visit Saudi · Outdoor Art",
+          "url": "https://www.visitsaudi.com/en/stories/outdoor-art-installations"
+        },
+        {
+          "title": "촬영자 기록 · Accident (2009)",
+          "url": "https://susieofarabia.wordpress.com/2009/03/02/accident-sculpture/"
+        },
+        {
+          "title": "2017 학술 조사 · Artscaping in public places",
+          "url": "https://visualcompublications.es/SAUC/article/download/5558/3872/21345"
+        },
+        {
+          "title": "Al Madina · 시청 대변인 인용, 이전 위치·차량 구성 (2025-04-16)",
+          "url": "https://www.al-madina.com/article/930857/محليات/مجسم-سرعة-جنونية-تحفة-فنية-تتنازل-عن-موقعها-لصالح-حلبة-كورنيش-جدة"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Accident!%20%2F%20Crazy%20Speed%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2025-04-16 Al Madina의 시청 대변인 인용 보도에서 North Corniche에서 Prince Faisal bin Fahd Street로 이전한 사실 확인. 백색 콘크리트와 다섯 대 자동차 구성도 명시.",
+        "remaining": "다섯 차량의 방향·가려진 면·받침 상세와 이전 이후 정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Jeddah의 도로변 공공미술 작품으로 Accident! 또는 Crazy Speed로 알려져 있다. 2025년 보도는 North Corniche에서 Prince Faisal bin Fahd Street로의 이전을 다룬다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "콘크리트 덩어리에서 돌출된 차량 구성이 강한 식별 요소다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "차량이 돌출된 입방체의 캐릭터는 강하고 이전 관련 사진도 확보했다. 차량별 방향과 가려진 면·받침의 입체 구성을 확정할 자료가 더 필요해 검토로 둔다.",
+        "remaining": "다섯 차량의 방향·가려진 면·받침 상세와 이전 이후 정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j19-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Crazy Speed",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "돌출된 차량별 방향과 받침대, 이전 후 배치를 확인할 자료가 부족하다.",
+          "remaining": "새 위치의 정확한 핀·차량별 방향과 받침대 상세 사진",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J20",
+      "name": "Four Lanterns",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "과거 Tahlia Street 기록 · 지도 장소 대조, 최근 설치 상태 확인 필요",
+      "visual_recommendation": "보통",
+      "character": "프레임에 매단 대형 전통 등 네 개. 장식색을 줄여도 등과 지지 구조의 윤곽을 남길 수 있다.",
+      "location_and_state_evidence": "과거 학술 조사·도판 · 현재 위치 보강",
+      "followup": "2017 학술 도판에서 네 등과 지지 프레임을 확인했고, 기존 지도 감사에서 장소 항목을 대조. 이 대조를 최근 존치·설치 상태 또는 정밀 좌표 검증으로 확대하지 않음. 미확인 Mamluk Mosque Lamps 별칭은 대표 명칭에서 제외.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "2017 학술 조사 · Artscaping in public places",
+          "url": "https://visualcompublications.es/SAUC/article/download/5558/3872/21345"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Four%20Lanterns%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2017 논문 Fig. 1의 Four Lanterns 제목·네 등 프레임 확인. 미확인 별칭 삭제.",
+        "remaining": "최근 설치 상태·받침과 지지부의 깊이·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "최근 설치 상태·받침과 지지부 구성 확인 필요",
+      "overview": "Jeddah의 대형 전통 등 조형물이다. Four Lanterns라는 작품명이 학술 도판에 기록되어 있으며, 과거 장소 기록과 현재 설치 위치를 구분해 조사한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "네 개의 등과 지지 구조가 반복되는 큰 윤곽을 이룬다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "네 등과 지지 프레임은 사진에서 확인되고 지도 장소도 대조돼 있다. 다만 현 설치 상태와 받침·지지부의 입체 구성을 판단할 자료가 부족해 검토를 유지한다.",
+        "remaining": "최근 설치 상태·받침과 지지부의 깊이·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j20-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Four Lanterns",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "현재 설치 위치와 받침대 자료가 미확인이다.",
+          "remaining": "현 위치·받침대",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J21",
+      "name": "The Seagull",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "북부 Corniche · 과거 기록",
+      "visual_recommendation": "보통",
+      "character": "길게 솟은 날개형 판과 낮은 곡면 판의 대비. 새 문양을 단순화해도 높낮이와 판의 윤곽이 남는다.",
+      "location_and_state_evidence": "2017 학술 도판·과거 보도/촬영자 기록 · 최신 핀 미확인",
+      "followup": "2025 자료는 광장 명칭과 행사 장소를 뒷받침한다. 광장의 존재만으로 조형물 자체의 2026 존치를 확정하지 않음. 다른 새 군상·Golden Falcon과 구분하며 최근 작품 사진 확인을 유지.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Jeddah 공공미술",
+          "url": "https://www.arabnews.com/art-culture/jeddah-the-city-of-arts-and-culture-490361"
+        },
+        {
+          "title": "촬영자 기록 · Seagull (2018)",
+          "url": "https://susieofarabia.blogspot.com/2018/02/jeddah-sculpture-seagull.html"
+        },
+        {
+          "title": "2017 학술 조사 · Artscaping in public places",
+          "url": "https://visualcompublications.es/SAUC/article/download/5558/3872/21345"
+        },
+        {
+          "title": "관광언론연합 · Nawras Square와 조형물 (2025-02-10)",
+          "url": "https://arabutm.org/19048/"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Seagull%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "기존 학술 도판의 The Seagull 식별에 더해, 2025-02-10 관광언론연합 보도가 ROSHN Waterfront의 Nawras Square 명칭과 갈매기 조형물의 관계를 명시.",
+        "remaining": "조형물 자체의 최근 존치·설치 상태, 판의 깊이·받침 범위·정밀 핀",
+        "visual_claim_check": "주요 형태를 출처 본문 또는 사진·도판과 대조",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "Nawras Square 연관 확인 · 조형물의 최근 존치 사진 필요",
+      "overview": "Jeddah 북부 해안의 갈매기 모티브 기념 조형물이다. Nawras Square와의 관계가 보도되어 있으며, 현재 존치 상태와 사진 촬영 시점은 별도 확인 대상이다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "제공 사진의 긴 수직 날개형 판과 낮은 곡면 판의 높낮이 대비가 뚜렷하다. 새 문양을 생략해도 큰 구조가 남는다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "추가 근접 사진과 기존 전경으로 날개형 판·낮은 곡면 판의 대비를 확인할 수 있다. 촬영 시점이 미확인이라 현재 존치와 설치 상태를 확인할 근거가 더 필요하다.",
+        "remaining": "조형물 자체의 최근 존치·설치 상태, 판의 깊이·받침 범위·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j21-user-01.png",
+          "research-j21-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "The Seagull",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "큰 형상은 보이나 조형물 자체의 최근 존치·설치 상태를 확인할 자료가 부족하다.",
+          "remaining": "조형물 자체의 최근 존치 사진·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J22",
+      "name": "The Fist",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Jeddah 도로변 · 현재 위치 확인 필요",
+      "visual_recommendation": "보통",
+      "character": "주먹을 크게 확대해 세운 단순하고 강한 형태. 원거리 실루엣의 식별력이 좋다.",
+      "location_and_state_evidence": "복원 보도 · 현재 위치 보강",
+      "followup": "The Thumb 등 다른 손 조각과 구분. 복원 기사가 오래되어 최근 존치·받침대·핀 확인 필요.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Saudi Gazette · Fist 복원 (2014)",
+          "url": "https://saudigazette.com.sa/article/106009"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Fist%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2014 복원 보도에서 The Fist 식별 확인.",
+        "remaining": "최근 존치·설치 상태와 실제 위치, 손·받침의 세부 깊이·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "최근 존치 여부·받침대 확인 필요",
+      "overview": "Jeddah의 공공미술 작품 The Fist다. 확대된 주먹을 소재로 한 조형물로, 복원 보도와 과거 사진이 남아 있다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "주먹 형상과 경사진 받침대가 직관적으로 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "주먹과 경사진 받침대의 큰 윤곽은 사진에서 분명하다. 현재 존치 근거와 위치가 충분히 대조되지 않아 강한 형태만으로 추천하지 않는다.",
+        "remaining": "최근 존치·설치 상태와 실제 위치, 손·받침의 세부 깊이·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j22-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "The Fist",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "최근 존치와 받침대 상세를 확인할 자료가 부족하다.",
+          "remaining": "최신 작품 사진과 형태 대조·존치·받침대·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J23",
+      "name": "Circular Mass",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al Arbaeen Lagoon",
+      "visual_recommendation": "보통",
+      "character": "원기둥형 몸체와 길게 패인 홈·표면 요철이 특징. 공식 사진에서 큰 윤곽은 보이지만 절개의 깊이와 가려진 면은 추가 대조가 필요하다.",
+      "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
+      "followup": "2025 설치 보도에서 작품명·작가·Al Arbaeen 구역 확인. 같은 작가의 다른 원형 조각 사진을 혼용하지 않음. 작품별 외형과 개별 핀은 추가 대조. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 원문 404로 카드 출처에는 추가하지 않음. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Al-Arbaeen 설치 보도 (2025-06-29)",
+          "url": "https://www.arabnews.com/saudi-arabia/global-sculptures-at-open-air-museum-in-historic-jeddah-2606300"
+        },
+        {
+          "title": "Jeddah Historic District · 작품별 공식 소개",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Circular%20Mass%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2025 설치 보도의 Circular Mass/Pomodoro·Al Arbaeen 구역 확인.",
+        "remaining": "홈·절개와 가려진 면의 깊이·수반 포함 범위·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "작품별 외형·정확한 입체 형태 대조 필요",
+      "overview": "Arnaldo Pomodoro의 공공미술 작품으로, Jeddah Historic District의 Al Arbaeen Lagoon 조형물 목록에 소개된다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "원기둥의 세부 요철에 특징이 집중돼 있어 축소 시 형태 식별력을 더 검토해야 한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 작품 사진에서 원기둥과 표면 요철은 확인된다. 홈과 절개의 깊이·가려진 면을 판단할 자료가 부족해 입체 구성을 더 대조해야 한다.",
+        "remaining": "홈·절개와 가려진 면의 깊이·수반 포함 범위·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j23-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Circular Mass",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "작품별 사진과 정확한 입체 형태 대조·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J24",
+      "name": "The Illusion of the Second Cube",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al Arbaeen Lagoon",
+      "visual_recommendation": "보통",
+      "character": "입방체 착시를 만드는 기하학적 구성과 색면 배치. 단색으로 단순화할 때 입체적 식별력이 유지되는지 검토가 필요하다.",
+      "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
+      "followup": "설치 보도 표기 The Illusion of the Second Cube로 명칭 정렬. 보는 방향에 따른 입체 구조·깊이는 작품별 사진을 대조한 뒤 확정.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Al-Arbaeen 설치 보도 (2025-06-29)",
+          "url": "https://www.arabnews.com/saudi-arabia/global-sculptures-at-open-air-museum-in-historic-jeddah-2606300"
+        },
+        {
+          "title": "Jeddah Historic District · 작품별 공식 소개",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Illusion%20of%20the%20Second%20Cube%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-23",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2025 보도 제목 The Illusion of the Second Cube로 표기 정렬.",
+        "remaining": "색·시점 변화에 따른 식별력, 실제 입체 깊이·받침·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Victor Vasarely의 기하학적 공공미술 작품이다. Jeddah Historic District가 Al Arbaeen Lagoon의 조형물로 소개한다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "검토",
+        "reason": "착시 효과가 색면 배치에 크게 의존한다. 단색·단순화 모델에서 입체적 차별성이 유지되는지 검토가 필요하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "색면과 기하학적 윤곽은 확인되지만 착시 효과가 보는 방향과 색에 의존한다. 단순화한 모델에서 식별력이 유지되는지와 실제 입체 깊이를 더 검토해야 한다.",
+        "remaining": "색·시점 변화에 따른 식별력, 실제 입체 깊이·받침·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j24-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "The Illusion of the Second Cube",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "검토",
+          "result": "검토",
+          "reason": "기존 형태 검토 의견과 미확인 사항을 종합해 검토를 유지한다.",
+          "remaining": "작품별 외형 사진 대조·정확한 핀; 낮은 폴리곤 적합성은 의견",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J25",
+      "name": "Flexibility of Balance",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al Arbaeen Lagoon",
+      "visual_recommendation": "보통",
+      "character": "붉은 곡면 판이 비대칭으로 겹치고 판 사이 빈 공간이 생기는 조각. 큰 윤곽은 공식 사진에서 보이며, 판의 깊이와 가려진 구성은 추가 자료로 대조해야 한다.",
+      "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
+      "followup": "기존 설치 보도와 공식 작품 사진으로 작품명·설치 구역·큰 윤곽을 확인. 개별 위치·판의 깊이·받침과 수공간의 모델 범위는 미확인. 오연결 지도 검색은 노출하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Al-Arbaeen 설치 보도 (2025-06-29)",
+          "url": "https://www.arabnews.com/saudi-arabia/global-sculptures-at-open-air-museum-in-historic-jeddah-2606300"
+        },
+        {
+          "title": "Jeddah Historic District · 작품별 공식 소개",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Flexibility%20of%20Balance%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2025 보도의 Flexibility of Balance/Calder·설치 구역 확인.",
+        "remaining": "곡면 판의 깊이·가려진 구성·받침/수공간 범위·개별 위치와 정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "판의 깊이·받침 범위와 개별 위치 확인 필요",
+      "overview": "Alexander Calder의 공공미술 작품이다. Jeddah Historic District의 Al Arbaeen Lagoon 조형물군에 포함되어 있다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "공식 수록 사진의 비대칭 곡면 판과 판 사이 빈 공간이 큰 구조로 읽힌다. 위치 미확인은 별도로 유지한다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 사진에서 비대칭 곡면 판과 판 사이 빈 공간은 확인된다. 판의 깊이·가려진 구성과 받침 범위 및 개별 위치가 미확인이라 검토를 유지한다.",
+        "remaining": "곡면 판의 깊이·가려진 구성·받침/수공간 범위·개별 위치와 정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j25-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Flexibility of Balance",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "공식 사진의 큰 윤곽은 보이나 측후면·받침대 범위와 실제 위치가 미확인이다.",
+          "remaining": "작품별 외형·받침대 사진 대조·정확한 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J26",
+      "name": "The Bird (Joan Miró)",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al Arbaeen Lagoon",
+      "visual_recommendation": "보통",
+      "character": "추상적인 몸체와 돌출부, 두 다리의 조합이 특징. 큰 덩어리와 사이의 빈 공간이 단색에서도 구별된다.",
+      "location_and_state_evidence": "2025 보도에서 설치 구역 명시 · 개별 핀 미확인",
+      "followup": "2025 보도의 The Bird / Joan Miró로 대표 명칭 정렬. Oiseau Bird를 검증된 공식 별칭으로 단정하던 문구 제거. The Seagull과 별개이며 작품별 사진·핀 보강 필요. Historic Jeddah 공식 작품 목록의 검색 색인도 확인했으나 원문 404로 카드 출처에는 추가하지 않음. 색인 기록은 실시간 현장 확인이나 작품 사진 대조를 대신하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Arab News · Al-Arbaeen 설치 보도 (2025-06-29)",
+          "url": "https://www.arabnews.com/saudi-arabia/global-sculptures-at-open-air-museum-in-historic-jeddah-2606300"
+        },
+        {
+          "title": "Jeddah Historic District · 작품별 공식 소개",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=The%20Bird%20%28Joan%20Mir%C3%B3%29%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-26",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "2025 보도의 The Bird/Joan Miró로 표기 정렬.",
+        "remaining": "가려진 돌출부의 깊이·다리와 받침 연결·정밀 핀; Oiseau 원문 표기",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "측후면·받침대 세부 형태와 정밀 핀 미확인",
+      "overview": "Joan Miró의 추상적인 새 조각이다. Jeddah Historic District의 Al Arbaeen Lagoon 목록에는 Oiseau Bird라는 이름으로도 소개된다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "검토",
+        "result": "추천",
+        "reason": "공식 수록 사진에서 추상적인 몸체·돌출부·두 다리의 조합이 뚜렷해 단색에서도 구별된다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 사진에서 추상 몸체·돌출부와 두 다리의 대비는 확인된다. 가려진 부분의 깊이와 받침 연결을 판단할 자료가 부족해 검토를 유지한다.",
+        "remaining": "가려진 돌출부의 깊이·다리와 받침 연결·정밀 핀; Oiseau 원문 표기",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j26-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "The Bird Joan Miró",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "추상 조각의 측후면 깊이·돌출부와 받침대를 확정할 자료가 부족하다.",
+          "remaining": "작품별 외형 사진 대조·정확한 핀; Oiseau 표기의 원문 재확인",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    },
+    {
+      "id": "J27",
+      "name": "Oval with Points",
+      "city": "Jeddah",
+      "type": "조형물",
+      "area": "Al Arbaeen Lagoon · 정밀 핀 미확인",
+      "visual_recommendation": "보통",
+      "character": "타원형 외곽과 안쪽을 향한 뾰족한 돌출부, 가운데 빈 공간이 핵심. 단색 모델에서도 캐릭터가 남는다.",
+      "location_and_state_evidence": "2026 Henry Moore Foundation 공개 학술 초록의 Jeddah 이전·복원 서술",
+      "followup": "재단 공개 초록의 이전·복원 기록과 Jeddah Historic District 공식 작품별 목록의 Al Arbaeen Lagoon 표기를 함께 확인. 정확한 핀은 별도 확인이 필요하며, 다른 도시 주조본 사진과 받침대를 혼용하지 않음.",
+      "confidence": "partial",
+      "coordinates": null,
+      "footprint": null,
+      "duplicate_check": "기존 카탈로그 명칭·별칭 대조상 동일 대상 미발견; 전체 GLB 형상 대조는 미수행",
+      "sources": [
+        {
+          "title": "Henry Moore Foundation · 2026 연구 초록 (Jeddah 작품)",
+          "url": "https://henry-moore.org/whats-on/recasting-global-modernities-and-the-making-of-shared-worlds/"
+        },
+        {
+          "title": "Visit Saudi · Oval with Points 식별 자료 (현 위치 근거 아님)",
+          "url": "https://www.visitsaudi.com/en/stories/outdoor-art-installations"
+        },
+        {
+          "title": "Jeddah Historic District · 작품별 공식 소개",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/sculpture-parks"
+        }
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Oval%20with%20Points%20Jeddah%20Saudi%20Arabia",
+      "review_status": "선정 전",
+      "scope_group": "Jeddah",
+      "fact_check": {
+        "date": "2026-09-29",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Henry Moore Foundation 공개 초록의 Jeddah 작품 이전·복원 기록과 Jeddah Historic District 공식 페이지의 작품명·작가·Al Arbaeen Lagoon 표기 및 작품 사진 확인.",
+        "remaining": "타원 몸체 두께·가려진 면·받침과 최근 설치 상태·정밀 핀",
+        "visual_claim_check": "기존 형태 의견의 세부 사진 대조 필요",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "decision_note": "공식 목록의 Al Arbaeen 배치 확인 · 정밀 핀·최근 현장 상태 미확인",
+      "overview": "Henry Moore의 Oval with Points다. Jeddah Historic District 공식 조형물 목록에서 Al Arbaeen Lagoon에 설치된 작품으로 소개된다.",
+      "recommendation_review": {
+        "date": "2026-09-29",
+        "previous": "추천",
+        "result": "추천",
+        "reason": "타원 몸체와 중앙 빈 공간, 안쪽 돌출부가 분명하다.",
+        "basis": "현재 로컬 사진·렌더링 및 기존 조사 기록에 대한 형태 의견; 최신 현장·좌표·치수 검증과 별개"
+      },
+      "recommendation_assessment": {
+        "date": "2026-09-30",
+        "criteria": "종합 추천 v1",
+        "previous": "검토",
+        "result": "검토",
+        "reason": "공식 사진에서 타원과 두 뾰족한 돌출부, 가운데 빈 공간은 확인된다. 몸체 두께·가려진 면과 최근 현장 상태의 자료가 부족해 검토를 유지한다.",
+        "remaining": "타원 몸체 두께·가려진 면·받침과 최근 설치 상태·정밀 핀",
+        "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님.",
+        "evidence_images": [
+          "research-j27-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "image_search_name": "Oval with Points",
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-09-29",
+          "criteria": "종합 추천 v1",
+          "previous": "추천",
+          "result": "검토",
+          "reason": "공식 사진은 있으나 최근 현장 상태와 세부 입체·받침대 자료가 부족하다.",
+          "remaining": "최근 현장 상태·세부 형태와 받침대 대조·정밀 핀",
+          "scope": "현재 확보 이미지와 기존 조사 기록 검토; 공개 자료 전체의 양을 새로 조사한 결과가 아님"
+        }
+      ],
+      "landmark_type": "sculpture"
+    }
+  ],
+  "holds": [
+    {
+      "id": "H01",
+      "name": "Camel Roundabout",
+      "reason": "2026-01-18 회전교차로 철거 착수·조형물 후속 이전 계획 보도. 이전 완료와 새 설치 위치는 확인하지 못했으므로 본 후보 수에서 제외.",
+      "release_condition": "최신 존치·이전 위치 확인",
+      "sources": [
+        {
+          "title": "Saudi Gazette · Camel 교차로 정비 (2026-01-18)",
+          "url": "https://saudigazette.com.sa/article/658264/SAUDI-ARABIA/Jeddah-removes-Camel-Roundabout-under-2026-traffic-congestion-plan"
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "name": "Island Mosque / Masjid al-Jazirah",
+      "reason": "Al Rahma와 별개 건물로 식별되는 유산 기록이 있으나, Floating Mosque 검색 결과가 혼재한다. 보유 Al Rahma 모델·정확한 핀과 형상 대조 후 신규 확정.",
+      "release_condition": "보유 모델·핀·외관의 일대일 대조",
+      "sources": [
+        {
+          "title": "IRCICA · Island Mosque",
+          "url": "https://www.islamicarchitecturalheritage.com/listings/island-mosque"
+        },
+        {
+          "title": "명칭 비교용 보조 자료 · Island Mosque",
+          "url": "https://umrah.guide/island-mosque/"
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "name": "Dallah / Coffee Pot Fountain",
+      "reason": "대형 커피포트 군집으로 형태 잠재력은 높다. 확보 자료가 개인 촬영 기록 중심이며 현재 위치·존치에 DATA LOW.",
+      "release_condition": "현재 위치와 최근 외관을 공신력 있는 자료로 보강",
+      "sources": [
+        {
+          "title": "촬영자 기록 · Dallah Fountain (2020)",
+          "url": "https://susieofarabia.blogspot.com/2020/06/jeddahs-dallah-fountain.html"
+        }
+      ]
+    },
+    {
+      "id": "H04",
+      "name": "Fruit Boat",
+      "reason": "배에 과일을 싣는 형태가 독특하지만 확보된 보도가 2008년 자료여서 현존·이전 여부를 확인하기 전에는 본 후보에 포함하지 않음. DATA LOW.",
+      "release_condition": "현재 존치·설치 위치 확인",
+      "sources": [
+        {
+          "title": "Arab News · Fruit Boat (2008)",
+          "url": "https://www.arabnews.com/node/316215"
+        }
+      ]
+    },
+    {
+      "id": "H05",
+      "name": "Jeddah Tower / Kingdom Tower",
+      "reason": "완공 건물 목록에 넣기 부적절한 공사 중 대상. 사업자 연차 보고에서 건설 진행을 확인. 실제 시공 상태와 최종 렌더를 분리해야 함.",
+      "release_condition": "공사 중 랜드마크를 Phase 1에 포함할지 및 표현 기준 결정",
+      "sources": [
+        {
+          "title": "Kingdom Holding · 2025 연차 보고",
+          "url": "https://kingdom.com.sa/download/reports/khcir25-english-spread-view"
+        }
+      ]
+    },
+    {
+      "id": "H06",
+      "name": "Haramain / King Abdulaziz railway station 계열",
+      "reason": "Archive 50 King Abdulaziz Railway Station과 중복될 가능성이 있어 신규로 계산하지 않음.",
+      "release_condition": "Archive 50의 좌표·GLB와 후보 역의 대조",
+      "sources": []
+    },
+    {
+      "id": "H07",
+      "name": "Historic Jeddah gates 추가 후보",
+      "reason": "Reference 23 Bab Makkah 및 Balady B38 Jeddah Historical Gate가 이미 존재. B38의 정확한 대상이 확인되기 전 다른 역사 성문 이름으로 수를 늘리지 않음.",
+      "release_condition": "B38 정확한 성문 식별",
+      "sources": []
+    }
+  ],
+  "inventory_exclusions": [
+    [
+      "Reference",
+      "07 Nassif House, 08 Al Rahma Mosque, 09 Prince Abdullah Al Faisal Stadium, 23 Bab Makkah, 24 Red Sea Mall, 25 King Fahd’s Fountain, 26 Abdul Raouf Khalil Museum, 27 Hassan Enany Mosque, 28 Fakieh Aquarium, 37 Savola Tower"
+    ],
+    [
+      "Balady+",
+      "B35 Jeddah Corniche Circuit, B36 Savola Tower, B37 Jeddah Flagpole, B38 Jeddah Historical Gate, B39 Al Jawhara Stadium, B40 King Abdulaziz International Airport"
+    ],
+    [
+      "Archive",
+      "61 KA Control Tower 병합본, 48·49 King Abdulaziz Control Tower, 50 King Abdulaziz Railway Station, 51 King Abdulaziz Fire Station"
+    ]
+  ],
+  "link_check_date": "2026-09-23",
+  "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
+  "fact_check_date": "2026-09-23",
+  "fact_check_report": "../FACT_CHECK_2026-09-23.md",
+  "fact_check_note": "기본 식별·출처 본문과 일부 외형을 대조한 검증. 전체 최신 외관·정밀 핀·치수·모델 중복 검증 완료를 뜻하지 않음.",
+  "selection_check_review_date": "2026-09-26",
+  "recommendation_review_date": "2026-09-30",
+  "recommendation_criteria": "종합 추천 v1",
+  "recommendation_review_summary": {
+    "date": "2026-09-30",
+    "count": 25,
+    "counts": {
+      "추천": 10,
+      "검토": 15
+    },
+    "report": "research/COMPOSITE_REVIEW_2026-09-30.md",
+    "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님."
+  },
+  "inventory_update": {
+    "date": "2026-09-30",
+    "removed_ids": [
+      "J12"
+    ],
+    "added_ids": [],
+    "reason": "사용자 요청: Matbouli House 삭제",
+    "count": 25
+  }
+}

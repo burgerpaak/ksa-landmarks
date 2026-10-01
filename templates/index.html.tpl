@@ -36,6 +36,8 @@
   --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
   --sidebar-width: 280px;
   --topbar-height: 64px;
+  --nav-link-inset: 10px;
+  --nav-group-inset: 4px;
 }
 
 [data-theme="dark"] {
@@ -133,23 +135,27 @@ a.brand:hover { opacity: 0.65; }
   line-height: 1;
 }
 
-/* 페이지 전환 nav (Reference / Progress) */
+/* 페이지 전환 nav */
 .topbar-nav {
   display: flex;
   gap: 4px;
+  margin-inline: var(--nav-group-inset);
   flex-shrink: 0;
 }
 .topbar-nav a {
-  padding: 6px 14px;
-  border-radius: 999px;
+  position: relative;
+  padding: 6px var(--nav-link-inset);
+  border-radius: 6px;
   font-size: 12.5px;
   font-weight: 500;
   color: var(--ink-soft);
-  background: var(--bg-sunken);
+  background: transparent;
   transition: background 0.14s ease, color 0.14s ease;
 }
-.topbar-nav a:hover { color: var(--ink); }
-.topbar-nav a.active { background: var(--ink); color: var(--bg-elev); }
+.topbar-nav a:hover { background: var(--bg-sunken); color: var(--ink); }
+.topbar-nav a.active { background: transparent; color: var(--ink); font-weight: 600; }
+.topbar-nav a.active::after { content: ''; position: absolute; left: var(--nav-link-inset); right: var(--nav-link-inset); bottom: 0; height: 2px; border-radius: 1px; background: currentColor; }
+@media (max-width: 640px) { .topbar-nav { --nav-link-inset: 8px; --nav-group-inset: 0px; } }
 
 .search-wrap {
   flex: 1;
@@ -202,6 +208,7 @@ a.brand:hover { opacity: 0.65; }
 }
 
 .topbar-actions {
+  margin-left: auto;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -1678,12 +1685,31 @@ body.density-compact .cards-grid { align-items: start; }
   .hero-stats { gap: 24px; }
 }
 
+@media (max-width: 520px) {
+  .cards-header { flex-wrap: wrap; gap: 10px; }
+  .density-toggle { margin-left: 0; }
+  .topbar { gap: 8px; padding: 0 10px; }
+  .topbar .brand-mark { font-size: 13px; }
+  .topbar .brand-meta { font-size: 8px; }
+  .topbar-nav { gap: 3px; }
+  .topbar-nav a { padding: 6px 8px; font-size: 11px; }
+  .topbar .icon-btn { width: 28px; height: 30px; flex-shrink: 0; }
+  .topbar-actions { margin-left: auto; }
+}
+
 /* ───── PRINT ───── */
 @media print {
   .topbar, .sidebar, .glossary { display: none; }
   .main { padding: 0; }
   .layout { grid-template-columns: 1fr; margin: 0; }
   .card { break-inside: avoid; box-shadow: none; border: 1px solid #999; }
+}
+
+
+@media (max-width: 375px) {
+  :root { --topbar-height: 96px; }
+  .topbar { flex-wrap: wrap; align-content: center; gap: 8px 12px; }
+  .topbar-nav { order: 4; flex-basis: 100%; justify-content: center; }
 }
 
 </style>
@@ -1703,6 +1729,7 @@ body.density-compact .cards-grid { align-items: start; }
 
   <nav class="topbar-nav">
     <a href="./" class="active">Reference</a>
+    <a href="research/">Research</a>
     <a href="progress/">Files</a>
   </nav>
 

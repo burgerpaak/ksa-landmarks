@@ -34,7 +34,7 @@ serve:
 all: fetch build
 
 clean:
-	rm -f docs/index.html docs/progress/index.html docs/progress/balady.html docs/progress/archive.html
+	rm -f docs/index.html docs/progress/index.html docs/progress/balady.html docs/progress/archive.html docs/research/index.html
 	@echo "✓ 생성된 HTML 삭제됨 (이미지·모델·PDF 유지)"
 
 clean-images:

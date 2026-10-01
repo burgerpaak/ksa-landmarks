@@ -36,6 +36,8 @@
   --shadow-md: 0 4px 16px rgba(15, 25, 40, 0.06);
   --sidebar-width: 280px;
   --topbar-height: 64px;
+  --nav-link-inset: 10px;
+  --nav-group-inset: 4px;
 }
 
 [data-theme="dark"] {
@@ -112,18 +114,22 @@ a.brand:hover { opacity: 0.65; }
 .topbar-nav {
   display: flex;
   gap: 4px;
+  margin-inline: var(--nav-group-inset);
 }
 .topbar-nav a {
-  padding: 6px 14px;
-  border-radius: 999px;
+  position: relative;
+  padding: 6px var(--nav-link-inset);
+  border-radius: 6px;
   font-size: 12.5px;
   font-weight: 500;
   color: var(--ink-soft);
-  background: var(--bg-sunken);
+  background: transparent;
   transition: background 0.14s ease, color 0.14s ease;
 }
-.topbar-nav a:hover { color: var(--ink); }
-.topbar-nav a.active { background: var(--ink); color: var(--bg-elev); }
+.topbar-nav a:hover { background: var(--bg-sunken); color: var(--ink); }
+.topbar-nav a.active { background: transparent; color: var(--ink); font-weight: 600; }
+.topbar-nav a.active::after { content: ''; position: absolute; left: var(--nav-link-inset); right: var(--nav-link-inset); bottom: 0; height: 2px; border-radius: 1px; background: currentColor; }
+@media (max-width: 640px) { .topbar-nav { --nav-link-inset: 8px; --nav-group-inset: 0px; } }
 
 
 /* ───── SEARCH (Reference와 동일 스펙) ───── */
@@ -178,6 +184,7 @@ a.brand:hover { opacity: 0.65; }
 }
 
 .topbar-actions {
+  margin-left: auto;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -201,28 +208,29 @@ a.brand:hover { opacity: 0.65; }
 .main {
   max-width: 920px;
   margin: 0 auto;
-  padding: calc(var(--topbar-height) + 40px) 32px 100px;
+  padding: calc(var(--topbar-height) + 32px) 40px 80px;
 }
 .main--files { max-width: 1200px; }
 
-.page-head { margin-bottom: 44px; }
+.page-head { margin-bottom: 24px; }
 .page-eyebrow {
-  font-family: var(--mono);
-  font-size: 11px; font-weight: 500;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px; font-weight: 400; line-height: 1.65;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .page-title {
-  font-size: clamp(30px, 4vw, 42px);
+  font-size: clamp(32px, 3.8vw, 44px);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--ink);
 }
 .page-sub {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 15px;
+  line-height: 1.6;
   color: var(--ink-soft);
   max-width: 760px;
 }
@@ -263,15 +271,15 @@ a.brand:hover { opacity: 0.65; }
 }
 .page-back:hover { color: var(--accent); }
 
-/* Balady+ 진입 배너 (메인 Files → 하위 페이지) */
+/* 보조 참조 자료 탐색 (메인 Files → 하위 페이지) */
+.reference-entries { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
 .balady-entry {
   display: flex; align-items: center; gap: 14px;
-  margin: 4px 0 32px;
-  padding: 18px 20px;
+  min-width: 0;
+  padding: 12px 16px;
   background: var(--bg-elev);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-sm);
+  border-radius: 10px;
   transition: border-color 0.14s ease, transform 0.14s ease;
 }
 .balady-entry:hover { border-color: color-mix(in srgb, var(--dup) 45%, var(--border)); transform: translateY(-1px); }
@@ -285,8 +293,8 @@ a.brand:hover { opacity: 0.65; }
   padding: 5px 10px; border-radius: 999px;
 }
 .balady-entry-text { flex: 1; min-width: 0; }
-.balady-entry-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); }
-.balady-entry-sub { display: block; font-size: 12.5px; color: var(--ink-mute); margin-top: 3px; }
+.balady-entry-title { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+.balady-entry-sub { display: block; font-size: 11px; color: var(--ink-mute); margin-top: 3px; }
 .balady-entry-arrow { flex-shrink: 0; font-size: 18px; color: var(--ink-mute); }
 .balady-entry:hover .balady-entry-arrow { color: var(--dup); }
 
@@ -294,7 +302,7 @@ a.brand:hover { opacity: 0.65; }
 .files-section { margin-bottom: 40px; }
 .files-section:last-child { margin-bottom: 0; }
 .files-section-head {
-  display: flex; align-items: baseline; gap: 10px;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
   margin: 0 0 16px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
@@ -306,6 +314,8 @@ a.brand:hover { opacity: 0.65; }
 .files-section-sub {
   font-size: 12px; color: var(--ink-mute);
 }
+.work-count { font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+.work-count + .files-section-sub { margin-left: auto; }
 
 /* ───── FILES GRID (랜드마크별 파일 카드) ───── */
 .files-grid {
@@ -499,8 +509,26 @@ a.brand:hover { opacity: 0.65; }
 }
 
 @media (max-width: 640px) {
-  .main { padding: calc(var(--topbar-height) + 28px) 18px 60px; }
+  .topbar { gap: 8px; padding: 0 12px; }
+  .topbar .brand { flex-shrink: 0; }
+  .topbar .brand-mark { font-size: 13px; }
+  .topbar .brand-meta { font-size: 8px; }
+  .topbar-nav { flex-shrink: 0; gap: 3px; }
+  .topbar-nav a { padding: 6px 8px; font-size: 11px; }
+  .topbar .search-wrap { display: none; }
+  .topbar-actions { margin-left: auto; }
+  .topbar .icon-btn { width: 30px; height: 30px; }
+  .main { padding: calc(var(--topbar-height) + 24px) 20px 60px; }
   .files-grid { grid-template-columns: 1fr; }
+  .reference-entries { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
+  .work-count + .files-section-sub { flex-basis: 100%; margin-left: 0; }
+}
+
+
+@media (max-width: 375px) {
+  :root { --topbar-height: 96px; }
+  .topbar { flex-wrap: wrap; align-content: center; gap: 8px 12px; }
+  .topbar-nav { order: 4; flex-basis: 100%; justify-content: center; }
 }
 
 </style>
@@ -514,6 +542,7 @@ a.brand:hover { opacity: 0.65; }
   </a>
   <nav class="topbar-nav">
     <a href="../">Reference</a>
+    <a href="../research/">Research</a>
     <a href="./" class="active">Files</a>
   </nav>
   <div class="search-wrap">
@@ -538,13 +567,12 @@ a.brand:hover { opacity: 0.65; }
     <div class="page-eyebrow">Files</div>
     <h1 class="page-title">Model Files</h1>
     <p class="page-sub">랜드마크별 3D 모델(.glb)과 이미지. 3D Viewer에서 이동·확대·회전하며 모델을 살펴볼 수 있습니다.</p>
-    <div class="page-count">작업 32 · 98개 파일   |   Balady+ 참조 50종 →</div>
+    
     
   </div>
 
-  <a class="balady-entry" href="balady.html"><span class="balady-entry-badge">Balady +</span><span class="balady-entry-text"><span class="balady-entry-title">Balady+ 참조 모델</span><span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 50종 · 클러스터·지역별 정리 · 참조용</span></span><span class="balady-entry-arrow">→</span></a>
-<a class="balady-entry" href="archive.html"><span class="balady-entry-badge">Archive</span><span class="balady-entry-text"><span class="balady-entry-title">Balady 아카이브</span><span class="balady-entry-sub">카탈로그 외 원본 자산 — 단지 병합본·KAFD 개별동·At-Turaif 상세 등 62종 (83파일) · 참조용</span></span><span class="balady-entry-arrow">→</span></a>
-<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">작업 파일</h2><span class="files-section-sub">팀이 제작 중인 3D 모델 · 캡처</span></div><div class="files-grid">
+  <nav class="reference-entries" aria-label="참조 자료"><a class="balady-entry" href="balady.html"><span class="balady-entry-text"><span class="balady-entry-title">Balady+ 참조 모델</span><span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 50종</span></span><span class="balady-entry-arrow">→</span></a><a class="balady-entry" href="archive.html"><span class="balady-entry-text"><span class="balady-entry-title">Balady 아카이브</span><span class="balady-entry-sub">카탈로그 외 원본 자산 62종 · 83개 파일</span></span><span class="balady-entry-arrow">→</span></a></nav>
+<section class="files-section"><div class="files-section-head"><h2 class="files-section-title">작업 파일</h2><span class="work-count" aria-live="polite">32건 · 98개 파일</span><span class="files-section-sub">팀이 제작 중인 3D 모델 · 캡처</span></div><div class="files-grid">
 
 <article class="file-card" data-search="national museum of saudi arabia 01 1 riyadh museum ksa-01_national-museum.glb">
   <header class="fc-head">
@@ -1253,8 +1281,8 @@ body.modal-lock .topbar { right: var(--sb-lock, 0px); }
     const main = document.querySelector('.main--files');
     const cards = [...document.querySelectorAll('.file-card')];
     const sections = [...document.querySelectorAll('.files-section')];
-    const entry = document.querySelector('.balady-entry');
-    const countEl = document.querySelector('.page-count');
+    const entry = document.querySelector('.reference-entries');
+    const countEl = document.querySelector('.work-count, .page-count');
     const baseCount = countEl ? countEl.textContent : '';
 
     // 결과 없음 안내
@@ -1276,7 +1304,7 @@ body.modal-lock .topbar { right: var(--sb-lock, 0px); }
         const any = [...s.querySelectorAll('.file-card')].some(c => !c.classList.contains('hidden'));
         s.classList.toggle('hidden', !any);
       });
-      // 검색 중엔 Balady 진입 배너 숨김 (카드가 아니라 링크라 혼동 방지)
+      // 검색 중엔 보조 참조 링크를 함께 숨김
       if (entry) entry.classList.toggle('hidden', !!q);
 
       empty.style.display = (q && shown === 0) ? '' : 'none';
