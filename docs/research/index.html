@@ -146,6 +146,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .photo-open:focus-visible { outline:3px solid var(--accent-strong);outline-offset:-3px; }
 .card-visual .card-meta { z-index:1;pointer-events:none; }
 .photo-kind { position:absolute;left:12px;bottom:12px;padding:3px 7px;border-radius:4px;background:var(--bg-elev);color:var(--ink-soft);font-size:10px;pointer-events:none; }
+.comment-thumbnail-badge { position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;min-height:28px;padding:4px 8px;border:1px solid rgb(255 255 255 / 25%);border-radius:6px;background:rgb(16 23 33 / 88%);color:#fff;font-size:11px;font-weight:500;box-shadow:0 1px 4px rgb(0 0 0 / 12%);user-select:none; }
+.comment-thumbnail-badge:hover { background:#101721; }
+.comment-thumbnail-badge:focus-visible { outline:2px solid #fff;outline-offset:2px; }
 .photo-gallery { display:grid;gap:20px;margin:10px 0 20px; }
 .research-photo { margin:0; }
 .photo-original { display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in; }
@@ -203,7 +206,16 @@ h1 em { font-style: normal; color: var(--accent); }
 .comment-write svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .comment-write:hover, .comment-expand:hover, .comment-text-toggle:hover, .comment-cancel:hover, .comment-author-change:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .comment-list { list-style: none; display: grid; gap: 14px; margin-top: 12px; }
-.comment-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 10px; color: var(--ink-mute); }
+.comment-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height:24px; font-size: 10px; color: var(--ink-mute); }
+.comment-manage { display:grid;place-items:center;margin-left:auto;width:28px;height:28px;padding:0;border:0;border-radius:6px;background:transparent;color:var(--ink-mute); }
+.comment-manage:hover, .comment-manage[aria-expanded="true"] { color:var(--ink);background:var(--bg-sunken); }
+.comment-menu { position:fixed;z-index:110;width:112px;padding:4px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elev);box-shadow:var(--shadow-md); }
+.comment-menu button { display:block;width:100%;padding:8px 10px;border:0;border-radius:4px;background:transparent;color:var(--ink-soft);font-size:12px;text-align:left; }
+.comment-menu button:hover, .comment-menu button:focus-visible { background:var(--bg-sunken);color:var(--ink); }
+.comment-edit-form { display:grid;gap:8px;margin-top:5px; }
+.comment-edit-form .comment-buttons { justify-content:flex-end; }
+.comment-delete-confirm { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:11px;color:var(--ink-soft); }
+.comment-delete-confirm .comment-buttons { margin-left:auto; }
 .comment-author { font-weight: 500; color: var(--ink-soft); overflow-wrap: anywhere; }
 .comment-text { margin-top: 5px; font-size: 12px; line-height: 1.7; color: var(--ink-soft); white-space: pre-wrap; overflow-wrap: anywhere; }
 .comment-text.is-collapsed { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
@@ -255,6 +267,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .comment-field input, .comment-field textarea { font-size: 16px; }
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
+ .comment-manage { width:44px;height:44px; }
+ .comment-menu button { min-height:44px; }
  .page-head { display: block; } .check-date { margin-top: 10px; }
  .overview { flex-direction: column; align-items: flex-start; gap: 16px; }
  .city-overview + .city-overview { border-left: 0; padding-left: 0; }
@@ -269,6 +283,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
 @media (pointer: coarse) {
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
+ .comment-manage { width:44px;height:44px; }
+ .comment-menu button { min-height:44px; }
 }
 @media (max-width: 375px) {
  :root { --topbar-height: 96px; }
@@ -362,6 +378,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Tamkeen Tower 사진과 상세 정보 보기">
           <img src="../images/research-n02-01.webp" alt="Tamkeen Tower — Tamkeen Tower의 전체 실루엣과 상부 개구부" width="800" height="450" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N02">Tamkeen Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 외관 사진에서 곡면 몸체와 길게 솟은 상부가 함께 보인다. 주요 실루엣을 판단할 자료가 있고 단순화해도 수직 윤곽이 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -406,6 +423,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Burj Rafal 사진과 상세 정보 보기">
           <img src="../images/research-n03-01.webp" alt="Burj Rafal — Burj Rafal의 도로 쪽 전경" width="1196" height="1600" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N03">Burj Rafal</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="준공 기록과 확보 전경에서 가늘고 긴 몸체와 상부 크라운을 확인할 수 있다. 주요 비례가 읽히고 주변 저층 건물과 구별되는 실루엣이 있어 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -450,6 +468,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Al Nakhlah Tower 사진과 상세 정보 보기">
           <img src="../images/research-n05-01.webp" alt="Al Nakhlah Tower — Al Nakhlah Tower의 외곽 프레임과 상부 개구부" width="1600" height="900" style="object-position:66% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N05">Al Nakhlah Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 전경과 상부 사진에서 큰 개구부와 외곽 프레임이 일관되게 보인다. 대상 주소도 공식 자료로 뒷받침돼 주요 형태와 강한 식별력을 함께 판단할 수 있다." aria-label="추천 등급: 추천">추천</button></div>
@@ -500,6 +519,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Al Rajhi Bank Headquarters 사진과 상세 정보 보기">
           <img src="../images/research-n06-01.webp" alt="Al Rajhi Bank Headquarters — Al Rajhi Bank Headquarters의 수직 코어와 유리 몸체" width="1139" height="771" style="object-position:47% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N06">Al Rajhi Bank Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 외관과 설계사 하부 사진에서 네 수직 코어와 유리 본체의 구성을 확인할 수 있다. 큰 구조가 재료색을 줄여도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -550,6 +570,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Elegance Tower 사진과 상세 정보 보기">
           <img src="../images/research-n07-user-01.png" alt="Elegance Tower · 중앙 후퇴부와 측면 돌출부가 보이는 정면" width="952" height="713" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N07">Elegance Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 정면 사진과 기존 사선·상세 사진을 함께 보면 중앙 후퇴부, 큰 빈 공간과 측면 돌출부를 판단할 수 있다. 공식 자산평가 자료로 대상도 구분돼 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
@@ -600,6 +621,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Olaya Towers 사진과 상세 정보 보기">
           <img src="../images/research-n16-01.png" alt="Olaya Towers — 두 타워의 전면과 상부 크라운" width="850" height="550" style="object-position:42% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N16">Olaya Towers</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 전경에서 두 타워의 전체 윤곽과 높이 차이, 곡면 상부를 함께 확인할 수 있다. 주변의 별도 건물과 구분되며 한 쌍의 비례가 지도 크기에서도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -644,6 +666,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Hamad Tower 사진과 상세 정보 보기">
           <img src="../images/research-n18-01.png" alt="Hamad Tower — 뾰족한 상부와 유리 입면의 사선 구조" width="736" height="1041" style="object-position:50% 5%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N18">Hamad Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 사진에서 뾰족한 상부와 테이퍼 몸체, 굵은 사선 구조가 함께 읽힌다. 핵심 형태를 판단할 자료가 있고 작은 모델에도 남길 구조가 명확해 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -688,6 +711,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Ministry of Interior Headquarters 사진과 상세 정보 보기">
           <img src="../images/research-n20-01.webp" alt="Ministry of Interior Headquarters — Ministry of Interior Headquarters의 역피라미드형 몸체와 상부 돔" width="1280" height="800" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N20">Ministry of Interior Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 자료와 외관 사진에서 역피라미드 몸체와 중앙 돔의 큰 구성을 확인할 수 있다. 입면 세부를 줄여도 형태 자체의 식별력이 높아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -732,6 +756,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="RAFAL Residence / Ascott Rafal Olaya 사진과 상세 정보 보기">
           <img src="../images/research-n04-01.webp" alt="RAFAL Residence / Ascott Rafal Olaya — RAFAL Residence의 단차가 있는 타워 구성" width="1449" height="1600" style="object-position:50% 10%" loading="lazy" decoding="async"></button><span class="photo-kind">설계 렌더링</span>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N04">RAFAL Residence / Ascott Rafal Olaya</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="운영 건물은 식별되지만 현재 확보한 형태 자료는 개발사 렌더링이다. 실제 타워·저층부가 설계와 어떻게 대응하는지 대조할 외관 자료가 필요해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -776,6 +801,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Moon Tower 사진과 상세 정보 보기">
           <img src="../images/research-n10-01.png" alt="Moon Tower — 곡면 유리 입면과 상부 원형 윤곽" width="500" height="650" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N10">Moon Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="곡면 입면과 상부 원형 윤곽은 사진에서 분명하다. 다만 진행 중으로 기록된 진입부 리노베이션의 완료 상태와 최종 하부 형태를 확인할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -826,6 +852,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Oval 사진과 상세 정보 보기">
           <img src="../images/research-n11-01.webp" alt="The Oval — The Oval의 곡면 발코니와 수직 몸체" width="1047" height="1371" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N11">The Oval</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="실제 외관 사진에서 곡면 발코니와 수직 몸체는 확인된다. 하부가 프레임 밖이라 타워와 기단의 전체 구성 및 설계와의 대응을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -870,6 +897,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="DAMAC Towers Riyadh 사진과 상세 정보 보기">
           <img src="../images/research-n12-01.webp" alt="DAMAC Towers Riyadh — 왼쪽 두 동이 DAMAC Towers입니다" width="1600" height="1200" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N12">DAMAC Towers Riyadh</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="두 타워의 반복 층과 외곽 틀은 전경에서 보인다. 동별 대상 범위와 하부 구성을 더 구분해야 하고, 큰 윤곽의 차별성도 다른 주거 타워와 비교할 필요가 있다." aria-label="추천 등급: 검토">검토</button></div>
@@ -914,6 +942,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Hilton Riyadh Olaya 사진과 상세 정보 보기">
           <img src="../images/research-n13-01.webp" alt="Hilton Riyadh Olaya — 가운데 원통형 건물이 Hilton Riyadh Olaya입니다" width="640" height="427" style="object-position:60% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N13">Hilton Riyadh Olaya</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 호텔 자료와 사진으로 원통형 타워는 식별된다. 현재 전경만으로 저층부 범위를 판단하기 어렵고 일반적인 호텔 타워 대비 실루엣의 차별성이 제한적이라 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
@@ -958,6 +987,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Al Anoud Towers (1·2) 사진과 상세 정보 보기">
           <img src="../images/research-n14-01.webp" alt="Al Anoud Towers (1·2) — Novotel Riyadh Al Anoud 공식 페이지의 외관" width="1024" height="768" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N14">Al Anoud Towers (1·2)</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="곡선 크라운을 가진 두 타워의 짝 구조는 매력적이다. 확보 사진과 호텔 자료를 각 동·부속 영역에 일대일로 대응시키는 작업이 남아 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1002,6 +1032,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Narcissus Hotel &amp; Residence Riyadh 사진과 상세 정보 보기">
           <img src="../images/research-n17-01.webp" alt="Narcissus Hotel &amp; Residence Riyadh — Narcissus Hotel의 입면과 코너 타워" width="1280" height="1415" style="object-position:50% 5%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N17">Narcissus Hotel &amp; Residence Riyadh</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="코너 타워와 장식적인 입면은 확인되지만 확보 자료는 야간 조명의 영향이 크다. 주간 외장과 큰 윤곽을 더 확인해야 하고 작은 모델에서 장식의 식별력이 유지되는지도 검토가 필요하다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1046,6 +1077,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="King Faisal Foundation Headquarters 사진과 상세 정보 보기">
           <img src="../images/research-n19-01.png" alt="King Faisal Foundation Headquarters — 마주 보는 두 동과 두 연결 브리지" width="2500" height="3333" style="object-position:50% 40%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N19">King Faisal Foundation Headquarters</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="두 타워 사이의 빈 공간과 두 연결 브리지는 사진에서 분명하다. 다만 기존 B11 Al Faisaliah 모델의 부속 영역과 겹치는지 확인되지 않아 추천으로 올리지 않는다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1090,6 +1122,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Hital Tower 사진과 상세 정보 보기">
           <img src="../images/research-n30-01.png" alt="Hital Tower · 휘어진 유리 몸체와 교차 프레임의 야간 외관" width="471" height="675" style="object-position:70% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N30">Hital Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="개발사 사진에서 교차 프레임과 휘어진 몸체는 뚜렷하다. 야간 전경만으로 프레임과 몸체 사이 깊이·접합부 및 주간 외장을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1134,6 +1167,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Tuwaiq Gate 사진과 상세 정보 보기">
           <img src="../images/research-n31-01.jpg" alt="Tuwaiq Gate · 중앙 파형 지붕과 양쪽 석재 사무동" width="1280" height="720" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N31">Tuwaiq Gate</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 외관과 배치 자료에서 중앙 파형 지붕과 석재 건물군의 구성이 읽힌다. 단지 전체를 포함할 모델 범위와 지붕 구조의 깊이를 더 대조해야 해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1184,6 +1218,7 @@ html { scrollbar-gutter: stable; }
           <span class="badge low" title="정확한 모델링을 위한 자료 부족">DATA LOW</span></div></div>
         <button class="photo-open" type="button" aria-label="SAB Head Office 사진과 상세 정보 보기">
           <img src="../images/research-n01-01.webp" alt="SAB Head Office — SAB 공식 페이지의 본사 조감·투시 이미지" width="760" height="500" style="object-position:38% 50%" loading="lazy" decoding="async"></button><span class="photo-kind">설계 렌더링</span>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-N01">SAB Head Office</h3>
         <button type="button" class="badge recommendation priority-3" data-recommendation-reason="신본사 명칭과 주소는 확인됐지만 확보 이미지는 설계 렌더링이다. 실제 신본사의 외관과 렌더링이 대응하는지 확인되지 않아 추천 판단을 보류한다." aria-label="추천 등급: 보류">보류</button></div>
@@ -1229,6 +1264,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="King Khalid International Airport — Terminal 5 사진과 상세 정보 보기">
           <img src="../images/research-n32-01.webp" alt="King Khalid International Airport Terminal 5 · 탑승 피어의 유리 입면과 반복 지붕" width="1280" height="765" style="transform:scale(1.55);object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N32">King Khalid International Airport — Terminal 5</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="Phase 1 별도 지정 대상이며 기존 터미널 1~4 모델과의 비중복을 사용자가 확인했다. 설계 자료와 피어 외관 사진은 확보했지만 본체 전체 조감·지붕 세부와 부속 시설의 제작 범위를 더 대조해야 해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1274,6 +1310,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Ministry of Foreign Affairs Headquarters 사진과 상세 정보 보기">
           <img src="../images/research-n24-01.webp" alt="Ministry of Foreign Affairs Headquarters — Ministry of Foreign Affairs의 외벽과 진입부" width="1600" height="899" style="object-position:55% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N24">Ministry of Foreign Affairs Headquarters</h4>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 조감 사진과 기존 외벽 사진으로 저층 청사의 배치, 곡면 외벽과 지붕 구성을 함께 판단할 수 있다. 설계사의 준공 기록도 확인돼 외부 형태의 캐릭터를 근거로 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1324,6 +1361,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Riyadh TV Tower 사진과 상세 정보 보기">
           <img src="../images/research-n22-user-01.png" alt="Riyadh TV Tower — 상부 방송 구조와 안테나. 하부는 주변 건물과 나무에 가려져 있습니다" width="466" height="805" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N22">Riyadh TV Tower</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="방송·전망부와 안테나는 강한 실루엣을 만든다. 제공 사진에서 하부가 주변 건물과 나무에 가려져 탑의 기단·연결 건물 범위를 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1368,6 +1406,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Riyadh Water Tower 사진과 상세 정보 보기">
           <img src="../images/research-n23-user-01.png" alt="Riyadh Water Tower — 넓게 벌어진 수조와 기둥, 주변 공원 전경" width="330" height="495" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N23">Riyadh Water Tower</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="제공 사진에서 넓게 벌어진 수조와 기둥의 전체 형태는 읽힌다. 기존 Museum·Murabba 모델에 주변 시설로 포함됐는지 확인되지 않아 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1412,6 +1451,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Qasr Al Hukm 사진과 상세 정보 보기">
           <img src="../images/research-n25-01.webp" alt="Qasr Al Hukm — Qasr Al Hukm의 성곽형 외벽과 입구·모서리 타워" width="1280" height="800" style="object-position:55% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N25">Qasr Al Hukm</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 위치와 외벽 사진으로 궁전 청사를 식별할 수 있다. 광장 사진에는 인접 건물도 포함돼 궁전의 전체 경계와 모스크 연결부의 모델 범위를 더 구분해야 한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1462,6 +1502,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Imam Turki Bin Abdullah Grand Mosque 사진과 상세 정보 보기">
           <img src="../images/research-n26-01.webp" alt="Imam Turki Bin Abdullah Grand Mosque — Imam Turki Bin Abdullah Grand Mosque의 넓은 중정과 미나레트" width="1500" height="1003" style="object-position:70% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N26">Imam Turki Bin Abdullah Grand Mosque</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="각진 쌍 미나레트와 낮은 예배당은 기존 사진과 기록에서 확인된다. 모스크 전체 배치와 궁전으로 이어지는 연결부의 깊이·범위 자료가 더 필요해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1506,6 +1547,7 @@ html { scrollbar-gutter: stable; }
           <span class="badge low" title="정확한 모델링을 위한 자료 부족">DATA LOW</span></div></div>
         <button class="photo-open" type="button" aria-label="Riyadh General Court — Qasr Al Hukm 지구 건물 사진과 상세 정보 보기">
           <img src="../images/research-n27-01.webp" alt="Riyadh General Court — Qasr Al Hukm 지구 건물 — Riyadh General Court의 정면과 깊은 중앙 개구부" width="1600" height="1067" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h4 id="title-N27">Riyadh General Court — Qasr Al Hukm 지구 건물</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="SPA의 법원 정면 사진, 제공 탑뷰와 지도 장소 대조로 대상 식별이 보강돼 보류에서 검토로 올린다. 깊은 중앙 개구부는 특징적이지만 측면 깊이와 부속 범위 자료가 더 필요하다." aria-label="추천 등급: 검토">검토</button></div>
@@ -1564,6 +1606,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Headquarters Business Park 사진과 상세 정보 보기">
           <img src="../images/research-j01-01.webp" alt="The Headquarters Business Park · 원형 상부와 수직 리브, 저층부가 보이는 외관." width="1067" height="1600" style="object-position:50% 15%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J01">The Headquarters Business Park</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="설계사 기록과 외관 사진으로 타워와 긴 저층 기단의 구성을 확인할 수 있다. 각진 상부와 돌출된 헬리패드가 지도 크기에서도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1608,6 +1651,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Al Jawharah Tower 사진과 상세 정보 보기">
           <img src="../images/research-j04-01.webp" alt="Al Jawharah Tower · 야간 조명이 켜진 Al Jawharah Tower. 주간 재료색과 구분해 참고." width="921" height="1233" style="object-position:50% 25%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J04">Al Jawharah Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="준공 기록과 확보 외관에서 굴곡진 몸체와 반복 발코니가 읽힌다. 주거 타워의 큰 윤곽이 단순한 직육면체와 구별돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1652,6 +1696,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Burj Assila / Shangri-La Jeddah 사진과 상세 정보 보기">
           <img src="../images/research-j05-01.webp" alt="Burj Assila / Shangri-La Jeddah · Shangri-La Jeddah가 입주한 타워의 상부와 곡선 입면." width="524" height="800" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J05">Burj Assila / Shangri-La Jeddah</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="호텔·준공 기록으로 대상이 식별되고 확보 사진에서 길고 휘어진 타워 윤곽을 확인할 수 있다. 돛을 연상시키는 큰 형상이 단순화 후에도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1696,6 +1741,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="National Commercial Bank — Jeddah historic headquarters 사진과 상세 정보 보기">
           <img src="../images/research-j06-01.webp" alt="National Commercial Bank — Jeddah historic headquarters · NCB 옛 본사의 큰 개구부와 삼각형 매스." width="695" height="800" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J06">National Commercial Bank — Jeddah historic headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="건축 기록과 사진에서 삼각형 매스와 큰 개구부를 확인할 수 있다. 표면 창문을 줄여도 몸체의 빈 공간이 주요 식별점으로 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1740,6 +1786,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Islamic Development Bank Headquarters 사진과 상세 정보 보기">
           <img src="../images/research-j07-01.webp" alt="Islamic Development Bank Headquarters · Islamic Development Bank 본사 정면과 큰 중앙 개구부." width="760" height="977" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J07">Islamic Development Bank Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 건축 기록과 정면 사진으로 큰 지붕, 두꺼운 벽체와 중앙 개구부의 구성을 판단할 수 있다. 큰 구조를 중심으로 단순화할 수 있어 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1784,6 +1831,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Jeddah Superdome 사진과 상세 정보 보기">
           <img src="../images/research-j08-01.webp" alt="Jeddah Superdome · Jeddah Superdome의 낮고 넓은 돔 외관." width="1600" height="900" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J08">Jeddah Superdome</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 시설 자료와 외관 사진에서 넓고 낮은 돔의 전체 윤곽을 확인할 수 있다. 타워·모스크와 다른 실루엣을 제공해 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1828,6 +1876,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="King Saud Mosque — Jeddah 사진과 상세 정보 보기">
           <img src="../images/research-j09-user-20260930-01.png" alt="King Saud Mosque — Jeddah · 돔과 미나레트 전경" width="800" height="491" style="object-position:50% 35%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J09">King Saud Mosque — Jeddah</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 조감 사진과 기존 지상 사진을 함께 보면 큰 돔·미나레트와 저층 몸체의 전체 배치를 판단할 수 있다. Jeddah 대상 식별 기록도 있어 담장 뒤 자료 부족을 해소한 것으로 보고 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1872,6 +1921,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Beit Al-Sharbatly 사진과 상세 정보 보기">
           <img src="../images/research-j13-user-01.png" alt="Beit Al-Sharbatly · 정면과 측면의 목재 발코니 및 로샨" width="816" height="516" style="object-position:55% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J13">Beit Al-Sharbatly</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 사진에서 정면·측면·지붕·지상층을 함께 볼 수 있어 연속 목재 발코니와 아치의 전체 구성을 판단할 수 있다. Matbouli의 개별 돌출 로샨 중심 입면과 큰 구성도 달라 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1916,6 +1966,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Globe Roundabout 사진과 상세 정보 보기">
           <img src="../images/research-j16-01.webp" alt="The Globe Roundabout · Globe Roundabout의 주간 외관과 받침대." width="1280" height="720" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J16">The Globe Roundabout</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="확보 주간 사진에서 구체·대륙 형상과 받침대를 함께 확인할 수 있다. 큰 형태를 판단할 자료가 있고 대륙 윤곽을 남기면 장소의 식별력이 유지돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -1960,6 +2011,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Engineering Roundabout / Engineers’ Tools 사진과 상세 정보 보기">
           <img src="../images/research-j17-01.webp" alt="Engineering Roundabout / Engineers’ Tools · 컴퍼스·각도기·삼각자 조형물의 야간 외관." width="1024" height="995" style="object-position:50% 0%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J17">Engineering Roundabout / Engineers’ Tools</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="확보 사진과 장소 대조에서 컴퍼스·각도기·삼각자의 큰 구성을 확인할 수 있다. 도구의 윤곽과 사이의 빈 공간이 다른 조형물과 구별돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
@@ -2004,6 +2056,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="King’s Road Tower 사진과 상세 정보 보기">
           <img src="../images/research-j02-user-01.png" alt="King’s Road Tower · 유리 타워와 저층 기단 전경" width="926" height="625" style="object-position:40% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J02">King’s Road Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="제공 사진으로 광고 효과를 제외한 유리 몸체와 중앙 돌출부, 기단을 확인할 수 있다. 다른 타워와 구별되는 큰 윤곽 및 몸체·기단 깊이를 더 비교해야 해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2048,6 +2101,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Golden Tower 사진과 상세 정보 보기">
           <img src="../images/research-j03-01.webp" alt="Golden Tower · 해안 쪽에서 본 Golden Tower. 타워는 사진 오른쪽에 위치한다." width="1600" height="1067" style="object-position:85% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J03">Golden Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 이미지는 설계 렌더링으로 추정돼 준공 외관 근거로 사용할 수 없다. 기존 원경 사진으로는 깊은 발코니와 어긋난 매스의 실제 구성을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2098,6 +2152,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Al-Ruwais Mosque / Al-Farsi Mosque 사진과 상세 정보 보기">
           <img src="../images/research-j10-user-20260930-01.png" alt="Al-Ruwais Mosque · 적갈색 외장과 돔" width="1024" height="763" style="object-position:50% 35%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J10">Al-Ruwais Mosque / Al-Farsi Mosque</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 사진은 세 돔·미나레트·반복 볼트 지붕을 잘 보여주지만 적갈색 외장 시기의 자료다. 이후 도장·개구부 변경이 기록돼 현재 모습의 근거를 보강해야 한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2142,6 +2197,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Khuzam Palace 사진과 상세 정보 보기">
           <img src="../images/research-j14-user-01.png" alt="Khuzam Palace · 궁전 대문 정면" width="596" height="335" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J14">Khuzam Palace</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="새 썸네일은 궁전 대문이므로 궁전 본체의 전체 형태를 보강하지 않는다. 기존 B38 정문과의 중복 및 본체·담장 범위를 확인해야 해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2186,6 +2242,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Bicycle Sculpture / Midan al-Darrajah 사진과 상세 정보 보기">
           <img src="../images/research-j15-01.webp" alt="Bicycle Sculpture / Midan al-Darrajah · 자전거 조형물의 측면 윤곽. 이전 전 배치 사진으로 현재 주변 환경을 뜻하지 않는다." width="600" height="450" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J15">Bicycle Sculpture / Midan al-Darrajah</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="자전거의 두 바퀴와 프레임은 형태가 강하고 옛 사진에서 전체 윤곽도 읽힌다. 이전 이후 자료는 원경 중심이라 현재 설치 상태와 받침 구성을 더 확인해야 한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2236,6 +2293,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Cosmos / Al-Falak Sculpture 사진과 상세 정보 보기">
           <img src="../images/research-j18-01.webp" alt="Cosmos / Al-Falak Sculpture · Cosmos의 궤도형 금속 프레임. 2022년 이전 관련 게시물의 사진." width="480" height="640" style="object-position:50% 55%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J18">Cosmos / Al-Falak Sculpture</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="금속 궤도와 구체의 큰 구조는 사진에서 보인다. 이전을 다룬 자료 이후의 설치 상태와 받침·부재 깊이를 확인할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2280,6 +2338,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Accident! / Crazy Speed 사진과 상세 정보 보기">
           <img src="../images/research-j19-01.webp" alt="Accident! / Crazy Speed · Crazy Speed 조형물의 입방체와 돌출된 자동차. 이전을 다룬 2025년 기사 수록 사진." width="850" height="485" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J19">Accident! / Crazy Speed</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="차량이 돌출된 입방체의 캐릭터는 강하고 이전 관련 사진도 확보했다. 차량별 방향과 가려진 면·받침의 입체 구성을 확정할 자료가 더 필요해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2324,6 +2383,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Four Lanterns 사진과 상세 정보 보기">
           <img src="../images/research-j20-01.webp" alt="Four Lanterns · Four Lanterns의 네 등과 지지 프레임. 원근 때문에 뒤쪽 등이 작게 보인다." width="1200" height="906" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J20">Four Lanterns</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="네 등과 지지 프레임은 사진에서 확인되고 지도 장소도 대조돼 있다. 다만 현 설치 상태와 받침·지지부의 입체 구성을 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2368,6 +2428,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Seagull 사진과 상세 정보 보기">
           <img src="../images/research-j21-user-01.png" alt="The Seagull · 날개형 수직 면과 새 문양" width="360" height="555" style="object-position:50% 15%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J21">The Seagull</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 근접 사진과 기존 전경으로 날개형 판·낮은 곡면 판의 대비를 확인할 수 있다. 촬영 시점이 미확인이라 현재 존치와 설치 상태를 확인할 근거가 더 필요하다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2418,6 +2479,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Fist 사진과 상세 정보 보기">
           <img src="../images/research-j22-01.webp" alt="The Fist · The Fist의 손가락과 주먹 형태, 경사진 받침대." width="1024" height="768" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J22">The Fist</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="주먹과 경사진 받침대의 큰 윤곽은 사진에서 분명하다. 현재 존치 근거와 위치가 충분히 대조되지 않아 강한 형태만으로 추천하지 않는다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2462,6 +2524,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Circular Mass 사진과 상세 정보 보기">
           <img src="../images/research-j23-01.webp" alt="Circular Mass · Circular Mass의 원기둥 형태와 표면 요철, 수반." width="1600" height="1200" style="object-position:50% 30%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J23">Circular Mass</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 작품 사진에서 원기둥과 표면 요철은 확인된다. 홈과 절개의 깊이·가려진 면을 판단할 자료가 부족해 입체 구성을 더 대조해야 한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2506,6 +2569,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Illusion of the Second Cube 사진과 상세 정보 보기">
           <img src="../images/research-j24-01.webp" alt="The Illusion of the Second Cube · The Illusion of a Second Cube의 색면과 기하학적 윤곽. 야간 조명 사진." width="1600" height="1067" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J24">The Illusion of the Second Cube</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="색면과 기하학적 윤곽은 확인되지만 착시 효과가 보는 방향과 색에 의존한다. 단순화한 모델에서 식별력이 유지되는지와 실제 입체 깊이를 더 검토해야 한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2550,6 +2614,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Flexibility of Balance 사진과 상세 정보 보기">
           <img src="../images/research-j25-01.webp" alt="Flexibility of Balance · Flexibility of Balance의 붉은 곡면 판과 받침대." width="1600" height="1067" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J25">Flexibility of Balance</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 비대칭 곡면 판과 판 사이 빈 공간은 확인된다. 판의 깊이·가려진 구성과 받침 범위 및 개별 위치가 미확인이라 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2594,6 +2659,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="The Bird (Joan Miró) 사진과 상세 정보 보기">
           <img src="../images/research-j26-01.webp" alt="The Bird (Joan Miró) · The Bird의 추상적인 몸체와 두 다리, 받침대." width="1600" height="1067" style="object-position:50% 50%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J26">The Bird (Joan Miró)</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 추상 몸체·돌출부와 두 다리의 대비는 확인된다. 가려진 부분의 깊이와 받침 연결을 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2638,6 +2704,7 @@ html { scrollbar-gutter: stable; }
           </div></div>
         <button class="photo-open" type="button" aria-label="Oval with Points 사진과 상세 정보 보기">
           <img src="../images/research-j27-01.webp" alt="Oval with Points · Oval with Points의 타원형 몸체와 중앙 개구부, 수반." width="1200" height="1600" style="object-position:50% 45%" loading="lazy" decoding="async"></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><h3 id="title-J27">Oval with Points</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 타원과 두 뾰족한 돌출부, 가운데 빈 공간은 확인된다. 몸체 두께·가려진 면과 최근 현장 상태의 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
@@ -2898,6 +2965,47 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
 
  const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
  const cardControls = new Map();
+ const commentMenu = document.createElement('div');
+ commentMenu.className = 'comment-menu'; commentMenu.id = 'comment-actions-menu';
+ commentMenu.role = 'menu'; commentMenu.setAttribute('aria-label', '코멘트 관리'); commentMenu.hidden = true;
+ const menuEdit = document.createElement('button'), menuDelete = document.createElement('button');
+ menuEdit.type = menuDelete.type = 'button'; menuEdit.role = menuDelete.role = 'menuitem';
+ menuEdit.textContent = '수정'; menuDelete.textContent = '삭제';
+ commentMenu.append(menuEdit, menuDelete); document.body.append(commentMenu);
+ let menuTarget = null;
+ function closeCommentMenu(restoreFocus = false) {
+  const target = menuTarget; menuTarget = null; commentMenu.hidden = true;
+  target?.trigger.setAttribute('aria-expanded', 'false');
+  if (restoreFocus) target?.trigger.focus({preventScroll:true});
+ }
+ function openCommentMenu(trigger, edit, remove) {
+  if (menuTarget?.trigger === trigger) { closeCommentMenu(true); return; }
+  closeCommentMenu(); menuTarget = {trigger, edit, remove};
+  trigger.setAttribute('aria-expanded', 'true'); commentMenu.hidden = false;
+  const box = trigger.getBoundingClientRect();
+  commentMenu.style.left = `${Math.max(8, Math.min(box.right - commentMenu.offsetWidth, innerWidth - commentMenu.offsetWidth - 8))}px`;
+  commentMenu.style.top = `${box.bottom + commentMenu.offsetHeight + 6 <= innerHeight - 8 ? box.bottom + 4 : Math.max(8, box.top - commentMenu.offsetHeight - 4)}px`;
+  menuEdit.focus({preventScroll:true});
+ }
+ menuEdit.addEventListener('click', () => { const target = menuTarget; closeCommentMenu(); target?.edit(); });
+ menuDelete.addEventListener('click', () => { const target = menuTarget; closeCommentMenu(); target?.remove(); });
+ commentMenu.addEventListener('keydown', event => {
+  if (['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {
+   event.preventDefault();
+   (event.key === 'Home' ? menuEdit : event.key === 'End' ? menuDelete : document.activeElement === menuEdit ? menuDelete : menuEdit).focus();
+  }
+ });
+ document.addEventListener('keydown', event => {
+  if (!menuTarget) return;
+  if (event.key === 'Escape') { event.preventDefault(); event.stopImmediatePropagation(); closeCommentMenu(true); }
+  if (event.key === 'Tab') closeCommentMenu(true);
+ }, true);
+ document.addEventListener('click', event => {
+  if (menuTarget && !commentMenu.contains(event.target) && !menuTarget.trigger.contains(event.target)) closeCommentMenu();
+ });
+ window.addEventListener('scroll', () => closeCommentMenu(), true);
+ window.addEventListener('resize', () => closeCommentMenu());
+ store.onViewerChange(() => cardControls.forEach(control => control.refreshOwnership()));
  const commentsObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
   entries.forEach(entry => {
    if (entry.isIntersecting && !entry.target.hidden) cardControls.get(entry.target)?.load();
@@ -2949,14 +3057,28 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   const retry = section.querySelector('.comment-retry');
   const cancel = section.querySelector('.comment-cancel');
   const feedback = section.querySelector('.comment-feedback');
+  const thumbnailBadge = card.querySelector('.comment-thumbnail-badge');
+  section.tabIndex = -1;
   list.id = `comment-list-${card.id}`;
   expand.setAttribute('aria-controls', list.id);
   let comments = [], total = 0, loaded = false, loading = false, revision = 0;
   let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
+  let mutating = false, editingId = null, deletingId = null;
+  let ownershipControls = [];
   let attempt = null;
   let expanded = false;
   let editingAuthor = false;
-  function updateSubmit() { submit.disabled = submitting || paging || !store.configured || !author.value.trim() || !message.value.trim(); }
+  function interacting() { return submitting || paging || mutating || editingId !== null || deletingId !== null; }
+  function updateSubmit() {
+   submit.disabled = interacting() || !store.configured || !author.value.trim() || !message.value.trim();
+   write.disabled = expand.disabled = more.disabled = interacting();
+   refreshOwnership();
+  }
+  function refreshOwnership() {
+   ownershipControls.forEach(({button, comment}) => {
+    button.hidden = !store.owns(comment); button.disabled = interacting();
+   });
+  }
   function refreshAuthor() {
    identityName.textContent = rememberedAuthor;
    if (!editingAuthor) author.value = rememberedAuthor;
@@ -2967,11 +3089,12 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   authorControls.push({refresh: refreshAuthor});
   refreshAuthor();
   async function load(force = false) {
-   if (loading || submitting || paging || (loaded && !force) || !store.configured) return;
+   if (loading || interacting() || (loaded && !force) || !store.configured) return;
    loading = true;
    const startedAt = revision;
    try {
     const result = await store.recent(card.id);
+    if (interacting() || startedAt !== revision) return;
     if (!pageLoaded) {
      comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
     }
@@ -2982,16 +3105,22 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    } finally { loading = false; }
   }
   function render() {
+   if (menuTarget && card.contains(menuTarget.trigger)) closeCommentMenu();
    count.hidden = total === 0;
    count.textContent = `코멘트 ${total}`;
+   thumbnailBadge.hidden = total === 0;
+   thumbnailBadge.querySelector('span').textContent = String(total);
+   thumbnailBadge.setAttribute('aria-label', `코멘트 ${total}개 보기`);
    list.hidden = comments.length === 0;
    list.replaceChildren();
+   ownershipControls = [];
    const checks = [];
    (expanded ? comments : comments.slice(0, 2)).forEach(comment => {
     const item = document.createElement('li');
     const meta = document.createElement('div'); meta.className = 'comment-meta';
     const name = document.createElement('span'); name.className = 'comment-author'; name.textContent = comment.author;
     const date = document.createElement('time'); date.dateTime = comment.createdAt; date.textContent = dateFormat.format(new Date(comment.createdAt));
+    if (comment.updatedAt) { const edited = document.createElement('span'); edited.textContent = '수정됨'; meta.append(edited); }
     const text = document.createElement('p'); text.className = 'comment-text is-collapsed'; text.id = comment.id; text.textContent = comment.text;
     const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'comment-text-toggle'; toggle.textContent = '더 보기'; toggle.hidden = true;
     toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', text.id);
@@ -3000,7 +3129,16 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
      toggle.textContent = collapsed ? '더 보기' : '접기';
      toggle.setAttribute('aria-expanded', String(!collapsed));
     });
-    meta.append(name, date); item.append(meta, text, toggle); list.append(item);
+    meta.prepend(name, date);
+    const manage = document.createElement('button'); manage.type = 'button'; manage.className = 'comment-manage';
+    manage.setAttribute('aria-label', `${comment.author} 코멘트 관리`); manage.setAttribute('aria-haspopup', 'menu');
+    manage.setAttribute('aria-expanded', 'false'); manage.setAttribute('aria-controls', commentMenu.id);
+    manage.innerHTML = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="3" cy="8" r="1.2"/><circle cx="8" cy="8" r="1.2"/><circle cx="13" cy="8" r="1.2"/></svg>';
+    manage.addEventListener('click', () => {
+     if (!interacting() && store.owns(comment)) openCommentMenu(manage, () => editComment(comment, item, text, toggle), () => confirmRemoval(comment, item));
+    });
+    ownershipControls.push({button:manage, comment}); meta.append(manage);
+    item.append(meta, text, toggle); list.append(item);
     checks.push({text, toggle});
    });
    textChecks.set(card, checks);
@@ -3008,7 +3146,78 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    expand.textContent = expanded ? '접기' : `전체 코멘트 ${total}개 보기`;
    expand.setAttribute('aria-expanded', String(expanded));
    more.hidden = !expanded || !hasMore;
+   refreshOwnership();
    requestAnimationFrame(() => checkText(card));
+  }
+  function operationFeedback(error, action) {
+   feedback.textContent = commentErrorMessage(error, action); feedback.hidden = false;
+  }
+  function actionButton(label, className) {
+   const button = document.createElement('button'); button.type = 'button'; button.className = className; button.textContent = label;
+   return button;
+  }
+  function endInteraction(focusId) {
+   editingId = deletingId = null; mutating = false; render(); updateSubmit();
+   const owner = ownershipControls.find(control => control.comment.id === focusId);
+   (owner?.button || write).focus({preventScroll:true});
+  }
+  function editComment(comment, item, text, toggle) {
+   if (interacting() || !store.owns(comment)) return;
+   editingId = comment.id; updateSubmit(); feedback.hidden = true;
+   const editor = document.createElement('form'); editor.className = 'comment-edit-form';
+   const label = document.createElement('label'); label.className = 'comment-field'; label.textContent = '코멘트 수정';
+   const input = document.createElement('textarea'); input.value = comment.text; input.maxLength = 1000; input.required = true;
+   label.append(input);
+   const actions = document.createElement('div'); actions.className = 'comment-buttons';
+   const discard = actionButton('취소', 'comment-cancel'), save = actionButton('저장', 'comment-submit'); save.type = 'submit';
+   const updateSave = () => { save.disabled = mutating || !input.value.trim() || input.value.trim() === comment.text; };
+   input.addEventListener('input', updateSave);
+   discard.addEventListener('click', () => { if (!mutating) { feedback.hidden = true; endInteraction(comment.id); } });
+   editor.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mutating) { event.preventDefault(); discard.click(); }
+   });
+   editor.addEventListener('submit', async event => {
+    event.preventDefault(); if (mutating || !input.value.trim() || !editor.reportValidity()) return;
+    mutating = true; save.textContent = '저장 중…'; input.disabled = discard.disabled = true; updateSave(); editor.setAttribute('aria-busy','true'); feedback.hidden = true;
+    try {
+     const saved = await store.edit(card.id, comment.id, input.value.trim());
+     comments = comments.map(current => current.id === saved.id ? saved : current); revision += 1;
+     endInteraction(comment.id); feedback.textContent = '코멘트를 수정했습니다.'; feedback.hidden = false;
+    } catch (error) {
+     mutating = false; save.textContent = '저장'; input.disabled = discard.disabled = false;
+     editor.removeAttribute('aria-busy'); updateSave(); operationFeedback(error, 'edit');
+    }
+   });
+   actions.append(discard, save); editor.append(label, actions); text.hidden = toggle.hidden = true; item.append(editor);
+   updateSave(); input.focus({preventScroll:true});
+  }
+  function confirmRemoval(comment, item) {
+   if (interacting() || !store.owns(comment)) return;
+   deletingId = comment.id; updateSubmit(); feedback.hidden = true;
+   const confirmation = document.createElement('div'); confirmation.className = 'comment-delete-confirm';
+   const question = document.createElement('span'); question.textContent = '이 코멘트를 삭제할까요?';
+   const actions = document.createElement('div'); actions.className = 'comment-buttons';
+   const discard = actionButton('취소', 'comment-cancel'), remove = actionButton('삭제', 'comment-submit');
+   discard.addEventListener('click', () => { if (!mutating) { feedback.hidden = true; endInteraction(comment.id); } });
+   confirmation.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mutating) { event.preventDefault(); discard.click(); }
+   });
+   remove.addEventListener('click', async () => {
+    if (mutating) return;
+    mutating = true; remove.textContent = '삭제 중…'; remove.disabled = discard.disabled = true;
+    confirmation.setAttribute('aria-busy','true'); feedback.hidden = true;
+    try {
+     await store.remove(card.id, comment.id); comments = comments.filter(current => current.id !== comment.id);
+     total = Math.max(0, total - 1); revision += 1; endInteraction();
+     feedback.textContent = '코멘트를 삭제했습니다.'; feedback.hidden = false;
+     // Refill the recent-two preview after removing a comment.
+     if (!pageLoaded && total > comments.length) load(true);
+    } catch (error) {
+     mutating = false; remove.textContent = '삭제'; remove.disabled = discard.disabled = false;
+     confirmation.removeAttribute('aria-busy'); operationFeedback(error, 'delete');
+    }
+   });
+   actions.append(discard, remove); confirmation.append(question, actions); item.append(confirmation); discard.focus({preventScroll:true});
   }
   function compose(open) {
    form.hidden = !open; write.hidden = open; write.setAttribute('aria-expanded', String(open));
@@ -3034,7 +3243,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   form.addEventListener('submit', async event => {
    event.preventDefault();
    const name = author.value.trim(), text = message.value.trim();
-   if (submitting || paging || !store.configured || !name || !text || !form.reportValidity()) return;
+   if (interacting() || !store.configured || !name || !text || !form.reportValidity()) return;
    if (!attempt || attempt.author !== name || attempt.text !== text) {
     attempt = {id: crypto.randomUUID(), author: name, text};
    }
@@ -3060,7 +3269,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    }
   });
   async function loadPage() {
-   if (paging || submitting) return;
+   if (interacting()) return;
    paging = true; expand.disabled = more.disabled = true; updateSubmit();
    try {
     const result = await store.page(card.id, pageLoaded ? cursor : null);
@@ -3068,14 +3277,15 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
     cursor = result.cursor; hasMore = result.hasMore; pageLoaded = true; expanded = true;
     feedback.hidden = true; render();
    } catch (error) { feedback.textContent = commentErrorMessage(error); feedback.hidden = false; }
-   finally { paging = false; expand.disabled = more.disabled = false; updateSubmit(); }
+   finally { paging = false; updateSubmit(); }
   }
   expand.addEventListener('click', () => {
    if (expanded || pageLoaded) { expanded = !expanded; render(); } else loadPage();
   });
   more.addEventListener('click', loadPage);
   retry.addEventListener('click', () => load(true));
-  cardControls.set(card, {load}); commentsObserver?.observe(card);
+  thumbnailBadge.addEventListener('click', () => { section.scrollIntoView({block:'center',behavior:'smooth'}); section.focus({preventScroll:true}); });
+  cardControls.set(card, {load, refreshOwnership}); commentsObserver?.observe(card);
   if (!commentsObserver) load();
   render(); section.hidden = false; resizeObserver?.observe(card);
  });

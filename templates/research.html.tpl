@@ -96,6 +96,9 @@ h1 em { font-style: normal; color: var(--accent); }
 .photo-open:focus-visible { outline:3px solid var(--accent-strong);outline-offset:-3px; }
 .card-visual .card-meta { z-index:1;pointer-events:none; }
 .photo-kind { position:absolute;left:12px;bottom:12px;padding:3px 7px;border-radius:4px;background:var(--bg-elev);color:var(--ink-soft);font-size:10px;pointer-events:none; }
+.comment-thumbnail-badge { position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;min-height:28px;padding:4px 8px;border:1px solid rgb(255 255 255 / 25%);border-radius:6px;background:rgb(16 23 33 / 88%);color:#fff;font-size:11px;font-weight:500;box-shadow:0 1px 4px rgb(0 0 0 / 12%);user-select:none; }
+.comment-thumbnail-badge:hover { background:#101721; }
+.comment-thumbnail-badge:focus-visible { outline:2px solid #fff;outline-offset:2px; }
 .photo-gallery { display:grid;gap:20px;margin:10px 0 20px; }
 .research-photo { margin:0; }
 .photo-original { display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in; }
@@ -153,7 +156,16 @@ h1 em { font-style: normal; color: var(--accent); }
 .comment-write svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .comment-write:hover, .comment-expand:hover, .comment-text-toggle:hover, .comment-cancel:hover, .comment-author-change:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .comment-list { list-style: none; display: grid; gap: 14px; margin-top: 12px; }
-.comment-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 10px; color: var(--ink-mute); }
+.comment-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height:24px; font-size: 10px; color: var(--ink-mute); }
+.comment-manage { display:grid;place-items:center;margin-left:auto;width:28px;height:28px;padding:0;border:0;border-radius:6px;background:transparent;color:var(--ink-mute); }
+.comment-manage:hover, .comment-manage[aria-expanded="true"] { color:var(--ink);background:var(--bg-sunken); }
+.comment-menu { position:fixed;z-index:110;width:112px;padding:4px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elev);box-shadow:var(--shadow-md); }
+.comment-menu button { display:block;width:100%;padding:8px 10px;border:0;border-radius:4px;background:transparent;color:var(--ink-soft);font-size:12px;text-align:left; }
+.comment-menu button:hover, .comment-menu button:focus-visible { background:var(--bg-sunken);color:var(--ink); }
+.comment-edit-form { display:grid;gap:8px;margin-top:5px; }
+.comment-edit-form .comment-buttons { justify-content:flex-end; }
+.comment-delete-confirm { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:11px;color:var(--ink-soft); }
+.comment-delete-confirm .comment-buttons { margin-left:auto; }
 .comment-author { font-weight: 500; color: var(--ink-soft); overflow-wrap: anywhere; }
 .comment-text { margin-top: 5px; font-size: 12px; line-height: 1.7; color: var(--ink-soft); white-space: pre-wrap; overflow-wrap: anywhere; }
 .comment-text.is-collapsed { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
@@ -205,6 +217,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .comment-field input, .comment-field textarea { font-size: 16px; }
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
+ .comment-manage { width:44px;height:44px; }
+ .comment-menu button { min-height:44px; }
  .page-head { display: block; } .check-date { margin-top: 10px; }
  .overview { flex-direction: column; align-items: flex-start; gap: 16px; }
  .city-overview + .city-overview { border-left: 0; padding-left: 0; }
@@ -219,6 +233,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
 @media (pointer: coarse) {
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
+ .comment-manage { width:44px;height:44px; }
+ .comment-menu button { min-height:44px; }
 }
 @media (max-width: 375px) {
  :root { --topbar-height: 96px; }
@@ -520,6 +536,47 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
 
  const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
  const cardControls = new Map();
+ const commentMenu = document.createElement('div');
+ commentMenu.className = 'comment-menu'; commentMenu.id = 'comment-actions-menu';
+ commentMenu.role = 'menu'; commentMenu.setAttribute('aria-label', '코멘트 관리'); commentMenu.hidden = true;
+ const menuEdit = document.createElement('button'), menuDelete = document.createElement('button');
+ menuEdit.type = menuDelete.type = 'button'; menuEdit.role = menuDelete.role = 'menuitem';
+ menuEdit.textContent = '수정'; menuDelete.textContent = '삭제';
+ commentMenu.append(menuEdit, menuDelete); document.body.append(commentMenu);
+ let menuTarget = null;
+ function closeCommentMenu(restoreFocus = false) {
+  const target = menuTarget; menuTarget = null; commentMenu.hidden = true;
+  target?.trigger.setAttribute('aria-expanded', 'false');
+  if (restoreFocus) target?.trigger.focus({preventScroll:true});
+ }
+ function openCommentMenu(trigger, edit, remove) {
+  if (menuTarget?.trigger === trigger) { closeCommentMenu(true); return; }
+  closeCommentMenu(); menuTarget = {trigger, edit, remove};
+  trigger.setAttribute('aria-expanded', 'true'); commentMenu.hidden = false;
+  const box = trigger.getBoundingClientRect();
+  commentMenu.style.left = `${Math.max(8, Math.min(box.right - commentMenu.offsetWidth, innerWidth - commentMenu.offsetWidth - 8))}px`;
+  commentMenu.style.top = `${box.bottom + commentMenu.offsetHeight + 6 <= innerHeight - 8 ? box.bottom + 4 : Math.max(8, box.top - commentMenu.offsetHeight - 4)}px`;
+  menuEdit.focus({preventScroll:true});
+ }
+ menuEdit.addEventListener('click', () => { const target = menuTarget; closeCommentMenu(); target?.edit(); });
+ menuDelete.addEventListener('click', () => { const target = menuTarget; closeCommentMenu(); target?.remove(); });
+ commentMenu.addEventListener('keydown', event => {
+  if (['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {
+   event.preventDefault();
+   (event.key === 'Home' ? menuEdit : event.key === 'End' ? menuDelete : document.activeElement === menuEdit ? menuDelete : menuEdit).focus();
+  }
+ });
+ document.addEventListener('keydown', event => {
+  if (!menuTarget) return;
+  if (event.key === 'Escape') { event.preventDefault(); event.stopImmediatePropagation(); closeCommentMenu(true); }
+  if (event.key === 'Tab') closeCommentMenu(true);
+ }, true);
+ document.addEventListener('click', event => {
+  if (menuTarget && !commentMenu.contains(event.target) && !menuTarget.trigger.contains(event.target)) closeCommentMenu();
+ });
+ window.addEventListener('scroll', () => closeCommentMenu(), true);
+ window.addEventListener('resize', () => closeCommentMenu());
+ store.onViewerChange(() => cardControls.forEach(control => control.refreshOwnership()));
  const commentsObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
   entries.forEach(entry => {
    if (entry.isIntersecting && !entry.target.hidden) cardControls.get(entry.target)?.load();
@@ -571,14 +628,28 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   const retry = section.querySelector('.comment-retry');
   const cancel = section.querySelector('.comment-cancel');
   const feedback = section.querySelector('.comment-feedback');
+  const thumbnailBadge = card.querySelector('.comment-thumbnail-badge');
+  section.tabIndex = -1;
   list.id = `comment-list-${card.id}`;
   expand.setAttribute('aria-controls', list.id);
   let comments = [], total = 0, loaded = false, loading = false, revision = 0;
   let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
+  let mutating = false, editingId = null, deletingId = null;
+  let ownershipControls = [];
   let attempt = null;
   let expanded = false;
   let editingAuthor = false;
-  function updateSubmit() { submit.disabled = submitting || paging || !store.configured || !author.value.trim() || !message.value.trim(); }
+  function interacting() { return submitting || paging || mutating || editingId !== null || deletingId !== null; }
+  function updateSubmit() {
+   submit.disabled = interacting() || !store.configured || !author.value.trim() || !message.value.trim();
+   write.disabled = expand.disabled = more.disabled = interacting();
+   refreshOwnership();
+  }
+  function refreshOwnership() {
+   ownershipControls.forEach(({button, comment}) => {
+    button.hidden = !store.owns(comment); button.disabled = interacting();
+   });
+  }
   function refreshAuthor() {
    identityName.textContent = rememberedAuthor;
    if (!editingAuthor) author.value = rememberedAuthor;
@@ -589,11 +660,12 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   authorControls.push({refresh: refreshAuthor});
   refreshAuthor();
   async function load(force = false) {
-   if (loading || submitting || paging || (loaded && !force) || !store.configured) return;
+   if (loading || interacting() || (loaded && !force) || !store.configured) return;
    loading = true;
    const startedAt = revision;
    try {
     const result = await store.recent(card.id);
+    if (interacting() || startedAt !== revision) return;
     if (!pageLoaded) {
      comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
     }
@@ -604,16 +676,22 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    } finally { loading = false; }
   }
   function render() {
+   if (menuTarget && card.contains(menuTarget.trigger)) closeCommentMenu();
    count.hidden = total === 0;
    count.textContent = `코멘트 ${total}`;
+   thumbnailBadge.hidden = total === 0;
+   thumbnailBadge.querySelector('span').textContent = String(total);
+   thumbnailBadge.setAttribute('aria-label', `코멘트 ${total}개 보기`);
    list.hidden = comments.length === 0;
    list.replaceChildren();
+   ownershipControls = [];
    const checks = [];
    (expanded ? comments : comments.slice(0, 2)).forEach(comment => {
     const item = document.createElement('li');
     const meta = document.createElement('div'); meta.className = 'comment-meta';
     const name = document.createElement('span'); name.className = 'comment-author'; name.textContent = comment.author;
     const date = document.createElement('time'); date.dateTime = comment.createdAt; date.textContent = dateFormat.format(new Date(comment.createdAt));
+    if (comment.updatedAt) { const edited = document.createElement('span'); edited.textContent = '수정됨'; meta.append(edited); }
     const text = document.createElement('p'); text.className = 'comment-text is-collapsed'; text.id = comment.id; text.textContent = comment.text;
     const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'comment-text-toggle'; toggle.textContent = '더 보기'; toggle.hidden = true;
     toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', text.id);
@@ -622,7 +700,16 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
      toggle.textContent = collapsed ? '더 보기' : '접기';
      toggle.setAttribute('aria-expanded', String(!collapsed));
     });
-    meta.append(name, date); item.append(meta, text, toggle); list.append(item);
+    meta.prepend(name, date);
+    const manage = document.createElement('button'); manage.type = 'button'; manage.className = 'comment-manage';
+    manage.setAttribute('aria-label', `${comment.author} 코멘트 관리`); manage.setAttribute('aria-haspopup', 'menu');
+    manage.setAttribute('aria-expanded', 'false'); manage.setAttribute('aria-controls', commentMenu.id);
+    manage.innerHTML = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="3" cy="8" r="1.2"/><circle cx="8" cy="8" r="1.2"/><circle cx="13" cy="8" r="1.2"/></svg>';
+    manage.addEventListener('click', () => {
+     if (!interacting() && store.owns(comment)) openCommentMenu(manage, () => editComment(comment, item, text, toggle), () => confirmRemoval(comment, item));
+    });
+    ownershipControls.push({button:manage, comment}); meta.append(manage);
+    item.append(meta, text, toggle); list.append(item);
     checks.push({text, toggle});
    });
    textChecks.set(card, checks);
@@ -630,7 +717,78 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    expand.textContent = expanded ? '접기' : `전체 코멘트 ${total}개 보기`;
    expand.setAttribute('aria-expanded', String(expanded));
    more.hidden = !expanded || !hasMore;
+   refreshOwnership();
    requestAnimationFrame(() => checkText(card));
+  }
+  function operationFeedback(error, action) {
+   feedback.textContent = commentErrorMessage(error, action); feedback.hidden = false;
+  }
+  function actionButton(label, className) {
+   const button = document.createElement('button'); button.type = 'button'; button.className = className; button.textContent = label;
+   return button;
+  }
+  function endInteraction(focusId) {
+   editingId = deletingId = null; mutating = false; render(); updateSubmit();
+   const owner = ownershipControls.find(control => control.comment.id === focusId);
+   (owner?.button || write).focus({preventScroll:true});
+  }
+  function editComment(comment, item, text, toggle) {
+   if (interacting() || !store.owns(comment)) return;
+   editingId = comment.id; updateSubmit(); feedback.hidden = true;
+   const editor = document.createElement('form'); editor.className = 'comment-edit-form';
+   const label = document.createElement('label'); label.className = 'comment-field'; label.textContent = '코멘트 수정';
+   const input = document.createElement('textarea'); input.value = comment.text; input.maxLength = 1000; input.required = true;
+   label.append(input);
+   const actions = document.createElement('div'); actions.className = 'comment-buttons';
+   const discard = actionButton('취소', 'comment-cancel'), save = actionButton('저장', 'comment-submit'); save.type = 'submit';
+   const updateSave = () => { save.disabled = mutating || !input.value.trim() || input.value.trim() === comment.text; };
+   input.addEventListener('input', updateSave);
+   discard.addEventListener('click', () => { if (!mutating) { feedback.hidden = true; endInteraction(comment.id); } });
+   editor.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mutating) { event.preventDefault(); discard.click(); }
+   });
+   editor.addEventListener('submit', async event => {
+    event.preventDefault(); if (mutating || !input.value.trim() || !editor.reportValidity()) return;
+    mutating = true; save.textContent = '저장 중…'; input.disabled = discard.disabled = true; updateSave(); editor.setAttribute('aria-busy','true'); feedback.hidden = true;
+    try {
+     const saved = await store.edit(card.id, comment.id, input.value.trim());
+     comments = comments.map(current => current.id === saved.id ? saved : current); revision += 1;
+     endInteraction(comment.id); feedback.textContent = '코멘트를 수정했습니다.'; feedback.hidden = false;
+    } catch (error) {
+     mutating = false; save.textContent = '저장'; input.disabled = discard.disabled = false;
+     editor.removeAttribute('aria-busy'); updateSave(); operationFeedback(error, 'edit');
+    }
+   });
+   actions.append(discard, save); editor.append(label, actions); text.hidden = toggle.hidden = true; item.append(editor);
+   updateSave(); input.focus({preventScroll:true});
+  }
+  function confirmRemoval(comment, item) {
+   if (interacting() || !store.owns(comment)) return;
+   deletingId = comment.id; updateSubmit(); feedback.hidden = true;
+   const confirmation = document.createElement('div'); confirmation.className = 'comment-delete-confirm';
+   const question = document.createElement('span'); question.textContent = '이 코멘트를 삭제할까요?';
+   const actions = document.createElement('div'); actions.className = 'comment-buttons';
+   const discard = actionButton('취소', 'comment-cancel'), remove = actionButton('삭제', 'comment-submit');
+   discard.addEventListener('click', () => { if (!mutating) { feedback.hidden = true; endInteraction(comment.id); } });
+   confirmation.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mutating) { event.preventDefault(); discard.click(); }
+   });
+   remove.addEventListener('click', async () => {
+    if (mutating) return;
+    mutating = true; remove.textContent = '삭제 중…'; remove.disabled = discard.disabled = true;
+    confirmation.setAttribute('aria-busy','true'); feedback.hidden = true;
+    try {
+     await store.remove(card.id, comment.id); comments = comments.filter(current => current.id !== comment.id);
+     total = Math.max(0, total - 1); revision += 1; endInteraction();
+     feedback.textContent = '코멘트를 삭제했습니다.'; feedback.hidden = false;
+     // Refill the recent-two preview after removing a comment.
+     if (!pageLoaded && total > comments.length) load(true);
+    } catch (error) {
+     mutating = false; remove.textContent = '삭제'; remove.disabled = discard.disabled = false;
+     confirmation.removeAttribute('aria-busy'); operationFeedback(error, 'delete');
+    }
+   });
+   actions.append(discard, remove); confirmation.append(question, actions); item.append(confirmation); discard.focus({preventScroll:true});
   }
   function compose(open) {
    form.hidden = !open; write.hidden = open; write.setAttribute('aria-expanded', String(open));
@@ -656,7 +814,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   form.addEventListener('submit', async event => {
    event.preventDefault();
    const name = author.value.trim(), text = message.value.trim();
-   if (submitting || paging || !store.configured || !name || !text || !form.reportValidity()) return;
+   if (interacting() || !store.configured || !name || !text || !form.reportValidity()) return;
    if (!attempt || attempt.author !== name || attempt.text !== text) {
     attempt = {id: crypto.randomUUID(), author: name, text};
    }
@@ -682,7 +840,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    }
   });
   async function loadPage() {
-   if (paging || submitting) return;
+   if (interacting()) return;
    paging = true; expand.disabled = more.disabled = true; updateSubmit();
    try {
     const result = await store.page(card.id, pageLoaded ? cursor : null);
@@ -690,14 +848,15 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
     cursor = result.cursor; hasMore = result.hasMore; pageLoaded = true; expanded = true;
     feedback.hidden = true; render();
    } catch (error) { feedback.textContent = commentErrorMessage(error); feedback.hidden = false; }
-   finally { paging = false; expand.disabled = more.disabled = false; updateSubmit(); }
+   finally { paging = false; updateSubmit(); }
   }
   expand.addEventListener('click', () => {
    if (expanded || pageLoaded) { expanded = !expanded; render(); } else loadPage();
   });
   more.addEventListener('click', loadPage);
   retry.addEventListener('click', () => load(true));
-  cardControls.set(card, {load}); commentsObserver?.observe(card);
+  thumbnailBadge.addEventListener('click', () => { section.scrollIntoView({block:'center',behavior:'smooth'}); section.focus({preventScroll:true}); });
+  cardControls.set(card, {load, refreshOwnership}); commentsObserver?.observe(card);
   if (!commentsObserver) load();
   render(); section.hidden = false; resizeObserver?.observe(card);
  });

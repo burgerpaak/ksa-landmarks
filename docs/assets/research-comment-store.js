@@ -5,6 +5,8 @@ const SDK = 'https://www.gstatic.com/firebasejs/12.19.0/';
 export function createCommentStore(config) {
   const configured = !!(config?.apiKey && config?.projectId && config?.appId);
   let connection;
+  let viewerId = null;
+  const viewerListeners = new Set();
   let activeReads = 0;
   const waitingReads = [];
   async function read(operation) {
@@ -31,7 +33,12 @@ export function createCommentStore(config) {
         import(`${SDK}firebase-firestore-lite.js`),
       ]).then(([appSdk, authSdk, dbSdk]) => {
         const app = appSdk.initializeApp(config, 'research-comments');
-        return {auth: authSdk.getAuth(app), authSdk, db: dbSdk.getFirestore(app), sdk: dbSdk};
+        const auth = authSdk.getAuth(app);
+        authSdk.onAuthStateChanged(auth, user => {
+          viewerId = user?.uid || null;
+          viewerListeners.forEach(listener => listener());
+        });
+        return {auth, authSdk, db: dbSdk.getFirestore(app), sdk: dbSdk};
       }).catch(error => { connection = null; throw error; });
     }
     return connection;
@@ -39,13 +46,19 @@ export function createCommentStore(config) {
   function toComment(snapshot) {
     const data = snapshot.data();
     return {id: snapshot.id, author: data.author, text: data.body,
-      createdAt: data.createdAt.toDate().toISOString()};
+      authorId: data.authorId, createdAt: data.createdAt.toDate().toISOString(),
+      updatedAt: data.updatedAt?.toDate().toISOString() || null};
   }
   function collectionRef({sdk, db}, landmarkId) {
     return sdk.collection(db, 'landmarkComments', landmarkId, 'comments');
   }
   return {
     configured,
+    owns(comment) { return !!viewerId && comment.authorId === viewerId; },
+    onViewerChange(listener) {
+      viewerListeners.add(listener);
+      return () => viewerListeners.delete(listener);
+    },
     async recent(landmarkId) {
       const connection = await connect(), {sdk} = connection;
       const ref = collectionRef(connection, landmarkId);
@@ -68,6 +81,7 @@ export function createCommentStore(config) {
       const connection = await connect(), {auth, authSdk, sdk, db} = connection;
       await auth.authStateReady();
       const user = auth.currentUser || (await authSdk.signInAnonymously(auth)).user;
+      viewerId = user.uid;
       const ref = sdk.doc(collectionRef(connection, landmarkId), attempt.id);
       const writerRef = sdk.doc(db, 'commentWriters', user.uid);
       await sdk.runTransaction(db, async transaction => {
@@ -94,12 +108,46 @@ export function createCommentStore(config) {
       catch (_) { /* Keep the saved comment visible and refresh on next load. */ }
       return {comment, total};
     },
+    async edit(landmarkId, commentId, text) {
+      const {auth, sdk, db} = await connect();
+      await auth.authStateReady();
+      if (!auth.currentUser) throw Object.assign(new Error('Author session missing'), {code: 'comment-not-owner'});
+      const ref = sdk.doc(db, 'landmarkComments', landmarkId, 'comments', commentId);
+      await sdk.runTransaction(db, async transaction => {
+        const existing = await transaction.get(ref);
+        if (!existing.exists()) throw Object.assign(new Error('Comment no longer exists'), {code: 'comment-not-found'});
+        if (existing.data().authorId !== auth.currentUser.uid) {
+          throw Object.assign(new Error('Not the author'), {code: 'comment-not-owner'});
+        }
+        transaction.update(ref, {body: text, updatedAt: sdk.serverTimestamp()});
+      });
+      return toComment(await read(() => sdk.getDoc(ref)));
+    },
+    async remove(landmarkId, commentId) {
+      const {auth, sdk, db} = await connect();
+      await auth.authStateReady();
+      if (!auth.currentUser) throw Object.assign(new Error('Author session missing'), {code: 'comment-not-owner'});
+      const ref = sdk.doc(db, 'landmarkComments', landmarkId, 'comments', commentId);
+      await sdk.runTransaction(db, async transaction => {
+        const existing = await transaction.get(ref);
+        // An uncertain deletion can be retried without creating another write.
+        if (!existing.exists()) return;
+        if (existing.data().authorId !== auth.currentUser.uid) {
+          throw Object.assign(new Error('Not the author'), {code: 'comment-not-owner'});
+        }
+        transaction.delete(ref);
+      });
+    },
   };
 }
 
 export function commentErrorMessage(error, action = 'load') {
+  if (error?.code === 'comment-not-owner') return '작성한 브라우저에서만 수정·삭제할 수 있습니다.';
+  if (error?.code === 'comment-not-found') return '이미 삭제된 코멘트입니다. 목록을 다시 불러와주세요.';
   if (error?.code === 'comment-rate-limit') return '잠시 후 다시 등록해주세요.';
   if (error?.code === 'not-configured') return '코멘트 저장소 연결 준비 중입니다.';
   if (action === 'save') return '등록을 확인하지 못했습니다. 입력한 내용은 유지됩니다. 다시 등록해주세요.';
+  if (action === 'edit') return '수정을 확인하지 못했습니다. 입력한 내용은 유지됩니다. 다시 저장해주세요.';
+  if (action === 'delete') return '삭제를 확인하지 못했습니다. 다시 시도해주세요.';
   return '코멘트를 불러오지 못했습니다. 다시 시도해주세요.';
 }

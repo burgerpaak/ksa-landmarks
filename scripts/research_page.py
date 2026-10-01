@@ -201,6 +201,7 @@ def render_card(item):
         <div class="card-meta"><div class="badges">
           {status}{low}</div></div>
         {visual}
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><{title_tag} id="title-{esc(item['id'])}">{esc(item['name'])}</{title_tag}>
         <button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{esc(tip_reason)}" aria-label="추천 등급: {esc(item['selection_suggestion'])}">{esc(item['selection_suggestion'])}</button></div>
