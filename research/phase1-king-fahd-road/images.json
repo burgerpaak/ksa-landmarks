@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-30",
-  "scope": "Riyadh 후보 25건 · 로컬 검토용 이미지",
+  "updated_at": "2026-10-01",
+  "scope": "Riyadh 후보 26건 · 출처·시점·사용 조건을 기록한 이미지",
   "candidates": {
     "N01": [
       {
@@ -794,6 +794,28 @@
         "processing": "출처 제공 파일 그대로 저장, 크롭 없음",
         "sha256": "a8cb5243d2f33869e3d9ef7a49c13b29910801220ebcd38621c740b37662f9b4",
         "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N32": [
+      {
+        "file": "research-n32-01.webp",
+        "width": 1280,
+        "height": 765,
+        "alt": "King Khalid International Airport Terminal 5 · 탑승 피어의 유리 입면과 반복 지붕",
+        "caption": "GMW As Built 갤러리의 제5터미널 탑승 피어 외관. 유리 입면, 반복 지붕과 탑승교가 보이며, 본체 전체의 조감 사진은 아닙니다. 촬영일은 미확인입니다.",
+        "kind": "외관 사진",
+        "source": "GMW · 설계사",
+        "source_url": "https://www.gmwmimarlik.com/projects/view/Riyadh-Airport-T5-As-Built/14",
+        "original_url": "https://www.gmwmimarlik.com/assets/upload/project/gallery/14/project-image-592e6923c5d50.jpg",
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인 · GMW 사이트 All Rights Reserved",
+        "license_url": null,
+        "accessed_at": "2026-10-01",
+        "processing": "원본 프레임·여백 유지, WebP 변환 · 썸네일만 CSS 마스크로 여백 제외 및 화면 크롭",
+        "sha256": "18a5c0718ff47471e195405aafc7ae7db65be22fcc82222e04c0d0c0f2898a22",
+        "thumbnail_position": "50% 50%",
+        "thumbnail_scale": 1.55
       }
     ]
   }

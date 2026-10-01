@@ -132,7 +132,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .research-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-sm); min-width: 0; overflow: hidden; }
 .research-card:target { border-color: var(--accent-strong); box-shadow: 0 0 0 2px var(--accent-soft); }
 .card-visual { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 7%, var(--bg-sunken)), var(--bg-sunken)); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
-.photo-open { position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer; }
+.photo-open { position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;overflow:hidden; }
 .photo-open img { display:block;width:100%;height:100%;object-fit:cover; }
 .photo-open:focus-visible { outline:3px solid var(--accent-strong);outline-offset:-3px; }
 .card-visual .card-meta { z-index:1;pointer-events:none; }
@@ -181,6 +181,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .connected-building + .character { margin-top:10px; }
 .building-relation .connected-building { font-size:12px;margin-top:8px; }
 .character { color: var(--ink-soft); font-size: 11px; line-height: 1.85; margin-bottom: 13px; }
+.model-scope-note { color: var(--accent); font-size: 11px; line-height: 1.75; margin-bottom: 13px; }
 .decision-note { margin: 0 0 13px; padding: 7px 9px; border-left: 2px solid color-mix(in srgb, var(--warning) 45%, var(--border)); background: color-mix(in srgb, var(--warning) 4%, var(--bg-elev)); color: var(--ink-soft); font-size: 10px; line-height: 1.75; }
 .decision-note > span { color: var(--warning); margin-right: 7px; font-weight: 500; white-space: nowrap; }
 .card-actions { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;column-gap:12px;border-top:1px solid var(--border); }
@@ -286,10 +287,10 @@ html { scrollbar-gutter: stable; }
 </header>
 <main class="main">
  <div class="page-head"><div><p class="eyebrow">SAUDI ARABIA · NEW LANDMARKS</p><h1>Landmark <em>Research</em></h1><p class="page-sub">신규 랜드마크 후보의 외형 특징과 조사 자료를 지역별로 모았습니다.</p></div><p class="check-date">자료 점검 2026-10-01</p></div>
- <nav class="overview" aria-label="도시별 랜드마크 후보"><div class="city-overview"><a class="jump-link city-jump" href="#riyadh">Riyadh</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="riyadh" data-count-kind="building">25</span></div></div></div>
+ <nav class="overview" aria-label="도시별 랜드마크 후보"><div class="city-overview"><a class="jump-link city-jump" href="#riyadh">Riyadh</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="riyadh" data-count-kind="building">26</span></div></div></div>
 <div class="city-overview"><a class="jump-link city-jump" href="#jeddah">Jeddah</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="building">12</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="sculpture">13</span></div></div></div></nav>
  <section class="city-section" id="riyadh" aria-labelledby="heading-riyadh">
-          <header class="section-head"><div class="section-title"><h2 id="heading-riyadh">Riyadh<span class="section-count" aria-live="polite">25</span></h2><p>King Fahd Road 주변 랜드마크 건축물</p></div>
+          <header class="section-head"><div class="section-title"><h2 id="heading-riyadh">Riyadh<span class="section-count" aria-live="polite">26</span></h2><p>King Fahd Road 주변·별도 지정·권역 확장 건축물</p></div>
             <div class="section-controls"><div class="status-control"><select class="status-filter" aria-label="Riyadh 선정 상태">
               <option value="review">상태: 검토 중</option><option value="selected">상태: 선정</option><option value="excluded">상태: 제외</option>
             </select><svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></div>
@@ -307,7 +308,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N02">Tamkeen Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 외관 사진에서 곡면 몸체와 길게 솟은 상부가 함께 보인다. 주요 실루엣을 판단할 자료가 있고 단순화해도 수직 윤곽이 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">북부 · Al Yasmin/Olaya 축</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">곡면 유리 몸체와 길게 솟는 상부가 만드는 수직 실루엣. 북부 스카이라인 기준점으로 적합.</p>
         
@@ -336,7 +337,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N03">Burj Rafal</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="준공 기록과 확보 전경에서 가늘고 긴 몸체와 상부 크라운을 확인할 수 있다. 주요 비례가 읽히고 주변 저층 건물과 구별되는 실루엣이 있어 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">북부 · As Sahafah</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">가늘고 높은 비례와 상부 크라운. 낮은 주변 건물과 대비되어 지도 축소 시에도 식별력이 좋음.</p>
         
@@ -365,7 +366,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N05">Al Nakhlah Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 전경과 상부 사진에서 큰 개구부와 외곽 프레임이 일관되게 보인다. 대상 주소도 공식 자료로 뒷받침돼 주요 형태와 강한 식별력을 함께 판단할 수 있다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">북부 · As Sahafah / King Fahd Road</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">큰 상부 개구부와 이를 둘러싼 외곽 프레임이 식별점. King Fahd Road 소재는 입주사 공식 주소로 확인.</p>
         
@@ -400,7 +401,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N06">Al Rajhi Bank Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="전체 외관과 설계사 하부 사진에서 네 수직 코어와 유리 본체의 구성을 확인할 수 있다. 큰 구조가 재료색을 줄여도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">중북부 · Al Muruj</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">유리 본체를 감싸는 네 개의 육중한 수직 코어와 비틀리는 하부. 재료색을 단순화해도 형태가 남음.</p>
         
@@ -435,7 +436,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N07">Elegance Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 정면 사진과 기존 사선·상세 사진을 함께 보면 중앙 후퇴부, 큰 빈 공간과 측면 돌출부를 판단할 수 있다. 공식 자산평가 자료로 대상도 구분돼 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">중북부 · Al Muruj</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">유리 타워 입면의 깊은 후퇴부와 돌출 매스가 특징. 공개 자산평가 보고서의 외관 사진으로 확인.</p>
         
@@ -470,7 +471,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N16">Olaya Towers</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 전경에서 두 타워의 전체 윤곽과 높이 차이, 곡면 상부를 함께 확인할 수 있다. 주변의 별도 건물과 구분되며 한 쌍의 비례가 지도 크기에서도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">중부 · Olaya × Tahlia</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">높이가 다른 한 쌍의 유리 타워와 곡면 상부. 두 동의 비례 차이가 지도용 실루엣을 만듦.</p>
         
@@ -499,7 +500,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N18">Hamad Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 사진에서 뾰족한 상부와 테이퍼 몸체, 굵은 사선 구조가 함께 읽힌다. 핵심 형태를 판단할 자료가 있고 작은 모델에도 남길 구조가 명확해 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">중부 · Al Faisaliah 인근</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">푸른 유리면을 가르는 굵은 흰색 사선과 테이퍼 형태. 작은 모델에도 남길 특징이 분명함.</p>
         
@@ -528,7 +529,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N20">Ministry of Interior Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 자료와 외관 사진에서 역피라미드 몸체와 중앙 돔의 큰 구성을 확인할 수 있다. 입면 세부를 줄여도 형태 자체의 식별력이 높아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">중남부 · 남부 Al Olaya</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Government" title="관공서">Government</span><span>도로변</span></div>
         <p class="character">위로 넓어지는 역피라미드와 중앙 돔. 형태만으로 알아볼 수 있어 최우선 검토 가치가 큼.</p>
         
@@ -557,7 +558,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N04">RAFAL Residence / Ascott Rafal Olaya</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="운영 건물은 식별되지만 현재 확보한 형태 자료는 개발사 렌더링이다. 실제 타워·저층부가 설계와 어떻게 대응하는지 대조할 외관 자료가 필요해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">북부 · As Sahafah</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">주거층과 서비스드 아파트를 포함한 수직 복합건물. 외관의 독창성은 최신 사진으로 비교.</p>
         
@@ -586,7 +587,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N10">Moon Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="곡면 입면과 상부 원형 윤곽은 사진에서 분명하다. 다만 진행 중으로 기록된 진입부 리노베이션의 완료 상태와 최종 하부 형태를 확인할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Ar Rahmaniyyah/Al Urubah 교차권</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">곡면 유리 입면과 상부의 큰 원형 윤곽이 특징. 원형 안쪽에도 유리면이 있어 관통 개구부로 표현하면 안 됨.</p>
         <p class="decision-note"><span>선정 전 확인</span>진입부 리노베이션은 설계사상 진행 중 · 렌더와 기존 외관 구분</p>
@@ -621,7 +622,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N11">The Oval</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="실제 외관 사진에서 곡면 발코니와 수직 몸체는 확인된다. 하부가 프레임 밖이라 타워와 기단의 전체 구성 및 설계와의 대응을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · King Fahd Road</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">둥근 평면과 겹겹이 둘러진 발코니·수평 띠. 각진 오피스 타워들 사이에 형태적 변화를 줌.</p>
         <p class="decision-note"><span>선정 전 확인</span>기단·진입부와 타워의 연결 구성 보강 필요</p>
@@ -650,7 +651,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N12">DAMAC Towers Riyadh</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="두 타워의 반복 층과 외곽 틀은 전경에서 보인다. 동별 대상 범위와 하부 구성을 더 구분해야 하고, 큰 윤곽의 차별성도 다른 주거 타워와 비교할 필요가 있다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Kingdom Centre 인근</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">반복되는 주거층과 상부 형상의 조합. 주변 호텔·업무 타워와 묶어 비교하기 좋은 후보.</p>
         
@@ -679,7 +680,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N13">Hilton Riyadh Olaya</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 호텔 자료와 사진으로 원통형 타워는 식별된다. 현재 전경만으로 저층부 범위를 판단하기 어렵고 일반적인 호텔 타워 대비 실루엣의 차별성이 제한적이라 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Kingdom Centre 인근</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">호텔 타워의 수직 실루엣과 저층부. 주변 초고층의 위치 관계를 보완할 후보.</p>
         
@@ -708,7 +709,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N14">Al Anoud Towers (1·2)</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="곡선 크라운을 가진 두 타워의 짝 구조는 매력적이다. 확보 사진과 호텔 자료를 각 동·부속 영역에 일대일로 대응시키는 작업이 남아 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Al Olaya</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">두 타워의 곡선 크라운과 첨탑이 만드는 짝 구조. 직선 위주의 스카이라인에서 구분이 쉬움.</p>
         
@@ -737,7 +738,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N17">Narcissus Hotel &amp; Residence Riyadh</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="코너 타워와 장식적인 입면은 확인되지만 확보 자료는 야간 조명의 영향이 크다. 주간 외장과 큰 윤곽을 더 확인해야 하고 작은 모델에서 장식의 식별력이 유지되는지도 검토가 필요하다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Olaya × Tahlia</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">장식적인 상부와 고전적인 입면 분위기의 호텔. 유리 오피스 타워와 다른 외형 유형.</p>
         
@@ -766,7 +767,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N19">King Faisal Foundation Headquarters</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="두 타워 사이의 빈 공간과 두 연결 브리지는 사진에서 분명하다. 다만 기존 B11 Al Faisaliah 모델의 부속 영역과 겹치는지 확인되지 않아 추천으로 올리지 않는다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Al Faisaliah 인근</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>인접</span></div>
         <p class="character">마주 보는 두 타워와 높이가 다른 상부 연결 브리지 두 개. 타워 사이 빈 공간과 연결 구조가 식별점.</p>
         <p class="decision-note"><span>선정 전 확인</span>기존 B11 Al Faisaliah 모델 부속 영역과 중복 확인</p>
@@ -795,7 +796,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N30">Hital Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="개발사 사진에서 교차 프레임과 휘어진 몸체는 뚜렷하다. 야간 전경만으로 프레임과 몸체 사이 깊이·접합부 및 주간 외장을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">북부 · As Sahafah / King Fahd Branch Road</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">휘어진 유리 몸체와 타워 바깥에서 교차하는 큰 프레임, 상부로 솟은 끝단이 특징. 야간 조명을 제외해도 외곽 윤곽과 프레임을 식별 요소로 남길 수 있다.</p>
         <p class="decision-note"><span>선정 전 확인</span>측후면·프레임 깊이와 주간 외장 자료 보강 필요</p>
@@ -824,7 +825,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N31">Tuwaiq Gate</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 외관과 배치 자료에서 중앙 파형 지붕과 석재 건물군의 구성이 읽힌다. 단지 전체를 포함할 모델 범위와 지붕 구조의 깊이를 더 대조해야 해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">중부 · Ar Rahmaniyyah / King Fahd Road</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Complex" title="복합 단지">Complex</span><span>도로변</span></div>
         <p class="character">중앙에서 높게 솟았다가 양쪽으로 낮아지는 파형 지붕과 석재 사무동이 특징. 저층 건물군과 중정의 반복 배치가 타워 위주 목록에 다른 외형 유형을 보완한다.</p>
         <p class="decision-note"><span>선정 전 확인</span>중앙 진입부·사무동·주거동의 모델 포함 범위 확인</p>
@@ -859,7 +860,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-N01">SAB Head Office</h3>
         <button type="button" class="badge recommendation priority-3" data-recommendation-reason="신본사 명칭과 주소는 확인됐지만 확보 이미지는 설계 렌더링이다. 실제 신본사의 외관과 렌더링이 대응하는지 확인되지 않아 추천 판단을 보류한다." aria-label="추천 등급: 보류">보류</button></div>
         <p class="area">북부 · Al Yasmin</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span><span>도로변</span></div>
         <p class="character">은행 본사 주소가 확인되는 후보. 외형의 독창성과 타워·저층부 구성은 최신 외관 사진 대조 후 판단.</p>
         <p class="decision-note"><span>선정 전 확인</span>신본사 SAB Tower 확인 · 실제 외관 사진 대조 필요</p>
@@ -876,7 +877,37 @@ html { scrollbar-gutter: stable; }
               사용 조건: 재사용 조건 미확인 · WebP 변환·축소, 크롭 없음</p></figcaption></figure></div></div>
         </details><div class="card-external-links"><a class="map-link" href="https://www.google.com/maps?cid=5790001582004100401" target="_blank" rel="noopener noreferrer">지도 <span aria-hidden="true">↗</span></a><a class="image-search-link" href="https://www.google.com/search?tbm=isch&amp;q=SAB+Head+Office" target="_blank" rel="noopener noreferrer">Google 이미지 <span aria-hidden="true">↗</span></a></div></div>
       </div>
-    </article></div><section class="scope-section" id="extended" aria-labelledby="heading-extended">
+    </article></div><section class="scope-section" id="designated" aria-labelledby="heading-designated">
+              <header class="scope-head"><h3 id="heading-designated">별도 지정 <span class="scope-count">1</span></h3><span>King Fahd Road 주변 목록과 별도로 지정한 Phase 1 대상</span></header>
+              <div class="cards-grid"><article class="research-card" id="N32" data-status="review"
+      data-kind="building" data-type="infra" data-priority="2" data-search="n32 king khalid international airport — terminal 5 riyadh 북부 · king khalid international airport / airport road 별도 지정 공항 · 별도 지정 넓은 직사각형 본체 위에 다이아몬드 모듈의 지붕이 반복되고, 유리 외벽보다 깊게 돌출된 지붕과 길게 이어지는 탑승 피어가 외형을 만든다. king fahd road 주변 후보와 별도로 지정된 phase 1 제5터미널 건물이다. 기본 대상은 제5터미널이며, 본체 외에 탑승 피어·주차동·에너지센터 등 부속 시설을 포함할지는 별도 결정이 필요하다. 과거 국내선 터미널 자료와 2026년 국제선 배정 안내를 구분한다. 검토 infra 기반 시설 리야드" aria-labelledby="title-N32">
+      <div class="card-visual">
+        <div class="card-meta"><div class="badges">
+          </div></div>
+        <button class="photo-open" type="button" aria-label="King Khalid International Airport — Terminal 5 사진과 상세 정보 보기">
+          <img src="../images/research-n32-01.webp" alt="King Khalid International Airport Terminal 5 · 탑승 피어의 유리 입면과 반복 지붕" width="1280" height="765" style="transform:scale(1.55);object-position:50% 50%" loading="lazy" decoding="async"></button>
+      </div>
+      <div class="card-body"><div class="card-heading"><h4 id="title-N32">King Khalid International Airport — Terminal 5</h4>
+        <button type="button" class="badge recommendation priority-2" data-recommendation-reason="Phase 1 별도 지정 대상이며 기존 터미널 1~4 모델과의 비중복을 사용자가 확인했다. 설계 자료와 피어 외관 사진은 확보했지만 본체 전체 조감·지붕 세부와 부속 시설의 제작 범위를 더 대조해야 해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
+        <p class="area">북부 · King Khalid International Airport / Airport Road</p>
+
+        <div class="card-tags"><span class="type-badge" aria-label="Type: Infra" title="기반 시설">Infra</span></div>
+        <p class="character">넓은 직사각형 본체 위에 다이아몬드 모듈의 지붕이 반복되고, 유리 외벽보다 깊게 돌출된 지붕과 길게 이어지는 탑승 피어가 외형을 만든다.</p><p class="model-scope-note">기존 공항 모델: 터미널 1~4 · 제5터미널 미포함 (사용자 확인)</p>
+        <p class="decision-note"><span>선정 전 확인</span>터미널 본체·피어·주차동의 제작 범위와 지붕 세부 확인</p>
+        <div class="card-actions"><details><summary>상세 정보 <svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></summary>
+          <div class="detail-body"><section class="landmark-intro"><h5>랜드마크 소개</h5><p>Riyadh의 King Khalid International Airport에 속한 제5터미널이다. 직사각형 터미널 본체와 항공기 탑승을 위한 선형 피어로 구성된다. 운영사의 2026년 2월 안내에서는 외국 항공사의 국제선 터미널로 배정되었다고 설명한다.</p></section><section class="model-scope"><h5>기존 모델과의 관계</h5><p>사용자 확인(2026-10-01): 기존 King Khalid International Airport 모델은 터미널 1~4까지만 포함하며 제5터미널은 미포함이다. 제5터미널은 같은 공항에 속한 별도 건물로, 기존 모델과 중복되지 않는 신규 제작 후보로 추가했다.</p></section><h5>외관 특징</h5><p>넓은 직사각형 본체 위에 다이아몬드 모듈의 지붕이 반복되고, 유리 외벽보다 깊게 돌출된 지붕과 길게 이어지는 탑승 피어가 외형을 만든다.</p><h5>조사 요약</h5><p>GMW As Built 자료에서 직사각형 본체·선형 피어·반복 모듈 지붕·후퇴한 유리 외벽을 확인하고 Robert Bird Group의 다이아몬드 모듈 지붕 설명과 대조. 운영사 안내에서 제5터미널 운영과 2026년 국제선 배정을 확인. Google 지도 Terminal 5의 이름·Airport Road 공항 주소와 장소 고유 링크를 대조. 기존 터미널 1~4 모델의 제5터미널 미포함은 사용자 확인에 따른 기록.</p>
+            <h5>미확인 사항</h5><p>반복 지붕 모듈의 높이·접합과 가려진 면, 터미널 본체·피어·주차동의 제작 경계, 정밀 좌표·footprint·치수</p>
+            <h5>검토 메모</h5><p>King Fahd Road 주변 후보와 별도로 지정된 Phase 1 제5터미널 건물이다. 기본 대상은 제5터미널이며, 본체 외에 탑승 피어·주차동·에너지센터 등 부속 시설을 포함할지는 별도 결정이 필요하다. 과거 국내선 터미널 자료와 2026년 국제선 배정 안내를 구분한다.</p>
+            <h5>출처</h5><ul class="sources"><li><a class="" href="https://www.gmwmimarlik.com/projects/view/Riyadh-Airport-T5-As-Built/14" target="_blank" rel="noopener noreferrer">GMW · 설계사 <span aria-hidden="true">↗</span></a></li><li><a class="" href="https://www.robertbird.com/rbg-projects/king-khaled-international-airport/" target="_blank" rel="noopener noreferrer">Robert Bird Group · 구조 설계사 <span aria-hidden="true">↗</span></a></li><li><a class="" href="https://www.riyadhairports.com/en/media/news-and-announcements/importednews/king-khalid-international-airport-completes-major-terminal-relocation-project" target="_blank" rel="noopener noreferrer">Riyadh Airports · 공항 운영사 <span aria-hidden="true">↗</span></a></li></ul><h5>외형 이미지</h5><div class="photo-gallery"><figure class="research-photo">
+          <button class="photo-original" type="button" aria-haspopup="dialog" aria-controls="research-lightbox" aria-label="King Khalid International Airport Terminal 5 · 탑승 피어의 유리 입면과 반복 지붕 크게 보기">
+            <img src="../images/research-n32-01.webp" alt="King Khalid International Airport Terminal 5 · 탑승 피어의 유리 입면과 반복 지붕" width="1280" height="765" loading="lazy" decoding="async"></button>
+          <figcaption><p>GMW As Built 갤러리의 제5터미널 탑승 피어 외관. 유리 입면, 반복 지붕과 탑승교가 보이며, 본체 전체의 조감 사진은 아닙니다. 촬영일은 미확인입니다.</p>
+            <p class="photo-credit"><a class="" href="https://www.gmwmimarlik.com/projects/view/Riyadh-Airport-T5-As-Built/14" target="_blank" rel="noopener noreferrer">GMW · 설계사 <span aria-hidden="true">↗</span></a> · 외관 사진<br>
+              촬영·제작: 미확인 · 시점: 촬영일 미확인<br>
+              사용 조건: 재사용 조건 미확인 · GMW 사이트 All Rights Reserved · 원본 프레임·여백 유지, WebP 변환 · 썸네일만 CSS 마스크로 여백 제외 및 화면 크롭</p></figcaption></figure></div></div>
+        </details><div class="card-external-links"><a class="map-link" href="https://www.google.com/maps?cid=3499202921125578715" target="_blank" rel="noopener noreferrer">지도 <span aria-hidden="true">↗</span></a><a class="image-search-link" href="https://www.google.com/search?tbm=isch&amp;q=King+Khalid+International+Airport+Terminal+5" target="_blank" rel="noopener noreferrer">Google 이미지 <span aria-hidden="true">↗</span></a></div></div>
+      </div>
+    </article></div></section><section class="scope-section" id="extended" aria-labelledby="heading-extended">
               <header class="scope-head"><h3 id="heading-extended">권역 확장 <span class="scope-count">6</span></h3><span>구도심·Al Nakheel 등 Riyadh 내 다른 지역까지 조사 범위 확대</span></header>
               <div class="cards-grid"><article class="research-card" id="N24" data-status="review"
       data-kind="building" data-type="government" data-priority="1" data-search="n24 ministry of foreign affairs headquarters riyadh 남부 서측 · al nasiriyah 권역 권역 확장 확장 기하학적 저층 배치와 중정, 두꺼운 외벽의 조합. 타워 이외 관공서 유형을 보완. 승인된 권역 확장 항목을 유지하며 king fahd road 도로변으로 표현하지 않음. 외벽·조감 사진에서 주요 외부 형태를 대조했고, 실내 중정의 특징만을 추천 근거로 사용하지 않음. 추천 government 관공서 리야드" aria-labelledby="title-N24">
@@ -889,7 +920,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N24">Ministry of Foreign Affairs Headquarters</h4>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 조감 사진과 기존 외벽 사진으로 저층 청사의 배치, 곡면 외벽과 지붕 구성을 함께 판단할 수 있다. 설계사의 준공 기록도 확인돼 외부 형태의 캐릭터를 근거로 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">남부 서측 · Al Nasiriyah 권역</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Government" title="관공서">Government</span></div>
         <p class="character">기하학적 저층 배치와 중정, 두꺼운 외벽의 조합. 타워 이외 관공서 유형을 보완.</p>
         
@@ -924,7 +955,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N22">Riyadh TV Tower</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="방송·전망부와 안테나는 강한 실루엣을 만든다. 제공 사진에서 하부가 주변 건물과 나무에 가려져 탑의 기단·연결 건물 범위를 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">남부 · Al Wisham</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Infra" title="기반 시설">Infra</span></div>
         <p class="character">가는 기둥 위의 둥근 방송·전망부와 안테나. 일반 건축물과 실루엣 차이가 큼.</p>
         
@@ -953,7 +984,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N23">Riyadh Water Tower</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="제공 사진에서 넓게 벌어진 수조와 기둥의 전체 형태는 읽힌다. 기존 Museum·Murabba 모델에 주변 시설로 포함됐는지 확인되지 않아 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">남부 · Al Futah/Al Watan Park</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Infra" title="기반 시설">Infra</span></div>
         <p class="character">가느다란 원통 기둥과 크게 벌어진 수조의 버섯형 윤곽. 단순한 모델로도 캐릭터 유지 가능.</p>
         <p class="decision-note"><span>선정 전 확인</span>보유 Museum·Murabba 모델의 주변부 포함 여부 확인</p>
@@ -982,7 +1013,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N25">Qasr Al Hukm</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 위치와 외벽 사진으로 궁전 청사를 식별할 수 있다. 광장 사진에는 인접 건물도 포함돼 궁전의 전체 경계와 모스크 연결부의 모델 범위를 더 구분해야 한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">남부 · Ad Dirah 구도심</p>
-        <button type="button" class="connected-building" data-related-card="N26" aria-haspopup="dialog" aria-controls="research-detail-panel">연결 건물 · Imam Turki 모스크 <span aria-hidden="true">→</span></button>
+<button type="button" class="connected-building" data-related-card="N26" aria-haspopup="dialog" aria-controls="research-detail-panel">연결 건물 · Imam Turki 모스크 <span aria-hidden="true">→</span></button>
         <div class="card-tags"><span class="type-badge" aria-label="Type: Heritage" title="역사 건축물">Heritage</span></div>
         <p class="character">성곽형 벽체, 모서리 타워, 중정이 이루는 전통 관공서 건축. 구도심을 대표하는 유형.</p>
         
@@ -1017,7 +1048,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N26">Imam Turki Bin Abdullah Grand Mosque</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="각진 쌍 미나레트와 낮은 예배당은 기존 사진과 기록에서 확인된다. 모스크 전체 배치와 궁전으로 이어지는 연결부의 깊이·범위 자료가 더 필요해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">남부 · Qasr Al Hukm 지구</p>
-        <button type="button" class="connected-building" data-related-card="N25" aria-haspopup="dialog" aria-controls="research-detail-panel">연결 건물 · Qasr Al-Hukm 궁전 <span aria-hidden="true">→</span></button>
+<button type="button" class="connected-building" data-related-card="N25" aria-haspopup="dialog" aria-controls="research-detail-panel">연결 건물 · Qasr Al-Hukm 궁전 <span aria-hidden="true">→</span></button>
         <div class="card-tags"><span class="type-badge" aria-label="Type: Mosque" title="모스크">Mosque</span></div>
         <p class="character">각진 쌍 미나레트와 넓은 중정, 낮은 예배당의 대비. 돔 중심 모스크와 다른 외형.</p>
         
@@ -1046,7 +1077,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h4 id="title-N27">Riyadh General Court — Qasr Al Hukm 지구 건물</h4>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="SPA의 법원 정면 사진, 제공 탑뷰와 지도 장소 대조로 대상 식별이 보강돼 보류에서 검토로 올린다. 깊은 중앙 개구부는 특징적이지만 측면 깊이와 부속 범위 자료가 더 필요하다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">남부 · 구도심</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Government" title="관공서">Government</span></div>
         <p class="character">육중한 석재 몸체와 정면 중앙의 깊고 높은 개구부가 특징. 탑뷰에서 지붕 배치가 보이며, 옆 모스크와 별개 건물로 다룬다.</p>
         <p class="decision-note"><span>선정 전 확인</span>측면 깊이·부속 영역의 모델 범위 확인 · DATA LOW</p>
@@ -1089,7 +1120,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J01">The Headquarters Business Park</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="설계사 기록과 외관 사진으로 타워와 긴 저층 기단의 구성을 확인할 수 있다. 각진 상부와 돌출된 헬리패드가 지도 크기에서도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">Corniche · 해안 업무지구</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">상부로 돌출된 헬리패드와 각진 고층 타워, 낮은 동을 잇는 긴 기단. 상부 윤곽과 단지 구성이 뚜렷하다.</p>
         
@@ -1118,7 +1149,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J04">Al Jawharah Tower</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="준공 기록과 확보 외관에서 굴곡진 몸체와 반복 발코니가 읽힌다. 주거 타워의 큰 윤곽이 단순한 직육면체와 구별돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">Corniche · Ash Shati</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">굴곡 있는 외곽과 반복되는 발코니가 만드는 주거 타워의 실루엣. 해안 스카이라인 보완 후보.</p>
         
@@ -1147,7 +1178,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J05">Burj Assila / Shangri-La Jeddah</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="호텔·준공 기록으로 대상이 식별되고 확보 사진에서 길고 휘어진 타워 윤곽을 확인할 수 있다. 돛을 연상시키는 큰 형상이 단순화 후에도 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">North Corniche</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">돛을 연상시키는 길고 휘어진 타워 윤곽. 사각형 타워와 형태 차이가 크다.</p>
         
@@ -1176,7 +1207,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J06">National Commercial Bank — Jeddah historic headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="건축 기록과 사진에서 삼각형 매스와 큰 개구부를 확인할 수 있다. 표면 창문을 줄여도 몸체의 빈 공간이 주요 식별점으로 남아 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">구도심 · 옛 항구권</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">삼각형 매스와 크게 파인 개구부·중정. 창문 텍스처를 줄여도 큰 빈 공간이 특징으로 남는다.</p>
         
@@ -1205,7 +1236,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J07">Islamic Development Bank Headquarters</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 건축 기록과 정면 사진으로 큰 지붕, 두꺼운 벽체와 중앙 개구부의 구성을 판단할 수 있다. 큰 구조를 중심으로 단순화할 수 있어 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">King Khalid Road · 본사 권역</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Complex" title="복합 단지">Complex</span></div>
         <p class="character">은행 본부와 연구·교육시설의 두 부분을 큰 지붕으로 통합한 구성. 두꺼운 외벽, 적은 개구부와 내부 채광 중정이 특징.</p>
         
@@ -1234,7 +1265,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J08">Jeddah Superdome</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="공식 시설 자료와 외관 사진에서 넓고 낮은 돔의 전체 윤곽을 확인할 수 있다. 타워·모스크와 다른 실루엣을 제공해 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">북부 Jeddah</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Event Venue" title="행사 시설">Event Venue</span></div>
         <p class="character">넓고 낮게 퍼지는 지오데식 돔 지붕. 타워·모스크와 실루엣이 달라 상공 시점의 후보로 검토.</p>
         
@@ -1263,7 +1294,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J09">King Saud Mosque — Jeddah</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="추가 조감 사진과 기존 지상 사진을 함께 보면 큰 돔·미나레트와 저층 몸체의 전체 배치를 판단할 수 있다. Jeddah 대상 식별 기록도 있어 담장 뒤 자료 부족을 해소한 것으로 보고 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">Al Sharafeyyah</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Mosque" title="모스크">Mosque</span></div>
         <p class="character">큰 돔, 미나레트와 중정이 이루는 저층 건축군. 덩어리의 높낮이가 읽히는 모스크 후보.</p>
         
@@ -1292,7 +1323,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J13">Beit Al-Sharbatly</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="제공 사진에서 정면·측면·지붕·지상층을 함께 볼 수 있어 연속 목재 발코니와 아치의 전체 구성을 판단할 수 있다. Matbouli의 개별 돌출 로샨 중심 입면과 큰 구성도 달라 추천으로 올린다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">Historic Jeddah · Al Balad</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Heritage" title="역사 건축물">Heritage</span></div>
         <p class="character">모서리를 감싸는 연속 목재 발코니와 로샨, 아치·기둥의 반복이 특징. 정면과 측면의 입체 구성이 지도용 식별 요소가 된다.</p>
         
@@ -1321,7 +1352,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J16">The Globe Roundabout</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="확보 주간 사진에서 구체·대륙 형상과 받침대를 함께 확인할 수 있다. 큰 형태를 판단할 자료가 있고 대륙 윤곽을 남기면 장소의 식별력이 유지돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">사이트 기재 위치 · King’s Road, North Obhur district</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">지구본 구체와 대륙 형상이 핵심. 지역 표지성이 강하나 단순 구만 남기면 특징이 약해질 수 있다.</p>
         
@@ -1350,7 +1381,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J17">Engineering Roundabout / Engineers’ Tools</h3>
         <button type="button" class="badge recommendation priority-1" data-recommendation-reason="확보 사진과 장소 대조에서 컴퍼스·각도기·삼각자의 큰 구성을 확인할 수 있다. 도구의 윤곽과 사이의 빈 공간이 다른 조형물과 구별돼 추천한다." aria-label="추천 등급: 추천">추천</button></div>
         <p class="area">사이트 기재 위치 · Intersection of Sari and Macarona Streets</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">컴퍼스·자·각도기 등 제도 도구를 크게 세운 구성. 다른 조형물과 주제가 명확히 구별된다.</p>
         
@@ -1379,7 +1410,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J02">King’s Road Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="제공 사진으로 광고 효과를 제외한 유리 몸체와 중앙 돌출부, 기단을 확인할 수 있다. 다른 타워와 구별되는 큰 윤곽 및 몸체·기단 깊이를 더 비교해야 해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">King Abdulaziz Road 축</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">대형 미디어 파사드가 장소성을 만드는 타워. 지도 모델에서는 화면 효과를 제외한 몸체·상부 형상의 식별력을 비교할 필요가 있다.</p>
         
@@ -1408,7 +1439,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J03">Golden Tower</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 이미지는 설계 렌더링으로 추정돼 준공 외관 근거로 사용할 수 없다. 기존 원경 사진으로는 깊은 발코니와 어긋난 매스의 실제 구성을 판단하기 어려워 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">North Corniche</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Tower" title="타워">Tower</span></div>
         <p class="character">매스가 조금 어긋나는 실루엣과 깊게 들어간 발코니·로샨형 개구부, 유리·석재를 조합한 입면.</p>
         
@@ -1443,7 +1474,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J10">Al-Ruwais Mosque / Al-Farsi Mosque</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 사진은 세 돔·미나레트·반복 볼트 지붕을 잘 보여주지만 적갈색 외장 시기의 자료다. 이후 도장·개구부 변경이 기록돼 현재 모습의 근거를 보강해야 한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">Ruwais · 해안 남측 권역</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Mosque" title="모스크">Mosque</span></div>
         <p class="character">나란한 세 돔과 팔각 미나레트, 반복되는 볼트 지붕. 작은 건축물 자체가 조형물처럼 읽힌다.</p>
         <p class="decision-note"><span>선정 전 확인</span>원형 사진과 백색 미장·유리 막음 상태 구분 · 최신 외장 미확인</p>
@@ -1472,7 +1503,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J14">Khuzam Palace</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="새 썸네일은 궁전 대문이므로 궁전 본체의 전체 형태를 보강하지 않는다. 기존 B38 정문과의 중복 및 본체·담장 범위를 확인해야 해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">Al Nazlah al Yamaniyah</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Heritage" title="역사 건축물">Heritage</span></div>
         <p class="character">궁전 본체와 담장이 이루는 저층 단지. 대표 정문은 기존 B38과의 중복 확인 전 모델 범위에서 제외.</p>
         <p class="decision-note"><span>선정 전 확인</span>정문은 기존 B38 모델과 대조 전 포함 보류</p>
@@ -1501,7 +1532,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J15">Bicycle Sculpture / Midan al-Darrajah</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="자전거의 두 바퀴와 프레임은 형태가 강하고 옛 사진에서 전체 윤곽도 읽힌다. 이전 이후 자료는 원경 중심이라 현재 설치 상태와 받침 구성을 더 확인해야 한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Al-Darraja Square</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">거대한 자전거 형상이 직관적이다. 두 바퀴와 프레임만으로도 강한 식별력을 갖는다.</p>
         <p class="decision-note"><span>선정 전 확인</span>이전 후 현 위치 확인 필요 · 옛 교차로 좌표 사용 금지</p>
@@ -1536,7 +1567,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J18">Cosmos / Al-Falak Sculpture</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="금속 궤도와 구체의 큰 구조는 사진에서 보인다. 이전을 다룬 자료 이후의 설치 상태와 받침·부재 깊이를 확인할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Intersection of Sari Street and Fahd Road</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">금속 곡선과 구체가 천체 궤도를 이루는 구조. 구체 하나인 Globe와 별개 대상이며 빈 공간이 많은 실루엣이다.</p>
         <p class="decision-note"><span>선정 전 확인</span>교량 옆 이전 확인 · 최근 현장 사진·정확한 핀 미확인</p>
@@ -1565,7 +1596,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J19">Accident! / Crazy Speed</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="차량이 돌출된 입방체의 캐릭터는 강하고 이전 관련 사진도 확보했다. 차량별 방향과 가려진 면·받침의 입체 구성을 확정할 자료가 더 필요해 검토로 둔다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Northern Corniche, Obhur district</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">백색 콘크리트 덩어리에서 다섯 대의 자동차가 엇갈려 돌출되는 조형물. 사고 장면을 과장한 구성이 강한 식별 요소다.</p>
         
@@ -1594,7 +1625,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J20">Four Lanterns</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="네 등과 지지 프레임은 사진에서 확인되고 지도 장소도 대조돼 있다. 다만 현 설치 상태와 받침·지지부의 입체 구성을 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Al-Tahliah Street</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">프레임에 매단 대형 전통 등 네 개. 장식색을 줄여도 등과 지지 구조의 윤곽을 남길 수 있다.</p>
         <p class="decision-note"><span>선정 전 확인</span>최근 설치 상태·받침과 지지부 구성 확인 필요</p>
@@ -1623,7 +1654,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J21">The Seagull</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="추가 근접 사진과 기존 전경으로 날개형 판·낮은 곡면 판의 대비를 확인할 수 있다. 촬영 시점이 미확인이라 현재 존치와 설치 상태를 확인할 근거가 더 필요하다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Northern Corniche, Obhur district</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">길게 솟은 날개형 판과 낮은 곡면 판의 대비. 새 문양을 단순화해도 높낮이와 판의 윤곽이 남는다.</p>
         <p class="decision-note"><span>선정 전 확인</span>Nawras Square 연관 확인 · 조형물의 최근 존치 사진 필요</p>
@@ -1658,7 +1689,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J22">The Fist</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="주먹과 경사진 받침대의 큰 윤곽은 사진에서 분명하다. 현재 존치 근거와 위치가 충분히 대조되지 않아 강한 형태만으로 추천하지 않는다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Prince Sultan Street</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">주먹을 크게 확대해 세운 단순하고 강한 형태. 원거리 실루엣의 식별력이 좋다.</p>
         <p class="decision-note"><span>선정 전 확인</span>최근 존치 여부·받침대 확인 필요</p>
@@ -1687,7 +1718,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J23">Circular Mass</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 작품 사진에서 원기둥과 표면 요철은 확인된다. 홈과 절개의 깊이·가려진 면을 판단할 자료가 부족해 입체 구성을 더 대조해야 한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Jeddah Sculpture Museum</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">원기둥형 몸체와 길게 패인 홈·표면 요철이 특징. 공식 사진에서 큰 윤곽은 보이지만 절개의 깊이와 가려진 면은 추가 대조가 필요하다.</p>
         <p class="decision-note"><span>선정 전 확인</span>작품별 외형·정확한 입체 형태 대조 필요</p>
@@ -1716,7 +1747,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J24">The Illusion of the Second Cube</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="색면과 기하학적 윤곽은 확인되지만 착시 효과가 보는 방향과 색에 의존한다. 단순화한 모델에서 식별력이 유지되는지와 실제 입체 깊이를 더 검토해야 한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Jeddah Sculpture Museum</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">입방체 착시를 만드는 기하학적 구성과 색면 배치. 단색으로 단순화할 때 입체적 식별력이 유지되는지 검토가 필요하다.</p>
         
@@ -1745,7 +1776,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J25">Flexibility of Balance</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 비대칭 곡면 판과 판 사이 빈 공간은 확인된다. 판의 깊이·가려진 구성과 받침 범위 및 개별 위치가 미확인이라 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Jeddah Sculpture Museum</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">붉은 곡면 판이 비대칭으로 겹치고 판 사이 빈 공간이 생기는 조각. 큰 윤곽은 공식 사진에서 보이며, 판의 깊이와 가려진 구성은 추가 자료로 대조해야 한다.</p>
         <p class="decision-note"><span>선정 전 확인</span>판의 깊이·받침 범위와 개별 위치 확인 필요</p>
@@ -1774,7 +1805,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J26">The Bird (Joan Miró)</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 추상 몸체·돌출부와 두 다리의 대비는 확인된다. 가려진 부분의 깊이와 받침 연결을 판단할 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Jeddah Sculpture Museum</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">추상적인 몸체와 돌출부, 두 다리의 조합이 특징. 큰 덩어리와 사이의 빈 공간이 단색에서도 구별된다.</p>
         <p class="decision-note"><span>선정 전 확인</span>측후면·받침대 세부 형태와 정밀 핀 미확인</p>
@@ -1803,7 +1834,7 @@ html { scrollbar-gutter: stable; }
       <div class="card-body"><div class="card-heading"><h3 id="title-J27">Oval with Points</h3>
         <button type="button" class="badge recommendation priority-2" data-recommendation-reason="공식 사진에서 타원과 두 뾰족한 돌출부, 가운데 빈 공간은 확인된다. 몸체 두께·가려진 면과 최근 현장 상태의 자료가 부족해 검토를 유지한다." aria-label="추천 등급: 검토">검토</button></div>
         <p class="area">사이트 기재 위치 · Jeddah Sculpture Museum</p>
-        
+
         <div class="card-tags"><span class="type-badge" aria-label="Type: Sculpture" title="조형물">Sculpture</span></div>
         <p class="character">타원형 외곽과 안쪽을 향한 뾰족한 돌출부, 가운데 빈 공간이 핵심. 단색 모델에서도 캐릭터가 남는다.</p>
         <p class="decision-note"><span>선정 전 확인</span>공식 목록의 Al Arbaeen 배치 확인 · 정밀 핀·최근 현장 상태 미확인</p>

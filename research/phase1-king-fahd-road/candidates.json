@@ -1,6 +1,6 @@
 {
   "research_date": "2026-09-23",
-  "scope": "Riyadh King Fahd Road 주변 19건 + 권역 확장 6건; N08 제외 유지",
+  "scope": "Riyadh King Fahd Road 주변 19건 + 별도 지정 제5터미널 1건 + 권역 확장 6건; N08 제외 유지",
   "excluded_inventory": [
     "data/landmarks.json",
     "data/balady_50.json",
@@ -1775,11 +1775,74 @@
         "map_identification_status": "matched"
       },
       "landmark_type": "complex"
+    },
+    {
+      "id": "N32",
+      "name": "King Khalid International Airport — Terminal 5",
+      "area": "북부 · King Khalid International Airport / Airport Road",
+      "overview": "Riyadh의 King Khalid International Airport에 속한 제5터미널이다. 직사각형 터미널 본체와 항공기 탑승을 위한 선형 피어로 구성된다. 운영사의 2026년 2월 안내에서는 외국 항공사의 국제선 터미널로 배정되었다고 설명한다.",
+      "visual_character": "넓은 직사각형 본체 위에 다이아몬드 모듈의 지붕이 반복되고, 유리 외벽보다 깊게 돌출된 지붕과 길게 이어지는 탑승 피어가 외형을 만든다.",
+      "status_evidence": "공항 운영사의 2026-02-26 운영 전환 완료 안내·설계사 As Built 자료·구조 설계사 프로젝트 설명",
+      "verification_notes": "King Fahd Road 주변 후보와 별도로 지정된 Phase 1 제5터미널 건물이다. 기본 대상은 제5터미널이며, 본체 외에 탑승 피어·주차동·에너지센터 등 부속 시설을 포함할지는 별도 결정이 필요하다. 과거 국내선 터미널 자료와 2026년 국제선 배정 안내를 구분한다.",
+      "sources": [
+        "https://www.gmwmimarlik.com/projects/view/Riyadh-Airport-T5-As-Built/14",
+        "https://www.robertbird.com/rbg-projects/king-khaled-international-airport/",
+        "https://www.riyadhairports.com/en/media/news-and-announcements/importednews/king-khalid-international-airport-completes-major-terminal-relocation-project"
+      ],
+      "decision_note": "터미널 본체·피어·주차동의 제작 범위와 지붕 세부 확인",
+      "road_relationship": "공항 · 별도 지정",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King+Khalid+International+Airport+Terminal+5+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "별도 지정",
+      "image_search_name": "King Khalid International Airport Terminal 5",
+      "duplicate_check": "사용자 확인(2026-10-01): 기존 King Khalid International Airport 모델은 터미널 1~4까지만 포함하며 제5터미널은 미포함. 별도 신규 대상으로 추가; GLB 직접 재검수는 미수행.",
+      "model_scope": {
+        "summary": "기존 공항 모델: 터미널 1~4 · 제5터미널 미포함 (사용자 확인)",
+        "detail": "사용자 확인(2026-10-01): 기존 King Khalid International Airport 모델은 터미널 1~4까지만 포함하며 제5터미널은 미포함이다. 제5터미널은 같은 공항에 속한 별도 건물로, 기존 모델과 중복되지 않는 신규 제작 후보로 추가했다.",
+        "confirmed_at": "2026-10-01",
+        "confirmed_by": "user",
+        "reference_id": "15",
+        "existing_terminals": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "new_terminal": 5
+      },
+      "fact_check": {
+        "date": "2026-10-01",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "GMW As Built 자료에서 직사각형 본체·선형 피어·반복 모듈 지붕·후퇴한 유리 외벽을 확인하고 Robert Bird Group의 다이아몬드 모듈 지붕 설명과 대조. 운영사 안내에서 제5터미널 운영과 2026년 국제선 배정을 확인. Google 지도 Terminal 5의 이름·Airport Road 공항 주소와 장소 고유 링크를 대조. 기존 터미널 1~4 모델의 제5터미널 미포함은 사용자 확인에 따른 기록.",
+        "remaining": "반복 지붕 모듈의 높이·접합과 가려진 면, 터미널 본체·피어·주차동의 제작 경계, 정밀 좌표·footprint·치수",
+        "visual_claim_check": "공식 탑승 피어 외관 사진에서 유리 입면·반복 지붕·탑승교 대조. 본체 전체 조감·지붕 세부는 추가 자료 필요.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-10-01",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "Phase 1 별도 지정 대상이며 기존 터미널 1~4 모델과의 비중복을 사용자가 확인했다. 설계 자료와 피어 외관 사진은 확보했지만 본체 전체 조감·지붕 세부와 부속 시설의 제작 범위를 더 대조해야 해 검토로 둔다.",
+        "remaining": "반복 지붕 모듈의 높이·접합과 가려진 면, 터미널 본체·피어·주차동의 제작 경계, 정밀 좌표·footprint·치수",
+        "scope": "공식 설계·운영 자료, Google 지도 장소 식별, 사용자의 기존 모델 범위 확인을 반영한 의견. 정밀 제작 검증과 GLB 직접 재검수 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n32-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "landmark_type": "infra"
     }
   ],
   "link_check_date": "2026-09-23",
   "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
-  "count": 25,
+  "count": 26,
   "scope_update": {
     "date": "2026-09-23",
     "excluded_ids": [
@@ -1800,7 +1863,8 @@
   },
   "counts_by_scope": {
     "core": 19,
-    "extension_under_review": 6
+    "extension_under_review": 6,
+    "designated": 1
   },
   "fact_check_date": "2026-09-23",
   "fact_check_report": "../FACT_CHECK_2026-09-23.md",
@@ -1810,12 +1874,12 @@
   "recommendation_review_date": "2026-09-30",
   "recommendation_criteria": "종합 추천 v1",
   "inventory_update": {
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "added_ids": [
-      "N31"
+      "N32"
     ],
     "removed_ids": [],
-    "reason": "사용자 요청: Tuwaiq Gate를 검토 등급으로 추가. 기존 모델의 Al Faisaliah Tower는 신규 후보에서 제외."
+    "reason": "사용자 요청: 기존 공항 모델은 터미널 1~4까지만 포함하므로 제5터미널을 비중복 Phase 1 별도 지정 대상으로 추가"
   },
   "inventory_update_history": [
     {
@@ -1841,6 +1905,14 @@
         "N30"
       ],
       "reason": "사용자 요청: Sky Gardens 완공 미확정으로 삭제. The Oval과 Hital Tower는 유지."
+    },
+    {
+      "date": "2026-09-30",
+      "added_ids": [
+        "N31"
+      ],
+      "removed_ids": [],
+      "reason": "사용자 요청: Tuwaiq Gate를 검토 등급으로 추가. 기존 모델의 Al Faisaliah Tower는 신규 후보에서 제외."
     }
   ],
   "recommendation_review_summary": {

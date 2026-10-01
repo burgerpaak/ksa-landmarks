@@ -443,6 +443,20 @@
         "46.6663879"
       ],
       "note": "Google 지도 장소의 이름·King Fahd Road/Ar Rahmaniyyah 소재지·공식 사이트 tg-sa.com·대표 전화 9200 12972를 공식 프로젝트와 입주사 주소에 대조. 동명 컨설팅 업체·Tuwaiq Heritage Tower 제외. 장소 식별은 납품 정밀 좌표 검증과 별개."
+    },
+    "N32": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=3499202921125578715",
+      "cid": "3499202921125578715",
+      "place_name": "Terminal 5",
+      "address": "Airport Road, King Khalid International Airport, Riyadh 13455, Saudi Arabia",
+      "checked_at": "2026-10-01",
+      "coordinate_strings": [
+        "24.9421843",
+        "46.7119327"
+      ],
+      "observed_url": "https://www.google.com/maps/place/Terminal+5/@24.9421843,46.7119327,911m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e2ef0f934a143c3:0x308faa8466b307db!8m2!3d24.9421843!4d46.7119327!16s%2Fg%2F11bzxvjl7z",
+      "note": "Google 지도 실제 Terminal 5 장소 상세의 이름·공항 주소를 공식 터미널 자료와 대조. 관찰한 feature ID의 CID를 사용했으며 @ 지도 뷰 중심과 !3d!4d 장소 핀을 구분. 장소 식별은 납품 정밀 좌표와 모델 경계 검증 완료를 뜻하지 않음."
     }
   },
   "method": "Google Maps 실제 장소 상세에서 명칭·소재지와 기존 조사자료 대조. 동명·입주사·이전 이력은 사진/기록 추가 확인. CID는 관찰한 장소 URL의 feature ID에서 변환; 검색어로 추정하지 않음."

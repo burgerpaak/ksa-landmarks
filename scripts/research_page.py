@@ -17,7 +17,7 @@ LANDMARK_TYPES = {
     "sculpture": ("Sculpture", "조형물"),
 }
 CITIES = (
-    ("riyadh", "Riyadh", "King Fahd Road 주변 랜드마크 건축물"),
+    ("riyadh", "Riyadh", "King Fahd Road 주변·별도 지정·권역 확장 건축물"),
     ("jeddah", "Jeddah", "랜드마크 건축물 · 조형물"),
 )
 
@@ -37,6 +37,9 @@ def source_label(url):
         "www.csbe.org": "CSBE · 건축 연구",
         "s3.eu-central-2.wasabisys.com": "Alkhabeer · 자산평가 보고서",
         "www.alkhabeer.com": "Alkhabeer · 공식 자료",
+        "www.gmwmimarlik.com": "GMW · 설계사",
+        "www.robertbird.com": "Robert Bird Group · 구조 설계사",
+        "www.riyadhairports.com": "Riyadh Airports · 공항 운영사",
     }
     return labels.get(host, host.removeprefix("www."))
 
@@ -60,7 +63,7 @@ def load_candidates(root):
     candidates = []
     for item in riyadh["candidates"]:
         candidates.append({**item, "images": images.get(item["id"], []), "city": "Riyadh", "city_key": "riyadh",
-                           "phase_key": "extended" if item["scope_group"] == "권역 확장" else "phase-1",
+                           "phase_key": {"권역 확장": "extended", "별도 지정": "designated"}.get(item["scope_group"], "phase-1"),
                            "tag": item["road_relationship"], "kind": "building",
                            "sources": [(source_label(url), url) for url in item["sources"]]})
     for item in jeddah["candidates"]:
@@ -151,7 +154,7 @@ def render_card(item):
     status = f'<span class="badge {state}">{esc(item["review_status"])}</span>' if state != "review" else ""
     decision_note = (f'<p class="decision-note"><span>선정 전 확인</span>{esc(item["decision_note"])}</p>'
                      if item.get("decision_note") else "")
-    title_tag = "h4" if item["phase_key"] == "extended" else "h3"
+    title_tag = "h3" if item["phase_key"] == "phase-1" else "h4"
     rank = PRIORITIES[item["selection_suggestion"]]
     assessment = item.get("recommendation_assessment", {})
     tip_reason = assessment.get("reason", "")
@@ -159,11 +162,15 @@ def render_card(item):
         tip_reason = item.get("recommendation_review", {}).get("reason") or check["remaining"]
     type_badge = f'<span class="type-badge" aria-label="Type: {esc(type_label)}" title="{esc(type_description)}">{esc(type_label)}</span>'
     relationship_tag = (f'<span>{esc(item["tag"])}</span>'
-                        if item["city_key"] == "riyadh" and item["phase_key"] != "extended" else "")
+                        if item["city_key"] == "riyadh" and item["phase_key"] == "phase-1" else "")
     tag = f'<div class="card-tags">{type_badge}{relationship_tag}</div>'
     sources = "".join(f'<li>{link(url, label)}</li>' for label, url in item["sources"])
     reason = f'<h5>제외 사유</h5><p>{esc(item.get("exclusion_reason", "사용자 제외 결정"))}</p>' if state == "excluded" else ""
     overview = f'<section class="landmark-intro"><h5>랜드마크 소개</h5><p>{esc(item["overview"])}</p></section>'
+    model_scope = item.get("model_scope")
+    model_scope_note = (f'<p class="model-scope-note">{esc(model_scope["summary"])}</p>' if model_scope else '')
+    model_scope_detail = (f'<section class="model-scope"><h5>기존 모델과의 관계</h5>'
+                          f'<p>{esc(model_scope["detail"])}</p></section>' if model_scope else '')
     relations = [("연결 건물", item["connected_building"])] if item.get("connected_building") else []
     relations += [("인접 건물", entry) for entry in item.get("adjacent_buildings", [])]
     relation_links = [f'<button type="button" class="connected-building" data-related-card="{esc(entry["id"])}" aria-haspopup="dialog" aria-controls="research-detail-panel">{kind} · {esc(entry["label"])} <span aria-hidden="true">→</span></button>' for kind, entry in relations]
@@ -179,8 +186,9 @@ def render_card(item):
     images = item.get("images", [])
     if images:
         photo = images[0]
+        thumbnail_transform = (f'transform:scale({esc(photo["thumbnail_scale"])});' if photo.get("thumbnail_scale") else '')
         visual = f'''<button class="photo-open" type="button" aria-label="{esc(item['name'])} 사진과 상세 정보 보기">
-          <img src="../images/{esc(photo['file'])}" alt="{esc(photo['alt'])}" width="{photo['width']}" height="{photo['height']}" style="object-position:{esc(photo.get('thumbnail_position', '50% 50%'))}" loading="lazy" decoding="async"></button>'''
+          <img src="../images/{esc(photo['file'])}" alt="{esc(photo['alt'])}" width="{photo['width']}" height="{photo['height']}" style="{thumbnail_transform}object-position:{esc(photo.get('thumbnail_position', '50% 50%'))}" loading="lazy" decoding="async"></button>'''
         if photo['kind'] != '외관 사진':
             visual += f'<span class="photo-kind">{esc(photo["kind"])}</span>'
     else:
@@ -196,12 +204,12 @@ def render_card(item):
       <div class="card-body"><div class="card-heading"><{title_tag} id="title-{esc(item['id'])}">{esc(item['name'])}</{title_tag}>
         <button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{esc(tip_reason)}" aria-label="추천 등급: {esc(item['selection_suggestion'])}">{esc(item['selection_suggestion'])}</button></div>
         <p class="area">{esc(area_text)}</p>
-        {related_link}
+{related_link}
         {tag}
-        <p class="character">{esc(item['visual_character'])}</p>
+        <p class="character">{esc(item['visual_character'])}</p>{model_scope_note}
         {decision_note}
         <div class="card-actions"><details><summary>상세 정보 <svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></summary>
-          <div class="detail-body">{overview}{location_detail}{reason}{relation_detail}{appearance}{checked}
+          <div class="detail-body">{overview}{model_scope_detail}{location_detail}{reason}{relation_detail}{appearance}{checked}
             <h5>미확인 사항</h5><p>{esc(check['remaining'])}</p>
             <h5>검토 메모</h5><p>{esc(item['verification_notes'])}</p>
             <h5>출처</h5><ul class="sources">{sources}</ul>{render_image_gallery(images)}</div>
@@ -223,9 +231,16 @@ def build_research(root: Path, output_dir: Path, palette: str):
             if city_key != "riyadh" or kind == "building"
         )
         overview.append(f'<div class="city-overview"><a class="jump-link city-jump" href="#{section_id}">{city}</a><div class="hero-stats">{type_stats}</div></div>')
-        core = [c for c in items if c["phase_key"] != "extended"]
+        core = [c for c in items if c["phase_key"] == "phase-1"]
+        designated = [c for c in items if c["phase_key"] == "designated"]
         extended = [c for c in items if c["phase_key"] == "extended"]
         cards = "\n".join(render_card(c) for c in core)
+        designated_section = ""
+        if designated:
+            designated_cards = "\n".join(render_card(c) for c in designated)
+            designated_section = f'''<section class="scope-section" id="designated" aria-labelledby="heading-designated">
+              <header class="scope-head"><h3 id="heading-designated">별도 지정 <span class="scope-count">{len(designated)}</span></h3><span>King Fahd Road 주변 목록과 별도로 지정한 Phase 1 대상</span></header>
+              <div class="cards-grid">{designated_cards}</div></section>'''
         extended_section = ""
         if extended:
             extended_cards = "\n".join(render_card(c) for c in extended)
@@ -241,7 +256,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
             <div class="display-help"><button type="button" class="help-trigger" aria-label="{city} 표시 기준" aria-describedby="help-{section_id}"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
               <p class="help-tooltip" id="help-{section_id}" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 선정 상태 필터를 반영합니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
-          <div class="cards-grid">{cards}</div>{extended_section}<p class="section-empty" aria-live="polite"{empty}>아직 등록된 조사 항목이 없습니다.</p></section>''')
+          <div class="cards-grid">{cards}</div>{designated_section}{extended_section}<p class="section-empty" aria-live="polite"{empty}>아직 등록된 조사 항목이 없습니다.</p></section>''')
     replacements = {
         "{{PALETTE}}": palette, "{{TOTAL}}": str(len(candidates)),
         "{{REVIEW_COUNT}}": str(counts["review"]), "{{SELECTED_COUNT}}": str(counts["selected"]),
