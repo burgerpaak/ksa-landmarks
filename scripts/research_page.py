@@ -1,6 +1,7 @@
 """Render landmark research by city, independently of review status."""
 import html
 import json
+import shutil
 from pathlib import Path
 from urllib.parse import urlsplit, urlencode
 
@@ -214,6 +215,21 @@ def render_card(item):
             <h5>검토 메모</h5><p>{esc(item['verification_notes'])}</p>
             <h5>출처</h5><ul class="sources">{sources}</ul>{render_image_gallery(images)}</div>
         </details><div class="card-external-links">{map_control}{link(image_search_url, 'Google 이미지', 'image-search-link')}</div></div>
+        <section class="card-comments" aria-label="{esc(item['name'])} 코멘트" hidden>
+          <div class="comment-heading"><span class="comment-count" hidden></span>
+            <button class="comment-write" type="button" aria-expanded="false" aria-controls="comment-form-{esc(item['id'])}"><svg aria-hidden="true" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>코멘트 남기기</button></div>
+          <ul class="comment-list" hidden></ul>
+          <div class="comment-list-actions"><button class="comment-expand" type="button" aria-expanded="false" hidden></button><button class="comment-more comment-expand" type="button" hidden>이전 코멘트 더 보기</button></div>
+          <form class="comment-composer" id="comment-form-{esc(item['id'])}" hidden>
+            <div class="comment-identity" hidden><span>작성자: <span class="comment-identity-name"></span></span><button class="comment-author-change" type="button">변경</button></div>
+            <label class="comment-field comment-author-field">작성자<input name="author" autocomplete="name" placeholder="이름" maxlength="40" required></label>
+            <label class="comment-field">코멘트<textarea name="comment" placeholder="선정 의견이나 확인할 내용을 남겨주세요." maxlength="1000" aria-describedby="comment-note-{esc(item['id'])}" required></textarea></label>
+            <div class="comment-composer-actions"><span class="comment-storage-note" id="comment-note-{esc(item['id'])}">등록한 코멘트는 다른 방문자에게도 표시됩니다.</span>
+              <div class="comment-buttons"><button class="comment-cancel" type="button">취소</button><button class="comment-submit" type="submit" disabled>등록</button></div></div>
+          </form>
+          <p class="comment-feedback" aria-live="polite" hidden></p>
+          <button class="comment-retry comment-expand" type="button" hidden>다시 불러오기</button>
+        </section>
       </div>
     </article>'''
 
@@ -257,7 +273,10 @@ def build_research(root: Path, output_dir: Path, palette: str):
               <p class="help-tooltip" id="help-{section_id}" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 선정 상태 필터를 반영합니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
           <div class="cards-grid">{cards}</div>{designated_section}{extended_section}<p class="section-empty" aria-live="polite"{empty}>아직 등록된 조사 항목이 없습니다.</p></section>''')
+    config_path = root / "data/firebase.json"
+    firebase_config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
     replacements = {
+        "{{FIREBASE_CONFIG}}": json.dumps(firebase_config, ensure_ascii=False).replace("<", "\\u003c"),
         "{{PALETTE}}": palette, "{{TOTAL}}": str(len(candidates)),
         "{{REVIEW_COUNT}}": str(counts["review"]), "{{SELECTED_COUNT}}": str(counts["selected"]),
         "{{EXCLUDED_COUNT}}": str(counts["excluded"]), "{{CHECK_DATE}}": esc(date),
@@ -269,4 +288,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
     target = output_dir / "research/index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(page, encoding="utf-8")
+    assets_dir = output_dir / "assets"
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(root / "assets/research-comment-store.js", assets_dir / "research-comment-store.js")
     print(f"✓ {target.relative_to(root)} ({len(candidates)} research cards)")

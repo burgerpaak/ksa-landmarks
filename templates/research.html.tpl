@@ -20,17 +20,23 @@ button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
 a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 4px; }
 [hidden] { display: none !important; }
-.topbar { position: fixed; inset: 0 0 auto; height: var(--topbar-height); z-index: 100; display: flex; align-items: center; gap: 24px; padding: 0 24px; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--bg-elev) 94%, transparent); backdrop-filter: blur(12px); }
-.brand { display: flex; flex-direction: column; flex-shrink: 0; line-height: 1; }
-.brand-mark { font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
-.brand-meta { margin-top: 5px; font: 9.5px var(--mono); letter-spacing: .1em; color: var(--ink-mute); text-transform: uppercase; }
+.topbar { position: fixed; inset: 0 0 auto; height: var(--topbar-height); z-index: 100; display: flex; align-items: center; gap: 24px; padding: 0 24px; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--bg-elev) 94%, transparent); backdrop-filter: blur(12px); line-height: 1.55; user-select: none; -webkit-user-select: none; }
+.topbar input, .topbar textarea { user-select: text; -webkit-user-select: text; }
+.topbar a, .topbar svg { -webkit-user-drag: none; }
+.brand { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; flex-shrink: 0; line-height: 1; }
+.brand-mark { font-size: 17px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.brand-meta { margin-top: 3px; font-family: var(--mono); font-size: 9.5px; line-height: 1; letter-spacing: .1em; color: var(--ink-mute); text-transform: uppercase; }
 .topbar-nav { display: flex; gap: 4px; margin-inline: var(--nav-group-inset); flex-shrink: 0; }
 .topbar-nav a { position: relative; padding: 6px var(--nav-link-inset); border-radius: 6px; background: transparent; color: var(--ink-soft); font-size: 12.5px; font-weight: 500; transition: background 0.14s ease, color 0.14s ease; }
 .topbar-nav a.active { background: transparent; color: var(--ink); font-weight: 600; }
 .topbar-nav a:hover { background: var(--bg-sunken); color: var(--ink); }
 .topbar-nav a.active::after { content: ''; position: absolute; left: var(--nav-link-inset); right: var(--nav-link-inset); bottom: 0; height: 2px; border-radius: 1px; background: currentColor; }
 @media (max-width: 640px) { .topbar-nav { --nav-link-inset: 8px; --nav-group-inset: 0px; } }
-.theme-toggle { margin-left: auto; width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-elev); color: var(--ink-soft); font-size: 19px; }
+.theme-toggle { margin-left: auto; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-elev); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease; }
+.theme-toggle:hover { background: var(--bg-sunken); color: var(--ink); }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="light"] .moon-icon { display: none; }
+.moon-icon { transform: translate(1px, -1px); }
 .main { max-width: 1440px; padding: calc(var(--topbar-height) + 32px) 40px 80px; margin: auto; }
 .eyebrow { font-size: 11px; color: var(--accent); letter-spacing: .12em; margin-bottom: 12px; }
 .page-head { display: flex; gap: 24px; justify-content: space-between; align-items: center; margin-bottom: var(--research-section-inset); }
@@ -139,6 +145,38 @@ h1 em { font-style: normal; color: var(--accent); }
 .decision-note > span { color: var(--warning); margin-right: 7px; font-weight: 500; white-space: nowrap; }
 .card-actions { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;column-gap:12px;border-top:1px solid var(--border); }
 .card-actions details[open] { flex-basis:100%; }
+.card-comments { border-top: 1px solid var(--border); padding: 14px 0 16px; }
+.comment-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.comment-count { font-size: 11px; font-weight: 500; color: var(--ink-soft); }
+.comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-author-change { padding: 0; min-height: 28px; border: 0; background: transparent; font-size: 11px; color: var(--ink-soft); }
+.comment-write { display: flex; align-items: center; gap: 5px; }
+.comment-write svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.comment-write:hover, .comment-expand:hover, .comment-text-toggle:hover, .comment-cancel:hover, .comment-author-change:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.comment-list { list-style: none; display: grid; gap: 14px; margin-top: 12px; }
+.comment-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 10px; color: var(--ink-mute); }
+.comment-author { font-weight: 500; color: var(--ink-soft); overflow-wrap: anywhere; }
+.comment-text { margin-top: 5px; font-size: 12px; line-height: 1.7; color: var(--ink-soft); white-space: pre-wrap; overflow-wrap: anywhere; }
+.comment-text.is-collapsed { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.comment-text-toggle { min-height: 24px; }
+.comment-expand { margin-top: 8px; }
+.comment-list-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.comment-composer { display: grid; gap: 10px; margin-top: 12px; }
+.comment-identity { display: flex; align-items: center; gap: 12px; min-width: 0; font-size: 11px; color: var(--ink-soft); }
+.comment-identity > span { min-width: 0; overflow-wrap: anywhere; }
+.comment-identity-name { font-weight: 500; }
+.comment-author-change { flex-shrink: 0; color: var(--ink-mute); }
+.comment-field { display: grid; gap: 5px; color: var(--ink-soft); font-size: 11px; }
+.comment-field input, .comment-field textarea { width: 100%; min-width: 0; border: 1px solid var(--border); border-radius: 6px; padding: 9px 10px; background: var(--bg-elev); color: var(--ink); font: inherit; font-size: 12px; }
+.comment-field textarea { min-height: 84px; resize: vertical; line-height: 1.6; }
+.comment-field input::placeholder, .comment-field textarea::placeholder { color: var(--ink-mute); }
+.comment-field input:focus-visible, .comment-field textarea:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.comment-composer-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.comment-storage-note { font-size: 10px; color: var(--ink-mute); }
+.comment-buttons { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.comment-submit { border: 0; border-radius: 6px; padding: 7px 11px; background: var(--ink); color: var(--bg-elev); font-size: 11px; }
+.comment-submit:disabled { opacity: .35; cursor: default; }
+.comment-submit:not(:disabled):hover { opacity: .8; }
+.comment-feedback { margin-top: 8px; font-size: 10px; line-height: 1.6; color: var(--ink-mute); }
 summary { display: flex; align-items: center; gap: 9px; cursor: pointer; list-style: none; padding: 14px 0; font-size: 11px; font-weight: 500; color: var(--ink-soft); }
 summary::-webkit-details-marker { display: none; }
 .chevron { width: 15px; height: 15px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; transition: transform .15s; }
@@ -154,17 +192,19 @@ details[open] summary > .chevron { transform: rotate(180deg); }
 .section-empty { border: 1px dashed var(--border); border-radius: 9px; padding: 24px; color: var(--ink-mute); font-size: 12px; }
 .footer { color: var(--ink-mute); font-size: 10px; border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; }
 @media (max-width: 1000px) { .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 800px) {
- :root { --topbar-height: 112px; }
- .topbar { flex-wrap: wrap; align-content: center; gap: 8px 12px; }
- .topbar .search-wrap { order: 4; flex: 0 0 100%; max-width: none; }
+@media (max-width: 768px) {
+ .topbar { padding: 0 16px; gap: 12px; }
+ .search-wrap { display: none; }
 }
 @media (max-width: 640px) {
- .topbar { padding: 0 12px; gap: 10px; }
+ .topbar { padding: 0 10px; gap: 8px; }
  .brand-mark { font-size: 13px; } .brand-meta { font-size: 8px; }
  .topbar-nav { gap: 3px; } .topbar-nav a { padding: 6px 8px; font-size: 11px; }
  .theme-toggle { width: 30px; height: 30px; flex-shrink: 0; }
  .main { padding: calc(var(--topbar-height) + 24px) 20px 60px; }
+ .comment-field input, .comment-field textarea { font-size: 16px; }
+ .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
+ .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
  .page-head { display: block; } .check-date { margin-top: 10px; }
  .overview { flex-direction: column; align-items: flex-start; gap: 16px; }
  .city-overview + .city-overview { border-left: 0; padding-left: 0; }
@@ -176,8 +216,12 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .scope-section { margin-left: 0; padding-left: 10px; }
  .area { margin-top: 8px; } .character { font-size: 12px; }
 }
+@media (pointer: coarse) {
+ .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
+ .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
+}
 @media (max-width: 375px) {
- :root { --topbar-height: 144px; }
+ :root { --topbar-height: 96px; }
  .topbar { flex-wrap: wrap; align-content: center; gap: 8px 12px; }
  .topbar-nav { order: 3; flex-basis: 100%; justify-content: center; }
 }
@@ -188,10 +232,12 @@ details[open] summary > .chevron { transform: rotate(180deg); }
 html { scrollbar-gutter: stable; }
 .detail-panel-trigger { display:flex;align-items:center;gap:9px;border:0;background:transparent;padding:14px 0;font-size:11px;font-weight:500;color:var(--ink-soft); }
 .detail-panel-trigger svg { width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5; }
-.detail-panel { position:fixed;inset:0 0 0 auto;margin:0;width:min(480px,100vw);height:100dvh;max-width:100vw;max-height:100dvh;border:0;border-left:1px solid var(--border);background:var(--bg-elev);color:var(--ink);padding:0;box-shadow:-12px 0 48px #0e131b20;overflow:hidden; }
-.detail-panel[open] { padding-top:64px;display:flex;flex-direction:column;animation:panel-in .2s ease-out; }
+.detail-panel { position:fixed;inset:0 0 0 auto;margin:0;width:min(480px,100vw);height:100vh;height:100dvh;max-width:100vw;max-height:100vh;max-height:100dvh;border:0;border-left:1px solid var(--border);background:var(--bg-elev);color:var(--ink);padding:0;box-shadow:-12px 0 48px #0e131b20;overflow:hidden; }
+.detail-panel[open] { display:flex;flex-direction:column;animation:panel-in .2s ease-out; }
 .detail-panel::backdrop { background:rgb(14 19 27 / .12); }
-.panel-close { position:absolute;top:18px;right:24px;z-index:2;width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elev);color:var(--ink-soft);display:grid;place-items:center; }
+.panel-toolbar { flex-shrink:0;min-height:64px;display:flex;justify-content:flex-end;align-items:center;padding:14px 24px; }
+.panel-close { flex-shrink:0;width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elev);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;gap:6px; }
+.panel-close:hover { background:var(--bg-sunken);color:var(--ink); }
 .panel-close svg { width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5; }
 .panel-content { flex:1;min-height:0;padding:8px 24px 24px;overflow:auto;overscroll-behavior:contain; }
 .panel-heading { display:flex;align-items:center;gap:12px; }
@@ -222,7 +268,13 @@ html { scrollbar-gutter: stable; }
 .lightbox-caption { grid-column:1 / -1;text-align:center;font-size:12px;line-height:1.6;max-height:18dvh;overflow:auto; }
 .lightbox-count { display:block;color:#cbd0d8;margin-bottom:4px; }
 @media(max-width:640px) { .photo-lightbox[open] { padding:64px 12px 16px;grid-template-columns:44px minmax(0,1fr) 44px;grid-template-rows:minmax(0,1fr) 44px auto;gap:10px; } .lightbox-image { grid-column:1 / -1; } .lightbox-prev { grid-row:2; } .lightbox-next { grid-row:2; } .lightbox-caption { grid-row:3; } .photo-lightbox.single-photo { grid-template-rows:minmax(0,1fr) auto; } .single-photo .lightbox-caption { grid-row:2; } }
-@media(max-width:640px) { .detail-panel { width:100vw;border:0; } .panel-content { padding:8px 20px 20px; } .panel-close { top:16px;right:20px; } }
+@media(max-width:640px) {
+ .detail-panel { inset:0;width:100%;max-width:none;border:0; }
+ .detail-panel[open] { animation:none; }
+ .panel-toolbar { padding:calc(10px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 10px 20px; }
+ .panel-content { padding:8px 20px calc(20px + env(safe-area-inset-bottom, 0px)); }
+ .panel-close { width:44px;height:44px;padding:0;border:0;background:var(--bg-sunken); }
+}
 @media(prefers-reduced-motion:reduce) { .detail-panel[open] { animation:none; } }
 </style>
 </head>
@@ -236,7 +288,10 @@ html { scrollbar-gutter: stable; }
   <span class="search-kbd" aria-hidden="true">⌘K</span>
   <button type="button" class="search-clear" aria-label="검색어 지우기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 4L10 10M10 4L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
  </div>
- <button class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환" aria-pressed="false">◐</button>
+ <button class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환" aria-pressed="false">
+      <svg aria-hidden="true" class="sun-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <svg aria-hidden="true" class="moon-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 9.5A6 6 0 1 1 6.5 3a4.5 4.5 0 0 0 6.5 6.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+ </button>
 </header>
 <main class="main">
  <div class="page-head"><div><p class="eyebrow">SAUDI ARABIA · NEW LANDMARKS</p><h1>Landmark <em>Research</em></h1><p class="page-sub">신규 랜드마크 후보의 외형 특징과 조사 자료를 지역별로 모았습니다.</p></div><p class="check-date">자료 점검 {{CHECK_DATE}}</p></div>
@@ -364,7 +419,7 @@ html { scrollbar-gutter: stable; }
 })();
 </script>
 <dialog class="detail-panel" id="research-detail-panel" aria-labelledby="panel-title">
- <button class="panel-close" type="button" aria-label="상세 패널 닫기" autofocus><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 3 10 10M13 3 3 13"/></svg></button>
+ <div class="panel-toolbar"><button class="panel-close" type="button" aria-label="상세 패널 닫기" autofocus><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 3 10 10M13 3 3 13"/></svg></button></div>
  <div class="panel-content"></div>
 </dialog>
 <dialog class="photo-lightbox" id="research-lightbox" aria-label="랜드마크 사진 크게 보기">
@@ -453,5 +508,201 @@ html { scrollbar-gutter: stable; }
 })();
 </script>
 
+<script id="research-firebase-config" type="application/json">{{FIREBASE_CONFIG}}</script>
+<script type="module">
+import {createCommentStore, commentErrorMessage} from '../assets/research-comment-store.js';
+(() => {
+ const topbar = document.querySelector('.topbar');
+ topbar.querySelectorAll('a').forEach(link => { link.draggable = false; });
+ topbar.addEventListener('dragstart', event => {
+  if (!event.target.closest('input, textarea')) event.preventDefault();
+ });
+
+ const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
+ const cardControls = new Map();
+ const commentsObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting && !entry.target.hidden) cardControls.get(entry.target)?.load();
+  });
+ }, {rootMargin: '200px 0px'}) : null;
+ const authorStorageKey = 'ksa-comment-author';
+ function normalizeAuthor(value) { return typeof value === 'string' ? value.trim().slice(0, 40) : ''; }
+ let rememberedAuthor = '';
+ try { rememberedAuthor = normalizeAuthor(localStorage.getItem(authorStorageKey)); } catch (_) {}
+ const authorControls = [];
+ function rememberAuthor(value) {
+  const name = normalizeAuthor(value);
+  if (!name) return;
+  rememberedAuthor = name;
+  try { localStorage.setItem(authorStorageKey, name); } catch (_) {}
+  authorControls.forEach(control => control.refresh());
+ }
+ window.addEventListener('storage', event => {
+  if (event.key !== authorStorageKey && event.key !== null) return;
+  rememberedAuthor = normalizeAuthor(event.key === null ? null : event.newValue);
+  authorControls.forEach(control => control.refresh());
+ });
+ const textChecks = new Map();
+ const dateFormat = new Intl.DateTimeFormat('ko-KR', {month: '2-digit', day: '2-digit'});
+ function checkText(card) {
+  if (card.hidden || !card.getBoundingClientRect().width) return;
+  (textChecks.get(card) || []).forEach(({text, toggle}) => {
+   toggle.hidden = text.classList.contains('is-collapsed') && text.scrollHeight <= text.clientHeight + 1;
+  });
+ }
+ const resizeObserver = typeof ResizeObserver === 'function' ? new ResizeObserver(entries => {
+  requestAnimationFrame(() => entries.forEach(entry => checkText(entry.target)));
+ }) : null;
+ document.querySelectorAll('.research-card').forEach(card => {
+  const section = card.querySelector('.card-comments');
+  const form = section.querySelector('.comment-composer');
+  const author = form.elements.namedItem('author');
+  const authorField = form.querySelector('.comment-author-field');
+  const identity = form.querySelector('.comment-identity');
+  const identityName = form.querySelector('.comment-identity-name');
+  const changeAuthor = form.querySelector('.comment-author-change');
+  const message = form.elements.namedItem('comment');
+  const write = section.querySelector('.comment-write');
+  const submit = section.querySelector('.comment-submit');
+  const count = section.querySelector('.comment-count');
+  const list = section.querySelector('.comment-list');
+  const expand = section.querySelector('.comment-list-actions .comment-expand');
+  const more = section.querySelector('.comment-more');
+  const retry = section.querySelector('.comment-retry');
+  const cancel = section.querySelector('.comment-cancel');
+  const feedback = section.querySelector('.comment-feedback');
+  list.id = `comment-list-${card.id}`;
+  expand.setAttribute('aria-controls', list.id);
+  let comments = [], total = 0, loaded = false, loading = false, revision = 0;
+  let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
+  let attempt = null;
+  let expanded = false;
+  let editingAuthor = false;
+  function updateSubmit() { submit.disabled = submitting || paging || !store.configured || !author.value.trim() || !message.value.trim(); }
+  function refreshAuthor() {
+   identityName.textContent = rememberedAuthor;
+   if (!editingAuthor) author.value = rememberedAuthor;
+   authorField.hidden = !!rememberedAuthor && !editingAuthor;
+   identity.hidden = !rememberedAuthor || editingAuthor;
+   updateSubmit();
+  }
+  authorControls.push({refresh: refreshAuthor});
+  refreshAuthor();
+  async function load(force = false) {
+   if (loading || submitting || paging || (loaded && !force) || !store.configured) return;
+   loading = true;
+   const startedAt = revision;
+   try {
+    const result = await store.recent(card.id);
+    if (!pageLoaded) {
+     comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
+    }
+    total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = true;
+    retry.hidden = true; feedback.hidden = true; render();
+   } catch (error) {
+    feedback.textContent = commentErrorMessage(error); feedback.hidden = false; retry.hidden = false;
+   } finally { loading = false; }
+  }
+  function render() {
+   count.hidden = total === 0;
+   count.textContent = `코멘트 ${total}`;
+   list.hidden = comments.length === 0;
+   list.replaceChildren();
+   const checks = [];
+   (expanded ? comments : comments.slice(0, 2)).forEach(comment => {
+    const item = document.createElement('li');
+    const meta = document.createElement('div'); meta.className = 'comment-meta';
+    const name = document.createElement('span'); name.className = 'comment-author'; name.textContent = comment.author;
+    const date = document.createElement('time'); date.dateTime = comment.createdAt; date.textContent = dateFormat.format(new Date(comment.createdAt));
+    const text = document.createElement('p'); text.className = 'comment-text is-collapsed'; text.id = comment.id; text.textContent = comment.text;
+    const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'comment-text-toggle'; toggle.textContent = '더 보기'; toggle.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', text.id);
+    toggle.addEventListener('click', () => {
+     const collapsed = text.classList.toggle('is-collapsed');
+     toggle.textContent = collapsed ? '더 보기' : '접기';
+     toggle.setAttribute('aria-expanded', String(!collapsed));
+    });
+    meta.append(name, date); item.append(meta, text, toggle); list.append(item);
+    checks.push({text, toggle});
+   });
+   textChecks.set(card, checks);
+   expand.hidden = total <= 2;
+   expand.textContent = expanded ? '접기' : `전체 코멘트 ${total}개 보기`;
+   expand.setAttribute('aria-expanded', String(expanded));
+   more.hidden = !expanded || !hasMore;
+   requestAnimationFrame(() => checkText(card));
+  }
+  function compose(open) {
+   form.hidden = !open; write.hidden = open; write.setAttribute('aria-expanded', String(open));
+   if (open) {
+    feedback.hidden = true; refreshAuthor(); load();
+    if (!store.configured) { feedback.textContent = '코멘트 저장소 연결 준비 중입니다.'; feedback.hidden = false; }
+    (authorField.hidden ? message : author).focus({preventScroll: true});
+   } else { editingAuthor = false; refreshAuthor(); write.focus({preventScroll: true}); }
+  }
+  changeAuthor.addEventListener('click', () => {
+   editingAuthor = true; refreshAuthor(); author.focus({preventScroll: true}); author.select();
+  });
+  author.addEventListener('change', () => {
+   // Keep the field visible until the next open, so editing does not move focus.
+   if (normalizeAuthor(author.value)) { editingAuthor = true; rememberAuthor(author.value); }
+  });
+  write.addEventListener('click', () => compose(true));
+  cancel.addEventListener('click', () => {
+   if (submitting) return;
+   rememberAuthor(author.value); message.value = ''; attempt = null; compose(false);
+  });
+  form.addEventListener('input', updateSubmit);
+  form.addEventListener('submit', async event => {
+   event.preventDefault();
+   const name = author.value.trim(), text = message.value.trim();
+   if (submitting || paging || !store.configured || !name || !text || !form.reportValidity()) return;
+   if (!attempt || attempt.author !== name || attempt.text !== text) {
+    attempt = {id: crypto.randomUUID(), author: name, text};
+   }
+   rememberAuthor(name);
+   submitting = true; submit.textContent = '등록 중…'; updateSubmit();
+   author.disabled = message.disabled = cancel.disabled = changeAuthor.disabled = true;
+   form.setAttribute('aria-busy', 'true'); feedback.hidden = true;
+   try {
+    const {comment, total: confirmedTotal} = await store.add(card.id, attempt);
+    revision += 1;
+    const alreadyShown = comments.some(existing => existing.id === comment.id);
+    comments = [comment, ...comments.filter(existing => existing.id !== comment.id)];
+    if (confirmedTotal !== null) total = confirmedTotal;
+    else if (!alreadyShown) total += 1;
+    message.value = ''; attempt = null; render(); compose(false);
+    feedback.textContent = '코멘트를 등록했습니다.'; feedback.hidden = false;
+   } catch (error) {
+    feedback.textContent = commentErrorMessage(error, 'save'); feedback.hidden = false;
+   } finally {
+    submitting = false; submit.textContent = '등록';
+    author.disabled = message.disabled = cancel.disabled = changeAuthor.disabled = false;
+    form.removeAttribute('aria-busy'); updateSubmit();
+   }
+  });
+  async function loadPage() {
+   if (paging || submitting) return;
+   paging = true; expand.disabled = more.disabled = true; updateSubmit();
+   try {
+    const result = await store.page(card.id, pageLoaded ? cursor : null);
+    comments = pageLoaded ? [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()] : result.comments;
+    cursor = result.cursor; hasMore = result.hasMore; pageLoaded = true; expanded = true;
+    feedback.hidden = true; render();
+   } catch (error) { feedback.textContent = commentErrorMessage(error); feedback.hidden = false; }
+   finally { paging = false; expand.disabled = more.disabled = false; updateSubmit(); }
+  }
+  expand.addEventListener('click', () => {
+   if (expanded || pageLoaded) { expanded = !expanded; render(); } else loadPage();
+  });
+  more.addEventListener('click', loadPage);
+  retry.addEventListener('click', () => load(true));
+  cardControls.set(card, {load}); commentsObserver?.observe(card);
+  if (!commentsObserver) load();
+  render(); section.hidden = false; resizeObserver?.observe(card);
+ });
+ if (!resizeObserver) window.addEventListener('resize', () => textChecks.forEach((_, card) => checkText(card)));
+})();
+</script>
 </body>
 </html>

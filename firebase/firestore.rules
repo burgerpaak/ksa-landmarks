@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function validLandmark(id) {
+      return id.matches('^(N|J)[0-9]{2}$');
+    }
+    function validComment(data) {
+      return request.auth != null
+        && data.keys().hasAll(['author', 'body', 'authorId', 'createdAt'])
+        && data.keys().hasOnly(['author', 'body', 'authorId', 'createdAt'])
+        && data.author is string && data.author.size() > 0 && data.author.size() <= 40
+        && data.author.matches('.*[^\\s].*')
+        && data.body is string && data.body.size() > 0 && data.body.size() <= 1000
+        && data.body.matches('(?s).*[^\\s].*')
+        && data.authorId == request.auth.uid
+        && data.createdAt == request.time;
+    }
+    function writerPath(uid) {
+      return /databases/$(database)/documents/commentWriters/$(uid);
+    }
+    function canPost(uid) {
+      return !exists(writerPath(uid))
+        || request.time >= get(writerPath(uid)).data.lastCreatedAt + duration.value(10, 's');
+    }
+    match /landmarkComments/{landmarkId}/comments/{commentId} {
+      allow read: if validLandmark(landmarkId);
+      allow create: if validLandmark(landmarkId) && validComment(request.resource.data)
+        && canPost(request.auth.uid)
+        && getAfter(writerPath(request.auth.uid)).data.lastCreatedAt == request.time
+        && getAfter(writerPath(request.auth.uid)).data.lastCommentId == commentId
+        && getAfter(writerPath(request.auth.uid)).data.lastLandmarkId == landmarkId;
+      allow update, delete: if false;
+    }
+    match /commentWriters/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasAll(['lastCreatedAt', 'lastCommentId', 'lastLandmarkId'])
+        && request.resource.data.keys().hasOnly(['lastCreatedAt', 'lastCommentId', 'lastLandmarkId'])
+        && request.resource.data.lastCreatedAt == request.time
+        && validLandmark(request.resource.data.lastLandmarkId)
+        && request.resource.data.lastCommentId is string
+        && canPost(uid)
+        && getAfter(/databases/$(database)/documents/landmarkComments/$(request.resource.data.lastLandmarkId)/comments/$(request.resource.data.lastCommentId)).data.authorId == uid
+        && getAfter(/databases/$(database)/documents/landmarkComments/$(request.resource.data.lastLandmarkId)/comments/$(request.resource.data.lastCommentId)).data.createdAt == request.time;
+      allow list, delete: if false;
+    }
+  }
+}

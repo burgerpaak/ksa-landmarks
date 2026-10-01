@@ -118,3 +118,35 @@ data/ 또는 templates/ 변경 시 자동 재빌드.
 
 `Archive_901/`은 Git에서 제외된 로컬 원본입니다. 이 폴더가 없는 환경에서는
 `docs/progress/assets/archive/`의 배포용 모델로 아카이브 페이지를 재생성합니다.
+
+## Research 코멘트 저장
+
+Firebase 프로젝트 `ksa-landmarks-comments-8dec4`의 Spark 요금제와 서울
+(`asia-northeast3`) Firestore 기본 데이터베이스를 사용합니다.
+방문자에게 가입 화면을 표시하지 않고, 등록할 때 Firebase 익명 인증을 사용합니다.
+표시 이름은 같은 브라우저의 localStorage에 기억합니다. 이름은 본인 확인 정보가 아닙니다.
+
+- `data/firebase.json`: 공개 웹 앱 구성. 서비스 계정 키를 넣지 않습니다.
+- `assets/research-comment-store.js`: 저장·조회 모듈. 빌드 시 `docs/assets/`에 복사합니다.
+- `firebase/firestore.rules`: 콘솔에 적용한 보안 규칙 원본. 파일 수정만으로 서버 규칙이 바뀌지는 않습니다.
+- 코멘트 경로: `landmarkComments/{카드 ID}/comments/{코멘트 ID}`.
+  작성자·본문·익명 작성자 ID·서버 등록 시각을 저장합니다.
+- 등록 제한 기록: `commentWriters/{익명 작성자 ID}`. 동일 ID는 10초 간격으로 등록합니다.
+  다른 방문자의 기록은 읽을 수 없고, 일반 방문자의 코멘트 수정·삭제는 허용하지 않습니다.
+
+화면에 가까운 카드의 최근 두 개와 건수를 조회하고, 전체 보기에서는 20개씩 불러옵니다.
+실시간 구독은 사용하지 않으므로 다른 사람이 새로 남긴 코멘트는 새로고침 후 확인합니다.
+통신 실패 시 본문을 유지하며, 같은 등록 ID로 재시도해 중복 저장을 방지합니다.
+코멘트에 만료 시간은 설정하지 않았습니다. 브라우저 데이터를 지워도 서버 코멘트는 유지됩니다.
+
+[Firebase 콘솔](https://console.firebase.google.com/project/ksa-landmarks-comments-8dec4/firestore)
+에서 데이터·규칙·사용량을 관리합니다. 코멘트는 공개 조회용입니다.
+익명 ID에 대한 입력 제한은 완전한 스팸 방어가 아니며, 표시 이름의 진위는 검증하지 않습니다.
+무료 한도는 [Firestore 할당량](https://firebase.google.com/docs/firestore/quotas)을 따릅니다.
+유료 Blaze 요금제와 예약 백업은 사용 설정하지 않았습니다.
+
+2026-10-01 연결 검증: 실제 저장·공개 재조회·건수 조회,
+인증 없는 쓰기·작성자 ID 위조·추가 필드·빈 입력·길이 초과·잘못된 경로·연속 등록·수정 차단을 확인했습니다.
+브라우저에서 등록·새로고침 유지·별도 origin 조회·취소·작성자 이름 기억·전체 보기와 안전한 텍스트 출력을 확인했습니다.
+검증 데이터는 실제 목록에 없는 `N99`에만 저장했습니다.
+웹사이트 배포는 별도 승인 후 진행합니다.
