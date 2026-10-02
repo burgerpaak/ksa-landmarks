@@ -13,6 +13,23 @@
 
 {{PALETTE}}
 
+/* Cross-page fade: the shared header stays in place. */
+@view-transition { navigation: auto; }
+.topbar { view-transition-name: site-header; }
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 180ms;
+  animation-timing-function: ease-out;
+}
+::view-transition-group(site-header),
+::view-transition-new(site-header) { animation: none; }
+::view-transition-old(site-header) { display: none; }
+::view-transition-new(site-header) { mix-blend-mode: normal; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -587,8 +604,11 @@ a.brand:hover { opacity: 0.65; }
     }
     function afterArrival(){ requestAnimationFrame(highlightArrival); }
     window.addEventListener('hashchange', afterArrival);
-    if (document.readyState === 'complete') afterArrival();
-    else window.addEventListener('load', afterArrival, { once: true });
+    // Cards are already parsed here. Align before the first page snapshot,
+    // without waiting for images or model-viewer; preserve history scroll.
+    if (performance.getEntriesByType('navigation')[0]?.type !== 'back_forward') {
+      highlightArrival();
+    }
   })();
 
   // ─── SEARCH ───

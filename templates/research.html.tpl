@@ -10,6 +10,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 {{PALETTE}}
+/* Cross-page fade: the shared header stays in place. */
+@view-transition { navigation: auto; }
+.topbar { view-transition-name: site-header; }
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 180ms;
+  animation-timing-function: ease-out;
+}
+::view-transition-group(site-header),
+::view-transition-new(site-header) { animation: none; }
+::view-transition-old(site-header) { display: none; }
+::view-transition-new(site-header) { mix-blend-mode: normal; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
 /* Section spacing ownership: see UI_LAYOUT.md. Controls belong to each city header. */
 :root { --research-section-inset: 24px; --research-section-gap: 28px; }
 * { box-sizing: border-box; margin: 0; padding: 0; }

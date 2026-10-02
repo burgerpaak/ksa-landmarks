@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-02",
   "scope": "Jeddah 후보 25건 · 로컬 검토용 이미지",
   "candidates": {
     "J01": [
@@ -149,6 +149,25 @@
       }
     ],
     "J07": [
+      {
+        "file": "research-j07-user-20261002-01.png",
+        "width": 615,
+        "height": 410,
+        "alt": "Islamic Development Bank Headquarters · 중앙 개구부와 전면 열주가 보이는 정면",
+        "caption": "사용자 제공 사진. Islamic Development Bank 본사의 중앙 개구부와 전면 열주가 보이는 정면.",
+        "kind": "외관 사진",
+        "source": "사용자 제공 · 원출처 미확인",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-02",
+        "processing": "제공 파일 그대로 저장 · 크롭 없음 · 썸네일만 화면 크롭",
+        "sha256": "0be8a4480989aee67c0cd7e0a9450028b9c8464d2956e0ac0d854f7b7b5186c2",
+        "thumbnail_position": "50% 50%"
+      },
       {
         "file": "research-j07-01.webp",
         "width": 760,
