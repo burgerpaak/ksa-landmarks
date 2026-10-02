@@ -170,6 +170,12 @@ def render_card(item):
     overview = f'<section class="landmark-intro"><h5>랜드마크 소개</h5><p>{esc(item["overview"])}</p></section>'
     model_scope = item.get("model_scope")
     model_scope_note = (f'<p class="model-scope-note">{esc(model_scope["summary"])}</p>' if model_scope else '')
+    if model_scope and model_scope.get("files_url"):
+        label, separator, scope = model_scope["summary"].partition(":")
+        if separator:
+            model_scope_note = (f'<p class="model-scope-note"><a class="model-scope-link" '
+                                f'href="{esc(model_scope["files_url"])}">{esc(label)} '
+                                f'<span aria-hidden="true">→</span></a> {esc(scope.strip())}</p>')
     model_scope_detail = (f'<section class="model-scope"><h5>기존 모델과의 관계</h5>'
                           f'<p>{esc(model_scope["detail"])}</p></section>' if model_scope else '')
     relations = [("연결 건물", item["connected_building"])] if item.get("connected_building") else []

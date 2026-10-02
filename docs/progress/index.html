@@ -325,13 +325,35 @@ a.brand:hover { opacity: 0.65; }
 }
 
 .file-card {
+  scroll-margin-top: calc(var(--topbar-height) + 16px);
   background: var(--bg-elev);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
   display: flex;
   flex-direction: column;
+}
+.file-card.card--selected {
+  border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent),
+              var(--shadow-md);
+}
+.file-card.card--selected:hover {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 22%, transparent),
+              0 8px 24px rgba(15, 25, 40, 0.05);
+}
+@keyframes cardPick {
+  0%, 55% {
+    border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent), var(--shadow-md);
+  }
+  100% { border-color: var(--border); box-shadow: var(--shadow-sm); }
+}
+.card--just-picked { animation: cardPick 1.8s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .card--just-picked { animation: none; }
 }
 
 .fc-head {
@@ -574,7 +596,7 @@ a.brand:hover { opacity: 0.65; }
   <nav class="reference-entries" aria-label="참조 자료"><a class="balady-entry" href="balady.html"><span class="balady-entry-text"><span class="balady-entry-title">Balady+ 참조 모델</span><span class="balady-entry-sub">MOMRAH/Balady 기존 3D 자산 50종</span></span><span class="balady-entry-arrow">→</span></a><a class="balady-entry" href="archive.html"><span class="balady-entry-text"><span class="balady-entry-title">Balady 아카이브</span><span class="balady-entry-sub">카탈로그 외 원본 자산 62종 · 83개 파일</span></span><span class="balady-entry-arrow">→</span></a></nav>
 <section class="files-section"><div class="files-section-head"><h2 class="files-section-title">작업 파일</h2><span class="work-count" aria-live="polite">32건 · 98개 파일</span><span class="files-section-sub">팀이 제작 중인 3D 모델 · 캡처</span></div><div class="files-grid">
 
-<article class="file-card" data-search="national museum of saudi arabia 01 1 riyadh museum ksa-01_national-museum.glb">
+<article class="file-card" id="file-01" data-search="national museum of saudi arabia 01 1 riyadh museum ksa-01_national-museum.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 01</span>
@@ -588,7 +610,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/01-1.png" alt="National Museum of Saudi Arabia" loading="lazy"><a class="shot-dl" href="assets/01-1.png" download title="01-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/01-2.png" alt="National Museum of Saudi Arabia" loading="lazy"><a class="shot-dl" href="assets/01-2.png" download title="01-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="murabba palace 02 2 riyadh heritage ksa-02_murabba-palace.glb">
+<article class="file-card" id="file-02" data-search="murabba palace 02 2 riyadh heritage ksa-02_murabba-palace.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 02</span>
@@ -602,7 +624,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/02-1.png" alt="Murabba Palace" loading="lazy"><a class="shot-dl" href="assets/02-1.png" download title="02-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/02-2.png" alt="Murabba Palace" loading="lazy"><a class="shot-dl" href="assets/02-2.png" download title="02-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="kingdom arena 03 3 riyadh stadium ksa-03_kingdom-arena.glb">
+<article class="file-card" id="file-03" data-search="kingdom arena 03 3 riyadh stadium ksa-03_kingdom-arena.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 03</span>
@@ -616,7 +638,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/03-1png.png" alt="Kingdom Arena" loading="lazy"><a class="shot-dl" href="assets/03-1png.png" download title="03-1png.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/03-2.png" alt="Kingdom Arena" loading="lazy"><a class="shot-dl" href="assets/03-2.png" download title="03-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king saud university stadium (alawwal park) 04 4 riyadh stadium ksa-04_ksu-stadium.glb">
+<article class="file-card" id="file-04" data-search="king saud university stadium (alawwal park) 04 4 riyadh stadium ksa-04_ksu-stadium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 04</span>
@@ -630,7 +652,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/04-1.png" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><a class="shot-dl" href="assets/04-1.png" download title="04-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/04-2.png" alt="King Saud University Stadium (Alawwal Park)" loading="lazy"><a class="shot-dl" href="assets/04-2.png" download title="04-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="imam muhammad ibn saud islamic university football stadium 05 5 riyadh stadium ksa-05_imam-muhammad-stadium.glb">
+<article class="file-card" id="file-05" data-search="imam muhammad ibn saud islamic university football stadium 05 5 riyadh stadium ksa-05_imam-muhammad-stadium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 05</span>
@@ -644,7 +666,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/05-1.png" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><a class="shot-dl" href="assets/05-1.png" download title="05-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/05-2.png" alt="Imam Muhammad Ibn Saud Islamic University Football Stadium" loading="lazy"><a class="shot-dl" href="assets/05-2.png" download title="05-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al shabab stadium 06 6 riyadh stadium ksa-06_al-shabab-stadium.glb">
+<article class="file-card" id="file-06" data-search="al shabab stadium 06 6 riyadh stadium ksa-06_al-shabab-stadium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 06</span>
@@ -658,7 +680,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/06-1.png" alt="Al Shabab Stadium" loading="lazy"><a class="shot-dl" href="assets/06-1.png" download title="06-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/06-2.png" alt="Al Shabab Stadium" loading="lazy"><a class="shot-dl" href="assets/06-2.png" download title="06-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="nassif house (bayt nassif) 07 7 jeddah heritage ksa-07_nassif-house-tex.glb ksa-07_nassif-house.glb">
+<article class="file-card" id="file-07" data-search="nassif house (bayt nassif) 07 7 jeddah heritage ksa-07_nassif-house-tex.glb ksa-07_nassif-house.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 07</span>
@@ -672,7 +694,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/07-1.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-1.png" download title="07-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/07-2.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-2.png" download title="07-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/07-3.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-3.png" download title="07-3.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/07-4.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-4.png" download title="07-4.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/07-5.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-5.png" download title="07-5.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/07-6.png" alt="Nassif House (Bayt Nassif)" loading="lazy"><a class="shot-dl" href="assets/07-6.png" download title="07-6.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al rahma mosque (floating mosque) 08 8 jeddah mosque ksa-08_al-rahma-mosque.glb">
+<article class="file-card" id="file-08" data-search="al rahma mosque (floating mosque) 08 8 jeddah mosque ksa-08_al-rahma-mosque.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 08</span>
@@ -686,7 +708,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/08-1.png" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><a class="shot-dl" href="assets/08-1.png" download title="08-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/08-2.png" alt="Al Rahma Mosque (Floating Mosque)" loading="lazy"><a class="shot-dl" href="assets/08-2.png" download title="08-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="prince abdullah al faisal sports city stadium 09 9 jeddah stadium ksa-09_prince-abdullah-stadium.glb">
+<article class="file-card" id="file-09" data-search="prince abdullah al faisal sports city stadium 09 9 jeddah stadium ksa-09_prince-abdullah-stadium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 09</span>
@@ -700,7 +722,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/09-1.png" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><a class="shot-dl" href="assets/09-1.png" download title="09-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/09-2.png" alt="Prince Abdullah Al Faisal Sports City Stadium" loading="lazy"><a class="shot-dl" href="assets/09-2.png" download title="09-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al khobar new stadium (aramco stadium) 10 10 al khobar stadium ksa-10_aramco-stadium.glb">
+<article class="file-card" id="file-10" data-search="al khobar new stadium (aramco stadium) 10 10 al khobar stadium ksa-10_aramco-stadium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-1"></span>
     <span class="fc-num">№ 10</span>
@@ -714,7 +736,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/10-1.png" alt="AL KHOBAR New Stadium (Aramco Stadium)" loading="lazy"><a class="shot-dl" href="assets/10-1.png" download title="10-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="salam park 12 12 riyadh park ksa-12_salam-park.glb">
+<article class="file-card" id="file-12" data-search="salam park 12 12 riyadh park ksa-12_salam-park.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 12</span>
@@ -728,7 +750,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/12-1.png" alt="Salam Park" loading="lazy"><a class="shot-dl" href="assets/12-1.png" download title="12-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/12-2.png" alt="Salam Park" loading="lazy"><a class="shot-dl" href="assets/12-2.png" download title="12-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king fahad national library 13 13 riyadh museum ksa-13_king-fahad-library.glb">
+<article class="file-card" id="file-13" data-search="king fahad national library 13 13 riyadh museum ksa-13_king-fahad-library.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 13</span>
@@ -742,7 +764,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/13-1.png" alt="King Fahad National Library" loading="lazy"><a class="shot-dl" href="assets/13-1.png" download title="13-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="six flags qiddiya city 14 14 riyadh resort ksa-14_six-flags-qiddiya.glb">
+<article class="file-card" id="file-14" data-search="six flags qiddiya city 14 14 riyadh resort ksa-14_six-flags-qiddiya.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 14</span>
@@ -756,7 +778,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/14-1.png" alt="Six Flags Qiddiya City" loading="lazy"><a class="shot-dl" href="assets/14-1.png" download title="14-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/14-2.png" alt="Six Flags Qiddiya City" loading="lazy"><a class="shot-dl" href="assets/14-2.png" download title="14-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king khalid international airport 15 15 riyadh infra ksa-15_king-khalid-airport.glb">
+<article class="file-card" id="file-15" data-search="king khalid international airport 15 15 riyadh infra ksa-15_king-khalid-airport.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 15</span>
@@ -770,7 +792,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/15-1.png" alt="King Khalid International Airport" loading="lazy"><a class="shot-dl" href="assets/15-1.png" download title="15-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/15-2.png" alt="King Khalid International Airport" loading="lazy"><a class="shot-dl" href="assets/15-2.png" download title="15-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/15-3.png" alt="King Khalid International Airport" loading="lazy"><a class="shot-dl" href="assets/15-3.png" download title="15-3.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king saud university 17 17 riyadh edu ksa-17_king-saud-university.glb">
+<article class="file-card" id="file-17" data-search="king saud university 17 17 riyadh edu ksa-17_king-saud-university.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 17</span>
@@ -784,7 +806,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/17-1.png" alt="King Saud University" loading="lazy"><a class="shot-dl" href="assets/17-1.png" download title="17-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/17-2.png" alt="King Saud University" loading="lazy"><a class="shot-dl" href="assets/17-2.png" download title="17-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="princess nourah bint abdulrahman university 18 18 riyadh edu ksa-18_princess-nourah-university.glb">
+<article class="file-card" id="file-18" data-search="princess nourah bint abdulrahman university 18 18 riyadh edu ksa-18_princess-nourah-university.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 18</span>
@@ -798,7 +820,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/18-1.png" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><a class="shot-dl" href="assets/18-1.png" download title="18-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/18-2.png" alt="Princess Nourah Bint Abdulrahman University" loading="lazy"><a class="shot-dl" href="assets/18-2.png" download title="18-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="riyadh golf club 19 19 riyadh park ksa-19_riyadh-golf-club.glb">
+<article class="file-card" id="file-19" data-search="riyadh golf club 19 19 riyadh park ksa-19_riyadh-golf-club.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 19</span>
@@ -812,7 +834,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/19-1.png" alt="Riyadh Golf Club" loading="lazy"><a class="shot-dl" href="assets/19-1.png" download title="19-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="kafd metro station 20 20 riyadh infra ksa-20_kafd-metro-station.glb">
+<article class="file-card" id="file-20" data-search="kafd metro station 20 20 riyadh infra ksa-20_kafd-metro-station.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 20</span>
@@ -826,7 +848,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/20-1.png" alt="KAFD Metro Station" loading="lazy"><a class="shot-dl" href="assets/20-1.png" download title="20-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/20-2.png" alt="KAFD Metro Station" loading="lazy"><a class="shot-dl" href="assets/20-2.png" download title="20-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al rajhi mosque 22 22 riyadh mosque ksa-22_al-rajhi-mosque.glb">
+<article class="file-card" id="file-22" data-search="al rajhi mosque 22 22 riyadh mosque ksa-22_al-rajhi-mosque.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 22</span>
@@ -840,7 +862,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/22-1.png" alt="Al Rajhi Mosque" loading="lazy"><a class="shot-dl" href="assets/22-1.png" download title="22-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/22-2.png" alt="Al Rajhi Mosque" loading="lazy"><a class="shot-dl" href="assets/22-2.png" download title="22-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="bab makkah 23 23 jeddah heritage ksa-23_bab-makkah.glb">
+<article class="file-card" id="file-23" data-search="bab makkah 23 23 jeddah heritage ksa-23_bab-makkah.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 23</span>
@@ -854,7 +876,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/23-1.png" alt="Bab Makkah" loading="lazy"><a class="shot-dl" href="assets/23-1.png" download title="23-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/23-2.png" alt="Bab Makkah" loading="lazy"><a class="shot-dl" href="assets/23-2.png" download title="23-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="red sea mall 24 24 jeddah mall ksa-24_red-sea-mall.glb">
+<article class="file-card" id="file-24" data-search="red sea mall 24 24 jeddah mall ksa-24_red-sea-mall.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 24</span>
@@ -868,7 +890,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/24-1.png" alt="Red Sea Mall" loading="lazy"><a class="shot-dl" href="assets/24-1.png" download title="24-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/24-2.png" alt="Red Sea Mall" loading="lazy"><a class="shot-dl" href="assets/24-2.png" download title="24-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king fahd&#x27;s fountain 25 25 jeddah infra ksa-25_king-fahd-fountain.glb">
+<article class="file-card" id="file-25" data-search="king fahd&#x27;s fountain 25 25 jeddah infra ksa-25_king-fahd-fountain.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 25</span>
@@ -882,7 +904,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/25-1.png" alt="King Fahd&#x27;s Fountain" loading="lazy"><a class="shot-dl" href="assets/25-1.png" download title="25-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/25-2.png" alt="King Fahd&#x27;s Fountain" loading="lazy"><a class="shot-dl" href="assets/25-2.png" download title="25-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="abdul raouf khalil museum 26 26 jeddah museum ksa-26_abdul-raouf-museum-lod.glb">
+<article class="file-card" id="file-26" data-search="abdul raouf khalil museum 26 26 jeddah museum ksa-26_abdul-raouf-museum-lod.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 26</span>
@@ -896,7 +918,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/26-1.png" alt="Abdul Raouf Khalil Museum" loading="lazy"><a class="shot-dl" href="assets/26-1.png" download title="26-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/26-2.png" alt="Abdul Raouf Khalil Museum" loading="lazy"><a class="shot-dl" href="assets/26-2.png" download title="26-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="hassan enany mosque 27 27 jeddah mosque ksa-27_hassan-enany-mosque.glb">
+<article class="file-card" id="file-27" data-search="hassan enany mosque 27 27 jeddah mosque ksa-27_hassan-enany-mosque.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 27</span>
@@ -910,7 +932,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/27-1.png" alt="Hassan Enany Mosque" loading="lazy"><a class="shot-dl" href="assets/27-1.png" download title="27-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/27-2.png" alt="Hassan Enany Mosque" loading="lazy"><a class="shot-dl" href="assets/27-2.png" download title="27-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="fakieh aquarium 28 28 jeddah museum ksa-28_fakieh-aquarium.glb">
+<article class="file-card" id="file-28" data-search="fakieh aquarium 28 28 jeddah museum ksa-28_fakieh-aquarium.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 28</span>
@@ -924,7 +946,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/28-1.png" alt="Fakieh Aquarium" loading="lazy"><a class="shot-dl" href="assets/28-1.png" download title="28-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/28-2.png" alt="Fakieh Aquarium" loading="lazy"><a class="shot-dl" href="assets/28-2.png" download title="28-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al othman office tower 30 30 al khobar tower ksa-30_al-othman-tower.glb">
+<article class="file-card" id="file-30" data-search="al othman office tower 30 30 al khobar tower ksa-30_al-othman-tower.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 30</span>
@@ -938,7 +960,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/30-1.png" alt="Al Othman Office Tower" loading="lazy"><a class="shot-dl" href="assets/30-1.png" download title="30-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/30-2.png" alt="Al Othman Office Tower" loading="lazy"><a class="shot-dl" href="assets/30-2.png" download title="30-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="jawza al qahtani mosque 32 32 al khobar mosque ksa-32_jawza-al-qahtani-mosque.glb">
+<article class="file-card" id="file-32" data-search="jawza al qahtani mosque 32 32 al khobar mosque ksa-32_jawza-al-qahtani-mosque.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 32</span>
@@ -952,7 +974,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/32-1.png" alt="Jawza Al Qahtani Mosque" loading="lazy"><a class="shot-dl" href="assets/32-1.png" download title="32-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/32-2.png" alt="Jawza Al Qahtani Mosque" loading="lazy"><a class="shot-dl" href="assets/32-2.png" download title="32-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="al othaim mall 33 33 dammam mall ksa-33_al-othaim-mall.glb">
+<article class="file-card" id="file-33" data-search="al othaim mall 33 33 dammam mall ksa-33_al-othaim-mall.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 33</span>
@@ -966,7 +988,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/33-1.png" alt="Al Othaim Mall" loading="lazy"><a class="shot-dl" href="assets/33-1.png" download title="33-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="westfield dammam 34 34 dammam mall ksa-34_westfield-dammam.glb">
+<article class="file-card" id="file-34" data-search="westfield dammam 34 34 dammam mall ksa-34_westfield-dammam.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 34</span>
@@ -980,7 +1002,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/34-1.png" alt="Westfield Dammam" loading="lazy"><a class="shot-dl" href="assets/34-1.png" download title="34-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="king fahd causeway 35 35 al khobar infra ksa-35_king-fahd-causeway.glb">
+<article class="file-card" id="file-35" data-search="king fahd causeway 35 35 al khobar infra ksa-35_king-fahd-causeway.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 35</span>
@@ -994,7 +1016,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/35-2.png" alt="King Fahd Causeway" loading="lazy"><a class="shot-dl" href="assets/35-2.png" download title="35-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="elephant rock (jabal alfil, alula) 36 36 alula nature ksa-36_elephant-rock.glb">
+<article class="file-card" id="file-36" data-search="elephant rock (jabal alfil, alula) 36 36 alula nature ksa-36_elephant-rock.glb">
   <header class="fc-head">
     <span class="fc-tier tier-3"></span>
     <span class="fc-num">№ 36</span>
@@ -1008,7 +1030,7 @@ a.brand:hover { opacity: 0.65; }
   <div class="fc-shots"><div class="fc-shot"><img src="assets/36-1.png" alt="Elephant Rock (Jabal AlFil, AlUla)" loading="lazy"><a class="shot-dl" href="assets/36-1.png" download title="36-1.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/36-2.png" alt="Elephant Rock (Jabal AlFil, AlUla)" loading="lazy"><a class="shot-dl" href="assets/36-2.png" download title="36-2.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="fc-shot"><img src="assets/36-3.png" alt="Elephant Rock (Jabal AlFil, AlUla)" loading="lazy"><a class="shot-dl" href="assets/36-3.png" download title="36-3.png 다운로드"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1 L5.5 7 M3 5 L5.5 7.5 L8 5 M2 9.5 L9 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
 </article>
 
-<article class="file-card" data-search="kafd grand mosque 41 41 riyadh mosque ksa-41_kafd-grand-mosque.glb">
+<article class="file-card" id="file-41" data-search="kafd grand mosque 41 41 riyadh mosque ksa-41_kafd-grand-mosque.glb">
   <header class="fc-head">
     <span class="fc-tier tier-2"></span>
     <span class="fc-num">№ 41</span>
@@ -1273,6 +1295,33 @@ body.modal-lock .topbar { right: var(--sb-lock, 0px); }
     document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
+
+  // Reference와 같은 고정 링을 표시하고 2초 안에 원래 스타일로 복귀한다.
+  (function(){
+    let highlighted = null;
+    let timer = null;
+    function highlightArrival(){
+      if (highlighted) highlighted.classList.remove('card--selected', 'card--just-picked');
+      clearTimeout(timer);
+      highlighted = null;
+      const id = window.location.hash.slice(1);
+      if (!/^file-\d+$/.test(id)) return;
+      const card = document.getElementById(id);
+      if (!card || !card.classList.contains('file-card')) return;
+      card.scrollIntoView({ block: 'start', behavior: 'instant' });
+      void card.offsetWidth;
+      card.classList.add('card--selected', 'card--just-picked');
+      highlighted = card;
+      timer = setTimeout(() => {
+        card.classList.remove('card--selected', 'card--just-picked');
+        highlighted = null;
+      }, 1800);
+    }
+    function afterArrival(){ requestAnimationFrame(highlightArrival); }
+    window.addEventListener('hashchange', afterArrival);
+    if (document.readyState === 'complete') afterArrival();
+    else window.addEventListener('load', afterArrival, { once: true });
+  })();
 
   // ─── SEARCH ───
   (function(){

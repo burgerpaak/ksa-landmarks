@@ -278,13 +278,35 @@ a.brand:hover { opacity: 0.65; }
 }
 
 .file-card {
+  scroll-margin-top: calc(var(--topbar-height) + 16px);
   background: var(--bg-elev);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
   display: flex;
   flex-direction: column;
+}
+.file-card.card--selected {
+  border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent),
+              var(--shadow-md);
+}
+.file-card.card--selected:hover {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 22%, transparent),
+              0 8px 24px rgba(15, 25, 40, 0.05);
+}
+@keyframes cardPick {
+  0%, 55% {
+    border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent), var(--shadow-md);
+  }
+  100% { border-color: var(--border); box-shadow: var(--shadow-sm); }
+}
+.card--just-picked { animation: cardPick 1.8s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .card--just-picked { animation: none; }
 }
 
 .fc-head {
@@ -541,6 +563,33 @@ a.brand:hover { opacity: 0.65; }
     document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('ksa-theme', isDark ? 'light' : 'dark');
   });
+
+  // Reference와 같은 고정 링을 표시하고 2초 안에 원래 스타일로 복귀한다.
+  (function(){
+    let highlighted = null;
+    let timer = null;
+    function highlightArrival(){
+      if (highlighted) highlighted.classList.remove('card--selected', 'card--just-picked');
+      clearTimeout(timer);
+      highlighted = null;
+      const id = window.location.hash.slice(1);
+      if (!/^file-\d+$/.test(id)) return;
+      const card = document.getElementById(id);
+      if (!card || !card.classList.contains('file-card')) return;
+      card.scrollIntoView({ block: 'start', behavior: 'instant' });
+      void card.offsetWidth;
+      card.classList.add('card--selected', 'card--just-picked');
+      highlighted = card;
+      timer = setTimeout(() => {
+        card.classList.remove('card--selected', 'card--just-picked');
+        highlighted = null;
+      }, 1800);
+    }
+    function afterArrival(){ requestAnimationFrame(highlightArrival); }
+    window.addEventListener('hashchange', afterArrival);
+    if (document.readyState === 'complete') afterArrival();
+    else window.addEventListener('load', afterArrival, { once: true });
+  })();
 
   // ─── SEARCH ───
   (function(){

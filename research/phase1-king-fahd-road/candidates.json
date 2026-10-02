@@ -1802,6 +1802,7 @@
       "image_search_name": "King Khalid International Airport Terminal 5",
       "duplicate_check": "사용자 확인(2026-10-01): 기존 King Khalid International Airport 모델은 터미널 1~4까지만 포함하며 제5터미널은 미포함. 별도 신규 대상으로 추가; GLB 직접 재검수는 미수행.",
       "model_scope": {
+        "files_url": "../progress/#file-15",
         "summary": "기존 공항 모델: 터미널 1~4 · 제5터미널 미포함 (사용자 확인)",
         "detail": "사용자 확인(2026-10-01): 기존 King Khalid International Airport 모델은 터미널 1~4까지만 포함하며 제5터미널은 미포함이다. 제5터미널은 같은 공항에 속한 별도 건물로, 기존 모델과 중복되지 않는 신규 제작 후보로 추가했다.",
         "confirmed_at": "2026-10-01",

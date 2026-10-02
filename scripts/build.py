@@ -1020,7 +1020,7 @@ def render_file_card(lid: str, group: dict, lm_map: dict, variant: str = "work")
     ])
 
     return f"""
-<article class="file-card" data-search="{esc(search_str)}">
+<article class="file-card" id="file-{esc(lid)}" data-search="{esc(search_str)}">
   <header class="fc-head">
     {tier_dot}
     <span class="fc-num">№ {esc(lid)}</span>

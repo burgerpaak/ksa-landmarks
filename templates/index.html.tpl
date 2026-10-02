@@ -900,7 +900,7 @@ body.density-compact .cards-grid { align-items: start; }
   box-shadow: 0 1px 0 rgba(15, 25, 40, 0.02);
 }
 
-/* 사이드바에서 선택한 카드 — 어디에 도착했는지 드러나도록 accent 링 유지.
+/* 사이드바에서 선택한 카드 — 도착한 위치를 짧게 강조.
    .card:hover(0,2,0)에 지지 않도록 특이도를 맞추고, 호버 시엔 링+호버그림자 병기 */
 .card.card--selected {
   border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
@@ -911,13 +911,15 @@ body.density-compact .cards-grid { align-items: start; }
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 22%, transparent),
               0 8px 24px rgba(15, 25, 40, 0.05);
 }
-/* 도착 직후 짧은 펄스로 시선 유도 */
+/* 링 크기는 고정하고 2초 안에 원래 스타일로 복귀 */
 @keyframes cardPick {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-strong) 45%, transparent), var(--shadow-md); }
-  60%  { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent-strong) 8%, transparent), var(--shadow-md); }
-  100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent), var(--shadow-md); }
+  0%, 55% {
+    border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--border));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 16%, transparent), var(--shadow-md);
+  }
+  100% { border-color: var(--border); box-shadow: 0 1px 0 rgba(15, 25, 40, 0.02); }
 }
-.card--just-picked { animation: cardPick 0.9s ease-out; }
+.card--just-picked { animation: cardPick 1.8s ease-out forwards; }
 @media (prefers-reduced-motion: reduce) {
   .card--just-picked { animation: none; }
 }
@@ -2230,15 +2232,17 @@ body.density-compact .cards-grid { align-items: start; }
   cards.forEach(card => observer.observe(card));
 
   // ─── 선택된 카드 강조 (명시적 선택 시에만 — 스크롤로는 바뀌지 않음) ───
+  let selectedCardTimer = null;
   function markSelectedCard(id) {
-    document.querySelectorAll('.card--selected').forEach(c => c.classList.remove('card--selected'));
+    clearTimeout(selectedCardTimer);
+    document.querySelectorAll('.card--selected').forEach(c => c.classList.remove('card--selected', 'card--just-picked'));
     const card = document.getElementById(id);
     if (!card) return;
     // 재선택 시에도 애니메이션이 다시 돌도록 리플로우 강제
     card.classList.remove('card--just-picked');
     void card.offsetWidth;
     card.classList.add('card--selected', 'card--just-picked');
-    setTimeout(() => card.classList.remove('card--just-picked'), 1200);
+    selectedCardTimer = setTimeout(() => card.classList.remove('card--selected', 'card--just-picked'), 1800);
   }
 
   // ─── NAV CLICK ───

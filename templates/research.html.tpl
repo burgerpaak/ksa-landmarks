@@ -144,6 +144,8 @@ h1 em { font-style: normal; color: var(--accent); }
 .building-relation .connected-building { font-size:12px;margin-top:8px; }
 .character { color: var(--ink-soft); font-size: 11px; line-height: 1.85; margin-bottom: 13px; }
 .model-scope-note { color: var(--accent); font-size: 11px; line-height: 1.75; margin-bottom: 13px; }
+.model-scope-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); text-underline-offset: 3px; }
+.model-scope-link:hover { text-decoration-color: currentColor; }
 .decision-note { margin: 0 0 13px; padding: 7px 9px; border-left: 2px solid color-mix(in srgb, var(--warning) 45%, var(--border)); background: color-mix(in srgb, var(--warning) 4%, var(--bg-elev)); color: var(--ink-soft); font-size: 10px; line-height: 1.75; }
 .decision-note > span { color: var(--warning); margin-right: 7px; font-weight: 500; white-space: nowrap; }
 .card-actions { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;column-gap:12px;border-top:1px solid var(--border); }
