@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-01",
-  "scope": "Riyadh 후보 26건 · 출처·시점·사용 조건을 기록한 이미지",
+  "updated_at": "2026-10-07",
+  "scope": "Riyadh 후보 30건 · 출처·시점·사용 조건을 기록한 이미지",
   "candidates": {
     "N01": [
       {
@@ -816,6 +816,90 @@
         "sha256": "18a5c0718ff47471e195405aafc7ae7db65be22fcc82222e04c0d0c0f2898a22",
         "thumbnail_position": "50% 50%",
         "thumbnail_scale": 1.55
+      }
+    ],
+    "N33": [
+      {
+        "file": "research-n33-01.webp",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Mansard Riyadh · Mansard 지붕과 중앙 진입부가 보이는 정면",
+        "caption": "Radisson 공식 외관 사진. 양쪽 건물의 Mansard 지붕·돌출 지붕창과 낮은 중앙 진입부가 보입니다. 양쪽 건물의 끝은 원본 프레임 밖이며 단지 전체 배치 사진은 아닙니다. 촬영일은 미확인입니다.",
+        "kind": "외관 사진",
+        "source": "Radisson Hotel Group · 호텔 운영사",
+        "source_url": "https://www.radissonhotels.com/en-us/hotels/radisson-collection-mansard-riyadh-hotel",
+        "original_url": "https://media.radissonhotels.net/image/mansard-riyadh-a-radisson-collection-hotel/exterior/16256-125558-f72592777_4K.jpg",
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인 · Radisson Hotel Group All rights reserved",
+        "license_url": null,
+        "accessed_at": "2026-10-07",
+        "processing": "원본 비율·프레임 유지, 긴 변 1600px 축소·WebP 변환, 파일 크롭 없음 · 썸네일만 화면 크롭",
+        "sha256": "fe341d9d87ce4958e6409a8f0f155ab5b6df3f503dc1a8ffec056de85f951378",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N34": [
+      {
+        "file": "research-n34-01.webp",
+        "width": 800,
+        "height": 325,
+        "alt": "Al-Yamamah Palace · 중앙 돔과 아치형 입면이 보이는 외관",
+        "caption": "사용자가 Al-Yamamah Palace로 지정해 제공한 외관 사진. 중앙 돔과 반복되는 아치형 입면·정원이 보입니다. 원출처·촬영자·촬영일은 미확인이며, 단지 전체 배치나 현재 외관을 검증한 자료는 아닙니다.",
+        "kind": "외관 사진",
+        "source": "사용자 제공",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-07",
+        "processing": "원본 비율·프레임 유지, WebP 변환, 파일 크롭 없음 · 썸네일만 화면 크롭",
+        "sha256": "e089b6e18f6f265f79a3217b7c33b8116034284ce9ef5b91826704802caa9558",
+        "thumbnail_position": "50% 40%"
+      }
+    ],
+    "N35": [
+      {
+        "file": "research-n35-01.webp",
+        "width": 1600,
+        "height": 1070,
+        "alt": "VIA Riyadh 외관",
+        "caption": "중정을 둘러싼 건물군과 여러 층의 테라스·조경, 큰 유리면과 석재색 벽면의 대비가 특징. 확보한 야간 사진에서는 곡선 조명 패턴이 입면을 강조한다.",
+        "kind": "외관 사진",
+        "source": "Saudipedia",
+        "source_url": "https://saudipedia.com/en/via-riyadh-zone",
+        "original_url": "https://saudipedia.com/var/site/storage/images/6/5/3/4/1094356-1-eng-GB/4c7c934c6a9f-97447.jpg",
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-07",
+        "processing": "원본 비율·프레임 유지, WebP 변환, 파일 크롭 없음 · 썸네일만 화면 크롭",
+        "sha256": "23c95807c232dda6c63895bd78a9f660f752b1b84cf6bc9f9001b4b68b8768a7",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N36": [
+      {
+        "file": "research-n36-01.webp",
+        "width": 314,
+        "height": 209,
+        "alt": "Dr. Sulaiman Al Habib Olaya Medical Complex 외관",
+        "caption": "석재색 직육면체 건물군과 반복 창호·세로 유리면이 보인다. 2011년 출처 사진은 단지 일부의 도로변 외관이며, 현재 외장과 증축 상태를 확인한 자료는 아니다.",
+        "kind": "외관 사진",
+        "source": "Sammar.shawki · Wikimedia Commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Olaya_Medical_Complex.png",
+        "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Olaya_Medical_Complex.png",
+        "photographer": "Sammar.shawki",
+        "date_note": "출처 표기일 2011-09-03 · 현재 외관 미확인",
+        "license": "CC BY-SA 3.0 · Sammar.shawki",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "accessed_at": "2026-10-07",
+        "processing": "원본 비율·프레임 유지, WebP 변환, 파일 크롭 없음 · 썸네일만 화면 크롭",
+        "sha256": "5ca1c95c6f9e47f9e8087b0e7afafc594c4523c954e2acf71de89a3a9125c34a",
+        "thumbnail_position": "50% 50%"
       }
     ]
   }

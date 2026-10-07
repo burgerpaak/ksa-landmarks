@@ -457,6 +457,52 @@
       ],
       "observed_url": "https://www.google.com/maps/place/Terminal+5/@24.9421843,46.7119327,911m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e2ef0f934a143c3:0x308faa8466b307db!8m2!3d24.9421843!4d46.7119327!16s%2Fg%2F11bzxvjl7z",
       "note": "Google 지도 실제 Terminal 5 장소 상세의 이름·공항 주소를 공식 터미널 자료와 대조. 관찰한 feature ID의 CID를 사용했으며 @ 지도 뷰 중심과 !3d!4d 장소 핀을 구분. 장소 식별은 납품 정밀 좌표와 모델 경계 검증 완료를 뜻하지 않음."
+    },
+    "N33": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=2501108654482729096",
+      "cid": "2501108654482729096",
+      "place_name": "Mansard Riyadh, A Radisson Collection Hotel",
+      "address": "4248 Prince Mohammed Ibn Salman Ibn Abdulaziz Road, Ar Rabi, Riyadh, Saudi Arabia",
+      "checked_at": "2026-10-07",
+      "coordinate_strings": [
+        "24.7836736",
+        "46.6528016"
+      ],
+      "observed_url": "https://www.google.com/maps/place/Mansard+Riyadh,+A+Radisson+Collection+Hotel/@24.7832209,46.6524978,446m/data=!3m1!1e3!4m9!3m8!1s0x3e2ee322ac19326f:0x22b5b911df192888!5m2!4m1!1i2!8m2!3d24.7836736!4d46.6528016!16s%2Fg%2F11dd_rlqxy",
+      "provided_url": "https://maps.app.goo.gl/UmioDN11jKkxnXgr6",
+      "note": "사용자 지도 단축 링크의 실제 리다이렉트에서 호텔명·장소 ID·!3d!4d 핀을 확인하고 Radisson 공식 이름·Ar Rabi 소재지·도로 주소와 대조. @ 지도 중심과 장소 핀을 구분하며, 좌표 자릿수는 관찰한 그대로 보존. 장소 식별은 납품 정밀 좌표·footprint·전체 모델 비중복 검증 완료를 뜻하지 않음."
+    },
+    "N34": {
+      "status": "unresolved",
+      "checked_at": "2026-10-07",
+      "note": "공식 자료는 Riyadh 서부까지만 확인. 장소 고유 핀·정밀 좌표 미확인."
+    },
+    "N35": {
+      "status": "matched",
+      "checked_at": "2026-10-07",
+      "note": "사용자 지정 장소의 !3d!4d 핀을 사용. @ 뷰 중심을 좌표로 사용하지 않음. 납품 정밀 좌표 검증 완료를 뜻하지 않음.",
+      "url": "https://www.google.com/maps?cid=7637286268238212859",
+      "cid": "7637286268238212859",
+      "place_name": "VIA Riyadh",
+      "coordinate_strings": [
+        "24.6670649",
+        "46.6263991"
+      ],
+      "pin_source": "사용자 제공 Google Maps URL의 장소 ID·!3d!4d 파라미터"
+    },
+    "N36": {
+      "status": "matched",
+      "checked_at": "2026-10-07",
+      "note": "사용자 지정 장소의 !3d!4d 핀을 사용. @ 뷰 중심을 좌표로 사용하지 않음. 납품 정밀 좌표 검증 완료를 뜻하지 않음.",
+      "url": "https://www.google.com/maps?cid=5845928083498655018",
+      "cid": "5845928083498655018",
+      "place_name": "Dr. Sulaiman Al Habib Olaya Medical Complex",
+      "coordinate_strings": [
+        "24.704154",
+        "46.677113"
+      ],
+      "pin_source": "사용자 제공 Google Maps URL의 장소 ID·!3d!4d 파라미터"
     }
   },
   "method": "Google Maps 실제 장소 상세에서 명칭·소재지와 기존 조사자료 대조. 동명·입주사·이전 이력은 사진/기록 추가 확인. CID는 관찰한 장소 URL의 feature ID에서 변환; 검색어로 추정하지 않음."

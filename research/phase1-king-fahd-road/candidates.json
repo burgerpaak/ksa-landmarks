@@ -1,6 +1,6 @@
 {
   "research_date": "2026-09-23",
-  "scope": "Riyadh King Fahd Road 주변 19건 + 별도 지정 제5터미널 1건 + 권역 확장 6건; N08 제외 유지",
+  "scope": "Riyadh King Fahd Road 주변 20건 + 별도 지정 제5터미널 1건 + 권역 확장 9건; N08 제외 유지",
   "excluded_inventory": [
     "data/landmarks.json",
     "data/balady_50.json",
@@ -1839,11 +1839,211 @@
         "map_identification_status": "matched"
       },
       "landmark_type": "infra"
+    },
+    {
+      "id": "N33",
+      "name": "Mansard Riyadh, A Radisson Collection Hotel",
+      "area": "북부 · Ar Rabi / Prince Mohammed bin Salman Road",
+      "overview": "Riyadh 북부 Ar Rabi의 호텔·서비스드 아파트·빌라 단지다. Radisson Collection이 운영하며, 운영사는 2022년 6월 개관을 발표했다. Prince Mohammed bin Salman Road에 위치하며 King Fahd Road 도로변 목록과 구분해 권역 확장 후보로 추가했다.",
+      "visual_character": "경사가 꺾이는 Mansard 지붕과 돌출 지붕창, 밝은 석재색 입면과 반복 창호가 특징. 낮은 중앙 진입부와 양쪽 건물의 높이 차이가 타워 위주 목록에 다른 외형 유형을 보완한다.",
+      "status_evidence": "Radisson 공식 호텔 운영 안내·2022-06-09 개관 보도자료·공식 외관 사진",
+      "verification_notes": "운영사 공식 자료와 사용자 제공 지도 링크에서 호텔 이름·Ar Rabi 소재지를 대조했다. 개관 발표일을 완공일이나 사진 촬영일로 바꾸지 않았다. 프랑스 Haussmann 양식에서 착안한 Mansard 지붕은 운영사의 설명이며, 호텔 본체·빌라·부속 시설의 모델링 포함 범위는 미정.",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/radisson-collection-mansard-riyadh-hotel",
+        "https://www.radissonhotels.com/en-us/corporate/media/press-releases/radisson-collection-amplifies-its-presence-in-saudi-arabia-with-the-opening-of-second-hotel-in-riyadh",
+        "https://www.radissonhotels.com/en-us/hotels/radisson-collection-mansard-riyadh-hotel/contact"
+      ],
+      "decision_note": "단지 전체 배치·지붕 세부와 호텔·빌라의 제작 범위 확인",
+      "road_relationship": "권역 확장",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Mansard+Riyadh+Radisson+Collection+Hotel",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "image_search_name": "Mansard Riyadh Radisson Collection Hotel",
+      "duplicate_check": "2026-10-07 Reference·Research·Balady+·Archive 명칭 목록 대조상 동일 호텔 미발견. 이름 없이 다른 단지 모델에 포함됐는지 전체 GLB 형상 대조는 미수행.",
+      "fact_check": {
+        "date": "2026-10-07",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "Radisson 공식 호텔 페이지에서 운영과 호텔·서비스드 아파트·빌라 구성을 확인. 2022-06-09 공식 보도자료에서 개관 발표·Ar Rabi 소재지와 Mansard 지붕 설명을 확인하고, 사용자 제공 지도 링크의 호텔 이름·장소 핀을 대조했다. 기존 Reference·Research·Balady+·Archive 명칭 목록에는 동일 대상이 없다.",
+        "remaining": "단지 전체 배치와 측후면, 지붕 깊이·높이, 호텔·빌라·부속 시설의 제작 경계, 정밀 좌표·footprint·치수",
+        "visual_claim_check": "공식 외관 사진에서 Mansard 지붕·돌출 지붕창·반복 창호·중앙 진입부를 대조. 양쪽 건물의 끝은 원본 프레임 밖이며 전체 배치·측후면은 미확인.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-10-07",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "운영 중인 호텔과 공식 외관 자료가 확인되고, Mansard 지붕과 낮은 건물군이 타워와 다른 실루엣을 만든다. 전체 배치·지붕 깊이와 호텔·빌라의 모델링 범위를 더 확인해야 해 검토로 둔다.",
+        "remaining": "단지 전체 배치와 측후면, 지붕 깊이·높이, 호텔·빌라·부속 시설의 제작 경계, 정밀 좌표·footprint·치수",
+        "scope": "공식 운영·개관·외관 자료, 사용자 제공 지도 장소와 기존 명칭 목록 대조에 따른 의견. 정밀 제작 검증과 전체 GLB 대조 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n33-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "landmark_type": "complex"
+    },
+    {
+      "id": "N34",
+      "name": "Al-Yamamah Palace",
+      "area": "서부 · Riyadh",
+      "overview": "국왕 집무실과 Royal Court가 있는 사우디아라비아의 공식 통치 거점이다. 국가 공식 행사와 고위 인사 접견에 사용하며 일반 관광객에게 개방된 박물관은 아니다.",
+      "visual_character": "무늬가 있는 중앙 돔과 높낮이가 다른 직선 건물군, 반복되는 긴 아치형 입면이 특징. 사용자 제공 사진에서 전면 정원과 낮게 이어지는 양쪽 건물의 윤곽이 보인다.",
+      "status_evidence": "공식 소개·출처 사진 대조",
+      "verification_notes": "사용자 제공 외관 사진을 추가했다. 원출처·촬영일과 최신 외관 여부는 미확인이며, 궁전 본체의 전체 배치와 정확한 장소 핀도 미확인이다.",
+      "sources": [
+        "https://saudipedia.com/en/al-yamamah-palace",
+        "https://commons.wikimedia.org/wiki/File:Al_Yamamah_Palace_state_visit_2025.png"
+      ],
+      "decision_note": "정확한 위치·단지 경계·측후면과 모델링 범위 확인",
+      "road_relationship": "권역 확장",
+      "selection_suggestion": "보류",
+      "confidence": "low",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Yamamah+Palace+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "image_search_name": "Al-Yamamah Palace",
+      "duplicate_check": "기존 명칭 목록 대조: 동일 명칭 미발견. 전체 GLB 형상 대조 미수행.",
+      "fact_check": {
+        "date": "2026-10-07",
+        "result": "부분 확인 — 제작 범위 미확정",
+        "checked": "Saudipedia에서 통치 거점·Royal Court·접견 용도를 확인. 공식 소개의 실내 사진과 2025-05-13 접견 영상 기록을 대조했으나 전체 외관 대표 사진으로 적합하지 않아 썸네일에는 사용하지 않았다. 사용자 지정 외관 사진을 대표·상세 이미지로 추가했다. 사진의 원출처·촬영일과 최신 외관 여부는 미확인이다.",
+        "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위, 사진 원출처·촬영일, 정밀 좌표·footprint·치수",
+        "visual_claim_check": "무늬가 있는 중앙 돔과 높낮이가 다른 직선 건물군, 반복되는 긴 아치형 입면이 특징. 사용자 제공 사진에서 전면 정원과 낮게 이어지는 양쪽 건물의 윤곽이 보인다. 사진의 대상 식별은 사용자 지정에 따른 것이며 독립적인 사진 출처 대조는 미완료.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-10-07",
+        "criteria": "종합 추천 v1",
+        "result": "보류",
+        "reason": "공식 통치 거점이라는 식별과 용도, 사용자 지정 외관 사진은 확보했다. 정확한 장소 핀과 전체 배치·측후면·제작 경계가 미확인이라 보류를 유지한다.",
+        "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위 확인",
+        "scope": "공식 소개와 확보된 사진에 따른 의견. 정밀 제작 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n34-01.webp"
+        ],
+        "map_identification_status": "unresolved"
+      },
+      "landmark_type": "government"
+    },
+    {
+      "id": "N35",
+      "name": "VIA Riyadh",
+      "area": "서부 · Riyadh",
+      "overview": "호텔·상점·식당·영화관이 함께 있는 복합 상업·여가 단지다. 공식 소개는 Riyadh의 지역 정체성을 반영한 Salmani 건축을 설명한다.",
+      "visual_character": "중정을 둘러싼 건물군과 여러 층의 테라스·조경, 큰 유리면과 석재색 벽면의 대비가 특징. 확보한 야간 사진에서는 곡선 조명 패턴이 입면을 강조한다.",
+      "status_evidence": "공식 소개·출처 사진 대조",
+      "verification_notes": "야간 사진은 단지 일부이며, 조명 패턴과 주간 재료색을 구분해야 한다. 공식 소개의 시설 구성은 단지 전체의 모델링 포함 범위를 확정하지 않는다.",
+      "sources": [
+        "https://www.viariyadh.com/story",
+        "https://www.visitsaudi.com/en/riyadh/attractions/via-riyadh",
+        "https://saudipedia.com/en/via-riyadh-zone"
+      ],
+      "decision_note": "호텔·상업동·중정의 제작 경계와 전체 배치·주간 외관 확인",
+      "road_relationship": "권역 확장",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=VIA+Riyadh+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "image_search_name": "VIA Riyadh",
+      "duplicate_check": "기존 명칭 목록 대조: 동일 명칭 미발견. 전체 GLB 형상 대조 미수행.",
+      "fact_check": {
+        "date": "2026-10-07",
+        "result": "부분 확인 — 제작 범위 미확정",
+        "checked": "공식 소개에서 단지 용도와 구성을 확인하고 사용자 제공 지도의 장소명과 장소 핀을 대상 위치로 기록했다.",
+        "remaining": "호텔·상업동·중정의 제작 경계와 전체 배치·주간 외관 확인 · 정밀 좌표·footprint·치수",
+        "visual_claim_check": "중정을 둘러싼 건물군과 여러 층의 테라스·조경, 큰 유리면과 석재색 벽면의 대비가 특징. 확보한 야간 사진에서는 곡선 조명 패턴이 입면을 강조한다.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-10-07",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "Salmani 건축과 중정·테라스가 타워 위주 목록에 다른 외형을 보완한다. 단지 전체 배치와 호텔·상업동의 제작 범위가 미정이어서 검토로 둔다.",
+        "remaining": "호텔·상업동·중정의 제작 경계와 전체 배치·주간 외관 확인",
+        "scope": "공식 소개와 확보된 사진에 따른 의견. 정밀 제작 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n35-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "landmark_type": "complex"
+    },
+    {
+      "id": "N36",
+      "name": "Dr. Sulaiman Al Habib Olaya Medical Complex",
+      "area": "중부 · Olaya / King Fahd Road",
+      "overview": "Dr. Sulaiman Al Habib Medical Group의 Olaya 의료 단지다. 운영사 자료는 외래 진료와 전문 병원 등 여러 시설의 구성을 설명한다. 다른 지역의 같은 그룹 병원과 구분해 사용자가 지정한 Olaya 장소를 대상으로 한다.",
+      "visual_character": "석재색 직육면체 건물군과 반복 창호·세로 유리면이 보인다. 2011년 출처 사진은 단지 일부의 도로변 외관이며, 현재 외장과 증축 상태를 확인한 자료는 아니다.",
+      "status_evidence": "공식 소개·출처 사진 대조",
+      "verification_notes": "과거 사진과 운영사 보고서로 의료 단지를 식별했다. 2011년 사진을 최신 외관으로 취급하지 않으며, 기존 Soliman Hospital 모델과의 중복 여부는 미확인이다.",
+      "sources": [
+        "https://www.hmg.com/ir/en/Lists/Reports_Publications/Attachments/73/2023_HMG_Annual_Report_En.pdf",
+        "https://hmg.com/report2020/at-a-glance.html",
+        "https://commons.wikimedia.org/wiki/File:Olaya_Medical_Complex.png"
+      ],
+      "decision_note": "기존 Soliman Hospital 모델과의 중복·포함 범위 및 현재 외관 확인",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "confidence": "partial",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Dr.+Sulaiman+Al+Habib+Olaya+Medical+Complex+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "image_search_name": "Dr. Sulaiman Al Habib Olaya Medical Complex",
+      "duplicate_check": "기존 명칭 목록 대조: Soliman Hospital과 중복 가능성. 아카이브 썸네일만으로 동일 병원 여부를 확정하지 않음.",
+      "fact_check": {
+        "date": "2026-10-07",
+        "result": "부분 확인 — 제작 범위 미확정",
+        "checked": "공식 소개에서 단지 용도와 구성을 확인하고 사용자 제공 지도의 장소명과 장소 핀을 대상 위치로 기록했다.",
+        "remaining": "기존 Soliman Hospital 모델과의 중복·포함 범위 및 현재 외관 확인 · 정밀 좌표·footprint·치수",
+        "visual_claim_check": "석재색 직육면체 건물군과 반복 창호·세로 유리면이 보인다. 2011년 출처 사진은 단지 일부의 도로변 외관이며, 현재 외장과 증축 상태를 확인한 자료는 아니다.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "recommendation_assessment": {
+        "date": "2026-10-07",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "도로변 의료 단지의 식별과 과거 외관 사진은 확보했다. 아카이브의 Soliman Hospital 모델과 중복될 가능성 및 현재 외관·제작 범위를 확인해야 해 검토로 둔다.",
+        "remaining": "기존 Soliman Hospital 모델과의 중복·포함 범위 및 현재 외관 확인",
+        "scope": "공식 소개와 확보된 사진에 따른 의견. 정밀 제작 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n36-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "landmark_type": "complex",
+      "model_scope": {
+        "summary": "기존 병원 모델: Soliman Hospital과 동일 대상 여부 미확인",
+        "detail": "Balady 아카이브에 Soliman Hospital 병합본(2동)과 개별 모델 2건이 있다. 이름이 유사하지만 아카이브 썸네일과 과거 사진만으로 Olaya 단지 포함 여부를 확정하지 못했다. 신규 제작 선정 전에 위치·형상을 대조해야 한다.",
+        "files_url": "../progress/archive.html"
+      }
     }
   ],
   "link_check_date": "2026-09-23",
   "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
-  "count": 26,
+  "count": 30,
   "scope_update": {
     "date": "2026-09-23",
     "excluded_ids": [
@@ -1863,8 +2063,8 @@
     "note": "후속 사용자 요청에 따라 권역 확장 8건을 검토 중으로 복귀. 도로변·인접 19건과 분리; N08은 제외 유지."
   },
   "counts_by_scope": {
-    "core": 19,
-    "extension_under_review": 6,
+    "core": 20,
+    "extension_under_review": 9,
     "designated": 1
   },
   "fact_check_date": "2026-09-23",
@@ -1875,12 +2075,14 @@
   "recommendation_review_date": "2026-09-30",
   "recommendation_criteria": "종합 추천 v1",
   "inventory_update": {
-    "date": "2026-10-01",
+    "date": "2026-10-07",
     "added_ids": [
-      "N32"
+      "N34",
+      "N35",
+      "N36"
     ],
     "removed_ids": [],
-    "reason": "사용자 요청: 기존 공항 모델은 터미널 1~4까지만 포함하므로 제5터미널을 비중복 Phase 1 별도 지정 대상으로 추가"
+    "reason": "사용자 지정 궁전·VIA Riyadh·Olaya 의료 단지 추가"
   },
   "inventory_update_history": [
     {
@@ -1914,6 +2116,22 @@
       ],
       "removed_ids": [],
       "reason": "사용자 요청: Tuwaiq Gate를 검토 등급으로 추가. 기존 모델의 Al Faisaliah Tower는 신규 후보에서 제외."
+    },
+    {
+      "date": "2026-10-01",
+      "added_ids": [
+        "N32"
+      ],
+      "removed_ids": [],
+      "reason": "사용자 요청: 기존 공항 모델은 터미널 1~4까지만 포함하므로 제5터미널을 비중복 Phase 1 별도 지정 대상으로 추가"
+    },
+    {
+      "date": "2026-10-07",
+      "added_ids": [
+        "N33"
+      ],
+      "removed_ids": [],
+      "reason": "사용자 요청: Mansard Riyadh, A Radisson Collection Hotel을 권역 확장 검토 후보로 추가"
     }
   ],
   "recommendation_review_summary": {

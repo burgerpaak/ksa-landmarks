@@ -29,6 +29,13 @@ def esc(value):
 
 def source_label(url):
     host = urlsplit(url).hostname or "출처"
+    if host == "www.radissonhotels.com":
+        path = urlsplit(url).path.rstrip("/")
+        if path.endswith("/contact"):
+            return "Radisson · 위치 안내"
+        if "/corporate/media/press-releases/" in path:
+            return "Radisson · 개관 보도자료"
+        return "Radisson · 호텔 공식"
     labels = {
         "www.skyscrapercenter.com": "Skyscraper Center",
         "saudipedia.com": "Saudipedia",
