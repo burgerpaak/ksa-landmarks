@@ -1,5 +1,6 @@
 """Render landmark research by city, independently of review status."""
 import html
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -289,6 +290,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
     config_path = root / "data/firebase.json"
     firebase_config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
     replacements = {
+        "{{COMMENT_STORE_VERSION}}": hashlib.sha256((root / "assets/research-comment-store.js").read_bytes()).hexdigest()[:12],
         "{{FIREBASE_CONFIG}}": json.dumps(firebase_config, ensure_ascii=False).replace("<", "\\u003c"),
         "{{PALETTE}}": palette, "{{TOTAL}}": str(len(candidates)),
         "{{REVIEW_COUNT}}": str(counts["review"]), "{{SELECTED_COUNT}}": str(counts["selected"]),

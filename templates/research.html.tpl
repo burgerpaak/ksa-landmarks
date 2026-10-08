@@ -564,7 +564,7 @@ html { scrollbar-gutter: stable; }
 
 <script id="research-firebase-config" type="application/json">{{FIREBASE_CONFIG}}</script>
 <script type="module">
-import {createCommentStore, commentErrorMessage} from '../assets/research-comment-store.js';
+import {createCommentStore, commentErrorMessage} from '../assets/research-comment-store.js?v={{COMMENT_STORE_VERSION}}';
 (() => {
  const topbar = document.querySelector('.topbar');
  topbar.querySelectorAll('a').forEach(link => { link.draggable = false; });
