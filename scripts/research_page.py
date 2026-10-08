@@ -280,12 +280,11 @@ def build_research(root: Path, output_dir: Path, palette: str):
         empty = " hidden" if items else ""
         sections.append(f'''<section class="city-section" id="{section_id}" aria-labelledby="heading-{section_id}">
           <header class="section-head"><div class="section-title"><h2 id="heading-{section_id}">{city}<span class="section-count" aria-live="polite">{len(items)}</span></h2><p>{description}</p></div>
-            <div class="section-controls"><div class="status-control"><select class="status-filter" aria-label="{city} 선정 상태">
-              <option value="review">상태: 검토 중</option><option value="selected">상태: 선정</option><option value="excluded">상태: 제외</option>
-            </select><svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></div>
+            <div class="section-controls"><button class="comment-filter" type="button" aria-label="{city} 코멘트 있는 카드만 보기" aria-pressed="false" title="{city} 코멘트 있는 카드만 보기" disabled><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></button>
             <div class="display-help"><button type="button" class="help-trigger" aria-label="{city} 표시 기준" aria-describedby="help-{section_id}"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
-              <p class="help-tooltip" id="help-{section_id}" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 선정 상태 필터를 반영합니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
+              <p class="help-tooltip" id="help-{section_id}" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 코멘트 필터를 반영합니다. 코멘트 옆 숫자는 검색 조건에 맞는 코멘트가 있는 카드 수이며, 코멘트 총 개수와는 다릅니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
+          <p class="comment-filter-feedback" role="status" hidden></p><span class="comment-filter-status visually-hidden" role="status"></span>
           <div class="cards-grid">{cards}</div>{designated_section}{extended_section}<p class="section-empty" aria-live="polite"{empty}>아직 등록된 조사 항목이 없습니다.</p></section>''')
     config_path = root / "data/firebase.json"
     firebase_config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}

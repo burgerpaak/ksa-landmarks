@@ -111,6 +111,14 @@ h1 em { font-style: normal; color: var(--accent); }
 .page-sub { color: var(--ink-soft); margin-top: 12px; font-size: 15px; line-height: 1.6; max-width: 60ch; }
 .check-date { font: 10px var(--mono); color: var(--ink-mute); white-space: nowrap; }
 .overview { display: flex; flex-wrap: wrap; gap: 24px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.comment-filter { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 5px 9px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--ink-soft); font-size: 12px; transition: background .14s ease, color .14s ease, border-color .14s ease; }
+.comment-filter:hover { background: var(--bg-sunken); color: var(--ink); }
+.comment-filter[aria-pressed="true"] { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); color: var(--accent-strong); font-weight: 600; }
+.comment-filter[aria-pressed="true"]:hover { background: color-mix(in srgb, var(--accent) 12%, var(--accent-soft)); border-color: var(--accent); }
+.comment-filter[aria-busy="true"] { opacity: .6; }
+.comment-filter-count { font-variant-numeric: tabular-nums; }
+.comment-filter-feedback { margin-bottom: 18px; font-size: 12px; color: var(--ink-soft); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .city-overview { display: flex; align-items: center; gap: 20px; }
 .city-overview + .city-overview { border-left: 1px solid var(--border); padding-left: 24px; }
 .city-jump { font-size: 16px; font-weight: 600; color: var(--ink); }
@@ -128,9 +136,6 @@ h1 em { font-style: normal; color: var(--accent); }
 .search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--ink-mute); }
 .search-clear:hover { background: var(--bg-sunken); color: var(--ink); }
 .search-clear:focus-visible { outline-offset: 0; color: var(--ink); }
-.status-control { position: relative; display: inline-flex; align-items: center; flex-shrink: 0; }
-.status-control select { appearance: none; cursor: pointer; font-size: 11px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 7px; padding: 6px 27px 6px 11px; color: var(--ink-soft); }
-.status-control .chevron { position: absolute; right: 8px; width: 12px; height: 12px; pointer-events: none; }
 /* Hover, keyboard focus and tap share the same help content. */
 .display-help { position: relative; }
 .help-trigger { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 0; background: transparent; color: var(--ink-mute); border-radius: 6px; }
@@ -289,6 +294,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .comment-menu button { min-height:44px; }
  .page-head { display: block; } .check-date { margin-top: 10px; }
  .overview { flex-direction: column; align-items: flex-start; gap: 16px; }
+ .comment-filter { min-height: 44px; }
+ .city-overview, .stat { white-space: nowrap; }
  .city-overview + .city-overview { border-left: 0; padding-left: 0; }
  .city-jump { min-width: 52px; }
  .hero-stats { gap: 16px; }
@@ -299,6 +306,7 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .area { margin-top: 8px; } .character { font-size: 12px; }
 }
 @media (pointer: coarse) {
+ .comment-filter { min-height: 44px; }
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
  .comment-manage { width:44px;height:44px; }
@@ -383,12 +391,11 @@ html { scrollbar-gutter: stable; }
 <div class="city-overview"><a class="jump-link city-jump" href="#jeddah">Jeddah</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="building">12</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="sculpture">13</span></div></div></div></nav>
  <section class="city-section" id="riyadh" aria-labelledby="heading-riyadh">
           <header class="section-head"><div class="section-title"><h2 id="heading-riyadh">Riyadh<span class="section-count" aria-live="polite">30</span></h2><p>King Fahd Road 주변·별도 지정·권역 확장 건축물</p></div>
-            <div class="section-controls"><div class="status-control"><select class="status-filter" aria-label="Riyadh 선정 상태">
-              <option value="review">상태: 검토 중</option><option value="selected">상태: 선정</option><option value="excluded">상태: 제외</option>
-            </select><svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></div>
+            <div class="section-controls"><button class="comment-filter" type="button" aria-label="Riyadh 코멘트 있는 카드만 보기" aria-pressed="false" title="Riyadh 코멘트 있는 카드만 보기" disabled><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></button>
             <div class="display-help"><button type="button" class="help-trigger" aria-label="Riyadh 표시 기준" aria-describedby="help-riyadh"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
-              <p class="help-tooltip" id="help-riyadh" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 선정 상태 필터를 반영합니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
+              <p class="help-tooltip" id="help-riyadh" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 코멘트 필터를 반영합니다. 코멘트 옆 숫자는 검색 조건에 맞는 코멘트가 있는 카드 수이며, 코멘트 총 개수와는 다릅니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
+          <p class="comment-filter-feedback" role="status" hidden></p><span class="comment-filter-status visually-hidden" role="status"></span>
           <div class="cards-grid"><article class="research-card" id="N02" data-status="review"
       data-kind="building" data-type="tower" data-priority="1" data-search="n02 tamkeen tower riyadh 북부 · al yasmin/olaya 축 king fahd road 주변 인접 곡면 유리 몸체와 길게 솟는 상부가 만드는 수직 실루엣. 북부 스카이라인 기준점으로 적합. king fahd road 직접 접면으로 단정하지 않음. ctbuh 주소는 ulaya road. arij tower와 동일 건물. 추천 tower 타워 리야드" aria-labelledby="title-N02">
       <div class="card-visual">
@@ -1791,12 +1798,11 @@ html { scrollbar-gutter: stable; }
     </article></div></section><p class="section-empty" aria-live="polite" hidden>아직 등록된 조사 항목이 없습니다.</p></section>
 <section class="city-section" id="jeddah" aria-labelledby="heading-jeddah">
           <header class="section-head"><div class="section-title"><h2 id="heading-jeddah">Jeddah<span class="section-count" aria-live="polite">25</span></h2><p>랜드마크 건축물 · 조형물</p></div>
-            <div class="section-controls"><div class="status-control"><select class="status-filter" aria-label="Jeddah 선정 상태">
-              <option value="review">상태: 검토 중</option><option value="selected">상태: 선정</option><option value="excluded">상태: 제외</option>
-            </select><svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></div>
+            <div class="section-controls"><button class="comment-filter" type="button" aria-label="Jeddah 코멘트 있는 카드만 보기" aria-pressed="false" title="Jeddah 코멘트 있는 카드만 보기" disabled><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></button>
             <div class="display-help"><button type="button" class="help-trigger" aria-label="Jeddah 표시 기준" aria-describedby="help-jeddah"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
-              <p class="help-tooltip" id="help-jeddah" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 선정 상태 필터를 반영합니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
+              <p class="help-tooltip" id="help-jeddah" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 코멘트 필터를 반영합니다. 코멘트 옆 숫자는 검색 조건에 맞는 코멘트가 있는 카드 수이며, 코멘트 총 개수와는 다릅니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
+          <p class="comment-filter-feedback" role="status" hidden></p><span class="comment-filter-status visually-hidden" role="status"></span>
           <div class="cards-grid"><article class="research-card" id="J01" data-status="review"
       data-kind="building" data-type="tower" data-priority="1" data-search="j01 the headquarters business park jeddah corniche · 해안 업무지구 jeddah 건축물 상부로 돌출된 헬리패드와 각진 고층 타워, 낮은 동을 잇는 긴 기단. 상부 윤곽과 단지 구성이 뚜렷하다. 현재 정확한 footprint와 타워·기단 범위 확인. 고층·저층을 합쳐 한 후보로 계산. 추천 tower 타워 제다" aria-labelledby="title-J01">
       <div class="card-visual">
@@ -2952,24 +2958,32 @@ html { scrollbar-gutter: stable; }
 (() => {
  const cards = [...document.querySelectorAll('.research-card')];
  const cities = [...document.querySelectorAll('.city-section')];
- const statusSelects = [...document.querySelectorAll('.status-filter')];
  const search = document.getElementById('search');
  const searchClear = document.querySelector('.search-clear');
  const searchShortcut = document.querySelector('.search-kbd');
- const labels = {review: '검토 중인', selected: '선정한', excluded: '제외한'};
+ const commentFilters = new Map(cities.map(section => [section.id, false]));
  function visibleCount(scope, kind) { return [...scope.querySelectorAll('.research-card')].filter(card => !card.hidden && (!kind || card.dataset.kind === kind)).length; }
  function applyFilters() {
   searchClear.hidden = search.value.length === 0;
   searchShortcut.hidden = search.value.length !== 0;
   const terms = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   cities.forEach(section => {
-   const filter = section.querySelector('.status-filter').value;
-   section.querySelectorAll('.research-card').forEach(card => { card.hidden = !(card.dataset.status === filter && terms.every(term => card.dataset.search.includes(term))); });
+   const commentsOnly = commentFilters.get(section.id);
+   const cityCards = [...section.querySelectorAll('.research-card')];
+   const matchesSearch = card => terms.every(term => card.dataset.search.includes(term));
+   cityCards.forEach(card => { card.hidden = !(matchesSearch(card) && (!commentsOnly || Number(card.dataset.commentCount) > 0)); });
+   const commentFilter = section.querySelector('.comment-filter');
+   const countKnown = cityCards.every(card => card.dataset.commentCount !== undefined);
+   const commentedCards = cityCards.filter(card => matchesSearch(card) && Number(card.dataset.commentCount) > 0).length;
+   const cityName = section.querySelector('h2').childNodes[0].textContent;
+   commentFilter.querySelector('.comment-filter-count').textContent = countKnown ? commentedCards : '—';
+   const filterLabel = `${cityName} 코멘트 있는 카드${countKnown ? ` ${commentedCards}개` : ''}만 보기`;
+   commentFilter.setAttribute('aria-label', filterLabel); commentFilter.title = filterLabel;
    const count = visibleCount(section);
    const empty = section.querySelector('.section-empty');
    section.querySelector('.section-count').textContent = count;
    empty.hidden = count !== 0;
-   empty.textContent = terms.length ? '이 지역에 일치하는 조사 항목이 없습니다.' : section.querySelector('.research-card') ? `아직 ${labels[filter]} 항목이 없습니다.` : '아직 등록된 조사 항목이 없습니다.';
+   empty.textContent = commentsOnly ? '현재 조건에 맞는 코멘트가 있는 카드가 없습니다.' : terms.length ? '이 지역에 일치하는 조사 항목이 없습니다.' : '아직 등록된 조사 항목이 없습니다.';
    // Keep city anchors available even when a filter has no matches.
   });
   document.querySelectorAll('.scope-section').forEach(section => {
@@ -2979,7 +2993,12 @@ html { scrollbar-gutter: stable; }
   });
   document.querySelectorAll('[data-count-for]').forEach(count => { count.textContent = visibleCount(document.getElementById(count.dataset.countFor), count.dataset.countKind); });
  }
- statusSelects.forEach(select => select.addEventListener('change', applyFilters));
+ document.addEventListener('research-comment-filter-state', event => { commentFilters.set(event.detail.city, event.detail.active); applyFilters(); });
+ document.addEventListener('research-comment-count-change', () => {
+  const focusedCard = document.activeElement.closest('.research-card');
+  applyFilters();
+  if (focusedCard?.hidden) focusedCard.closest('.city-section').querySelector('.comment-filter').focus({preventScroll: true});
+ });
  search.addEventListener('input', applyFilters);
  searchClear.addEventListener('click', () => { search.value = ''; applyFilters(); search.focus(); });
  // One floating tooltip, mounted inside an open dialog when needed.
@@ -3044,8 +3063,7 @@ html { scrollbar-gutter: stable; }
   const hash = location.hash.slice(1);
   const target = document.getElementById(legacyAnchors[hash] || hash);
   if (!target) return;
-  if (target.classList.contains('research-card')) { search.value = ''; target.closest('.city-section').querySelector('.status-filter').value = target.dataset.status; applyFilters(); }
-  if (target.classList.contains('scope-section') && target.hidden) { search.value = ''; target.closest('.city-section').querySelector('.status-filter').value = 'review'; applyFilters(); }
+  if (target.classList.contains('research-card') || (target.classList.contains('scope-section') && target.hidden)) { document.dispatchEvent(new CustomEvent('research-comment-filter-reset', {detail: {city: target.closest('.city-section').id}})); search.value = ''; applyFilters(); }
   if (target.matches('.research-card, .city-section, .scope-section')) target.scrollIntoView({block: 'start'});
  }
  window.addEventListener('hashchange', revealHash);
@@ -3169,6 +3187,46 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
 
  const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
  const cardControls = new Map();
+ const cityFilters = new Map([...document.querySelectorAll('.city-section')].map(section => [section.id, {
+  section, button: section.querySelector('.comment-filter'), feedback: section.querySelector('.comment-filter-feedback'),
+  status: section.querySelector('.comment-filter-status'), request: 0, counts: null,
+ }]));
+ function resetCommentFilter(control) {
+  control.request += 1;
+  control.button.setAttribute('aria-pressed', 'false');
+  control.feedback.hidden = true; control.status.textContent = '';
+  document.dispatchEvent(new CustomEvent('research-comment-filter-state', {detail: {city: control.section.id, active: false}}));
+ }
+ function fetchCityCounts(control) {
+  const cards = [...control.section.querySelectorAll('.research-card')];
+  if (cards.every(card => card.dataset.commentCount !== undefined)) return Promise.resolve(true);
+  if (!control.counts) {
+   control.button.setAttribute('aria-busy', 'true');
+   control.counts = Promise.allSettled(cards.map(card => cardControls.get(card).ensureCount()))
+    .then(results => results.every(result => result.status === 'fulfilled'))
+    .finally(() => { control.counts = null; control.button.removeAttribute('aria-busy'); });
+  }
+  return control.counts;
+ }
+ document.addEventListener('research-comment-filter-reset', event => {
+  const control = cityFilters.get(event.detail.city);
+  if (control) resetCommentFilter(control);
+ });
+ cityFilters.forEach(control => control.button.addEventListener('click', async () => {
+  if (control.button.getAttribute('aria-pressed') === 'true') { resetCommentFilter(control); return; }
+  const request = ++control.request;
+  control.button.setAttribute('aria-pressed', 'true');
+  control.feedback.hidden = true; control.status.textContent = '코멘트를 확인하고 있습니다.';
+  const complete = await fetchCityCounts(control);
+  if (request !== control.request) return;
+  if (!complete) {
+   resetCommentFilter(control);
+   control.feedback.textContent = '코멘트를 확인하지 못했습니다. 다시 눌러주세요.'; control.feedback.hidden = false;
+   return;
+  }
+  document.dispatchEvent(new CustomEvent('research-comment-filter-state', {detail: {city: control.section.id, active: true}}));
+  control.status.textContent = '이 도시의 코멘트가 있는 카드만 표시합니다.';
+ }));
  const commentMenu = document.createElement('div');
  commentMenu.className = 'comment-menu'; commentMenu.id = 'comment-actions-menu';
  commentMenu.role = 'menu'; commentMenu.setAttribute('aria-label', '코멘트 관리'); commentMenu.hidden = true;
@@ -3266,6 +3324,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   list.id = `comment-list-${card.id}`;
   expand.setAttribute('aria-controls', list.id);
   let comments = [], total = 0, loaded = false, loading = false, revision = 0;
+  let countKnown = false, countRequest = null, previewRequest = null;
   let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
   let mutating = false, editingId = null, deletingId = null;
   let ownershipControls = [];
@@ -3297,18 +3356,37 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    loading = true;
    const startedAt = revision;
    try {
-    const result = await store.recent(card.id);
+    previewRequest = store.recent(card.id);
+    const result = await previewRequest;
     if (interacting() || startedAt !== revision) return;
     if (!pageLoaded) {
      comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
     }
-    total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = true;
+    total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = countKnown = true;
     retry.hidden = true; feedback.hidden = true; render();
    } catch (error) {
     feedback.textContent = commentErrorMessage(error); feedback.hidden = false; retry.hidden = false;
-   } finally { loading = false; }
+   } finally { loading = false; previewRequest = null; }
+  }
+  async function ensureCount() {
+   // Reuse an in-flight preview and known totals before issuing count-only reads.
+   if (countKnown) return;
+   if (previewRequest) { try { await previewRequest; } catch (_) {} }
+   if (countKnown) return;
+   if (!countRequest) {
+    const startedAt = revision;
+    countRequest = store.count(card.id).then(value => {
+     if (countKnown || startedAt !== revision) return;
+     total = value; countKnown = true; render();
+    }).finally(() => { countRequest = null; });
+   }
+   await countRequest;
   }
   function render() {
+   if (countKnown && card.dataset.commentCount !== String(total)) {
+    card.dataset.commentCount = String(total);
+    document.dispatchEvent(new Event('research-comment-count-change'));
+   }
    if (menuTarget && card.contains(menuTarget.trigger)) closeCommentMenu();
    count.hidden = total === 0;
    count.textContent = `코멘트 ${total}`;
@@ -3457,7 +3535,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    form.setAttribute('aria-busy', 'true'); feedback.hidden = true;
    try {
     const {comment, total: confirmedTotal} = await store.add(card.id, attempt);
-    revision += 1;
+    revision += 1; countKnown = true;
     const alreadyShown = comments.some(existing => existing.id === comment.id);
     comments = [comment, ...comments.filter(existing => existing.id !== comment.id)];
     if (confirmedTotal !== null) total = confirmedTotal;
@@ -3489,9 +3567,13 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   more.addEventListener('click', loadPage);
   retry.addEventListener('click', () => load(true));
   thumbnailBadge.addEventListener('click', () => { section.scrollIntoView({block:'center',behavior:'smooth'}); section.focus({preventScroll:true}); });
-  cardControls.set(card, {load, refreshOwnership}); commentsObserver?.observe(card);
+  cardControls.set(card, {load, ensureCount, refreshOwnership}); commentsObserver?.observe(card);
   if (!commentsObserver) load();
   render(); section.hidden = false; resizeObserver?.observe(card);
+ });
+ cityFilters.forEach(control => {
+  control.button.disabled = !store.configured;
+  if (store.configured) fetchCityCounts(control);
  });
  if (!resizeObserver) window.addEventListener('resize', () => textChecks.forEach((_, card) => checkText(card)));
 })();

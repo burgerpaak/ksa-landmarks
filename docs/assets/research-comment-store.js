@@ -59,6 +59,11 @@ export function createCommentStore(config) {
       viewerListeners.add(listener);
       return () => viewerListeners.delete(listener);
     },
+    async count(landmarkId) {
+      const connection = await connect(), {sdk} = connection;
+      const count = await read(() => sdk.getCount(collectionRef(connection, landmarkId)));
+      return count.data().count;
+    },
     async recent(landmarkId) {
       const connection = await connect(), {sdk} = connection;
       const ref = collectionRef(connection, landmarkId);

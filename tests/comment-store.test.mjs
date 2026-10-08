@@ -13,6 +13,11 @@ async function setup(uid = 'author-a') {
   const snapshot = ref => ({id: ref.split('/').at(-1), exists: () => records.has(ref), data: () => records.get(ref)});
   const sdk = {
     getFirestore: () => ({}), doc: (_, ...segments) => segments.join('/'),
+    collection: (_, ...segments) => segments.join('/'),
+    getCount: async ref => {
+      if (failure) throw failure;
+      return {data: () => ({count: [...records.keys()].filter(path => path.startsWith(ref + '/')).length})};
+    },
     getDoc: async ref => snapshot(ref), serverTimestamp: stamp,
     runTransaction: async (_, run) => {
       const writes = [];
@@ -53,6 +58,22 @@ test('author can edit body while retaining author, ID and creation time', async 
   assert.equal(result.id,'one'); assert.ok(result.updatedAt);
   assert.equal(records.get(path).author,before.author);
   assert.equal(records.get(path).createdAt,before.createdAt);
+});
+
+test('filter counts include unseen cards and do not read or modify comment bodies', async () => {
+  const {store,records,path,stamp} = await setup(null);
+  records.set('landmarkComments/N36/comments/two', {author:'B',body:'Distant card',authorId:'b',createdAt:stamp()});
+  assert.equal(await store.count('N02'), 1);
+  assert.equal(await store.count('N36'), 1);
+  assert.equal(await store.count('N34'), 0);
+  assert.equal(records.get(path).body, 'Original');
+  assert.equal(records.size, 2);
+});
+
+test('count failures reject so an incomplete filter cannot silently omit cards', async () => {
+  const {store,fail} = await setup();
+  fail(Object.assign(new Error('denied'), {code:'permission-denied'}));
+  await assert.rejects(store.count('N36'), {code:'permission-denied'});
 });
 
 test('same display name does not give another anonymous identity ownership', async () => {

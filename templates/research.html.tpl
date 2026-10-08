@@ -61,6 +61,14 @@ h1 em { font-style: normal; color: var(--accent); }
 .page-sub { color: var(--ink-soft); margin-top: 12px; font-size: 15px; line-height: 1.6; max-width: 60ch; }
 .check-date { font: 10px var(--mono); color: var(--ink-mute); white-space: nowrap; }
 .overview { display: flex; flex-wrap: wrap; gap: 24px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.comment-filter { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 5px 9px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--ink-soft); font-size: 12px; transition: background .14s ease, color .14s ease, border-color .14s ease; }
+.comment-filter:hover { background: var(--bg-sunken); color: var(--ink); }
+.comment-filter[aria-pressed="true"] { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); color: var(--accent-strong); font-weight: 600; }
+.comment-filter[aria-pressed="true"]:hover { background: color-mix(in srgb, var(--accent) 12%, var(--accent-soft)); border-color: var(--accent); }
+.comment-filter[aria-busy="true"] { opacity: .6; }
+.comment-filter-count { font-variant-numeric: tabular-nums; }
+.comment-filter-feedback { margin-bottom: 18px; font-size: 12px; color: var(--ink-soft); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .city-overview { display: flex; align-items: center; gap: 20px; }
 .city-overview + .city-overview { border-left: 1px solid var(--border); padding-left: 24px; }
 .city-jump { font-size: 16px; font-weight: 600; color: var(--ink); }
@@ -78,9 +86,6 @@ h1 em { font-style: normal; color: var(--accent); }
 .search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--ink-mute); }
 .search-clear:hover { background: var(--bg-sunken); color: var(--ink); }
 .search-clear:focus-visible { outline-offset: 0; color: var(--ink); }
-.status-control { position: relative; display: inline-flex; align-items: center; flex-shrink: 0; }
-.status-control select { appearance: none; cursor: pointer; font-size: 11px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 7px; padding: 6px 27px 6px 11px; color: var(--ink-soft); }
-.status-control .chevron { position: absolute; right: 8px; width: 12px; height: 12px; pointer-events: none; }
 /* Hover, keyboard focus and tap share the same help content. */
 .display-help { position: relative; }
 .help-trigger { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 0; background: transparent; color: var(--ink-mute); border-radius: 6px; }
@@ -239,6 +244,8 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .comment-menu button { min-height:44px; }
  .page-head { display: block; } .check-date { margin-top: 10px; }
  .overview { flex-direction: column; align-items: flex-start; gap: 16px; }
+ .comment-filter { min-height: 44px; }
+ .city-overview, .stat { white-space: nowrap; }
  .city-overview + .city-overview { border-left: 0; padding-left: 0; }
  .city-jump { min-width: 52px; }
  .hero-stats { gap: 16px; }
@@ -249,6 +256,7 @@ details[open] summary > .chevron { transform: rotate(180deg); }
  .area { margin-top: 8px; } .character { font-size: 12px; }
 }
 @media (pointer: coarse) {
+ .comment-filter { min-height: 44px; }
  .comment-write, .comment-expand, .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-height: 44px; }
  .comment-text-toggle, .comment-cancel, .comment-submit, .comment-author-change { min-width: 44px; }
  .comment-manage { width:44px;height:44px; }
@@ -337,24 +345,32 @@ html { scrollbar-gutter: stable; }
 (() => {
  const cards = [...document.querySelectorAll('.research-card')];
  const cities = [...document.querySelectorAll('.city-section')];
- const statusSelects = [...document.querySelectorAll('.status-filter')];
  const search = document.getElementById('search');
  const searchClear = document.querySelector('.search-clear');
  const searchShortcut = document.querySelector('.search-kbd');
- const labels = {review: '검토 중인', selected: '선정한', excluded: '제외한'};
+ const commentFilters = new Map(cities.map(section => [section.id, false]));
  function visibleCount(scope, kind) { return [...scope.querySelectorAll('.research-card')].filter(card => !card.hidden && (!kind || card.dataset.kind === kind)).length; }
  function applyFilters() {
   searchClear.hidden = search.value.length === 0;
   searchShortcut.hidden = search.value.length !== 0;
   const terms = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   cities.forEach(section => {
-   const filter = section.querySelector('.status-filter').value;
-   section.querySelectorAll('.research-card').forEach(card => { card.hidden = !(card.dataset.status === filter && terms.every(term => card.dataset.search.includes(term))); });
+   const commentsOnly = commentFilters.get(section.id);
+   const cityCards = [...section.querySelectorAll('.research-card')];
+   const matchesSearch = card => terms.every(term => card.dataset.search.includes(term));
+   cityCards.forEach(card => { card.hidden = !(matchesSearch(card) && (!commentsOnly || Number(card.dataset.commentCount) > 0)); });
+   const commentFilter = section.querySelector('.comment-filter');
+   const countKnown = cityCards.every(card => card.dataset.commentCount !== undefined);
+   const commentedCards = cityCards.filter(card => matchesSearch(card) && Number(card.dataset.commentCount) > 0).length;
+   const cityName = section.querySelector('h2').childNodes[0].textContent;
+   commentFilter.querySelector('.comment-filter-count').textContent = countKnown ? commentedCards : '—';
+   const filterLabel = `${cityName} 코멘트 있는 카드${countKnown ? ` ${commentedCards}개` : ''}만 보기`;
+   commentFilter.setAttribute('aria-label', filterLabel); commentFilter.title = filterLabel;
    const count = visibleCount(section);
    const empty = section.querySelector('.section-empty');
    section.querySelector('.section-count').textContent = count;
    empty.hidden = count !== 0;
-   empty.textContent = terms.length ? '이 지역에 일치하는 조사 항목이 없습니다.' : section.querySelector('.research-card') ? `아직 ${labels[filter]} 항목이 없습니다.` : '아직 등록된 조사 항목이 없습니다.';
+   empty.textContent = commentsOnly ? '현재 조건에 맞는 코멘트가 있는 카드가 없습니다.' : terms.length ? '이 지역에 일치하는 조사 항목이 없습니다.' : '아직 등록된 조사 항목이 없습니다.';
    // Keep city anchors available even when a filter has no matches.
   });
   document.querySelectorAll('.scope-section').forEach(section => {
@@ -364,7 +380,12 @@ html { scrollbar-gutter: stable; }
   });
   document.querySelectorAll('[data-count-for]').forEach(count => { count.textContent = visibleCount(document.getElementById(count.dataset.countFor), count.dataset.countKind); });
  }
- statusSelects.forEach(select => select.addEventListener('change', applyFilters));
+ document.addEventListener('research-comment-filter-state', event => { commentFilters.set(event.detail.city, event.detail.active); applyFilters(); });
+ document.addEventListener('research-comment-count-change', () => {
+  const focusedCard = document.activeElement.closest('.research-card');
+  applyFilters();
+  if (focusedCard?.hidden) focusedCard.closest('.city-section').querySelector('.comment-filter').focus({preventScroll: true});
+ });
  search.addEventListener('input', applyFilters);
  searchClear.addEventListener('click', () => { search.value = ''; applyFilters(); search.focus(); });
  // One floating tooltip, mounted inside an open dialog when needed.
@@ -429,8 +450,7 @@ html { scrollbar-gutter: stable; }
   const hash = location.hash.slice(1);
   const target = document.getElementById(legacyAnchors[hash] || hash);
   if (!target) return;
-  if (target.classList.contains('research-card')) { search.value = ''; target.closest('.city-section').querySelector('.status-filter').value = target.dataset.status; applyFilters(); }
-  if (target.classList.contains('scope-section') && target.hidden) { search.value = ''; target.closest('.city-section').querySelector('.status-filter').value = 'review'; applyFilters(); }
+  if (target.classList.contains('research-card') || (target.classList.contains('scope-section') && target.hidden)) { document.dispatchEvent(new CustomEvent('research-comment-filter-reset', {detail: {city: target.closest('.city-section').id}})); search.value = ''; applyFilters(); }
   if (target.matches('.research-card, .city-section, .scope-section')) target.scrollIntoView({block: 'start'});
  }
  window.addEventListener('hashchange', revealHash);
@@ -554,6 +574,46 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
 
  const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
  const cardControls = new Map();
+ const cityFilters = new Map([...document.querySelectorAll('.city-section')].map(section => [section.id, {
+  section, button: section.querySelector('.comment-filter'), feedback: section.querySelector('.comment-filter-feedback'),
+  status: section.querySelector('.comment-filter-status'), request: 0, counts: null,
+ }]));
+ function resetCommentFilter(control) {
+  control.request += 1;
+  control.button.setAttribute('aria-pressed', 'false');
+  control.feedback.hidden = true; control.status.textContent = '';
+  document.dispatchEvent(new CustomEvent('research-comment-filter-state', {detail: {city: control.section.id, active: false}}));
+ }
+ function fetchCityCounts(control) {
+  const cards = [...control.section.querySelectorAll('.research-card')];
+  if (cards.every(card => card.dataset.commentCount !== undefined)) return Promise.resolve(true);
+  if (!control.counts) {
+   control.button.setAttribute('aria-busy', 'true');
+   control.counts = Promise.allSettled(cards.map(card => cardControls.get(card).ensureCount()))
+    .then(results => results.every(result => result.status === 'fulfilled'))
+    .finally(() => { control.counts = null; control.button.removeAttribute('aria-busy'); });
+  }
+  return control.counts;
+ }
+ document.addEventListener('research-comment-filter-reset', event => {
+  const control = cityFilters.get(event.detail.city);
+  if (control) resetCommentFilter(control);
+ });
+ cityFilters.forEach(control => control.button.addEventListener('click', async () => {
+  if (control.button.getAttribute('aria-pressed') === 'true') { resetCommentFilter(control); return; }
+  const request = ++control.request;
+  control.button.setAttribute('aria-pressed', 'true');
+  control.feedback.hidden = true; control.status.textContent = '코멘트를 확인하고 있습니다.';
+  const complete = await fetchCityCounts(control);
+  if (request !== control.request) return;
+  if (!complete) {
+   resetCommentFilter(control);
+   control.feedback.textContent = '코멘트를 확인하지 못했습니다. 다시 눌러주세요.'; control.feedback.hidden = false;
+   return;
+  }
+  document.dispatchEvent(new CustomEvent('research-comment-filter-state', {detail: {city: control.section.id, active: true}}));
+  control.status.textContent = '이 도시의 코멘트가 있는 카드만 표시합니다.';
+ }));
  const commentMenu = document.createElement('div');
  commentMenu.className = 'comment-menu'; commentMenu.id = 'comment-actions-menu';
  commentMenu.role = 'menu'; commentMenu.setAttribute('aria-label', '코멘트 관리'); commentMenu.hidden = true;
@@ -651,6 +711,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   list.id = `comment-list-${card.id}`;
   expand.setAttribute('aria-controls', list.id);
   let comments = [], total = 0, loaded = false, loading = false, revision = 0;
+  let countKnown = false, countRequest = null, previewRequest = null;
   let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
   let mutating = false, editingId = null, deletingId = null;
   let ownershipControls = [];
@@ -682,18 +743,37 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    loading = true;
    const startedAt = revision;
    try {
-    const result = await store.recent(card.id);
+    previewRequest = store.recent(card.id);
+    const result = await previewRequest;
     if (interacting() || startedAt !== revision) return;
     if (!pageLoaded) {
      comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
     }
-    total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = true;
+    total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = countKnown = true;
     retry.hidden = true; feedback.hidden = true; render();
    } catch (error) {
     feedback.textContent = commentErrorMessage(error); feedback.hidden = false; retry.hidden = false;
-   } finally { loading = false; }
+   } finally { loading = false; previewRequest = null; }
+  }
+  async function ensureCount() {
+   // Reuse an in-flight preview and known totals before issuing count-only reads.
+   if (countKnown) return;
+   if (previewRequest) { try { await previewRequest; } catch (_) {} }
+   if (countKnown) return;
+   if (!countRequest) {
+    const startedAt = revision;
+    countRequest = store.count(card.id).then(value => {
+     if (countKnown || startedAt !== revision) return;
+     total = value; countKnown = true; render();
+    }).finally(() => { countRequest = null; });
+   }
+   await countRequest;
   }
   function render() {
+   if (countKnown && card.dataset.commentCount !== String(total)) {
+    card.dataset.commentCount = String(total);
+    document.dispatchEvent(new Event('research-comment-count-change'));
+   }
    if (menuTarget && card.contains(menuTarget.trigger)) closeCommentMenu();
    count.hidden = total === 0;
    count.textContent = `코멘트 ${total}`;
@@ -842,7 +922,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    form.setAttribute('aria-busy', 'true'); feedback.hidden = true;
    try {
     const {comment, total: confirmedTotal} = await store.add(card.id, attempt);
-    revision += 1;
+    revision += 1; countKnown = true;
     const alreadyShown = comments.some(existing => existing.id === comment.id);
     comments = [comment, ...comments.filter(existing => existing.id !== comment.id)];
     if (confirmedTotal !== null) total = confirmedTotal;
@@ -874,9 +954,13 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   more.addEventListener('click', loadPage);
   retry.addEventListener('click', () => load(true));
   thumbnailBadge.addEventListener('click', () => { section.scrollIntoView({block:'center',behavior:'smooth'}); section.focus({preventScroll:true}); });
-  cardControls.set(card, {load, refreshOwnership}); commentsObserver?.observe(card);
+  cardControls.set(card, {load, ensureCount, refreshOwnership}); commentsObserver?.observe(card);
   if (!commentsObserver) load();
   render(); section.hidden = false; resizeObserver?.observe(card);
+ });
+ cityFilters.forEach(control => {
+  control.button.disabled = !store.configured;
+  if (store.configured) fetchCityCounts(control);
  });
  if (!resizeObserver) window.addEventListener('resize', () => textChecks.forEach((_, card) => checkText(card)));
 })();
