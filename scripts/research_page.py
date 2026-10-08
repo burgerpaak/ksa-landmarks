@@ -215,7 +215,7 @@ def render_card(item):
         <div class="card-meta"><div class="badges">
           {status}{low}</div></div>
         {visual}
-        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span></span></button>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-thumbnail-count"></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><{title_tag} id="title-{esc(item['id'])}">{esc(item['name'])}</{title_tag}>
         <button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{esc(tip_reason)}" aria-label="추천 등급: {esc(item['selection_suggestion'])}">{esc(item['selection_suggestion'])}</button></div>
@@ -281,7 +281,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
         empty = " hidden" if items else ""
         sections.append(f'''<section class="city-section" id="{section_id}" aria-labelledby="heading-{section_id}">
           <header class="section-head"><div class="section-title"><h2 id="heading-{section_id}">{city}<span class="section-count" aria-live="polite">{len(items)}</span></h2><p>{description}</p></div>
-            <div class="section-controls"><button class="comment-filter" type="button" aria-label="{city} 코멘트 있는 카드만 보기" aria-pressed="false" title="{city} 코멘트 있는 카드만 보기" disabled><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></button>
+            <div class="section-controls"><button class="comment-filter" type="button" aria-label="{city} 코멘트 있는 카드만 보기" aria-pressed="false" title="{city} 코멘트 있는 카드만 보기" disabled><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-filter-label"><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></span></button>
             <div class="display-help"><button type="button" class="help-trigger" aria-label="{city} 표시 기준" aria-describedby="help-{section_id}"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
               <p class="help-tooltip" id="help-{section_id}" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 코멘트 필터를 반영합니다. 코멘트 옆 숫자는 검색 조건에 맞는 코멘트가 있는 카드 수이며, 코멘트 총 개수와는 다릅니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
             </div></div></header>
@@ -291,6 +291,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
     firebase_config = json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
     replacements = {
         "{{COMMENT_STORE_VERSION}}": hashlib.sha256((root / "assets/research-comment-store.js").read_bytes()).hexdigest()[:12],
+        "{{COMMENT_READ_VERSION}}": hashlib.sha256((root / "assets/research-comment-read-state.js").read_bytes()).hexdigest()[:12],
         "{{FIREBASE_CONFIG}}": json.dumps(firebase_config, ensure_ascii=False).replace("<", "\\u003c"),
         "{{PALETTE}}": palette, "{{TOTAL}}": str(len(candidates)),
         "{{REVIEW_COUNT}}": str(counts["review"]), "{{SELECTED_COUNT}}": str(counts["selected"]),
@@ -306,4 +307,5 @@ def build_research(root: Path, output_dir: Path, palette: str):
     assets_dir = output_dir / "assets"
     assets_dir.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(root / "assets/research-comment-store.js", assets_dir / "research-comment-store.js")
+    shutil.copyfile(root / "assets/research-comment-read-state.js", assets_dir / "research-comment-read-state.js")
     print(f"✓ {target.relative_to(root)} ({len(candidates)} research cards)")

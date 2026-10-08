@@ -9,11 +9,23 @@ async function setup(uid = 'author-a') {
   const records = new Map();
   const auth = {currentUser: uid ? {uid} : null, authStateReady: async () => {}};
   let authListener, failure;
+  const documentReads = [];
   const stamp = () => ({toDate: () => new Date('2026-10-01T12:00:00Z'), toMillis: () => 1790856000000});
   const snapshot = ref => ({id: ref.split('/').at(-1), exists: () => records.has(ref), data: () => records.get(ref)});
   const sdk = {
     getFirestore: () => ({}), doc: (_, ...segments) => segments.join('/'),
     collection: (_, ...segments) => segments.join('/'),
+    orderBy: (field, direction) => ({field, direction}), limit: count => ({count}),
+    query: (ref, ...constraints) => ({ref, constraints}),
+    getDocs: async ({ref, constraints}) => {
+      if (failure) throw failure;
+      const cap = constraints.find(rule => rule.count !== undefined).count;
+      const docs = [...records.keys()].filter(path => path.startsWith(ref + '/'))
+        .sort((a, b) => records.get(b).createdAt.toMillis() - records.get(a).createdAt.toMillis())
+        .slice(0, cap).map(snapshot);
+      documentReads.push({ref, cap, returned: docs.length});
+      return {docs, size: docs.length};
+    },
     getCount: async ref => {
       if (failure) throw failure;
       return {data: () => ({count: [...records.keys()].filter(path => path.startsWith(ref + '/')).length})};
@@ -47,8 +59,32 @@ async function setup(uid = 'author-a') {
   const store = module.namespace.createCommentStore({apiKey:'public',projectId:'test',appId:'test'});
   const path = 'landmarkComments/N02/comments/one';
   records.set(path, {author:'Same name',body:'Original',authorId:'author-a',createdAt:stamp()});
-  return {store,records,path,auth,stamp,changeUser: next => {auth.currentUser = next ? {uid:next} : null; authListener(auth.currentUser);}, fail: error => {failure=error;}};
+  return {store,records,path,auth,stamp,documentReads,changeUser: next => {auth.currentUser = next ? {uid:next} : null; authListener(auth.currentUser);}, fail: error => {failure=error;}};
 }
+
+test('summary returns latest creation timestamp at nanosecond precision with only one document', async () => {
+  const {store, records, stamp, documentReads} = await setup(null);
+  const date = new Date('2026-10-08T12:00:00Z');
+  const latest = {seconds: date.getTime() / 1000, nanoseconds: 123456789,
+    toDate: () => date, toMillis: () => date.getTime()};
+  records.set('landmarkComments/N02/comments/new', {author:'B',body:'New',authorId:'b',createdAt:latest});
+  const result = await store.summary('N02');
+  assert.equal(result.total, 2);
+  assert.deepEqual({...result.latest}, {seconds: latest.seconds, nanoseconds: 123456789});
+  assert.deepEqual(documentReads, [{ref:'landmarkComments/N02/comments',cap:1,returned:1}]);
+  const preview = await store.recent('N02');
+  assert.equal(preview.comments.length, 2);
+  assert.deepEqual({...preview.latest}, {...preview.comments[0].createdStamp});
+  assert.equal(preview.latest.nanoseconds, 123456789);
+  const empty = await store.summary('J01');
+  assert.equal(empty.total, 0); assert.equal(empty.latest, null);
+});
+
+test('failed summary cannot establish a read baseline', async () => {
+  const {store, fail} = await setup();
+  fail(Object.assign(new Error('denied'), {code:'permission-denied'}));
+  await assert.rejects(store.summary('N36'), {code:'permission-denied'});
+});
 
 test('author can edit body while retaining author, ID and creation time', async () => {
   const {store,records,path} = await setup();

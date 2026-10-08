@@ -46,8 +46,12 @@ export function createCommentStore(config) {
   function toComment(snapshot) {
     const data = snapshot.data();
     return {id: snapshot.id, author: data.author, text: data.body,
-      authorId: data.authorId, createdAt: data.createdAt.toDate().toISOString(),
+      authorId: data.authorId, createdAt: data.createdAt.toDate().toISOString(), createdStamp: timestampStamp(data.createdAt),
       updatedAt: data.updatedAt?.toDate().toISOString() || null};
+  }
+  function timestampStamp(value) {
+    return {seconds: value.seconds ?? Math.floor(value.toMillis() / 1000),
+      nanoseconds: value.nanoseconds ?? (value.toMillis() % 1000) * 1e6};
   }
   function collectionRef({sdk, db}, landmarkId) {
     return sdk.collection(db, 'landmarkComments', landmarkId, 'comments');
@@ -64,6 +68,14 @@ export function createCommentStore(config) {
       const count = await read(() => sdk.getCount(collectionRef(connection, landmarkId)));
       return count.data().count;
     },
+    async summary(landmarkId) {
+      const connection = await connect(), {sdk} = connection;
+      const ref = collectionRef(connection, landmarkId);
+      const [count, latest] = await read(() => Promise.all([
+        sdk.getCount(ref), sdk.getDocs(sdk.query(ref, sdk.orderBy('createdAt', 'desc'), sdk.limit(1))),
+      ]));
+      return {total: count.data().count, latest: latest.docs.length ? timestampStamp(latest.docs[0].data().createdAt) : null};
+    },
     async recent(landmarkId) {
       const connection = await connect(), {sdk} = connection;
       const ref = collectionRef(connection, landmarkId);
@@ -71,7 +83,8 @@ export function createCommentStore(config) {
         sdk.getDocs(sdk.query(ref, sdk.orderBy('createdAt', 'desc'), sdk.limit(2))),
         sdk.getCount(ref),
       ]));
-      return {comments: rows.docs.map(toComment), total: count.data().count};
+      return {comments: rows.docs.map(toComment), total: count.data().count,
+        latest: rows.docs.length ? timestampStamp(rows.docs[0].data().createdAt) : null};
     },
     async page(landmarkId, cursor = null) {
       const connection = await connect(), {sdk} = connection;

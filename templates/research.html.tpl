@@ -61,12 +61,15 @@ h1 em { font-style: normal; color: var(--accent); }
 .page-sub { color: var(--ink-soft); margin-top: 12px; font-size: 15px; line-height: 1.6; max-width: 60ch; }
 .check-date { font: 10px var(--mono); color: var(--ink-mute); white-space: nowrap; }
 .overview { display: flex; flex-wrap: wrap; gap: 24px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.comment-filter { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 5px 9px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--ink-soft); font-size: 12px; transition: background .14s ease, color .14s ease, border-color .14s ease; }
-.comment-filter:hover { background: var(--bg-sunken); color: var(--ink); }
+.comment-filter { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-elev); color: var(--ink-soft); font-size: 12px; transition: background .14s ease, color .14s ease, border-color .14s ease; }
+.comment-filter:hover { background: var(--bg-sunken); border-color: color-mix(in srgb, var(--ink-mute) 40%, var(--border)); color: var(--ink); }
 .comment-filter[aria-pressed="true"] { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); color: var(--accent-strong); font-weight: 600; }
 .comment-filter[aria-pressed="true"]:hover { background: color-mix(in srgb, var(--accent) 12%, var(--accent-soft)); border-color: var(--accent); }
 .comment-filter[aria-busy="true"] { opacity: .6; }
 .comment-filter-count { font-variant-numeric: tabular-nums; }
+.comment-filter-label { display:inline-flex;align-items:baseline;gap:4px; }
+.comment-update-dot { display:none;flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--accent-strong);pointer-events:none; }
+[data-unread="true"] > .comment-update-dot { display:block; }
 .comment-filter-feedback { margin-bottom: 18px; font-size: 12px; color: var(--ink-soft); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .city-overview { display: flex; align-items: center; gap: 20px; }
@@ -117,9 +120,10 @@ h1 em { font-style: normal; color: var(--accent); }
 .photo-open:focus-visible { outline:3px solid var(--accent-strong);outline-offset:-3px; }
 .card-visual .card-meta { z-index:1;pointer-events:none; }
 .photo-kind { position:absolute;left:12px;bottom:12px;padding:3px 7px;border-radius:4px;background:var(--bg-elev);color:var(--ink-soft);font-size:10px;pointer-events:none; }
-.comment-thumbnail-badge { position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;min-height:28px;padding:4px 8px;border:1px solid rgb(255 255 255 / 25%);border-radius:6px;background:rgb(16 23 33 / 88%);color:#fff;font-size:11px;font-weight:500;box-shadow:0 1px 4px rgb(0 0 0 / 12%);user-select:none; }
+.comment-thumbnail-badge { position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:4px;min-height:28px;padding:4px 8px;border:1px solid rgb(255 255 255 / 25%);border-radius:6px;background:rgb(16 23 33 / 88%);color:#fff;font-size:11px;font-weight:500;box-shadow:0 1px 4px rgb(0 0 0 / 12%);user-select:none; }
 .comment-thumbnail-badge:hover { background:#101721; }
 .comment-thumbnail-badge:focus-visible { outline:2px solid #fff;outline-offset:2px; }
+.comment-thumbnail-badge > .comment-update-dot { background:#6ba6ef; }
 .photo-gallery { display:grid;gap:20px;margin:10px 0 20px; }
 .research-photo { margin:0; }
 .photo-original { display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in; }
@@ -362,10 +366,12 @@ html { scrollbar-gutter: stable; }
    const commentFilter = section.querySelector('.comment-filter');
    const countKnown = cityCards.every(card => card.dataset.commentCount !== undefined);
    const commentedCards = cityCards.filter(card => matchesSearch(card) && Number(card.dataset.commentCount) > 0).length;
+   const unread = cityCards.some(card => matchesSearch(card) && card.dataset.commentUnread === 'true');
+   commentFilter.dataset.unread = String(unread);
    const cityName = section.querySelector('h2').childNodes[0].textContent;
    commentFilter.querySelector('.comment-filter-count').textContent = countKnown ? commentedCards : '—';
    const filterLabel = `${cityName} 코멘트 있는 카드${countKnown ? ` ${commentedCards}개` : ''}만 보기`;
-   commentFilter.setAttribute('aria-label', filterLabel); commentFilter.title = filterLabel;
+   commentFilter.setAttribute('aria-label', filterLabel + (unread ? ' · 새 코멘트가 있습니다' : '')); commentFilter.title = unread ? '' : filterLabel;
    const count = visibleCount(section);
    const empty = section.querySelector('.section-empty');
    section.querySelector('.section-count').textContent = count;
@@ -381,6 +387,7 @@ html { scrollbar-gutter: stable; }
   document.querySelectorAll('[data-count-for]').forEach(count => { count.textContent = visibleCount(document.getElementById(count.dataset.countFor), count.dataset.countKind); });
  }
  document.addEventListener('research-comment-filter-state', event => { commentFilters.set(event.detail.city, event.detail.active); applyFilters(); });
+ document.addEventListener('research-comment-read-change', applyFilters);
  document.addEventListener('research-comment-count-change', () => {
   const focusedCard = document.activeElement.closest('.research-card');
   applyFilters();
@@ -565,6 +572,7 @@ html { scrollbar-gutter: stable; }
 <script id="research-firebase-config" type="application/json">{{FIREBASE_CONFIG}}</script>
 <script type="module">
 import {createCommentStore, commentErrorMessage} from '../assets/research-comment-store.js?v={{COMMENT_STORE_VERSION}}';
+import {createCommentReadState, commentStamp} from '../assets/research-comment-read-state.js?v={{COMMENT_READ_VERSION}}';
 (() => {
  const topbar = document.querySelector('.topbar');
  topbar.querySelectorAll('a').forEach(link => { link.draggable = false; });
@@ -572,8 +580,53 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   if (!event.target.closest('input, textarea')) event.preventDefault();
  });
 
- const store = createCommentStore(JSON.parse(document.getElementById('research-firebase-config').textContent));
+ const firebaseConfig = JSON.parse(document.getElementById('research-firebase-config').textContent);
+ const store = createCommentStore(firebaseConfig);
+ const readStorageKey = `ksa-comment-seen-v1:${firebaseConfig.projectId || 'preview'}`;
+ const readState = createCommentReadState({read: () => localStorage.getItem(readStorageKey), write: value => localStorage.setItem(readStorageKey, value)});
  const cardControls = new Map();
+ let readFrame = null;
+ function scheduleReadCheck() {
+  if (readFrame !== null) return;
+  readFrame = requestAnimationFrame(() => {
+   readFrame = null;
+   if (document.visibilityState !== 'visible' || document.querySelector('dialog[open]')) return;
+   const top = document.querySelector('.topbar').getBoundingClientRect().bottom;
+   cardControls.forEach(control => control.markVisibleRead(top));
+  });
+ }
+ window.addEventListener('scroll', scheduleReadCheck, {passive: true});
+ window.addEventListener('resize', scheduleReadCheck);
+ document.addEventListener('visibilitychange', scheduleReadCheck);
+ document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('close', scheduleReadCheck));
+ document.addEventListener('research-comment-filter-state', scheduleReadCheck);
+ window.addEventListener('storage', event => {
+  if (event.key !== readStorageKey && event.key !== null) return;
+  readState.sync(); cardControls.forEach(control => control.renderReadStatus());
+ });
+ const updateTip = document.createElement('div');
+ updateTip.id = 'comment-update-tooltip'; updateTip.className = 'recommendation-tooltip';
+ updateTip.setAttribute('role', 'tooltip'); updateTip.textContent = '새 코멘트가 있습니다'; updateTip.hidden = true;
+ document.body.append(updateTip);
+ let updateAnchor = null;
+ function closeUpdateTip() {
+  updateAnchor?.removeAttribute('aria-describedby'); updateAnchor = null; updateTip.hidden = true;
+ }
+ document.querySelectorAll('.comment-filter, .comment-thumbnail-badge').forEach(button => {
+  const show = () => {
+   if (button.dataset.unread !== 'true') return;
+   closeUpdateTip(); updateAnchor = button; updateTip.hidden = false;
+   button.setAttribute('aria-describedby', updateTip.id);
+   const box = button.getBoundingClientRect();
+   updateTip.style.left = `${Math.max(8, Math.min(box.right - updateTip.offsetWidth, innerWidth - updateTip.offsetWidth - 8))}px`;
+   updateTip.style.top = `${box.bottom + updateTip.offsetHeight + 6 <= innerHeight - 8 ? box.bottom + 6 : Math.max(8, box.top - updateTip.offsetHeight - 6)}px`;
+  };
+  button.addEventListener('mouseenter', show); button.addEventListener('focus', show);
+  button.addEventListener('mouseleave', closeUpdateTip); button.addEventListener('blur', closeUpdateTip);
+ });
+ window.addEventListener('scroll', closeUpdateTip, true); window.addEventListener('resize', closeUpdateTip);
+ document.addEventListener('keydown', event => { if (event.key === 'Escape') closeUpdateTip(); });
+ document.addEventListener('research-comment-read-change', () => { if (updateAnchor?.dataset.unread !== 'true') closeUpdateTip(); });
  const cityFilters = new Map([...document.querySelectorAll('.city-section')].map(section => [section.id, {
   section, button: section.querySelector('.comment-filter'), feedback: section.querySelector('.comment-filter-feedback'),
   status: section.querySelector('.comment-filter-status'), request: 0, counts: null,
@@ -712,6 +765,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   expand.setAttribute('aria-controls', list.id);
   let comments = [], total = 0, loaded = false, loading = false, revision = 0;
   let countKnown = false, countRequest = null, previewRequest = null;
+  let visibleComments = [];
   let submitting = false, paging = false, pageLoaded = false, cursor = null, hasMore = false;
   let mutating = false, editingId = null, deletingId = null;
   let ownershipControls = [];
@@ -750,24 +804,43 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
      comments = startedAt === revision ? result.comments : [...new Map([...comments, ...result.comments].map(comment => [comment.id, comment])).values()];
     }
     total = startedAt === revision ? result.total : Math.max(total, result.total); loaded = countKnown = true;
+    readState.observe(card.id, result.latest);
     retry.hidden = true; feedback.hidden = true; render();
    } catch (error) {
     feedback.textContent = commentErrorMessage(error); feedback.hidden = false; retry.hidden = false;
    } finally { loading = false; previewRequest = null; }
   }
   async function ensureCount() {
-   // Reuse an in-flight preview and known totals before issuing count-only reads.
+   // Reuse an in-flight preview and known totals before querying update metadata.
    if (countKnown) return;
    if (previewRequest) { try { await previewRequest; } catch (_) {} }
    if (countKnown) return;
    if (!countRequest) {
     const startedAt = revision;
-    countRequest = store.count(card.id).then(value => {
+    countRequest = store.summary(card.id).then(result => {
      if (countKnown || startedAt !== revision) return;
-     total = value; countKnown = true; render();
+     total = result.total; countKnown = true; readState.observe(card.id, result.latest); render();
     }).finally(() => { countRequest = null; });
    }
    await countRequest;
+  }
+  function renderReadStatus() {
+   const unread = String(total > 0 && readState.hasUnread(card.id));
+   const changed = card.dataset.commentUnread !== unread;
+   card.dataset.commentUnread = thumbnailBadge.dataset.unread = unread;
+   thumbnailBadge.setAttribute('aria-label', `코멘트 ${total}개 보기${unread === 'true' ? ' · 새 코멘트가 있습니다' : ''}`);
+   thumbnailBadge.title = unread === 'true' ? '' : `코멘트 ${total}개 보기`;
+   if (changed) document.dispatchEvent(new Event('research-comment-read-change'));
+  }
+  function markVisibleRead(top) {
+   if (card.hidden || !readState.hasUnread(card.id)) return;
+   visibleComments.forEach(({text, stamp}) => {
+    const box = text.getBoundingClientRect();
+    const height = Math.min(box.bottom, innerHeight) - Math.max(box.top, top);
+    const width = Math.min(box.right, innerWidth) - Math.max(box.left, 0);
+    if (box.height > 0 && height >= Math.min(box.height, 24) && width >= Math.min(box.width, 24)) readState.markSeen(card.id, stamp);
+   });
+   renderReadStatus();
   }
   function render() {
    if (countKnown && card.dataset.commentCount !== String(total)) {
@@ -778,11 +851,12 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    count.hidden = total === 0;
    count.textContent = `코멘트 ${total}`;
    thumbnailBadge.hidden = total === 0;
-   thumbnailBadge.querySelector('span').textContent = String(total);
-   thumbnailBadge.setAttribute('aria-label', `코멘트 ${total}개 보기`);
+   thumbnailBadge.querySelector('.comment-thumbnail-count').textContent = String(total);
+   renderReadStatus();
    list.hidden = comments.length === 0;
    list.replaceChildren();
    ownershipControls = [];
+   visibleComments = [];
    const checks = [];
    (expanded ? comments : comments.slice(0, 2)).forEach(comment => {
     const item = document.createElement('li');
@@ -791,6 +865,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
     const date = document.createElement('time'); date.dateTime = comment.createdAt; date.textContent = dateFormat.format(new Date(comment.createdAt));
     if (comment.updatedAt) { const edited = document.createElement('span'); edited.textContent = '수정됨'; meta.append(edited); }
     const text = document.createElement('p'); text.className = 'comment-text is-collapsed'; text.id = comment.id; text.textContent = comment.text;
+    visibleComments.push({text, stamp: commentStamp(comment)});
     const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'comment-text-toggle'; toggle.textContent = '더 보기'; toggle.hidden = true;
     toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', text.id);
     toggle.addEventListener('click', () => {
@@ -816,7 +891,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
    expand.setAttribute('aria-expanded', String(expanded));
    more.hidden = !expanded || !hasMore;
    refreshOwnership();
-   requestAnimationFrame(() => checkText(card));
+   requestAnimationFrame(() => checkText(card)); scheduleReadCheck();
   }
   function operationFeedback(error, action) {
    feedback.textContent = commentErrorMessage(error, action); feedback.hidden = false;
@@ -877,7 +952,9 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
     confirmation.setAttribute('aria-busy','true'); feedback.hidden = true;
     try {
      await store.remove(card.id, comment.id); comments = comments.filter(current => current.id !== comment.id);
-     total = Math.max(0, total - 1); revision += 1; endInteraction();
+     total = Math.max(0, total - 1); revision += 1;
+     if (comments.length || total === 0) readState.observe(card.id, commentStamp(comments[0]));
+     endInteraction();
      feedback.textContent = '코멘트를 삭제했습니다.'; feedback.hidden = false;
      // Refill the recent-two preview after removing a comment.
      if (!pageLoaded && total > comments.length) load(true);
@@ -927,6 +1004,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
     comments = [comment, ...comments.filter(existing => existing.id !== comment.id)];
     if (confirmedTotal !== null) total = confirmedTotal;
     else if (!alreadyShown) total += 1;
+    readState.observe(card.id, commentStamp(comment)); readState.markSeen(card.id, commentStamp(comment));
     message.value = ''; attempt = null; render(); compose(false);
     feedback.textContent = '코멘트를 등록했습니다.'; feedback.hidden = false;
    } catch (error) {
@@ -954,7 +1032,7 @@ import {createCommentStore, commentErrorMessage} from '../assets/research-commen
   more.addEventListener('click', loadPage);
   retry.addEventListener('click', () => load(true));
   thumbnailBadge.addEventListener('click', () => { section.scrollIntoView({block:'center',behavior:'smooth'}); section.focus({preventScroll:true}); });
-  cardControls.set(card, {load, ensureCount, refreshOwnership}); commentsObserver?.observe(card);
+  cardControls.set(card, {load, ensureCount, refreshOwnership, renderReadStatus, markVisibleRead}); commentsObserver?.observe(card);
   if (!commentsObserver) load();
   render(); section.hidden = false; resizeObserver?.observe(card);
  });
