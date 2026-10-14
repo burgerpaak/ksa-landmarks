@@ -2,6 +2,7 @@
 import html
 import hashlib
 import json
+import re
 import shutil
 from pathlib import Path
 from urllib.parse import urlsplit, urlencode
@@ -150,8 +151,12 @@ def render_card(item):
     area_text = f'사이트 기재 위치 · {item["area"]}' if catalogue_location else item["area"]
     location_detail = (f'<section class="location-record"><h5>위치 기록</h5>'
                        f'<p>{esc(catalogue_location["note"])}</p></section>' if catalogue_location else '')
+    image_search_name = item.get("image_search_name") or item["name"]
+    city = item["city"]
+    image_search_query = (image_search_name if re.search(rf"\b{re.escape(city)}\b", image_search_name, re.IGNORECASE)
+                          else f"{city} {image_search_name}")
     image_search_url = 'https://www.google.com/search?' + urlencode({
-        'tbm': 'isch', 'q': item.get("image_search_name", item["name"])
+        'tbm': 'isch', 'q': image_search_query
     })
     state = REVIEW_STATES[item["review_status"]]
     check = item["fact_check"]
