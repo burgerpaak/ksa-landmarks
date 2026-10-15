@@ -474,9 +474,40 @@
       "note": "사용자 지도 단축 링크의 실제 리다이렉트에서 호텔명·장소 ID·!3d!4d 핀을 확인하고 Radisson 공식 이름·Ar Rabi 소재지·도로 주소와 대조. @ 지도 중심과 장소 핀을 구분하며, 좌표 자릿수는 관찰한 그대로 보존. 장소 식별은 납품 정밀 좌표·footprint·전체 모델 비중복 검증 완료를 뜻하지 않음."
     },
     "N34": {
-      "status": "unresolved",
-      "checked_at": "2026-10-07",
-      "note": "공식 자료는 Riyadh 서부까지만 확인. 장소 고유 핀·정밀 좌표 미확인."
+      "status": "coordinate_matched",
+      "url": "https://www.google.com/maps/search/?api=1&query=24.664674%2C46.639674",
+      "coordinate_strings": [
+        "24.664674",
+        "46.639674"
+      ],
+      "checked_at": "2026-10-15",
+      "source_url": "https://www.openstreetmap.org/way/329988178",
+      "pin_source": "OpenStreetMap 원본의 Yamamah Palace 건물 표시 기준점. 공개 표시값 6자리를 그대로 사용.",
+      "note": "Saudipedia의 서부 Riyadh 왕궁 소개와 OpenStreetMap의 건물명·윤곽 및 Al Hada·Al Diwan Street 일대를 대조했다. Google 이름 검색의 동명 호텔을 제외하고 궁전 본체 구역의 위치 확인용 좌표를 사용한다. 출입구·방문 경로나 납품용 정밀 좌표·전체 부지 경계·최신 외관·제공 사진 대상을 검증한 것은 아니다.",
+      "rejected_name_search": {
+        "url": "https://www.google.com/maps/search/?api=1&query=Al-Yamamah+Palace+Riyadh",
+        "resolved_name": "Al-Yamamah Palace housing units",
+        "resolved_area": "Al Malqa, Riyadh",
+        "coordinate_strings": [
+          "24.7977054",
+          "46.6270068"
+        ],
+        "cid": "16158576675386811080",
+        "reason": "궁전이 아닌 동명 숙박시설"
+      },
+      "legacy_place_id_check": {
+        "cid": "563967154871499674",
+        "status": "empty_place_panel",
+        "source_url": "https://sa.near-place.com/al-yamamah-palace-4315-riyadh",
+        "note": "과거 왕궁 장소 링크를 열었으나 제목·주소가 없는 빈 패널로 표시되어 현재 링크로 채택하지 않음."
+      },
+      "history": [
+        {
+          "status": "unresolved",
+          "checked_at": "2026-10-07",
+          "note": "공식 자료는 Riyadh 서부까지만 확인. 장소 고유 핀·정밀 좌표 미확인."
+        }
+      ]
     },
     "N35": {
       "status": "matched",
@@ -503,6 +534,33 @@
         "46.677113"
       ],
       "pin_source": "사용자 제공 Google Maps URL의 장소 ID·!3d!4d 파라미터"
+    },
+    "N37": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=12819309071952198795",
+      "cid": "12819309071952198795",
+      "place_name": "Saudi German Hospital Riyadh - SGH",
+      "address": "2616 King Fahd Branch Rd, As Sahafah, Riyadh 13321",
+      "coordinate_strings": [
+        "24.8006125",
+        "46.6278968"
+      ],
+      "checked_at": "2026-10-15",
+      "provided_url": "https://maps.app.goo.gl/F1Y9NV8ZTGeyGFB68",
+      "pin_source": "사용자 제공 단축 링크 리다이렉트의 장소 feature ID와 !3d!4d",
+      "note": "Google Maps 병원명·소재지와 운영사 King Fahd Road·As Sahafah 안내 대조. @ 뷰 중심을 사용하지 않으며 납품 정밀 좌표·증축 범위 검증 완료를 뜻하지 않음."
+    },
+    "N38": {
+      "status": "coordinate_matched",
+      "url": "https://www.google.com/maps/search/?api=1&query=24.7044444%2C46.6228056",
+      "coordinate_strings": [
+        "24.7044444",
+        "46.6228056"
+      ],
+      "checked_at": "2026-10-15",
+      "provided_url": "https://maps.app.goo.gl/goxmrsBNQ6u2UFsv5",
+      "pin_source": "사용자 제공 좌표 링크 리다이렉트의 !3d!4d. 원본 7자리 그대로 보존.",
+      "note": "King Khalid Road·King Abdullah Road 교차로와 Helical Spheres(시공사 표기 Spiral Spheres) 공식 사진·프로젝트 위치를 대조한 조사 기준점이다. 제공 핀은 개별 조형물의 정밀 설치점이 아니며, 배치별 좌표·최신 존치는 미확인."
     }
   },
   "method": "Google Maps 실제 장소 상세에서 명칭·소재지와 기존 조사자료 대조. 동명·입주사·이전 이력은 사진/기록 추가 확인. CID는 관찰한 장소 URL의 feature ID에서 변환; 검색어로 추정하지 않음."

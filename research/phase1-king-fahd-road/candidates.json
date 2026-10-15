@@ -1,6 +1,6 @@
 {
   "research_date": "2026-09-23",
-  "scope": "Riyadh King Fahd Road 주변 20건 + 별도 지정 제5터미널 1건 + 권역 확장 9건; N08 제외 유지",
+  "scope": "Riyadh King Fahd Road 주변 건축물 21건 + 별도 지정 제5터미널 1건 + 권역 확장 건축물·조형물 10건; N08 제외 유지",
   "excluded_inventory": [
     "data/landmarks.json",
     "data/balady_50.json",
@@ -1892,20 +1892,23 @@
     {
       "id": "N34",
       "name": "Al-Yamamah Palace",
-      "area": "서부 · Riyadh",
-      "overview": "국왕 집무실과 Royal Court가 있는 사우디아라비아의 공식 통치 거점이다. 국가 공식 행사와 고위 인사 접견에 사용하며 일반 관광객에게 개방된 박물관은 아니다.",
+      "area": "서부 · Al Hada / Al Diwan Street 일대",
+      "overview": "Riyadh 서부 Al Hada의 Al Diwan Street 일대에 있는 사우디아라비아의 공식 통치 거점이다. 국왕 집무실과 Royal Court가 있으며 국가 공식 행사와 고위 인사 접견에 사용한다. 일반 관광객에게 개방된 박물관은 아니다.",
       "visual_character": "무늬가 있는 중앙 돔과 높낮이가 다른 직선 건물군, 반복되는 긴 아치형 입면이 특징. 사용자 제공 사진에서 전면 정원과 낮게 이어지는 양쪽 건물의 윤곽이 보인다.",
-      "status_evidence": "공식 소개·출처 사진 대조",
-      "verification_notes": "사용자 제공 외관 사진을 추가했다. 원출처·촬영일과 최신 외관 여부는 미확인이며, 궁전 본체의 전체 배치와 정확한 장소 핀도 미확인이다.",
+      "status_evidence": "Saudipedia의 궁전 소개·OpenStreetMap 건물 원본·Google 좌표 지도 대조",
+      "verification_notes": "현재 공개 자료만으로는 정확한 랜드마크 제작이 어렵다. 궁전 일대 일부 위성영상이 흐려 지붕·건물 경계·전체 배치를 판독하기 어렵고, 제공 외관 사진의 대상 식별과 측후면 대조도 미완료다. 대상이 확인된 외관 사진·배치도 등 보완 자료를 확보하기 전까지 보류 의견을 유지한다. 영상 가림 사유는 미확인이며 보안 목적이라고 단정하지 않는다.",
       "sources": [
         "https://saudipedia.com/en/al-yamamah-palace",
-        "https://commons.wikimedia.org/wiki/File:Al_Yamamah_Palace_state_visit_2025.png"
+        "https://commons.wikimedia.org/wiki/File:Al_Yamamah_Palace_state_visit_2025.png",
+        "https://www.openstreetmap.org/way/329988178",
+        "https://support.google.com/maps/answer/3094088?hl=en",
+        "https://support.google.com/earth/answer/6327779?hl=en"
       ],
-      "decision_note": "정확한 위치·단지 경계·측후면과 모델링 범위 확인",
+      "decision_note": "위성영상 흐림·외관 자료 부족으로 지붕·전체 배치 확인 어려움",
       "road_relationship": "권역 확장",
       "selection_suggestion": "보류",
       "confidence": "low",
-      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Yamamah+Palace+Riyadh",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=24.664674%2C46.639674",
       "latitude": null,
       "longitude": null,
       "dimensions": null,
@@ -1914,28 +1917,85 @@
       "image_search_name": "Al-Yamamah Palace",
       "duplicate_check": "기존 명칭 목록 대조: 동일 명칭 미발견. 전체 GLB 형상 대조 미수행.",
       "fact_check": {
-        "date": "2026-10-07",
-        "result": "부분 확인 — 제작 범위 미확정",
-        "checked": "Saudipedia에서 통치 거점·Royal Court·접견 용도를 확인. 공식 소개의 실내 사진과 2025-05-13 접견 영상 기록을 대조했으나 전체 외관 대표 사진으로 적합하지 않아 썸네일에는 사용하지 않았다. 사용자 지정 외관 사진을 대표·상세 이미지로 추가했다. 사진의 원출처·촬영일과 최신 외관 여부는 미확인이다.",
-        "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위, 사진 원출처·촬영일, 정밀 좌표·footprint·치수",
-        "visual_claim_check": "무늬가 있는 중앙 돔과 높낮이가 다른 직선 건물군, 반복되는 긴 아치형 입면이 특징. 사용자 제공 사진에서 전면 정원과 낮게 이어지는 양쪽 건물의 윤곽이 보인다. 사진의 대상 식별은 사용자 지정에 따른 것이며 독립적인 사진 출처 대조는 미완료.",
+        "date": "2026-10-15",
+        "result": "부분 확인 — 위치 대조·위성영상 판독 한계 확인",
+        "checked": "궁전 본체의 위치는 Saudipedia의 서부 Riyadh 소개와 OpenStreetMap의 건물명·윤곽을 대조해 확인했다. 동명 숙박시설로 연결되는 이름 검색 대신 위치 확인용 좌표를 사용한다. 사용자 제공 Google 지도 화면에서는 궁전 일대 일부 구역의 흐림·화질 차이가 보여 지붕·건물 경계를 정밀하게 읽기 어렵다. 보안 목적의 가림인지 원본 영상·해상도 차이인지는 미확인이다.",
+        "remaining": "궁전 본체·부속동·정원의 제작 경계, 지붕·측후면·최신 외관과 부재 치수를 확인할 보완 자료가 필요하다. 사용자 제공 외관 사진의 대상 식별·원출처·촬영일, 납품용 정밀 좌표·footprint·치수도 미확인이다. 일부 위성영상의 흐림 원인과 보안 목적의 가림 여부는 확인되지 않았다.",
+        "visual_claim_check": "OpenStreetMap의 궁전 건물 윤곽과 위치를 대조했다. 카드의 돔 사진은 사용자 지정 자료로 유지하며, 해당 건물 사진이라는 독립적인 원출처 대조는 미완료다. 궁전 일대 일부 위성영상은 흐림·화질 차이로 정밀 형상 판독에 한계가 있어 지붕·경계를 확정하는 근거로 사용하지 않는다.",
         "precise_pin_verified": false,
         "model_overlap_verified": false,
         "checked_scope": "general"
       },
       "recommendation_assessment": {
-        "date": "2026-10-07",
+        "date": "2026-10-15",
         "criteria": "종합 추천 v1",
         "result": "보류",
-        "reason": "공식 통치 거점이라는 식별과 용도, 사용자 지정 외관 사진은 확보했다. 정확한 장소 핀과 전체 배치·측후면·제작 경계가 미확인이라 보류를 유지한다.",
-        "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위 확인",
-        "scope": "공식 소개와 확보된 사진에 따른 의견. 정밀 제작 검증 완료를 뜻하지 않음.",
+        "reason": "궁전 일대 일부 위성영상이 흐려 지붕 형태·건물 경계·전체 배치를 확인하기 어렵다. 확보 외관 사진의 대상 식별과 측후면 대조도 미완료여서, 현재 자료만으로 정확한 랜드마크 제작이 어려워 보류를 유지한다.",
+        "remaining": "대상이 확인된 외관 사진·배치도 등 보완 자료, 단지 경계·지붕·측후면·최신 외관과 모델링 범위 확인",
+        "scope": "공식 소개·확보 사진과 사용자가 제공한 Google 지도 화면의 판독 한계에 따른 의견. 제작 불가능이나 보안 목적의 가림을 확정한 결과가 아니며 정밀 제작 검증 완료를 뜻하지 않음.",
         "evidence_images": [
           "research-n34-01.webp"
         ],
-        "map_identification_status": "unresolved"
+        "map_identification_status": "coordinate_matched"
       },
-      "landmark_type": "government"
+      "landmark_type": "government",
+      "fact_check_history": [
+        {
+          "date": "2026-10-07",
+          "result": "부분 확인 — 제작 범위 미확정",
+          "checked": "Saudipedia에서 통치 거점·Royal Court·접견 용도를 확인. 공식 소개의 실내 사진과 2025-05-13 접견 영상 기록을 대조했으나 전체 외관 대표 사진으로 적합하지 않아 썸네일에는 사용하지 않았다. 사용자 지정 외관 사진을 대표·상세 이미지로 추가했다. 사진의 원출처·촬영일과 최신 외관 여부는 미확인이다.",
+          "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위, 사진 원출처·촬영일, 정밀 좌표·footprint·치수",
+          "visual_claim_check": "무늬가 있는 중앙 돔과 높낮이가 다른 직선 건물군, 반복되는 긴 아치형 입면이 특징. 사용자 제공 사진에서 전면 정원과 낮게 이어지는 양쪽 건물의 윤곽이 보인다. 사진의 대상 식별은 사용자 지정에 따른 것이며 독립적인 사진 출처 대조는 미완료.",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "recommendation_assessment_history": [
+        {
+          "date": "2026-10-07",
+          "criteria": "종합 추천 v1",
+          "result": "보류",
+          "reason": "공식 통치 거점이라는 식별과 용도, 사용자 지정 외관 사진은 확보했다. 정확한 장소 핀과 전체 배치·측후면·제작 경계가 미확인이라 보류를 유지한다.",
+          "remaining": "정확한 위치·단지 경계·측후면과 모델링 범위 확인",
+          "scope": "공식 소개와 확보된 사진에 따른 의견. 정밀 제작 검증 완료를 뜻하지 않음.",
+          "evidence_images": [
+            "research-n34-01.webp"
+          ],
+          "map_identification_status": "unresolved"
+        }
+      ],
+      "location_verification": {
+        "date": "2026-10-15",
+        "status": "building_reference_matched",
+        "reference_coordinates": [
+          "24.664674",
+          "46.639674"
+        ],
+        "coordinate_source": "OpenStreetMap way 329988178를 선택했을 때의 건물 표시 기준점. 공개 표시값 6자리를 그대로 사용하며 측량 정밀도를 뜻하지 않는다.",
+        "source_url": "https://www.openstreetmap.org/way/329988178",
+        "osm_way": {
+          "id": "329988178",
+          "version": "3",
+          "timestamp": "2018-10-22T07:09:12Z",
+          "name": "Yamamah Palace"
+        },
+        "scope": "궁전 본체 구역의 식별·위치 확인. 전체 부지 경계·출입구·현재 외관·제공 사진 대상·납품 좌표 검증은 포함하지 않는다."
+      },
+      "satellite_imagery_assessment": {
+        "date": "2026-10-15",
+        "evidence": "사용자 제공 Google 지도 화면(2026-10-15) 및 지도 위치 대조",
+        "observed_scope": "궁전 일대 일부 구역",
+        "observed": "사각형 경계를 따른 국소적 화질 차이·흐림",
+        "cause": "미확인 — 보안 목적의 가림인지 원본 영상·촬영 시점·해상도 차이인지 확정하지 않음",
+        "modeling_impact": "해당 위성영상으로 지붕 형태·건물 경계·전체 배치를 정밀하게 확인하기 어려움",
+        "selection_implication": "확보 외관 자료의 대상 식별·측후면 대조도 미완료이므로 보류 유지",
+        "context_sources": [
+          "https://support.google.com/maps/answer/3094088?hl=en",
+          "https://support.google.com/earth/answer/6327779?hl=en"
+        ],
+        "source_scope": "Google의 일반적인 위성영상 처리·수집 설명이다. 이 구역의 개별 처리 사유를 입증하지 않는다."
+      }
     },
     {
       "id": "N35",
@@ -2039,11 +2099,167 @@
         "detail": "Balady 아카이브에 Soliman Hospital 병합본(2동)과 개별 모델 2건이 있다. 이름이 유사하지만 아카이브 썸네일과 과거 사진만으로 Olaya 단지 포함 여부를 확정하지 못했다. 신규 제작 선정 전에 위치·형상을 대조해야 한다.",
         "files_url": "../progress/archive.html"
       }
+    },
+    {
+      "id": "N37",
+      "name": "Saudi German Hospital Riyadh",
+      "area": "북부 · As Sahafah / King Fahd Road",
+      "road_relationship": "도로변",
+      "selection_suggestion": "검토",
+      "visual_character": "긴 병동과 돌출된 진입부, 반복되는 사각 창이 만드는 의료 단지. 기존 본관과 증축 의료타워를 구분해 제작 범위를 정할 필요가 있다.",
+      "status_evidence": "병원 공식 운영 안내·증축 운영 공시",
+      "confidence": "partial",
+      "verification_notes": "기존 본관·2023년 증축 의료타워·부속동의 포함 범위, 최신 외관·옥상·후면, footprint와 세부 치수 확인. 기존 모델과 전체 형상 대조는 미수행.",
+      "sources": [
+        "https://riyadh.saudigermanhealth.com/en",
+        "https://ihcc.sa/project/300-beds-hospital-for-middle-east-healthcare-company",
+        "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=66&anId=71772&cs=4009&locale=en"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh+Saudi+German+Hospital+Riyadh",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "King Fahd Road 주변",
+      "fact_check": {
+        "date": "2026-10-15",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "병원 공식 소개에서 King Fahd Road·As Sahafah 소재 종합병원과 2001년 운영 개시를 확인했다. IHCC는 기존 병원 설계·시공과 외관 사진을 공개한다. 운영사 공시는 의료타워·병상 증축부의 2023-01-22 운영 개시를 명시한다. 서로 다른 시점의 면적 수치는 현재 전체 단지 치수로 통합하지 않았다.",
+        "remaining": "기존 본관·2023년 증축 의료타워·부속동의 포함 범위, 최신 외관·옥상·후면, footprint와 세부 치수 확인. 기존 모델과 전체 형상 대조는 미수행.",
+        "visual_claim_check": "공식 외관 사진과 지도 배치를 대조; 증축 이후 최신 외관 범위 미확인",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Saudi German Health가 운영하는 Riyadh As Sahafah의 종합병원이다. King Fahd Road에 위치하며 2001년 운영을 시작했다. 기존 본관 외에 의료타워·병상 증축부는 2023년 1월 22일부터 단계적으로 운영을 시작했다.",
+      "recommendation_assessment": {
+        "date": "2026-10-15",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "King Fahd Road 조사 범위에 부합하고 공식 외관 사진과 설계·시공 기록이 있다. 다만 증축 전후 외관과 제작 범위를 맞춰야 하며, 단순화한 병원 고유 실루엣의 식별력도 비교할 필요가 있어 검토한다.",
+        "remaining": "기존 본관·2023년 증축 의료타워·부속동의 포함 범위, 최신 외관·옥상·후면, footprint와 세부 치수 확인. 기존 모델과 전체 형상 대조는 미수행.",
+        "scope": "사용자 지정 지도, 공개 원출처 및 현재 확보 자료에 따른 의견. 정밀 치수·전체 GLB 형상 대조·최신 현장 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n37-01.webp"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "Saudi German Hospital Riyadh",
+      "landmark_type": "complex",
+      "duplicate_check": "Reference·Balady+·Archive의 명칭·별칭 대조에서 동일 대상 미발견. 전체 GLB 형상 대조는 미수행.",
+      "decision_note": "기존 본관·2023년 증축동의 제작 범위와 최신 외관 확인",
+      "provided_map_url": "https://maps.app.goo.gl/F1Y9NV8ZTGeyGFB68"
+    },
+    {
+      "id": "N38",
+      "name": "Helical Spheres",
+      "area": "서부 · King Khalid Road × King Abdullah Road / King Saud University 인근",
+      "road_relationship": "교차로",
+      "selection_suggestion": "검토",
+      "visual_character": "녹색 나선 띠가 구형 수관을 이루고, 가늘게 뻗은 격자형 기둥이 이를 받치는 나무 형태의 조형물군이다. 서로 다른 크기와 높이의 구조물이 교차로 램프 사이에 반복 배치된다.",
+      "status_evidence": "설계사 ALS·구조설계사 SOCOTEC·시공사 Al-Babtain의 공식 프로젝트 자료와 사진 대조",
+      "confidence": "low",
+      "verification_notes": "현재 존치·개별 설치점과 배치 간격, 제작용 도면·부재별 정밀 치수·접합부 구조 확인. 설치 연도는 출처 간 시점 대조가 필요하며, 사용자 제공 사진의 원출처·촬영일·재사용 조건은 미확인.",
+      "sources": [
+        "https://alslighting.com/en/projects/helical-spheres/",
+        "https://www.socotec.es/proyectos/spiral-spheres-urban-forest",
+        "https://www.lamp.es/en/project/spheres-project_40767",
+        "https://www.linkedin.com/posts/al-babtain-power-telecommunication-co-_we-would-like-to-congratulate-all-the-team-activity-6315075486305390592-ShKO",
+        "https://arabsstock.com/en/photos/image-102396-artistic-sculptures-form-green-trees-king-khalid-expressway",
+        "https://maps.app.goo.gl/goxmrsBNQ6u2UFsv5"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh+Helical+Spheres",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-10-15",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "설계사 ALS의 공식 프로젝트 페이지 제목은 Helical Spheres이며, 야간 갤러리에서 사용자 제공 조형물과 같은 나선형 수관·격자 기둥을 확인했다. 시공사 Al-Babtain의 공식 게시물은 King Khalid Road와 King Abdullah Road 교차로의 프로젝트를 Spiral Spheres로 명시한다. 구조설계사 SOCOTEC은 Spiral Spheres Urban Forest, 조명 공급사 Lamp는 The Spheres로 소개한다. Lamp가 공개한 설계 구성은 27기, 수관 지름 5·7·9m이나 현재 존치 개수와 개별 설치점·부재 치수를 실측 검증한 것은 아니다.",
+        "remaining": "현재 존치·개별 설치점과 배치 간격, 제작용 도면·부재별 정밀 치수·접합부 구조 확인. 설치 연도는 출처 간 시점 대조가 필요하며, 사용자 제공 사진의 원출처·촬영일·재사용 조건은 미확인.",
+        "visual_claim_check": "ALS 공식 프로젝트의 야간 사진과 사용자 제공 전경·근접 사진에서 나선형 수관과 격자 기둥의 형태를 대조. Al-Babtain 공식 게시물의 교차로 이름으로 위치와 프로젝트명을 연결했다.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Riyadh의 King Khalid Road와 King Abdullah Road 교차로를 나무 형태의 구조물로 구성한 경관·조명 설치물이다. 설계사 ALS는 Helical Spheres, 시공사 Al-Babtain은 Spiral Spheres, 구조설계사 SOCOTEC은 Spiral Spheres Urban Forest로 소개한다. 설계사 표기를 대표명으로 사용한다. 사용자 제공 좌표는 교차로 조사 기준점이며 각각의 조형물 설치점을 확정한 좌표는 아니다.",
+      "recommendation_assessment": {
+        "date": "2026-10-15",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "설계·시공 관계사의 공식 프로젝트명과 나선형 나무 구조를 확인해 대상 식별 근거가 보강됐다. 반복되는 구형 수관과 가는 기둥은 특징적이나, 개별 설치 범위·배치와 제작용 부재·접합부 자료가 더 필요해 검토를 유지한다.",
+        "remaining": "현재 존치·개별 설치점과 배치 간격, 제작용 도면·부재별 정밀 치수·접합부 구조 확인. 설치 연도는 출처 간 시점 대조가 필요하며, 사용자 제공 사진의 원출처·촬영일·재사용 조건은 미확인.",
+        "scope": "사용자 지정 지도, 공개 원출처 및 현재 확보 자료에 따른 의견. 정밀 치수·전체 GLB 형상 대조·최신 현장 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n38-user-01.png",
+          "research-n38-user-02.png"
+        ],
+        "map_identification_status": "coordinate_matched"
+      },
+      "image_search_name": "Helical Spheres Spiral Spheres",
+      "landmark_type": "sculpture",
+      "duplicate_check": "Reference·Balady+·Archive의 명칭·별칭 대조에서 동일 대상 미발견. 전체 GLB 형상 대조는 미수행.",
+      "decision_note": "개별 설치 범위·배치·정밀 치수와 사진 사용권 확인",
+      "provided_map_url": "https://maps.app.goo.gl/goxmrsBNQ6u2UFsv5",
+      "name_status": "설계사 공식 프로젝트명 확인 · 시공·구조설계사 표기 병기",
+      "resource_assessment": {
+        "available": "ALS의 공식 사진, SOCOTEC의 구조설계 설명, Lamp의 공개 구성 수·수관 지름과 시공사 Al-Babtain의 교차로·명칭 안내를 확보. 기존 현장 사진 출처와 사용자 제공 사진 2장도 유지한다.",
+        "not_secured": "제작용 도면·부재별 정밀 치수·접합부 구조와 현재 개별 배치 미확보. 사용자 제공 사진의 원출처·촬영일·재사용 조건은 미확인. 유료 스톡 원본은 구매하지 않음."
+      },
+      "fact_check_history": [
+        {
+          "date": "2026-10-15",
+          "result": "부분 확인 — 상세 제작 검증 미완료",
+          "checked": "사용자 단축 링크의 !3d!4d에서 24.7044444, 46.6228056을 추출했다. 지도에서 King Khalid Road–King Abdullah Road 교차로를 확인하고, Farooq Afzal의 현장 사진(Arabsstock 102396)에 기록된 교차로와 녹색 나무 형태를 대조했다. 공식 작품명·작가·설치 연도는 확인하지 못했다. 사용자 제공 교차로 배치 전경과 야간 상부 근접 사진 2장을 상세 정보에 추가하고 전경을 대표 이미지로 사용했다. 촬영 시점과 원출처는 미확인이다.",
+          "remaining": "공식 작품명·작가·설치 연도, 현재 존치·전체 개수·개별 설치점·실제 치수와 링·지지대의 측후면 구조 확인. 사용자 제공 사진의 원출처·촬영일·재사용 조건은 미확인.",
+          "visual_claim_check": "사진가의 현장 사진과 사용자 제공 전경·야간 근접 사진에서 나무 형태 링 상부·지지대를 대조. 공식 작품명·개별 설치점·현재 전체 개수는 미확인.",
+          "precise_pin_verified": false,
+          "model_overlap_verified": false,
+          "checked_scope": "general"
+        }
+      ],
+      "name_verification": {
+        "date": "2026-10-15",
+        "status": "project_name_verified",
+        "preferred_name": "Helical Spheres",
+        "aliases": [
+          "Spiral Spheres",
+          "Spiral Spheres Urban Forest",
+          "The Spheres"
+        ],
+        "previous_descriptive_name": "King Khalid–King Abdullah Interchange Tree Sculptures",
+        "basis": "ALS의 공식 프로젝트명과 사진을 우선하고, Al-Babtain의 공식 게시물에서 동일 교차로와 Spiral Spheres 명칭을 대조했다. 광장·교차로 지명과 작품·프로젝트명을 구분한다.",
+        "sources": [
+          {
+            "organisation": "ALS · 설계사",
+            "project_name": "Helical Spheres",
+            "url": "https://alslighting.com/en/projects/helical-spheres/"
+          },
+          {
+            "organisation": "Al-Babtain · 시공사",
+            "project_name": "Spiral Spheres",
+            "url": "https://www.linkedin.com/posts/al-babtain-power-telecommunication-co-_we-would-like-to-congratulate-all-the-team-activity-6315075486305390592-ShKO"
+          },
+          {
+            "organisation": "SOCOTEC · 구조설계사",
+            "project_name": "Spiral Spheres Urban Forest",
+            "url": "https://www.socotec.es/proyectos/spiral-spheres-urban-forest"
+          },
+          {
+            "organisation": "Lamp · 조명 공급사",
+            "project_name": "The Spheres",
+            "url": "https://www.lamp.es/en/project/spheres-project_40767"
+          }
+        ],
+        "year_note": "ALS 페이지의 2018 표기를 시공 완료·설치 연도로 단정하지 않는다. Al-Babtain의 완료 게시 시점과 대조가 필요하다."
+      }
     }
   ],
   "link_check_date": "2026-09-23",
   "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
-  "count": 30,
+  "count": 32,
   "scope_update": {
     "date": "2026-09-23",
     "excluded_ids": [
@@ -2063,8 +2279,8 @@
     "note": "후속 사용자 요청에 따라 권역 확장 8건을 검토 중으로 복귀. 도로변·인접 19건과 분리; N08은 제외 유지."
   },
   "counts_by_scope": {
-    "core": 20,
-    "extension_under_review": 9,
+    "core": 21,
+    "extension_under_review": 10,
     "designated": 1
   },
   "fact_check_date": "2026-09-23",
@@ -2075,14 +2291,13 @@
   "recommendation_review_date": "2026-09-30",
   "recommendation_criteria": "종합 추천 v1",
   "inventory_update": {
-    "date": "2026-10-07",
+    "date": "2026-10-15",
     "added_ids": [
-      "N34",
-      "N35",
-      "N36"
+      "N37",
+      "N38"
     ],
     "removed_ids": [],
-    "reason": "사용자 지정 궁전·VIA Riyadh·Olaya 의료 단지 추가"
+    "reason": "사용자 요청: Saudi German Hospital Riyadh 및 제공 좌표의 나무 형태 조형물 추가. 후속 명칭 재조사에서 설계사 공식 표기 Helical Spheres와 관계사 표기 Spiral Spheres를 확인."
   },
   "inventory_update_history": [
     {
@@ -2132,6 +2347,16 @@
       ],
       "removed_ids": [],
       "reason": "사용자 요청: Mansard Riyadh, A Radisson Collection Hotel을 권역 확장 검토 후보로 추가"
+    },
+    {
+      "date": "2026-10-07",
+      "added_ids": [
+        "N34",
+        "N35",
+        "N36"
+      ],
+      "removed_ids": [],
+      "reason": "사용자 지정 궁전·VIA Riyadh·Olaya 의료 단지 추가"
     }
   ],
   "recommendation_review_summary": {
@@ -2144,5 +2369,9 @@
     },
     "report": "research/COMPOSITE_REVIEW_2026-09-30.md",
     "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님."
+  },
+  "counts_by_type": {
+    "buildings": 31,
+    "sculptures": 1
   }
 }

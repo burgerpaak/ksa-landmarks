@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-07",
-  "scope": "Riyadh 후보 30건 · 출처·시점·사용 조건을 기록한 이미지",
+  "updated_at": "2026-10-15",
+  "scope": "Riyadh 후보 32건 · 출처·시점·사용 조건을 기록한 이미지",
   "candidates": {
     "N01": [
       {
@@ -845,7 +845,7 @@
         "width": 800,
         "height": 325,
         "alt": "Al-Yamamah Palace · 중앙 돔과 아치형 입면이 보이는 외관",
-        "caption": "사용자가 Al-Yamamah Palace로 지정해 제공한 외관 사진. 중앙 돔과 반복되는 아치형 입면·정원이 보입니다. 원출처·촬영자·촬영일은 미확인이며, 단지 전체 배치나 현재 외관을 검증한 자료는 아닙니다.",
+        "caption": "사용자가 Al-Yamamah Palace로 지정해 제공한 외관 사진. 중앙 돔과 반복되는 아치형 입면·정원이 보입니다. 원출처·촬영자·촬영일과 사진 대상의 독립적인 대조는 미완료입니다. 지도 위치 확인은 이 사진의 대상·단지 전체 배치나 현재 외관 검증을 뜻하지 않습니다.",
         "kind": "외관 사진",
         "source": "사용자 제공",
         "source_url": null,
@@ -900,6 +900,69 @@
         "processing": "원본 비율·프레임 유지, WebP 변환, 파일 크롭 없음 · 썸네일만 화면 크롭",
         "sha256": "5ca1c95c6f9e47f9e8087b0e7afafc594c4523c954e2acf71de89a3a9125c34a",
         "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N37": [
+      {
+        "file": "research-n37-01.webp",
+        "width": 540,
+        "height": 540,
+        "alt": "Saudi German Hospital Riyadh — IHCC 공식 갤러리의 기존 본관과 진입부 외관",
+        "caption": "IHCC의 Riyadh 병원 프로젝트 갤러리에 공개된 기존 본관과 진입부. 촬영일은 미확인으로, 2023년 증축 의료타워를 포함한 현재 전체 단지 외관을 입증하는 사진으로 사용하지 않습니다.",
+        "kind": "외관 사진",
+        "source": "IHCC · 설계·시공",
+        "source_url": "https://ihcc.sa/project/300-beds-hospital-for-middle-east-healthcare-company",
+        "original_url": "https://ihcc.sa/images/media/2024/11/gallery-6085.webp",
+        "photographer": null,
+        "date_note": "촬영일 미확인 · 업로드 경로의 날짜를 촬영일로 간주하지 않음",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-15",
+        "processing": "공개 WebP 원본 그대로 저장, 크롭 없음",
+        "sha256": "c44a1dd4eb8764bb43e1774a3862a7357213adccebfd9173ccc8f2f512895bf9",
+        "thumbnail_position": "50% 40%"
+      }
+    ],
+    "N38": [
+      {
+        "file": "research-n38-user-01.png",
+        "width": 390,
+        "height": 292,
+        "alt": "Helical Spheres — King Khalid·King Abdullah 교차로의 조형물군과 도로 배치",
+        "caption": "사용자 제공 교차로 전경. 녹색 링 상부와 격자형 지지대가 있는 조형물군의 배치가 보입니다. 원출처와 촬영일은 미확인이며, 현재 전체 개수·개별 설치점·실제 치수를 확정하는 자료는 아닙니다.",
+        "kind": "외관 사진",
+        "source": "사용자 제공 · 원출처 미확인",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-15",
+        "processing": "제공된 PNG 원본 그대로 저장, 크롭 없음",
+        "sha256": "a8826a74f805ee9d22e0e4362b28ffa4096326b370b7107f6171c3cdfca2c509",
+        "thumbnail_position": "50% 50%",
+        "provided_filename": "codex-clipboard-1fdb52ae-92cf-4ce5-b511-7a940bc146f4.png"
+      },
+      {
+        "file": "research-n38-user-02.png",
+        "width": 480,
+        "height": 269,
+        "alt": "Helical Spheres — 야간 녹색 나선형 수관 근접 사진",
+        "caption": "사용자 제공 야간 상부 근접 사진. 겹쳐진 링과 연결부가 보이며 상부 일부는 제공된 원본 프레임에서 잘려 있습니다. 야간 조명색을 주간 외장색으로 확정하지 않습니다.",
+        "kind": "외관 사진",
+        "source": "사용자 제공 · 원출처 미확인",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-15",
+        "processing": "제공된 PNG 원본 그대로 저장, 크롭 없음",
+        "sha256": "6728f50cb1617a364f7cb0a7a919723369a8439f86b1ca8d4b910593d9db4d61",
+        "thumbnail_position": "50% 50%",
+        "provided_filename": "codex-clipboard-2f96af8a-2a49-4341-8d60-6b017d394e65.png"
       }
     ]
   }

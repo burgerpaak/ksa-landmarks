@@ -20,7 +20,7 @@ LANDMARK_TYPES = {
     "sculpture": ("Sculpture", "조형물"),
 }
 CITIES = (
-    ("riyadh", "Riyadh", "King Fahd Road 주변·별도 지정·권역 확장 건축물"),
+    ("riyadh", "Riyadh", "King Fahd Road 주변·별도 지정·권역 확장 건축물 · 조형물"),
     ("jeddah", "Jeddah", "랜드마크 건축물 · 조형물"),
 )
 
@@ -31,6 +31,15 @@ def esc(value):
 
 def source_label(url):
     host = urlsplit(url).hostname or "출처"
+    if host == "support.google.com":
+        google_guides = {
+            "/maps/answer/3094088": "Google 지도 · 위성영상 가림 안내",
+            "/earth/answer/6327779": "Google Earth · 영상 수집 안내",
+        }
+        if label := google_guides.get(urlsplit(url).path.rstrip("/")):
+            return label
+    if host == "www.linkedin.com" and urlsplit(url).path.startswith("/posts/al-babtain-power-telecommunication-co-_"):
+        return "Al-Babtain · 시공사 공식 게시물"
     if host == "www.radissonhotels.com":
         path = urlsplit(url).path.rstrip("/")
         if path.endswith("/contact"):
@@ -50,6 +59,14 @@ def source_label(url):
         "www.gmwmimarlik.com": "GMW · 설계사",
         "www.robertbird.com": "Robert Bird Group · 구조 설계사",
         "www.riyadhairports.com": "Riyadh Airports · 공항 운영사",
+        "riyadh.saudigermanhealth.com": "Saudi German Health · 병원 공식",
+        "abha.saudigermanhealth.com": "Saudi German Health · 공식 공지",
+        "ihcc.sa": "IHCC · 설계·시공",
+        "arabsstock.com": "Arabsstock · 현장 사진",
+        "alslighting.com": "ALS · 설계사",
+        "www.socotec.es": "SOCOTEC · 구조 설계사",
+        "www.lamp.es": "Lamp · 조명 공급사",
+        "www.openstreetmap.org": "OpenStreetMap · 건물 위치",
     }
     return labels.get(host, host.removeprefix("www."))
 
@@ -74,7 +91,8 @@ def load_candidates(root):
     for item in riyadh["candidates"]:
         candidates.append({**item, "images": images.get(item["id"], []), "city": "Riyadh", "city_key": "riyadh",
                            "phase_key": {"권역 확장": "extended", "별도 지정": "designated"}.get(item["scope_group"], "phase-1"),
-                           "tag": item["road_relationship"], "kind": "building",
+                           "tag": item["road_relationship"],
+                           "kind": "sculpture" if item["landmark_type"] == "sculpture" else "building",
                            "sources": [(source_label(url), url) for url in item["sources"]]})
     for item in jeddah["candidates"]:
         candidates.append({**item, "images": jeddah_images.get(item["id"], []), "city_key": "jeddah", "phase_key": "phase-1", "tag": item["type"],
@@ -164,6 +182,9 @@ def render_card(item):
     search = " ".join(str(item.get(k, "")) for k in (
         "id", "name", "city", "area", "scope_group", "tag", "visual_character", "verification_notes", "selection_suggestion"
     )) + f" {type_label} {type_description}" + (" 리야드" if item["city_key"] == "riyadh" else " 제다")
+    aliases = item.get("name_verification", {}).get("aliases", [])
+    if aliases:
+        search += " " + " ".join(aliases)
     low = '<span class="badge low" title="정확한 모델링을 위한 자료 부족">DATA LOW</span>' if item["confidence"] == "low" else ""
     status = f'<span class="badge {state}">{esc(item["review_status"])}</span>' if state != "review" else ""
     decision_note = (f'<p class="decision-note"><span>선정 전 확인</span>{esc(item["decision_note"])}</p>'
@@ -264,7 +285,7 @@ def build_research(root: Path, output_dir: Path, palette: str):
         type_stats = "".join(
             f'<div class="stat"><span class="stat-label">{label}</span><span class="stat-num" data-count-for="{section_id}" data-count-kind="{kind}">{sum(c["kind"] == kind for c in items)}</span></div>'
             for kind, label in (("building", "건축물"), ("sculpture", "조형물"))
-            if city_key != "riyadh" or kind == "building"
+            if city_key != "riyadh" or kind == "building" or any(c["kind"] == kind for c in items)
         )
         overview.append(f'<div class="city-overview"><a class="jump-link city-jump" href="#{section_id}">{city}</a><div class="hero-stats">{type_stats}</div></div>')
         core = [c for c in items if c["phase_key"] == "phase-1"]
