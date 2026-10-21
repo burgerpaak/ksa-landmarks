@@ -67,6 +67,8 @@ def source_label(url):
         "www.socotec.es": "SOCOTEC · 구조 설계사",
         "www.lamp.es": "Lamp · 조명 공급사",
         "www.openstreetmap.org": "OpenStreetMap · 건물 위치",
+        "zfp.com": "ZFP · 설계사",
+        "www.sabic.com": "SABIC · 기업 공식",
     }
     return labels.get(host, host.removeprefix("www."))
 

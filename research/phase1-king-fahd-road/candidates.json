@@ -1,6 +1,6 @@
 {
   "research_date": "2026-09-23",
-  "scope": "Riyadh King Fahd Road 주변 건축물 21건 + 별도 지정 제5터미널 1건 + 권역 확장 건축물·조형물 10건; N08 제외 유지",
+  "scope": "Riyadh King Fahd Road 주변 건축물 21건 + 별도 지정 제5터미널 1건 + 권역 확장 건축물·조형물 11건; N08 제외 유지",
   "excluded_inventory": [
     "data/landmarks.json",
     "data/balady_50.json",
@@ -2255,11 +2255,79 @@
         ],
         "year_note": "ALS 페이지의 2018 표기를 시공 완료·설치 연도로 단정하지 않는다. Al-Babtain의 완료 게시 시점과 대조가 필요하다."
       }
+    },
+    {
+      "id": "N39",
+      "name": "SABIC Headquarters",
+      "area": "북동부 · Qurtubah / Airport Road",
+      "road_relationship": "별도 권역",
+      "selection_suggestion": "검토",
+      "visual_character": "두 타워를 상부에서 연결한 본관으로, 큰 중앙 개구부와 이를 둘러싼 겹 프레임이 식별점이다. 전면 저층부의 돔과 부속동은 본관과 구분해 제작 범위를 정할 필요가 있다.",
+      "status_evidence": "SABIC 공식 개관 연혁·ZFP 공식 프로젝트와 실제 외관 사진",
+      "confidence": "partial",
+      "verification_notes": "본관의 큰 중앙 개구부·상부 연결부를 우선 보존하는 제작안을 권한다. 캠퍼스 전체를 한 모델에 포함할지는 별도로 판단하며, 야간 사진의 조명색을 외장색으로 사용하지 않는다.",
+      "sources": [
+        "https://zfp.com/sabic-headquarters/",
+        "https://www.sabic.com/en/about/50-years",
+        "https://www.sabic.com/en/nusaned/contact-and-support",
+        "https://maps.app.goo.gl/7B6Wbrxg1UcSnVF37"
+      ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Riyadh+SABIC+Headquarters",
+      "latitude": null,
+      "longitude": null,
+      "dimensions": null,
+      "review_status": "검토 중",
+      "scope_group": "권역 확장",
+      "fact_check": {
+        "date": "2026-10-15",
+        "result": "부분 확인 — 상세 제작 검증 미완료",
+        "checked": "SABIC 공식 연혁은 리야드 글로벌 본사의 2002년 개관을 명시한다. ZFP 공식 프로젝트는 타워 2개·17층과 모스크·식당, 강당·전시 공간, 마케팅동, 주차장·체육시설 등의 구성을 설명한다. Google Maps의 SABIC HQ 명칭·Qurtubah의 6575 Airport Road 주소와 공식 Airport Road 소재 안내를 대조했다. 일부 과거 보도의 16층 표기 대신 설계사 공식 설명을 따르며, 공개된 단지 면적을 본관 footprint나 높이로 환산하지 않았다.",
+        "remaining": "본관·모스크·강당·주차동의 제작 포함 범위, 현재 후면·지붕 세부, footprint와 정확한 높이·치수 확인. 기존 모델과 전체 형상 대조는 미수행.",
+        "visual_claim_check": "ZFP의 야간 외관 사진과 Google Maps의 주간 방문자 사진·위성영상에서 큰 중앙 개구부와 상부 연결부를 대조. 현재 전체 단지의 상세 형태·치수 검증은 미완료.",
+        "precise_pin_verified": false,
+        "model_overlap_verified": false,
+        "checked_scope": "general"
+      },
+      "overview": "Saudi Basic Industries Corporation(SABIC)의 글로벌 본사로, 석유화학 기업의 경영·업무시설이다. Riyadh Qurtubah의 Airport Road에 있으며 2002년에 개관했다. Zuhair Fayez Partnership(ZFP)이 공식 프로젝트로 소개하며, 본관 외에 모스크·강당·주차장 등 부속시설을 포함한다. 기존 후보 SAB Head Office는 Saudi Awwal Bank의 은행 본사로 서로 다른 대상이다.",
+      "recommendation_assessment": {
+        "date": "2026-10-15",
+        "criteria": "종합 추천 v1",
+        "result": "검토",
+        "reason": "큰 중앙 개구부와 상부 연결부가 지도 크기에서도 식별점을 만들고, 설계사 공식 사진·구성 설명과 지도 사진이 있어 본관 중심의 제작 후보로 적합하다. 다만 King Fahd Road 주변과는 별도 권역이며, 부속동을 포함한 제작 범위와 주요 후면·지붕 자료를 확인해야 해 검토한다.",
+        "remaining": "본관·모스크·강당·주차동의 제작 포함 범위, 현재 후면·지붕 세부, footprint와 정확한 높이·치수 확인. 기존 모델과 전체 형상 대조는 미수행.",
+        "scope": "사용자 지정 지도와 설계사·기업 공식 자료에 따른 의견. 본관 중심 검토이며 정밀 치수·전체 GLB 대조·현재 단지 전체 형태 검증 완료를 뜻하지 않음.",
+        "evidence_images": [
+          "research-n39-01.jpg"
+        ],
+        "map_identification_status": "matched"
+      },
+      "image_search_name": "SABIC Headquarters",
+      "landmark_type": "tower",
+      "duplicate_check": "Reference·Balady+·Archive·Research의 명칭·별칭 대조에서 동일 대상 미발견. SAB Head Office(Saudi Awwal Bank)와는 다른 기업·건물이며 전체 GLB 형상 대조는 미수행.",
+      "decision_note": "본관 중심 제작 권장 · 부속동 포함 범위와 후면·지붕 세부 확인",
+      "provided_map_url": "https://maps.app.goo.gl/7B6Wbrxg1UcSnVF37",
+      "name_verification": {
+        "date": "2026-10-15",
+        "status": "project_name_verified",
+        "preferred_name": "SABIC Headquarters",
+        "aliases": [
+          "SABIC HQ",
+          "SABIC Global Headquarters",
+          "Saudi Basic Industries Corporation Headquarters",
+          "사빅 본사",
+          "سابك - المركز الرئيسي"
+        ],
+        "basis": "ZFP 공식 프로젝트명 SABIC HEADQUARTERS와 SABIC 공식 글로벌 본사 연혁, 사용자 지정 Google Maps 장소명을 대조."
+      },
+      "resource_assessment": {
+        "available": "ZFP 공식 야간 외관 사진을 확보했다. Google Maps에 주간 방문자 사진과 위성영상이 있으며, 설계사 설명으로 쌍둥이 타워와 부속시설 구성을 확인했다.",
+        "not_secured": "제작용 평면도·정확한 높이·치수와 현재 후면·지붕 세부 자료는 미확보. 공식 사진의 촬영일·촬영자·재사용 조건은 미확인."
+      }
     }
   ],
   "link_check_date": "2026-09-23",
   "link_check_note": "실제 HTTP GET 점검 및 문제 링크 대체·제거. 상세 기록: research/LINK_CHECK_2026-09-23.md. 검색 색인 본문만으로 링크 생존을 판정하지 않음.",
-  "count": 32,
+  "count": 33,
   "scope_update": {
     "date": "2026-09-23",
     "excluded_ids": [
@@ -2280,7 +2348,7 @@
   },
   "counts_by_scope": {
     "core": 21,
-    "extension_under_review": 10,
+    "extension_under_review": 11,
     "designated": 1
   },
   "fact_check_date": "2026-09-23",
@@ -2293,11 +2361,10 @@
   "inventory_update": {
     "date": "2026-10-15",
     "added_ids": [
-      "N37",
-      "N38"
+      "N39"
     ],
     "removed_ids": [],
-    "reason": "사용자 요청: Saudi German Hospital Riyadh 및 제공 좌표의 나무 형태 조형물 추가. 후속 명칭 재조사에서 설계사 공식 표기 Helical Spheres와 관계사 표기 Spiral Spheres를 확인."
+    "reason": "사용자 요청: 조사한 SABIC Headquarters를 권역 확장·검토 후보로 추가. 본관 중심 제작 의견과 부속동 범위 미확정 사항을 기록."
   },
   "inventory_update_history": [
     {
@@ -2357,6 +2424,15 @@
       ],
       "removed_ids": [],
       "reason": "사용자 지정 궁전·VIA Riyadh·Olaya 의료 단지 추가"
+    },
+    {
+      "date": "2026-10-15",
+      "added_ids": [
+        "N37",
+        "N38"
+      ],
+      "removed_ids": [],
+      "reason": "사용자 요청: Saudi German Hospital Riyadh 및 제공 좌표의 나무 형태 조형물 추가. 후속 명칭 재조사에서 설계사 공식 표기 Helical Spheres와 관계사 표기 Spiral Spheres를 확인."
     }
   ],
   "recommendation_review_summary": {
@@ -2371,7 +2447,7 @@
     "scope": "2026-09-30 현재 확보 이미지 전체와 갱신된 조사·지도 식별 기록을 대조한 종합 의견. 공개 리소스 전체량·모든 항목의 최신 현장 상태를 새로 검증한 결과가 아님."
   },
   "counts_by_type": {
-    "buildings": 31,
+    "buildings": 32,
     "sculptures": 1
   }
 }

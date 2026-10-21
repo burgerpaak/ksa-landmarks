@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-15",
-  "scope": "Riyadh 후보 32건 · 출처·시점·사용 조건을 기록한 이미지",
+  "scope": "Riyadh 후보 33건 · 출처·시점·사용 조건을 기록한 이미지",
   "candidates": {
     "N01": [
       {
@@ -963,6 +963,27 @@
         "sha256": "6728f50cb1617a364f7cb0a7a919723369a8439f86b1ca8d4b910593d9db4d61",
         "thumbnail_position": "50% 50%",
         "provided_filename": "codex-clipboard-2f96af8a-2a49-4341-8d60-6b017d394e65.png"
+      }
+    ],
+    "N39": [
+      {
+        "file": "research-n39-01.jpg",
+        "width": 2130,
+        "height": 1424,
+        "alt": "SABIC Headquarters — 큰 중앙 개구부와 상부 연결부가 보이는 ZFP 공식 야간 외관 사진",
+        "caption": "ZFP 공식 프로젝트의 야간 외관 사진. 본관의 큰 중앙 개구부와 상부 연결부, 전면 저층부 돔이 보입니다. 야간 조명색을 주간 외장색으로 간주하지 않으며, 촬영일은 미확인입니다. 단지 전체의 최신 배치·지붕·후면을 확인하는 자료는 아닙니다.",
+        "kind": "외관 사진",
+        "source": "ZFP · 설계사",
+        "source_url": "https://zfp.com/sabic-headquarters/",
+        "original_url": "https://zfp.com/wp-content/uploads/1996/01/SABIC-HQ-Riyadh-02.jpg",
+        "photographer": null,
+        "date_note": "촬영일 미확인 · 업로드 경로의 날짜를 촬영일·준공일로 간주하지 않음",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-15",
+        "processing": "공개 JPEG 원본 그대로 저장, 크롭 없음",
+        "sha256": "ee42bb34b2c897e239106dffec8985b8976de4600e7a4b14e3d0163a0246764a",
+        "thumbnail_position": "45% 35%"
       }
     ]
   }

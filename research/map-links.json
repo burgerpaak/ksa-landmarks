@@ -561,6 +561,21 @@
       "provided_url": "https://maps.app.goo.gl/goxmrsBNQ6u2UFsv5",
       "pin_source": "사용자 제공 좌표 링크 리다이렉트의 !3d!4d. 원본 7자리 그대로 보존.",
       "note": "King Khalid Road·King Abdullah Road 교차로와 Helical Spheres(시공사 표기 Spiral Spheres) 공식 사진·프로젝트 위치를 대조한 조사 기준점이다. 제공 핀은 개별 조형물의 정밀 설치점이 아니며, 배치별 좌표·최신 존치는 미확인."
+    },
+    "N39": {
+      "status": "matched",
+      "url": "https://www.google.com/maps?cid=2182219596390628561",
+      "cid": "2182219596390628561",
+      "place_name": "SABIC HQ",
+      "address": "6575 Airport Road, Qurtubah, Riyadh 13244, Saudi Arabia",
+      "coordinate_strings": [
+        "24.7980241",
+        "46.7226041"
+      ],
+      "checked_at": "2026-10-15",
+      "provided_url": "https://maps.app.goo.gl/7B6Wbrxg1UcSnVF37",
+      "pin_source": "사용자 단축 링크 리다이렉트의 장소 feature ID와 !3d!4d",
+      "note": "실제 Google Maps의 SABIC HQ 명칭·주소·사진과 SABIC 공식 Airport Road 소재 안내를 대조. @ 뷰 중심을 사용하지 않으며 납품 정밀 좌표·단지 경계·제작 범위 검증 완료를 뜻하지 않음."
     }
   },
   "method": "Google Maps 실제 장소 상세에서 명칭·소재지와 기존 조사자료 대조. 동명·입주사·이전 이력은 사진/기록 추가 확인. CID는 관찰한 장소 URL의 feature ID에서 변환; 검색어로 추정하지 않음."
