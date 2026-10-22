@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15",
+  "updated_at": "2026-10-22",
   "scope": "Riyadh 후보 33건 · 출처·시점·사용 조건을 기록한 이미지",
   "candidates": {
     "N01": [
@@ -966,6 +966,46 @@
       }
     ],
     "N39": [
+      {
+        "file": "research-n39-user-01.png",
+        "width": 1024,
+        "height": 640,
+        "alt": "SABIC Headquarters — 중앙 개구부와 상부 연결부가 보이는 주간 정면",
+        "caption": "사용자 제공 주간 정면 사진. 중앙 개구부와 그 안쪽 연결 구조, 전면 진입부가 보입니다. 원출처와 촬영일은 미확인이며, 현재 외관 전체를 검증한 자료는 아닙니다.",
+        "kind": "외관 사진",
+        "source": "사용자 제공 · 원출처 미확인",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-22",
+        "processing": "제공된 PNG 원본 그대로 저장, 크롭 없음",
+        "sha256": "7863cd73d82ff6a476930ce6ac0709c3c4718eb9a03ec5c2d3afe16644139bf9",
+        "thumbnail_position": "50% 40%",
+        "provided_filename": "codex-clipboard-fe2997ab-c7db-405b-bec0-49020dad1cfc.png"
+      },
+      {
+        "file": "research-n39-user-02.png",
+        "width": 554,
+        "height": 554,
+        "alt": "SABIC Headquarters — 프레임 깊이와 개구부 안쪽 연결 구조가 보이는 사선 전경",
+        "caption": "사용자 제공 사선 외관 사진. 중앙 프레임의 깊이와 개구부 안쪽 연결 구조, 하부 진입부가 보입니다. 건물 상부 일부는 제공된 원본 프레임에서 잘려 있으며 원출처와 촬영일은 미확인입니다.",
+        "kind": "외관 사진",
+        "source": "사용자 제공 · 원출처 미확인",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영일 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-10-22",
+        "processing": "제공된 PNG 원본 그대로 저장, 크롭 없음",
+        "sha256": "26338f3ec430ed1a95153699bc954183004c5fef6c7f949b9f951f205f28cc70",
+        "thumbnail_position": "50% 50%",
+        "provided_filename": "codex-clipboard-8c2205d4-7b65-4f6a-8aef-ead55fff0d06.png"
+      },
       {
         "file": "research-n39-01.jpg",
         "width": 2130,
