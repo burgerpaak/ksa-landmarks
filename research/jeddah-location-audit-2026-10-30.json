@@ -1,0 +1,190 @@
+{
+  "checked_at": "2026-10-30",
+  "scope": "기존 Research의 Jeddah 조형물 13개 위치 대조. 신규 작품 추가·추천 등급 변경 없음.",
+  "wikipedia_url": "https://en.wikipedia.org/wiki/Jeddah_Beautification_Project",
+  "wikipedia_revision_url": "https://en.wikipedia.org/w/index.php?title=Jeddah_Beautification_Project&oldid=1370870357",
+  "wikipedia_coordinates_are_survey_verified": false,
+  "method": "위키 표는 조사 단서로 사용하고 원출처·공식 설치 목록·이전 기록·Google Maps 장소 사진과 도로 배치를 대조. 지도 좌표는 조사 기준이며 현장 존치·납품 정밀 좌표와 구분.",
+  "counts": {
+    "reviewed": 13,
+    "wikipedia_listed": 7,
+    "wikipedia_coordinate_rows": 6,
+    "place_or_supplied_pin_links": 6,
+    "official_area_searches": 5,
+    "road_searches_individual_pin_unresolved": 2
+  },
+  "candidates": [
+    {
+      "id": "J15",
+      "name": "Bicycle Sculpture / Midan al-Darrajah",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "Monument to the Unknown Cyclist",
+      "wikipedia_coordinate_strings": [
+        "21.5680222",
+        "39.1834139"
+      ],
+      "wikipedia_location": "Al-Darraja Square",
+      "display_area": "Al-Darraja Square · King Fahd Road / Bicycle Bridge 옆",
+      "map_scope": "place_or_supplied_pin",
+      "note": "위키 좌표는 Bicycle Bridge 옆 교통섬을 가리킨다. 같은 구역의 The Cycle 장소 항목에서 대형 자전거 사진과 King Fahad Road 주소를 대조했다. 위키 좌표와 장소 핀은 약 35m 차이가 있어 고유 장소 링크를 사용한다. 2022 촬영자 기록의 교량 공사에 따른 이동은 교차로 일대에서의 재배치로 다루며, 현재 현장 상태·납품 정밀 좌표 검증과는 구분한다.",
+      "wiki_to_place_pin_distance_m_approx": 35.1
+    },
+    {
+      "id": "J16",
+      "name": "The Globe Roundabout",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "The Globe",
+      "wikipedia_coordinate_strings": [
+        "21.6645306",
+        "39.1108000"
+      ],
+      "wikipedia_location": "King Abdulaziz Road × Assalam Street",
+      "display_area": "Al Mohammadiyyah · King Abdulaziz Road × Assalam Street",
+      "map_scope": "place_or_supplied_pin",
+      "note": "위키 좌표와 Globe Roundabout 고유 장소 항목이 같은 회전교차로를 가리킨다. 지도 사진의 지구본 형상과 King Abdulaziz Road·Assalam Street 교차부를 대조했다. 기존 North Obhur 지역 검색 대신 고유 장소 링크를 사용한다.",
+      "wiki_to_place_pin_distance_m_approx": 4.9
+    },
+    {
+      "id": "J17",
+      "name": "Engineering Roundabout / Engineers’ Tools",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "Engineers’ Tools",
+      "wikipedia_coordinate_strings": [
+        "21.5869083",
+        "39.1869083"
+      ],
+      "wikipedia_location": "Engineers’ Square",
+      "display_area": "Engineering Square · Sari Street × Al Makarunah Road",
+      "map_scope": "place_or_supplied_pin",
+      "note": "위키 좌표와 Engineering Square 항목은 같은 Sari Street·Al Makarunah Road 교차로 구역이다. 지도 사진에서 컴퍼스·각도기 형상을 확인했다. 위키 좌표와 장소 핀은 약 33m 차이가 있어 위키의 숫자를 정밀 설치점으로 채택하지 않고 고유 장소 링크를 사용한다.",
+      "wiki_to_place_pin_distance_m_approx": 33.3
+    },
+    {
+      "id": "J18",
+      "name": "Cosmos / Al-Falak Sculpture",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Sari Street × King Fahd Road · 교량 옆 이전 기록",
+      "map_scope": "road_area",
+      "note": "이번 위키 위치표에는 Cosmos 항목·좌표가 없다. Sculptures of Jeddah의 교차로 기록과 2020년 제다 시청 이전 완료 발표를 인용한 Sada 보도는 같은 교차로의 교량 옆 위치를 뒷받침한다. 지도 검색은 교차로 구역이며 작품의 개별 설치점을 뜻하지 않는다."
+    },
+    {
+      "id": "J19",
+      "name": "Accident! / Crazy Speed",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "Accident!!! (Crazy Speed)",
+      "wikipedia_coordinate_strings": [
+        "21.6168361",
+        "39.1102972"
+      ],
+      "wikipedia_location": "Prince Faisal Ibn Saud Street (위키 표기)",
+      "display_area": "Ash Shati · Prince Faisal bin Fahd Street",
+      "map_scope": "place_or_supplied_pin",
+      "note": "위키의 현 위치 좌표는 Cars Cube Sculpture의 장소 핀과 같은 회전교차로를 가리킨다. 자동차가 돌출된 흰 블록 사진, Ash Shati·Prince Faisal Ibn Fahd Road 배치와 2025 Sabq의 2021년 이전 기록을 대조했다. 위키 본문의 Prince Faisal Ibn Saud Street 표기는 지도·보도의 Ibn Fahd와 달라 채택하지 않는다. 옛 Corniche 좌표는 이력으로만 보존한다.",
+      "wikipedia_former_coordinate_strings": [
+        "21.6254944",
+        "39.1053361"
+      ],
+      "rejected_street_text": "Prince Faisal Ibn Saud Street",
+      "adopted_street": "Prince Faisal bin Fahd Street",
+      "wiki_to_place_pin_distance_m_approx": 7.0
+    },
+    {
+      "id": "J20",
+      "name": "Four Lanterns",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "The Four Lanterns",
+      "wikipedia_coordinate_strings": [
+        "21.5441500",
+        "39.1339500"
+      ],
+      "wikipedia_location": "Al Andalus Street",
+      "display_area": "Al Andalus · Al Andalus Road",
+      "map_scope": "place_or_supplied_pin",
+      "note": "위키 좌표와 Four Lanterns 고유 장소 핀이 같은 Al Andalus 구역을 가리키며 지도 사진의 네 등 형상을 대조했다. Sculptures of Jeddah 본문도 Al Andalus Street로 설명하지만 별도 Location 필드는 Al-Tahliah Street로 달라, 본문·지도·위키가 일치하는 Al Andalus를 표시한다.",
+      "wiki_to_place_pin_distance_m_approx": 8.3
+    },
+    {
+      "id": "J21",
+      "name": "The Seagull",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "The Seagull",
+      "wikipedia_coordinate_strings": [
+        "21.5903917",
+        "39.1073722"
+      ],
+      "wikipedia_location": "Al Kurnaysh Branch Road",
+      "display_area": "북부 Corniche · Ash Shati / Khaled Al-Faisal Road",
+      "map_scope": "place_or_supplied_pin",
+      "note": "사용자가 The Seagull 위치로 제공한 단축 링크의 리다이렉트 !3d!4d에서 21.590392, 39.107372를 추출했다. 위성 지도에서 핀과 Sculpture: The Seagull by Mustafa Senbel 라벨, 날개형 구조물의 배치를 대조했다. 지도는 Ash Shati·Khaled Al-Faisal Road 일대를 표시한다. 기존 Sculptures of Jeddah의 Northern Corniche, Obhur district 기록은 출처 이력으로 보존하고 지역 검색보다 사용자 제공 핀을 우선한다. 위성영상 촬영일은 확인하지 못했으므로 현재 현장 존치 검증으로 확대하지 않는다. 위키의 The Seagull 좌표 21.5903917,39.1073722도 같은 설치점을 가리켜 사용자 원본 좌표를 유지했다."
+    },
+    {
+      "id": "J22",
+      "name": "The Fist",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Prince Sultan Street · 개별 설치점 미확인",
+      "map_scope": "road_area",
+      "note": "이번 위키 위치표에는 The Fist 항목·좌표가 없다. Sculptures of Jeddah는 Prince Sultan Street·Fist Roundabout을 기재하지만 개별 설치점은 이번 대조에서 확인하지 못했다. 지도 검색은 도로 구역이며 다른 작품의 좌표를 대신 사용하지 않는다."
+    },
+    {
+      "id": "J23",
+      "name": "Circular Mass",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Al Arbaeen Lagoon · Historic Jeddah",
+      "map_scope": "official_area",
+      "note": "Jeddah Historic District 공식 작품 목록에서 Al Arbaeen Lagoon 설치를 확인했다. 기존 Sculptures of Jeddah의 Jeddah Sculpture Museum 기록과 구분하여 공식 설치 구역을 우선 표시한다. 지도 검색은 Al Arbaeen Lagoon 구역을 찾는 링크이며 작품별 설치점·좌표는 미확인이다. 이번 위키 위치표에는 해당 작품의 개별 항목·좌표가 없다."
+    },
+    {
+      "id": "J24",
+      "name": "The Illusion of the Second Cube",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Al Arbaeen Lagoon · Historic Jeddah",
+      "map_scope": "official_area",
+      "note": "Jeddah Historic District 공식 작품 목록에서 Al Arbaeen Lagoon 설치를 확인했다. 기존 Sculptures of Jeddah의 Jeddah Sculpture Museum 기록과 구분하여 공식 설치 구역을 우선 표시한다. 지도 검색은 Al Arbaeen Lagoon 구역을 찾는 링크이며 작품별 설치점·좌표는 미확인이다. 이번 위키 위치표에는 해당 작품의 개별 항목·좌표가 없다."
+    },
+    {
+      "id": "J25",
+      "name": "Flexibility of Balance",
+      "wikipedia_listed": true,
+      "wikipedia_row_title": "Flexibility of Balance",
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": "Jeddah Sculpture Museum · 2011 이전 기록",
+      "display_area": "Al Arbaeen Lagoon · Historic Jeddah",
+      "map_scope": "official_area",
+      "note": "Jeddah Historic District 공식 작품 목록에서 Al Arbaeen Lagoon 설치를 확인했다. 기존 Sculptures of Jeddah의 Jeddah Sculpture Museum 기록과 구분하여 공식 설치 구역을 우선 표시한다. 지도 검색은 Al Arbaeen Lagoon 구역을 찾는 링크이며 작품별 설치점·좌표는 미확인이다. 위키의 2011년 Jeddah Sculpture Museum 이전 기록을 현재 위치로 사용하지 않는다."
+    },
+    {
+      "id": "J26",
+      "name": "The Bird (Joan Miró)",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Al Arbaeen Lagoon · Historic Jeddah",
+      "map_scope": "official_area",
+      "note": "Jeddah Historic District 공식 작품 목록에서 Al Arbaeen Lagoon 설치를 확인했다. 기존 Sculptures of Jeddah의 Jeddah Sculpture Museum 기록과 구분하여 공식 설치 구역을 우선 표시한다. 지도 검색은 Al Arbaeen Lagoon 구역을 찾는 링크이며 작품별 설치점·좌표는 미확인이다. 이번 위키 위치표에는 해당 작품의 개별 항목·좌표가 없다."
+    },
+    {
+      "id": "J27",
+      "name": "Oval with Points",
+      "wikipedia_listed": false,
+      "wikipedia_row_title": null,
+      "wikipedia_coordinate_strings": null,
+      "wikipedia_location": null,
+      "display_area": "Al Arbaeen Lagoon · Historic Jeddah",
+      "map_scope": "official_area",
+      "note": "Jeddah Historic District 공식 작품 목록에서 Al Arbaeen Lagoon 설치를 확인했다. 기존 Sculptures of Jeddah의 Jeddah Sculpture Museum 기록과 구분하여 공식 설치 구역을 우선 표시한다. 지도 검색은 Al Arbaeen Lagoon 구역을 찾는 링크이며 작품별 설치점·좌표는 미확인이다. 이번 위키 위치표에는 해당 작품의 개별 항목·좌표가 없다."
+    }
+  ]
+}

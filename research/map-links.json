@@ -110,9 +110,24 @@
       "note": "궁전명·Al Nazlah 지역 일치"
     },
     "J15": {
-      "status": "unresolved",
-      "note": "The Cycle 항목은 찾았으나 이전 후 실제 조형물 위치와 핀 일치 추가 확인 필요.",
-      "checked_at": "2026-09-29"
+      "status": "matched",
+      "note": "위키 좌표는 Bicycle Bridge 옆 교통섬을 가리킨다. 같은 구역의 The Cycle 장소 항목에서 대형 자전거 사진과 King Fahad Road 주소를 대조했다. 위키 좌표와 장소 핀은 약 35m 차이가 있어 고유 장소 링크를 사용한다. 2022 촬영자 기록의 교량 공사에 따른 이동은 교차로 일대에서의 재배치로 다루며, 현재 현장 상태·납품 정밀 좌표 검증과는 구분한다.",
+      "checked_at": "2026-10-30",
+      "url": "https://www.google.com/maps?cid=10914403826242302250",
+      "cid": "10914403826242302250",
+      "place_name": "The Cycle",
+      "address": "7305 King Fahad Rd, Al Faisaliyyah, Jeddah 23444",
+      "coordinate_strings": [
+        "21.568191",
+        "39.1831268"
+      ],
+      "pin_source": "실제 Google Maps 장소 항목의 !3d!4d. 위키 도분초 변환 좌표와 구분.",
+      "previous_record": {
+        "status": "unresolved",
+        "note": "The Cycle 항목은 찾았으나 이전 후 실제 조형물 위치와 핀 일치 추가 확인 필요.",
+        "checked_at": "2026-09-29"
+      },
+      "feature_id": "0x15c3d16d5836ab7f:0x9777c073f656312a"
     },
     "J16": {
       "status": "matched",
@@ -120,17 +135,27 @@
       "cid": "12772767417012118695",
       "place_name": "Globe Roundabout",
       "address": "Al Mohammadiyyah, Jeddah 23618",
-      "checked_at": "2026-09-29",
-      "note": "북부 Globe Roundabout 선택; 남부 MONUMENT GLOBE 제외"
+      "checked_at": "2026-10-30",
+      "note": "위키 좌표와 Globe Roundabout 고유 장소 항목이 같은 회전교차로를 가리킨다. 지도 사진의 지구본 형상과 King Abdulaziz Road·Assalam Street 교차부를 대조했다. 기존 North Obhur 지역 검색 대신 고유 장소 링크를 사용한다.",
+      "coordinate_strings": [
+        "21.6645127",
+        "39.1107571"
+      ],
+      "pin_source": "실제 Google Maps 장소 항목의 !3d!4d. 위키 도분초 변환 좌표와 구분."
     },
     "J17": {
       "status": "matched",
       "url": "https://www.google.com/maps?cid=4988929099513631424",
       "cid": "4988929099513631424",
       "place_name": "Engineering Square",
-      "address": "Engineering Roundabout, Jeddah 23448",
-      "checked_at": "2026-09-29",
-      "note": "컴퍼스·각도기 조형물 사진 및 교차로 핀 대조"
+      "address": "Engineering's Roundabout, Jeddah 23448",
+      "checked_at": "2026-10-30",
+      "note": "위키 좌표와 Engineering Square 항목은 같은 Sari Street·Al Makarunah Road 교차로 구역이다. 지도 사진에서 컴퍼스·각도기 형상을 확인했다. 위키 좌표와 장소 핀은 약 33m 차이가 있어 위키의 숫자를 정밀 설치점으로 채택하지 않고 고유 장소 링크를 사용한다.",
+      "coordinate_strings": [
+        "21.5871101",
+        "39.1866704"
+      ],
+      "pin_source": "실제 Google Maps 장소 항목의 !3d!4d. 위키 도분초 변환 좌표와 구분."
     },
     "J18": {
       "status": "matched",
@@ -142,27 +167,61 @@
       "note": "Al Falak 조형물 사진과 이름 대조. 2020 교량 옆 이전 보도와 구분; 납품 정밀 핀 검증 아님"
     },
     "J19": {
-      "status": "unresolved",
-      "note": "Cars Cube Sculpture 사진은 동일 작품이나 2025 Prince Faisal bin Fahd Street 이전 위치와 핀 일치 추가 확인 필요.",
-      "checked_at": "2026-09-29"
+      "status": "matched",
+      "note": "위키의 현 위치 좌표는 Cars Cube Sculpture의 장소 핀과 같은 회전교차로를 가리킨다. 자동차가 돌출된 흰 블록 사진, Ash Shati·Prince Faisal Ibn Fahd Road 배치와 2025 Sabq의 2021년 이전 기록을 대조했다. 위키 본문의 Prince Faisal Ibn Saud Street 표기는 지도·보도의 Ibn Fahd와 달라 채택하지 않는다. 옛 Corniche 좌표는 이력으로만 보존한다.",
+      "checked_at": "2026-10-30",
+      "url": "https://www.google.com/maps?cid=13496359129698874405",
+      "cid": "13496359129698874405",
+      "place_name": "Cars Cube Sculpture",
+      "address": "Ash Shati, Jeddah 23514 · Prince Faisal Ibn Fahd Road",
+      "coordinate_strings": [
+        "21.6167769",
+        "39.1102733"
+      ],
+      "pin_source": "실제 Google Maps 장소 항목의 !3d!4d. 위키 도분초 변환 좌표와 구분.",
+      "previous_record": {
+        "status": "unresolved",
+        "note": "Cars Cube Sculpture 사진은 동일 작품이나 2025 Prince Faisal bin Fahd Street 이전 위치와 핀 일치 추가 확인 필요.",
+        "checked_at": "2026-09-29"
+      },
+      "feature_id": "0x15c3db350712b42f:0xbb4cb31f26cd3425"
     },
     "J20": {
       "status": "matched",
       "url": "https://www.google.com/maps?cid=9067635146850155997",
       "cid": "9067635146850155997",
       "place_name": "The Four Lanterns monument by Julio Lafuente",
-      "address": "6340 Hisham Ibn Hakim, Al Andalus District, Jeddah",
-      "checked_at": "2026-09-29",
-      "note": "네 개 랜턴 형상과 작가명 일치. 지도 장소 식별이며 최근 현장 실측 아님"
+      "address": "6340 Hisham Ibn Hakim, Al Andalus District, Jeddah 23322",
+      "checked_at": "2026-10-30",
+      "note": "위키 좌표와 Four Lanterns 고유 장소 핀이 같은 Al Andalus 구역을 가리키며 지도 사진의 네 등 형상을 대조했다. Sculptures of Jeddah 본문도 Al Andalus Street로 설명하지만 별도 Location 필드는 Al-Tahliah Street로 달라, 본문·지도·위키가 일치하는 Al Andalus를 표시한다.",
+      "coordinate_strings": [
+        "21.5440759",
+        "39.1339546"
+      ],
+      "pin_source": "실제 Google Maps 장소 항목의 !3d!4d. 위키 도분초 변환 좌표와 구분."
     },
     "J21": {
-      "status": "matched",
-      "url": "https://www.google.com/maps?cid=5676363594014908882",
-      "cid": "5676363594014908882",
-      "place_name": "Sculpture: 'The Seagull' by Mustafa Senbel",
-      "address": "6770 Al Kurnaysh Br Rd, Ash Shati District, Jeddah 23511",
-      "checked_at": "2026-09-29",
-      "note": "The Seagull·Mustafa Senbel 명칭과 북부 Corniche 위치 일치"
+      "status": "coordinate_matched",
+      "url": "https://www.google.com/maps/search/?api=1&query=21.590392%2C39.107372",
+      "coordinate_strings": [
+        "21.590392",
+        "39.107372"
+      ],
+      "place_name": "The Seagull · 사용자 제공 좌표",
+      "address": "Ash Shati / Khaled Al-Faisal Road, Jeddah",
+      "checked_at": "2026-10-30",
+      "provided_url": "https://maps.app.goo.gl/F7mm7A8KZTAdcLu6A",
+      "pin_source": "사용자 링크 최초 리다이렉트의 !3d!4d",
+      "note": "사용자 제공 위치와 위성 지도상의 The Seagull 라벨·구조물 배치를 대조. 기존 지역 검색을 좌표 핀으로 대체. 원본 6자리 보존하며 현재 현장 존치·납품 정밀 좌표 검증 완료를 뜻하지 않음.",
+      "previous_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps?cid=5676363594014908882",
+        "cid": "5676363594014908882",
+        "place_name": "Sculpture: 'The Seagull' by Mustafa Senbel",
+        "address": "6770 Al Kurnaysh Br Rd, Ash Shati District, Jeddah 23511",
+        "checked_at": "2026-09-29",
+        "note": "The Seagull·Mustafa Senbel 명칭과 북부 Corniche 위치 일치"
+      }
     },
     "J22": {
       "status": "unresolved",
@@ -171,29 +230,29 @@
     },
     "J23": {
       "status": "unresolved",
-      "note": "Circular Mass 검색은 Magic Carpet·Globe 등 다른 작품 목록. 공식 Al Arbaeen 배치 기록만으로 개별 장소 ID를 확정하지 않음.",
-      "checked_at": "2026-09-29"
+      "note": "공식 설치 구역 Al Arbaeen Lagoon을 재확인. 구역 지도 검색은 제공하되 작품별 고유 장소·정밀 핀은 미확인. 과거 Jeddah Sculpture Museum 명칭 검색과 구분.",
+      "checked_at": "2026-10-30"
     },
     "J24": {
       "status": "unresolved",
-      "note": "작품명 검색이 제다 도시 전체로 연결됨. 개별 장소 미확보.",
-      "checked_at": "2026-09-29"
+      "note": "공식 설치 구역 Al Arbaeen Lagoon을 재확인. 구역 지도 검색은 제공하되 작품별 고유 장소·정밀 핀은 미확인. 과거 Jeddah Sculpture Museum 명칭 검색과 구분.",
+      "checked_at": "2026-10-30"
     },
     "J25": {
       "status": "unresolved",
-      "note": "작품명 검색이 Flow Pilates House로 오연결. 해당 업체 제외.",
-      "checked_at": "2026-09-29",
+      "note": "공식 설치 구역 Al Arbaeen Lagoon을 재확인. 구역 지도 검색은 제공하되 작품별 고유 장소·정밀 핀은 미확인. 과거 Jeddah Sculpture Museum 명칭 검색과 구분.",
+      "checked_at": "2026-10-30",
       "suppress_search": true
     },
     "J26": {
       "status": "unresolved",
-      "note": "작품명 검색이 제다 도시 전체로 연결됨. 개별 장소 미확보.",
-      "checked_at": "2026-09-29"
+      "note": "공식 설치 구역 Al Arbaeen Lagoon을 재확인. 구역 지도 검색은 제공하되 작품별 고유 장소·정밀 핀은 미확인. 과거 Jeddah Sculpture Museum 명칭 검색과 구분.",
+      "checked_at": "2026-10-30"
     },
     "J27": {
       "status": "unresolved",
-      "note": "Magic Carpet·Oval Offices·Globe 등 다른 장소 목록. 공식 Al Arbaeen 배치와 일치하는 개별 항목 미확보.",
-      "checked_at": "2026-09-29"
+      "note": "공식 설치 구역 Al Arbaeen Lagoon을 재확인. 구역 지도 검색은 제공하되 작품별 고유 장소·정밀 핀은 미확인. 과거 Jeddah Sculpture Museum 명칭 검색과 구분.",
+      "checked_at": "2026-10-30"
     },
     "N01": {
       "status": "matched",
