@@ -38,6 +38,9 @@
   --topbar-height: 64px;
   --nav-link-inset: 10px;
   --nav-group-inset: 4px;
+  --reference-resource-gap: 14px;
+  --reference-resource-inset: 24px;
+  --reference-list-gap: 36px;
 }
 
 [data-theme="dark"] {
@@ -568,6 +571,30 @@ a.brand:hover { opacity: 0.65; }
   :root { --topbar-height: 96px; }
   .topbar { flex-wrap: wrap; align-content: center; gap: 8px 12px; }
   .topbar-nav { order: 4; flex-basis: 100%; justify-content: center; }
+}
+
+
+/* Mobile search opens within the existing header without adding another row. */
+.mobile-search-toggle { display:none; }
+@media (max-width: 768px) {
+ .topbar .search-wrap { display:none; }
+ .topbar .mobile-search-toggle { display:grid; place-items:center; margin-left:auto; flex:0 0 36px; width:36px; height:36px; padding:0; border:1px solid var(--border); border-radius:10px; background:var(--bg-elev); color:var(--ink-soft); cursor:pointer; }
+ .topbar .mobile-search-toggle:hover { background:var(--bg-sunken); color:var(--ink); }
+ .topbar .mobile-search-toggle.has-search { color:var(--accent-strong); }
+ .topbar .topbar-actions, .topbar .theme-toggle { margin-left:0; }
+ .topbar.mobile-search-open > :not(.search-wrap):not(.mobile-search-toggle) { visibility:hidden; }
+ .topbar.mobile-search-open .search-wrap { display:block; position:absolute; z-index:2; left:12px; right:56px; top:50%; transform:translateY(-50%); width:auto; max-width:none; }
+ .topbar.mobile-search-open .search-input { font-size:16px; }
+ .topbar.mobile-search-open .search-kbd { display:none; }
+ .topbar.mobile-search-open .mobile-search-toggle { position:absolute; right:10px; top:50%; transform:translateY(-50%); z-index:3; }
+}
+@media (min-width: 376px) and (max-width: 420px) {
+ .topbar { gap:4px; }
+ .topbar-nav a { padding-left:5px; padding-right:5px; }
+ .topbar .mobile-search-toggle { width:32px; height:32px; flex-basis:32px; }
+}
+@media (max-width: 375px) {
+ .topbar.mobile-search-open .search-wrap, .topbar.mobile-search-open .mobile-search-toggle { top:25px; }
 }
 
 </style>
@@ -1557,5 +1584,31 @@ body.modal-lock .topbar { right: var(--sb-lock, 0px); }
   });
 })();
 </script>
+
+<script>
+(() => {
+ const bar = document.querySelector('.topbar');
+ const wrap = bar?.querySelector('.search-wrap');
+ const input = wrap?.querySelector('#search');
+ if (!input) return;
+ const media = matchMedia('(max-width: 768px)');
+ const button = document.createElement('button');
+ button.type = 'button'; button.className = 'mobile-search-toggle';
+ button.setAttribute('aria-label', '검색 열기'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-controls', 'search');
+ const searchIcon = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="m11 11 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+ const closeIcon = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+ function state(open, focus = false) {
+  bar.classList.toggle('mobile-search-open', open); button.setAttribute('aria-expanded', String(open));
+  button.setAttribute('aria-label', open ? '검색 닫기' : '검색 열기'); button.innerHTML = open ? closeIcon : searchIcon;
+  button.classList.toggle('has-search', !!input.value); if (focus) (open ? input : button).focus();
+ }
+ wrap.insertAdjacentElement('afterend', button); state(false);
+ button.addEventListener('click', () => state(!bar.classList.contains('mobile-search-open'), true));
+ input.addEventListener('input', () => button.classList.toggle('has-search', !!input.value));
+ document.addEventListener('keydown', event => { if (event.key === 'Escape' && bar.classList.contains('mobile-search-open')) { event.preventDefault(); state(false, true); } });
+ media.addEventListener('change', event => { if (!event.matches) state(false); });
+})();
+</script>
+
 </body>
 </html>

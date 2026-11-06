@@ -1215,6 +1215,7 @@ def build():
     # Files 페이지 먼저 빌드 → Reference 카드 3D 버튼용 맵 확보
     palette = extract_palette(template)
     build_research(ROOT, OUTPUT_DIR, palette)
+    build_research(ROOT, OUTPUT_DIR, palette, phase=2)
     prog = build_files(landmarks, palette)
     PROGRESS_LATEST = prog["dates"]
     PROGRESS_REP_MODELS = prog["rep_models"]

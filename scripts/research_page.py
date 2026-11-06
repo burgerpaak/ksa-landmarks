@@ -183,7 +183,7 @@ def render_card(item):
     type_label, type_description = LANDMARK_TYPES[item["landmark_type"]]
     search = " ".join(str(item.get(k, "")) for k in (
         "id", "name", "city", "area", "scope_group", "tag", "visual_character", "verification_notes", "selection_suggestion"
-    )) + f" {type_label} {type_description}" + (" 리야드" if item["city_key"] == "riyadh" else " 제다")
+    )) + f" {type_label} {type_description}" + {"riyadh":" 리야드", "jeddah":" 제다", "dammam":" 담맘", "khobar":" 코바르"}.get(item["city_key"], "")
     aliases = item.get("name_verification", {}).get("aliases", [])
     if aliases:
         search += " " + " ".join(aliases)
@@ -193,10 +193,13 @@ def render_card(item):
                      if item.get("decision_note") else "")
     title_tag = "h3" if item["phase_key"] == "phase-1" else "h4"
     rank = PRIORITIES[item["selection_suggestion"]]
+    grade = ('<span class="badge">평가 전</span>' if item.get('_phase2') else
+             f'<button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{{reason}}" aria-label="추천 등급: {esc(item["selection_suggestion"])}">{esc(item["selection_suggestion"])}</button>')
     assessment = item.get("recommendation_assessment", {})
     tip_reason = assessment.get("reason", "")
     if tip_reason.startswith(("기존 조사에서", "기존 형태 검토", "대상 대응 또는")) or not tip_reason:
         tip_reason = item.get("recommendation_review", {}).get("reason") or check["remaining"]
+    grade = grade.replace('{reason}', esc(tip_reason))
     type_badge = f'<span class="type-badge" aria-label="Type: {esc(type_label)}" title="{esc(type_description)}">{esc(type_label)}</span>'
     relationship_tag = (f'<span>{esc(item["tag"])}</span>'
                         if item["city_key"] == "riyadh" and item["phase_key"] == "phase-1" else "")
@@ -239,14 +242,14 @@ def render_card(item):
         <span class="placeholder-caption">외관 사진 준비 중 <small>PHOTO PENDING</small></span>'''
     return f'''<article class="research-card" id="{esc(item['id'])}" data-status="{state}"
       data-kind="{item['kind']}" data-type="{esc(item['landmark_type'])}" data-priority="{rank}" data-search="{esc(search.casefold())}" aria-labelledby="title-{esc(item['id'])}">
-      <div class="card-visual">
+      <div class="card-visual{' is-placeholder' if not images else ''}">
         <div class="card-meta"><div class="badges">
           {status}{low}</div></div>
         {visual}
         <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-thumbnail-count"></span></button>
       </div>
       <div class="card-body"><div class="card-heading"><{title_tag} id="title-{esc(item['id'])}">{esc(item['name'])}</{title_tag}>
-        <button type="button" class="badge recommendation priority-{rank}" data-recommendation-reason="{esc(tip_reason)}" aria-label="추천 등급: {esc(item['selection_suggestion'])}">{esc(item['selection_suggestion'])}</button></div>
+        {grade}</div>
         <p class="area">{esc(area_text)}</p>
 {related_link}
         {tag}
@@ -277,11 +280,31 @@ def render_card(item):
     </article>'''
 
 
-def build_research(root: Path, output_dir: Path, palette: str):
-    candidates, date = load_candidates(root)
+def build_research(root: Path, output_dir: Path, palette: str, phase=1):
+    if phase == 1:
+        candidates, date = load_candidates(root)
+        cities = CITIES
+    else:
+        data = json.loads((root / 'research/phase2/candidates.json').read_text(encoding='utf-8'))
+        image_file = root / 'research/phase2/images.json'
+        phase2_images = json.loads(image_file.read_text(encoding='utf-8'))['candidates'] if image_file.exists() else {}
+        candidates, date = data['candidates'], data['checked_at']
+        cities = (("jeddah", "Jeddah", "건축물 · 조형물"), ("dammam", "Dammam", "건축물 · 조형물"), ("khobar", "Khobar", "건축물 · 조형물"))
+        for c in candidates:
+            c.update(city_key=c['city'].lower().replace('al ', ''), phase_key='phase-1', tag='', _phase2=True,
+                     kind='sculpture' if c['landmark_type']=='sculpture' else 'building',
+                     review_status='검토 중', selection_suggestion='검토', confidence='partial', images=phase2_images.get(c['id'], []),
+                     map_record=c.get('map_record', {'status':'unresolved', 'suppress_search': c.get('suppress_map', False)}),
+                     verification_notes=c['remaining'], decision_note=c['remaining'],
+                     fact_check={'date':date,'checked':c['evidence'],'remaining':c['remaining']},
+                     sources=[(source_label(s['url']), s['url']) for s in c['sources']])
+        existing, _ = load_candidates(root)
+        ids = {c['id'] for c in candidates}
+        if len(ids) != len(candidates) or ids.intersection(c['id'] for c in existing):
+            raise ValueError('Duplicate Phase 2 IDs')
     counts = {key: sum(REVIEW_STATES[c["review_status"]] == key for c in candidates) for key in REVIEW_STATES.values()}
     overview, sections = [], []
-    for city_key, city, description in CITIES:
+    for city_key, city, description in cities:
         section_id = city_key
         items = [c for c in candidates if c["city_key"] == city_key]
         type_stats = "".join(
@@ -327,9 +350,15 @@ def build_research(root: Path, output_dir: Path, palette: str):
         "{{OVERVIEW}}": "\n".join(overview), "{{SECTIONS}}": "\n".join(sections),
     }
     page = (root / "templates/research.html.tpl").read_text(encoding="utf-8")
+    phase_nav = ('<nav class="phase-nav" aria-label="조사 단계"><a href="./"' + (' aria-current="page"' if phase == 1 else '') + '>Phase 1</a><a href="./phase2.html"' + (' aria-current="page"' if phase == 2 else '') + '>Phase 2</a></nav>')
+    page = page.replace('{{PHASE_NAV}}', phase_nav)
+    page = page.replace('{{PHASE_NUMBER}}', str(phase))
+    if phase == 2:
+        page = page.replace('신규 랜드마크 후보의 외형 특징과 조사 자료를 지역별로 모았습니다.', 'Phase 2 선정 후보입니다. 위치와 외관 자료는 추가 확인이 필요합니다.')
+        page = page.replace('카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.', 'Phase 2 후보는 추천 등급 평가 전입니다.')
     for token, value in replacements.items():
         page = page.replace(token, value)
-    target = output_dir / "research/index.html"
+    target = output_dir / ("research/index.html" if phase == 1 else "research/phase2.html")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(page, encoding="utf-8")
     assets_dir = output_dir / "assets"

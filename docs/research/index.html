@@ -110,6 +110,12 @@ h1 { font-size: clamp(32px, 3.8vw, 44px); line-height: 1.05; letter-spacing: -.0
 h1 em { font-style: normal; color: var(--accent); }
 .page-sub { color: var(--ink-soft); margin-top: 12px; font-size: 15px; line-height: 1.6; max-width: 60ch; }
 .check-date { font: 10px var(--mono); color: var(--ink-mute); white-space: nowrap; }
+.phase-nav { display:flex; gap:24px; border-bottom:1px solid var(--border); margin-bottom:4px; }
+.phase-nav a { position:relative; color:var(--ink-soft); font-size:13px; font-weight:500; padding:12px 2px; }
+.phase-nav a:hover { color:var(--ink); }
+.phase-nav a[aria-current="page"] { color:var(--ink); font-weight:600; }
+.phase-nav a[aria-current="page"]::after { content:''; position:absolute; bottom:-1px; left:2px; right:2px; height:2px; background:var(--ink); }
+.phase-nav + .overview { border-top:0; }
 .overview { display: flex; flex-wrap: wrap; gap: 24px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .comment-filter { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-elev); color: var(--ink-soft); font-size: 12px; transition: background .14s ease, color .14s ease, border-color .14s ease; }
 .comment-filter:hover { background: var(--bg-sunken); border-color: color-mix(in srgb, var(--ink-mute) 40%, var(--border)); color: var(--ink); }
@@ -165,6 +171,11 @@ h1 em { font-style: normal; color: var(--accent); }
 .research-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-sm); min-width: 0; overflow: hidden; }
 .research-card:target { border-color: var(--accent-strong); box-shadow: 0 0 0 2px var(--accent-soft); }
 .card-visual { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 7%, var(--bg-sunken)), var(--bg-sunken)); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+body[data-phase="2"] .card-visual.is-placeholder { aspect-ratio:auto; height:64px; justify-content:flex-start; padding-left:20px; gap:10px; }
+body[data-phase="2"] .placeholder-art { width:28px; flex:0 0 28px; }
+body[data-phase="2"] .placeholder-caption { position:static; text-align:left; }
+body[data-phase="2"] .placeholder-caption small { display:none; }
+body[data-phase="2"] .comment-thumbnail-badge { bottom:16px; }
 .photo-open { position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;overflow:hidden; }
 .photo-open img { display:block;width:100%;height:100%;object-fit:cover; }
 .photo-open:focus-visible { outline:3px solid var(--accent-strong);outline-offset:-3px; }
@@ -372,9 +383,33 @@ html { scrollbar-gutter: stable; }
  .panel-close { width:44px;height:44px;padding:0;border:0;background:var(--bg-sunken); }
 }
 @media(prefers-reduced-motion:reduce) { .detail-panel[open] { animation:none; } }
+
+/* Mobile search opens within the existing header without adding another row. */
+.mobile-search-toggle { display:none; }
+@media (max-width: 768px) {
+ .topbar .search-wrap { display:none; }
+ .topbar .mobile-search-toggle { display:grid; place-items:center; margin-left:auto; flex:0 0 36px; width:36px; height:36px; padding:0; border:1px solid var(--border); border-radius:10px; background:var(--bg-elev); color:var(--ink-soft); cursor:pointer; }
+ .topbar .mobile-search-toggle:hover { background:var(--bg-sunken); color:var(--ink); }
+ .topbar .mobile-search-toggle.has-search { color:var(--accent-strong); }
+ .topbar .topbar-actions, .topbar .theme-toggle { margin-left:0; }
+ .topbar.mobile-search-open > :not(.search-wrap):not(.mobile-search-toggle) { visibility:hidden; }
+ .topbar.mobile-search-open .search-wrap { display:block; position:absolute; z-index:2; left:12px; right:56px; top:50%; transform:translateY(-50%); width:auto; max-width:none; }
+ .topbar.mobile-search-open .search-input { font-size:16px; }
+ .topbar.mobile-search-open .search-kbd { display:none; }
+ .topbar.mobile-search-open .mobile-search-toggle { position:absolute; right:10px; top:50%; transform:translateY(-50%); z-index:3; }
+}
+@media (min-width: 376px) and (max-width: 420px) {
+ .topbar { gap:4px; }
+ .topbar-nav a { padding-left:5px; padding-right:5px; }
+ .topbar .mobile-search-toggle { width:32px; height:32px; flex-basis:32px; }
+}
+@media (max-width: 375px) {
+ .topbar.mobile-search-open .search-wrap, .topbar.mobile-search-open .mobile-search-toggle { top:25px; }
+}
+
 </style>
 </head>
-<body data-theme="light">
+<body data-theme="light" data-phase="1">
 <header class="topbar">
  <a class="brand" href="../" title="홈으로"><span class="brand-mark">KSA Landmarks</span><span class="brand-meta">3D · Reference</span></a>
  <nav class="topbar-nav" aria-label="주 메뉴"><a href="../">Reference</a><a href="./" class="active" aria-current="page">Research</a><a href="../progress/">Files</a></nav>
@@ -391,6 +426,7 @@ html { scrollbar-gutter: stable; }
 </header>
 <main class="main">
  <div class="page-head"><div><p class="eyebrow">SAUDI ARABIA · NEW LANDMARKS</p><h1>Landmark <em>Research</em></h1><p class="page-sub">신규 랜드마크 후보의 외형 특징과 조사 자료를 지역별로 모았습니다.</p></div><p class="check-date">자료 점검 2026-10-30</p></div>
+ <nav class="phase-nav" aria-label="조사 단계"><a href="./" aria-current="page">Phase 1</a><a href="./phase2.html">Phase 2</a></nav>
  <nav class="overview" aria-label="도시별 랜드마크 후보"><div class="city-overview"><a class="jump-link city-jump" href="#riyadh">Riyadh</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="riyadh" data-count-kind="building">32</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="riyadh" data-count-kind="sculpture">1</span></div></div></div>
 <div class="city-overview"><a class="jump-link city-jump" href="#jeddah">Jeddah</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="building">12</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="sculpture">13</span></div></div></div></nav>
  <section class="city-section" id="riyadh" aria-labelledby="heading-riyadh">
@@ -3300,7 +3336,7 @@ html { scrollbar-gutter: stable; }
   button.addEventListener('click',()=>{
    if(!panel.open){opener=button;savedY=window.scrollY;}content.replaceChildren();
    const heading=document.createElement('div');heading.className='panel-heading';
-   const title=document.createElement('h2');title.id='panel-title';title.textContent=card.querySelector('.card-heading h3,.card-heading h4').textContent;heading.append(title,card.querySelector('.recommendation').cloneNode(true));content.append(heading);
+   const title=document.createElement('h2');title.id='panel-title';title.textContent=card.querySelector('.card-heading h3,.card-heading h4').textContent;heading.append(title);const grade=card.querySelector('.card-heading .badge');if(grade)heading.append(grade.cloneNode(true));content.append(heading);
    const body=detailsByCard.get(card).cloneNode(true);
    const area=card.querySelector('.area');if(area)content.append(area.cloneNode(true));
    const type=card.querySelector('.type-badge');if(type){const tags=document.createElement('div');tags.className='card-tags';tags.append(type.cloneNode(true));content.append(tags);}
@@ -3809,5 +3845,31 @@ import {createCommentReadState, commentStamp} from '../assets/research-comment-r
  if (!resizeObserver) window.addEventListener('resize', () => textChecks.forEach((_, card) => checkText(card)));
 })();
 </script>
+
+<script>
+(() => {
+ const bar = document.querySelector('.topbar');
+ const wrap = bar?.querySelector('.search-wrap');
+ const input = wrap?.querySelector('#search');
+ if (!input) return;
+ const media = matchMedia('(max-width: 768px)');
+ const button = document.createElement('button');
+ button.type = 'button'; button.className = 'mobile-search-toggle';
+ button.setAttribute('aria-label', '검색 열기'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-controls', 'search');
+ const searchIcon = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="m11 11 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+ const closeIcon = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+ function state(open, focus = false) {
+  bar.classList.toggle('mobile-search-open', open); button.setAttribute('aria-expanded', String(open));
+  button.setAttribute('aria-label', open ? '검색 닫기' : '검색 열기'); button.innerHTML = open ? closeIcon : searchIcon;
+  button.classList.toggle('has-search', !!input.value); if (focus) (open ? input : button).focus();
+ }
+ wrap.insertAdjacentElement('afterend', button); state(false);
+ button.addEventListener('click', () => state(!bar.classList.contains('mobile-search-open'), true));
+ input.addEventListener('input', () => button.classList.toggle('has-search', !!input.value));
+ document.addEventListener('keydown', event => { if (event.key === 'Escape' && bar.classList.contains('mobile-search-open')) { event.preventDefault(); state(false, true); } });
+ media.addEventListener('change', event => { if (!event.matches) state(false); });
+})();
+</script>
+
 </body>
 </html>

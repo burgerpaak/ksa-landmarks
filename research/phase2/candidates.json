@@ -1,0 +1,1287 @@
+{
+  "checked_at": "2026-11-05",
+  "candidates": [
+    {
+      "id": "J40",
+      "name": "Abdulaziz Abdullah Sharbatly Mosque",
+      "city": "Jeddah",
+      "area": "Jeddah · Al-Jawhara / Bouvardia City",
+      "landmark_type": "mosque",
+      "visual_character": "곡선 벽과 미나레트가 특징인 모스크.",
+      "overview": "제다 Al-Jawhara 주거지의 모스크로, 3D 프린팅 기술을 건축에 적용한 사례다. 예배 공간과 두 미나레트를 갖춘 종교 시설이다.",
+      "evidence": "Google 지도에 등록된 2024년 3월 외관 사진과 ArchDaily 기사 사진을 대조해 양쪽 사각 미나레트, 상단 프레임과 반복된 뾰족 아치 정면이 일치함을 확인했다. 정부 자료는 Bouvardia가 Al-Jawhara 주거지 안에 있다고 설명한다.",
+      "remaining": "지도 장소는 외관 식별용 · 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Abdulaziz+Abdullah+Sharbatly+Mosque+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Abdulaziz Abdullah Sharbatly Mosque",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.archdaily.com/1014542/worlds-first-ever-3d-printed-mosque-opens-in-jeddah-saudi-arabia"
+        },
+        {
+          "title": "지자체 주거지 설명",
+          "url": "https://momah.gov.sa/en/node/13699"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Abdulaziz+Abdullah+Sharbatly+Mosque/@21.7524153,39.175226,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c17de5628da081:0x2b355c375cce09d2!8m2!3d21.7524153!4d39.175226!16s%2Fg%2F11v9xcz9_6"
+      }
+    },
+    {
+      "id": "J41",
+      "name": "Hayy Jameel",
+      "city": "Jeddah",
+      "area": "Al Muhammadiyah · Arwa bint Abdulmutalib Street",
+      "landmark_type": "complex",
+      "visual_character": "중정을 중심으로 배치된 문화시설.",
+      "overview": "제다 Al Muhammadiyah의 복합 문화시설이다. 전시·영화·창작 활동을 위한 공간이 중앙 중정을 중심으로 이어진다.",
+      "evidence": "운영 기관 방문 안내의 Google 지도 링크와 주소를 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hayy+Jameel+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Hayy Jameel",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://hayyjameel.org/about-hayy-jameel/architecture/"
+        },
+        {
+          "title": "위치 대조 자료",
+          "url": "https://hayyjameel.org/visit/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "15576413403629318072",
+        "url": "https://www.google.com/maps?cid=15576413403629318072",
+        "coordinate_strings": [
+          "21.6312844",
+          "39.1291346"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "운영 기관 방문 안내의 Google 지도 링크와 주소를 대조했다.",
+        "source_url": "https://hayyjameel.org/visit/",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J42",
+      "name": "Beit Jokhdar",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Al Jawkhadar Lane",
+      "landmark_type": "heritage",
+      "visual_character": "청록색 로샨이 특징인 역사 건축물.",
+      "overview": "제다 역사 지구에 자리한 전통 가옥이다. 현재 역사 건축물의 보존과 활용을 위한 Heritage and Hospitality 프로그램에 소개돼 있다.",
+      "evidence": "공식 역사 지구의 Beit Jokhdar와 지도 장소명·역사 지구 주소를 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Beit+Jokhdar+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Beit Jokhdar",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.jeddahalbalad.sa/our-nitiatives/heritage_and_hospitality"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "5289625707261654335",
+        "url": "https://www.google.com/maps?cid=5289625707261654335",
+        "coordinate_strings": [
+          "21.4831169",
+          "39.1871531"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "공식 역사 지구의 Beit Jokhdar와 지도 장소명·역사 지구 주소를 대조했다.",
+        "source_url": "https://www.jeddahalbalad.sa/our-nitiatives/heritage_and_hospitality",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J45",
+      "name": "Sword / Hope for the Right Path",
+      "city": "Jeddah",
+      "area": "Jeddah · Tahliah Street / Sword Roundabout",
+      "landmark_type": "sculpture",
+      "visual_character": "검을 연상시키는 수직 조형. Swords of God과 다른 작품.",
+      "overview": "제다 Tahliah Street의 Sword Roundabout에 설치된 조형물이다. 작품명 Hope for the Right Path와 Sword로도 알려져 있다.",
+      "evidence": "Hope for the Right Path의 Sword Roundabout 설치 기록과 해당 지도 항목의 작가 정보·위치를 대조했다. 지도상 위치가 납품용 정밀 좌표 확인을 뜻하지는 않는다.",
+      "remaining": "현장 외관과 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Sword+%2F+Hope+for+the+Right+Path+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Hope for the Right Path sculpture",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.spa.gov.sa/en/w2709665"
+        },
+        {
+          "title": "작품 설치 위치 기록",
+          "url": "https://en.wikipedia.org/wiki/Tahliah_Street_%28Jeddah%29"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Sword+Roundabout/@21.5484287,39.1432545,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c3c50752bd2547:0x5c54996c7985556b!8m2!3d21.5484287!4d39.1432545!16s%2Fg%2F11rjkdv788"
+      }
+    },
+    {
+      "id": "J46",
+      "name": "Al-Qiblah",
+      "city": "Jeddah",
+      "area": "Al Andalus Road · Jeddah",
+      "landmark_type": "sculpture",
+      "visual_character": "날개를 펼친 듯한 석재 조형.",
+      "overview": "제다 Al Andalus Road 주변에 있는 조형물이다. 제다의 공공 조형물 기록에 작품명 Al-Qiblah와 작가 Julio Lafuente가 소개돼 있다.",
+      "evidence": "Al-Qiblah by Julio Lafuente 지도 장소와 작품 사진·작가명을 기존 작품 기록과 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Qiblah+Jeddah+Saudi+Arabia",
+      "suppress_map": true,
+      "image_search_name": "Al-Qiblah sculpture",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.sculpturesofjeddah.com/sculptures"
+        },
+        {
+          "title": "위치 대조 자료",
+          "url": "https://www.sculpturesofjeddah.com/sculptures/detail/al-qiblah"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "5039241812182559769",
+        "url": "https://www.google.com/maps?cid=5039241812182559769",
+        "coordinate_strings": [
+          "21.5422185",
+          "39.1545399"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "Al-Qiblah by Julio Lafuente 지도 장소와 작품 사진·작가명을 기존 작품 기록과 대조했다.",
+        "source_url": "https://www.sculpturesofjeddah.com/sculptures/detail/al-qiblah",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J48",
+      "name": "Fish",
+      "city": "Jeddah",
+      "area": "Jeddah · South Obhur Waterfront",
+      "landmark_type": "sculpture",
+      "visual_character": "물고기를 단순화한 조형. 이전·재설치 이력 확인 필요.",
+      "overview": "제다 남부 Obhur 수변의 물고기 조형물이다. 주변 수변과 함께 장소를 식별할 수 있는 공공미술 후보이며, 과거 사진과 현재 상태의 대조가 필요하다.",
+      "evidence": "남부 Obhur의 Fish Model 지도 장소와 물고기 조형물에 관한 연구 자료의 위치를 대조했다. 재정비 이후 현장 형태와 납품용 좌표는 추가 확인이 필요하다.",
+      "remaining": "재정비 이후 외관·납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Fish+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Fish sculpture Obhur",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.sculpturesofjeddah.com/sculptures"
+        },
+        {
+          "title": "Fish Lagoon 연구 자료",
+          "url": "https://www.researchgate.net/figure/A-Shows-a-general-overview-of-the-Fish-Lagoon-within-Obhur-Bay-B-Sampling-locations_fig1_338484690"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Fish+Model/@21.7219042,39.1144955,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c163d185a34e9d:0x38070fe03fcaf5ce!8m2!3d21.7219042!4d39.1144955!16s%2Fg%2F11l6qq4589",
+        "source_url": "https://www.researchgate.net/figure/A-Shows-a-general-overview-of-the-Fish-Lagoon-within-Obhur-Bay-B-Sampling-locations_fig1_338484690"
+      }
+    },
+    {
+      "id": "J50",
+      "name": "Shahada al-Tawhid / Unification Fountain",
+      "city": "Jeddah",
+      "area": "Ash Shati · Jeddah Corniche",
+      "landmark_type": "sculpture",
+      "visual_character": "문자 형태와 수반을 결합한 조형.",
+      "overview": "제다 Ash Shati 해안에 있는 문자 형태의 조형물과 분수다. Shahada al-Tawhid 또는 Unification Fountain이라는 이름으로 확인되는 장소다.",
+      "evidence": "Google 지도 Shahada al-Tawhid 장소명·작가와 해안 위치를 작품 기록과 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Shahada+al-Tawhid+%2F+Unification+Fountain+Jeddah+Saudi+Arabia",
+      "suppress_map": true,
+      "image_search_name": "Unification Fountain sculpture",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.sculpturesofjeddah.com/sculptures"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "17561442095015414934",
+        "url": "https://www.google.com/maps?cid=17561442095015414934",
+        "coordinate_strings": [
+          "21.5978789",
+          "39.1061971"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "Google 지도 Shahada al-Tawhid 장소명·작가와 해안 위치를 작품 기록과 대조했다.",
+        "source_url": "https://www.sculpturesofjeddah.com/sculptures/detail/the-shahada-al-tawhid-unification-fountain",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J74",
+      "name": "Island Mosque",
+      "city": "Jeddah",
+      "area": "Jeddah · Corniche",
+      "landmark_type": "mosque",
+      "visual_character": "작은 섬에 자리한 흰색 돔과 미나레트의 모스크.",
+      "overview": "제다 코르니시의 인공섬에 세워진 모스크. 기존 Al Rahma Mosque와는 별개 건물이다.",
+      "evidence": "IRCICA의 건물 위치와 Google 지도 Island Mosque 장소 핀을 대조했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "모스크·진입로의 제작 범위와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/place/Island+Mosque/@21.5970681,39.105446,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c3db06f181fa6d:0x873311a508e6033f!8m2!3d21.5970681!4d39.105446!16s%2Fg%2F1hc3gt_7c?entry=ttu",
+      "suppress_map": false,
+      "image_search_name": "Island Mosque Jeddah Abdel Wahed El Wakil",
+      "sources": [
+        {
+          "title": "IRCICA · Island Mosque",
+          "url": "https://www.islamicarchitecturalheritage.com/listings/island-mosque"
+        },
+        {
+          "title": "Sculptures of Jeddah · Island Mosque",
+          "url": "https://sculpturesofjeddah.com/sculptures/detail/the-island-mosque"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Island+Mosque/@21.5970681,39.105446,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c3db06f181fa6d:0x873311a508e6033f!8m2!3d21.5970681!4d39.105446!16s%2Fg%2F1hc3gt_7c?entry=ttu",
+        "coordinate_strings": [
+          "21.5970681",
+          "39.105446"
+        ],
+        "checked_at": "2026-11-06",
+        "evidence": "Google 지도 Island Mosque 장소명과 IRCICA 등재 좌표를 대조했다.",
+        "source_url": "https://www.islamicarchitecturalheritage.com/listings/island-mosque",
+        "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J53",
+      "name": "Ship and Sail",
+      "city": "Jeddah",
+      "area": "Jeddah · South Obhur / Al Safina Roundabout",
+      "landmark_type": "sculpture",
+      "visual_character": "배·돛·물결을 조합한 조형.",
+      "overview": "제다 남부 Obhur의 Al Safina 회전교차로에 놓인 배와 돛 형태의 공공 조형물이다. 도로 교차로와 함께 인식되는 장소다.",
+      "evidence": "Al Safina 회전교차로의 위치 기록과 지도 장소의 배·돛 조형 사진을 대조했다. 조형물의 색상은 재도색에 따라 이전 사진과 다를 수 있다.",
+      "remaining": "현재 도색·외관과 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ship+and+Sail+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Ship and Sail sculpture",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://en.wikipedia.org/wiki/Jeddah_Beautification_Project"
+        },
+        {
+          "title": "Obhur 조형물 사진 기록",
+          "url": "https://susieofarabia.wordpress.com/2009/02/14/boat-and-sail-sculpture/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Ship+field/@21.7399788,39.1270512,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c1630880b51fd5:0xe7c6e73e22e21440!8m2!3d21.7399788!4d39.1270512!16s%2Fg%2F11l6bkfw2f"
+      }
+    },
+    {
+      "id": "J61",
+      "name": "Red Sea Museum / Bab Al-Bunt",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Al-Balad",
+      "landmark_type": "heritage",
+      "visual_character": "반복되는 아치형 목재 창과 돌출된 모서리, 길게 이어진 입면이 특징인 옛 항구 관문 건물.",
+      "overview": "역사 지구의 옛 항구·세관 건물 Bab Al-Bunt를 복원해 조성한 박물관. 홍해와 해상 교류의 역사를 소개한다.",
+      "evidence": "사우디 통신사는 복원된 Bab Al-Bunt 건물에 박물관이 개관했다고 밝혔다. 지도는 박물관이 자리한 Al Bant Museum 장소 항목이다.",
+      "remaining": "건물 본체와 현대식 증축부의 모델링 범위·납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Red+Sea+Museum+Bab+Al+Bunt+Jeddah",
+      "suppress_map": false,
+      "image_search_name": "Red Sea Museum Bab Al Bunt",
+      "map_record": {
+        "status": "matched",
+        "cid": "15437425354373766003",
+        "url": "https://www.google.com/maps?cid=15437425354373766003",
+        "coordinate_strings": [
+          "21.483271",
+          "39.18276"
+        ],
+        "checked_at": "2026-11-05",
+        "evidence": "박물관 방문 안내의 Google 지도 링크에서 Al Bant Museum 장소 항목으로 연결됨을 확인.",
+        "source_url": "https://iadelalsulami.com/en/red-sea-museum-jeddah/",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "sources": [
+        {
+          "title": "공식 개관 자료",
+          "url": "https://www.spa.gov.sa/en/N2460439"
+        },
+        {
+          "title": "복원 설계사",
+          "url": "https://www.chatillonarchitectes.com/en/portfolio/musee-de-la-mer-rouge/"
+        },
+        {
+          "title": "방문 안내 및 지도",
+          "url": "https://iadelalsulami.com/en/red-sea-museum-jeddah/"
+        }
+      ]
+    },
+    {
+      "id": "N60",
+      "name": "Heritage Village",
+      "city": "Dammam",
+      "area": "Ash Shati Al Gharbi · Dammam Corniche",
+      "landmark_type": "heritage",
+      "visual_character": "성곽형 매스와 전통 건축 요소가 특징인 문화시설.",
+      "overview": "담맘 코르니시의 문화·관광 시설이다. 사우디의 전통 생활과 유물을 소개하는 공간으로, 전통 건축에서 차용한 외관을 갖췄다.",
+      "evidence": "지도 Heritage Village 장소명·해안 주소와 기존 문화 안내를 대조했다. 다른 지도 자료의 상충 좌표는 사용하지 않았다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Heritage+Village+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Heritage Village",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.ithra.com/files/9616/6002/6279/Culture_Guide_-English.pdf"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "3172071856249970362",
+        "url": "https://www.google.com/maps?cid=3172071856249970362",
+        "coordinate_strings": [
+          "26.4919366",
+          "50.1206131"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "지도 Heritage Village 장소명·해안 주소와 기존 문화 안내를 대조했다. 다른 지도 자료의 상충 좌표는 사용하지 않았다.",
+        "source_url": "https://www.ithra.com/files/9616/6002/6279/Culture_Guide_-English.pdf",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N61",
+      "name": "King Fahd International Airport Mosque",
+      "city": "Dammam",
+      "area": "King Fahd International Airport · Dammam",
+      "landmark_type": "mosque",
+      "visual_character": "공항 주차장 위의 모스크. 돔과 주변 범위를 함께 검토한다.",
+      "overview": "담맘 King Fahd International Airport 구역에 있는 모스크다. 여객터미널과 별개 시설이며 주차장 위에 자리한다.",
+      "evidence": "공항 Grand Mosque 지도 장소와 주차장 위 돔형 모스크 사진을 대조했다. Google 지도는 2026-11-03 기준 임시 휴업으로 표시하므로 운영 상태는 별도 확인한다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King+Fahd+International+Airport+Mosque+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "King Fahd International Airport Mosque",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://brianclarke.co.uk/art/architectural-projects/king-fahd-international-airport-mosque"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "14434714958821976890",
+        "url": "https://www.google.com/maps?cid=14434714958821976890",
+        "coordinate_strings": [
+          "26.4686954",
+          "49.7989064"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "공항 Grand Mosque 지도 장소와 주차장 위 돔형 모스크 사진을 대조했다. Google 지도는 2026-11-03 기준 임시 휴업으로 표시하므로 운영 상태는 별도 확인한다.",
+        "source_url": "https://brianclarke.co.uk/art/architectural-projects/king-fahd-international-airport-mosque",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N62",
+      "name": "Al-Shaghroud Mosque",
+      "city": "Dammam",
+      "area": "Dammam · King Abdullah Road",
+      "landmark_type": "mosque",
+      "visual_character": "입방체와 프레임이 결합된 외형.",
+      "overview": "담맘 King Abdullah Road 주변의 모스크다. 설립자의 이름을 딴 예배 시설로, 수직 프레임과 미나레트가 외관 식별에 도움이 된다.",
+      "evidence": "Mosqpedia의 외관 사진과 Google 지도 사진의 반복된 수직 프레임·미나레트·건물 형태가 일치하고 King Abdullah Road와 설립자 이름도 부합한다. 지구명은 자료마다 Taiba와 Al Manar로 달리 기재되어 있다.",
+      "remaining": "지도 위치는 장소 식별용이며 납품용 정밀 좌표는 별도 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Shaghroud+Mosque+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Al-Shaghroud Mosque",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://mosqpedia.org/masajid/alshaghroud-mosque/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Alshgrud+Mosque/@26.3667403,50.0520279,770m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49e2da65b6aeb1:0xf10a89fe670b676d!8m2!3d26.3667403!4d50.0520279!16s%2Fg%2F11bxdzh7sk"
+      }
+    },
+    {
+      "id": "N63",
+      "name": "Dammam Railway Station",
+      "city": "Dammam",
+      "area": "Fatema Al Zahra Street · Dammam",
+      "landmark_type": "infra",
+      "visual_character": "아케이드와 개구부가 특징인 철도역.",
+      "overview": "담맘에 위치한 여객 철도역이다. Fatema Al Zahra Street에 자리하며 도시의 철도 교통을 위한 시설이다.",
+      "evidence": "지도 Dammam Railway Station 장소와 기차역 명칭·주소를 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Dammam+Railway+Station+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Dammam Railway Station",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://en.wikipedia.org/wiki/Dammam_railway_station"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "11982712461910076768",
+        "url": "https://www.google.com/maps?cid=11982712461910076768",
+        "coordinate_strings": [
+          "26.4099101",
+          "50.126418"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "지도 Dammam Railway Station 장소와 기차역 명칭·주소를 대조했다.",
+        "source_url": "https://en.wikipedia.org/wiki/Dammam_railway_station",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N64",
+      "name": "Sails Roundabout",
+      "city": "Dammam",
+      "area": "Dammam Corniche · Sails Roundabout",
+      "landmark_type": "sculpture",
+      "visual_character": "돛 형태의 회전교차로 조형물.",
+      "overview": "담맘 코르니시 도로의 회전교차로에 설치된 돛 형태의 조형물이다. 도로와 해안 공간을 함께 고려할 수 있는 후보이다.",
+      "evidence": "지도상 Sails Roundabout 장소명과 담맘 해안 도로의 조형 기록을 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Sails+Roundabout+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Sails Roundabout",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://wesal.com.sa/en/news/we-were-pleased-to-work-with-the-eastern-province-municipality-to-implement-the-two-largest-pictures-of-the-wise-leadership-may-god-protect-them-on-the-dammam-corniche/show"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "1283659435913023228",
+        "url": "https://www.google.com/maps?cid=1283659435913023228",
+        "coordinate_strings": [
+          "26.4553442",
+          "50.1119061"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "지도상 Sails Roundabout 장소명과 담맘 해안 도로의 조형 기록을 대조했다.",
+        "source_url": "https://wesal.com.sa/en/news/we-were-pleased-to-work-with-the-eastern-province-municipality-to-implement-the-two-largest-pictures-of-the-wise-leadership-may-god-protect-them-on-the-dammam-corniche/show",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N65",
+      "name": "Al-Marjan Island observation tower",
+      "city": "Dammam",
+      "area": "Dammam · Al-Marjan Island",
+      "landmark_type": "infra",
+      "visual_character": "섬 중앙의 전망 타워.",
+      "overview": "담맘 코르니시에서 다리로 이어지는 Al-Marjan Island 중앙의 탑이다. 섬 자체는 개발 계획이 진행 중이며, 탑의 현재 외관과 존치 상태는 별도 확인이 필요하다.",
+      "evidence": "사용자가 제공한 Google 지도 장소의 사진에서 섬 중앙에 있는 흰색 계단형 탑을 기존 외관 사진과 대조했다. 지도상 명칭은 لافتيل이며 공식 명칭 여부는 확인되지 않았다.",
+      "remaining": "정비 후 현재 존치와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Murjan+Island+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Al-Marjan Island observation tower",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.arabnews.com/saudi-arabia/theplace-saudi-arabias-al-marjan-island-is-a-landmark-and-a-recreational-destination-for-tourists-1930801"
+        },
+        {
+          "title": "Saudipedia · 섬과 전망 타워",
+          "url": "https://saudipedia.com/en/dammam-corniche"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://maps.app.goo.gl/VJCiGrSCxDohiGDh7",
+        "coordinate_strings": [
+          "26.483873",
+          "50.1058926"
+        ],
+        "checked_at": "2026-11-06",
+        "evidence": "사용자가 제공한 지도 장소의 흰색 계단형 탑 사진과 기존 외관 사진이 일치한다. 지도 등록명은 لافتيل이다.",
+        "source_url": "https://maps.app.goo.gl/VJCiGrSCxDohiGDh7",
+        "precision_note": "Google 지도 장소 핀. 납품 정밀 좌표와 현장 상태는 별도 확인."
+      }
+    },
+    {
+      "id": "N66",
+      "name": "Mosque of the Custodian of the Two Holy Mosques",
+      "city": "Dammam",
+      "area": "Dammam · Al Souq",
+      "landmark_type": "mosque",
+      "visual_character": "담맘에 위치한 모스크. 지도 검색 결과의 건물 대응 확인 필요.",
+      "overview": "담맘 Al Souq의 모스크다. 시공사 자료에는 Mosque of the Custodian of the Two Holy Mosques 및 King Fahd Mosque로 소개돼 있어, 다른 도시의 동명 시설과 구분해야 한다.",
+      "evidence": "시공사 Al Mashrik의 프로젝트 사진과 Google 지도 King Fahd Mosque의 2019년 사진을 대조했다. 출입구의 세 뾰족 아치, 줄무늬 석재, 작은 원형 장식, 계단과 옆의 긴 창이 일치한다. 시공사 브로슈어는 담맘 프로젝트를 King Fahd Mosque로도 표기한다.",
+      "remaining": "지도 장소는 외관 식별용 · 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Mosque+of+the+Custodian+of+the+Two+Holy+Mosques+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Mosque of the Custodian of the Two Holy Mosques",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://almashrik.com/project/dammam-mosque-of-the-custodian-of-the-two-holy-mosques/"
+        },
+        {
+          "title": "시공사 프로젝트 목록",
+          "url": "https://almashrik.com/wp-content/uploads/2018/06/AL-MASHRIK_BROCHURE.pdf"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/King+Fahd+Mosque/@26.4408626,50.1029385,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49fb87174d2b6d:0x9545c8eb2378aed8!8m2!3d26.4408626!4d50.1029385!16s%2Fg%2F11zlrkcm8"
+      }
+    },
+    {
+      "id": "N67",
+      "name": "Prince Mohammed bin Fahd Stadium",
+      "city": "Dammam",
+      "area": "Muhammed Ibn Saud · Dammam",
+      "landmark_type": "infra",
+      "visual_character": "담맘의 경기장.",
+      "overview": "담맘에 위치한 다목적 경기장이다. Prince Mohammed bin Fahd의 이름을 사용하며 축구 경기를 비롯한 스포츠 행사에 쓰인다.",
+      "evidence": "지도 Prince Mohammed bin Fahd Stadium 장소명·경기장 주소를 조사 자료와 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Prince+Mohammed+bin+Fahd+Stadium+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Prince Mohammed bin Fahd Stadium",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://details.sa/en/archives/places/prince-mohammed-bin-fahd-stadium"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "14698456091965172884",
+        "url": "https://www.google.com/maps?cid=14698456091965172884",
+        "coordinate_strings": [
+          "26.4279873",
+          "50.1143195"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "지도 Prince Mohammed bin Fahd Stadium 장소명·경기장 주소를 조사 자료와 대조했다.",
+        "source_url": "https://details.sa/en/archives/places/prince-mohammed-bin-fahd-stadium",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N68",
+      "name": "King Fahd International Airport terminal",
+      "city": "Dammam",
+      "area": "Dammam · King Fahd International Airport",
+      "landmark_type": "infra",
+      "visual_character": "담맘 공항의 여객터미널. 공항 모스크와 별도 건물.",
+      "overview": "담맘 King Fahd International Airport의 여객터미널이다. 같은 공항 구역의 모스크와는 다른 시설로, 터미널과 탑승동의 범위를 구분해 검토한다.",
+      "evidence": "Google Maps의 King Fahd International Airport 장소 항목과 공항 공식 정보를 대조했다. 지도는 공항 장소 핀이며 터미널 본체의 납품 정밀 좌표는 아니다.",
+      "remaining": "터미널·탑승동 제작 범위와 지도 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King+Fahd+International+Airport+terminal+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "King Fahd International Airport terminal",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.lee-wolfe.com/images/pdf/Aviation_KingFahd.pdf"
+        },
+        {
+          "title": "사우디 항공정보 · 여객터미널",
+          "url": "https://aimss.sans.com.sa/assets/FileManagerFiles/AIRAC%20AIP%20AMDT%2002_26_2026_02_19/eAIP/AD%202%20OEDF%20DAMMAM%20-%20KING%20FAHD%20INTERNATIONAL-en-GB.html"
+        },
+        {
+          "title": "OpenStreetMap · 터미널 건물",
+          "url": "https://www.openstreetmap.org/way/92222677"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/King+Fahd+International+Airport/@26.4699659,49.6583596,57549m/data=!3m1!1e3!4m10!1m2!2m1!1sKing+Fahd+International+Airport+terminal+Dammam!3m6!1s0x3e35e241f330c94b:0xa0e439ebecc7e382!8m2!3d26.4699659!4d49.7984353!15sCi9LaW5nIEZhaGQgSW50ZXJuYXRpb25hbCBBaXJwb3J0IHRlcm1pbmFsIERhbW1hbVoxIi9raW5nIGZhaGQgaW50ZXJuYXRpb25hbCBhaXJwb3J0IHRlcm1pbmFsIGRhbW1hbZIBFWludGVybmF0aW9uYWxfYWlycG9ydJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyMHdOVTlGUm5GWFZsSmhWRVJrWVZsWFdtWlpiRnAwWWtST00xcFlZeEFC4AEA-gEECAAQQQ!16zL20vMDZ3OXlx?entry=ttu",
+        "coordinate_strings": [
+          "26.4699659",
+          "49.7984353"
+        ],
+        "checked_at": "2026-11-06",
+        "evidence": "Google Maps의 King Fahd International Airport 장소 항목에서 공항명·주소·공식 웹사이트를 확인했다. 공항의 장소 핀이며 터미널 본체의 납품 좌표는 아니다.",
+        "source_url": "https://kfia.sa/Contact-Us",
+        "precision_note": "공항 장소 핀. 터미널 본체의 납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N69",
+      "name": "Aebayah / Obayya Roundabout",
+      "city": "Al Khobar",
+      "area": "King Fahd Road · Sinayiat Alfawaziya",
+      "landmark_type": "sculpture",
+      "visual_character": "반복 부재로 말의 움직임을 표현한 회전교차로 조형.",
+      "overview": "알코바르 King Fahd Road의 회전교차로 조형물이다. 말의 움직임을 표현한 작품으로, Al-Bairaq과는 서로 다른 장소에 있다.",
+      "evidence": "Google Maps의 Abayyah Roundabout 장소명·주소·사진과 조형 기록을 대조했다. Al-Bairaq과 다른 장소이며 자료의 좌표와 지도 핀은 약 18m 차이가 있다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Aebayah+%2F+Obayya+Roundabout+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Aebayah Roundabout",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://zamil.com/index.php/representing-its-slogan-partners-in-nation-building-zamil-group-launches-obayya-roundabout/?lang=en"
+        },
+        {
+          "title": "위치 대조 자료",
+          "url": "https://maalemsa.com/en/landmarks/aebayah/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "7318017341654946438",
+        "url": "https://www.google.com/maps?cid=7318017341654946438",
+        "coordinate_strings": [
+          "26.2386404",
+          "50.2148185"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "Google Maps의 Abayyah Roundabout 장소명·주소·사진과 조형 기록을 대조했다. Al-Bairaq과 다른 장소이며 자료의 좌표와 지도 핀은 약 18m 차이가 있다.",
+        "source_url": "https://maalemsa.com/en/landmarks/aebayah/",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N70",
+      "name": "Al-Bairaq / Albairaq Roundabout",
+      "city": "Al Khobar",
+      "area": "Al Tahliyah · Al Khobar",
+      "landmark_type": "sculpture",
+      "visual_character": "깃발에서 착안한 조형. Aebayah와 다른 작품.",
+      "overview": "알코바르 Al Tahliyah의 회전교차로 조형물이다. 사우디 국기를 주제로 하며, Aebayah / Obayya와는 다른 작품이다.",
+      "evidence": "Google Maps의 AlBairaq Roundabout 장소명·사진과 조형 기록을 대조했다. Aebayah와 다른 장소이며 자료의 좌표와 지도 핀은 약 31m 차이가 있다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al-Bairaq+%2F+Albairaq+Roundabout+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Albairaq Roundabout",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.alfozan.com/press-releases/extra-offers-al-bairaq-sculpture-nation-al-khobar-and-abdullah-al-fozan-confirms-his"
+        },
+        {
+          "title": "위치 대조 자료",
+          "url": "https://maalemsa.com/en/landmarks/albairaq/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "9485570425639997772",
+        "url": "https://www.google.com/maps?cid=9485570425639997772",
+        "coordinate_strings": [
+          "26.1802582",
+          "50.1818387"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "Google Maps의 AlBairaq Roundabout 장소명·사진과 조형 기록을 대조했다. Aebayah와 다른 장소이며 자료의 좌표와 지도 핀은 약 31m 차이가 있다.",
+        "source_url": "https://maalemsa.com/en/landmarks/albairaq/",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N71",
+      "name": "Alarda / Al-Ardah Square",
+      "city": "Al Khobar",
+      "area": "Al Khobar Corniche · Alardha Square",
+      "landmark_type": "sculpture",
+      "visual_character": "전통 검무에서 영감을 받은 조형.",
+      "overview": "알코바르 코르니시에 있는 광장 조형물이다. 사우디의 전통 검무 Al-Ardah에서 영감을 받은 공공미술 공간으로 소개된다.",
+      "evidence": "Google Maps에서 Alardha Square 장소명과 해안 입지 및 Mujassam Watan 연결을 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Alarda+%2F+Al-Ardah+Square+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Alarda Square",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.archdaily.com/1024531/the-transformative-power-of-sculptures-and-landmarks-in-urban-spaces-the-case-of-al-khobar-saudi-arabia"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "2456654297343675398",
+        "url": "https://www.google.com/maps?cid=2456654297343675398",
+        "coordinate_strings": [
+          "26.3179692",
+          "50.2300085"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "Google Maps에서 Alardha Square 장소명과 해안 입지 및 Mujassam Watan 연결을 대조했다.",
+        "source_url": "https://www.archdaily.com/1024531/the-transformative-power-of-sculptures-and-landmarks-in-urban-spaces-the-case-of-al-khobar-saudi-arabia",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N72",
+      "name": "Khobar Memory Square",
+      "city": "Al Khobar",
+      "area": "Al Khobar Northern Corniche · Kurnaish Road",
+      "landmark_type": "sculpture",
+      "visual_character": "바다를 향하는 다리와 양쪽 벽으로 구성된 광장.",
+      "overview": "알코바르 북부 코르니시의 수변 광장이다. 장소의 기억을 주제로 조성됐으며 바다 방향으로 이어지는 공간과 양쪽 벽을 함께 살펴볼 수 있다.",
+      "evidence": "아랍어 명칭 ميدان ذاكرة الخبر의 지도 항목, 해안 입지와 다리·벽 사진을 설치 기관 기록과 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
+      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Khobar+Memory+Square+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Khobar Memory Square",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://alfozan.com/press-releases/mujassam-watan-competition-inaugurates-khobar-memory-square"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "16002236122126242767",
+        "url": "https://www.google.com/maps?cid=16002236122126242767",
+        "coordinate_strings": [
+          "26.3061138",
+          "50.2273462"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "아랍어 명칭 ميدان ذاكرة الخبر의 지도 항목, 해안 입지와 다리·벽 사진을 설치 기관 기록과 대조했다.",
+        "source_url": "https://alfozan.com/press-releases/mujassam-watan-competition-inaugurates-khobar-memory-square",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N74",
+      "name": "Al-Talaqi Square",
+      "city": "Al Khobar",
+      "area": "Al Khobar · King Salman Road 일대",
+      "landmark_type": "sculpture",
+      "visual_character": "야자 잎에서 영감을 받은 기둥과 지붕 구조.",
+      "overview": "알코바르 King Salman Road 주변에 조성된 공공 광장이다. 지역의 야자나무와 만남의 공간을 주제로 한 구조물을 포함한다.",
+      "evidence": "주최 측 자료와 지도 사진의 기둥 형태 및 King Salman Road 위치가 일치한다. 지도에는 다른 이름으로 등록되어 있다.",
+      "remaining": "지도 등록명과 공식 명칭의 추가 대조",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=King+Salman+Road+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Al-Talaqi Square",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.alfozan.com/press-releases/eastern-province-mayor-inaugurates-al-talaqi-square-al-khobar-urban-landmark"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/%D8%A7%D9%84%D8%B3%D9%86%D8%A8%D9%84%D8%A9/data=!4m5!3m4!1s0x3e49e70026a052a1:0xc0cb9b14b8c0a167!8m2!3d26.3148254!4d50.1800648"
+      }
+    },
+    {
+      "id": "N80",
+      "name": "Sultan bin Abdulaziz Science and Technology Center (SciTech)",
+      "city": "Al Khobar",
+      "area": "Al Khobar · Corniche Road",
+      "landmark_type": "complex",
+      "visual_character": "저층 전시 시설과 과학 돔이 함께 있는 해안가 과학관.",
+      "overview": "코바르 코르니시에 자리한 과학·기술 전시관으로 전시실과 과학 돔, 천문 관측 시설을 갖춘다.",
+      "evidence": "운영 기관의 SciTech 공식 명칭과 코르니시 위치를 지도 장소 항목 및 OpenStreetMap의 과학관 건물 범위와 대조했다.",
+      "remaining": "지도는 과학관 장소 핀 · 돔·부속 시설의 모델링 범위와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Sultan+bin+Abdulaziz+Science+and+Technology+Center+SciTech+Al+Khobar",
+      "suppress_map": false,
+      "image_search_name": "Sultan bin Abdulaziz Science and Technology Center SciTech",
+      "sources": [
+        {
+          "title": "SciTech 공식 소개",
+          "url": "https://scitech.sa/en/p/2/"
+        },
+        {
+          "title": "방문 사진",
+          "url": "https://amuslimtraveller.wordpress.com/2015/04/06/visit-to-scitech-khobar/"
+        },
+        {
+          "title": "OpenStreetMap 과학관 건물",
+          "url": "https://www.openstreetmap.org/way/1544665782"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "6068639516977584882",
+        "url": "https://www.google.com/maps?cid=6068639516977584882",
+        "coordinate_strings": [
+          "26.319249",
+          "50.2279355"
+        ],
+        "checked_at": "2026-11-05",
+        "evidence": "SciTech 장소 링크의 고유 핀을 공식 명칭과 OpenStreetMap 과학관 건물 범위와 대조했다.",
+        "source_url": "https://scitech.sa/en/p/2/",
+        "precision_note": "과학관 장소 핀. 모델용 정밀 좌표·돔 경계는 별도 확인."
+      }
+    },
+    {
+      "id": "N88",
+      "name": "Al Reziza Tower",
+      "city": "Al Khobar",
+      "area": "King Fahd Road · Al Khobar",
+      "landmark_type": "tower",
+      "visual_character": "담맘–알코바르 도로변의 유리 외관 업무용 타워.",
+      "overview": "담맘–알코바르 도로변의 상업·업무용 고층 건물이다. 설계사 자료에 따르면 저층부에는 상업시설이, 타워에는 업무 공간이 들어간다.",
+      "evidence": "설계사 Dewan의 건물명·용도·도로변 위치와 입주사 안내의 지도 링크를 대조했다.",
+      "remaining": "실제 외관 사진과 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al+Reziza+Tower+Al+Khobar",
+      "suppress_map": false,
+      "image_search_name": "Al Reziza Tower",
+      "sources": [
+        {
+          "title": "설계사 · Al Reziza Tower",
+          "url": "https://www.dewan-architects.com/work/alreziza-tower"
+        },
+        {
+          "title": "입주사 · 건물 주소",
+          "url": "https://www.khidmah.com/en/contact-us?id=1156"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://goo.gl/maps/BgRWJhdpiUArqgZm6",
+        "checked_at": "2026-11-06",
+        "evidence": "Al Reziza Tower로 안내된 입주사 지도 링크와 설계사 건물 정보를 대조했다.",
+        "source_url": "https://startup.jobs/foodics-recruitment-day-khobar-foodics-6427729",
+        "precision_note": "입주사 제공 건물 장소 링크. 납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "N78",
+      "name": "Ajdan Rise",
+      "city": "Al Khobar",
+      "area": "Al Khobar Corniche · Ajdan Rise",
+      "landmark_type": "tower",
+      "visual_character": "해안가의 주거 타워와 낮은 기단부가 결합된 건물.",
+      "overview": "알코바르 코르니시의 주거용 타워다. Ajdan Infinity와는 별개 프로젝트로, 바다를 바라보는 주거 건물과 낮은 기단부로 구성된다.",
+      "evidence": "CTBUH의 완공 기록과 지도 Ajdan Rise 장소, 사용자가 제공한 사진을 대조했다.",
+      "remaining": "타워·기단부의 제작 범위와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ajdan+Rise+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Ajdan Rise",
+      "sources": [
+        {
+          "title": "후보 조사 자료",
+          "url": "https://www.skyscrapercenter.com/building/ajdan-rise/48844"
+        },
+        {
+          "title": "위치 대조 자료",
+          "url": "https://ajdan.com/uploads/0000/5/2024/11/AjdanProfile.pdf"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "cid": "15267267257380539424",
+        "url": "https://www.google.com/maps?cid=15267267257380539424",
+        "coordinate_strings": [
+          "26.2824375",
+          "50.2216875"
+        ],
+        "checked_at": "2026-11-03",
+        "evidence": "지도 Ajdan Rise의 주거 건물 항목과 Waterfront 소재를 대조했다.",
+        "source_url": "https://ajdan.com/uploads/0000/5/2024/11/AjdanProfile.pdf",
+        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      }
+    },
+    {
+      "id": "J62",
+      "name": "Jeddah Yacht Club",
+      "city": "Jeddah",
+      "area": "Jeddah · North Corniche",
+      "landmark_type": "complex",
+      "visual_character": "돛을 닮은 삼각형 구조물이 수변의 저층 클럽 건물 위로 솟아 있다.",
+      "overview": "제다 북부 해안의 요트 클럽과 마리나 시설이다. 클럽 건물과 주변 수변·계류 구역 가운데 어느 범위를 모델링할지 구분해야 한다.",
+      "evidence": "사용자가 돛 형태 건물 위치로 제시한 좌표이며, 위성 지도에서 요트클럽 방파제 일대에 위치한다. 건물 본체와 좌표의 정확한 대응은 추가 확인이 필요하다. 사용자가 대표 렌더링을 실제 외관과 대조했다고 확인했다.",
+      "remaining": "사용자 제안 좌표 · 건물 본체와 정확한 대응 및 제작 범위 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Jeddah+Yacht+Club+Marina+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Jeddah Yacht Club",
+      "sources": [
+        {
+          "title": "운영사 · Sela",
+          "url": "https://sela.sa/destinations/"
+        },
+        {
+          "title": "마리나 설계 자료",
+          "url": "https://brocklarsendesign.com/Jeddah-Yacht-Club-Marina-and-Promenade-Jeddah-Saudi-Arabia"
+        }
+      ],
+      "map_record": {
+        "status": "coordinate_matched",
+        "url": "https://www.google.com/maps/search/?api=1&query=21.650655268060454%2C39.09980282084691"
+      }
+    },
+    {
+      "id": "J64",
+      "name": "Jeddah Performing Arts Center",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Culture Square",
+      "landmark_type": "complex",
+      "visual_character": "전통 목재 로샨을 재해석한 돌출 입면과 아치형 저층부가 이어지는 문화시설.",
+      "overview": "제다 Culture Square에 있는 공연예술 시설이다. 같은 광장의 디지털 미술관 teamLab Borderless 및 역사 건물 Bait Amir Al Bahar와는 각각 별개 시설이다.",
+      "evidence": "사용자 제공 Google 지도에서 공연예술센터 장소 핀을 확인했다. Culture Square의 공연·영화 시설이다.",
+      "remaining": "센터 본체의 외관 사진과 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Jeddah+Culture+Square+Performing+Arts+Center",
+      "suppress_map": false,
+      "image_search_name": "Jeddah Performing Arts Center",
+      "sources": [
+        {
+          "title": "사우디 통신사",
+          "url": "https://www.spa.gov.sa/N2217894"
+        },
+        {
+          "title": "설계사 · Urko Sanchez Architects",
+          "url": "https://vimeo.com/1040061368"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://maps.app.goo.gl/Rm5CSWHQ9rhjxKa46"
+      }
+    },
+    {
+      "id": "J65",
+      "name": "teamLab Borderless Jeddah",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Culture Square",
+      "landmark_type": "complex",
+      "visual_character": "Culture Square 안에 자리한 디지털 미술관.",
+      "overview": "제다 역사 지구의 Culture Square에 있는 디지털 미술관이다. teamLab Borderless 전시가 열리는 공간으로, 같은 광장의 공연예술센터와는 별개 시설이다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/teamLab+Borderless+Jeddah/data=!4m5!3m4!1s0x15c3cf0039459e45:0x13f8bed3e3c1832a!8m2!3d21.4948976!4d39.1836397",
+      "suppress_map": false,
+      "image_search_name": "teamLab Borderless Jeddah",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://www.teamlab.art/e/jeddah/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/teamLab+Borderless+Jeddah/data=!4m5!3m4!1s0x15c3cf0039459e45:0x13f8bed3e3c1832a!8m2!3d21.4948976!4d39.1836397"
+      }
+    },
+    {
+      "id": "J66",
+      "name": "Al-Jaffali Mosque",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Al-Madinah Road",
+      "landmark_type": "mosque",
+      "visual_character": "돔과 미나레트가 구도심 진입부에 보이는 모스크.",
+      "overview": "제다 역사 지구와 Al-Madinah Road 인근의 모스크다. 역사 지구 진입부 주변에서 볼 수 있는 종교 건축물이다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Jaffali+Mosque/data=!4m5!3m4!1s0x15c3cf058bb59043:0xf64e9fc51659312c!8m2!3d21.4923931!4d39.1856749",
+      "suppress_map": false,
+      "image_search_name": "Al-Jaffali Mosque",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://news.iium.edu.my/al-jaffali-mosque-as-an-ornament-of-jeddah/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Jaffali+Mosque/data=!4m5!3m4!1s0x15c3cf058bb59043:0xf64e9fc51659312c!8m2!3d21.4923931!4d39.1856749"
+      }
+    },
+    {
+      "id": "J69",
+      "name": "Bayt Zenel / Bayt Xenel",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Harat Al Sham",
+      "landmark_type": "heritage",
+      "visual_character": "돌출 창과 전통적인 외관이 특징인 역사 건물.",
+      "overview": "제다 역사 지구 Harat Al Sham에 위치한 역사 건물이다. 과거 아람코의 제다 사옥으로도 사용된 건물로 소개된다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335",
+      "suppress_map": false,
+      "image_search_name": "Bayt Zenel / Bayt Xenel",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://artsandculture.google.com/story/9wVx4xrCvwgB0w"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335"
+      }
+    },
+    {
+      "id": "J70",
+      "name": "Beit Baeshen",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Al Balad",
+      "landmark_type": "heritage",
+      "visual_character": "목재 로샨이 돌출된 두 건물이 연결된 역사 가옥.",
+      "overview": "제다 Al Balad의 전통 가옥이다. 역사 지구의 주거 건축을 보여주는 사례로, 현재 Baeshen Museum이라는 지도 장소로 확인된다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626",
+      "suppress_map": false,
+      "image_search_name": "Beit Baeshen",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://www.visitsaudi.com/ar/jeddah/attractions/beit-baeshen"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626"
+      }
+    },
+    {
+      "id": "J71",
+      "name": "Al-Mimar Mosque",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Souq Al Alawi",
+      "landmark_type": "mosque",
+      "visual_character": "구도심의 전통 모스크와 미나레트.",
+      "overview": "제다 역사 지구 Souq Al Alawi 부근의 모스크다. Al-Maamar Mosque라는 표기로도 확인되는 구도심 예배 시설이다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Al+Ma%27amar+Mosque/data=!4m5!3m4!1s0x15c3cf1a10d563dd:0xfbacbcf6d54bf3c4!8m2!3d21.4843307!4d39.1867091",
+      "suppress_map": false,
+      "image_search_name": "Al-Mimar Mosque",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://news.iium.edu.my/al-mimar-mosque-as-the-most-strategic-mosque-in-jeddah/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Al+Ma%27amar+Mosque/data=!4m5!3m4!1s0x15c3cf1a10d563dd:0xfbacbcf6d54bf3c4!8m2!3d21.4843307!4d39.1867091"
+      }
+    },
+    {
+      "id": "J72",
+      "name": "Tariq Abdulhakim Museum",
+      "city": "Jeddah",
+      "area": "Historic Jeddah · Al Balad",
+      "landmark_type": "heritage",
+      "visual_character": "밝은 외벽과 색을 입힌 창이 특징인 문화시설.",
+      "overview": "제다 역사 지구에 있는 박물관이다. 음악가 Tariq Abdulhakim과 사우디 음악의 유산을 소개하는 문화시설이다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566",
+      "suppress_map": false,
+      "image_search_name": "Tariq Abdulhakim Museum",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://www.spa.gov.sa/en/N2012895"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566"
+      }
+    },
+    {
+      "id": "N82",
+      "name": "Yousef Al Dossary Grand Mosque",
+      "city": "Dammam",
+      "area": "Dammam · King Abdullah Road",
+      "landmark_type": "mosque",
+      "visual_character": "밝은 외벽과 높은 미나레트가 보이는 모스크.",
+      "overview": "담맘 King Abdullah Road에 위치한 모스크다. 예배를 위한 종교 시설로, 지도에서는 Yousef Al Dossary Grand Mosque라는 명칭으로 등록돼 있다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733",
+      "suppress_map": false,
+      "image_search_name": "Yousef Al Dossary Grand Mosque",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+      }
+    },
+    {
+      "id": "N83",
+      "name": "Dammam Public Library",
+      "city": "Dammam",
+      "area": "Dammam · Prince Mohammed Bin Fahd Road",
+      "landmark_type": "complex",
+      "visual_character": "공공 도서관과 문화 공간이 있는 건물.",
+      "overview": "담맘 Prince Mohammed Bin Fahd Road의 공공 문화시설이다. 도서관 기능을 가진 건물로, 세부 시설과 건물 범위는 추가 확인이 필요하다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Dammam+Public+Library/data=!4m5!3m4!1s0x3e49fb9654267fdd:0xf2d7eb791fd04dee!8m2!3d26.4287714!4d50.1184516",
+      "suppress_map": false,
+      "image_search_name": "Dammam Public Library",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://saudipedia.com/en/dammam-museum"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Dammam+Public+Library/data=!4m5!3m4!1s0x3e49fb9654267fdd:0xf2d7eb791fd04dee!8m2!3d26.4287714!4d50.1184516"
+      }
+    },
+    {
+      "id": "N84",
+      "name": "King Fahd Grand Mosque — Al Khobar",
+      "city": "Al Khobar",
+      "area": "Al Khobar · Iskan",
+      "landmark_type": "mosque",
+      "visual_character": "겹친 지붕과 뾰족한 아치 창이 특징인 모스크.",
+      "overview": "알코바르 Iskan 지역의 모스크다. 시공사 자료에 Mosque of the Custodian of the Two Holy Mosques로 소개되며, 담맘의 동명 모스크와는 별개 시설이다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "시공사 자료와 지도 외관의 최종 대조",
+      "map_search_url": "https://www.google.com/maps/place/King+Fahd+Masjid/data=!4m5!3m4!1s0x3e49c29092ce9f97:0x5e8f27b854d7d250!8m2!3d26.2622627!4d50.2108119",
+      "suppress_map": false,
+      "image_search_name": "King Fahd Grand Mosque — Al Khobar",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://almashrik.com/project/mosque-of-the-custodian-of-the-two-holy-mosques-al-khobar/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/King+Fahd+Masjid/data=!4m5!3m4!1s0x3e49c29092ce9f97:0x5e8f27b854d7d250!8m2!3d26.2622627!4d50.2108119"
+      }
+    },
+    {
+      "id": "N85",
+      "name": "Salem Bin Laden Mosque",
+      "city": "Al Khobar",
+      "area": "Al Khobar · Corniche Road",
+      "landmark_type": "mosque",
+      "visual_character": "해안에 자리한 모스크와 주변 수변 공간.",
+      "overview": "알코바르 코르니시 해안에 자리한 모스크다. 예배 시설과 주변 수변 공간의 관계를 함께 살펴볼 수 있다.",
+      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+      "remaining": "외관 자료와 모델링 범위 확인",
+      "map_search_url": "https://www.google.com/maps/place/Salem+Bin+Laden+Mosque/data=!4m5!3m4!1s0x3e49c28f4d9a8aef:0x20326debbe98d1ad!8m2!3d26.265438!4d50.2191231",
+      "suppress_map": false,
+      "image_search_name": "Salem Bin Laden Mosque",
+      "sources": [
+        {
+          "title": "조사 자료",
+          "url": "https://www.google.com/maps/place/Salem+Bin+Laden+Mosque/data=!4m5!3m4!1s0x3e49c28f4d9a8aef:0x20326debbe98d1ad!8m2!3d26.265438!4d50.2191231"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Salem+Bin+Laden+Mosque/data=!4m5!3m4!1s0x3e49c28f4d9a8aef:0x20326debbe98d1ad!8m2!3d26.265438!4d50.2191231"
+      }
+    },
+    {
+      "id": "J73",
+      "name": "International Medical Center Hospital",
+      "city": "Jeddah",
+      "area": "Al-Ruwais · Jeddah",
+      "landmark_type": "complex",
+      "visual_character": "밝은 석재 외벽과 아치형 입구, 돌출된 로샨이 결합된 병원 건물.",
+      "overview": "제다 Al-Ruwais에 위치한 International Medical Center 병원이다. 병원 본체와 모스크 등 부속 건물 가운데 모델링 범위를 구분해 검토한다.",
+      "evidence": "시공사 자료의 병원명·제다 소재와 석재 장식·로샨 설명을 Google 지도 병원 장소와 대조했다. 지도 핀은 장소 식별용이다.",
+      "remaining": "병원 본체·모스크·부속 건물의 제작 범위와 현재 외관 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=International+Medical+Center+Hospital+Jeddah",
+      "suppress_map": false,
+      "image_search_name": "International Medical Center Hospital",
+      "sources": [
+        {
+          "title": "시공사 · 병원 프로젝트",
+          "url": "https://fsa.com.sa/portfolio/international-medical-center-jeddah/"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/International+Medical+Center+Hospital/data=!4m6!3m5!1s0x15c3cf97ce9b38e7:0x33f98d24e3f20523!8m2!3d21.5135508!4d39.1741314!16s%2Fm%2F0gmb_31"
+      }
+    },
+    {
+      "id": "N86",
+      "name": "Al Salam Hospital / Dallah Al Khobar",
+      "city": "Al Khobar",
+      "area": "Al Khobar · King Faisal Road",
+      "landmark_type": "complex",
+      "visual_character": "긴 수평 기단과 병원동, 반복되는 외장 프레임이 결합된 의료 시설.",
+      "overview": "알코바르 King Faisal Road의 병원이다. 기존 Al Salam Hospital이 Dallah 의료 네트워크에 편입되면서 Dallah Al Khobar라는 이름으로도 안내된다.",
+      "evidence": "설계사 프로젝트와 사우디 보건부 개원 기록을 확인하고 Google 지도 장소를 대조했다. 지도 핀은 장소 식별용이다. 사용자가 대표 렌더링을 실제 외관과 대조했다고 확인했다.",
+      "remaining": "병원동 및 부속 시설의 제작 범위와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al+Salam+Hospital+Al+Khobar",
+      "suppress_map": false,
+      "image_search_name": "Al Salam Hospital Dallah Al Khobar",
+      "sources": [
+        {
+          "title": "설계사 · 병원 프로젝트",
+          "url": "https://www.dar-engineering.com/en/project/Al-Salam-Hospital-Dallah-Hospital"
+        },
+        {
+          "title": "사우디 보건부 · 개원",
+          "url": "https://www.moh.gov.sa/en/ministry/mediacenter/news/pages/news-2023-05-29-001.aspx"
+        }
+      ],
+      "map_record": {
+        "status": "matched",
+        "url": "https://www.google.com/maps/place/Al+Salam+Hospital/data=!4m6!3m5!1s0x3e49e8ccb910234f:0x6f1d169085b36629!8m2!3d26.3511168!4d50.2096489!16s%2Fg%2F11dx8mwqmx"
+      }
+    },
+    {
+      "id": "J75",
+      "name": "King Abdulaziz International Airport — Hajj Terminal",
+      "city": "Jeddah",
+      "area": "King Abdulaziz International Airport · Jeddah",
+      "landmark_type": "infra",
+      "visual_character": "반복되는 흰 천막 지붕이 케이블과 기둥에 매달린 순례객 터미널.",
+      "overview": "제다 King Abdulaziz International Airport의 하지 순례객을 위한 터미널이다. 1981년 완공된 시설로, 공항의 제1터미널과는 별도 건축물이다. 동·서 지붕군과 그 사이 공간을 하나의 랜드마크로 제작한다.",
+      "evidence": "설계사 SOM의 터미널 소개와 공항 항공도의 Terminal 1·Hajj Terminal 구분을 확인했다. 보유 B40 모델의 형상 및 등록 위치와 대조했을 때 천막형 하지 터미널은 보이지 않는다.",
+      "remaining": "터미널 본체·주변 도로의 제작 범위와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hajj+Terminal+King+Abdulaziz+International+Airport+Jeddah",
+      "suppress_map": false,
+      "image_search_name": "King Abdulaziz International Airport Hajj Terminal",
+      "sources": [
+        {
+          "title": "설계사 · Hajj Terminal",
+          "url": "https://www.som.com/projects/king-abdulaziz-international-airport--hajj-terminal/"
+        },
+        {
+          "title": "사우디 항공정보 · 공항 항공도",
+          "url": "https://aimss.sans.com.sa/assets/FileManagerFiles/AIRAC%20AIP%20AMDT%2006_25_2025_06_12/documents/PDF/AMDT.pdf"
+        },
+        {
+          "title": "Hajj Terminal 사진",
+          "url": "https://commons.wikimedia.org/wiki/Category:Hajj_Terminal"
+        }
+      ],
+      "map_record": {
+        "status": "unresolved",
+        "suppress_search": false
+      },
+      "model_scope": {
+        "files_url": "../progress/balady.html",
+        "summary": "기존 공항 모델: Balady+ B40 · 하지 터미널 별도",
+        "detail": "보유한 Balady+ B40은 제다 King Abdulaziz International Airport 모델이다. 모델 이미지의 터미널 형상과 등록 위치를 하지 터미널의 천막 지붕·위치와 대조했을 때 하지 터미널은 보이지 않았다. 모델 제공자의 공식 범위 문서는 확인되지 않았으므로 형상·위치에 근거한 판단이다."
+      }
+    }
+  ]
+}
