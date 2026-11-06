@@ -1437,6 +1437,48 @@
         "sha256": "b81ff975d18d9203599f91b64225f7c09d97ef4c71f1f05e2c2d5974093fd935",
         "thumbnail_position": "50% 50%"
       }
+    ],
+    "N89": [
+      {
+        "file": "research-n89-user-01.webp",
+        "width": 397,
+        "height": 298,
+        "alt": "Al Hariri Mosque 외관",
+        "caption": "사용자가 지정한 Al Hariri Mosque의 지도 사진. Google 지도에 2022년 1월 이미지로 표시됩니다.",
+        "kind": "외관 사진",
+        "source": "Google 지도 · 사용자 지정",
+        "source_url": "https://www.google.com/maps/place/Hariri+Mosque/data=!4m6!3m5!1s0x3e49e91d02a2fbc3:0x3148b6092a808587!8m2!3d26.3299159!4d50.2269967!16s%2Fg%2F11_0z91wx",
+        "original_url": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SXGfff3t2kfD74YE7k_OzOEFpzLuvKBZPmgyghgnKJo3GtfRbsu-umVQERV5hzOPDcVKmr8nAG1XsLV9vrcPh0GZc4TZpWD47pQJdqveB84V0lCz01oMALEK8Xo1trhuVbwT5k=w397-h298-k-no",
+        "photographer": "Farouq S. Aldilaijan (Google 지도 표시)",
+        "date_note": "Google 지도 이미지 캡처: 2022년 1월",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-06",
+        "processing": "지도 사진을 WebP 변환 · 썸네일만 화면 크롭",
+        "sha256": "863c9a4b9e52dd8673475d3d16a9427a049797ac4fe09318b4f32af72ec64838",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N90": [
+      {
+        "file": "research-n90-01.webp",
+        "width": 1600,
+        "height": 1067,
+        "alt": "AlTasis · 외관 사진",
+        "caption": "AlTasis 조형물의 외관. 작품 소개 페이지에 게시된 사진입니다.",
+        "kind": "외관 사진",
+        "source": "Maalem · MWAWARD Archive",
+        "source_url": "https://maalemsa.com/en/landmarks/altasis/",
+        "original_url": "https://maalemsa.com/wp-content/uploads/2026/08/AlTasis-Hero01-1920x1280.jpg",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-06",
+        "processing": "원본 비율 유지 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+        "sha256": "b8477cd5d695a16af1a40ffd0b7684d754d7fd81ad99ec33f624bcf38feeb804",
+        "thumbnail_position": "35% 50%"
+      }
     ]
   }
 }

@@ -732,36 +732,38 @@
       }
     },
     {
-      "id": "N72",
-      "name": "Khobar Memory Square",
+      "id": "N89",
+      "name": "Al Hariri Mosque",
       "city": "Al Khobar",
-      "area": "Al Khobar Northern Corniche · Kurnaish Road",
-      "landmark_type": "sculpture",
-      "visual_character": "바다를 향하는 다리와 양쪽 벽으로 구성된 광장.",
-      "overview": "알코바르 북부 코르니시의 수변 광장이다. 장소의 기억을 주제로 조성됐으며 바다 방향으로 이어지는 공간과 양쪽 벽을 함께 살펴볼 수 있다.",
-      "evidence": "아랍어 명칭 ميدان ذاكرة الخبر의 지도 항목, 해안 입지와 다리·벽 사진을 설치 기관 기록과 대조했다. 지도 장소 핀은 현장 측량이나 납품 정밀 좌표 확인을 뜻하지 않는다.",
-      "remaining": "현장 상태·정밀 좌표·외관 사진 확인",
-      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Khobar+Memory+Square+Al+Khobar+Saudi+Arabia",
+      "area": "Al Khobar · Corniche Road",
+      "landmark_type": "mosque",
+      "visual_character": "흰 외벽과 아치형 개구부, 돔과 미나레트가 특징인 해안가 모스크.",
+      "overview": "알코바르 코르니시 해안에 자리한 모스크다. 해안 산책로와 인접한 예배 시설이다.",
+      "evidence": "Google 지도 Hariri Mosque 장소의 위치와 외관을 확인하고 기존 Jawza Al Qahtani Mosque·Salem Bin Laden Mosque의 지도 위치와 대조했다. 서로 다른 장소 핀이다.",
+      "remaining": "현재 외관 상태와 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/place/Hariri+Mosque/data=!4m6!3m5!1s0x3e49e91d02a2fbc3:0x3148b6092a808587!8m2!3d26.3299159!4d50.2269967!16s%2Fg%2F11_0z91wx",
       "suppress_map": false,
-      "image_search_name": "Khobar Memory Square",
+      "image_search_name": "Al Hariri Mosque",
       "sources": [
         {
-          "title": "후보 조사 자료",
-          "url": "https://alfozan.com/press-releases/mujassam-watan-competition-inaugurates-khobar-memory-square"
+          "title": "지역 안내 · Al Hariri Mosque",
+          "url": "https://www.iau.edu.sa/sites/default/files/resources/faculty_handbook_2020_final_v.pdf"
+        },
+        {
+          "title": "Google 지도 · Hariri Mosque",
+          "url": "https://www.google.com/maps/place/Hariri+Mosque/data=!4m6!3m5!1s0x3e49e91d02a2fbc3:0x3148b6092a808587!8m2!3d26.3299159!4d50.2269967!16s%2Fg%2F11_0z91wx"
         }
       ],
       "map_record": {
         "status": "matched",
-        "cid": "16002236122126242767",
-        "url": "https://www.google.com/maps?cid=16002236122126242767",
+        "url": "https://www.google.com/maps/place/Hariri+Mosque/data=!4m6!3m5!1s0x3e49e91d02a2fbc3:0x3148b6092a808587!8m2!3d26.3299159!4d50.2269967!16s%2Fg%2F11_0z91wx",
         "coordinate_strings": [
-          "26.3061138",
-          "50.2273462"
+          "26.3299159",
+          "50.2269967"
         ],
-        "checked_at": "2026-11-03",
-        "evidence": "아랍어 명칭 ميدان ذاكرة الخبر의 지도 항목, 해안 입지와 다리·벽 사진을 설치 기관 기록과 대조했다.",
-        "source_url": "https://alfozan.com/press-releases/mujassam-watan-competition-inaugurates-khobar-memory-square",
-        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+        "checked_at": "2026-11-06",
+        "evidence": "Google 지도의 Hariri Mosque 장소명·해안 입지와 외관을 확인했다. 기존 Jawza Al Qahtani·Salem Bin Laden Mosque와는 서로 다른 지도 위치다.",
+        "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
       }
     },
     {
@@ -830,35 +832,39 @@
       }
     },
     {
-      "id": "N88",
-      "name": "Al Reziza Tower",
+      "id": "N90",
+      "name": "AlTasis",
       "city": "Al Khobar",
-      "area": "King Fahd Road · Al Khobar",
-      "landmark_type": "tower",
-      "visual_character": "담맘–알코바르 도로변의 유리 외관 업무용 타워.",
-      "overview": "담맘–알코바르 도로변의 상업·업무용 고층 건물이다. 설계사 자료에 따르면 저층부에는 상업시설이, 타워에는 업무 공간이 들어간다.",
-      "evidence": "설계사 Dewan의 건물명·용도·도로변 위치와 입주사 안내의 지도 링크를 대조했다.",
-      "remaining": "실제 외관 사진과 납품용 정밀 좌표 확인",
-      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Al+Reziza+Tower+Al+Khobar",
+      "area": "Al Khobar · Corniche Road / Prince Turki Street",
+      "landmark_type": "sculpture",
+      "visual_character": "곡선형 구조와 촘촘히 반복되는 수평 부재가 높이 솟은 조형물.",
+      "overview": "알코바르 코르니시 도로변에 자리한 공공 조형물이다. 건국기념일의 시각 요소인 낙타 행렬과 깃발의 움직임에서 영감을 받은 작품이다.",
+      "evidence": "작품 소개의 완공 상태·작품명과 연결된 Google 지도 장소의 아랍어 명칭 및 외관 사진을 대조했다. 기존 조형물과 서로 다른 지도 위치다.",
+      "remaining": "조형물과 기단의 제작 범위 및 납품용 정밀 좌표 확인",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=AlTasis+sculpture+Al+Khobar",
       "suppress_map": false,
-      "image_search_name": "Al Reziza Tower",
+      "image_search_name": "AlTasis sculpture",
       "sources": [
         {
-          "title": "설계사 · Al Reziza Tower",
-          "url": "https://www.dewan-architects.com/work/alreziza-tower"
+          "title": "작품 소개 · AlTasis",
+          "url": "https://maalemsa.com/en/landmarks/altasis/"
         },
         {
-          "title": "입주사 · 건물 주소",
-          "url": "https://www.khidmah.com/en/contact-us?id=1156"
+          "title": "착공 보도 · Al Riyadh",
+          "url": "https://www.alriyadh.com/2022144"
         }
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://goo.gl/maps/BgRWJhdpiUArqgZm6",
+        "url": "https://maps.app.goo.gl/JBHjXkfthS66vYx5A",
+        "coordinate_strings": [
+          "26.3003125",
+          "50.2226875"
+        ],
         "checked_at": "2026-11-06",
-        "evidence": "Al Reziza Tower로 안내된 입주사 지도 링크와 설계사 건물 정보를 대조했다.",
-        "source_url": "https://startup.jobs/foodics-recruitment-day-khobar-foodics-6427729",
-        "precision_note": "입주사 제공 건물 장소 링크. 납품 정밀 좌표는 별도 확인."
+        "evidence": "작품 소개에서 연결한 Google 지도 장소명과 외관을 대조했다.",
+        "source_url": "https://maalemsa.com/en/landmarks/altasis/",
+        "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
       }
     },
     {
