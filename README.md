@@ -43,6 +43,16 @@ make serve
 # 그 후 http://localhost:8000/docs/index.html 접속
 ```
 
+## GitHub Pages 배포
+
+사용자 배포 승인 후 `docs/`의 검증된 결과물을 `main`에 올리면
+`.github/workflows/pages.yml`이 해당 폴더만 GitHub Pages에 게시합니다.
+Pages의 Source는 **GitHub Actions**로 설정합니다. 배포 서버에서 자료를
+다시 생성하거나 Jekyll로 변환하지 않습니다.
+
+재배포는 Actions의 **Deploy published site → Run workflow**로 실행합니다.
+작업 성공과 공개 페이지의 실제 변경 내용을 모두 확인한 후 배포 완료로 보고합니다.
+
 ## 이미지 다운로드 옵션
 
 ```bash
