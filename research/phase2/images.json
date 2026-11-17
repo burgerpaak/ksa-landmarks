@@ -1007,67 +1007,6 @@
         "thumbnail_position": "50% 50%"
       }
     ],
-    "J69": [
-      {
-        "file": "research-j69-01.webp",
-        "width": 512,
-        "height": 340,
-        "alt": "Bayt Zenel / Bayt Xenel · 외관 사진",
-        "caption": "Bayt Zenel / Bayt Xenel의 외관 참고 이미지.",
-        "kind": "외관 사진",
-        "source": "Google Arts & Culture · Jeddah Historic District",
-        "source_url": "https://artsandculture.google.com/story/9wVx4xrCvwgB0w",
-        "original_url": "https://lh3.googleusercontent.com/ci/AL18g_QkwcgStzaUs_7OS783u944j6w1fsYEv2ItMtx0tI8sT2h8-nqAkuZGIlgBqpKRx2uJXCbU7H0",
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-05",
-        "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "fbf0418e829b6c3683a3a9d9928c0245cfbe5c2bba8de15cb881358d336e92de",
-        "thumbnail_position": "50% 50%"
-      }
-    ],
-    "J70": [
-      {
-        "file": "research-j70-user-01.webp",
-        "width": 399,
-        "height": 501,
-        "alt": "Beit Baeshen · 사용자 제공 사진",
-        "caption": "사용자가 제공한 Beit Baeshen 사진. 원출처와 촬영 시점은 확인되지 않았습니다.",
-        "kind": "외관 사진",
-        "source": "사용자 제공",
-        "source_url": null,
-        "original_url": null,
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-06",
-        "processing": "제공 이미지 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "0f2f3042a85fa44aeb04e92d7597d12fa911d2f10f854b5f0f26b08162742e05",
-        "thumbnail_position": "50% 50%"
-      },
-      {
-        "file": "research-j70-01.webp",
-        "width": 500,
-        "height": 375,
-        "alt": "Beit Baeshen · 외관 사진",
-        "caption": "Beit Baeshen의 외관 참고 이미지.",
-        "kind": "외관 사진",
-        "source": "Al Jazirah",
-        "source_url": "https://www.al-jazirah.com/2020/20200313/rl3.htm",
-        "original_url": "https://www.al-jazirah.com/2020/20200313/in_27_1.jpg",
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-05",
-        "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "66654197617400fc1e6b113e21ffec243842b2b34341da61d30a9b1a50c0d44e",
-        "thumbnail_position": "50% 50%"
-      }
-    ],
     "J71": [
       {
         "file": "research-j71-01.webp",
@@ -1089,46 +1028,6 @@
         "thumbnail_position": "50% 50%"
       }
     ],
-    "J72": [
-      {
-        "file": "research-j72-user-01.webp",
-        "width": 1024,
-        "height": 768,
-        "alt": "Tariq Abdulhakim Museum · 사용자 제공 외관 사진",
-        "caption": "사용자가 제공한 Tariq Abdulhakim Museum 외관 사진. 촬영 시점과 원출처는 확인되지 않았습니다.",
-        "kind": "외관 사진",
-        "source": "사용자 제공",
-        "source_url": null,
-        "original_url": null,
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-06",
-        "processing": "제공 이미지 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "b4af1f5c9fbde7a84ceb67fd1ca40dc2f05c39d71be6d45b51679de1413a6ea7",
-        "thumbnail_position": "50% 50%"
-      },
-      {
-        "file": "research-j72-01.webp",
-        "width": 1200,
-        "height": 675,
-        "alt": "Tariq Abdulhakim Museum · 외관 사진",
-        "caption": "Tariq Abdulhakim Museum의 외관 참고 이미지.",
-        "kind": "외관 사진",
-        "source": "Talents",
-        "source_url": "https://talents.edu.sa/en/projects/tariq-abdulhakim-museum",
-        "original_url": "https://talents.edu.sa/_next/image?url=https%3A%2F%2F168.144.65.46%2Fwp-content%2Fuploads%2F2026%2F09%2Fmuseums__tariq-abdulhakim-museum.jpg&w=1200&q=75",
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-05",
-        "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "861df25a80c0edd82b2c134632b26b9f092007ff79169943597b11c555fb579e",
-        "thumbnail_position": "50% 50%"
-      }
-    ],
     "N74": [
       {
         "file": "research-n74-01.webp",
@@ -1147,46 +1046,6 @@
         "accessed_at": "2026-11-05",
         "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
         "sha256": "49f9e3094c44260bf1f1c8561d95905134f893fdb805df6e92483f4da6e74b7c",
-        "thumbnail_position": "50% 50%"
-      }
-    ],
-    "N82": [
-      {
-        "file": "research-n82-user-02.webp",
-        "width": 1200,
-        "height": 900,
-        "alt": "Yousef Al Dossary Grand Mosque · 외관 사진",
-        "caption": "Yousef Al Dossary Grand Mosque 정면과 두 미나레트. 출처에 같은 건물로 표기되어 있으며 촬영 시점은 미확인입니다.",
-        "kind": "외관 사진",
-        "source": "순간을 머무는 바람",
-        "source_url": "https://geoever.tistory.com/517",
-        "original_url": "https://blog.kakaocdn.net/dna/dwavt4/btqwKSYu89d/AAAAAAAAAAAAAAAAAAAAAA51c7tae9BcHo3fCYL3P5ykhQPEYSoSdftBDPY7uMdf/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1796050799&allow_ip=&allow_referer=&signature=8q6JGSipTaWrXNu8tbO4Fo%2Bz280%3D",
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-06",
-        "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "f0e57768f0334a011b91d2af15c2caa90d40aaf41c53bc9cba7443f165dd52db",
-        "thumbnail_position": "50% 50%"
-      },
-      {
-        "file": "research-n82-01.webp",
-        "width": 1200,
-        "height": 900,
-        "alt": "Yousef Al Dossary Grand Mosque · 외관 사진",
-        "caption": "Yousef Al Dossary Grand Mosque의 외관 참고 이미지.",
-        "kind": "외관 사진",
-        "source": "순간을 머무는 바람",
-        "source_url": "https://geoever.tistory.com/entry/%EC%82%AC%EC%9A%B0%EB%94%94%EC%95%84%EB%9D%BC%EB%B9%84%EC%95%84-%EC%9D%B4%EC%8A%AC%EB%9E%8C-%EC%82%AC%EC%9B%90-%EB%AA%A8%EC%8A%A4%ED%81%ACMosque%EC%97%90-%EA%B4%80%ED%95%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0",
-        "original_url": "https://blog.kakaocdn.net/dna/oKy8X/btqwLBvcjG2/AAAAAAAAAAAAAAAAAAAAAKetd39edHMHb5mNNKRnEcc9tw7x8WddPWGJuZtmCYh_/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1796050799&allow_ip=&allow_referer=&signature=Q0t39pVyf4hWl6ZjyP%2B6Du4cPO0%3D",
-        "photographer": null,
-        "date_note": "촬영 시점 미확인",
-        "license": "재사용 조건 미확인",
-        "license_url": null,
-        "accessed_at": "2026-11-05",
-        "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
-        "sha256": "090da4db0e1716c7729a5c5b2cb477266de7e4593c179351043277ac389cd56d",
         "thumbnail_position": "50% 50%"
       }
     ],
@@ -1478,6 +1337,128 @@
         "processing": "원본 비율 유지 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
         "sha256": "b8477cd5d695a16af1a40ffd0b7684d754d7fd81ad99ec33f624bcf38feeb804",
         "thumbnail_position": "35% 50%"
+      }
+    ],
+    "N91": [
+      {
+        "file": "research-n91-01.webp",
+        "width": 492,
+        "height": 375,
+        "alt": "Prince Saud Monument · 외관 사진",
+        "caption": "개발사에 게재된 기념물 외관 사진. 후면·상부와 현재 현장 상태는 별도 확인이 필요합니다.",
+        "kind": "외관 사진",
+        "source": "Al Dammam Development",
+        "source_url": "https://dammamdev.com.sa/project/prince-saud-monument/",
+        "original_url": "https://dammamdev.com.sa/wp-content/uploads/2025/05/Screenshot-2025-05-13-172433.png",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 최대 1600px 축소 · 썸네일만 화면 크롭",
+        "sha256": "56c02601b5946df845504fe64ac53c10f1df8f215a76bdb42ce7296f7b8c13b0",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "J76": [
+      {
+        "file": "research-j76-01.webp",
+        "width": 1600,
+        "height": 1057,
+        "alt": "Darat Safeya Binzagr · 외관 사진",
+        "caption": "설계사에 게재된 실제 건물 외관. 당초 미구현 원안과 구분하며 후면·지붕·건물 경계는 추가 확인이 필요합니다.",
+        "kind": "외관 사진",
+        "source": "MOK Architects",
+        "source_url": "https://mokarchitects.com/projects/darat-safeya-binzagr/",
+        "original_url": "https://mokarchitects.com/uploads/projects/public-cultural/cultural-museums/safia-bin-zaqar-museum/safia-bin-zaqar-museum-01.webp",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 최대 1600px 축소 · 썸네일만 화면 크롭",
+        "sha256": "c377844e14f77b4205d456a8b13cf7c8a30fc8b9cfa745f08f201ec71916fbbc",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "N92": [
+      {
+        "file": "research-n92-01.webp",
+        "width": 1068,
+        "height": 1600,
+        "alt": "Anan Alsama · 외관 사진",
+        "caption": "두 매스 사이 개구부와 접힌 면이 보이는 야간 외관. 조명색을 외장색으로 사용하지 않으며 사진 상부와 하부에 일부 잘림이 있습니다.",
+        "kind": "외관 사진",
+        "source": "Maalem · MWAWARD Archive",
+        "source_url": "https://maalemsa.com/en/landmarks/anan-alsama/",
+        "original_url": "https://maalemsa.com/wp-content/uploads/2026/08/Anan-Alsama03.jpg",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 최대 1600px 축소 · 썸네일만 화면 크롭",
+        "sha256": "43ced1efedbc767dd84f92c34878d7d55a0adfabbfb9985fc28d6a5a5f8cb403",
+        "thumbnail_position": "50% 35%"
+      },
+      {
+        "file": "research-n92-02.webp",
+        "width": 1600,
+        "height": 1198,
+        "alt": "Anan Alsama · 외관 사진",
+        "caption": "조형물과 회전교차로 배치를 보여주는 항공사진. 설계 배치도나 정밀 측량 자료가 아닙니다.",
+        "kind": "외관 사진",
+        "source": "Maalem · MWAWARD Archive",
+        "source_url": "https://maalemsa.com/en/landmarks/anan-alsama/",
+        "original_url": "https://maalemsa.com/wp-content/uploads/2026/08/Anan-Alsama02.jpg",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 최대 1600px 축소 · 썸네일만 화면 크롭",
+        "sha256": "f9c82f37487666138644a8711f8b70b194a4b3c6c164926e95aa1fad16375f5b",
+        "thumbnail_position": "50% 50%"
+      }
+    ],
+    "J77": [
+      {
+        "file": "research-j77-01.webp",
+        "width": 800,
+        "height": 530,
+        "alt": "Corniche Mosque · 외관 사진",
+        "caption": "공식 수상기관에 게재된 외관 사진. 큰 돔·작은 돔과 아치형 포치·미나레트가 보이며, 하부는 울타리에 일부 가려져 있습니다. 촬영 시점과 현재 외관의 일치 여부는 미확인입니다.",
+        "kind": "외관 사진",
+        "source": "AKDN · Aga Khan Trust for Culture",
+        "source_url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/corniche-mosque",
+        "original_url": "https://static.the.akdn/53832/1644227000-10116_11.jpg",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "AKTC 표기 · 재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 썸네일만 화면 크롭",
+        "sha256": "10752f4cdbb8dca63cce0fdb22a6165ec62efafd3c2d467fa7d9502d6e6d8db7",
+        "thumbnail_position": "50% 50%"
+      },
+      {
+        "file": "research-j77-02.webp",
+        "width": 800,
+        "height": 530,
+        "alt": "Corniche Mosque · 외관 사진",
+        "caption": "공식 수상기관에 게재된 돔과 지붕 장식의 확대 사진. 미나레트 상부와 건물 하부가 원본 프레임에서 잘려 있습니다.",
+        "kind": "외관 사진",
+        "source": "AKDN · Aga Khan Trust for Culture",
+        "source_url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/corniche-mosque",
+        "original_url": "https://static.the.akdn/53832/1642491185-10116_5.jpg",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "AKTC 표기 · 재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-16",
+        "processing": "확인용 이미지 WebP 변환 · 썸네일만 화면 크롭",
+        "sha256": "9d189b5b2a19e1b852e27c28eee036e24d2e483465263f51d7af33eeedd44aec",
+        "thumbnail_position": "50% 50%"
       }
     ]
   }

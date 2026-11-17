@@ -1,5 +1,7 @@
 # Phase 2 선정 검토 목록
 
+> 최신 목록은 `candidates.json`을 따른다. 2026-11-16 사용자 결정으로 N83 도서관은 유지하고 N82 → N91 Prince Saud Monument, J72 → J76 Darat Safeya Binzagr, J69 → N92 Anan Alsama, J70 Beit Baeshen → J77 Corniche Mosque로 교체했다. 상세 근거는 [교체 기록](REPLACEMENT_REVIEW_2026-11-16.md), 이전 카드 원본은 `removed-from-web.json`에 보존한다. 아래 2026-11-05 목록은 당시 이력이다.
+
 2026-11-05 사용자 요청 기준 · 웹 반영 전 별도 목록
 
 위치 재확인 및 지도 링크: [LOCATION_REVIEW_PENDING.md](LOCATION_REVIEW_PENDING.md)

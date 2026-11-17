@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-05",
+  "checked_at": "2026-11-16",
   "candidates": [
     {
       "id": "J40",
@@ -1009,51 +1009,117 @@
       }
     },
     {
-      "id": "J69",
-      "name": "Bayt Zenel / Bayt Xenel",
-      "city": "Jeddah",
-      "area": "Historic Jeddah · Harat Al Sham",
-      "landmark_type": "heritage",
-      "visual_character": "돌출 창과 전통적인 외관이 특징인 역사 건물.",
-      "overview": "제다 역사 지구 Harat Al Sham에 위치한 역사 건물이다. 과거 아람코의 제다 사옥으로도 사용된 건물로 소개된다.",
-      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
-      "remaining": "외관 자료와 모델링 범위 확인",
-      "map_search_url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335",
-      "suppress_map": false,
-      "image_search_name": "Bayt Zenel / Bayt Xenel",
+      "id": "N92",
+      "name": "Anan Alsama",
+      "city": "Al Khobar",
+      "area": "Al Khobar · Al Sadafah",
+      "landmark_type": "sculpture",
+      "visual_character": "위로 갈라져 솟는 두 매스와 중앙 개구부, 접힌 듯한 면이 특징인 조형물.",
+      "overview": "Mujassam Watan의 공공미술 프로젝트다. 주최 측은 Tuwaiq 산지와 하늘을 향한 열망에서 착안한 두 조형물로 설명하며, 지역 아카이브는 코바르 Al Sadafah의 작품으로 소개한다.",
+      "evidence": "주최 측의 작품명·두 조형물 구성 설명과 지역 아카이브의 외관·항공사진을 대조했다. 주최 측 본문은 Riyadh로 표시하지만 연결 지도 좌표는 코바르 권역이며, 지역 아카이브도 Al Khobar 주소를 제공한다. 상충한 위치 기록을 남기며 고유 장소 핀·납품 정밀 좌표 검증 완료로 취급하지 않는다.",
+      "remaining": "공식 도시 표기와 지도 위치의 상충 해소·고유 장소·두 매스 및 광장 제작 범위 확인. 항공사진 확보, 평면·배치도 미확보.",
       "sources": [
         {
-          "title": "조사 자료",
-          "url": "https://artsandculture.google.com/story/9wVx4xrCvwgB0w"
+          "title": "주최 측 · 작품 소개",
+          "url": "https://mwaward.com/projects/anan-alsama/"
+        },
+        {
+          "title": "지역 아카이브 · 외관과 항공사진",
+          "url": "https://maalemsa.com/en/landmarks/anan-alsama/"
         }
       ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Anan+Alsama+Al+Khobar+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Anan Alsama",
       "map_record": {
-        "status": "matched",
-        "url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335"
+        "status": "unresolved",
+        "suppress_search": false
+      },
+      "replacement_of": "J69",
+      "replacement_approved_at": "2026-11-16",
+      "duplicate_check": "Reference·Balady+·Archive·Phase 1·Phase 2 및 타업체 324개 목록의 명칭·별칭 대조에서 동일 대상 미발견. 전체 모델 형상 대조는 미수행.",
+      "plan_research": {
+        "searched_at": "2026-11-16",
+        "status": "not_found",
+        "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다.",
+        "top_view": "지역 아카이브의 항공사진 확보. 측량·설계 도면이 아님."
       }
     },
     {
-      "id": "J70",
-      "name": "Beit Baeshen",
+      "id": "J77",
+      "name": "Corniche Mosque",
       "city": "Jeddah",
-      "area": "Historic Jeddah · Al Balad",
-      "landmark_type": "heritage",
-      "visual_character": "목재 로샨이 돌출된 두 건물이 연결된 역사 가옥.",
-      "overview": "제다 Al Balad의 전통 가옥이다. 역사 지구의 주거 건축을 보여주는 사례로, 현재 Baeshen Museum이라는 지도 장소로 확인된다.",
-      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
-      "remaining": "외관 자료와 모델링 범위 확인",
-      "map_search_url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626",
+      "area": "Jeddah · Northern Corniche",
+      "landmark_type": "mosque",
+      "visual_character": "큰 돔과 작은 돔들, 아치형 포치와 팔각 미나레트가 결합된 모스크.",
+      "overview": "제다 북부 코르니시의 모스크로, 1989년 아가칸 건축상 수상작이다. 전통 이슬람 건축의 형태와 벽돌 조적 방식을 현대의 종교시설에 적용한 사례로 소개된다.",
+      "evidence": "AKDN의 공식 수상 기록과 Archnet의 건물·도면·현장 심사 자료를 대조했다. 공식 외관 사진과 단면도 원본을 확인했다. 평면도 원본과 도면 축척·치수는 미검증이다. 완공 연도는 AKDN 1986년·Archnet 1988년으로 달라 확정하지 않았다. 지도는 Archnet의 위치 링크에 기재된 좌표이며 장소 핀·납품 정밀 좌표 검증을 뜻하지 않는다.",
+      "remaining": "현재 외관·정밀 위치·제작 범위 확인. 평면도 원본·도면 축척·치수 미검증.",
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=21.633895%2C39.102592",
       "suppress_map": false,
-      "image_search_name": "Beit Baeshen",
+      "image_search_name": "Corniche Mosque Abdel Wahed El Wakil",
       "sources": [
         {
-          "title": "조사 자료",
-          "url": "https://www.visitsaudi.com/ar/jeddah/attractions/beit-baeshen"
+          "title": "AKDN · 공식 수상 기록과 외관·단면도",
+          "url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/corniche-mosque"
+        },
+        {
+          "title": "Archnet · 건물 기록",
+          "url": "https://www.archnet.org/sites/429"
+        },
+        {
+          "title": "Archnet · 설계자 제출 도면",
+          "url": "https://www.archnet.org/publications/712"
+        },
+        {
+          "title": "Archnet · 현장 심사 보고서",
+          "url": "https://www.archnet.org/publications/715"
         }
       ],
       "map_record": {
-        "status": "matched",
-        "url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626"
+        "status": "coordinate_matched",
+        "url": "https://www.google.com/maps/search/?api=1&query=21.633895%2C39.102592",
+        "coordinate_strings": [
+          "21.633895",
+          "39.102592"
+        ],
+        "checked_at": "2026-11-16",
+        "source_url": "https://www.archnet.org/sites/429",
+        "evidence": "Archnet 건물 기록의 Directions 링크 좌표를 확인했다.",
+        "precision_note": "공식 건물 기록의 위치 좌표. 장소 핀·현재 존치·납품 정밀 좌표는 별도 확인."
+      },
+      "replacement_of": "J70",
+      "replacement_approved_at": "2026-11-16",
+      "duplicate_check": "Reference·Balady+·Archive·Phase 1·Phase 2 및 타업체 324개 목록의 명칭·별칭 대조에서 동일 대상 미발견. 전체 모델 형상 대조는 미수행.",
+      "award_record": {
+        "name": "Aga Khan Award for Architecture",
+        "cycle": "1987-1989",
+        "year": 1989,
+        "status": "Award Recipient",
+        "source_url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/corniche-mosque"
+      },
+      "completion_year_review": {
+        "status": "conflicting",
+        "adopted_year": null,
+        "sources": [
+          {
+            "year": 1986,
+            "url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-trust-culture/akaa/corniche-mosque"
+          },
+          {
+            "year": 1988,
+            "url": "https://www.archnet.org/sites/429"
+          }
+        ]
+      },
+      "plan_research": {
+        "searched_at": "2026-11-16",
+        "status": "partial",
+        "note": "평면·배치도 검색 수행. Archnet에서 설계자 제출 도면 소장 기록을 확인했고, AKDN 공식 단면도 원본을 확보·시각 검토했다. 평면도 원본·배치도·도면 축척과 구조 치수는 미확보 또는 미검증이다. 단면도를 평면도로 표시하지 않는다.",
+        "drawings_catalogue_url": "https://www.archnet.org/publications/712",
+        "verified_section_url": "https://static.the.akdn/53832/1644226990-10116_4.jpg",
+        "site_plan_status": "not_found",
+        "floor_plan_status": "original_not_verified"
       }
     },
     {
@@ -1081,51 +1147,75 @@
       }
     },
     {
-      "id": "J72",
-      "name": "Tariq Abdulhakim Museum",
+      "id": "J76",
+      "name": "Darat Safeya Binzagr",
       "city": "Jeddah",
-      "area": "Historic Jeddah · Al Balad",
-      "landmark_type": "heritage",
-      "visual_character": "밝은 외벽과 색을 입힌 창이 특징인 문화시설.",
-      "overview": "제다 역사 지구에 있는 박물관이다. 음악가 Tariq Abdulhakim과 사우디 음악의 유산을 소개하는 문화시설이다.",
-      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
-      "remaining": "외관 자료와 모델링 범위 확인",
-      "map_search_url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566",
-      "suppress_map": false,
-      "image_search_name": "Tariq Abdulhakim Museum",
+      "area": "Jeddah · King Abdullah Road",
+      "landmark_type": "complex",
+      "visual_character": "깊게 들어간 큰 출입구와 계단식 테두리, 단순한 벽체가 결합된 미술관.",
+      "overview": "작가 Safeya Binzagr의 회화·전통 의복 등 소장품과 작업실·도서관을 갖춘 제다의 문화시설이다. 운영기관의 방문 안내는 King Abdullah Road를 주소로 제공한다.",
+      "evidence": "운영기관의 명칭·주소·소장품 안내와 설계사 MOK Architects의 프로젝트 소개·외관 사진을 대조했다. 설계사는 당초 원안 전체가 아닌 지상 두 층만 구현됐다고 설명한다. 설계사 기록의 Wali Alahed Street 표기와 운영기관의 현재 주소 간 대응은 추가 확인이 필요하다.",
+      "remaining": "고유 위치·후면과 지붕·실제 건립 범위 확인. 평면·배치도 미확보. 미구현 원안과 실제 건물을 구분.",
       "sources": [
         {
-          "title": "조사 자료",
-          "url": "https://www.spa.gov.sa/en/N2012895"
+          "title": "운영기관 · 시설 소개",
+          "url": "https://daratsb.com/"
+        },
+        {
+          "title": "운영기관 · 방문 안내",
+          "url": "https://daratsb.com/visit/"
+        },
+        {
+          "title": "설계사 · 실제 구현 범위",
+          "url": "https://mokarchitects.com/projects/darat-safeya-binzagr/"
         }
       ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Darat+Safeya+Binzagr+Jeddah+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Darat Safeya Binzagr",
       "map_record": {
-        "status": "matched",
-        "url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566"
+        "status": "unresolved",
+        "suppress_search": false
+      },
+      "replacement_of": "J72",
+      "replacement_approved_at": "2026-11-16",
+      "duplicate_check": "Reference·Balady+·Archive·Phase 1·Phase 2 및 타업체 324개 목록의 명칭·별칭 대조에서 동일 대상 미발견. 전체 모델 형상 대조는 미수행.",
+      "plan_research": {
+        "searched_at": "2026-11-16",
+        "status": "not_found",
+        "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다."
       }
     },
     {
-      "id": "N82",
-      "name": "Yousef Al Dossary Grand Mosque",
+      "id": "N91",
+      "name": "Prince Saud Monument",
       "city": "Dammam",
-      "area": "Dammam · King Abdullah Road",
-      "landmark_type": "mosque",
-      "visual_character": "밝은 외벽과 높은 미나레트가 보이는 모스크.",
-      "overview": "담맘 King Abdullah Road에 위치한 모스크다. 예배를 위한 종교 시설로, 지도에서는 Yousef Al Dossary Grand Mosque라는 명칭으로 등록돼 있다.",
-      "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
-      "remaining": "외관 자료와 모델링 범위 확인",
-      "map_search_url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733",
-      "suppress_map": false,
-      "image_search_name": "Yousef Al Dossary Grand Mosque",
+      "area": "Dammam · King Fahd Street",
+      "landmark_type": "sculpture",
+      "visual_character": "시계가 있는 수직 탑과 상부 돌출 구조, 세로 개구부가 특징인 기념물.",
+      "overview": "담맘 King Fahd Street에 건립된 기념물이다. 개발사 Al Dammam Development는 Prince Saud Bin Naif Bin Abdul-Aziz Monument라는 이름으로 소개한다.",
+      "evidence": "개발사 프로젝트 소개의 명칭·담맘 소재와 게시된 외관 사진을 확인했다. 도로 내 정확한 위치와 현재 존치 상태는 별도 확인이 필요하다.",
+      "remaining": "고유 위치·현재 존치·후면과 상부 형태·제작 범위 확인. 평면·배치도 미확보.",
       "sources": [
         {
-          "title": "조사 자료",
-          "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+          "title": "개발사 · 기념물 소개",
+          "url": "https://dammamdev.com.sa/project/prince-saud-monument/"
         }
       ],
+      "map_search_url": "https://www.google.com/maps/search/?api=1&query=Prince+Saud+Monument+Dammam+Saudi+Arabia",
+      "suppress_map": false,
+      "image_search_name": "Prince Saud Monument",
       "map_record": {
-        "status": "matched",
-        "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+        "status": "unresolved",
+        "suppress_search": false
+      },
+      "replacement_of": "N82",
+      "replacement_approved_at": "2026-11-16",
+      "duplicate_check": "Reference·Balady+·Archive·Phase 1·Phase 2 및 타업체 324개 목록의 명칭·별칭 대조에서 동일 대상 미발견. 전체 모델 형상 대조는 미수행.",
+      "plan_research": {
+        "searched_at": "2026-11-16",
+        "status": "not_found",
+        "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다."
       }
     },
     {

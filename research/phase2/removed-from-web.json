@@ -1,0 +1,265 @@
+{
+  "candidates": [
+    {
+      "removed_at": "2026-11-16",
+      "reason": "사용자 요청: 교체 우선순위 2·3·5번을 대체 후보로 교체. N83 도서관은 유지.",
+      "replacement_id": "N91",
+      "replacement_name": "Prince Saud Monument",
+      "candidate": {
+        "id": "N82",
+        "name": "Yousef Al Dossary Grand Mosque",
+        "city": "Dammam",
+        "area": "Dammam · King Abdullah Road",
+        "landmark_type": "mosque",
+        "visual_character": "밝은 외벽과 높은 미나레트가 보이는 모스크.",
+        "overview": "담맘 King Abdullah Road에 위치한 모스크다. 예배를 위한 종교 시설로, 지도에서는 Yousef Al Dossary Grand Mosque라는 명칭으로 등록돼 있다.",
+        "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+        "remaining": "외관 자료와 모델링 범위 확인",
+        "map_search_url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733",
+        "suppress_map": false,
+        "image_search_name": "Yousef Al Dossary Grand Mosque",
+        "sources": [
+          {
+            "title": "조사 자료",
+            "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+          }
+        ],
+        "map_record": {
+          "status": "matched",
+          "url": "https://www.google.com/maps/place/Yousef+Al+Dossary+Grand+Mosque/data=!4m5!3m4!1s0x3e49fbba009dc733:0xa0b996b216093f8b!8m2!3d26.4588122!4d50.1317733"
+        }
+      },
+      "images": [
+        {
+          "file": "research-n82-user-02.webp",
+          "width": 1200,
+          "height": 900,
+          "alt": "Yousef Al Dossary Grand Mosque · 외관 사진",
+          "caption": "Yousef Al Dossary Grand Mosque 정면과 두 미나레트. 출처에 같은 건물로 표기되어 있으며 촬영 시점은 미확인입니다.",
+          "kind": "외관 사진",
+          "source": "순간을 머무는 바람",
+          "source_url": "https://geoever.tistory.com/517",
+          "original_url": "https://blog.kakaocdn.net/dna/dwavt4/btqwKSYu89d/AAAAAAAAAAAAAAAAAAAAAA51c7tae9BcHo3fCYL3P5ykhQPEYSoSdftBDPY7uMdf/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1796050799&allow_ip=&allow_referer=&signature=8q6JGSipTaWrXNu8tbO4Fo%2Bz280%3D",
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-06",
+          "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "f0e57768f0334a011b91d2af15c2caa90d40aaf41c53bc9cba7443f165dd52db",
+          "thumbnail_position": "50% 50%"
+        },
+        {
+          "file": "research-n82-01.webp",
+          "width": 1200,
+          "height": 900,
+          "alt": "Yousef Al Dossary Grand Mosque · 외관 사진",
+          "caption": "Yousef Al Dossary Grand Mosque의 외관 참고 이미지.",
+          "kind": "외관 사진",
+          "source": "순간을 머무는 바람",
+          "source_url": "https://geoever.tistory.com/entry/%EC%82%AC%EC%9A%B0%EB%94%94%EC%95%84%EB%9D%BC%EB%B9%84%EC%95%84-%EC%9D%B4%EC%8A%AC%EB%9E%8C-%EC%82%AC%EC%9B%90-%EB%AA%A8%EC%8A%A4%ED%81%ACMosque%EC%97%90-%EA%B4%80%ED%95%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0",
+          "original_url": "https://blog.kakaocdn.net/dna/oKy8X/btqwLBvcjG2/AAAAAAAAAAAAAAAAAAAAAKetd39edHMHb5mNNKRnEcc9tw7x8WddPWGJuZtmCYh_/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1796050799&allow_ip=&allow_referer=&signature=Q0t39pVyf4hWl6ZjyP%2B6Du4cPO0%3D",
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-05",
+          "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "090da4db0e1716c7729a5c5b2cb477266de7e4593c179351043277ac389cd56d",
+          "thumbnail_position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "removed_at": "2026-11-16",
+      "reason": "사용자 요청: 교체 우선순위 2·3·5번을 대체 후보로 교체. N83 도서관은 유지.",
+      "replacement_id": "J76",
+      "replacement_name": "Darat Safeya Binzagr",
+      "candidate": {
+        "id": "J72",
+        "name": "Tariq Abdulhakim Museum",
+        "city": "Jeddah",
+        "area": "Historic Jeddah · Al Balad",
+        "landmark_type": "heritage",
+        "visual_character": "밝은 외벽과 색을 입힌 창이 특징인 문화시설.",
+        "overview": "제다 역사 지구에 있는 박물관이다. 음악가 Tariq Abdulhakim과 사우디 음악의 유산을 소개하는 문화시설이다.",
+        "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+        "remaining": "외관 자료와 모델링 범위 확인",
+        "map_search_url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566",
+        "suppress_map": false,
+        "image_search_name": "Tariq Abdulhakim Museum",
+        "sources": [
+          {
+            "title": "조사 자료",
+            "url": "https://www.spa.gov.sa/en/N2012895"
+          }
+        ],
+        "map_record": {
+          "status": "matched",
+          "url": "https://www.google.com/maps/place/Tariq+Abdulhakim+Museum/data=!4m5!3m4!1s0x15c3cf10eaa24671:0xe937734dd33f07d3!8m2!3d21.4829797!4d39.1874566"
+        }
+      },
+      "images": [
+        {
+          "file": "research-j72-user-01.webp",
+          "width": 1024,
+          "height": 768,
+          "alt": "Tariq Abdulhakim Museum · 사용자 제공 외관 사진",
+          "caption": "사용자가 제공한 Tariq Abdulhakim Museum 외관 사진. 촬영 시점과 원출처는 확인되지 않았습니다.",
+          "kind": "외관 사진",
+          "source": "사용자 제공",
+          "source_url": null,
+          "original_url": null,
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-06",
+          "processing": "제공 이미지 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "b4af1f5c9fbde7a84ceb67fd1ca40dc2f05c39d71be6d45b51679de1413a6ea7",
+          "thumbnail_position": "50% 50%"
+        },
+        {
+          "file": "research-j72-01.webp",
+          "width": 1200,
+          "height": 675,
+          "alt": "Tariq Abdulhakim Museum · 외관 사진",
+          "caption": "Tariq Abdulhakim Museum의 외관 참고 이미지.",
+          "kind": "외관 사진",
+          "source": "Talents",
+          "source_url": "https://talents.edu.sa/en/projects/tariq-abdulhakim-museum",
+          "original_url": "https://talents.edu.sa/_next/image?url=https%3A%2F%2F168.144.65.46%2Fwp-content%2Fuploads%2F2026%2F09%2Fmuseums__tariq-abdulhakim-museum.jpg&w=1200&q=75",
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-05",
+          "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "861df25a80c0edd82b2c134632b26b9f092007ff79169943597b11c555fb579e",
+          "thumbnail_position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "removed_at": "2026-11-16",
+      "reason": "사용자 요청: 교체 우선순위 2·3·5번을 대체 후보로 교체. N83 도서관은 유지.",
+      "replacement_id": "N92",
+      "replacement_name": "Anan Alsama",
+      "candidate": {
+        "id": "J69",
+        "name": "Bayt Zenel / Bayt Xenel",
+        "city": "Jeddah",
+        "area": "Historic Jeddah · Harat Al Sham",
+        "landmark_type": "heritage",
+        "visual_character": "돌출 창과 전통적인 외관이 특징인 역사 건물.",
+        "overview": "제다 역사 지구 Harat Al Sham에 위치한 역사 건물이다. 과거 아람코의 제다 사옥으로도 사용된 건물로 소개된다.",
+        "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+        "remaining": "외관 자료와 모델링 범위 확인",
+        "map_search_url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335",
+        "suppress_map": false,
+        "image_search_name": "Bayt Zenel / Bayt Xenel",
+        "sources": [
+          {
+            "title": "조사 자료",
+            "url": "https://artsandculture.google.com/story/9wVx4xrCvwgB0w"
+          }
+        ],
+        "map_record": {
+          "status": "matched",
+          "url": "https://www.google.com/maps/place/Bayt+Xenel/data=!4m5!3m4!1s0x15c3cf4d2a3c8ac7:0x9097688a2e91b334!8m2!3d21.4893717!4d39.1855335"
+        }
+      },
+      "images": [
+        {
+          "file": "research-j69-01.webp",
+          "width": 512,
+          "height": 340,
+          "alt": "Bayt Zenel / Bayt Xenel · 외관 사진",
+          "caption": "Bayt Zenel / Bayt Xenel의 외관 참고 이미지.",
+          "kind": "외관 사진",
+          "source": "Google Arts & Culture · Jeddah Historic District",
+          "source_url": "https://artsandculture.google.com/story/9wVx4xrCvwgB0w",
+          "original_url": "https://lh3.googleusercontent.com/ci/AL18g_QkwcgStzaUs_7OS783u944j6w1fsYEv2ItMtx0tI8sT2h8-nqAkuZGIlgBqpKRx2uJXCbU7H0",
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-05",
+          "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "fbf0418e829b6c3683a3a9d9928c0245cfbe5c2bba8de15cb881358d336e92de",
+          "thumbnail_position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "removed_at": "2026-11-16",
+      "reason": "사용자 요청: Beit Baeshen을 Corniche Mosque로 교체.",
+      "replacement_id": "J77",
+      "replacement_name": "Corniche Mosque",
+      "candidate": {
+        "id": "J70",
+        "name": "Beit Baeshen",
+        "city": "Jeddah",
+        "area": "Historic Jeddah · Al Balad",
+        "landmark_type": "heritage",
+        "visual_character": "목재 로샨이 돌출된 두 건물이 연결된 역사 가옥.",
+        "overview": "제다 Al Balad의 전통 가옥이다. 역사 지구의 주거 건축을 보여주는 사례로, 현재 Baeshen Museum이라는 지도 장소로 확인된다.",
+        "evidence": "Google 지도 장소명과 조사 자료를 확인했다. 지도 핀은 납품용 정밀 좌표가 아니다.",
+        "remaining": "외관 자료와 모델링 범위 확인",
+        "map_search_url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626",
+        "suppress_map": false,
+        "image_search_name": "Beit Baeshen",
+        "sources": [
+          {
+            "title": "조사 자료",
+            "url": "https://www.visitsaudi.com/ar/jeddah/attractions/beit-baeshen"
+          }
+        ],
+        "map_record": {
+          "status": "matched",
+          "url": "https://www.google.com/maps/place/Baeshen+Museum/data=!4m5!3m4!1s0x15c3cf1ab9e80d91:0x6dd0829d6a7a0e67!8m2!3d21.4870012!4d39.1866626"
+        }
+      },
+      "images": [
+        {
+          "file": "research-j70-user-01.webp",
+          "width": 399,
+          "height": 501,
+          "alt": "Beit Baeshen · 사용자 제공 사진",
+          "caption": "사용자가 제공한 Beit Baeshen 사진. 원출처와 촬영 시점은 확인되지 않았습니다.",
+          "kind": "외관 사진",
+          "source": "사용자 제공",
+          "source_url": null,
+          "original_url": null,
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-06",
+          "processing": "제공 이미지 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "0f2f3042a85fa44aeb04e92d7597d12fa911d2f10f854b5f0f26b08162742e05",
+          "thumbnail_position": "50% 50%"
+        },
+        {
+          "file": "research-j70-01.webp",
+          "width": 500,
+          "height": 375,
+          "alt": "Beit Baeshen · 외관 사진",
+          "caption": "Beit Baeshen의 외관 참고 이미지.",
+          "kind": "외관 사진",
+          "source": "Al Jazirah",
+          "source_url": "https://www.al-jazirah.com/2020/20200313/rl3.htm",
+          "original_url": "https://www.al-jazirah.com/2020/20200313/in_27_1.jpg",
+          "photographer": null,
+          "date_note": "촬영 시점 미확인",
+          "license": "재사용 조건 미확인",
+          "license_url": null,
+          "accessed_at": "2026-11-05",
+          "processing": "확인용 이미지 변환 · 최대 1600px 축소 및 WebP 변환 · 썸네일만 화면 크롭",
+          "sha256": "66654197617400fc1e6b113e21ffec243842b2b34341da61d30a9b1a50c0d44e",
+          "thumbnail_position": "50% 50%"
+        }
+      ]
+    }
+  ]
+}
