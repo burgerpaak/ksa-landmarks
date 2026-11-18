@@ -17,6 +17,7 @@ import sys
 import time
 from pathlib import Path
 from research_page import build_research
+from glossary_illustrations import render_illustration
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -646,17 +647,21 @@ def render_sidebar_item(lm: dict) -> str:
 
 
 def render_glossary(glossary: list) -> str:
-    parts = []
+    parts = ['<p class="gloss-intro">그림에서 형태를 먼저 보고, 아래 설명과 함께 비교해 보세요. '
+             '일러스트는 이해를 돕는 개념도이며 실제 랜드마크의 치수·구조를 재현한 도면이 아닙니다.</p>']
     for cat in glossary:
         terms_html = "".join(
-            f'<div class="hl-item gloss-term">'
+            f'<article class="gloss-term" id="gloss-{esc(t["id"])}">'
+            f'<div class="gloss-figure">{render_illustration(t)}</div>'
+            f'<div class="gloss-copy">'
             f'<div class="gloss-term-row">'
-            f'<span class="gloss-kr">{esc(t["kr"])}</span>'
+            f'<h4 class="gloss-kr">{esc(t["kr"])}</h4>'
             f'<span class="gloss-en">{esc(t["en"])}</span>'
             f"</div>"
             f'<p class="gloss-desc">{esc(t["desc"])}</p>'
-            f'<p class="gloss-where">{esc(t["where"])}</p>'
-            f"</div>"
+            f'<p class="gloss-focus"><span>그림에서 볼 부분</span>{esc(t["focus"])}</p>'
+            f'<p class="gloss-where">살펴볼 곳 · {esc(t["where"])}</p>'
+            f"</div></article>"
             for t in cat["terms"]
         )
         parts.append(f"""
@@ -665,8 +670,16 @@ def render_glossary(glossary: list) -> str:
     <h3 class="section-eyebrow section-eyebrow--accent">{esc(cat["category"])}</h3>
     <p class="gloss-cat-desc">{esc(cat["desc"])}</p>
   </div>
-  <div class="hairline-list">{terms_html}</div>
+  <div class="gloss-grid">{terms_html}</div>
 </div>""")
+    parts.append('''<details class="gloss-sources"><summary>용어 구분 참고 자료</summary>
+<ul><li><a href="https://www.un.org/ungifts/node/624" target="_blank" rel="noopener noreferrer">UN · 바르질과 자연 환기</a></li>
+<li><a href="https://whc.unesco.org/en/list/1361" target="_blank" rel="noopener noreferrer">UNESCO · 제다의 전통 건축과 로샨</a></li>
+<li><a href="https://www.getty.edu/education/teachers/classroom_resources/curricula/art_architecture/downloads/arch_vocabulary.pdf" target="_blank" rel="noopener noreferrer">Getty · 아케이드·코니스 등 건축 용어</a></li>
+<li><a href="https://www.getty.edu/vow/AATFullDisplay?find=&amp;logic=AND&amp;note=work&amp;subjectid=300004145" target="_blank" rel="noopener noreferrer">Getty AAT · 포르티코</a></li>
+<li><a href="https://www.birdair.com/membrane/" target="_blank" rel="noopener noreferrer">Birdair · PTFE 원단과 ETFE 필름</a></li>
+<li><a href="https://inside.fifa.com/innovation/stadium-guidelines/general-process-guidelines/design/stadium-bowl" target="_blank" rel="noopener noreferrer">FIFA · 관람석 보울과 지붕의 구분</a></li>
+<li><a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/instances/realize_instances.html" target="_blank" rel="noopener noreferrer">Blender Manual · 인스턴스의 실체화</a></li></ul></details>''')
     return "".join(parts)
 
 
@@ -1253,9 +1266,10 @@ def build():
 
     # 카드 본문에서 호버 툴팁용 - 카테고리 평탄화
     flat_terms = [
-        {"kr": t["kr"], "en": t["en"], "desc": t["desc"]}
+        {"kr": name, "en": t["en"], "desc": t["desc"]}
         for cat in glossary
         for t in cat["terms"]
+        for name in [t["kr"], *t.get("aliases", [])]
     ]
     glossary_json = json.dumps(flat_terms, ensure_ascii=False).replace("</", "<\\/")
 

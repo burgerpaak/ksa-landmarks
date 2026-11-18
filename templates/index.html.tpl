@@ -722,15 +722,48 @@ a.brand:hover { opacity: 0.65; }
   margin-top: 2px;
 }
 
-/* glossary 항목 — hairline-list 위에 얹은 의미적 스타일 */
-.gloss-term { padding: 12px 0 14px; }
+/* Illustrated glossary: changes are contained within the existing accordion. */
+.gloss-intro { margin: 0 0 24px; color: var(--ink-soft); font-size: 13px; line-height: 1.7; max-width: 70ch; }
+.glossary { scroll-margin-top: 80px; }
+.gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.gloss-term { min-width: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-elev); scroll-margin-top: 88px; }
+.gloss-figure { background: #f5f7f6; border-bottom: 1px solid var(--border); padding: 10px 12px 12px; }
+.gloss-diagram { display: block; width: 100%; height: auto; aspect-ratio: 320 / 200; max-height: 220px; }
+.gloss-legend { display: grid; grid-template-columns: repeat(var(--legend-count), minmax(0, 1fr)); gap: 8px; min-height: 34px; margin-top: 4px; padding-top: 8px; border-top: 1px solid #dbe3e0; color: #375650; font-size: 11px; line-height: 1.55; text-align: center; }
+.gloss-legend span { min-width: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.gloss-diagram .base { fill: #e2e7e6; stroke: #657775; stroke-width: 1.3; }
+.gloss-diagram .light { fill: #f4f6f5; stroke: #657775; stroke-width: 1.3; }
+.gloss-diagram .shade { fill: #bdc9c7; stroke: #657775; stroke-width: 1.3; }
+.gloss-diagram .accent { fill: #a6d6cc; stroke: #17786f; stroke-width: 1.6; }
+.gloss-diagram .warm { fill: #e1ceb5; stroke: #88765d; stroke-width: 1.3; }
+.gloss-diagram .glass { fill: #cee6ed; fill-opacity: .85; stroke: #538b99; stroke-width: 1.2; }
+.gloss-diagram .paper { fill: #f5f7f6; stroke: none; }
+.gloss-diagram .pitch { fill: #e9eee2; stroke: #829376; stroke-width: 1; }
+.gloss-diagram .line { fill: none; stroke: #657775; stroke-width: 1.4; }
+.gloss-diagram .fine { fill: none; stroke: #547b76; stroke-width: 1; }
+.gloss-diagram .heavy { fill: none; stroke: #17786f; stroke-width: 3; }
+.gloss-diagram .arrow { fill: none; stroke: #17786f; stroke-width: 2; }
+.gloss-diagram .dash { fill: none; stroke: #829693; stroke-width: 1.3; stroke-dasharray: 5 4; }
+.gloss-diagram .grain { fill: none; stroke: #a38b6f; stroke-width: 1; }
+.gloss-diagram .plaster { fill: #f4ecde; stroke: #ac9c81; stroke-width: 1; }
+.gloss-diagram .dimension { fill: none; stroke: #17786f; stroke-width: 2; }
+.gloss-diagram .glow { fill: #fff0ac; stroke: #b89738; stroke-width: 1.5; }
+.gloss-diagram .lamp { fill: #ffe397; stroke: #a78626; stroke-width: 1; }
+.gloss-copy { padding: 16px; }
+.gloss-focus { margin: 12px 0 0; padding-left: 10px; border-left: 2px solid var(--accent); color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
+.gloss-focus > span { display: block; color: var(--ink); font-weight: 600; margin-bottom: 3px; }
+.gloss-sources { border-top: 1px solid var(--border); margin-top: 28px; padding-top: 18px; color: var(--ink-soft); font-size: 12px; }
+.gloss-sources summary { cursor: pointer; width: fit-content; }
+.gloss-sources ul { padding-left: 18px; margin-top: 12px; line-height: 1.9; }
+.gloss-sources a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 600px) { .gloss-grid { grid-template-columns: 1fr; } .gloss-copy { padding: 14px; } }
 
 .gloss-term-row {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 .gloss-kr {
@@ -738,6 +771,7 @@ a.brand:hover { opacity: 0.65; }
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 .gloss-en {
@@ -760,7 +794,9 @@ a.brand:hover { opacity: 0.65; }
   font-size: 10.5px;
   color: var(--ink-mute);
   letter-spacing: 0;
-  margin: 6px 0 0;
+  margin: 12px 0 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .gloss-where::before {
@@ -2029,6 +2065,18 @@ body.density-compact .cards-grid { align-items: start; }
       content.hidden = !open;
     };
     setOpen(storage ? localStorage.getItem(storage) === 'open' : false);
+    if (id === 'glossary') {
+      const revealTerm = () => {
+        const targetId = location.hash.slice(1);
+        if (targetId !== 'glossary' && !targetId.startsWith('gloss-')) return;
+        const target = document.getElementById(targetId);
+        if (!target || !section.contains(target)) return;
+        setOpen(true);
+        requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+      };
+      revealTerm();
+      window.addEventListener('hashchange', revealTerm);
+    }
     button.addEventListener('click', () => {
       const open = button.getAttribute('aria-expanded') !== 'true';
       setOpen(open);
