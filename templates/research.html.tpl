@@ -231,7 +231,7 @@ summary { display: flex; align-items: center; gap: 9px; cursor: pointer; list-st
 summary::-webkit-details-marker { display: none; }
 .chevron { width: 15px; height: 15px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; transition: transform .15s; }
 details[open] summary > .chevron { transform: rotate(180deg); }
-.card-external-links { display:flex;align-items:center;gap:12px;padding:14px 0; }
+.card-external-links { display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 0; }
 .map-link, .image-search-link { font-size:11px;color:var(--ink-mute);white-space:nowrap; }
 .map-link:hover, .image-search-link:hover, .sources a:hover { color: var(--accent-strong); text-decoration: underline; }
 .detail-body { padding: 0 0 20px; font-size: 11px; color: var(--ink-soft); line-height: 1.85; }

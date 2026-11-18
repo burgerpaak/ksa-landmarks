@@ -168,6 +168,9 @@ def render_card(item):
                     else map_record.get('suppress_search', False))
     map_control = ('<span class="map-unavailable">위치 미확인</span>'
                    if suppress_map else link(map_url, map_label, 'map-link'))
+    if not suppress_map and not catalogue_location and map_record.get("places"):
+        map_control = "".join(link(place["url"], place["label"], 'map-link')
+                              for place in map_record["places"])
     area_text = f'사이트 기재 위치 · {item["area"]}' if catalogue_location else item["area"]
     location_detail = (f'<section class="location-record"><h5>위치 기록</h5>'
                        f'<p>{esc(catalogue_location["note"])}</p></section>' if catalogue_location else '')

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16",
+  "checked_at": "2026-11-18",
   "candidates": [
     {
       "id": "J40",
@@ -298,23 +298,24 @@
       "landmark_type": "heritage",
       "visual_character": "반복되는 아치형 목재 창과 돌출된 모서리, 길게 이어진 입면이 특징인 옛 항구 관문 건물.",
       "overview": "역사 지구의 옛 항구·세관 건물 Bab Al-Bunt를 복원해 조성한 박물관. 홍해와 해상 교류의 역사를 소개한다.",
-      "evidence": "사우디 통신사는 복원된 Bab Al-Bunt 건물에 박물관이 개관했다고 밝혔다. 지도는 박물관이 자리한 Al Bant Museum 장소 항목이다.",
+      "evidence": "사우디 통신사는 복원된 Bab Al-Bunt 건물에 박물관이 개관했다고 밝혔다. 지도는 현재 Red Sea Museum 장소 항목의 명칭·주소·공식 사이트와 대조해 연결했다.",
       "remaining": "건물 본체와 현대식 증축부의 모델링 범위·납품용 정밀 좌표 확인",
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Red+Sea+Museum+Bab+Al+Bunt+Jeddah",
       "suppress_map": false,
       "image_search_name": "Red Sea Museum Bab Al Bunt",
       "map_record": {
         "status": "matched",
-        "cid": "15437425354373766003",
-        "url": "https://www.google.com/maps?cid=15437425354373766003",
+        "cid": "9922599924782252336",
+        "url": "https://www.google.com/maps/place/Red+Sea+Museum/data=!4m6!3m5!1s0x15c3cf77487c0047:0x89b4280f34f6c130!8m2!3d21.4833191!4d39.1827557!16s%2Fg%2F11mrwj71d6",
+        "place_name": "Red Sea Museum",
         "coordinate_strings": [
-          "21.483271",
-          "39.18276"
+          "21.4833191",
+          "39.1827557"
         ],
-        "checked_at": "2026-11-05",
-        "evidence": "박물관 방문 안내의 Google 지도 링크에서 Al Bant Museum 장소 항목으로 연결됨을 확인.",
-        "source_url": "https://iadelalsulami.com/en/red-sea-museum-jeddah/",
-        "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+        "checked_at": "2026-11-18",
+        "evidence": "기존 Al Bant Museum 링크는 장소 정보가 비어 있음. 현재 Red Sea Museum 장소의 명칭·Al Balad 주소·박물관 공식 사이트 링크를 확인하고 Bab Al-Bunt 건물 위치와 대조했다.",
+        "source_url": "https://www.visitalbalad.com/en/explore/1851",
+        "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다."
       },
       "sources": [
         {
@@ -1016,7 +1017,7 @@
       "landmark_type": "sculpture",
       "visual_character": "위로 갈라져 솟는 두 매스와 중앙 개구부, 접힌 듯한 면이 특징인 조형물.",
       "overview": "Mujassam Watan의 공공미술 프로젝트다. 주최 측은 Tuwaiq 산지와 하늘을 향한 열망에서 착안한 두 조형물로 설명하며, 지역 아카이브는 코바르 Al Sadafah의 작품으로 소개한다.",
-      "evidence": "주최 측의 작품명·두 조형물 구성 설명과 지역 아카이브의 외관·항공사진을 대조했다. 주최 측 본문은 Riyadh로 표시하지만 연결 지도 좌표는 코바르 권역이며, 지역 아카이브도 Al Khobar 주소를 제공한다. 상충한 위치 기록을 남기며 고유 장소 핀·납품 정밀 좌표 검증 완료로 취급하지 않는다.",
+      "evidence": "주최 측의 작품명·두 조형물 구성 설명과 지역 아카이브의 외관·항공사진을 대조했다. 주최 측 본문은 Riyadh로 표시하지만 연결 지도 좌표는 코바르 권역이며, 지역 아카이브도 Al Khobar 주소를 제공한다. 상충한 위치 기록을 남기며 고유 장소 핀·납품 정밀 좌표 검증 완료로 취급하지 않는다. 지도 링크는 주최 측 작품 페이지에 제공된 좌표를 사용한다.",
       "remaining": "공식 도시 표기와 지도 위치의 상충 해소·고유 장소·두 매스 및 광장 제작 범위 확인. 항공사진 확보, 평면·배치도 미확보.",
       "sources": [
         {
@@ -1032,8 +1033,16 @@
       "suppress_map": false,
       "image_search_name": "Anan Alsama",
       "map_record": {
-        "status": "unresolved",
-        "suppress_search": false
+        "status": "coordinate_matched",
+        "url": "https://www.google.com/maps/search/?api=1&query=26.370797%2C50.237821",
+        "coordinate_strings": [
+          "26.370797",
+          "50.237821"
+        ],
+        "checked_at": "2026-11-18",
+        "source_url": "https://mwaward.com/projects/anan-alsama/",
+        "evidence": "영문 명칭 검색이 Al Khobar 도시로 연결되어 주최 측 작품 페이지의 지도 좌표로 교체했다. 주최 측 본문의 Riyadh 표기와 지역 아카이브의 Al Khobar 표기가 상충한다. 좌표는 출처의 표기를 그대로 사용했으며 고유 장소 핀·납품 정밀 좌표는 미확인이다.",
+        "precision_note": "주최 측 지도 제공 좌표. 고유 장소 식별 및 납품 정밀 좌표 검증 완료를 뜻하지 않는다."
       },
       "replacement_of": "J69",
       "replacement_approved_at": "2026-11-16",
@@ -1154,8 +1163,8 @@
       "landmark_type": "complex",
       "visual_character": "깊게 들어간 큰 출입구와 계단식 테두리, 단순한 벽체가 결합된 미술관.",
       "overview": "작가 Safeya Binzagr의 회화·전통 의복 등 소장품과 작업실·도서관을 갖춘 제다의 문화시설이다. 운영기관의 방문 안내는 King Abdullah Road를 주소로 제공한다.",
-      "evidence": "운영기관의 명칭·주소·소장품 안내와 설계사 MOK Architects의 프로젝트 소개·외관 사진을 대조했다. 설계사는 당초 원안 전체가 아닌 지상 두 층만 구현됐다고 설명한다. 설계사 기록의 Wali Alahed Street 표기와 운영기관의 현재 주소 간 대응은 추가 확인이 필요하다.",
-      "remaining": "고유 위치·후면과 지붕·실제 건립 범위 확인. 평면·배치도 미확보. 미구현 원안과 실제 건물을 구분.",
+      "evidence": "운영기관의 명칭·주소·소장품 안내와 설계사 MOK Architects의 프로젝트 소개·외관 사진을 대조했다. 설계사는 당초 원안 전체가 아닌 지상 두 층만 구현됐다고 설명한다. 설계사 기록의 Wali Alahed Street 표기와 운영기관의 현재 주소 간 대응은 추가 확인이 필요하다. Google 지도 장소의 명칭·King Abdullah Road 주소·운영기관 사이트가 일치함을 확인했다.",
+      "remaining": "후면과 지붕·실제 건립 범위·납품용 정밀 좌표 확인. 평면·배치도 미확보. 미구현 원안과 실제 건물을 구분.",
       "sources": [
         {
           "title": "운영기관 · 시설 소개",
@@ -1174,8 +1183,18 @@
       "suppress_map": false,
       "image_search_name": "Darat Safeya Binzagr",
       "map_record": {
-        "status": "unresolved",
-        "suppress_search": false
+        "status": "matched",
+        "cid": "5880244597524693160",
+        "url": "https://www.google.com/maps/place/Darat+Safeya+Binzagr/data=!4m6!3m5!1s0x15c3cfbb4e3855e5:0x519ad34e7bde80a8!8m2!3d21.5097737!4d39.1810003!16s%2Fg%2F11cm3fjld1",
+        "place_name": "Darat Safeya Binzagr",
+        "coordinate_strings": [
+          "21.5097737",
+          "39.1810003"
+        ],
+        "checked_at": "2026-11-18",
+        "evidence": "Google 지도 장소명·King Abdullah Road 주소·운영기관 사이트를 대조했다. 검색 링크를 고유 장소 링크로 바꿨다.",
+        "source_url": "https://daratsb.com/contact/",
+        "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다."
       },
       "replacement_of": "J72",
       "replacement_approved_at": "2026-11-16",
@@ -1194,8 +1213,8 @@
       "landmark_type": "sculpture",
       "visual_character": "시계가 있는 수직 탑과 상부 돌출 구조, 세로 개구부가 특징인 기념물.",
       "overview": "담맘 King Fahd Street에 건립된 기념물이다. 개발사 Al Dammam Development는 Prince Saud Bin Naif Bin Abdul-Aziz Monument라는 이름으로 소개한다.",
-      "evidence": "개발사 프로젝트 소개의 명칭·담맘 소재와 게시된 외관 사진을 확인했다. 도로 내 정확한 위치와 현재 존치 상태는 별도 확인이 필요하다.",
-      "remaining": "고유 위치·현재 존치·후면과 상부 형태·제작 범위 확인. 평면·배치도 미확보.",
+      "evidence": "개발사 프로젝트 소개의 명칭·담맘 King Fahd Street 소재와 외관 사진을 Google 지도 기념물 항목의 명칭·주소·시계탑 사진과 대조했다. 현재 존치 상태는 별도 확인이 필요하다.",
+      "remaining": "현재 존치·후면과 상부 형태·제작 범위·납품용 정밀 좌표 확인. 평면·배치도 미확보.",
       "sources": [
         {
           "title": "개발사 · 기념물 소개",
@@ -1206,8 +1225,18 @@
       "suppress_map": false,
       "image_search_name": "Prince Saud Monument",
       "map_record": {
-        "status": "unresolved",
-        "suppress_search": false
+        "status": "matched",
+        "cid": "928310238499665448",
+        "url": "https://www.google.com/maps/place/Prince+Saud+Bin+Naif+Bin+Abdulaziz+Monument/data=!4m6!3m5!1s0x3e49fc826f899cc7:0xce2053e57217628!8m2!3d26.4268014!4d50.100207!16s%2Fg%2F12hkr2jsl",
+        "place_name": "Prince Saud Bin Naif Bin Abdulaziz Monument",
+        "coordinate_strings": [
+          "26.4268014",
+          "50.100207"
+        ],
+        "checked_at": "2026-11-18",
+        "evidence": "개발사 작품명·King Fahd Street 주소·시계탑 사진을 지도 기념물 항목과 대조했다. 검색 결과의 같은 위치 광장 항목 대신 기념물 명칭의 장소 핀을 연결했다.",
+        "source_url": "https://dammamdev.com.sa/project/prince-saud-monument/",
+        "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다."
       },
       "replacement_of": "N82",
       "replacement_approved_at": "2026-11-16",
@@ -1350,7 +1379,7 @@
       "landmark_type": "infra",
       "visual_character": "반복되는 흰 천막 지붕이 케이블과 기둥에 매달린 순례객 터미널.",
       "overview": "제다 King Abdulaziz International Airport의 하지 순례객을 위한 터미널이다. 1981년 완공된 시설로, 공항의 제1터미널과는 별도 건축물이다. 동·서 지붕군과 그 사이 공간을 하나의 랜드마크로 제작한다.",
-      "evidence": "설계사 SOM의 터미널 소개와 공항 항공도의 Terminal 1·Hajj Terminal 구분을 확인했다. 보유 B40 모델의 형상 및 등록 위치와 대조했을 때 천막형 하지 터미널은 보이지 않는다.",
+      "evidence": "설계사 SOM의 터미널 소개와 공항 항공도의 Terminal 1·Hajj Terminal 구분을 확인했다. 보유 B40 모델의 형상 및 등록 위치와 대조했을 때 천막형 하지 터미널은 보이지 않는다. 지도는 동·서 터미널 각각의 장소 항목으로 연결했다.",
       "remaining": "터미널 본체·주변 도로의 제작 범위와 납품용 정밀 좌표 확인",
       "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hajj+Terminal+King+Abdulaziz+International+Airport+Jeddah",
       "suppress_map": false,
@@ -1370,8 +1399,50 @@
         }
       ],
       "map_record": {
-        "status": "unresolved",
-        "suppress_search": false
+        "status": "matched",
+        "cid": "3884760844848519207",
+        "url": "https://www.google.com/maps/place/Hajj+Terminal+East/data=!4m6!3m5!1s0x15c3d80fd4bf8817:0x35e97167f28ad827!8m2!3d21.7006689!4d39.14071!16s%2Fg%2F1hc3ygr6h",
+        "place_name": "Hajj Terminal East",
+        "coordinate_strings": [
+          "21.7006689",
+          "39.14071"
+        ],
+        "checked_at": "2026-11-18",
+        "evidence": "동쪽으로만 열리던 검색 링크를 동·서 터미널의 고유 장소 링크 두 개로 교체했다. 각 장소명·King Abdulaziz International Airport 소재를 확인했다.",
+        "source_url": "https://www.som.com/projects/king-abdulaziz-international-airport-hajj-terminal/",
+        "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다.",
+        "places": [
+          {
+            "status": "matched",
+            "cid": "3884760844848519207",
+            "url": "https://www.google.com/maps/place/Hajj+Terminal+East/data=!4m6!3m5!1s0x15c3d80fd4bf8817:0x35e97167f28ad827!8m2!3d21.7006689!4d39.14071!16s%2Fg%2F1hc3ygr6h",
+            "place_name": "Hajj Terminal East",
+            "coordinate_strings": [
+              "21.7006689",
+              "39.14071"
+            ],
+            "checked_at": "2026-11-18",
+            "evidence": "Google 지도에서 동쪽 터미널 명칭·공항 소재를 확인했다.",
+            "source_url": "https://www.som.com/projects/king-abdulaziz-international-airport-hajj-terminal/",
+            "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다.",
+            "label": "동쪽 지도"
+          },
+          {
+            "status": "matched",
+            "cid": "11676305183916013389",
+            "url": "https://www.google.com/maps/place/Hajj+Terminal+West/data=!4m6!3m5!1s0x15c3d813ada577cf:0xa20a91b3785db74d!8m2!3d21.6980287!4d39.1368073!16s%2Fg%2F1hc0z2zyd",
+            "place_name": "Hajj Terminal West",
+            "coordinate_strings": [
+              "21.6980287",
+              "39.1368073"
+            ],
+            "checked_at": "2026-11-18",
+            "evidence": "Google 지도에서 서쪽 터미널 명칭·공항 소재를 확인했다.",
+            "source_url": "https://www.som.com/projects/king-abdulaziz-international-airport-hajj-terminal/",
+            "precision_note": "장소 식별용 지도 핀. 현장 측량·납품 정밀 좌표 검증을 뜻하지 않는다.",
+            "label": "서쪽 지도"
+          }
+        ]
       },
       "model_scope": {
         "files_url": "../progress/balady.html",
