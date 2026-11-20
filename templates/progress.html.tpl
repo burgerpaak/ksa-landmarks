@@ -614,7 +614,7 @@ a.brand:hover { opacity: 0.65; }
       clearTimeout(timer);
       highlighted = null;
       const id = window.location.hash.slice(1);
-      if (!/^file-\d+$/.test(id)) return;
+      if (!/^file-(?:B)?\d+$/.test(id)) return;
       const card = document.getElementById(id);
       if (!card || !card.classList.contains('file-card')) return;
       card.scrollIntoView({ block: 'start', behavior: 'instant' });

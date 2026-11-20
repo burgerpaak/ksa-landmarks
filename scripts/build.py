@@ -679,7 +679,8 @@ def render_glossary(glossary: list) -> str:
 <li><a href="https://www.getty.edu/vow/AATFullDisplay?find=&amp;logic=AND&amp;note=work&amp;subjectid=300004145" target="_blank" rel="noopener noreferrer">Getty AAT · 포르티코</a></li>
 <li><a href="https://www.birdair.com/membrane/" target="_blank" rel="noopener noreferrer">Birdair · PTFE 원단과 ETFE 필름</a></li>
 <li><a href="https://inside.fifa.com/innovation/stadium-guidelines/general-process-guidelines/design/stadium-bowl" target="_blank" rel="noopener noreferrer">FIFA · 관람석 보울과 지붕의 구분</a></li>
-<li><a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/instances/realize_instances.html" target="_blank" rel="noopener noreferrer">Blender Manual · 인스턴스의 실체화</a></li></ul></details>''')
+<li><a href="https://www.getty.edu/vow/AATFullDisplay?subjectid=300003161" target="_blank" rel="noopener noreferrer">Getty AAT · 인방</a></li>
+<li><a href="https://www.spab.org.uk/sites/default/files/maintenance-toolkit/Church%20Maintenance%20Toolkit-web.pdf#page=13" target="_blank" rel="noopener noreferrer">SPAB · 고측창과 파시아</a></li></ul></details>''')
     return "".join(parts)
 
 
@@ -890,7 +891,7 @@ def render_balady_card(entry: dict) -> str:
         entry["model"]["file"].split("/")[-1].lower(), "balady",
     ])
     return f"""
-<article class="file-card" data-search="{esc(search_str)}">
+<article class="file-card" id="file-B{num}" data-search="{esc(search_str)}">
   <header class="fc-head">
     <span class="fc-num">№ {num:02d}</span>
     <span class="fc-name">{esc(name)}</span>

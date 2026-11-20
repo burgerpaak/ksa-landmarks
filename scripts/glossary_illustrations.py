@@ -65,6 +65,41 @@ def bowl(open_front=False):
 
 
 def drawing(key):
+    if key=='lintel':
+        s=path('M61 44H259V169H211V111H109V169H61Z','base')
+        for y in [64,84]:s+=line(62,y,258,y,'fine')
+        for x in [94,160,226]:s+=line(x,44,x,64,'fine')
+        for x in [127,193]:s+=line(x,64,x,84,'fine')
+        s+=rect(87,91,146,20,'accent')
+        s+=arrow('M160 22L160 43')
+        s+=arrow('M98 119L98 145')+arrow('M222 119L222 145')
+        return s
+    if key=='clerestory':
+        # A continuous stepped roof: glazing is in the vertical rise,
+        # above the lower roof, rather than a dormer pasted onto it.
+        s=rect(50,125,200,48)
+        s+=poly('250,125 274,94 274,155 250,173','shade')
+        s+=rect(74,54,200,40)
+        s+=rect(84,62,180,24,'accent')
+        for x in [88,123,158,193,228]:s+=rect(x,66,31,16,'glass')
+        s+=poly('50,125 250,125 274,94 74,94','light')
+        s+=poly('50,125 250,125 250,130 50,130','base')
+        s+=poly('250,125 274,94 274,99 250,130','shade')
+        s+=poly('68,49 280,49 292,40 80,40','light')
+        s+=rect(68,49,212,5)
+        s+=poly('280,49 292,40 292,45 280,54','shade')
+        return s+arrow('M32 68L81 74')
+    if key=='fascia':
+        # Pitched roof on supporting walls. Only the vertical eaves board
+        # is accented; roof covering, side edge and soffit stay neutral.
+        s=rect(64,119,162,57)
+        s+=poly('226,119 250,65 274,105 274,154 226,176','shade')
+        s+=windows(102,139,3,1,25,27,39)
+        s+=poly('48,112 234,112 254,52 68,52','light')
+        s+=poly('234,112 254,52 282,100 282,106 254,58 234,118','base')
+        s+=poly('48,124 234,124 226,130 64,130','shade')
+        s+=rect(48,112,186,12,'accent')
+        return s+arrow('M28 151L90 119')
     if key=='najdi':
         s=box(44,75,210,88,'warm')
         for x in range(44,252,24): s+=rect(x,64,13,12,'warm')
@@ -80,11 +115,23 @@ def drawing(key):
                 for k in range(3):s+=line(x+12+k*15,y+7,x+16+k*15,y+12,'grain')
         return s
     if key=='rawshan':
-        s=box(68,40,164,132)+windows(82,57,4,1,15,16,35)
-        s+=box(101,78,100,74,'accent',25,-17)
-        for x in range(111,200,12):s+=line(x,79,x,151,'fine')
-        for y in range(88,151,12):s+=line(102,y,200,y,'fine')
-        return s+arrow('M52 133L98 120')
+        # The bay projects toward the viewer from the wall plane. A cap,
+        # panel frames and separate screened lower panels articulate the woodwork.
+        s=box(90,37,154,137,dx=20,dy=-14)
+        for x in [98,174]:
+            s+=poly(f'{x},153 {x+24},137 {x+24},147 {x},164','shade')
+        s+=box(82,74,118,73,'accent',24,-16)
+        for x in [89,125,161]:
+            s+=rect(x,80,31,31,'light')
+            for y in [86,92,98,104]:s+=line(x+2,y,x+29,y,'fine')
+            s+=rect(x,119,31,21,'light')
+            for xx in range(x+6,x+30,6):s+=line(xx,120,xx,139,'fine')
+            for y in [125,132]:s+=line(x+1,y,x+30,y,'fine')
+        s+=poly('205,79 219,69.7 219,128.3 205,137.7','light')
+        for y in [87,96,105,114,123]:s+=line(205,y,219,y-9.3,'fine')
+        s+=box(78,147,126,6,'accent',24,-16)
+        s+=box(77,67,128,7,'accent',24,-16)
+        return s+arrow('M37 107L78 107')
     if key in ('sandstone','stucco'):
         s=box(72,47,163,113,'warm' if key=='sandstone' else 'base')
         if key=='sandstone':
@@ -181,9 +228,23 @@ def drawing(key):
         s+=arrow('M240 32L240 68')
         return s+path('M118 162L267 162','dash')
     if key=='membrane':
-        s=path('M26 128Q52 112 75 55Q99 111 145 128Q100 145 26 128Z','accent')
-        s+=line(75,55,75,164,'line')+line(26,128,26,164,'line')+line(145,128,145,164,'line')
-        s+=path('M179 100Q225 49 279 100Q225 145 179 100Z','glass')+line(179,100,279,100,'dash')
+        # Left: tensioned fabric canopy, mast and tied edges in exterior view.
+        # Right: an inflated two-film cushion SECTION, with an empty air space.
+        s=line(160,26,160,174,'fine')
+        s+=line(81,40,81,170,'line')+rect(73,170,16,5,'base')
+        s+=line(28,120,15,166,'line')+line(136,120,148,166,'line')
+        s+=rect(9,166,12,6,'base')+rect(142,166,12,6,'base')
+        s+=path('M28 120Q61 105 81 57Q104 105 136 120Q82 147 28 120Z','accent')
+        s+=path('M81 57Q74 105 82 133','fine')
+        s+=arrow('M35 115L9 139')+arrow('M128 115L152 139')
+        # The blue boundaries are separate films, not a solid lens.
+        s+=path('M181 100C202 54 276 54 297 100','line',
+                'style="stroke:#538b99;stroke-width:3"')
+        s+=path('M181 100C202 146 276 146 297 100','line',
+                'style="stroke:#538b99;stroke-width:3"')
+        s+=rect(176,92,9,16,'shade')+rect(293,92,9,16,'shade')
+        s+=arrow('M239 93L239 70')+arrow('M239 107L239 130')
+        s+=arrow('M211 95L202 81')+arrow('M267 105L276 119')
         return s
     if key=='truss':
         s=path('M22 82L143 82L143 118L22 118ZM22 118L52 82L83 118L113 82L143 118','heavy')
@@ -192,12 +253,32 @@ def drawing(key):
         for y in [38,99]:s+=path(f'M185 {y+61}L230 {y}L276 {y+61}M185 {y}L230 {y+61}L276 {y}','heavy')
         return s
     if key=='podium':
-        return box(103,34,81,104)+windows(118,49,3,4,12,11,22,23)+box(49,137,202,36,'accent')
+        # Paint the terrace first so its rear edge never crosses the tower.
+        s=box(44,144,210,35,'accent',48,-30)
+        s+=windows(58,154,7,1,19,17,27)
+        s+=box(120,40,70,90)+windows(130,53,3,4,11,11,20,19)
+        return s
     if key=='bridge':
-        return box(45,47,61,118)+box(209,35,58,130)+box(104,83,106,18,'accent',12,-8)
+        s=box(48,50,52,124,dx=26,dy=-18)+windows(58,65,2,4,11,14,22,25)
+        s+=box(108,90,122,22,'accent',14,-10)
+        for x in [119,141,163,185,207]:s+=rect(x,95,17,12,'glass')
+        # The nearer right tower masks the bridge end at its left wall.
+        s+=box(220,37,52,137,dx=26,dy=-18)+windows(230,53,2,5,11,14,22,24)
+        return s+arrow('M169 55L169 86')
     if key in ('twist','taper'):
         if key=='taper':
-            return poly('80,164 117,32 199,32 238,164','base')+poly('117,32 142,20 221,20 199,32','light')+poly('199,32 221,20 261,151 238,164','shade')+line(80,177,238,177,'dimension')+line(117,18,199,18,'dimension')
+            s=poly('110,173 135,40 182,40 207,173','base')
+            s+=poly('135,40 154,28 201,28 182,40','light')
+            s+=poly('182,40 201,28 234,157 207,173','shade')
+            for t in [.2,.4,.6,.8]:
+                y=40+133*t;left=135-25*t;right=182+25*t
+                s+=line(left,y,right,y,'fine')
+                s+=line(right,y,201+33*t,28+129*t,'fine')
+            for left,right,y in [(135,182,16),(110,207,187)]:
+                s+=line(left,y,right,y,'dimension')
+                s+=line(left,y-4,left,y+4,'dimension')
+                s+=line(right,y-4,right,y+4,'dimension')
+            return s
         levels=[]
         for i in range(11):
             a=radians(-18+i*5);pts=[]
@@ -270,6 +351,9 @@ def drawing(key):
 
 
 LABELS = {
+    'lintel': ('개구부 위의 수평 구조 부재',),
+    'clerestory': ('낮은 지붕 위의 수직 채광창',),
+    'fascia': ('처마 끝의 전면 마감판',),
     'najdi': ('작은 창 · 두꺼운 흙벽',),
     'adobe': ('햇볕에 말린 흙벽돌',),
     'rawshan': ('돌출 깊이와 목재 격자',),
@@ -284,7 +368,7 @@ LABELS = {
     'lattice': ('규칙에 따라 변하는 연결 격자',),
     'exoskeleton': ('건물 바깥의 지지 골격',),
     'cantilever': ('고정단', '자유단과 하중 ↓'),
-    'membrane': ('PTFE 원단의 한 예', 'ETFE 쿠션의 한 예'),
+    'membrane': ('PTFE · 당겨 고정한 원단 (외관)', 'ETFE · 공기로 부푼 필름 (단면)'),
     'truss': ('삼각형 트러스', '다이아그리드'),
     'podium': ('넓은 저층 기단부',),
     'bridge': ('공중 연결부',),
