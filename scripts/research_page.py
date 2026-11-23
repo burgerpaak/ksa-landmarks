@@ -171,6 +171,18 @@ def render_card(item):
     if not suppress_map and not catalogue_location and map_record.get("places"):
         map_control = "".join(link(place["url"], place["label"], 'map-link')
                               for place in map_record["places"])
+    # Opt in per candidate; use the audited place pin, never the Maps view center.
+    esri_view = item.get("esri_view")
+    if esri_view and not suppress_map and (place_verified or coordinate_verified):
+        # A multi-part landmark may use a separate viewing center without
+        # changing its audited place pin (e.g. Hajj Terminal east and west).
+        latitude, longitude = esri_view.get("center", map_record["coordinate_strings"])
+        esri_url = 'https://www.arcgis.com/apps/mapviewer/index.html?' + urlencode({
+            'basemapUrl': 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
+            'center': f'{longitude},{latitude}',
+            'level': esri_view['level'],
+        })
+        map_control += link(esri_url, 'Esri 위성뷰', 'map-link esri-link')
     area_text = f'사이트 기재 위치 · {item["area"]}' if catalogue_location else item["area"]
     location_detail = (f'<section class="location-record"><h5>위치 기록</h5>'
                        f'<p>{esc(catalogue_location["note"])}</p></section>' if catalogue_location else '')

@@ -26,7 +26,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Abdulaziz+Abdullah+Sharbatly+Mosque/@21.7524153,39.175226,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c17de5628da081:0x2b355c375cce09d2!8m2!3d21.7524153!4d39.175226!16s%2Fg%2F11v9xcz9_6"
+        "url": "https://www.google.com/maps/place/Abdulaziz+Abdullah+Sharbatly+Mosque/@21.7524153,39.175226,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c17de5628da081:0x2b355c375cce09d2!8m2!3d21.7524153!4d39.175226!16s%2Fg%2F11v9xcz9_6",
+        "coordinate_strings": [
+          "21.7524153",
+          "39.175226"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -64,6 +71,9 @@
         "evidence": "운영 기관 방문 안내의 Google 지도 링크와 주소를 대조했다.",
         "source_url": "https://hayyjameel.org/visit/",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -97,6 +107,9 @@
         "evidence": "공식 역사 지구의 Beit Jokhdar와 지도 장소명·역사 지구 주소를 대조했다.",
         "source_url": "https://www.jeddahalbalad.sa/our-nitiatives/heritage_and_hospitality",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -124,7 +137,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Sword+Roundabout/@21.5484287,39.1432545,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c3c50752bd2547:0x5c54996c7985556b!8m2!3d21.5484287!4d39.1432545!16s%2Fg%2F11rjkdv788"
+        "url": "https://www.google.com/maps/place/Sword+Roundabout/@21.5484287,39.1432545,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c3c50752bd2547:0x5c54996c7985556b!8m2!3d21.5484287!4d39.1432545!16s%2Fg%2F11rjkdv788",
+        "coordinate_strings": [
+          "21.5484287",
+          "39.1432545"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -162,6 +182,9 @@
         "evidence": "Al-Qiblah by Julio Lafuente 지도 장소와 작품 사진·작가명을 기존 작품 기록과 대조했다.",
         "source_url": "https://www.sculpturesofjeddah.com/sculptures/detail/al-qiblah",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -190,7 +213,14 @@
       "map_record": {
         "status": "matched",
         "url": "https://www.google.com/maps/place/Fish+Model/@21.7219042,39.1144955,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c163d185a34e9d:0x38070fe03fcaf5ce!8m2!3d21.7219042!4d39.1144955!16s%2Fg%2F11l6qq4589",
-        "source_url": "https://www.researchgate.net/figure/A-Shows-a-general-overview-of-the-Fish-Lagoon-within-Obhur-Bay-B-Sampling-locations_fig1_338484690"
+        "source_url": "https://www.researchgate.net/figure/A-Shows-a-general-overview-of-the-Fish-Lagoon-within-Obhur-Bay-B-Sampling-locations_fig1_338484690",
+        "coordinate_strings": [
+          "21.7219042",
+          "39.1144955"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -224,6 +254,9 @@
         "evidence": "Google 지도 Shahada al-Tawhid 장소명·작가와 해안 위치를 작품 기록과 대조했다.",
         "source_url": "https://www.sculpturesofjeddah.com/sculptures/detail/the-shahada-al-tawhid-unification-fountain",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -260,6 +293,9 @@
         "evidence": "Google 지도 Island Mosque 장소명과 IRCICA 등재 좌표를 대조했다.",
         "source_url": "https://www.islamicarchitecturalheritage.com/listings/island-mosque",
         "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -287,7 +323,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Ship+field/@21.7399788,39.1270512,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c1630880b51fd5:0xe7c6e73e22e21440!8m2!3d21.7399788!4d39.1270512!16s%2Fg%2F11l6bkfw2f"
+        "url": "https://www.google.com/maps/place/Ship+field/@21.7399788,39.1270512,798m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15c1630880b51fd5:0xe7c6e73e22e21440!8m2!3d21.7399788!4d39.1270512!16s%2Fg%2F11l6bkfw2f",
+        "coordinate_strings": [
+          "21.7399788",
+          "39.1270512"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -330,7 +373,10 @@
           "title": "방문 안내 및 지도",
           "url": "https://iadelalsulami.com/en/red-sea-museum-jeddah/"
         }
-      ]
+      ],
+      "esri_view": {
+        "level": 19
+      }
     },
     {
       "id": "N60",
@@ -363,6 +409,9 @@
         "evidence": "지도 Heritage Village 장소명·해안 주소와 기존 문화 안내를 대조했다. 다른 지도 자료의 상충 좌표는 사용하지 않았다.",
         "source_url": "https://www.ithra.com/files/9616/6002/6279/Culture_Guide_-English.pdf",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -396,6 +445,9 @@
         "evidence": "공항 Grand Mosque 지도 장소와 주차장 위 돔형 모스크 사진을 대조했다. Google 지도는 2026-11-03 기준 임시 휴업으로 표시하므로 운영 상태는 별도 확인한다.",
         "source_url": "https://brianclarke.co.uk/art/architectural-projects/king-fahd-international-airport-mosque",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -419,7 +471,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Alshgrud+Mosque/@26.3667403,50.0520279,770m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49e2da65b6aeb1:0xf10a89fe670b676d!8m2!3d26.3667403!4d50.0520279!16s%2Fg%2F11bxdzh7sk"
+        "url": "https://www.google.com/maps/place/Alshgrud+Mosque/@26.3667403,50.0520279,770m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49e2da65b6aeb1:0xf10a89fe670b676d!8m2!3d26.3667403!4d50.0520279!16s%2Fg%2F11bxdzh7sk",
+        "coordinate_strings": [
+          "26.3667403",
+          "50.0520279"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -453,6 +512,9 @@
         "evidence": "지도 Dammam Railway Station 장소와 기차역 명칭·주소를 대조했다.",
         "source_url": "https://en.wikipedia.org/wiki/Dammam_railway_station",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -486,6 +548,9 @@
         "evidence": "지도상 Sails Roundabout 장소명과 담맘 해안 도로의 조형 기록을 대조했다.",
         "source_url": "https://wesal.com.sa/en/news/we-were-pleased-to-work-with-the-eastern-province-municipality-to-implement-the-two-largest-pictures-of-the-wise-leadership-may-god-protect-them-on-the-dammam-corniche/show",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -522,6 +587,9 @@
         "evidence": "사용자가 제공한 지도 장소의 흰색 계단형 탑 사진과 기존 외관 사진이 일치한다. 지도 등록명은 لافتيل이다.",
         "source_url": "https://maps.app.goo.gl/VJCiGrSCxDohiGDh7",
         "precision_note": "Google 지도 장소 핀. 납품 정밀 좌표와 현장 상태는 별도 확인."
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -549,7 +617,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/King+Fahd+Mosque/@26.4408626,50.1029385,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49fb87174d2b6d:0x9545c8eb2378aed8!8m2!3d26.4408626!4d50.1029385!16s%2Fg%2F11zlrkcm8"
+        "url": "https://www.google.com/maps/place/King+Fahd+Mosque/@26.4408626,50.1029385,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3e49fb87174d2b6d:0x9545c8eb2378aed8!8m2!3d26.4408626!4d50.1029385!16s%2Fg%2F11zlrkcm8",
+        "coordinate_strings": [
+          "26.4408626",
+          "50.1029385"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -583,6 +658,9 @@
         "evidence": "지도 Prince Mohammed bin Fahd Stadium 장소명·경기장 주소를 조사 자료와 대조했다.",
         "source_url": "https://details.sa/en/archives/places/prince-mohammed-bin-fahd-stadium",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 17
       }
     },
     {
@@ -623,6 +701,9 @@
         "evidence": "Google Maps의 King Fahd International Airport 장소 항목에서 공항명·주소·공식 웹사이트를 확인했다. 공항의 장소 핀이며 터미널 본체의 납품 좌표는 아니다.",
         "source_url": "https://kfia.sa/Contact-Us",
         "precision_note": "공항 장소 핀. 터미널 본체의 납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 16
       }
     },
     {
@@ -660,6 +741,9 @@
         "evidence": "Google Maps의 Abayyah Roundabout 장소명·주소·사진과 조형 기록을 대조했다. Al-Bairaq과 다른 장소이며 자료의 좌표와 지도 핀은 약 18m 차이가 있다.",
         "source_url": "https://maalemsa.com/en/landmarks/aebayah/",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -697,6 +781,9 @@
         "evidence": "Google Maps의 AlBairaq Roundabout 장소명·사진과 조형 기록을 대조했다. Aebayah와 다른 장소이며 자료의 좌표와 지도 핀은 약 31m 차이가 있다.",
         "source_url": "https://maalemsa.com/en/landmarks/albairaq/",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -730,6 +817,9 @@
         "evidence": "Google Maps에서 Alardha Square 장소명과 해안 입지 및 Mujassam Watan 연결을 대조했다.",
         "source_url": "https://www.archdaily.com/1024531/the-transformative-power-of-sculptures-and-landmarks-in-urban-spaces-the-case-of-al-khobar-saudi-arabia",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -765,6 +855,9 @@
         "checked_at": "2026-11-06",
         "evidence": "Google 지도의 Hariri Mosque 장소명·해안 입지와 외관을 확인했다. 기존 Jawza Al Qahtani·Salem Bin Laden Mosque와는 서로 다른 지도 위치다.",
         "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -788,7 +881,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/%D8%A7%D9%84%D8%B3%D9%86%D8%A8%D9%84%D8%A9/data=!4m5!3m4!1s0x3e49e70026a052a1:0xc0cb9b14b8c0a167!8m2!3d26.3148254!4d50.1800648"
+        "url": "https://www.google.com/maps/place/%D8%A7%D9%84%D8%B3%D9%86%D8%A8%D9%84%D8%A9/data=!4m5!3m4!1s0x3e49e70026a052a1:0xc0cb9b14b8c0a167!8m2!3d26.3148254!4d50.1800648",
+        "coordinate_strings": [
+          "26.3148254",
+          "50.1800648"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -830,6 +930,9 @@
         "evidence": "SciTech 장소 링크의 고유 핀을 공식 명칭과 OpenStreetMap 과학관 건물 범위와 대조했다.",
         "source_url": "https://scitech.sa/en/p/2/",
         "precision_note": "과학관 장소 핀. 모델용 정밀 좌표·돔 경계는 별도 확인."
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -866,6 +969,9 @@
         "evidence": "작품 소개에서 연결한 Google 지도 장소명과 외관을 대조했다.",
         "source_url": "https://maalemsa.com/en/landmarks/altasis/",
         "precision_note": "지도 장소 핀. 납품용 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -903,6 +1009,9 @@
         "evidence": "지도 Ajdan Rise의 주거 건물 항목과 Waterfront 소재를 대조했다.",
         "source_url": "https://ajdan.com/uploads/0000/5/2024/11/AjdanProfile.pdf",
         "precision_note": "지도 장소 핀. 현장 측량·납품 정밀 좌표는 별도 확인."
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -930,7 +1039,14 @@
       ],
       "map_record": {
         "status": "coordinate_matched",
-        "url": "https://www.google.com/maps/search/?api=1&query=21.650655268060454%2C39.09980282084691"
+        "url": "https://www.google.com/maps/search/?api=1&query=21.650655268060454%2C39.09980282084691",
+        "coordinate_strings": [
+          "21.650655268060454",
+          "39.09980282084691"
+        ]
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -958,7 +1074,15 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://maps.app.goo.gl/Rm5CSWHQ9rhjxKa46"
+        "url": "https://maps.app.goo.gl/Rm5CSWHQ9rhjxKa46",
+        "coordinate_strings": [
+          "21.4945558",
+          "39.1843168"
+        ],
+        "coordinate_source": "research/phase2/LOCATION_REVIEW_PENDING.md — 2026-11-05 개별 장소 핀 확인"
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -982,7 +1106,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/teamLab+Borderless+Jeddah/data=!4m5!3m4!1s0x15c3cf0039459e45:0x13f8bed3e3c1832a!8m2!3d21.4948976!4d39.1836397"
+        "url": "https://www.google.com/maps/place/teamLab+Borderless+Jeddah/data=!4m5!3m4!1s0x15c3cf0039459e45:0x13f8bed3e3c1832a!8m2!3d21.4948976!4d39.1836397",
+        "coordinate_strings": [
+          "21.4948976",
+          "39.1836397"
+        ]
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -1006,7 +1137,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Jaffali+Mosque/data=!4m5!3m4!1s0x15c3cf058bb59043:0xf64e9fc51659312c!8m2!3d21.4923931!4d39.1856749"
+        "url": "https://www.google.com/maps/place/Jaffali+Mosque/data=!4m5!3m4!1s0x15c3cf058bb59043:0xf64e9fc51659312c!8m2!3d21.4923931!4d39.1856749",
+        "coordinate_strings": [
+          "21.4923931",
+          "39.1856749"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1052,6 +1190,9 @@
         "status": "not_found",
         "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다.",
         "top_view": "지역 아카이브의 항공사진 확보. 측량·설계 도면이 아님."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1129,6 +1270,9 @@
         "verified_section_url": "https://static.the.akdn/53832/1644226990-10116_4.jpg",
         "site_plan_status": "not_found",
         "floor_plan_status": "original_not_verified"
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1152,7 +1296,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Al+Ma%27amar+Mosque/data=!4m5!3m4!1s0x15c3cf1a10d563dd:0xfbacbcf6d54bf3c4!8m2!3d21.4843307!4d39.1867091"
+        "url": "https://www.google.com/maps/place/Al+Ma%27amar+Mosque/data=!4m5!3m4!1s0x15c3cf1a10d563dd:0xfbacbcf6d54bf3c4!8m2!3d21.4843307!4d39.1867091",
+        "coordinate_strings": [
+          "21.4843307",
+          "39.1867091"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1203,6 +1354,9 @@
         "searched_at": "2026-11-16",
         "status": "not_found",
         "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다."
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -1245,6 +1399,9 @@
         "searched_at": "2026-11-16",
         "status": "not_found",
         "note": "평면·배치도 검색을 실시했으나 공개 도면 미확보. 사진만으로 높이·두께·가려진 부분을 확정하지 않는다."
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1268,7 +1425,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Dammam+Public+Library/data=!4m5!3m4!1s0x3e49fb9654267fdd:0xf2d7eb791fd04dee!8m2!3d26.4287714!4d50.1184516"
+        "url": "https://www.google.com/maps/place/Dammam+Public+Library/data=!4m5!3m4!1s0x3e49fb9654267fdd:0xf2d7eb791fd04dee!8m2!3d26.4287714!4d50.1184516",
+        "coordinate_strings": [
+          "26.4287714",
+          "50.1184516"
+        ]
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -1292,7 +1456,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/King+Fahd+Masjid/data=!4m5!3m4!1s0x3e49c29092ce9f97:0x5e8f27b854d7d250!8m2!3d26.2622627!4d50.2108119"
+        "url": "https://www.google.com/maps/place/King+Fahd+Masjid/data=!4m5!3m4!1s0x3e49c29092ce9f97:0x5e8f27b854d7d250!8m2!3d26.2622627!4d50.2108119",
+        "coordinate_strings": [
+          "26.2622627",
+          "50.2108119"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1316,7 +1487,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Salem+Bin+Laden+Mosque/data=!4m5!3m4!1s0x3e49c28f4d9a8aef:0x20326debbe98d1ad!8m2!3d26.265438!4d50.2191231"
+        "url": "https://www.google.com/maps/place/Salem+Bin+Laden+Mosque/data=!4m5!3m4!1s0x3e49c28f4d9a8aef:0x20326debbe98d1ad!8m2!3d26.265438!4d50.2191231",
+        "coordinate_strings": [
+          "26.265438",
+          "50.2191231"
+        ]
+      },
+      "esri_view": {
+        "level": 19
       }
     },
     {
@@ -1340,7 +1518,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/International+Medical+Center+Hospital/data=!4m6!3m5!1s0x15c3cf97ce9b38e7:0x33f98d24e3f20523!8m2!3d21.5135508!4d39.1741314!16s%2Fm%2F0gmb_31"
+        "url": "https://www.google.com/maps/place/International+Medical+Center+Hospital/data=!4m6!3m5!1s0x15c3cf97ce9b38e7:0x33f98d24e3f20523!8m2!3d21.5135508!4d39.1741314!16s%2Fm%2F0gmb_31",
+        "coordinate_strings": [
+          "21.5135508",
+          "39.1741314"
+        ]
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -1368,7 +1553,14 @@
       ],
       "map_record": {
         "status": "matched",
-        "url": "https://www.google.com/maps/place/Al+Salam+Hospital/data=!4m6!3m5!1s0x3e49e8ccb910234f:0x6f1d169085b36629!8m2!3d26.3511168!4d50.2096489!16s%2Fg%2F11dx8mwqmx"
+        "url": "https://www.google.com/maps/place/Al+Salam+Hospital/data=!4m6!3m5!1s0x3e49e8ccb910234f:0x6f1d169085b36629!8m2!3d26.3511168!4d50.2096489!16s%2Fg%2F11dx8mwqmx",
+        "coordinate_strings": [
+          "26.3511168",
+          "50.2096489"
+        ]
+      },
+      "esri_view": {
+        "level": 18
       }
     },
     {
@@ -1448,6 +1640,14 @@
         "files_url": "../progress/balady.html#file-B40",
         "summary": "기존 공항 모델: Balady+ B40 · 하지 터미널 별도",
         "detail": "보유한 Balady+ B40은 제다 King Abdulaziz International Airport 모델이다. 모델 이미지의 터미널 형상과 등록 위치를 하지 터미널의 천막 지붕·위치와 대조했을 때 하지 터미널은 보이지 않았다. 모델 제공자의 공식 범위 문서는 확인되지 않았으므로 형상·위치에 근거한 판단이다."
+      },
+      "esri_view": {
+        "level": 16,
+        "center": [
+          "21.6993488",
+          "39.13875865"
+        ],
+        "note": "동·서 터미널의 기존 장소 핀 중간을 보기 중심으로 사용. 납품 좌표가 아님."
       }
     }
   ]
