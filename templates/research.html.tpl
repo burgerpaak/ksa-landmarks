@@ -81,6 +81,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .city-overview { display: flex; align-items: center; gap: 20px; }
 .city-overview + .city-overview { border-left: 1px solid var(--border); padding-left: 24px; }
 .city-jump { font-size: 16px; font-weight: 600; color: var(--ink); }
+.city-jump[href="#common"] { font-size: 14px; font-weight: 500; line-height: 26.4px; letter-spacing: -0.02em; }
 .hero-stats { display: flex; align-items: center; gap: 20px; }
 .stat { display: flex; align-items: center; gap: 5px; }
 .stat-num { font-size: 13px; font-weight: 500; color: var(--ink-soft); }

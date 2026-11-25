@@ -10,6 +10,7 @@ from urllib.parse import urlsplit, urlencode
 REVIEW_STATES = {"검토 중": "review", "선정": "selected", "제외": "excluded"}
 PRIORITIES = {"추천": 1, "검토": 2, "보류": 3}
 LANDMARK_TYPES = {
+    "shared-model": ("공통 모델", "공통 배치용 모델"),
     "tower": ("Tower", "타워"),
     "mosque": ("Mosque", "모스크"),
     "heritage": ("Heritage", "역사 건축물"),
@@ -151,6 +152,7 @@ def render_image_gallery(images):
 
 
 def render_card(item):
+    shared_model = item.get('shared_model', False)
     map_record = item["map_record"]
     catalogue_location = item.get("catalogue_location")
     place_verified = map_record["status"] == "matched"
@@ -183,6 +185,8 @@ def render_card(item):
             'level': esri_view['level'],
         })
         map_control += link(esri_url, 'Esri 위성뷰', 'map-link esri-link')
+    if shared_model:
+        map_control = ''
     area_text = f'사이트 기재 위치 · {item["area"]}' if catalogue_location else item["area"]
     location_detail = (f'<section class="location-record"><h5>위치 기록</h5>'
                        f'<p>{esc(catalogue_location["note"])}</p></section>' if catalogue_location else '')
@@ -206,6 +210,8 @@ def render_card(item):
     status = f'<span class="badge {state}">{esc(item["review_status"])}</span>' if state != "review" else ""
     decision_note = (f'<p class="decision-note"><span>선정 전 확인</span>{esc(item["decision_note"])}</p>'
                      if item.get("decision_note") else "")
+    if shared_model:
+        decision_note = decision_note.replace('선정 전 확인', '제작 전 확인')
     title_tag = "h3" if item["phase_key"] == "phase-1" else "h4"
     rank = PRIORITIES[item["selection_suggestion"]]
     grade = ('<span class="badge">평가 전</span>' if item.get('_phase2') else
@@ -215,6 +221,8 @@ def render_card(item):
     if tip_reason.startswith(("기존 조사에서", "기존 형태 검토", "대상 대응 또는")) or not tip_reason:
         tip_reason = item.get("recommendation_review", {}).get("reason") or check["remaining"]
     grade = grade.replace('{reason}', esc(tip_reason))
+    if shared_model:
+        grade = ''
     type_badge = f'<span class="type-badge" aria-label="Type: {esc(type_label)}" title="{esc(type_description)}">{esc(type_label)}</span>'
     relationship_tag = (f'<span>{esc(item["tag"])}</span>'
                         if item["city_key"] == "riyadh" and item["phase_key"] == "phase-1" else "")
@@ -222,6 +230,9 @@ def render_card(item):
     sources = "".join(f'<li>{link(url, label)}</li>' for label, url in item["sources"])
     reason = f'<h5>제외 사유</h5><p>{esc(item.get("exclusion_reason", "사용자 제외 결정"))}</p>' if state == "excluded" else ""
     overview = f'<section class="landmark-intro"><h5>랜드마크 소개</h5><p>{esc(item["overview"])}</p></section>'
+    if shared_model:
+        overview = overview.replace('랜드마크 소개', '모델 소개')
+        overview += f'<section class="production-scope"><h5>제작 범위</h5><p>{esc(item["production_scope"])}</p></section>'
     model_scope = item.get("model_scope")
     model_scope_note = (f'<p class="model-scope-note">{esc(model_scope["summary"])}</p>' if model_scope else '')
     if model_scope and model_scope.get("files_url"):
@@ -244,6 +255,12 @@ def render_card(item):
         checked = ''
     else:
         checked = f'<h5>조사 요약</h5><p>{esc(check["checked"])}</p>'
+    if shared_model:
+        checked = f'<h5>참고 자료</h5><p>{esc(check["checked"])}</p>'
+    external_links = (link(item['reference_url'], '제조사 자료', 'image-search-link') if shared_model
+                      else link(image_search_url, 'Google 이미지', 'image-search-link'))
+    review_details = (f'            <h5>미확인 사항</h5><p>{esc(check["remaining"])}</p>'
+                      f'\n            <h5>검토 메모</h5><p>{esc(item["verification_notes"])}</p>' if not shared_model else '')
     images = item.get("images", [])
     if images:
         photo = images[0]
@@ -272,10 +289,9 @@ def render_card(item):
         {decision_note}
         <div class="card-actions"><details><summary>상세 정보 <svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></summary>
           <div class="detail-body">{overview}{model_scope_detail}{location_detail}{reason}{relation_detail}{appearance}{checked}
-            <h5>미확인 사항</h5><p>{esc(check['remaining'])}</p>
-            <h5>검토 메모</h5><p>{esc(item['verification_notes'])}</p>
+{review_details}
             <h5>출처</h5><ul class="sources">{sources}</ul>{render_image_gallery(images)}</div>
-        </details><div class="card-external-links">{map_control}{link(image_search_url, 'Google 이미지', 'image-search-link')}</div></div>
+        </details><div class="card-external-links">{map_control}{external_links}</div></div>
         <section class="card-comments" aria-label="{esc(item['name'])} 코멘트" hidden>
           <div class="comment-heading"><span class="comment-count" hidden></span>
             <button class="comment-write" type="button" aria-expanded="false" aria-controls="comment-form-{esc(item['id'])}"><svg aria-hidden="true" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>코멘트 남기기</button></div>
@@ -303,11 +319,13 @@ def build_research(root: Path, output_dir: Path, palette: str, phase=1):
         data = json.loads((root / 'research/phase2/candidates.json').read_text(encoding='utf-8'))
         image_file = root / 'research/phase2/images.json'
         phase2_images = json.loads(image_file.read_text(encoding='utf-8'))['candidates'] if image_file.exists() else {}
-        candidates, date = data['candidates'], data['checked_at']
+        candidates, date = data['candidates'] + data.get('common_models', []), data['checked_at']
         cities = (("jeddah", "Jeddah", "건축물 · 조형물"), ("dammam", "Dammam", "건축물 · 조형물"), ("khobar", "Khobar", "건축물 · 조형물"))
+        if data.get('common_models'):
+            cities += (("common", "공통 배치용 모델", "여러 장소에 반복 배치 · 설치 위치 미지정"),)
         for c in candidates:
-            c.update(city_key=c['city'].lower().replace('al ', ''), phase_key='phase-1', tag='', _phase2=True,
-                     kind='sculpture' if c['landmark_type']=='sculpture' else 'building',
+            c.update(city_key='common' if c.get('shared_model') else c['city'].lower().replace('al ', ''), phase_key='phase-1', tag='', _phase2=True,
+                     kind='shared-model' if c.get('shared_model') else 'sculpture' if c['landmark_type']=='sculpture' else 'building',
                      review_status='검토 중', selection_suggestion='검토', confidence='partial', images=phase2_images.get(c['id'], []),
                      map_record=c.get('map_record', {'status':'unresolved', 'suppress_search': c.get('suppress_map', False)}),
                      verification_notes=c['remaining'], decision_note=c['remaining'],
@@ -324,7 +342,7 @@ def build_research(root: Path, output_dir: Path, palette: str, phase=1):
         items = [c for c in candidates if c["city_key"] == city_key]
         type_stats = "".join(
             f'<div class="stat"><span class="stat-label">{label}</span><span class="stat-num" data-count-for="{section_id}" data-count-kind="{kind}">{sum(c["kind"] == kind for c in items)}</span></div>'
-            for kind, label in (("building", "건축물"), ("sculpture", "조형물"))
+            for kind, label in ((("shared-model", "모델"),) if city_key == "common" else (("building", "건축물"), ("sculpture", "조형물")))
             if city_key != "riyadh" or kind == "building" or any(c["kind"] == kind for c in items)
         )
         overview.append(f'<div class="city-overview"><a class="jump-link city-jump" href="#{section_id}">{city}</a><div class="hero-stats">{type_stats}</div></div>')

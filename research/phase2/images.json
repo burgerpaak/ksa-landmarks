@@ -1460,6 +1460,45 @@
         "sha256": "9d189b5b2a19e1b852e27c28eee036e24d2e483465263f51d7af33eeedd44aec",
         "thumbnail_position": "50% 50%"
       }
+    ],
+    "N93": [
+      {
+        "file": "research-n93-flagpole.jpg",
+        "width": 1250,
+        "height": 1549,
+        "alt": "사우디 국기를 게양한 국기봉 · Al-Babtain 제품 자료 사진",
+        "caption": "Al-Babtain 국기봉 제품 자료 3페이지 사진. 공통 모델의 외형 참고용이며 특정 설치 위치·규격을 확정하는 자료는 아님. 받침대는 원본 사진에 보이지 않음.",
+        "kind": "참고 사진",
+        "source": "Al-Babtain · 제품 자료 3페이지",
+        "source_url": "https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf#page=3",
+        "original_url": "https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf",
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-25",
+        "processing": "PDF 3페이지 내장 JPEG 원본 추출 · 파일 크롭·리터칭 없음 · 썸네일만 상단 중심 화면 크롭",
+        "sha256": "57c3bca685115f857b2074a7defbac02406a7819d44588aad74d87af58a787fb",
+        "thumbnail_position": "50% 0%"
+      },
+      {
+        "file": "research-n93-flagpole-user-reference.jpg",
+        "width": 784,
+        "height": 1434,
+        "alt": "사우디 국기봉 전체와 원형 광장 · 사용자 제공 참고 사진",
+        "caption": "국기봉 전체 형태와 하부 배치 참고. 원형 광장·조경·바닥 문양은 제작 범위에서 제외. 이미지에 삽입된 지역명은 설치 위치의 확인 근거로 사용하지 않음.",
+        "kind": "참고 사진",
+        "source": "사용자 제공 사진",
+        "source_url": null,
+        "original_url": null,
+        "photographer": null,
+        "date_note": "촬영 시점 미확인",
+        "license": "재사용 조건 미확인",
+        "license_url": null,
+        "accessed_at": "2026-11-25",
+        "processing": "원본 유지 · 크롭·리터칭 없음",
+        "sha256": "18feb427661c88778a25f26190411ecc44d944958858a1bd7ab4574c7e7d0b40"
+      }
     ]
   }
 }

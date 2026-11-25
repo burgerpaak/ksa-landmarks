@@ -131,6 +131,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .city-overview { display: flex; align-items: center; gap: 20px; }
 .city-overview + .city-overview { border-left: 1px solid var(--border); padding-left: 24px; }
 .city-jump { font-size: 16px; font-weight: 600; color: var(--ink); }
+.city-jump[href="#common"] { font-size: 14px; font-weight: 500; line-height: 26.4px; letter-spacing: -0.02em; }
 .hero-stats { display: flex; align-items: center; gap: 20px; }
 .stat { display: flex; align-items: center; gap: 5px; }
 .stat-num { font-size: 13px; font-weight: 500; color: var(--ink-soft); }
@@ -429,7 +430,8 @@ html { scrollbar-gutter: stable; }
  <nav class="phase-nav" aria-label="조사 단계"><a href="./">Phase 1</a><a href="./phase2.html" aria-current="page">Phase 2</a></nav>
  <nav class="overview" aria-label="도시별 랜드마크 후보"><div class="city-overview"><a class="jump-link city-jump" href="#jeddah">Jeddah</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="building">14</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="jeddah" data-count-kind="sculpture">5</span></div></div></div>
 <div class="city-overview"><a class="jump-link city-jump" href="#dammam">Dammam</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="dammam" data-count-kind="building">9</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="dammam" data-count-kind="sculpture">2</span></div></div></div>
-<div class="city-overview"><a class="jump-link city-jump" href="#khobar">Khobar</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="khobar" data-count-kind="building">6</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="khobar" data-count-kind="sculpture">6</span></div></div></div></nav>
+<div class="city-overview"><a class="jump-link city-jump" href="#khobar">Khobar</a><div class="hero-stats"><div class="stat"><span class="stat-label">건축물</span><span class="stat-num" data-count-for="khobar" data-count-kind="building">6</span></div><div class="stat"><span class="stat-label">조형물</span><span class="stat-num" data-count-for="khobar" data-count-kind="sculpture">6</span></div></div></div>
+<div class="city-overview"><a class="jump-link city-jump" href="#common">공통 배치용 모델</a><div class="hero-stats"><div class="stat"><span class="stat-label">모델</span><span class="stat-num" data-count-for="common" data-count-kind="shared-model">1</span></div></div></div></nav>
  <section class="city-section" id="jeddah" aria-labelledby="heading-jeddah">
           <header class="section-head"><div class="section-title"><h2 id="heading-jeddah">Jeddah<span class="section-count" aria-live="polite">19</span></h2><p>건축물 · 조형물</p></div>
             <div class="section-controls"><button class="comment-filter" type="button" aria-label="Jeddah 코멘트 있는 카드만 보기" aria-pressed="false" title="Jeddah 코멘트 있는 카드만 보기" disabled><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-filter-label"><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></span></button>
@@ -2418,6 +2420,63 @@ html { scrollbar-gutter: stable; }
             <label class="comment-field comment-author-field">작성자<input name="author" autocomplete="name" placeholder="이름" maxlength="40" required></label>
             <label class="comment-field">코멘트<textarea name="comment" placeholder="선정 의견이나 확인할 내용을 남겨주세요." maxlength="1000" aria-describedby="comment-note-N86" required></textarea></label>
             <div class="comment-composer-actions"><span class="comment-storage-note" id="comment-note-N86">등록한 코멘트는 다른 방문자에게도 표시됩니다.</span>
+              <div class="comment-buttons"><button class="comment-cancel" type="button">취소</button><button class="comment-submit" type="submit" disabled>등록</button></div></div>
+          </form>
+          <p class="comment-feedback" aria-live="polite" hidden></p>
+          <button class="comment-retry comment-expand" type="button" hidden>다시 불러오기</button>
+        </section>
+      </div>
+    </article></div><p class="section-empty" aria-live="polite" hidden>아직 등록된 조사 항목이 없습니다.</p></section>
+<section class="city-section" id="common" aria-labelledby="heading-common">
+          <header class="section-head"><div class="section-title"><h2 id="heading-common">공통 배치용 모델<span class="section-count" aria-live="polite">1</span></h2><p>여러 장소에 반복 배치 · 설치 위치 미지정</p></div>
+            <div class="section-controls"><button class="comment-filter" type="button" aria-label="공통 배치용 모델 코멘트 있는 카드만 보기" aria-pressed="false" title="공통 배치용 모델 코멘트 있는 카드만 보기" disabled><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-filter-label"><span>코멘트</span><span class="comment-filter-count" aria-hidden="true">—</span></span></button>
+            <div class="display-help"><button type="button" class="help-trigger" aria-label="공통 배치용 모델 표시 기준" aria-describedby="help-common"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle class="info-dot" cx="10" cy="6" r=".8"/></svg></button>
+              <p class="help-tooltip" id="help-common" role="tooltip" hidden>사진의 출처·시점은 상세 정보에서 확인할 수 있습니다. 미확보 이미지는 준비 중으로 표시합니다. 건수는 검색어와 해당 도시의 코멘트 필터를 반영합니다. 코멘트 옆 숫자는 검색 조건에 맞는 코멘트가 있는 카드 수이며, 코멘트 총 개수와는 다릅니다. 카드는 추천 → 검토 → 보류 순으로 표시하며, 추천 등급은 기존 조건·모델링 리소스·캐릭터성을 함께 평가한 의견입니다. 추천은 우선 후보, 검토는 조건이나 자료 보완이 필요한 후보, 보류는 판단 근거가 부족한 후보입니다. 최종 선정과는 구분합니다.</p>
+            </div></div></header>
+          <p class="comment-filter-feedback" role="status" hidden></p><span class="comment-filter-status visually-hidden" role="status"></span>
+          <div class="cards-grid"><article class="research-card" id="N93" data-status="review"
+      data-kind="shared-model" data-type="shared-model" data-priority="2" data-search="n93 saudi flagpole · 사우디 국기봉 공통 공통 배치용 모델 · 설치 위치 미지정   상부로 갈수록 가늘어지는 긴 기둥과 상단의 국기, 하부 고정 받침부. 기준 높이·기둥 직경·국기 크기·받침대 형태 확정 필요. 국기의 고정 형태 또는 애니메이션 필요 여부 확인. 검토 공통 모델 공통 배치용 모델" aria-labelledby="title-N93">
+      <div class="card-visual">
+        <div class="card-meta"><div class="badges">
+          </div></div>
+        <button class="photo-open" type="button" aria-label="Saudi Flagpole · 사우디 국기봉 사진과 상세 정보 보기">
+          <img src="../images/research-n93-flagpole.jpg" alt="사우디 국기를 게양한 국기봉 · Al-Babtain 제품 자료 사진" width="1250" height="1549" style="object-position:50% 0%" loading="lazy" decoding="async"></button><span class="photo-kind">참고 사진</span>
+        <button class="comment-thumbnail-badge" type="button" aria-label="코멘트 보기" hidden><span class="comment-update-dot" aria-hidden="true"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5a1.5 1.5 0 0 1-1.5 1.5H6l-3.5 2V4A1.5 1.5 0 0 1 4 2.5h7.5A1.5 1.5 0 0 1 13 4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="comment-thumbnail-count"></span></button>
+      </div>
+      <div class="card-body"><div class="card-heading"><h3 id="title-N93">Saudi Flagpole · 사우디 국기봉</h3>
+        </div>
+        <p class="area">공통 배치용 모델 · 설치 위치 미지정</p>
+
+        <div class="card-tags"><span class="type-badge" aria-label="Type: 공통 모델" title="공통 배치용 모델">공통 모델</span></div>
+        <p class="character">상부로 갈수록 가늘어지는 긴 기둥과 상단의 국기, 하부 고정 받침부.</p>
+        <p class="decision-note"><span>제작 전 확인</span>기준 높이·기둥 직경·국기 크기·받침대 형태 확정 필요. 국기의 고정 형태 또는 애니메이션 필요 여부 확인.</p>
+        <div class="card-actions"><details><summary>상세 정보 <svg class="chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></summary>
+          <div class="detail-body"><section class="landmark-intro"><h5>모델 소개</h5><p>사우디 국기를 게양하는 독립형 국기봉. 여러 장소에 반복 배치할 수 있는 공통 모델로 제작.</p></section><section class="production-scope"><h5>제작 범위</h5><p>국기봉 본체·국기·기본 받침대. 각 요소를 분리하여 배치 및 크기 조정에 대응. 원형 광장·조경·바닥 문양은 제작 범위에서 제외.</p></section><h5>외관 특징</h5><p>상부로 갈수록 가늘어지는 긴 기둥과 상단의 국기, 하부 고정 받침부.</p><h5>참고 자료</h5><p>Al-Babtain 공식 제품 자료의 국기봉 사진을 외형 참고로 사용. 4페이지에 일반 제품의 입면·베이스 플레이트 평면·고정 볼트 상세 수록. 특정 장소나 제품 규격을 그대로 재현하는 모델이 아닌 공통 배치용 자산.</p>
+
+            <h5>출처</h5><ul class="sources"><li><a class="" href="https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf" target="_blank" rel="noopener noreferrer">al-babtain.com.sa <span aria-hidden="true">↗</span></a></li></ul><h5>외형 이미지</h5><div class="photo-gallery"><figure class="research-photo">
+          <button class="photo-original" type="button" aria-haspopup="dialog" aria-controls="research-lightbox" aria-label="사우디 국기를 게양한 국기봉 · Al-Babtain 제품 자료 사진 크게 보기">
+            <img src="../images/research-n93-flagpole.jpg" alt="사우디 국기를 게양한 국기봉 · Al-Babtain 제품 자료 사진" width="1250" height="1549" loading="lazy" decoding="async"></button>
+          <figcaption><p>Al-Babtain 국기봉 제품 자료 3페이지 사진. 공통 모델의 외형 참고용이며 특정 설치 위치·규격을 확정하는 자료는 아님. 받침대는 원본 사진에 보이지 않음.</p>
+            <p class="photo-credit"><a class="" href="https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf#page=3" target="_blank" rel="noopener noreferrer">Al-Babtain · 제품 자료 3페이지 <span aria-hidden="true">↗</span></a> · 참고 사진<br>
+              촬영·제작: 미확인 · 시점: 촬영 시점 미확인<br>
+              사용 조건: 재사용 조건 미확인 · PDF 3페이지 내장 JPEG 원본 추출 · 파일 크롭·리터칭 없음 · 썸네일만 상단 중심 화면 크롭</p></figcaption></figure><figure class="research-photo">
+          <button class="photo-original" type="button" aria-haspopup="dialog" aria-controls="research-lightbox" aria-label="사우디 국기봉 전체와 원형 광장 · 사용자 제공 참고 사진 크게 보기">
+            <img src="../images/research-n93-flagpole-user-reference.jpg" alt="사우디 국기봉 전체와 원형 광장 · 사용자 제공 참고 사진" width="784" height="1434" loading="lazy" decoding="async"></button>
+          <figcaption><p>국기봉 전체 형태와 하부 배치 참고. 원형 광장·조경·바닥 문양은 제작 범위에서 제외. 이미지에 삽입된 지역명은 설치 위치의 확인 근거로 사용하지 않음.</p>
+            <p class="photo-credit">사용자 제공 사진 · 참고 사진<br>
+              촬영·제작: 미확인 · 시점: 촬영 시점 미확인<br>
+              사용 조건: 재사용 조건 미확인 · 원본 유지 · 크롭·리터칭 없음</p></figcaption></figure></div></div>
+        </details><div class="card-external-links"><a class="image-search-link" href="https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf" target="_blank" rel="noopener noreferrer">제조사 자료 <span aria-hidden="true">↗</span></a></div></div>
+        <section class="card-comments" aria-label="Saudi Flagpole · 사우디 국기봉 코멘트" hidden>
+          <div class="comment-heading"><span class="comment-count" hidden></span>
+            <button class="comment-write" type="button" aria-expanded="false" aria-controls="comment-form-N93"><svg aria-hidden="true" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg>코멘트 남기기</button></div>
+          <ul class="comment-list" hidden></ul>
+          <div class="comment-list-actions"><button class="comment-expand" type="button" aria-expanded="false" hidden></button><button class="comment-more comment-expand" type="button" hidden>이전 코멘트 더 보기</button></div>
+          <form class="comment-composer" id="comment-form-N93" hidden>
+            <div class="comment-identity" hidden><span>작성자: <span class="comment-identity-name"></span></span><button class="comment-author-change" type="button">변경</button></div>
+            <label class="comment-field comment-author-field">작성자<input name="author" autocomplete="name" placeholder="이름" maxlength="40" required></label>
+            <label class="comment-field">코멘트<textarea name="comment" placeholder="선정 의견이나 확인할 내용을 남겨주세요." maxlength="1000" aria-describedby="comment-note-N93" required></textarea></label>
+            <div class="comment-composer-actions"><span class="comment-storage-note" id="comment-note-N93">등록한 코멘트는 다른 방문자에게도 표시됩니다.</span>
               <div class="comment-buttons"><button class="comment-cancel" type="button">취소</button><button class="comment-submit" type="submit" disabled>등록</button></div></div>
           </form>
           <p class="comment-feedback" aria-live="polite" hidden></p>

@@ -1650,5 +1650,32 @@
         "note": "동·서 터미널의 기존 장소 핀 중간을 보기 중심으로 사용. 납품 좌표가 아님."
       }
     }
+  ],
+  "common_models": [
+    {
+      "id": "N93",
+      "name": "Saudi Flagpole · 사우디 국기봉",
+      "city": "공통",
+      "area": "공통 배치용 모델 · 설치 위치 미지정",
+      "shared_model": true,
+      "landmark_type": "shared-model",
+      "visual_character": "상부로 갈수록 가늘어지는 긴 기둥과 상단의 국기, 하부 고정 받침부.",
+      "overview": "사우디 국기를 게양하는 독립형 국기봉. 여러 장소에 반복 배치할 수 있는 공통 모델로 제작.",
+      "production_scope": "국기봉 본체·국기·기본 받침대. 각 요소를 분리하여 배치 및 크기 조정에 대응. 원형 광장·조경·바닥 문양은 제작 범위에서 제외.",
+      "evidence": "Al-Babtain 공식 제품 자료의 국기봉 사진을 외형 참고로 사용. 4페이지에 일반 제품의 입면·베이스 플레이트 평면·고정 볼트 상세 수록. 특정 장소나 제품 규격을 그대로 재현하는 모델이 아닌 공통 배치용 자산.",
+      "remaining": "기준 높이·기둥 직경·국기 크기·받침대 형태 확정 필요. 국기의 고정 형태 또는 애니메이션 필요 여부 확인.",
+      "map_record": {
+        "status": "not_applicable",
+        "suppress_search": true
+      },
+      "map_search_url": "",
+      "reference_url": "https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf",
+      "sources": [
+        {
+          "title": "Al-Babtain · 국기봉 제품 자료",
+          "url": "https://al-babtain.com.sa/wp-content/uploads/2020/02/Flag-Pole.pdf"
+        }
+      ]
+    }
   ]
 }
